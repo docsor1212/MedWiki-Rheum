@@ -37,7 +37,7 @@ h1 { font-size:1.6rem; font-weight:700; color:var(--accent); margin-bottom:2px; 
 .stat.s1 .num { color:var(--accent); }
 .stat.s2 .num { color:var(--green); }
 .stat.s3 .num { color:var(--yellow); }
-</style>
+@media(max-width:768px){ .wrap{padding:0 4px;} .header,.stats{flex-direction:column;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;} .grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));} } </style>
 </head>
 <body>
 <div class="wrap">
