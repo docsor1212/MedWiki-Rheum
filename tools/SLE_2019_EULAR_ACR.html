@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2019 EULAR/ACR SLE 分类助手</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&family=Inter:wght@400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #fdfdfe;
+            color: #1e293b;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .serif-title { font-family: 'Noto Serif SC', serif; }
+
+        /* 典雅卡片设计 */
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .card-clinical { border-top: 3px solid #64748b; }
+        .card-immuno { border-top: 3px solid #be123c; }
+        .card-special { border-top: 3px solid #4f46e5; }
+
+        /* 点击项紧凑设计 */
+        .clickable-item {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #f8fafc;
+        }
+
+        .selected {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .selected .badge {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+
+        .badge {
+            background: #e2e8f0;
+            color: #64748b;
+            font-size: 0.7rem;
+            width: 24px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
+            z-index: 50;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        @media (max-width: 640px) {
+            .card-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+            /* 手机端进一步优化底部空间 */
+            .sticky-footer { padding-top: 0.75rem; padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)); }
+        }
+    </style>
+</head>
+<body class="pb-52 md:pb-40">
+
+    <!-- 顶部导航 -->
+    <header class="max-w-4xl mx-auto px-5 pt-8 pb-4">
+        <div class="flex items-baseline justify-between border-b-2 border-slate-100 pb-2">
+            <h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
+                SLE <span class="text-indigo-600">Criteria</span>
+            </h1>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Version 2019     --By DoctorQ</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pt-4">
+        
+        <!-- 准入标准 -->
+        <section class="mb-5">
+            <div class="bg-slate-800 rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-white text-sm font-bold tracking-wide">准入标准 (Entry Criterion)</h2>
+                        <p class="text-slate-400 text-[10px] font-medium">ANA ≥ 1:80 (HEp-2) 为分类前提</p>
+                    </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="anaCheck" class="sr-only peer" onchange="runCalc()">
+                    <div class="w-12 h-6 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500"></div>
+                </label>
+            </div>
+        </section>
+
+        <!-- 网格排版 -->
+        <div class="card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <!-- 整合列：全身状况 + 肌肉骨骼 -->
+            <div class="flex flex-col gap-4">
+                <!-- 全身状况 -->
+                <div class="glass-card card-clinical p-3.5 rounded-xl flex-1" data-domain="const">
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">全身状况</h3>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-xs font-bold" data-score="2" data-name="发热" onclick="hit(this)">
+                        <span>发热 >38.3°C</span><span class="badge rounded">2</span>
+                    </div>
+                </div>
+                <!-- 肌肉骨骼 -->
+                <div class="glass-card card-clinical p-3.5 rounded-xl flex-1" data-domain="joint">
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">肌肉骨骼</h3>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-xs font-bold" data-score="6" data-name="关节炎" onclick="hit(this)">
+                        <span>≥2关节滑膜炎</span><span class="badge rounded">6</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 皮肤黏膜 -->
+            <div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="muco">
+                <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">皮肤黏膜</h3>
+                <div class="space-y-1.5">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="6" data-name="急性皮损" onclick="hit(this)">
+                        <span>急性皮肤狼疮</span><span class="badge rounded">6</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="4" data-name="亚急性/盘状" onclick="hit(this)">
+                        <span>亚急性/盘状</span><span class="badge rounded">4</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="2" data-name="口腔溃疡" onclick="hit(this)">
+                        <span>口腔溃疡</span><span class="badge rounded">2</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="2" data-name="脱发" onclick="hit(this)">
+                        <span>非瘢痕性脱发</span><span class="badge rounded">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 肾脏受累 -->
+            <div class="glass-card card-special p-3.5 rounded-xl ring-4 ring-indigo-50" data-domain="renal">
+                <h3 class="text-[10px] font-black text-indigo-600 uppercase mb-3 tracking-wider">肾脏受累 (核心)</h3>
+                <div class="space-y-1.5">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-bold" data-score="10" data-name="LN III/IV" onclick="hit(this)">
+                        <span>LN III/IV 型</span><span class="badge rounded">10</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="8" data-name="LN II/V" onclick="hit(this)">
+                        <span>LN II/V 型</span><span class="badge rounded">8</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-score="4" data-name="蛋白尿" onclick="hit(this)">
+                        <span>蛋白尿 >0.5g/24h</span><span class="badge rounded">4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 神经精神 -->
+            <div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="neuro">
+                <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">神经精神</h3>
+                <div class="space-y-1.5 text-[11px] font-semibold">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="5" data-name="癫痫" onclick="hit(this)">
+                        <span>癫痫发作</span><span class="badge rounded">5</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="3" data-name="精神病" onclick="hit(this)">
+                        <span>精神病</span><span class="badge rounded">3</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="2" data-name="谵妄" onclick="hit(this)">
+                        <span>谵妄 (精神错乱)</span><span class="badge rounded">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 浆膜炎 -->
+            <div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="sero">
+                <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">浆膜炎</h3>
+                <div class="space-y-1.5 text-[11px] font-semibold">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="6" data-name="心包炎" onclick="hit(this)">
+                        <span>急性心包炎</span><span class="badge rounded">6</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="5" data-name="积液" onclick="hit(this)">
+                        <span>胸腔/心包积液</span><span class="badge rounded">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 血液系统 -->
+            <div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="hem">
+                <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">血液系统</h3>
+                <div class="space-y-1.5 text-[11px] font-semibold">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="4" data-name="溶贫" onclick="hit(this)">
+                        <span>自身免疫溶贫</span><span class="badge rounded">4</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="4" data-name="PLT低" onclick="hit(this)">
+                        <span>PLT <100×10⁹/L</span><span class="badge rounded">4</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="3" data-name="WBC低" onclick="hit(this)">
+                        <span>WBC <4×10⁹/L</span><span class="badge rounded">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 免疫领域：抗磷脂 -->
+            <div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="apl">
+                <h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">抗磷脂抗体</h3>
+                <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-[10px] font-bold leading-tight" data-score="2" data-name="APL" onclick="hit(this)">
+                    <span>LA / ACL / β2GP1</span><span class="badge rounded">2</span>
+                </div>
+            </div>
+
+            <!-- 补体蛋白 -->
+            <div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="comp">
+                <h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">补体蛋白</h3>
+                <div class="space-y-1.5 text-[11px] font-semibold">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="4" data-name="C3/C4均低" onclick="hit(this)">
+                        <span>C3 且 C4 降低</span><span class="badge rounded">4</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="3" data-name="C3或C4低" onclick="hit(this)">
+                        <span>C3 或 C4 降低</span><span class="badge rounded">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特异抗体 -->
+            <div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="spec">
+                <h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">特异抗体</h3>
+                <div class="space-y-1.5 text-[11px] font-bold">
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="6" data-name="dsDNA" onclick="hit(this)">
+                        <span>抗 dsDNA 抗体</span><span class="badge rounded">6</span>
+                    </div>
+                    <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-score="6" data-name="Sm" onclick="hit(this)">
+                        <span>抗 Sm 抗体</span><span class="badge rounded">6</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">Precision Medicine Diagnostic Support</p>
+
+    </main>
+
+    <!-- 底部操作面板 -->
+    <div class="sticky-footer">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
+                
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active Path</span>
+                        <button onclick="clearAll()" class="text-[10px] font-black text-rose-500 hover:bg-rose-50 px-2 py-1 rounded transition-colors uppercase">Reset</button>
+                    </div>
+                    <!-- 优化：移除 truncate，改用折行显示 -->
+                    <div id="pathLine" class="text-[11px] text-slate-500 font-bold italic bg-slate-50 py-2.5 px-3 rounded-lg border border-slate-100 leading-relaxed break-words">请选择临床表现以开始计算...</div>
+                </div>
+
+                <div class="flex items-center gap-8 justify-between md:justify-end">
+                    <div class="flex flex-col items-center">
+                        <span class="text-[10px] font-black text-slate-300 uppercase">Score</span>
+                        <span id="scoreNum" class="text-5xl font-black text-slate-800 leading-none tracking-tighter">0</span>
+                    </div>
+                    <div id="statusBox" class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm">
+                        ANA Required
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hit(el) {
+            el.classList.toggle('selected');
+            runCalc();
+        }
+
+        function clearAll() {
+            document.querySelectorAll('.selected').forEach(e => e.classList.remove('selected'));
+            document.getElementById('anaCheck').checked = false;
+            runCalc();
+        }
+
+        function runCalc() {
+            const isAna = document.getElementById('anaCheck').checked;
+            const domains = {};
+            const clinicalKeys = ['const', 'muco', 'joint', 'renal', 'neuro', 'sero', 'hem'];
+            let hasClin = false;
+
+            document.querySelectorAll('.selected').forEach(el => {
+                const dom = el.closest('[data-domain]').dataset.domain;
+                const val = parseInt(el.dataset.score);
+                const txt = el.dataset.name;
+                if (!domains[dom] || val > domains[dom].val) {
+                    domains[dom] = { val, txt };
+                }
+            });
+
+            let sum = 0;
+            let path = [];
+            for (let k in domains) {
+                sum += domains[k].val;
+                path.push(`${domains[k].txt}(${domains[k].val})`);
+                if (clinicalKeys.includes(k)) hasClin = true;
+            }
+
+            const scoreNum = document.getElementById('scoreNum');
+            const statusBox = document.getElementById('statusBox');
+            const pathLine = document.getElementById('pathLine');
+
+            scoreNum.innerText = sum;
+            pathLine.innerText = path.length > 0 ? path.join(' + ') : '请选择临床表现以开始计算...';
+
+            if (!isAna) {
+                statusBox.innerText = "ANA 阴性 / 待填";
+                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-slate-100 text-slate-400 border border-slate-200";
+                scoreNum.className = "text-5xl font-black text-slate-200 leading-none tracking-tighter";
+            } else {
+                scoreNum.className = "text-5xl font-black text-slate-800 leading-none tracking-tighter";
+                if (sum >= 10 && hasClin) {
+                    statusBox.innerText = "符合分类标准";
+                    statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-indigo-600 text-white shadow-xl shadow-indigo-100";
+                    scoreNum.className = "text-5xl font-black text-indigo-600 leading-none tracking-tighter";
+                } else {
+                    let msg = sum >= 10 ? "缺临床标准" : "积分不足";
+                    statusBox.innerText = msg;
+                    statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-white text-indigo-600 border-2 border-indigo-100 shadow-sm";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

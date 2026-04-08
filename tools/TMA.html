@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儿童血栓性微血管病 (TMA) 诊疗卡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Libre+Baskerville:italic&display=swap');
+        
+        :root {
+            --nature-red: #C8102E;
+            --nature-black: #1A1A1A;
+            --nature-grey: #F8F8F8;
+            --nature-border: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #ECECEC;
+            color: var(--nature-black);
+            line-height: 1.4;
+        }
+
+        .card-container {
+            width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-top: 10px solid var(--nature-red);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+        }
+
+        .header {
+            padding: 25px 40px;
+            border-bottom: 2px solid var(--nature-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .journal-tag {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: var(--nature-red);
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header {
+            background-color: var(--nature-black);
+            color: white;
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-body {
+            padding: 20px 40px 30px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .sub-section {
+            margin-bottom: 20px;
+        }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--nature-red);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--nature-red);
+            padding-bottom: 4px;
+        }
+
+        .diagnostic-criteria {
+            background: var(--nature-grey);
+            padding: 15px;
+            border-left: 4px solid var(--nature-red);
+        }
+
+        .list-item {
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .list-item::before {
+            content: "•";
+            color: var(--nature-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .treatment-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .step-num {
+            background: var(--nature-red);
+            color: white;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .step-content {
+            font-size: 0.85rem;
+        }
+
+        .urgent-tag {
+            background: #FFF0F0;
+            border: 1px solid var(--nature-red);
+            color: var(--nature-red);
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        .footer-glossary {
+            background: var(--nature-black);
+            color: #AAA;
+            padding: 15px 40px;
+            font-size: 0.7rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .differential-table {
+            width: 100%;
+            font-size: 0.75rem;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .differential-table th {
+            text-align: left;
+            border-bottom: 1px solid var(--nature-black);
+            padding: 4px;
+        }
+
+        .differential-table td {
+            padding: 4px;
+            border-bottom: 1px solid var(--nature-border);
+        }
+
+        .highlight-text {
+            color: var(--nature-red);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="header">
+        <div>
+            <span class="journal-tag">Pediatric Immunology & Nephrology</span>
+            <h1 class="main-title">儿童血栓性微血管病 (TMA) 诊疗规范</h1>
+        </div>
+        <div class="text-right text-xs font-bold text-gray-400">
+            CLINICAL PATHWAY<br>2024 UPDATED
+        </div>
+    </div>
+
+    <div class="content-body">
+        
+        <div class="info-grid">
+            <!-- 左侧：诊断标准与鉴别 -->
+            <div>
+                <div class="section-header">诊断体系 (Diagnostic Framework)</div>
+                
+                <div class="sub-section mt-4">
+                    <div class="box-title">临床三联征 (Clinical Triad)</div>
+                    <div class="diagnostic-criteria">
+                        <div class="list-item"><strong>微血管病性溶血性贫血 (MAHA):</strong> Hb < 正常下限，外周血涂片可见<span class="highlight-text">破碎红细胞 (>1%)</span>，LDH 升高，结合珠蛋白降低。</div>
+                        <div class="list-item"><strong>消耗性血小板减少:</strong> PLT < 100 × 10⁹/L 或较基线下降 >25%。</div>
+                        <div class="list-item"><strong>脏器受损靶器官受累:</strong> 以肾脏损害最常见（血尿、蛋白尿、Scr 升高），常伴神经系统、胃肠道损害。</div>
+                    </div>
+                </div>
+
+                <div class="sub-section">
+                    <div class="box-title">核心鉴别诊断 (Differential Diagnosis)</div>
+                    <table class="differential-table">
+                        <thead>
+                            <tr>
+                                <th>疾病类型</th>
+                                <th>核心标志物</th>
+                                <th>临床特征</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">STEC-HUS</td>
+                                <td>Shiga 毒素 (+)</td>
+                                <td>前驱腹泻史，流行性</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">TTP</td>
+                                <td><span class="highlight-text">ADAMTS13 < 10%</span></td>
+                                <td>神经系统症状突出</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">aHUS</td>
+                                <td>补体替代途径异常</td>
+                                <td>无前驱感染，反复发作</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">继发性 TMA</td>
+                                <td>病因特异性抗体</td>
+                                <td>SLE, 恶性高血压, 移植</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 右侧：治疗方案 -->
+            <div>
+                <div class="section-header">治疗策略 (Therapeutic Strategy)</div>
+
+                <div class="sub-section mt-4">
+                    <div class="box-title">初始支持与急症处理</div>
+                    <div class="treatment-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <strong>对症支持:</strong> 纠正水、电解质紊乱；严禁在 STEC-HUS 早期使用抗生素及止泻药；高血压控制。
+                        </div>
+                    </div>
+                    <div class="treatment-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <strong>肾脏替代治疗 (RRT):</strong> 严重氮质血症、容量负荷过重或电解质紊乱无法药物纠正时。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-section">
+                    <div class="box-title">特异性治疗 (Targeted Therapy)</div>
+                    <div class="treatment-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <span class="urgent-tag">FIRST-LINE</span> <strong>血浆置换 (TPE):</strong> 
+                            高度怀疑 TTP 或补体介导 TMA 时首选，直至 ADAMTS13 结果明确。
+                        </div>
+                    </div>
+                    <div class="treatment-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <span class="urgent-tag">aHUS CHOICE</span> <strong>补体抑制剂 (Eculizumab):</strong> 
+                            对于补体介导的 aHUS，应在 <span class="highlight-text">24-48h 内</span> 尽早启动治疗。
+                        </div>
+                    </div>
+                    <div class="treatment-step">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <strong>免疫抑制:</strong> 针对继发于 SLE 或抗 ADAMTS13 自身抗体的 TTP，给予糖皮质激素或利妥昔单抗。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 p-3 border border-red-200 text-[0.8rem]">
+                    <p class="font-bold text-red-800 mb-1">监控要点：</p>
+                    <p>每日监测：Hb, PLT, Scr, LDH, 破碎红细胞计数。治疗目标：PLT 恢复正常，LDH 正常化，器官功能好转。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-glossary">
+        <span><strong>MAHA:</strong> 微血管病性溶血性贫血</span>
+        <span><strong>STEC-HUS:</strong> 产志贺毒素大肠杆菌相关 HUS</span>
+        <span><strong>TTP:</strong> 血栓性血小板减少性紫癜</span>
+        <span><strong>aHUS:</strong> 非典型溶血尿毒综合征</span>
+        <span><strong>ADAMTS13:</strong> 血管性血友病因子裂解蛋白酶</span>
+        <span><strong>TPE:</strong> 治疗性血浆置换</span>
+        <span><strong>LDH:</strong> 乳酸脱氢酶</span>
+        <span><strong>Scr:</strong> 血肌酐</span>
+        <span><strong>Hb:</strong> 血红蛋白</span>
+        <span><strong>PLT:</strong> 血小板计数</span>
+        <span><strong>RRT:</strong> 肾脏替代治疗</span>
+        <span><strong>SLE:</strong> 系统性红斑狼疮</span>
+    </div>
+</div>
+
+</body>
+</html>
