@@ -7,13 +7,13 @@
 
 ## 🔧 网页评分工具（浏览器打开）
 
-| 工具 | 功能 | 链接 |
-|------|------|------|
-| APS分类标准 | 2023 ACR/EULAR 抗磷脂综合征 | [打开](clinical_tools/web_tools/aps_classification.html) |
-| SLEDAI-2000 | 系统性红斑狼疮疾病活动度评分 | [打开](clinical_tools/web_tools/sledai_2000.html) |
-| SLE分类标准 | 2019 EULAR/ACR SLE分类 | [打开](clinical_tools/web_tools/sle_2019_eular_acr.html) |
-| TMA诊疗卡 | 儿童血栓性微血管病诊疗 | [打开](clinical_tools/web_tools/tma_card.html) |
-| 全部工具导航 | 4个工具入口页面 | [打开](clinical_tools/web_tools/index.html) |
+| 工具          | 功能                    | 链接                                                     |
+| ----------- | --------------------- | ------------------------------------------------------ |
+| APS分类标准     | 2023 ACR/EULAR 抗磷脂综合征 | [打开](clinical_tools/web_tools/aps_classification.html) |
+| SLEDAI-2000 | 系统性红斑狼疮疾病活动度评分        | [打开](clinical_tools/web_tools/sledai_2000.html)        |
+| SLE分类标准     | 2019 EULAR/ACR SLE分类  | [打开](clinical_tools/web_tools/sle_2019_eular_acr.html) |
+| TMA诊疗卡      | 儿童血栓性微血管病诊疗           | [打开](clinical_tools/web_tools/tma_card.html)           |
+| 全部工具导航      | 4个工具入口页面              | [打开](clinical_tools/web_tools/index.html)              |
 
 > 💡 在Obsidian中点击链接 → 右键 → "在系统浏览器中打开"
 > 或直接访问 `~/MedWiki-Rheum/clinical_tools/web_tools/`

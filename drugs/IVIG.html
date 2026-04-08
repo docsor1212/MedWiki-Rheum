@@ -190,15 +190,94 @@ tr.hl-yellow td { background:#faf3dc; }
 <tr><td>抗凝/抗血小板药</td><td>出血风险（证据不一）</td><td>监测</td></tr>
 </table>
 
+<!-- IgA缺乏专题 -->
+<div class="sh red" style="font-size:0.85rem;">🔴 IgA缺乏与IVIG — 详细风险分层与处置</div>
+
+<div style="margin:4px 0 6px; font-size:11.5px; color:var(--text2);">
+  <b>核心机制：</b>IgA缺乏患者可产生IgG或IgE类抗IgA抗体 → 输注含微量IgA的IVIG制品 → 免疫复合物/过敏反应 → 轻则荨麻疹，重则过敏性休克。<br>
+  <b>关键文献：</b>Katz U et al. <i>Autoimmun Rev</i> 2007 (PMID: 17317619)；Torabi Sagvand B et al. <i>Allergol Immunopathol</i> 2015 (PMID: 25201762)
+</div>
+
+<table>
+<tr><th class="red-hd">IgA水平</th><th class="red-hd">风险等级</th><th class="red-hd">抗IgA抗体</th><th class="red-hd">处置建议</th></tr>
+<tr>
+  <td class="c-g b">正常 (>70 mg/dL)</td>
+  <td><span class="tag t-g">无特殊风险</span></td>
+  <td>无需检测</td>
+  <td>正常使用任何IVIG制剂</td>
+</tr>
+<tr class="hl-yellow">
+  <td class="c-y b">低IgA (7–70 mg/dL)</td>
+  <td><span class="tag t-y">低风险</span></td>
+  <td>可选检测</td>
+  <td>优先选择低IgA制剂；如用普通制剂，首剂慢速并密切监测</td>
+</tr>
+<tr class="hl-red">
+  <td class="c-r b">IgA缺乏 (&lt;7 mg/dL)</td>
+  <td><span class="tag t-r">高风险</span></td>
+  <td class="c-r b">必须检测IgG型和IgE型抗IgA抗体</td>
+  <td class="c-r b">抗体阳性 → 禁用普通IVIG（见下方方案）</td>
+</tr>
+<tr style="background:#fce5e1;">
+  <td class="c-r b">IgA缺乏 + 抗IgA抗体(+) <br>（IgG型或IgE型）</td>
+  <td><span class="tag t-r">🚫 极高风险</span></td>
+  <td class="c-r b">已确认阳性</td>
+  <td class="c-r b"><b>禁用普通IVIG</b> → 见替代方案</td>
+</tr>
+</table>
+
+<div style="margin:8px 0 4px;">
+<div class="sh green" style="font-size:0.78rem;">✅ IgA缺乏/抗体阳性者的替代方案</div>
+<table>
+<tr><th class="green-hd">方案</th><th class="green-hd">适用</th><th class="green-hd">制剂举例</th><th class="green-hd">备注</th></tr>
+<tr class="hl-green">
+  <td class="c-g b">① 选用极低IgA制剂</td>
+  <td>IgA缺乏，无抗体或抗体低滴度</td>
+  <td>Gammagard Liquid (IgA &lt;2.2 μg/mL)<br>IgIV-C (Flebogamma)</td>
+  <td>仍需慢速输注 + 充分预处理</td>
+</tr>
+<tr class="hl-green">
+  <td class="c-g b">② 皮下免疫球蛋白(SCIG)</td>
+  <td>IgA缺乏 + 抗IgA抗体(+)，<br>需长期替代治疗</td>
+  <td>Hizentra, Gamunex-C (皮下)</td>
+  <td class="c-g b">首选推荐 — 局部吸收，全身反应风险低<br>需每周输注，患者/家长培训后可居家</td>
+</tr>
+<tr>
+  <td>③ 必须用普通IVIG时</td>
+  <td>无替代产品且治疗不可延迟</td>
+  <td>任何可用制剂</td>
+  <td class="c-r b">必须：预处理(抗组胺+糖皮质激素) + 极慢输注(0.5 mg/kg/min起始) + ICU级别监测 + 肾上腺素备 ready</td>
+</tr>
+</table>
+</div>
+
+<div style="margin:6px 0;">
+<div class="sh" style="font-size:0.78rem;">📋 IVIG前IgA筛查流程</div>
+<div style="font-size:11.5px; padding:6px 10px; background:var(--accent-bg); border-radius:6px;">
+  <b>Step 1：</b>所有患者首次IVIG前 → 查血清IgA水平<br>
+  <b>Step 2：</b>IgA &lt;70 mg/dL → 记录并关注<br>
+  <b>Step 3：</b>IgA &lt;7 mg/dL → <span class="c-r b">立即查IgG型和IgE型抗IgA抗体</span><br>
+  <b>Step 4：</b>抗体阳性 → <span class="c-r b">禁用普通IVIG</span>，启用替代方案（首选SCIG）<br>
+  <b>Step 5：</b>抗体阴性 → 可用极低IgA制剂，首剂密切监测，定期复查抗体<br>
+  <b>⚠️ 注意：</b>抗IgA抗体滴度可随时间变化，<span class="b">长期反复使用IVIG者建议定期复查</span>（每6-12月或出现过敏反应时）
+</div>
+</div>
+
+<div class="note" style="margin-top:6px;">
+  <b>流行病学：</b>选择性IgA缺乏是最常见的原发性免疫缺陷，白种人发病率约1/600。多数无症状，但在需要IVIG治疗的免疫缺陷患者中比例更高。<br>
+  <b>实际发生率：</b>虽然IgA缺乏伴抗IgA抗体者发生过敏性休克的数据有限，但个案报告显示可为致死性。预防性筛查是公认的合理措施。<br>
+  <b>【需要验证】：</b>目前尚无统一的"IgA绝对阈值"指南——IgA &lt;7 mg/dL是基于选择性IgA缺乏诊断标准的广泛共识，而非IVIG专用指南的硬性规定。
+</div>
+
 <!-- 关键警示 -->
-<div class="sh red">🔴 关键警示</div>
+<div class="sh red" style="margin-top:10px;">🔴 关键警示</div>
 <div class="alert">
-<b>1. IgA缺乏者</b>：IgA缺乏伴抗IgA抗体 → <span class="c-r b">过敏性休克风险极高</span>，必须筛查IgA水平<br>
+<b>1. IgA筛查</b>：首次IVIG前必须查IgA；IgA缺乏者必须查抗IgA抗体 → 阳性禁用普通IVIG（详见上方专题）<br>
 <b>2. 体重精确计量</b>：2g/kg方案中体重必须精确（避免液体过负荷）<br>
 <b>3. 肾损伤预防</b>：选低渗透压产品（不含蔗糖制剂），避免同时用利尿剂<br>
 <b>4. 血栓风险</b>：高剂量+快速输注 → 血栓栓塞，严格控制输注速度<br>
 <b>5. 疫苗间隔</b>：IVIG后至少3-6月内减活疫苗可能无效，需延迟接种<br>
-<b>6. 肾功能不全</b>：eGFR<30慎用，必要时减量至1g/kg，选低渗产品
+<b>6. 肾功能不全</b>：eGFR&lt;30慎用，必要时减量至1g/kg，选低渗产品
 </div>
 
 </div><!-- body -->
