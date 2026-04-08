@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "templates/jia_template.md",
+                "file": "drugs/anakinra.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "jia_template"
+              "title": "anakinra"
             }
           }
         ]
@@ -185,10 +185,17 @@
   },
   "active": "1ac7e5665473bd2c",
   "lastOpenFiles": [
-    "drugs/MTX.md",
-    "templates/sle_template.md",
-    "schema/evidence_levels.md",
+    "drugs/azathioprine.md",
     "schema/aliases.md",
+    "templates/jia_template.md",
+    "templates/sle_template.md",
+    "templates/followup_visit.md",
+    "templates/initial_visit.md",
+    "topics/IgAV.md",
+    "topics/JSLE.md",
+    "topics/AID.md",
+    "drugs/MTX.md",
+    "schema/evidence_levels.md",
     "tools/SDAI.md",
     "tools/liver_kidney.md",
     "tools/followup.md",
@@ -201,15 +208,8 @@
     "tools/JADAS71.md",
     "tools/vaccine.md",
     "tools/BMI_Zscore.md",
-    "templates/jia_template.md",
-    "templates/initial_visit.md",
-    "templates/followup_visit.md",
     "literature/cat_paper.md",
     "literature/uptodate.md",
-    "literature/paper_rheum.md",
-    "literature/guideline_jcs.md",
-    "literature/paper.md",
-    "literature/guideline_cn.md",
-    "drugs/tocilizumab.md"
+    "literature/paper_rheum.md"
   ]
 }

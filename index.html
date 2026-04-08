@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedWiki-Rheum — 儿童风湿免疫临床知识库</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:12px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+.wrap { max-width:980px; margin:0 auto; padding:20px; }
+h1 { font-size:1.6rem; font-weight:700; color:var(--accent); margin-bottom:2px; }
+.subtitle { font-size:0.9rem; color:var(--text2); margin-bottom:20px; }
+.section { margin-bottom:18px; }
+.section-title { font-size:0.85rem; font-weight:700; color:#fff; padding:6px 12px; border-radius:6px; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+.section-title.s-topics { background:var(--accent); }
+.section-title.s-drugs { background:var(--green); }
+.section-title.s-tools { background:var(--yellow); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:8px; }
+.card { display:block; background:var(--surface); border:1.5px solid var(--border); border-radius:var(--radius); padding:10px 12px; text-decoration:none; color:var(--text); transition:all 0.15s; position:relative; overflow:hidden; }
+.card:hover { border-color:var(--accent); box-shadow:0 2px 8px rgba(32,163,158,0.12); transform:translateY(-1px); }
+.card .name { font-size:0.82rem; font-weight:600; margin-bottom:2px; }
+.card .desc { font-size:0.7rem; color:var(--text2); }
+.card .badge { position:absolute; top:6px; right:8px; font-size:0.6rem; padding:1px 5px; border-radius:3px; font-weight:600; }
+.card[data-cat="topic"] .badge { background:var(--accent-bg); color:var(--accent); }
+.card[data-cat="drug"] .badge { background:var(--green-bg); color:var(--green); }
+.card[data-cat="tool"] .badge { background:var(--yellow-bg); color:var(--yellow); }
+.card[data-cat="topic"] { border-left:3px solid var(--accent); }
+.card[data-cat="drug"] { border-left:3px solid var(--green); }
+.card[data-cat="tool"] { border-left:3px solid var(--yellow); }
+.footer { text-align:center; font-size:0.75rem; color:var(--text3); margin-top:30px; padding-top:12px; border-top:1px solid var(--border); }
+.stats { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+.stat { background:var(--surface); border-radius:var(--radius); padding:8px 14px; border:1px solid var(--border); }
+.stat .num { font-size:1.4rem; font-weight:700; }
+.stat .label { font-size:0.7rem; color:var(--text2); }
+.stat.s1 .num { color:var(--accent); }
+.stat.s2 .num { color:var(--green); }
+.stat.s3 .num { color:var(--yellow); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>🏥 MedWiki-Rheum</h1>
+<div class="subtitle">儿童风湿免疫临床知识库 · 归墟设计系统 · v6.1</div>
+
+<div class="stats">
+  <div class="stat s1"><div class="num">11</div><div class="label">疾病主题</div></div>
+  <div class="stat s2"><div class="num">13</div><div class="label">药物专页</div></div>
+  <div class="stat s3"><div class="num">14</div><div class="label">临床工具</div></div>
+</div>
+
+<!-- Topics -->
+<div class="section">
+  <div class="section-title s-topics">📖 疾病主题 Topics</div>
+  <div class="grid">
+    <a class="card" data-cat="topic" href="topics/JIA.html"><div class="badge">TOPIC</div><div class="name">JIA</div><div class="desc">幼年特发性关节炎</div></a>
+    <a class="card" data-cat="topic" href="topics/JSLE.html"><div class="badge">TOPIC</div><div class="name">JSLE</div><div class="desc">儿童系统性红斑狼疮</div></a>
+    <a class="card" data-cat="topic" href="topics/SLE.html"><div class="badge">TOPIC</div><div class="name">SLE</div><div class="desc">系统性红斑狼疮</div></a>
+    <a class="card" data-cat="topic" href="topics/MAS.html"><div class="badge">TOPIC</div><div class="name">MAS/HLH</div><div class="desc">巨噬细胞活化综合征</div></a>
+    <a class="card" data-cat="topic" href="topics/JDM.html"><div class="badge">TOPIC</div><div class="name">JDM</div><div class="desc">幼年皮肌炎</div></a>
+    <a class="card" data-cat="topic" href="topics/KD.html"><div class="badge">TOPIC</div><div class="name">KD</div><div class="desc">川崎病</div></a>
+    <a class="card" data-cat="topic" href="topics/IgAV.html"><div class="badge">TOPIC</div><div class="name">IgAV/HSP</div><div class="desc">IgA血管炎</div></a>
+    <a class="card" data-cat="topic" href="topics/Uveitis.html"><div class="badge">TOPIC</div><div class="name">Uveitis</div><div class="desc">儿童葡萄膜炎</div></a>
+    <a class="card" data-cat="topic" href="topics/AID.html"><div class="badge">TOPIC</div><div class="name">AID</div><div class="desc">自身炎症性疾病</div></a>
+    <a class="card" data-cat="topic" href="topics/PID.html"><div class="badge">TOPIC</div><div class="name">PID</div><div class="desc">原发性免疫缺陷</div></a>
+    <a class="card" data-cat="topic" href="topics/ITP.html"><div class="badge">TOPIC</div><div class="name">ITP</div><div class="desc">免疫性血小板减少</div></a>
+  </div>
+</div>
+
+<!-- Drugs -->
+<div class="section">
+  <div class="section-title s-drugs">💊 药物专页 Drugs</div>
+  <div class="grid">
+    <a class="card" data-cat="drug" href="drugs/MTX.html"><div class="badge">DRUG</div><div class="name">MTX</div><div class="desc">甲氨蝶呤</div></a>
+    <a class="card" data-cat="drug" href="drugs/glucocorticoids.html"><div class="badge">DRUG</div><div class="name">GC (口服)</div><div class="desc">糖皮质激素</div></a>
+    <a class="card" data-cat="drug" href="drugs/corticosteroids_IV.html"><div class="badge">DRUG</div><div class="name">GC (IV冲击)</div><div class="desc">静脉糖皮质激素</div></a>
+    <a class="card" data-cat="drug" href="drugs/NSAIDs.html"><div class="badge">DRUG</div><div class="name">NSAIDs</div><div class="desc">非甾体抗炎药</div></a>
+    <a class="card" data-cat="drug" href="drugs/IVIG.html"><div class="badge">DRUG</div><div class="name">IVIG</div><div class="desc">静脉免疫球蛋白</div></a>
+    <a class="card" data-cat="drug" href="drugs/cyclosporine.html"><div class="badge">DRUG</div><div class="name">CsA</div><div class="desc">环孢素A</div></a>
+    <a class="card" data-cat="drug" href="drugs/tacrolimus.html"><div class="badge">DRUG</div><div class="name">FK506</div><div class="desc">他克莫司</div></a>
+    <a class="card" data-cat="drug" href="drugs/mycophenolate.html"><div class="badge">DRUG</div><div class="name">MMF</div><div class="desc">吗替麦考酚酯</div></a>
+    <a class="card" data-cat="drug" href="drugs/azathioprine.html"><div class="badge">DRUG</div><div class="name">AZA</div><div class="desc">硫唑嘌呤</div></a>
+    <a class="card" data-cat="drug" href="drugs/anakinra.html"><div class="badge">DRUG</div><div class="name">ANA</div><div class="desc">阿那白滞素</div></a>
+    <a class="card" data-cat="drug" href="drugs/tocilizumab.html"><div class="badge">DRUG</div><div class="name">TCZ</div><div class="desc">托珠单抗</div></a>
+    <a class="card" data-cat="drug" href="drugs/biologics.html"><div class="badge">DRUG</div><div class="name">生物制剂总览</div><div class="desc">TNFi/IL-6/B细胞</div></a>
+    <a class="card" data-cat="drug" href="drugs/calcium_vitd.html"><div class="badge">DRUG</div><div class="name">钙+VitD</div><div class="desc">补充方案</div></a>
+  </div>
+</div>
+
+<!-- Tools -->
+<div class="section">
+  <div class="section-title s-tools">🔬 临床工具 Tools</div>
+  <div class="grid">
+    <a class="card" data-cat="tool" href="tools/JADAS27.html"><div class="badge">TOOL</div><div class="name">JADAS-27</div><div class="desc">JIA活动度评分</div></a>
+    <a class="card" data-cat="tool" href="tools/JADAS71.html"><div class="badge">TOOL</div><div class="name">JADAS-71</div><div class="desc">71关节详评</div></a>
+    <a class="card" data-cat="tool" href="tools/CHAQ.html"><div class="badge">TOOL</div><div class="name">CHAQ</div><div class="desc">儿童健康评估</div></a>
+    <a class="card" data-cat="tool" href="tools/DAS28.html"><div class="badge">TOOL</div><div class="name">DAS28</div><div class="desc">疾病活动指数</div></a>
+    <a class="card" data-cat="tool" href="tools/CDAI.html"><div class="badge">TOOL</div><div class="name">CDAI</div><div class="desc">临床疾病活动</div></a>
+    <a class="card" data-cat="tool" href="tools/SDAI.html"><div class="badge">TOOL</div><div class="name">SDAI</div><div class="desc">简化疾病活动</div></a>
+    <a class="card" data-cat="tool" href="tools/BSA.html"><div class="badge">TOOL</div><div class="name">BSA</div><div class="desc">体表面积计算</div></a>
+    <a class="card" data-cat="tool" href="tools/BMI_Zscore.html"><div class="badge">TOOL</div><div class="name">BMI Z评分</div><div class="desc">生长发育评估</div></a>
+    <a class="card" data-cat="tool" href="tools/MTX_dose.html"><div class="badge">TOOL</div><div class="name">MTX剂量</div><div class="desc">按BSA速算</div></a>
+    <a class="card" data-cat="tool" href="tools/autoantibodies.html"><div class="badge">TOOL</div><div class="name">自身抗体</div><div class="desc">ANA/ENA/aPL解读</div></a>
+    <a class="card" data-cat="tool" href="tools/ESR_CRP.html"><div class="badge">TOOL</div><div class="name">ESR/CRP</div><div class="desc">炎症指标判读</div></a>
+    <a class="card" data-cat="tool" href="tools/liver_kidney.html"><div class="badge">TOOL</div><div class="name">肝肾功能</div><div class="desc">药物监测</div></a>
+    <a class="card" data-cat="tool" href="tools/followup.html"><div class="badge">TOOL</div><div class="name">随访计划</div><div class="desc">按病种/药物</div></a>
+    <a class="card" data-cat="tool" href="tools/vaccine.html"><div class="badge">TOOL</div><div class="name">疫苗策略</div><div class="desc">免疫抑制下接种</div></a>
+  </div>
+</div>
+
+<div class="footer">MedWiki-Rheum v6.1 · 归墟设计系统 · 38页 · 2026-04</div>
+
+</div>
+</body>
+</html>
