@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物制剂 — Biologics (bDMARDs)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>生物制剂 — bDMARDs 总览</h1>
+    <div class="sub">TNFi / IL-6i / IL-1i / T细胞共刺激 / 抗CD20 · <span style="color:#ffe0d0;font-weight:700;">用药前全面筛查</span> · 禁止减活疫苗</div>
+  </div>
+  <div class="meta">
+    用药前筛查必须完成<br>
+    sJIA首选TCZ/ANA: A级<br>
+    pJIA首选TNFi: A级
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 用药前筛查 -->
+<div class="alert">
+  <b>🔴 用药前筛查（所有生物制剂通用）</b><br>
+  <b>感染筛查</b>：T-SPOT/PPD + HBV + HCV + HIV &nbsp;|&nbsp;
+  <b>免疫球蛋白</b>：IgG/IgA/IgM基线 &nbsp;|&nbsp;
+  <b>疫苗</b>：确保灭活疫苗完成，<span class="c-r b">活疫苗需提前4周</span> &nbsp;|&nbsp;
+  <b>心脏</b>：心超（必要时）
+</div>
+
+<!-- TNF抑制剂 -->
+<div class="sh green">🧬 TNF抑制剂 (TNFi)</div>
+<table>
+<tr><th>药物</th><th>商品名</th><th>类型</th><th>儿童剂量</th><th>半衰期</th><th>主要适应症</th></tr>
+<tr class="hl-green"><td class="c-g b">依那西普</td><td>ENBREL</td><td>可溶性受体</td><td>0.8 mg/kg SC qw（最大50mg）</td><td>~4天</td><td>JIA多关节型/附着点炎型、JDM、PsA</td></tr>
+<tr class="hl-green"><td class="c-g b">阿达木单抗</td><td>HUMIRA</td><td>全人源化IgG1</td><td>20–40 mg SC q2w（体重分层）</td><td>~14天</td><td>JIA多关节型/附着点炎型/uveitis、难治性川崎病</td></tr>
+<tr><td>英夫利西单抗</td><td>REMICADE</td><td>鼠-人嵌合</td><td>5–6 mg/kg IV 0/2/6w后q4–8w</td><td>~10天</td><td>JDM、IVIG无反应川崎病、肠道贝赫切特</td></tr>
+</table>
+<div class="note">英夫利西单抗输注反应风险较高（鼠-人嵌合）。阿达木单抗为<uveitis首选之一</b>。</div>
+
+<!-- IL-6抑制剂 -->
+<div class="sh green">🧬 IL-6抑制剂</div>
+<table>
+<tr><th>药物</th><th>商品名</th><th>儿童剂量</th><th>半衰期</th><th>主要适应症</th></tr>
+<tr class="hl-green"><td class="c-g b">托珠单抗</td><td>ACTEMRA</td><td>sJIA: 12mg/kg IV(&lt;30kg)/8mg/kg(≥30kg) q4w; 162mg SC qw</td><td>~13天</td><td>sJIA首选、pJIA、MAS</td></tr>
+</table>
+<div class="note">详见 → <b class="c-a">托珠单抗专页</b>。MAS一线选择，降CRP/ESR快。注意粒细胞↓和肝酶↑。</div>
+
+<!-- IL-1抑制剂 -->
+<div class="sh green">🧬 IL-1抑制剂</div>
+<table>
+<tr><th>药物</th><th>商品名</th><th>儿童剂量</th><th>半衰期</th><th>主要适应症</th></tr>
+<tr class="hl-green"><td class="c-g b">阿那白滞素</td><td>KINERET</td><td>1–2 mg/kg SC qd（最大100mg）</td><td class="c-r b">~3小时</td><td>sJIA、TRAPS、CAPS、AOSD</td></tr>
+<tr><td>卡那奴单抗</td><td>ILARIS</td><td>4 mg/kg SC q4w（sJIA）</td><td class="c-g b">~26天</td><td>sJIA、CAPS、TRAPS、HIDS/MKD、FMF</td></tr>
+<tr><td>利纳西普</td><td>—</td><td>2.2 mg/kg SC qw（负荷量加倍）</td><td>—</td><td>CAPS</td></tr>
+</table>
+<div class="note">阿那白滞素短半衰期需每日注射，依从性差；卡那奴单抗长半衰期每4周1次，依从性好。详见 → <b class="c-a">阿那白滞素专页</b>。</div>
+
+<!-- T细胞共刺激 + 抗CD20 -->
+<div class="sh yellow">🧬 T细胞共刺激调节剂 + 抗CD20</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">阿巴西普 (ORENCIA)</th><th class="green-hd">内容</th></tr>
+<tr><td>类型</td><td>T细胞共刺激调节剂</td></tr>
+<tr class="hl-green"><td>适应症</td><td class="c-g b">pJIA</td></tr>
+<tr><td>儿童剂量</td><td>10 mg/kg IV 0/2/4w后q4w</td></tr>
+<tr><td>SC方案</td><td>20–25kg: 50mg SC qw</td></tr>
+<tr><td>特点</td><td class="c-g b">不增加感染风险，适合合并感染倾向者</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">利妥昔单抗 (MABTHERA)</th><th class="yellow-hd">内容</th></tr>
+<tr><td>类型</td><td>抗CD20（B细胞清除）</td></tr>
+<tr class="hl-yellow"><td>适应症</td><td class="c-y b">难治性SLE、TTP、Evans综合征、肾病型SLE</td></tr>
+<tr><td>儿童剂量</td><td>375 mg/m² IV qw×4 或 1000mg IV×2</td></tr>
+<tr><td>起效时间</td><td class="c-y">3–6月（起效慢）</td></tr>
+<tr><td>注意事项</td><td class="c-r b">低IgG注意补充</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 共同不良反应 -->
+<div class="sh red">⚠️ 共同不良反应</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见</th><th class="red-hd">处理</th></tr>
+<tr><td>注射部位反应</td><td>轮换部位，冷敷</td></tr>
+<tr><td>感染风险↑（结核、真菌）</td><td>用药前筛查+预防</td></tr>
+<tr><td>过敏/输注反应</td><td>预处理/减慢输注</td></tr>
+<tr><td>中和抗体（长期用药）</td><td>联用MTX可降低</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">严重（罕见）</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">致死性感染（败血症）</td><td>停药+抗感染</td></tr>
+<tr class="hl-red"><td class="c-r b">脱髓鞘（极罕见）</td><td>避免用于MS患者</td></tr>
+<tr><td>恶性肿瘤（信号不确定）</td><td>长期监测</td></tr>
+<tr><td>心衰加重（TNFi）</td><td>NYHA III–IV禁用TNFi</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 共同禁忌</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">绝对禁忌</th></tr>
+<tr><td>活动性严重感染（含结核）</td></tr>
+<tr><td><span class="c-r b">减活疫苗（用药期间禁止）</span></td></tr>
+<tr><td>已知对该制剂过敏</td></tr>
+<tr><td>中重度心衰（TNFi特有）</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th style="background:#faf3dc;color:var(--yellow);">相对禁忌</th></tr>
+<tr><td>脱髓鞘病史/MS（避免TNFi）</td></tr>
+<tr><td>恶性肿瘤病史</td></tr>
+<tr><td>低IgG（利妥昔单抗慎用）</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 证据等级速览 -->
+<div class="sh">📋 证据等级速览</div>
+<table>
+<tr><th>适应症</th><th>首选药物</th><th>证据</th></tr>
+<tr class="hl-green"><td class="c-g b">sJIA首选生物制剂</td><td class="c-g b">托珠单抗 / 阿那白滞素</td><td><span class="tag t-g">A级</span></td></tr>
+<tr class="hl-green"><td class="c-g b">pJIA首选</td><td class="c-g b">TNFi</td><td><span class="tag t-g">A级</span></td></tr>
+<tr><td>MAS首选</td><td>托珠单抗 + 糖皮质激素</td><td><span class="tag t-g">A级</span></td></tr>
+<tr><td>难治性SLE</td><td>利妥昔单抗</td><td><span class="tag t-a">B级</span></td></tr>
+</table>
+
+</div><!-- body -->
+
+<div class="footer">
+  ACR 2013 / EULAR/PRINTO 2018 · ACR/EULAR 2019 pJIA · ACR 2022 / EULAR/ACR 2024 MAS · 共同禁减活疫苗
+</div>
+
+</div>
+</body>
+</html>

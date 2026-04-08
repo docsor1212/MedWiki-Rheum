@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JDM — 幼年皮肌炎</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>JDM — 幼年皮肌炎</h1>
+    <div class="sub">近端肌无力 + Gottron丘疹 + Heliotrope皮疹 · IFN通路激活 · 血管病变</div>
+  </div>
+  <div class="meta">
+    发病率 1.9–4.1/100万/年<br>
+    女:男 ≈ 2:1 · 高峰4–8岁<br>
+    5年生存率 &gt;95%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 核心特征 -->
+<div class="sh">🏷️ 诊断核心（Bohan & Peter）</div>
+<table>
+<tr><th style="width:5%">#</th><th style="width:30%">特征</th><th>要点</th></tr>
+<tr class="hl-red"><td class="c-r b">1</td><td class="c-r b">近端肌无力</td><td>对称性：骨盆带&gt;肩胛带，<span class="c-r b">Gowers征(+)</span></td></tr>
+<tr class="hl-red"><td class="c-r b">2</td><td class="c-r b">肌酶升高</td><td><span class="c-r b">CK</span> + AST + LDH + aldolase</td></tr>
+<tr><td>3</td><td>EMG三联征</td><td>纤颤 + 短时低幅多相 + 异常插入活动</td></tr>
+<tr><td>4</td><td>肌肉活检</td><td>CD4+ T血管周围浸润 + <span class="c-a b">C5b-9毛细血管沉积</span></td></tr>
+<tr class="hl-yellow"><td class="c-y b">5 ⭐</td><td class="c-y b">特征性皮疹</td><td><span class="c-y b">Gottron丘疹</span>（指关节伸侧）+ <span class="c-y b">Heliotrope</span>（上眼睑紫红）</td></tr>
+</table>
+<div class="note"><b>肯定JDM</b>：1–4中≥3项 + 5 | <b>可能JDM</b>：1–4中≥2项 + 5</div>
+
+<!-- 亚型+MSA -->
+<div class="g2">
+
+<div>
+<div class="sh yellow">📊 临床亚型</div>
+<table>
+<tr><th class="yellow-hd">亚型</th><th class="yellow-hd">特征</th><th class="yellow-hd">预后</th></tr>
+<tr><td>典型JDM</td><td>肌无力+皮疹</td><td class="c-g b">大部分良好</td></tr>
+<tr><td>ADM</td><td>皮疹典型，肌力/肌酶正常</td><td>需随访</td></tr>
+<tr class="hl-red"><td class="c-r b">钙化性</td><td class="c-r">软组织钙化（关节周围）</td><td class="c-r b">残疾风险高</td></tr>
+<tr class="hl-red"><td class="c-r b">溃疡性</td><td class="c-r">严重皮肤缺血溃疡</td><td class="c-r b">预后差</td></tr>
+<tr><td>合并ILD</td><td>罕见于儿童</td><td class="c-r">预后差</td></tr>
+</table>
+</div>
+
+<div>
+<div class="sh green">🧬 肌炎特异性抗体（MSA）</div>
+<table>
+<tr><th class="green-hd">抗体</th><th class="green-hd">特征</th><th class="green-hd">预后</th></tr>
+<tr><td><span class="c-y b">anti-TIF1-γ</span></td><td>最常见25–30%，广泛皮损+钙化</td><td>中等</td></tr>
+<tr><td><span class="c-y b">anti-NXP2</span></td><td>~20%，远端无力+严重钙化</td><td>中等</td></tr>
+<tr><td>anti-Mi-2</td><td>皮损突出，肌力恢复好</td><td class="c-g b">较好</td></tr>
+<tr class="hl-red"><td class="c-r b">anti-MDA5</td><td class="c-r">溃疡+网状青斑+ILD</td><td class="c-r b">差</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 检查 -->
+<div class="sh">🔍 首诊检查</div>
+<table>
+<tr><th style="background:#faf3dc;color:var(--yellow);">分类</th><th style="background:#faf3dc;color:var(--yellow);">内容</th></tr>
+<tr><td class="c-r b">必做</td><td><span class="c-r b">CK</span> + aldolase + AST + LDH<br>ANA + <span class="c-a b">肌炎抗体谱(MSA+MAA)</span><br><span class="c-a b">肌肉MRI</span>（STIR序列水肿）+ <span class="c-a b">EMG</span> + <span class="c-a b">活检</span></td></tr>
+<tr class="hl-yellow"><td class="c-y b">吞咽困难</td><td>钡餐/FEES评估</td></tr>
+<tr><td>可选</td><td>肺功能+HRCT（排ILD）+ 心超 + 钙化筛查</td></tr>
+</table>
+
+<!-- 治疗 -->
+<div class="sh">💊 治疗阶梯</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">轻度 · 无内脏受累</div>
+    <span class="c-a b">MTX</span> 15mg/m²/w max25mg + 叶酸<br>
+    <span class="c-a b">PDN</span> 1–2mg/kg/d → 4–8w渐减<br>
+    <span class="c-y b">羟氯喹</span> 4–5mg/kg/d（皮损）<br>
+    <span class="tag t-a">二线：MMF/IVIG</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">中度 · 明显肌无力</div>
+    <span class="c-r b">IVMP</span> 15–30mg/kg/d×3d<br>
+    MTX + 激素<br>
+    <span class="c-r b">MMF</span> 或 <span class="c-y b">CsA</span> 3–5mg/kg/d<br>
+    <span class="tag t-y">利妥昔单抗（难治）</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">重度 · 溃疡/ILD</div>
+    <span class="c-r b">IVMP冲击</span> + <span class="c-r b">IVCY</span> 500–750mg/m²/mo<br>
+    <span class="c-g b">IVIG</span> 2g/kg/mo<br>
+    <span class="c-g b">阿巴西普</span> / <span class="c-g b">JAKi</span><br>
+    <span class="tag t-r">⚠️ 吞咽困难→鼻饲/胃造瘘</span>
+  </div>
+</div>
+
+<!-- 钙化 -->
+<div class="sh yellow">⚡ 特殊处理</div>
+<table>
+<tr><th class="yellow-hd">问题</th><th class="yellow-hd">处理</th></tr>
+<tr class="hl-yellow"><td class="c-y b">钙化（20–40%）</td><td><span class="c-y b">丙磺舒</span> 15–30mg/kg/d + 低钙饮食 + 双膦酸盐；避免制动</td></tr>
+<tr><td>吞咽困难</td><td>早期<span class="c-r b">鼻饲/胃造瘘</span> + 甲强龙冲击</td></tr>
+<tr><td>ILD</td><td>利妥昔单抗 + MMF</td></tr>
+<tr><td>脂肪代谢障碍</td><td>激素减量 + 代谢管理</td></tr>
+</table>
+
+<!-- 随访 -->
+<div class="sh green">📅 随访监测</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">频率</th></tr>
+<tr class="hl-red"><td class="c-r b">活动期</td><td class="c-r b">q2–4w</td></tr>
+<tr><td>稳定期</td><td>q1–2m</td></tr>
+<tr><td>缓解期</td><td>q3–6m</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">每次必查</th></tr>
+<tr><td><span class="c-a b">CMAS</span>肌力 + <span class="c-r b">CK</span> + aldolase</td></tr>
+<tr><td>皮肤评分（MDAAT）</td></tr>
+<tr><td>肌肉MRI q6–12m</td></tr>
+<tr><td>生长指标 + 肝功</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 预后 -->
+<div class="sh">📊 预后</div>
+<table>
+<tr><th>分型</th><th>比例</th></tr>
+<tr class="hl-green"><td class="c-g b">单次发作后缓解</td><td class="c-g b">~1/3</td></tr>
+<tr><td>慢性病程</td><td>~1/3</td></tr>
+<tr class="hl-red"><td class="c-r b">重度持续</td><td class="c-r">~1/3</td></tr>
+<tr><td>钙化（长期并发症）</td><td class="c-y b">20–40%</td></tr>
+<tr><td>死因Top3</td><td><span class="c-r b">呼衰</span>（ILD/呼吸肌）· 感染 · <span class="c-r">GI血管炎</span></td></tr>
+</table>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>吞咽困难+呛咳</b> → <span class="c-r b">误吸风险</span>，紧急鼻饲+甲强龙冲击</li>
+    <li><b>急性呼吸困难</b> → 排<span class="c-r b">呼吸肌无力/ILD</span></li>
+    <li><b>皮肤坏死/溃疡扩大</b> → 强化免疫抑制</li>
+    <li><b>CK急剧升高</b> → 横纹肌溶解风险</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  Bohan & Peter 1975 · EULAR/ACR IIM 2017(Lundberg IE, Ann Rheum Dis) · PRINTO/Ravelli A, Ann Rheum Dis 2016 · CARRA/Huber AM, Arthritis Rheumatol 2019 · PREDNIMMUNE RCT 2021 · RIM trial(Aggarwal R, 2014)
+</div>
+
+</div>
+</body>
+</html>

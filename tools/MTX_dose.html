@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTX剂量计算 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>💊 MTX 剂量计算</h1>
+    <div class="sub">JIA/JSLE/JDM · SC首选 · mg/m²/周 · 最大25mg</div>
+  </div>
+  <div class="meta">
+    10–15 mg/m²/周<br>
+    SC生物利用度↑30%<br>
+    联用叶酸必须<br>
+    置信度上限 90%
+  </div>
+</div>
+
+<div class="body">
+
+<div class="sh green">💉 JIA皮下注射（首选）</div>
+<table>
+<tr><th class="green-hd">项目</th><th class="green-hd">方案</th></tr>
+<tr class="hl-green"><td class="c-g b">剂量</td><td class="c-g b">10–15 mg/m²/周，最大 25 mg/周</td></tr>
+<tr><td>起始</td><td>通常 10 mg/m²/周</td></tr>
+<tr><td>加量</td><td>每2–4周加 2.5–5 mg，至目标或最大</td></tr>
+<tr><td>途径</td><td><span class="c-a b">皮下注射</span>（生物利用度↑30%）</td></tr>
+</table>
+
+<div class="sh yellow">🧾 按疾病分类</div>
+<table>
+<tr><th class="yellow-hd">疾病</th><th class="yellow-hd">剂量</th><th class="yellow-hd">最大</th><th class="yellow-hd">备注</th></tr>
+<tr class="hl-green"><td class="c-g b">JIA</td><td class="c-g b">10–15 mg/m²/周</td><td>25mg</td><td class="c-a b">SC首选</td></tr>
+<tr><td>JSLE</td><td>10–15 mg/m²/周</td><td>25mg</td><td>皮肤/关节受累</td></tr>
+<tr><td>JDM</td><td class="c-y b">15 mg/m²/周</td><td>25mg</td><td>与激素联用</td></tr>
+<tr><td>川崎病</td><td>—</td><td>—</td><td>不常规使用</td></tr>
+</table>
+
+<div class="sh green">💚 叶酸补充方案</div>
+<table>
+<tr><th class="green-hd">方案</th><th class="green-hd">剂量</th><th class="green-hd">时机</th></tr>
+<tr class="hl-green"><td class="c-g b">方案A（推荐）</td><td class="c-g b">1 mg/天</td><td>MTX后24h服用</td></tr>
+<tr><td>方案B</td><td>5 mg/天</td><td>MTX后24h，连用2天</td></tr>
+<tr><td>方案C</td><td>5 mg/天</td><td>非MTX日每日</td></tr>
+<tr class="hl-red"><td class="c-r b">不推荐</td><td class="c-r">&gt;5mg/d</td><td class="c-r">可能降低MTX疗效</td></tr>
+</table>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应及处理</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">不良反应</th><th class="red-hd">处理</th></tr>
+<tr><td>恶心/呕吐</td><td>改SC，加止吐药</td></tr>
+<tr><td>口腔溃疡</td><td>加叶酸，改SC</td></tr>
+<tr class="hl-yellow"><td class="c-y b">肝酶升高</td><td class="c-y b">减量/暂停，排查肝炎</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">严重反应</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">骨髓抑制</td><td class="c-r b">暂停，恢复后减量</td></tr>
+<tr class="hl-red"><td class="c-r b">MTX肺炎</td><td class="c-r b">永久停药</td></tr>
+<tr><td>感染</td><td>暂停，评估感染控制</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 监测 -->
+<div class="sh yellow">🔬 监测方案</div>
+<table>
+<tr><th class="yellow-hd">时间点</th><th class="yellow-hd">检查项目</th></tr>
+<tr class="hl-red"><td class="c-r b">基线</td><td>CBC + 肝功 + 肌酐 + <span class="c-r b">HBsAg</span></td></tr>
+<tr><td>前3月</td><td class="c-y b">每月</td><td class="c-y b">每月 CBC + 肝功</td></tr>
+<tr><td>稳定后</td><td>每2–3月 CBC + 肝功</td><td></td></tr>
+<tr><td>警惕</td><td>WBC&lt;3.5×10⁹/L、ALT&gt;2×ULN</td><td></td></tr>
+</table>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 禁忌症</div>
+<table>
+<tr><th class="red-hd">禁忌</th></tr>
+<tr class="hl-red"><td class="c-r b">严重肝肾功能不全</td></tr>
+<tr class="hl-red"><td class="c-r b">妊娠/备孕（需停药3–6月）</td></tr>
+<tr><td>活动性感染</td></tr>
+<tr><td>免疫缺陷（HIV）</td></tr>
+<tr><td>严重血液系统疾病</td></tr>
+</table>
+
+</div>
+
+<div class="footer">
+  JIA首选csDMARD · SC优于口服 · 叶酸必须联用 · 起效4–12周
+</div>
+
+</div>
+</body>
+</html>

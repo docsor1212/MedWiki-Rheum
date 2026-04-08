@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Z评分 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2,.g3{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>📏 BMI 与 Z 评分</h1>
+    <div class="sub">WHO儿童生长标准 · 生长发育监测 · 激素影响评估</div>
+  </div>
+  <div class="meta">
+    BMI = 体重/身高²<br>
+    Z = (实测-均值)/SD<br>
+    置信度上限 90%
+  </div>
+</div>
+
+<div class="body">
+
+<div class="sh">📐 Z评分核心公式</div>
+<div class="alert"><b>Z评分</b> = (实测值 − 同龄同性别均值) ÷ 标准差（SD）</div>
+
+<div class="sh yellow">📊 BMI Z评分解读</div>
+<table>
+<tr><th class="yellow-hd">Z值</th><th class="yellow-hd">分类</th><th class="yellow-hd">临床建议</th></tr>
+<tr class="hl-red"><td class="c-r b">&lt; −2.0</td><td class="c-r b">消瘦</td><td class="c-r">营养评估 + 疾病活动度评估</td></tr>
+<tr class="hl-green"><td class="c-g b">−2.0 ~ +1.0</td><td class="c-g b">正常</td><td class="c-g">继续常规监测</td></tr>
+<tr class="hl-yellow"><td class="c-y b">+1.0 ~ +2.0</td><td class="c-y b">超重</td><td class="c-y">饮食指导 + 运动</td></tr>
+<tr class="hl-red"><td class="c-r b">≥ +2.0</td><td class="c-r b">肥胖</td><td class="c-r">干预：饮食+运动，激素减量</td></tr>
+</table>
+
+<div class="g3">
+<div>
+<div class="sh green" style="margin-top:0;">📏 身高Z</div>
+<table>
+<tr><th class="green-hd">Z值</th><th class="green-hd">分类</th></tr>
+<tr class="hl-red"><td class="c-r">&lt;−2.0</td><td class="c-r b">生长迟缓</td></tr>
+<tr class="hl-green"><td class="c-g">−2.0~+2.0</td><td class="c-g b">正常</td></tr>
+<tr><td>&gt;+2.0</td><td class="c-y">需排查</td></tr>
+</table>
+</div>
+<div>
+<div class="sh" style="margin-top:0;">⚖️ 体重Z</div>
+<table>
+<tr><th>Z值</th><th>分类</th></tr>
+<tr class="hl-red"><td class="c-r">&lt;−2.0</td><td class="c-r b">低体重</td></tr>
+<tr class="hl-green"><td class="c-g">−2.0~+2.0</td><td class="c-g b">正常</td></tr>
+<tr class="hl-yellow"><td class="c-y">&gt;+2.0</td><td class="c-y b">超重</td></tr>
+</table>
+</div>
+<div>
+<div class="sh red" style="margin-top:0;">⚠️ 激素对生长</div>
+<table>
+<tr><th class="red-hd">风险</th><th class="red-hd">阈值</th></tr>
+<tr class="hl-red"><td class="c-r b">生长减速</td><td class="c-r">泼尼松&gt;0.1mg/kg/d×&gt;3月</td></tr>
+<tr><td>需干预</td><td class="c-y">身高Z偏差&gt;−1.0</td></tr>
+<tr><td>GH评估</td><td>骨龄片</td></tr>
+</table>
+</div>
+</div>
+
+<div class="sh">👶 儿童风湿免疫生长监测</div>
+<table>
+<tr><th>疾病</th><th>监测频率</th><th>重点指标</th></tr>
+<tr class="hl-yellow"><td class="c-y b">JIA</td><td>每6月</td><td>身高Z + <span class="c-r b">骨龄</span>（激素治疗时）</td></tr>
+<tr class="hl-yellow"><td class="c-y b">JSLE</td><td>每6月</td><td>身高/体重/BMI Z评分</td></tr>
+<tr><td>JDM</td><td>每次随访</td><td>体重变化 → 反映疾病活动</td></tr>
+</table>
+<div class="note">长期激素 → 每<b class="c-r">6月测身高Z</b>，偏差&gt;−1.0需干预，考虑生长激素评估（骨龄片）</div>
+
+</div>
+
+<div class="footer">
+  WHO儿童生长标准 · Z评分需对照同龄同性别参考值 · 激素治疗每6月评估身高Z
+</div>
+
+</div>
+</body>
+</html>

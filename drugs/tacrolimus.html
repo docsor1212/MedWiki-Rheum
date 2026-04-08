@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>他克莫司 — Tacrolimus</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>他克莫司 — Tacrolimus (FK506)</h1>
+    <div class="sub">钙调神经磷酸酶抑制剂(CNI) · <span style="color:#d0f0e0;font-weight:700;">必须TDM浓度监测</span> · CsA替代 · 高血糖风险</div>
+  </div>
+  <div class="meta">
+    起效 1-2周<br>
+    半衰期 儿童6-18h<br>
+    谷浓度目标 5-10ng/ml
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 适应症 -->
+<div class="sh">🎯 适应症与证据等级</div>
+<table>
+<tr><th>疾病</th><th>证据等级</th><th>备注</th></tr>
+<tr><td>JSLE（尤其是肾病型）</td><td>B级</td><td>CsA替代/联合，肾功能/血压优势</td></tr>
+<tr><td>MAS</td><td>B级</td><td>与IVMP联用</td></tr>
+<tr><td>sJIA激素耐药/依赖</td><td>C级</td><td>二/三线</td></tr>
+<tr><td>JDM难治性</td><td>C级</td><td>二/三线，CsA不耐受时</td></tr>
+<tr><td>川崎休克综合征</td><td>C级</td><td>联合IVIG+IVMP</td></tr>
+</table>
+
+<!-- 剂量 -->
+<div class="sh">💊 剂量速查</div>
+<table>
+<tr><th>疾病</th><th>剂量</th><th>目标谷浓度C₀</th><th>备注</th></tr>
+<tr class="hl-green"><td class="c-g b">JSLE肾病型</td><td class="c-g b">0.1-0.15 mg/kg/d, q12h</td><td class="c-g b">5-10 ng/mL</td><td>联合MMF或替代CsA</td></tr>
+<tr><td>sJIA激素耐药</td><td>0.05-0.1 mg/kg/d, q12h</td><td>5-8 ng/mL</td><td>二/三线</td></tr>
+<tr><td>JDM难治性</td><td>0.05-0.1 mg/kg/d, q12h</td><td>5-8 ng/mL</td><td>CsA不耐受时</td></tr>
+<tr><td>MAS</td><td>0.1-0.15 mg/kg/d, 口服/鼻饲</td><td>—</td><td>联合IVMP冲击</td></tr>
+</table>
+<div class="note"><b>给药方式</b>：空腹服用（餐前1h或餐后2-3h），避免高脂食物。CYP3A5基因多态性影响代谢，建议基因检测指导初始剂量。</div>
+
+<!-- CYP3A5 -->
+<div class="sh yellow">🧬 CYP3A5基因多态性</div>
+<table>
+<tr><th class="yellow-hd">基因型</th><th class="yellow-hd">代谢速度</th><th class="yellow-hd">剂量建议</th></tr>
+<tr class="hl-yellow"><td class="c-y b">*1/*1 或 *1/*3（表达者）</td><td class="c-y b">代谢快</td><td class="c-y b">需较高剂量</td></tr>
+<tr><td>*3/*3（非表达者）</td><td>代谢慢</td><td>需较低剂量</td></tr>
+</table>
+<div class="note">儿科建议进行CYP3A5基因检测以指导初始剂量。生物利用度个体差异大（5-67%）。</div>
+
+<!-- 浓度监测 -->
+<div class="sh yellow">🔬 浓度监测要点</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="yellow-hd">项目</th><th class="yellow-hd">参数</th></tr>
+<tr class="hl-yellow"><td class="c-y b">采血时间</td><td class="c-y b">下次服药前（谷浓度C₀）</td></tr>
+<tr><td>首次测浓度</td><td>用药3-5天后（~3个半衰期）</td></tr>
+<tr class="hl-green"><td class="c-g b">目标范围</td><td class="c-g b">5-10 ng/mL</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">异常情况</th><th class="yellow-hd">调整</th></tr>
+<tr class="hl-red"><td class="c-r b">过高（>15 ng/mL）</td><td class="c-r b">减量25-50%，3天后复查</td></tr>
+<tr><td>过低（<3 ng/mL）</td><td>增量0.02-0.05mg/kg/d，3天后复查</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应（分级）</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见 (10-30%)</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">肾功能损害（~30%）</td><td class="c-r b">Cr↑，监测eGFR</td></tr>
+<tr><td>高血压（15-25%）</td><td>降压药控制</td></tr>
+<tr class="hl-red"><td class="c-r b">高血糖（较CsA更常见）</td><td class="c-r b">胰岛β细胞毒性</td></tr>
+<tr><td>手部细震颤</td><td>与浓度相关</td></tr>
+<tr><td>腹泻/腹痛（较CsA多见）</td><td>对症</td></tr>
+<tr><td>头痛、失眠</td><td>对症</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">中度 (5-10%)</th><th class="red-hd">处理</th></tr>
+<tr><td>低镁血症（较CsA多见）</td><td>补镁</td></tr>
+<tr><td>高钾血症</td><td>监测电解质</td></tr>
+<tr><td>贫血/WBC减少</td><td>监测CBC</td></tr>
+<tr><td>感觉异常（手/足麻木）</td><td>减量可改善</td></tr>
+</table>
+<table style="margin-top:4px;">
+<tr><th class="red-hd">重度 (&lt;5%)</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">急性肾衰竭</td><td class="c-r b">停药</td></tr>
+<tr><td>糖尿病/酮症酸中毒</td><td>停药+胰岛素</td></tr>
+<tr><td>神经毒性（癫痫/白质脑病）</td><td>停药</td></tr>
+<tr><td>HUS/TTP</td><td>停药+血浆置换</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 与CsA对比 -->
+<div class="sh green">⚖️ 他克莫司 vs 环孢素A对比</div>
+<table>
+<tr><th>不良反应</th><th class="green-hd">他克莫司</th><th>环孢素A</th></tr>
+<tr><td>多毛症</td><td class="c-g">少见 ✓</td><td class="c-r">常见 ✗</td></tr>
+<tr><td>牙龈增生</td><td class="c-g">少见 ✓</td><td class="c-r">常见 ✗</td></tr>
+<tr class="hl-red"><td class="c-r b">高血糖</td><td class="c-r b">较多 ⚠️</td><td>较少</td></tr>
+<tr><td>低镁血症</td><td class="c-y">较多 ⚠️</td><td>较少</td></tr>
+<tr><td>神经毒性</td><td class="c-y">稍多</td><td>较少</td></tr>
+<tr><td>肾毒性</td><td>相当</td><td>相当</td></tr>
+</table>
+
+<!-- 监测 -->
+<div class="sh">🔬 监测时间表</div>
+<table>
+<tr><th>时间</th><th>检查项目</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线</td><td class="c-y b">肾功能、肝功、血糖/HbA1c、血压、电解质(K/Mg/UA)、CBC、尿常规、CYP3A5基因型（可选）</td></tr>
+<tr><td>起始3-5天后</td><td><span class="c-r b">谷浓度C₀</span></td></tr>
+<tr><td>每月×3月</td><td>谷浓度、肾功、<span class="c-r b">血糖</span>、血压、电解质</td></tr>
+<tr><td>稳定后 q1-3月</td><td>谷浓度、肾功、血糖/HbA1c、血压、血脂</td></tr>
+</table>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 禁忌</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">绝对禁忌</th></tr>
+<tr><td><span class="c-r b">严重肾功能不全</span></td></tr>
+<tr><td><span class="c-r b">未控制高血压</span></td></tr>
+<tr><td>活动性严重感染</td></tr>
+<tr><td>已知他克莫司过敏</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">相对禁忌</th></tr>
+<tr><td>轻中度肾功能不全</td><td>起始减量+密切监测</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 相互作用 -->
+<div class="sh yellow">⚡ 相互作用（CYP3A4）</div>
+<table>
+<tr><th class="yellow-hd">类型</th><th class="yellow-hd">药物</th><th class="yellow-hd">影响</th></tr>
+<tr class="hl-red"><td class="c-r b">↑他克莫司浓度</td><td class="c-r b">酮康唑、氟康唑、克拉霉素、红霉素、地尔硫䓬、维拉帕米、<span class="c-r b">葡萄柚汁</span></td><td>CYP3A4抑制，强效抑制剂时<span class="c-r b">他克莫司减量50-80%</span></td></tr>
+<tr><td>↓他克莫司浓度</td><td>利福平、苯巴比妥、苯妥英、卡马西平、圣约翰草</td><td>CYP3A4诱导</td></tr>
+<tr class="hl-red"><td class="c-r b">肾毒性叠加</td><td class="c-r b">氨基糖苷类、两性霉素B、万古霉素、NSAIDs</td><td class="c-r b">慎用</td></tr>
+<tr><td>高钾风险</td><td>补钾 + 他克莫司</td><td>补钾需谨慎</td></tr>
+<tr><td>高血糖叠加</td><td>糖皮质激素 + 他克莫司</td><td><span class="c-r">高血糖风险叠加</span></td></tr>
+</table>
+
+<!-- 特殊人群 -->
+<div class="sh green">👶 特殊人群</div>
+<table>
+<tr><th class="green-hd">人群</th><th class="green-hd">要点</th></tr>
+<tr><td>肝功能不全</td><td>Child-Pugh B/C: 减量，密切监测浓度</td></tr>
+<tr><td>妊娠</td><td>FDA C级，可用（评估风险/获益），致畸性低于MTX/MMF</td></tr>
+<tr><td>哺乳</td><td>进入乳汁，建议哺乳期避免或密切监测婴儿</td></tr>
+</table>
+
+<!-- 关键警示 -->
+<div class="sh red">🔴 关键警示</div>
+<div class="alert">
+<b>1. 必须TDM</b>：他克莫司治疗窗极窄、生物利用度差异大（5-67%），<span class="c-r b">必须常规监测谷浓度</span><br>
+<b>2. 高血糖</b>：较CsA更常见（胰岛β细胞毒性），联用糖皮质激素时<span class="c-r b">高血糖风险叠加</span><br>
+<b>3. CYP3A4</b>：大量药物相互作用，<span class="c-r b">禁止葡萄柚汁</span>，联用强效CYP3A4抑制剂必须减量50-80%<br>
+<b>4. 低镁血症</b>：较CsA更常见，需定期监测血镁并补充<br>
+<b>5. 空腹给药</b>：餐前1h或餐后2-3h，高脂食物影响吸收<br>
+<b>6. 神经毒性</b>：癫痫、白质脑病虽罕见但需警惕
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  JSLE肾病/MAS B级 · CsA替代（无多毛/牙龈增生） · CYP3A4代谢 · TDM必须 · 高血糖关注
+</div>
+
+</div>
+</body>
+</html>

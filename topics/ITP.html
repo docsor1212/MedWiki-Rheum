@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITP — 免疫性血小板减少症（儿科）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.45; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.78rem; opacity:0.9; margin-top:2px; }
+.header .meta { text-align:right; font-size:0.72rem; opacity:0.92; line-height:1.5; }
+.body { padding:10px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--red); padding:4px 10px; border-radius:5px; margin:10px 0 4px; }
+.sh.teal { background:var(--accent); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--red-bg); color:var(--red); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.teal-hd { background:var(--accent-bg); color:var(--accent); }
+th.green-hd { background:var(--green-bg); color:var(--green); }
+th.yellow-hd { background:var(--yellow-bg); color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:var(--green-bg); }
+tr.hl-red td { background:var(--red-bg); }
+tr.hl-yellow td { background:var(--yellow-bg); }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.warn { background:var(--yellow-bg); border-left:3px solid var(--yellow); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.warn b { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+/* Steps cards */
+.steps { display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+.step { flex:1; min-width:130px; background:#fff; border:1.5px solid var(--border); border-radius:var(--radius); padding:8px 10px; position:relative; }
+.step .num { display:inline-block; width:20px; height:20px; border-radius:50%; color:#fff; font-size:11px; font-weight:700; text-align:center; line-height:20px; margin-bottom:3px; }
+.step .num.n1 { background:var(--green); }
+.step .num.n2 { background:var(--accent); }
+.step .num.n3 { background:var(--yellow); }
+.step .num.n4 { background:var(--red); }
+.step .stitle { font-size:12px; font-weight:700; margin-bottom:2px; }
+.step .sdesc { font-size:10.5px; color:var(--text2); }
+.step .splat { margin-top:3px; font-size:10.5px; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>🩸 ITP — 免疫性血小板减少症</h1>
+    <div class="sub">儿科最常见出血性疾病 · <b style="color:#ffe0d0">80%急性自限</b> · 20%慢性需免疫治疗 · 警惕继发性ITP（SLE/AIHA/Evans）</div>
+  </div>
+  <div class="meta">
+    血小板 &lt;100×10⁹/L<br>
+    排除性诊断<br>
+    发病率 1–6/10万/年
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 流行病学 -->
+<div class="sh teal">📊 流行病学 + 急性 vs 慢性</div>
+<div class="g2">
+<div>
+<table>
+<tr><th>项目</th><th>数据</th></tr>
+<tr><td>发病率</td><td><b>1–6/10万</b>儿童/年</td></tr>
+<tr class="hl-yellow"><td class="c-y b">峰值年龄</td><td class="c-y b">2–5岁（急性）</td></tr>
+<tr><td>性别比</td><td>急性 M:F≈1:1；慢性 F>M</td></tr>
+<tr><td>季节</td><td>春冬季多发（感染后）</td></tr>
+<tr class="hl-green"><td class="c-g b">自限率</td><td class="c-g b">80% 6月内自发缓解</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="teal-hd">特征</th><th class="teal-hd">急性（&lt;12月）</th><th class="teal-hd">慢性（≥12月）</th></tr>
+<tr><td>年龄</td><td><b>&lt;10岁</b></td><td>>10岁/青春期</td></tr>
+<tr><td>起病</td><td>急，感染后1–4周</td><td>隐匿</td></tr>
+<tr class="hl-green"><td>自发缓解</td><td class="c-g b">80%</td><td>&lt;20%</td></tr>
+<tr><td>性别</td><td>M≈F</td><td>F>M</td></tr>
+<tr><td>抗体</td><td>一过性</td><td>持续性</td></tr>
+<tr class="hl-red"><td>治疗</td><td>多数仅需观察</td><td class="c-r b">需免疫治疗</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 诊断标准+检查 -->
+<div class="sh">🔍 诊断标准 + 检查</div>
+<div class="g2">
+<div>
+<div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:4px;">⚠️ 排除性诊断 — 必备条件</div>
+<div style="font-size:11.5px;color:var(--text2);margin-bottom:4px;">
+<b style="color:var(--text)">①</b> 血小板 <span class="c-r b">&lt;100×10⁹/L</span>（≥2次）<br>
+<b style="color:var(--text)">②</b> 血涂片：血小板↓，<b>无异常细胞</b>，RBC正常<br>
+<b style="color:var(--text)">③</b> 骨髓（非必须）：巨核细胞正常或增多
+</div>
+<div class="alert"><b>必须排除：</b>假性血小板减少（EDTA→枸橼酸钠）、遗传性（WAS/BSS/MYH9）、AA/MDS/白血病、DIC/TTP-HUS、药物性（肝素/万古/磺胺）、NAIT</div>
+</div>
+<div>
+<table>
+<tr><th>检查</th><th>目的</th></tr>
+<tr class="hl-green"><td class="c-g b">CBC+涂片 ⭐</td><td>确认+排除异常细胞</td></tr>
+<tr><td>网织血小板</td><td>↑提示破坏增多</td></tr>
+<tr><td>ANA</td><td><span class="c-r b">青春期女必查</span></td></tr>
+<tr><td>直抗Coombs</td><td><span class="c-r b">必查</span>（排除Evans）</td></tr>
+<tr><td>dsDNA/抗Sm</td><td>ANA(+)时加查</td></tr>
+<tr><td>aPL</td><td>反复血栓+血小板低</td></tr>
+<tr><td>HBV/HCV/HIV</td><td>慢性ITP必查</td></tr>
+<tr><td>Ig水平</td><td>慢性/反复感染</td></tr>
+<tr class="hl-yellow"><td>骨髓</td><td>治疗无效/不典型时</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 红旗征 -->
+<div class="warn"><b>🚩 骨髓检查红旗征：</b>Hb↓+Ret↓+WBC异常 → 白血病/MDS/AA｜脾大 → 白血病/淋巴瘤｜骨痛 → 白血病/神经母细胞瘤｜涂片异常细胞 → 白血病｜多种一线无效 → 非ITP｜>10岁+全身症状 → SLE</div>
+
+<!-- 出血分级 -->
+<div class="sh red">🩸 出血分级（Buchanan评分）+ 治疗指征</div>
+<div class="g2">
+<div>
+<table>
+<tr><th>分级</th><th>表现</th><th>决策</th></tr>
+<tr class="hl-green"><td class="c-g b">0</td><td>无出血</td><td class="c-g">观察</td></tr>
+<tr class="hl-green"><td class="c-g">1</td><td>轻微瘀点/瘀斑（&lt;5处）</td><td class="c-g">观察</td></tr>
+<tr class="hl-yellow"><td class="c-y b">2</td><td>中等瘀斑/少量鼻衄</td><td class="c-y">考虑治疗</td></tr>
+<tr class="hl-red"><td class="c-r b">3</td><td class="c-r b">黏膜出血</b>（鼻衄>30min、牙龈、血尿）</td><td class="c-r b">积极治疗</td></tr>
+<tr class="hl-red"><td class="c-r b">4</td><td class="c-r b">严重出血</b>（颅内、消化道大出血）</td><td class="c-r b">紧急治疗</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="teal-hd">血小板</th><th class="teal-hd">出血</th><th class="teal-hd">处理</th></tr>
+<tr class="hl-green"><td>>30×10⁹/L</td><td>无/轻微瘀点</td><td class="c-g b">观察</td></tr>
+<tr><td>10–30</td><td>黏膜出血</td><td>考虑治疗</td></tr>
+<tr class="hl-red"><td><10</td><td>或湿性出血</td><td class="c-r b">立即治疗</td></tr>
+<tr class="hl-yellow"><td><20</td><td>无出血但活动量大</td><td>个体化</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 治疗阶梯 -->
+<div class="sh green">💊 治疗阶梯</div>
+<div class="steps">
+<div class="step">
+  <div class="num n1">1</div>
+  <div class="stitle c-g">观察等待</div>
+  <div class="sdesc">PLT>30 + 无/轻微出血</div>
+  <div class="splat"><span class="t-g">首选方案</span></div>
+</div>
+<div class="step">
+  <div class="num n2">2</div>
+  <div class="stitle c-a">一线治疗</div>
+  <div class="sdesc">IVIG ± 糖皮质激素 ± 抗D</div>
+  <div class="splat"><span class="t-a">有效率80%</span></div>
+</div>
+<div class="step">
+  <div class="num n3">3</div>
+  <div class="stitle c-y">二线治疗</div>
+  <div class="sdesc">TPO-RA / 利妥昔单抗</div>
+  <div class="splat"><span class="t-y">慢性/难治性</span></div>
+</div>
+<div class="step">
+  <div class="num n4">4</div>
+  <div class="stitle c-r">三线/最后手段</div>
+  <div class="sdesc">CSA/MMF/AZA → 脾切除</div>
+  <div class="splat"><span class="t-r">>5岁，ITP>1年</span></div>
+</div>
+</div>
+
+<!-- 一线治疗详情 -->
+<div class="sh teal">一线治疗详情</div>
+<div class="g2">
+<div>
+<div style="font-size:12px;font-weight:700;color:var(--accent);margin:4px 0 2px;">IVIG</div>
+<table>
+<tr><th class="teal-hd">项目</th><th class="teal-hd">内容</th></tr>
+<tr class="hl-green"><td class="c-g b">剂量</td><td class="c-g b">0.8–1g/kg/d × 1–2天 或 2g/kg分2天</td></tr>
+<tr><td>起效</td><td>24–72小时</td></tr>
+<tr class="hl-green"><td>有效率</td><td class="c-g b">80%（暂时性）</td></tr>
+<tr><td>维持</td><td>2–4周</td></tr>
+<tr><td>机制</td><td>Fc受体封闭+抗独特型抗体</td></tr>
+</table>
+<div class="note">适用：急性出血、需快速提升PLT、手术前</div>
+
+<div style="font-size:12px;font-weight:700;color:var(--accent);margin:8px 0 2px;">抗D免疫球蛋白</div>
+<table>
+<tr><th class="teal-hd">项目</th><th class="teal-hd">内容</th></tr>
+<tr><td>剂量</td><td><b>50–75μg/kg</b> 单次</td></tr>
+<tr class="hl-yellow"><td>前提</td><td class="c-y b">RhD(+) + 脾未切 + Hb正常</td></tr>
+<tr><td>有效率</td><td>70–80%</td></tr>
+<tr><td>起效</td><td>24–48小时</td></tr>
+<tr class="hl-red"><td>⚠️</td><td class="c-r">一过性溶血（Hb↓10–20g/L）</td></tr>
+</table>
+</div>
+<div>
+<div style="font-size:12px;font-weight:700;color:var(--accent);margin:4px 0 2px;">糖皮质激素</div>
+<table>
+<tr><th class="teal-hd">方案</th><th class="teal-hd">剂量</th><th class="teal-hd">疗程</th></tr>
+<tr class="hl-green"><td class="c-g b">泼尼松</td><td class="c-g b">1–2mg/kg/d（最大60mg）</td><td>2–4周渐减</td></tr>
+<tr><td>地塞米松</td><td>0.6mg/kg/d（最大40mg）×4天</td><td>脉冲式</td></tr>
+<tr class="hl-red"><td>IVMP（严重）</td><td class="c-r b">10–30mg/kg/d × 3天</td><td>冲击</td></tr>
+</table>
+<div class="note">适用：慢性ITP、IVIG无效或替代｜<b class="c-r">儿童急性ITP应避免长期激素（生长影响）</b></div>
+
+<div style="font-size:12px;font-weight:700;color:var(--green);margin:8px 0 2px;">💡 观察等待要点</div>
+<div style="font-size:11px;color:var(--text2);padding-left:4px;">
+• PLT>30 + 无/轻微瘀点 → 无需治疗<br>
+• 限制剧烈/接触性运动<br>
+• 避免阿司匹林、NSAIDs<br>
+• 每周查PLT直至稳定
+</div>
+</div>
+</div>
+
+<!-- 二线治疗 -->
+<div class="sh yellow">🔄 二线治疗（慢性/难治性ITP）</div>
+<table>
+<tr><th>药物</th><th>剂量</th><th>有效率</th><th>备注</th></tr>
+<tr class="hl-green"><td class="c-g b">TPO受体激动剂（整体）</td><td>—</td><td class="c-g b">70–80%</td><td class="c-g b">长期维持，不治愈，改变预后</td></tr>
+<tr><td>&nbsp;&nbsp;罗米司亭 Romiplostim</td><td>1–10μg/kg SC qw</td><td><b>80%</b></td><td>皮下注射</td></tr>
+<tr><td>&nbsp;&nbsp;艾曲波帕 Eltrombopag</td><td>25–75mg/d 口服</td><td>70–80%</td><td>肝毒性监测</td></tr>
+<tr><td>&nbsp;&nbsp;海曲泊帕 Hetrombopag</td><td>2.5–7.5mg/d</td><td>70%+</td><td><span class="t-g">中国已上市</span></td></tr>
+<tr><td>利妥昔单抗 Rituximab</td><td>375mg/m² qw ×4周</td><td>30–60%（6月）</td><td>B细胞清除，持续缓解率低</td></tr>
+<tr><td>环孢素A</td><td>3–5mg/kg/d</td><td>30–50%</td><td>肾毒性</td></tr>
+<tr><td>MMF</td><td>300–600mg/m² bid</td><td>30–40%</td><td>耐受性好</td></tr>
+<tr><td>硫唑嘌呤</td><td>1–2mg/kg/d</td><td>20–40%</td><td>起效慢8–12周</td></tr>
+<tr class="hl-red"><td class="c-r b">脾切除</td><td>—</td><td class="c-r b">80%（即刻）</td><td class="c-r b">最后手段，>5岁，感染风险</td></tr>
+</table>
+
+<!-- Evans综合征 -->
+<div class="sh red">🔴 Evans综合征</div>
+<div style="font-size:11.5px;margin:4px 0 6px;"><b>定义：</b><span class="c-r b">AIHA + ITP</span>，同时或相继发生。可发展为三系自身免疫（AIHA+ITP+AIN）。占ITP <b>1–3%</b>，慢性化率<span class="c-r b"> >60%</span>，复发率50–70%，双峰发病（<5岁和10–15岁）。</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">特征</th><th class="red-hd">单纯ITP</th><th class="red-hd">Evans综合征</th></tr>
+<tr><td>受累系</td><td>仅血小板</td><td class="c-r b">血小板+RBC（±粒细胞）</td></tr>
+<tr><td>Coombs</td><td>(-)</td><td class="c-r b">(+)</td></tr>
+<tr><td>溶血</td><td>(-)</td><td class="c-r b">(+)</td></tr>
+<tr class="hl-yellow"><td>慢性率</td><td>20%</td><td class="c-r b">>60%</td></tr>
+<tr><td>继发SLE</td><td>低</td><td class="c-r b">高</td></tr>
+<tr class="hl-red"><td>治疗反应</td><td>好</td><td class="c-r b">差</td></tr>
+<tr><td>脾切有效率</td><td>80%</td><td>40–50%</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">Evans治疗</th><th class="red-hd">方案</th></tr>
+<tr class="hl-green"><td>急性</td><td class="c-g b">IVIG + 激素（激素更重要）</td></tr>
+<tr><td>维持</td><td>泼尼松1–2mg/kg→渐减至最低有效量</td></tr>
+<tr class="hl-yellow"><td>激素依赖</td><td class="c-y b">利妥昔单抗（首选二线，70%）</td></tr>
+<tr class="hl-red"><td>难治性</td><td>CSA/MMF/西罗莫司/脾切</td></tr>
+<tr><td>紧急输血</td><td class="c-r b">O型洗涤RBC</span>（温抗体配型困难）</td></tr>
+</table>
+<div class="alert"><b>Evans→继发风险：</b>SLE 10–20%｜APS 5–10%｜CVID 5%｜ALPS 罕见 → 随访ANA+dsDNA q6–12月、aPL、Ig水平</div>
+</div>
+</div>
+
+<!-- 继发性ITP-SLE -->
+<div class="sh red">🔴 继发性ITP（SLE相关）</div>
+<div style="font-size:11.5px;margin:4px 0 6px;"><b>关键：</b>SLE患者ITP发生率<span class="c-r b">10–25%</span>，ITP为SLE首发表现<b>3–15%</b> → <span class="c-r b">青少年慢性ITP建议筛查ANA</span></div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">特征</th><th class="red-hd">原发ITP</th><th class="red-hd">SLE-ITP</th></tr>
+<tr><td>ANA</td><td>通常(-)</td><td class="c-r b">(+)</td></tr>
+<tr><td>抗磷脂抗体</td><td>通常(-)</td><td class="c-r b">常(+)</td></tr>
+<tr class="hl-yellow"><td>补体</td><td>正常</td><td class="c-r b">↓（C3/C4）</td></tr>
+<tr><td>多系统受累</td><td>(-)</td><td class="c-r b">(+)</td></tr>
+<tr><td>抗dsDNA</td><td>(-)</td><td class="c-r b">(+)</td></tr>
+<tr class="hl-red"><td>治疗反应</td><td>好</td><td class="c-r b">需SLE整体治疗</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">SLE-ITP治疗</th><th class="red-hd">方案</th></tr>
+<tr class="hl-green"><td>基础</td><td class="c-g b">SLE整体治疗（HCQ+激素）</td></tr>
+<tr><td>一线</td><td>激素（同原发ITP）</td></tr>
+<tr><td>二线</td><td><b>利妥昔单抗</b> / MMF / AZA</td></tr>
+<tr><td>三线</td><td>TPO-RA</td></tr>
+<tr class="hl-red"><td>避免</td><td class="c-r b">脾切除（SLE感染风险极高）</td></tr>
+</table>
+<div class="alert"><b>SLE转化预警：</b>ANA(+) → 10–30%转化率｜补体低｜aPL(+)｜女性>10岁｜多系受累 → <b>随访至少5年</b>，每6–12月查ANA+补体+aPL</div>
+</div>
+</div>
+
+<!-- 急诊处理 -->
+<div class="sh red">🚨 急诊处理</div>
+<div class="g2">
+<div>
+<div style="font-size:12px;font-weight:700;color:var(--red);margin:4px 0 2px;">⚠️ 颅内出血（&lt;1%，致命）</div>
+<table>
+<tr><th class="red-hd">项目</th><th class="red-hd">内容</th></tr>
+<tr class="hl-red"><td>表现</td><td class="c-r b">头痛+呕吐+意识改变+局灶神经征</td></tr>
+<tr><td>发生率</td><td class="c-r b">0.1–0.5%</td></tr>
+<tr class="hl-red"><td>死亡率</td><td class="c-r b">50%+（未及时处理）</td></tr>
+<tr class="hl-red"><td class="c-r b">紧急处理</td><td class="c-r b">IVIG 1g/kg + IVMP 30mg/kg + 输注血小板</td></tr>
+<tr><td>检查</td><td>头颅CT立即 + 神经外科会诊</td></tr>
+</table>
+</div>
+<div>
+<div style="font-size:12px;font-weight:700;color:var(--red);margin:4px 0 2px;">严重黏膜出血处理</div>
+<table>
+<tr><th class="red-hd">步骤</th><th class="red-hd">处理</th></tr>
+<tr><td class="b">1</td><td class="c-r b">IVIG 1g/kg（快速输注）</td></tr>
+<tr><td class="b">2</td><td>IVMP 10–30mg/kg</td></tr>
+<tr><td class="b">3</td><td><b>血小板输注</b>（大剂量可止血）</td></tr>
+<tr><td class="b">4</td><td>氨甲环酸 10mg/kg IV q8h</td></tr>
+<tr><td class="b">5</td><td>rFVIIa（难治性出血）</td></tr>
+</table>
+<div style="font-size:12px;font-weight:700;color:var(--yellow);margin:8px 0 2px;">🏃 活动限制</div>
+<table>
+<tr><th class="yellow-hd">PLT水平</th><th class="yellow-hd">限制</th></tr>
+<tr class="hl-green"><td>>50</td><td class="c-g">正常活动</td></tr>
+<tr><td>30–50</td><td>避免接触性运动</td></tr>
+<tr><td>10–30</td><td>限制剧烈活动</td></tr>
+<tr class="hl-red"><td><10</td><td class="c-r b">床上活动为主，避免外伤</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 随访+预后 -->
+<div class="sh teal">📅 随访 + 预后</div>
+<div class="g2">
+<div>
+<table>
+<tr><th>阶段</th><th>频率</th><th>内容</th></tr>
+<tr><td>急性期（0–4周）</td><td class="c-y b">每周</td><td>CBC+出血评估</td></tr>
+<tr><td>恢复期（1–3月）</td><td>每2–4周</td><td>CBC</td></tr>
+<tr class="hl-yellow"><td>慢性（>12月）</td><td>每1–3月</td><td>CBC+ANA/补体</td></tr>
+<tr><td>Evans</td><td>每1–2月</td><td>CBC+Ret+Coombs+LDH</td></tr>
+<tr><td>SLE-ITP</td><td>按SLE随访</td><td>+血小板监测</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="teal-hd">类型</th><th class="teal-hd">缓解率</th><th class="teal-hd">备注</th></tr>
+<tr class="hl-green"><td class="c-g b">急性ITP</td><td class="c-g b">80%（6月内）</td><td>多数不需治疗</td></tr>
+<tr><td>持续性（3–12月）</td><td>50%最终缓解</td><td>部分进入慢性</td></tr>
+<tr><td>慢性ITP</td><td>20–30%自发缓解</td><td><span class="t-g">TPO-RA改变预后</span></td></tr>
+<tr class="hl-red"><td class="c-r b">Evans综合征</td><td class="c-r b"><30%持续缓解</td><td>需长期免疫抑制</td></tr>
+<tr class="hl-yellow"><td>SLE-ITP</td><td>随SLE活动</td><td>取决于SLE控制</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 证据等级 -->
+<div class="sh green">📚 证据等级</div>
+<table>
+<tr><th>治疗</th><th>证据</th><th>来源</th></tr>
+<tr class="hl-green"><td class="c-g b">观察等待安全性</td><td class="c-g b"><span class="t-g">A级</span></td><td>Intercontinental Study, Blood 2009</td></tr>
+<tr class="hl-green"><td class="c-g b">IVIG vs 激素</td><td class="c-g b"><span class="t-g">A级</span></td><td>SITiP RCT, Lancet 2020</td></tr>
+<tr><td>利妥昔单抗</td><td><span class="t-y">B级</span></td><td>多项RCT，长期缓解率低</td></tr>
+<tr class="hl-green"><td class="c-g b">TPO-RA</td><td class="c-g b"><span class="t-g">A级</span></td><td>PETIT/PETIT2研究（儿童）</td></tr>
+<tr><td>脾切除</td><td><span class="t-y">B级</span></td><td>>5岁，ITP>1年，最后手段</td></tr>
+<tr class="hl-green"><td class="c-g b">抗D</td><td class="c-g b"><span class="t-g">A级</span></td><td>北美常用，中国少用</td></tr>
+</table>
+
+<!-- 特殊情况 -->
+<div class="sh yellow">⚠️ 特殊情况</div>
+<div class="g2">
+<div>
+<div style="font-size:11.5px;font-weight:700;color:var(--yellow);">青春期女性/妊娠相关</div>
+<div style="font-size:11px;color:var(--text2);padding-left:4px;">
+• 避免TPO-RA（安全性未知）<br>
+• 分娩时PLT>50×10⁹/L目标<br>
+• 硬膜外麻醉需>80×10⁹/L
+</div>
+</div>
+<div>
+<div style="font-size:11.5px;font-weight:700;color:var(--yellow);">新生儿ITP</div>
+<div style="font-size:11px;color:var(--text2);padding-left:4px;">
+• 母亲ITP → 5–10%新生儿PLT低<br>
+• 发生时间：出生后1–3天<br>
+• 治疗：IVIG ± 激素<br>
+• ICH风险<1%（PLT<50时需监测）
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+MedWiki-Rheum · 儿科免疫性血小板减少症 · 仅供医学参考，不替代临床判断
+</div>
+
+</div>
+</body>
+</html>

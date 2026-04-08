@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDAI 临床疾病活动指数 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>📊 CDAI 临床疾病活动指数</h1>
+    <div class="sub">Clinical Disease Activity Index · 无需实验室检查 · 床边快速评估</div>
+  </div>
+  <div class="meta">
+    主要用于成人RA<br>
+    缓解 ≤2.8<br>
+    置信度上限 90%
+  </div>
+</div>
+
+<div class="body">
+
+<div class="sh">📐 CDAI公式</div>
+<div class="alert"><b>CDAI</b> = TJC（压痛关节数）+ SJC（肿胀关节数）+ PhGA（医生评估 0–10）+ PtGA（患者评估 0–10）</div>
+<div class="note">CDAI = SDAI − CRP，<b class="c-a">不需要任何实验室检查</b>，床边即可完成</div>
+
+<div class="sh yellow">📝 公式组成详解</div>
+<table>
+<tr><th class="yellow-hd">组分</th><th class="yellow-hd">全称</th><th class="yellow-hd">评分范围</th><th class="yellow-hd">评估方式</th></tr>
+<tr><td class="b">TJC</td><td>Tender Joint Count</td><td>0–28/66/68</td><td>压痛关节数</td></tr>
+<tr><td class="b">SJC</td><td>Swollen Joint Count</td><td>0–28/66/68</td><td>肿胀关节数</td></tr>
+<tr><td class="b">PhGA</td><td>Physician Global Assessment</td><td>0–10 VAS</td><td>医生整体评估</td></tr>
+<tr><td class="b">PtGA</td><td>Patient Global Assessment</td><td>0–10 VAS</td><td>患者/家长整体评估</td></tr>
+</table>
+
+<div class="sh red">🎯 疾病活动度分级</div>
+<table>
+<tr><th class="red-hd">CDAI分值</th><th class="red-hd">活动度</th><th class="red-hd" style="background:#e2f3dd;color:var(--green);">临床决策</th></tr>
+<tr class="hl-green"><td class="c-g b">≤ 2.8</td><td class="c-g b">缓解 Remission</td><td class="c-g b">维持治疗 / 考虑减量</td></tr>
+<tr><td>2.8–10.0</td><td class="c-a">低活动度</td><td>当前方案有效，继续</td></tr>
+<tr class="hl-yellow"><td>10.0–22.0</td><td class="c-y b">中活动度</td><td class="c-y">考虑加用/更换csDMARD</td></tr>
+<tr class="hl-red"><td class="c-r b">&gt; 22.0</td><td class="c-r b">高活动度</td><td class="c-r b">强化治疗：考虑生物制剂/JAKi</td></tr>
+</table>
+
+<div class="sh green">✅ CDAI优势</div>
+<table>
+<tr><th class="green-hd">优势</th><th class="green-hd">说明</th></tr>
+<tr class="hl-green"><td class="c-g b">无需抽血</td><td class="c-g b">完全基于临床评估</td></tr>
+<tr><td>最快速</td><td>床边2–3分钟完成</td></tr>
+<tr><td>适合基层</td><td>无需实验室支持</td></tr>
+<tr><td>适合快速随访</td><td>门诊高效筛查</td></tr>
+</table>
+
+<div class="sh">🔄 CDAI vs SDAI vs DAS28</div>
+<table>
+<tr><th>维度</th><th>CDAI</th><th>SDAI</th><th>DAS28</th></tr>
+<tr><td>实验室</td><td class="c-g b">无</td><td>CRP</td><td>ESR + 对数计算</td></tr>
+<tr><td>计算复杂度</td><td class="c-g b">最简单</td><td>简单</td><td class="c-y">需对数</td></tr>
+<tr><td>速度</td><td class="c-g b">最快</td><td>快</td><td>较慢</td></tr>
+<tr><td>敏感性</td><td>良好</td><td>良好</td><td class="c-a b">最高</td></tr>
+</table>
+
+</div>
+
+<div class="footer">
+  ACR/EULAR推荐CDAI用于RA快速评估 · 缓解标准≤2.8 · 儿童JIA首选JADAS-27
+</div>
+
+</div>
+</body>
+</html>

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "literature/cat_paper.md",
+                "file": "templates/jia_template.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "cat_paper"
+              "title": "jia_template"
             }
           }
         ]
@@ -183,33 +183,33 @@
       "bases:新建数据库": false
     }
   },
-  "active": "1b66358dd01afe01",
+  "active": "1ac7e5665473bd2c",
   "lastOpenFiles": [
-    "log.md",
-    "index.md",
-    "topics/JSLE.md",
-    "literature/cat_paper.md",
-    "topics/IgAV.md",
-    "topics/JDM.md",
-    "topics/AID.md",
-    "tools/vaccine.md",
-    "tools/SDAI.md",
-    "tools/MTX_dose.md",
-    "tools/liver_kidney.md",
-    "tools/JADAS71.md",
-    "tools/JADAS27.md",
-    "tools/followup.md",
-    "tools/ESR_CRP.md",
-    "tools/autoantibodies.md",
+    "drugs/MTX.md",
+    "templates/sle_template.md",
     "schema/evidence_levels.md",
     "schema/aliases.md",
+    "tools/SDAI.md",
+    "tools/liver_kidney.md",
+    "tools/followup.md",
+    "tools/ESR_CRP.md",
+    "tools/DAS28.md",
+    "tools/autoantibodies.md",
+    "tools/CDAI.md",
+    "tools/BSA.md",
+    "tools/CHAQ.md",
+    "tools/JADAS71.md",
+    "tools/vaccine.md",
+    "tools/BMI_Zscore.md",
+    "templates/jia_template.md",
+    "templates/initial_visit.md",
+    "templates/followup_visit.md",
+    "literature/cat_paper.md",
+    "literature/uptodate.md",
     "literature/paper_rheum.md",
-    "literature/paper.md",
     "literature/guideline_jcs.md",
+    "literature/paper.md",
     "literature/guideline_cn.md",
-    "drugs/NSAIDs.md",
-    "drugs/MTX.md",
-    "drugs/glucocorticoids.md",
-    "drugs/calcium_vitd.md"
+    "drugs/tocilizumab.md"
   ]
 }

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IgAV — IgA血管炎（过敏性紫癜）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#4a9e3f; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>IgAV — IgA血管炎（过敏性紫癜）</h1>
+    <div class="sub">可触性紫癜（下肢为主）+ 腹痛/关节痛/肾炎 · Gd-IgA1免疫复合物沉积</div>
+  </div>
+  <div class="meta">
+    最常见儿童血管炎<br>
+    3–27/10万/年 · 高峰4–7岁<br>
+    >80%完全恢复
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 诊断 -->
+<div class="sh">🏷️ 分类标准（EULAR/PRES/PRINTO 2010）</div>
+<div class="alert" style="margin-top:4px;margin-bottom:6px;"><b>可触性紫癜（必需）+ 以下≥1项</b></div>
+<table>
+<tr><th style="width:8%">#</th><th style="width:30%">标准</th><th>要点</th></tr>
+<tr class="hl-red"><td class="c-r b">必须</td><td class="c-r b">可触性紫癜</td><td>下肢为主，<span class="c-r b">血小板正常/升高</span>（区别ITP）</td></tr>
+<tr><td>1</td><td>弥漫性腹痛</td><td>可有血便、隐血+</td></tr>
+<tr><td>2</td><td>IgA免疫复合物沉积</td><td>活检（皮肤/肾）</td></tr>
+<tr><td>3</td><td>关节炎/关节痛</td><td>大关节为主，非侵蚀性</td></tr>
+<tr><td>4</td><td>肾脏受累</td><td>蛋白尿/血尿/红细胞管型</td></tr>
+</table>
+
+<!-- 肾脏分型 -->
+<div class="sh red">🫘 肾脏受累分型（ISKDC）</div>
+<table>
+<tr><th class="red-hd">分级</th><th class="red-hd">病理</th><th class="red-hd">治疗</th></tr>
+<tr><td>I</td><td>轻微肾小球异常</td><td>观察</td></tr>
+<tr><td>IIa/b</td><td>系膜增生±新月体&lt;50%</td><td>随访 ± ACEI</td></tr>
+<tr class="hl-yellow"><td>III</td><td class="c-y b">局灶性+新月体50–75%</td><td class="c-y b">免疫抑制</td></tr>
+<tr class="hl-red"><td class="c-r b">IV</td><td class="c-r b">弥漫性+新月体>75%</td><td class="c-r b">积极免疫抑制</td></tr>
+<tr><td>V</td><td>膜性</td><td>蛋白尿为主</td></tr>
+<tr><td>VI</td><td>晚期硬化</td><td>不可逆</td></tr>
+</table>
+
+<div class="g2">
+
+<!-- 检查 -->
+<div>
+<div class="sh yellow">🔍 检查</div>
+<table>
+<tr><th style="background:#faf3dc;color:var(--yellow);">分类</th><th style="background:#faf3dc;color:var(--yellow);">内容</th></tr>
+<tr><td class="c-r b">必做</td><td><span class="c-r b">PLT正常/↑</span>（区别ITP！）<br>尿常规+<span class="c-r b">UPCR</span>+肾功<br>大便常规+隐血<br>ESR + CRP</td></tr>
+<tr class="hl-yellow"><td class="c-y b">肾受累追加</td><td>24h尿蛋白 + <span class="c-y b">肾活检</span>（蛋白尿&gt;1g/d或肾功↓）</td></tr>
+<tr><td>可选</td><td>ASO + C3/C4 + 腹部超声（排肠套叠）</td></tr>
+</table>
+</div>
+
+<!-- 鉴别 -->
+<div>
+<div class="sh green">🩺 鉴别</div>
+<table>
+<tr><th class="green-hd">疾病</th><th class="green-hd">鉴别要点</th></tr>
+<tr class="hl-red"><td class="c-r b">ITP</td><td><span class="c-r">PLT↓</span>，无腹痛关节痛</td></tr>
+<tr><td>急性肾炎</td><td>ASO↑+C3↓</td></tr>
+<tr><td>败血症紫癜</td><td>血培养+，中毒症状重</td></tr>
+<tr class="hl-yellow"><td class="c-y b">肠套叠</td><td class="c-y">超声/空气灌肠</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 治疗阶梯</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">轻度 · 皮肤+关节</div>
+    休息+水化<br>
+    <span class="c-a b">NSAIDs</span>（关节痛）<br>
+    <span class="tag t-a">激素不预防肾炎</span><br>
+    严重腹痛：PDN 1–2mg/kg×3–5d
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">中度 · 肾炎UPCR 0.5–1</div>
+    <span class="c-r b">ACEI/ARB</span> 减少蛋白尿<br>
+    <span class="c-r b">PDN</span> 1mg/kg/d → 6–8w渐减<br>
+    <span class="tag t-y">考虑肾活检</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">重度 · 新月体>50%</div>
+    <span class="c-g b">IVMP冲击</span> + <span class="c-g b">IVCY</span><br>
+    或 <span class="c-g b">MMF</span> 600mg/m² BID<br>
+    ACEI/ARB持续<br>
+    <span class="tag t-r">难治→利妥昔单抗</span>
+  </div>
+</div>
+
+<div class="alert"><b>⭐ 激素不能预防IgAV肾炎</b>（RCT证实）— 仅用于严重腹痛/关节症状，不作为常规预防</div>
+
+<!-- 随访 -->
+<div class="sh green">📅 随访</div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">频率</th><th class="green-hd">核心</th></tr>
+<tr><td>急性期</td><td>qw 1–2次</td><td>尿常规+血压+肾功</td></tr>
+<tr><td>无肾受累</td><td>qm×3 → q3m×6</td><td>每次查尿</td></tr>
+<tr class="hl-red"><td class="c-r b">肾受累</td><td class="c-r b">q1–2w×1m → qm×6</td><td><span class="c-r b">UPCR+血压+肾功</span></td></tr>
+</table>
+
+<!-- 预后 -->
+<div class="sh">📊 预后</div>
+<table>
+<tr><th>指标</th><th>数据</th></tr>
+<tr><td>完全恢复</td><td class="c-g b">&gt;80%</td></tr>
+<tr><td>肾受累</td><td>20–60%（大部分轻微）</td></tr>
+<tr><td>进展ESRD</td><td class="c-y b">1–5%（新月体型最差）</td></tr>
+<tr><td>复发率</td><td>30–40%</td></tr>
+</table>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>剧烈腹痛</b> → 排<span class="c-r b">肠套叠/肠穿孔</span>，紧急腹部超声</li>
+    <li><b>睾丸红肿痛</b> → 排<span class="c-r b">睾丸扭转</span>，紧急手术评估</li>
+    <li><b>尿量↓+水肿加重</b> → 肾炎恶化，查肾功</li>
+    <li><b>大量肉眼血尿</b> → 评估肾活检</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR/PRES/PRINTO 2010(Ozen S, Ann Rheum Dis) · 激素不预防肾炎(Dudley J/Ronkainen J, RCT) · ISKDC分型 · PRINTO IgAV肾炎共识(Ravelli A, 2019) · 中国IgAV共识2020
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLE — 系统性红斑狼疮</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2,.g3{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>SLE — 系统性红斑狼疮</h1>
+    <div class="sub">多系统自身免疫病 · 自身抗体+免疫复合物沉积 · 补体激活</div>
+  </div>
+  <div class="meta">
+    患病率 30–150/10万<br>
+    女:男 ≈ 9:1<br>
+    好发 15–45岁（育龄女性）
+  </div>
+</div>
+
+<div class="body">
+
+<!-- EULAR/ACR 2019 分类标准 -->
+<div class="sh red">📋 EULAR/ACR 2019 分类标准（≥10分+ANA≥1:80）</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">临床标准</th><th class="red-hd">积分</th></tr>
+<tr class="hl-red"><td class="c-r b">急性皮肤狼疮</td><td class="c-r b">6</td></tr>
+<tr><td>慢性皮肤狼疮</td><td>4</td></tr>
+<tr><td>口腔溃疡</td><td>2</td></tr>
+<tr><td>非瘢痕性脱发</td><td>2</td></tr>
+<tr class="hl-red"><td class="c-r b">滑膜炎（≥2关节）</td><td class="c-r b">6</td></tr>
+<tr class="hl-yellow"><td class="c-y b">肾脏（UP>0.5g/d或RBC管型）</td><td class="c-y b">4</td></tr>
+<tr><td>神经系统（癫痫/精神病等）</td><td>5</td></tr>
+<tr><td>溶血性贫血</td><td>4</td></tr>
+<tr><td>WBC↓(&lt;4×10⁹) 或 Lym↓(&lt;1×10⁹)</td><td>3</td></tr>
+<tr><td>PLT↓(&lt;100×10⁹)</td><td>4</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">免疫学标准</th><th class="red-hd">积分</th></tr>
+<tr class="hl-red"><td class="c-r b">anti-dsDNA（+）</td><td class="c-r b">6</td></tr>
+<tr class="hl-red"><td class="c-r b">anti-Sm（+）</td><td class="c-r b">6</td></tr>
+<tr><td>抗磷脂抗体（aCL/aβ2GPI/LA）</td><td>2</td></tr>
+<tr class="hl-yellow"><td class="c-y b">低补体（C3/C4/CH50）</td><td class="c-y b">4</td></tr>
+<tr><td>直接Coombs（+）（无溶贫时）</td><td>1</td></tr>
+</table>
+<div class="note"><b>入选条件</b>：ANA≥1:80（HEp-2）必填<br>每项仅计1次，累加≥10分分类为SLE</div>
+</div>
+</div>
+
+<!-- 鉴别诊断 + 检查 -->
+<div class="g2">
+<div>
+<div class="sh green">🩺 鉴别诊断</div>
+<table>
+<tr><th class="green-hd">疾病</th><th class="green-hd">鉴别要点</th></tr>
+<tr><td>RA</td><td>关节侵蚀、RF/CCP(+)、补体正常</td></tr>
+<tr><td>pSS</td><td>口眼干、抗SSA/SSB(+)</td></tr>
+<tr><td>MCTD</td><td>高滴度抗U1RNP</td></tr>
+<tr><td>药物性狼疮</td><td>药物史、抗组蛋白(+)、无肾/CNS</td></tr>
+<tr class="hl-yellow"><td class="c-y b">感染</td><td class="c-y">HIV/HCV/EBV可模拟SLE</td></tr>
+<tr><td>原发性肾炎</td><td>无自身抗体</td></tr>
+</table>
+</div>
+<div>
+<div class="sh yellow">🔍 推荐检查</div>
+<table>
+<tr><th class="yellow-hd">必做</th></tr>
+<tr><td><span class="c-r b">ANA+anti-dsDNA</span>+抗ENA谱(Sm/RNP/SSA/SSB/Scl-70/Jo-1)</td></tr>
+<tr><td><span class="c-r b">C3/C4/CH50</span>+血常规+尿常规+UPCR+24hUP</td></tr>
+<tr><td><span class="c-a b">抗磷脂抗体谱</span>（aCL IgG/M/aβ2GPI/LA）</td></tr>
+<tr><td>肝肾功能+白蛋白+ESR/CRP</td></tr>
+<tr class="hl-yellow"><td class="c-y b">可选</td><td class="c-y">肾活检（LN分型）· 皮肤DIF · 胸CT · 头MRI · 心超</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 分层治疗 -->
+<div class="sh">💊 分层治疗（BLUF）</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">轻度 · 皮肤关节</div>
+    <span class="c-a b">羟氯喹</span> 4–5mg/kg/d ≤400mg<br>
+    NSAIDs + 局部激素<br>
+    <span class="tag t-a">所有SLE基础用药</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">中度 · 血液/LN轻</div>
+    <span class="c-r b">PDN</span> 0.5–1mg/kg/d<br>
+    <span class="c-a b">AZA</span> 1–3mg/kg/d<br>
+    或 <span class="c-a b">MMF</span> 1–2g/d<br>
+    或 <span class="c-a b">MTX</span> 15–25mg/w
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">重度 · LN III/IV/NP</div>
+    <span class="c-r b">PDN</span> 0.5–1mg/kg/d<br>
+    <span class="tag t-r">Euro-Lupus IVCY</span> 500mg/m²/mo×6<br>
+    或 <span class="tag t-r">MMF</span> 2–3g/d×6m
+  </div>
+  <div class="stp s4">
+    <div class="stp-label">难治 · 生物制剂</div>
+    <span class="c-g b">贝利木单抗</span> 10mg/kg/mo<br>
+    <span class="c-g b">利妥昔单抗</span> 375mg/m²/w×4<br>
+    <span class="c-g b">anifrolumab</span> 300mg IV q4w<br>
+    <span class="c-y b">voclosporin</span> 23.7mg BID
+  </div>
+</div>
+
+<!-- LN治疗路径 -->
+<div class="sh red">🫘 狼疮性肾炎治疗路径</div>
+<div class="path">
+  <b class="c-r">诱导期（6个月）：</b>
+  <span class="node">PDN 0.5–1mg/kg/d</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">IVCY 500mg/m²/mo×6（Euro-Lupus）或 MMF 2–3g/d</span>
+  <span class="arr">→</span>
+  <span class="node" style="border-color:var(--green);">肾活检确认分型（必须）</span>
+</div>
+<div class="path" style="margin-top:3px;">
+  <b class="c-g">维持期（≥3年）：</b>
+  <span class="node">MMF 1–2g/d</span> 或 <span class="node">AZA 1–3mg/kg/d</span> + <span class="node" style="border-color:var(--green);">羟氯喹持续</span> + <span class="node">PDN渐减 ≤5mg/d</span>
+</div>
+<div class="note"><b>FDA批准LN新药</b>：voclosporin 23.7mg BID（2021）+ anifrolumab 300mg IV q4w（抗IFNAR，中重度SLE）</div>
+
+<!-- 特殊情况 -->
+<div class="g2">
+<div>
+<div class="sh yellow">⚡ 特殊情况</div>
+<table>
+<tr><th class="yellow-hd">情况</th><th class="yellow-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">合并APS</td><td class="c-r b">终身抗凝（华法林 INR 2–3）</td></tr>
+<tr class="hl-yellow"><td class="c-y b">妊娠期</td><td>羟氯喹 ✅ 可用<br>禁用 IVCY/MMF/MTX<br>监测抗SSA/SSB→预防新生儿狼疮</td></tr>
+<tr><td>LN复发</td><td>重复诱导或升级免疫抑制</td></tr>
+</table>
+</div>
+
+<div>
+<div class="sh green">📅 随访监测</div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">频率</th></tr>
+<tr class="hl-red"><td class="c-r b">活动期</td><td class="c-r b">q2–4w</td></tr>
+<tr><td>稳定期</td><td>q1–3m</td></tr>
+<tr><td>缓解期</td><td>q3–6m</td></tr>
+<tr><td>LN维持期</td><td class="c-y b">q1–3m</td></tr>
+</table>
+<div class="note"><b>每次必查</b>：CBC+UPCR+C3/C4+anti-dsDNA+肝肾功<br><b>羟氯喹OCT</b>：>5年者每年 · <b>骨密度</b>：长期激素每年</div>
+</div>
+</div>
+
+<!-- 预后 -->
+<div class="sh">📊 预后</div>
+<div class="g2">
+<div>
+<table>
+<tr><th>指标</th><th>数据</th></tr>
+<tr><td>10年生存率</td><td class="c-g b">85–95%</td></tr>
+<tr class="hl-red"><td class="c-r b">死因Top3</td><td class="c-r b">感染 · 心血管 · LN肾衰竭</td></tr>
+<tr><td>核心预后指标</td><td class="c-a b">累积损伤SDI</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th>T2T目标</th></tr>
+<tr><td>缓解或<span class="c-a b">LLDAS</span></td></tr>
+<tr><td>激素<span class="c-r b">≤5mg/d</span>或停用</td></tr>
+<tr><td>SRI-4应答率≥50%</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 紧急警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>新发神经系统症状</b>（癫痫/精神异常）→ NP狼疮，紧急甲强龙冲击</li>
+    <li><b>肾功能急剧恶化/水肿加重</b> → 查肾功+UPCR，考虑LN活动</li>
+    <li><b>严重溶贫/PLT&lt;20×10⁹</b> → 查Coombs，评估Evans综合征</li>
+    <li><b>高热不退</b> → <span class="c-r b">感染 vs 复发</span>，血培养+CRP+PCT</li>
+    <li><b>胸痛/呼吸困难</b> → 胸膜炎/肺出血，紧急影像</li>
+  </ul>
+</div>
+
+<!-- 发病机制 -->
+<div class="sh">🧬 发病机制</div>
+<div class="path">
+  <span class="node">遗传（HLA-DR3/DR2/IRF5/STAT4）</span><span class="arr">+</span>
+  <span class="node">性激素（雌激素促炎）</span><span class="arr">+</span>
+  <span class="node">环境触发（UVB/EBV/药物）</span>
+  <span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);color:var(--red);font-weight:700;">凋亡清除障碍→自身抗原暴露→浆细胞产生自身抗体(ANA/anti-dsDNA/anti-Sm)</span>
+  <span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);color:var(--red);">免疫复合物沉积→补体经典途径激活→C3/C4消耗→组织损伤</span>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR/ACR 2019(Aringer M, Ann Rheum Dis 2019) · EULAR LN 2019/2021(Fanouriakis A, Ann Rheum Dis 2020) · KDIGO 2024 LN · T2T/SLE 2021(van Vollenhoven RF, Ann Rheum Dis 2021) · BLISS-52/76(Navarra SV, Lancet 2011) · TULIP(Morand EF, NEJM 2020) · AURORA(Rovin BH, Lancet 2021)
+</div>
+
+</div>
+</body>
+</html>

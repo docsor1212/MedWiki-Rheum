@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHAQ 儿童健康评估问卷 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>📋 CHAQ 儿童健康评估问卷</h1>
+    <div class="sub">Childhood Health Assessment Questionnaire · 8功能区 · 0–3分制</div>
+  </div>
+  <div class="meta">
+    适用 1–18岁<br>
+    家长协助填写<br>
+    &gt;30种语言验证<br>
+    置信度上限 90%
+  </div>
+</div>
+
+<div class="body">
+
+<div class="sh">📝 8个功能评估维度</div>
+<table>
+<tr><th>功能区</th><th>评估内容</th><th>典型困难表现</th></tr>
+<tr class="hl-green"><td class="c-g b">穿衣</td><td>系扣子、拉拉链、穿衣</td><td>手指关节受累时困难</td></tr>
+<tr><td>起身</td><td>从椅子上站起、起床</td><td>膝关节/髋关节受累</td></tr>
+<tr><td>进食</td><td>用餐具、端杯子</td><td>腕/手小关节</td></tr>
+<tr><td>行走</td><td>走路、跑步、爬楼梯</td><td>膝/踝关节</td></tr>
+<tr><td>卫生</td><td>洗手、洗澡、梳头</td><td>肩/肘关节</td></tr>
+<tr><td>提物</td><td>提书包、拿重物</td><td>上肢关节</td></tr>
+<tr><td>握力</td><td>开瓶盖、开门</td><td>手/腕关节</td></tr>
+<tr><td>活动</td><td>跑步、体育课、骑车</td><td>下肢多关节</td></tr>
+</table>
+
+<div class="sh yellow">📊 评分方法</div>
+<table>
+<tr><th class="yellow-hd">评分</th><th class="yellow-hd">含义</th><th class="yellow-hd">CHAQ-DI解读</th></tr>
+<tr class="hl-green"><td class="c-g b">0分</td><td class="c-g b">无困难</td><td class="c-g b">完全正常功能</td></tr>
+<tr><td>1分</td><td>有些困难</td><td>轻度功能障碍</td></tr>
+<tr class="hl-yellow"><td>2分</td><td class="c-y b">很多困难</td><td class="c-y">中度功能障碍</td></tr>
+<tr class="hl-red"><td class="c-r b">3分</td><td class="c-r b">做不到</td><td class="c-r b">严重功能障碍</td></tr>
+</table>
+<div class="alert"><b>CHAQ-DI</b> = 8项平均分（0–3），分数越高功能越差。如使用了辅助设备或需要帮助，该功能评分自动上调为2或3分。</div>
+
+<div class="sh green">📏 疼痛和总体评估（VAS）</div>
+<table>
+<tr><th class="green-hd">评估项</th><th class="green-hd">工具</th><th class="green-hd">范围</th></tr>
+<tr><td>疼痛</td><td>VAS视觉模拟</td><td>0–100mm</td></tr>
+<tr><td>患者总体</td><td>VAS</td><td>0–100mm</td></tr>
+<tr><td>家长总体</td><td>VAS</td><td>0–100mm</td></tr>
+</table>
+
+<div class="sh">🔬 临床应用</div>
+<table>
+<tr><th>用途</th><th>说明</th></tr>
+<tr class="hl-green"><td class="c-g b">JIA临床研究</td><td class="c-g b">核心结局指标（ACR Pedi 30/50/70/90）</td></tr>
+<tr><td>治疗反应评估</td><td>与JADAS联合使用</td></tr>
+<tr><td>生活质量监测</td><td>长期随访功能状态</td></tr>
+<tr><td>ACR Pedi标准</td><td>CHAQ-DI改善≥0.13为有意义改善</td></tr>
+</table>
+<div class="note">CHAQ已被<b class="c-a">广泛验证</b>（&gt;30种语言），是JIA临床试验的金标准功能评估工具</div>
+
+</div>
+
+<div class="footer">
+  CHAQ是JIA核心功能评估工具 · ACR Pedi 30/50/70/90标准 · 与JADAS联合评估治疗反应
+</div>
+
+</div>
+</body>
+</html>

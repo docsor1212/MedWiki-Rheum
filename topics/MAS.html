@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAS — 巨噬细胞活化综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>MAS — 巨噬细胞活化综合征</h1>
+    <div class="sub">细胞因子风暴 · sJIA首要死因 · 需紧急识别</div>
+  </div>
+  <div class="meta">
+    sJIA合并MAS ~10%<br>
+    死因：多器官衰竭<br>
+    早期治疗死亡率&lt;5%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 机制 -->
+<div class="sh">⚡ 核心机制（一句话）</div>
+<div class="note" style="border-left-color:var(--red);">
+<b class="c-r">NK/CTL功能缺陷 → 巨噬细胞持续活化 → 细胞因子风暴（IFN-γ/IL-1/IL-6/IL-18↑↑）→ 噬血现象</b>
+</div>
+
+<!-- 诊断标准 -->
+<div class="sh red">🔴 快速诊断 — 2022 sJIA-MAS分类标准（PRINTO/ACR）</div>
+<div class="note"><b>适用</b>：sJIA活动期 + 发热 + Ferritin &gt;684ng/mL → 计算：</div>
+<table>
+<tr><th class="red-hd" style="width:50%">指标</th><th class="red-hd" style="width:15%">分值</th><th class="red-hd">阈值</th></tr>
+<tr class="hl-red"><td class="c-r b">CNS功能障碍</td><td class="c-r b">33</td><td>—</td></tr>
+<tr class="hl-red"><td class="c-r b">WBC ≤4.0×10⁹/L</td><td class="c-r b">37</td><td>≤4.0</td></tr>
+<tr class="hl-red"><td class="c-r b">PLT ≤181×10⁹/L</td><td class="c-r b">38</td><td>≤181</td></tr>
+<tr><td>AST &gt;48U/L</td><td>33</td><td>&gt;48</td></tr>
+<tr><td>TG &gt;156mg/dL</td><td>22</td><td>&gt;156</td></tr>
+<tr><td>Fbg ≤360mg/dL</td><td>19</td><td>≤360</td></tr>
+<tr><td>Ferritin &gt;688ng/mL</td><td>18</td><td>&gt;688</td></tr>
+<tr><td>出血表现</td><td>21</td><td>非ITP相关</td></tr>
+</table>
+<div class="alert"><b>≥46分 = 诊断MAS</b>（敏感性93%，特异性89%）</div>
+
+<div class="g2">
+
+<!-- HLH-2004 -->
+<div>
+<div class="sh yellow">📋 HLH-2004（8条满足5条）</div>
+<table>
+<tr><th class="yellow-hd">临床</th><th class="yellow-hd">阈值</th></tr>
+<tr><td>① 发热</td><td>≥38.5℃</td></tr>
+<tr><td>② 脾大</td><td>—</td></tr>
+<tr><td>③ PLT↓</td><td>&lt;100×10⁹/L</td></tr>
+<tr><td>④ Fbg↓</td><td class="c-r b">&lt;1.5g/L</td></tr>
+<tr><td>⑤ TG↑</td><td>≥3.0mmol/L</td></tr>
+<tr><td>⑥ 骨髓噬血</td><td class="c-r b">⭐ 确诊依据</td></tr>
+<tr><td>⑦ NK活性↓/缺</td><td>—</td></tr>
+<tr><td>⑧ sCD25↑</td><td>—</td></tr>
+<tr><td>⑨ Ferritin↑</td><td class="c-r b">≥500μg/L</td></tr>
+</table>
+</div>
+
+<!-- 鉴别+危险信号 -->
+<div>
+<div class="sh green">🩺 鉴别诊断</div>
+<table>
+<tr><th class="green-hd">疾病</th><th class="green-hd">鉴别要点</th></tr>
+<tr><td>脓毒症</td><td>血培养+，PCT↑↑，噬血少见</td></tr>
+<tr><td>恶性肿瘤</td><td>骨髓见肿瘤细胞</td></tr>
+<tr><td>药物超敏</td><td>停药后好转</td></tr>
+<tr><td>原发HLH</td><td><span class="c-a b">基因检测</span>（PRF1/UNC13D/STX11/STXBP2）</td></tr>
+</table>
+
+<div class="sh red" style="margin-top:8px;">🚨 sJIA→MAS预警信号</div>
+<div class="alert">
+  <ul>
+    <li><span class="c-r b">Ferritin骤升</span>（尤其&gt;684）</li>
+    <li><span class="c-r b">ESR↓但CRP↑</span>（ESR因Fbg消耗而下降）</li>
+    <li><span class="c-r b">WBC/PLT/Fbg三系进行性↓</span></li>
+    <li>高热不退 + <span class="c-r b">肝脾迅速增大</span></li>
+    <li><span class="c-y b">TG↑ + sCD25↑</span></li>
+  </ul>
+</div>
+</div>
+
+</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 治疗阶梯（逐级升级）</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">Step 1 · 早期/轻症</div>
+    <span class="c-a b">IVMP</span> 10–30mg/kg/d×3d<br>
+    <span class="c-a b">IVIG</span> 2g/kg×1–2d<br>
+    <span class="tag t-a">sJIA-MAS首选</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">Step 2 · 中重度</div>
+    <span class="c-r b">阿那白滞素</span> 2–4mg/kg/d SC<br>
+    可加至<span class="c-r b">8–10mg/kg/d</span><br>
+    <span class="tag t-r">⭐ EULAR推荐</span><br>
+    <span class="c-y b">环孢素A</span> 2–5mg/kg/d<br>
+    谷浓度100–200ng/ml
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">Step 3 · 危及生命</div>
+    <span class="c-g b">VP-16</span> 150mg/m²<br>
+    <span class="c-g b">Emapalumab</span>（抗IFN-γ）<br>
+    <span class="tag t-y">血浆置换</span><br>
+    <span class="tag t-g">HSCT</span>（原发HLH）
+  </div>
+</div>
+
+<!-- HLH-94方案 -->
+<div class="sh yellow">📐 HLH-94/2004方案（原发/重型）</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">剂量</th><th class="yellow-hd">疗程</th></tr>
+<tr class="hl-yellow"><td class="c-y b">地塞米松</td><td>10mg/m²/d PO/IV</td><td>8w（第3w起渐减）</td></tr>
+<tr class="hl-yellow"><td class="c-y b">依托泊苷(VP-16)</td><td>150mg/m²</td><td>w1–2: biw → w3–8: qw</td></tr>
+<tr><td>环孢素A</td><td>6mg/kg/d</td><td>第3w开始持续</td></tr>
+</table>
+
+<!-- 监测 -->
+<div class="sh green">📅 监测与预后</div>
+<table>
+<tr><th class="green-hd">阶段</th><th class="green-hd">频率</th><th class="green-hd">核心指标</th></tr>
+<tr class="hl-red"><td class="c-r b">急性期</td><td class="c-r b">每日</td><td><span class="c-r b">Ferritin趋势</span> + TG + Fbg + CBC + 肝功 + sCD25</td></tr>
+<tr><td>缓解后</td><td>每周</td><td>Ferritin + CBC + 肝肾功</td></tr>
+<tr><td>维持期</td><td>q2–4w</td><td>全套 + 环孢素浓度</td></tr>
+</table>
+
+<div class="g2">
+<div>
+<div class="note" style="border-left-color:var(--green);"><b>⭐ Ferritin下降速度 = 早期疗效最敏感指标</b></div>
+<div class="note" style="border-left-color:var(--yellow);">sCD25下降滞后于临床改善，不作为早期判断依据</div>
+</div>
+<div>
+<table>
+<tr><th>预后</th><th>数据</th></tr>
+<tr><td>原发HLH不移植</td><td class="c-r b">死亡率高</td></tr>
+<tr><td>原发HLH移植后</td><td class="c-g b">5年生存50–70%</td></tr>
+<tr><td>sJIA-MAS早期治疗</td><td class="c-g b">死亡率&lt;5%</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>再次高热+Ferritin↑</b> → <span class="c-r b">MAS复发</span>，立即重启治疗</li>
+    <li><b>出血倾向加重</b> → 查Fbg+DIC，输注<span class="c-r b">血小板+FFP</span></li>
+    <li><b>意识改变</b> → CNS受累，紧急<span class="c-r b">甲强龙冲击</span></li>
+    <li><b>呼吸困难</b> → 排<span class="c-r b">ARDS</span>，机械通气</li>
+    <li><b>少尿/肾功恶化</b> → <span class="c-r b">CRRT</span></li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  HLH-2004(Henter JI, Pediatr Blood Cancer 2007) · HScore(Fardet L, Arthritis Rheumatol 2014) · 2022 sJIA-MAS(PRINTO/ACR) · EULAR 2016 sJIA · Emapalumab(FDA/EMA approved)
+</div>
+
+</div>
+</body>
+</html>

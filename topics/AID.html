@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AID — 自身炎症性疾病</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#b8891a; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.accent { background:var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#faf3dc; color:#b8891a; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.accent-hd { background:#d4f0ed; color:#20a39e; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+tr.hl-accent td { background:#d4f0ed; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--yellow); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>AID — 自身炎症性疾病</h1>
+    <div class="sub">先天免疫失调 · 无自身抗体/抗原特异性T细胞 · 炎症小体→IL-1β核心通路</div>
+  </div>
+  <div class="meta">
+    单基因多为罕见病 &lt;1/10万<br>
+    FMF 土耳其 1:400–1:1000<br>
+    IL-1通路是治疗核心
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 核心机制 -->
+<div class="path">
+  <b class="c-y">核心通路：</b>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">遗传突变</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--yellow);font-weight:700;color:var(--yellow);">炎症小体激活</span><span class="arr">→</span>
+  <span class="node">caspase-1</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">IL-1β/IL-18↑↑</span><span class="arr">→</span>
+  <span class="node">发热·浆膜炎·皮疹</span>
+</div>
+
+<!-- AID vs SLE区别 -->
+<div class="sh red">⚠️ AID vs 自身免疫病关键区别</div>
+<table>
+<tr><th class="red-hd" style="width:25%">维度</th><th class="red-hd">AID</th><th class="red-hd">SLE/RA等</th></tr>
+<tr class="hl-red"><td class="c-r b">免疫紊乱</td><td class="c-r b">先天免疫</td><td>获得性免疫</td></tr>
+<tr class="hl-yellow"><td class="c-y b">自身抗体</td><td class="c-y b">无/低滴度</td><td>高滴度（ANA等）</td></tr>
+<tr><td>抗原特异性T细胞</td><td>无</td><td>有</td></tr>
+<tr><td>核心细胞因子</td><td class="c-r b">IL-1β（核心）</td><td>IFN/IL-6等</td></tr>
+<tr><td>遗传基础</td><td>单基因突变为主</td><td>多基因+环境</td></tr>
+</table>
+
+<!-- 单基因AID分类 -->
+<div class="sh">🧬 单基因AID分类</div>
+<table>
+<tr><th>疾病</th><th>基因</th><th>遗传</th><th>核心临床特征</th></tr>
+<tr class="hl-yellow"><td class="c-y b">FMF</td><td><span class="c-y b">MEFV</span></td><td>常隐</td><td>发热1–3天 + <span class="c-y b">浆膜炎</span>（腹膜炎最常见）+ 关节炎</td></tr>
+<tr class="hl-yellow"><td class="c-y b">TRAPS</td><td><span class="c-y b">TNFRSF1A</span></td><td>常显</td><td>长程发热&gt;1周 + 迁移性皮疹 + 肌痛 + 眼部</td></tr>
+<tr class="hl-red"><td class="c-r b">CAPS</td><td><span class="c-r b">NLRP3</span></td><td>常显</td><td>FCAS/MWS/CINCA谱；<span class="c-r b">冷刺激诱发</span>；荨麻疹样皮疹</td></tr>
+<tr><td>MKD/HIDS</td><td>MVK</td><td>常隐</td><td>发热3–7天 + 淋巴结大 + 腹痛腹泻</td></tr>
+<tr class="hl-red"><td class="c-r b">DIRA</td><td><span class="c-r b">IL1RN</span></td><td>常隐</td><td><span class="c-r b">新生儿起病</span>；骨膜炎 + 皮疹 + pustulosis</td></tr>
+<tr><td>Blau</td><td>NOD2</td><td>常显</td><td>肉芽肿皮疹 + 关节炎 + 葡萄膜炎</td></tr>
+<tr><td>PAPA</td><td>PSTPIP1</td><td>常显</td><td>化脓性无菌性关节炎 + 坏疽性脓皮病 + 痤疮</td></tr>
+<tr><td>SAVI</td><td>TMEM173</td><td>常显</td><td>间质性肺病 + 皮肤血管炎 + 川崎病样</td></tr>
+</table>
+
+<!-- CAPS严重度谱系 -->
+<div class="sh red">🌡️ CAPS严重度谱系</div>
+<table>
+<tr><th class="red-hd">表型</th><th class="red-hd">别名</th><th class="red-hd">严重度</th><th class="red-hd">特征</th></tr>
+<tr class="hl-accent"><td>FCAS</td><td>家族性冷自身炎症综合征</td><td><span class="tag t-a">轻</span></td><td>冷刺激诱发发热+皮疹+关节痛</td></tr>
+<tr class="hl-yellow"><td>MWS</td><td>Muckle-Wells</td><td><span class="tag t-y">中</span></td><td>发热+皮疹+<span class="c-y b">感音神经性耳聋</span>+淀粉样变性</td></tr>
+<tr class="hl-red"><td class="c-r b">CINCA/NOMID</td><td>慢性婴儿神经皮肤关节综合征</td><td><span class="tag t-r">重</span></td><td class="c-r b">出生起病+慢性脑膜炎+关节过度生长+视力丧失</td></tr>
+</table>
+
+<div class="g2">
+
+<!-- FMF诊断 -->
+<div>
+<div class="sh">📋 FMF诊断（Tel Hashomer）</div>
+<table>
+<tr><th>标准</th><th>内容</th></tr>
+<tr class="hl-yellow"><td class="c-y b">典型发作</td><td class="c-y">发热+浆膜炎（腹/胸/滑膜）+自限12h–3天</td></tr>
+<tr><td class="b">主要</td><td>复发发热≥3次 + 浆膜炎</td></tr>
+<tr><td>次要</td><td>不完全发作、运动后诱发、家族史+</td></tr>
+<tr><td>支持</td><td>FMF高发族裔、<span class="c-a b">秋水仙碱有效</span></td></tr>
+</table>
+</div>
+
+<!-- 鉴别诊断 -->
+<div>
+<div class="sh accent">🔍 鉴别诊断</div>
+<table>
+<tr><th class="accent-hd">疾病</th><th class="accent-hd">要点</th></tr>
+<tr><td>感染</td><td>结核、EBV、CMV（反复感染）</td></tr>
+<tr class="hl-red"><td class="c-r b">淋巴瘤</td><td class="c-r">B症状（发热+盗汗+消瘦）酷似</td></tr>
+<tr><td>SLE/JIA</td><td>自身抗体(+)可鉴别</td></tr>
+<tr><td>免疫缺陷</td><td>CVID、高IgD综合征</td></tr>
+<tr><td>周期性中性粒细胞减少</td><td>中性粒细胞周期性↓</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 推荐检查 -->
+<div class="sh green">🔬 推荐检查</div>
+<table>
+<tr><th class="green-hd" style="width:12%">类别</th><th class="green-hd">项目</th></tr>
+<tr class="hl-red"><td class="c-r b">必需</td><td>CBC（急性期中性粒细胞↑）+ ESR + CRP + <span class="c-r b">SAA</span>（最敏感）+ 铁蛋白<br><span class="c-r b">基因检测</span>（靶向panel：MEFV, NLRP3, TNFRSF1A, MVK, IL1RN, NOD2, PSTPIP1, TMEM173）+ 肝肾功</td></tr>
+<tr><td>可选</td><td>IgD（HIDS↑）· SAA持续监测（淀粉样变性风险）· 腹部超声 · 关节影像 · 心脏评估 · 听力（MWS）· 眼科（Blau/CAPS）· 骨髓穿刺（排除恶性病）</td></tr>
+</table>
+
+<!-- 治疗：IL-1核心 -->
+<div class="sh red">💊 IL-1通路治疗策略（核心！）</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">FMF 一线</div>
+    <span class="c-a b">秋水仙碱</span> 0.5–1.5mg/d<br>
+    儿童 0.02–0.03mg/kg/d<br>
+    有效率 65–70%，<span class="c-r b">终身服用</span><br>
+    <span class="tag t-y">预防淀粉样变性里程碑</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">FMF 抵抗型</div>
+    <span class="c-r b">IL-1抑制剂</span><br>
+    阿那白滞素 1–2mg/kg/d SC<br>
+    卡那单抗 2–4mg/kg/4w<br>
+    <span class="tag t-r">秋水仙碱无效时</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">CAPS</div>
+    <span class="c-g b">IL-1抑制剂一线</span><br>
+    卡那单抗：FCAS 2mg/kg/8w<br>
+    CINCA 4mg/kg/4w<br>
+    <span class="tag t-g">FDA 2012</span>
+  </div>
+  <div class="stp s4">
+    <div class="stp-label">TRAPS</div>
+    <span class="c-y b">GC桥接</span>→IL-1抑制<br>
+    或 TNF抑制（依那西普，效果有限）<br>
+    三线：托珠单抗（IL-6）<br>
+    <span class="tag t-y">淀粉样变风险15–25%</span>
+  </div>
+</div>
+
+<div class="g2">
+
+<!-- 其他AID治疗 -->
+<div>
+<div class="sh">💊 其他AID治疗</div>
+<table>
+<tr><th>疾病</th><th>一线</th><th>二线</th></tr>
+<tr class="hl-accent"><td class="c-y b">HIDS/MKD</td><td>NSAIDs + 短期GC</td><td>阿那白滞素/卡那单抗</td></tr>
+<tr class="hl-red"><td class="c-r b">DIRA</td><td class="c-r b">阿那白滞素首选</td><td>卡那单抗</td></tr>
+<tr><td>Blau</td><td>GC + MTX</td><td>TNFi（阿达木单抗）</td></tr>
+<tr class="hl-yellow"><td class="c-y b">PFAPA</td><td>单剂泼尼松 0.5–1mg/kg<br><span class="tag t-g">非常有效</span></td><td>扁桃体切除 80%治愈</td></tr>
+</table>
+</div>
+
+<!-- 随访 -->
+<div>
+<div class="sh green">📅 随访监测</div>
+<table>
+<tr><th class="green-hd">项目</th><th class="green-hd">要点</th></tr>
+<tr class="hl-red"><td class="c-r b">SAA + CRP</td><td class="c-r b">每次随访</span> — SAA是淀粉样变性最佳预测</td></tr>
+<tr><td>尿蛋白/肌酐</td><td>监测肾脏淀粉样变性</td></tr>
+<tr><td>肝肾功</td><td>秋水仙碱毒性</td></tr>
+<tr><td>频率</td><td>稳定期 q1–3m · 生物制剂 q1–3m</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 预后 -->
+<div class="sh accent">📊 预后</div>
+<table>
+<tr><th>疾病</th><th>预后要点</th></tr>
+<tr class="hl-green"><td class="c-g b">FMF</td><td class="c-g b">秋水仙碱有效者预后良好；AA淀粉样变性（秋水仙碱时代显著↓）</td></tr>
+<tr class="hl-accent"><td>CAPS</td><td>IL-1抑制剂时代显著改善，<span class="c-y b">CINCA仍有累积损伤</span></td></tr>
+<tr class="hl-yellow"><td>TRAPS</td><td>淀粉样变性风险<span class="c-r b"> 15–25%</span></td></tr>
+<tr><td>DIRA</td><td>IL-1替代治疗后改善</td></tr>
+</table>
+
+<!-- 紧急警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>持续高热&gt;7天</b> → 排除感染后考虑AID急性发作</li>
+    <li><b>严重腹痛</b> → 腹膜炎需鉴别<span class="c-r b">急腹症</span></li>
+    <li><b>感觉神经性耳聋新发/加重</b> → <span class="c-r b">MWS进展</span></li>
+    <li><b>关节红肿热痛</b> → 鉴别<span class="c-r b">化脓性关节炎</span></li>
+    <li><b>尿量减少/蛋白尿</b> → <span class="c-r b">淀粉样变性肾脏受累</span></li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR 2023单基因AID管理(Giancane G, Ann Rheum Dis 2023) · 卡那单抗CAPS试验(Lachmann HJ, NEJM 2009, Level I RCT) · 阿那白滞素DIRA(Aksentijevich I, NEJM 2009) · FMF秋水仙碱里程碑(Zemer D, NEJM 1986) · Tel Hashomer标准(Livneh A, Arthritis Rheum 1997) · Eurofever注册(Giancane G, Ann Rheum Dis 2019) · 基因检测指南(Masters SL, Nat Rev Rheumatol 2016) · 50篇相关文献
+</div>
+
+</div>
+</body>
+</html>

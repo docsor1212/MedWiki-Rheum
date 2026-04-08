@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uveitis — 儿童非感染性葡萄膜炎</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>Uveitis — 儿童非感染性葡萄膜炎</h1>
+    <div class="sub">JIA相关最常见 · <span class="c-r b">2/3无症状（"安静的白眼"）</span> · 裂隙灯筛查是核心</div>
+  </div>
+  <div class="meta">
+    JIA相关占儿童葡萄膜炎20–40%<br>
+    ANA(+)少关节型风险20–30%<br>
+    诊断延迟>2y → 白内障3–5倍
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 筛查 -->
+<div class="sh red">🔴 JIA葡萄膜炎筛查频率（ACR）</div>
+<table>
+<tr><th class="red-hd">风险级别</th><th class="red-hd">条件</th><th class="red-hd">频率</th></tr>
+<tr class="hl-red"><td class="c-r b">高危</td><td>ANA(+)少关节型 + &lt;7岁</td><td class="c-r b">每3月裂隙灯</td></tr>
+<tr><td>高危正常>4年</td><td>前3次均正常</td><td>每6月</td></tr>
+<tr class="hl-yellow"><td class="c-y b">炎症活动</td><td>—</td><td class="c-y b">每4–6周至缓解</td></tr>
+<tr><td>低危</td><td>ANA(-)、多关节型</td><td>每6–12月</td></tr>
+</table>
+<div class="alert"><b>⭐ ANA(+)少关节型JIA确诊后立即开始眼科筛查，每3月！</b></div>
+
+<!-- SUN分级 -->
+<div class="sh">🔬 SUN分级（前房细胞）</div>
+<table>
+<tr><th>级别</th><th>细胞数（1mm光束）</th><th>临床意义</th></tr>
+<tr><td>0</td><td>&lt;1</td><td class="c-g b">缓解</td></tr>
+<tr><td>0.5+</td><td>1–5</td><td>轻微</td></tr>
+<tr><td>1+</td><td>6–10</td><td>轻度</td></tr>
+<tr class="hl-yellow"><td class="c-y b">2+</td><td>11–20</td><td class="c-y">中度，需局部治疗</td></tr>
+<tr class="hl-red"><td class="c-r b">3+ / 4+</td><td>21–50 / >50</td><td class="c-r b">重度，需系统治疗</td></tr>
+</table>
+
+<div class="g2">
+
+<!-- 检查 -->
+<div>
+<div class="sh yellow">🔍 诊断检查</div>
+<table>
+<tr><th style="background:#faf3dc;color:var(--yellow);">项目</th><th style="background:#faf3dc;color:var(--yellow);">内容</th></tr>
+<tr><td class="c-r b">核心</td><td><span class="c-r b">裂隙灯</span>（细胞+闪辉）+ 眼压 + 视力</td></tr>
+<tr><td>眼底</td><td>黄斑水肿 + 视盘 + 血管炎</td></tr>
+<tr><td><span class="c-a b">OCT</span></td><td>黄斑水肿<span class="c-a b">金标准</span></td></tr>
+<tr><td>必需</td><td>ANA + ACE + <span class="c-a b">T-SPOT/PPD</span></td></tr>
+<tr><td>可选</td><td>HLA-B27/B51 + 弓形体/梅毒</td></tr>
+</table>
+</div>
+
+<!-- 并发症 -->
+<div>
+<div class="sh green">👁️ 并发症（各1分）</div>
+<table>
+<tr><th class="green-hd">并发症</th><th class="green-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">白内障</td><td>炎症静止≥3月后手术</td></tr>
+<tr class="hl-red"><td class="c-r b">青光眼</td><td>降眼压药→手术</td></tr>
+<tr><td>带状角膜变性</td><td>贝伐单抗点眼</td></tr>
+<tr class="hl-yellow"><td class="c-y b">黄斑水肿</td><td>Tenon下TA / 玻注地塞米松</td></tr>
+<tr><td>虹膜后粘连</td><td>预防为主（散瞳）</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 治疗阶梯（目标：0细胞）</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">Step 1 · 局部</div>
+    <span class="c-a b">泼尼松龙1%</span> q1–2h→渐减<br>
+    <span class="c-a b">散瞳剂</span>（防粘连）<br>
+    <span class="tag t-a">轻度前葡萄膜炎</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">Step 2 · +MTX</div>
+    <span class="c-r b">MTX</span> 10–15mg/m²/w SC<br>
+    4–12周起效<br>
+    <span class="tag t-r">4–6w局部控制不佳即加</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">Step 3 · 生物制剂</div>
+    <span class="c-g b">阿达木单抗</span> 20/40mg q2w<br>
+    <span class="tag t-g">⭐ SYCAMORE A级</span><br>
+    英夫利昔单抗（二线）<br>
+    托珠单抗（C级）
+  </div>
+  <div class="stp s4">
+    <div class="stp-label">Step 4 · 系统</div>
+    <span class="c-y b">PDN</span> 0.5–1mg/kg 短期<br>
+    IVMP（严重）<br>
+    <span class="tag t-y">⚠️ 长期致白内障/青光眼</span>
+  </div>
+</div>
+
+<!-- 随访 -->
+<div class="sh green">📅 眼科随访频率</div>
+<table>
+<tr><th class="green-hd">阶段</th><th class="green-hd">频率</th><th class="green-hd">核心</th></tr>
+<tr class="hl-red"><td class="c-r b">活动期</td><td class="c-r b">q4–6w</td><td>裂隙灯+眼压+OCT</td></tr>
+<tr><td>缓解中</td><td>q6–8w</td><td>同上</td></tr>
+<tr><td>缓解后</td><td>q3m</td><td>同上</td></tr>
+<tr><td>稳定>2年</td><td>q4–6m</td><td>同上</td></tr>
+</table>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>突发视力下降</b> → 紧急眼科，排除黄斑水肿/青光眼</li>
+    <li><b>眼红+痛+畏光加重</b> → 炎症恶化，升级治疗</li>
+    <li><b>眼压急骤升高</b> → <span class="c-r b">激素性青光眼</span>，紧急降眼压</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  ACR 2022筛查指南 · SYCAMORE RCT(NEJM 2020) · ADJUVITE RCT · SUN分级(2005国际共识) · MTX A级证据
+</div>
+
+</div>
+</body>
+</html>

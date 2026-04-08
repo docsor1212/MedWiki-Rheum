@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMF — 吗替麦考酚酯</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>MMF — 吗替麦考酚酯</h1>
+    <div class="sub">抗代谢类免疫抑制剂 · JSLE肾病一线维持 · <span style="color:#ffe0d0;font-weight:700;">FDA妊娠X级·致畸</span> · 腹泻最常见</div>
+  </div>
+  <div class="meta">
+    起效 4–8周<br>
+    JSLE肾病A级 · JDM B级<br>
+    口服生物利用度94%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 剂量 -->
+<div class="sh">💊 剂量速查</div>
+<table>
+<tr><th>疾病</th><th>剂量</th><th>途径</th><th>最大</th><th>频率</th></tr>
+<tr class="hl-green"><td class="c-g b">JSLE（肾病型）</td><td>600 mg/m²/d</td><td>口服</td><td>1500mg bid</td><td>bid</td></tr>
+<tr class="hl-green"><td class="c-g b">JSLE（非肾病型）</td><td>600 mg/m²/d</td><td>口服</td><td>1500mg bid</td><td>bid</td></tr>
+<tr><td>JDM</td><td>600–1200 mg/m²/d</td><td>口服</td><td>—</td><td>bid</td></tr>
+<tr><td>川崎病血管损害</td><td>600 mg/m²/d</td><td>口服</td><td>—</td><td>bid</td></tr>
+</table>
+<div class="note">MMF为前药，口服后迅速水解为活性代谢物MPA。起效<b class="c-a">4–8周</b>。</div>
+
+<!-- 药代动力学 -->
+<div class="sh yellow">📐 药代动力学速览</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="yellow-hd">参数</th><th class="yellow-hd">数值</th></tr>
+<tr><td>口服生物利用度</td><td class="c-a b">~94%</td></tr>
+<tr><td>达峰时间</td><td>0.8–1.5h</td></tr>
+<tr><td>半衰期（MPA）</td><td>12–17h</td></tr>
+<tr><td>代谢</td><td>肝脏UGT→MPAG（无活性）</td></tr>
+<tr><td>排泄</td><td>主要经肾</td></tr>
+</table>
+</div>
+<div>
+<div class="alert">
+  <b>🔴 致畸警告（X级）</b><br>
+  先天畸形风险约<b>26%</b>（一般人群4–5%）。常见：耳部异常、唇腭裂、心脏缺陷。<br>
+  <b>所有育龄女性必须避孕</b>，备孕前停药≥6周。
+</div>
+</div>
+</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见（10–30%）</th><th class="red-hd">处理</th></tr>
+<tr><td class="c-r b">腹泻（最常见）</td><td>对症处理，持续则减量</td></tr>
+<tr><td>恶心/腹痛/呕吐</td><td>随餐服用，分次给药</td></tr>
+<tr><td>白细胞减少</td><td>监测WBC</td></tr>
+<tr><td>贫血</td><td>监测Hb</td></tr>
+<tr><td>CMV/带状疱疹</td><td>感染筛查+预防</td></tr>
+<tr><td>转氨酶轻度↑</td><td>监测，常可恢复</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">严重（需停药/干预）</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">严重骨髓抑制</td><td>WBC&lt;2.0 → <span class="c-r b">暂停，恢复后减量50%</span></td></tr>
+<tr class="hl-red"><td class="c-r b">严重感染</td><td>败血症/侵袭性真菌 → 停药+抗感染</td></tr>
+<tr class="hl-red"><td class="c-r b">严重腹泻/结肠炎</td><td>停药鉴别（GI-GVHD vs 感染）</td></tr>
+<tr class="hl-red"><td class="c-r b">致畸（妊娠期）</td><td>立即停药，产科评估</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 监测 -->
+<div class="sh">🔬 监测 + 停药阈值</div>
+<table>
+<tr><th>时间</th><th>检查</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线</td><td>血常规 + 肝肾功 + 尿常规+尿蛋白定量 + <span class="c-r b">妊娠试验</span>（育龄女性）</td></tr>
+<tr><td>每月×3月</td><td>血常规（重点WBC）+ 肝肾功</td></tr>
+<tr><td>稳定后</td><td>q2–3月 血常规 + 肝肾功</td></tr>
+<tr><td>每次随访</td><td>育龄女性确认避孕情况</td></tr>
+</table>
+<table style="margin-top:4px;">
+<tr><th class="red-hd">指标</th><th class="yellow-hd" style="background:#faf3dc;color:var(--yellow);">减量线</th><th class="red-hd">停药线</th></tr>
+<tr><td>WBC</td><td class="c-y">&lt;3.0×10⁹/L → 减25%</td><td class="c-r b">&lt;2.0 或 ANC&lt;1.0 → 暂停</td></tr>
+<tr><td>PLT</td><td class="c-y">&lt;75×10⁹/L → 减量/暂停</td><td class="c-r b">显著下降 → 暂停</td></tr>
+<tr><td>Hb</td><td class="c-y">&lt;80 g/L → 减量/暂停</td><td class="c-r b">持续下降 → 暂停</td></tr>
+</table>
+
+<!-- 相互作用 -->
+<div class="sh yellow">⚡ 相互作用</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">影响</th><th class="yellow-hd">建议</th></tr>
+<tr><td>抗酸药（含铝/镁）</td><td>↓MMF吸收</td><td class="c-y b">间隔≥2h</td></tr>
+<tr><td>考来烯胺</td><td>↓MMF吸收</td><td>间隔≥2h</td></tr>
+<tr><td>阿昔洛韦/更昔洛韦</td><td>竞争肾小管排泄，双方血药浓度↑</td><td>监测肾功能</td></tr>
+<tr><td class="c-y b">环孢素A</td><td class="c-y">↓MPA AUC约30%</td><td>MMF浓度需调整</td></tr>
+<tr><td>口服避孕药</td><td>避孕效果可能受影响</td><td>确保有效避孕</td></tr>
+</table>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 禁忌</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">绝对禁忌</th></tr>
+<tr><td><span class="c-r b">妊娠/备孕</span>（致畸X级，停药≥6周）</td></tr>
+<tr><td>严重骨髓抑制</td></tr>
+<tr><td>严重活动性感染</td></tr>
+<tr><td>已知对MMF过敏</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th style="background:#faf3dc;color:var(--yellow);">相对禁忌</th></tr>
+<tr><td>eGFR&lt;30（减量50%，密切监测）</td></tr>
+<tr><td>严重肝功能不全（减量）</td></tr>
+<tr><td>哺乳期（MPA进入乳汁，避免）</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 特殊人群 -->
+<div class="sh green">👥 特殊人群</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">肾功能不全</th><th class="green-hd">建议</th></tr>
+<tr><td>eGFR 30–60</td><td>无需调量</td></tr>
+<tr><td>eGFR &lt;30</td><td class="c-y b">减量50%，密切监测</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">肝功能不全</th><th class="green-hd">建议</th></tr>
+<tr><td>严重不全</td><td class="c-y b">减量（MPA暴露可能增加）</td></tr>
+</table>
+</div>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR/ERA-EDTA 2019 LN指南A级 · ALMS研究 · JSLE肾病诱导+维持A级 · JDM维持B级 (SHARE 2017)
+</div>
+
+</div>
+</body>
+</html>

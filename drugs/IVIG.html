@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>静脉丙种球蛋白 — IVIG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#b8891a; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#faf3dc; color:#b8891a; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>IVIG — 静脉丙种球蛋白</h1>
+    <div class="sub">免疫调节剂/血液制品 · KD一线标准治疗 · <span style="color:#ffe0d0;font-weight:700;">IgA缺乏者慎用</span> · 血栓风险</div>
+  </div>
+  <div class="meta">
+    起效 输注后即刻<br>
+    半衰期 21-25天<br>
+    预处理: 对乙酰氨基酚+苯海拉明
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 适应症 -->
+<div class="sh">🎯 适应症与证据等级</div>
+<table>
+<tr><th>疾病</th><th>证据等级</th><th>备注</th></tr>
+<tr class="hl-yellow"><td class="c-y b">川崎病（KD）</td><td class="c-y b">A级</td><td class="c-y b">标准治疗，一线用药</td></tr>
+<tr><td>KD耐药（48-72h仍发热）</td><td>A级</td><td>追加 + 联合IVMP</td></tr>
+<tr><td>ITP（免疫性血小板减少症）</td><td>A级</td><td>急性/慢性</td></tr>
+<tr><td>JDM急性期/重症</td><td>B级</td><td>每月可重复</td></tr>
+<tr><td>川崎休克综合征(KSS)</td><td>B级</td><td>联合糖皮质激素</td></tr>
+<tr><td>sJIA合并MAS</td><td>B级</td><td>辅助治疗</td></tr>
+<tr><td>KD合并MAS</td><td>B级</td><td>参考MAS方案</td></tr>
+</table>
+
+<!-- 剂量 -->
+<div class="sh">💊 剂量速查</div>
+<table>
+<tr><th>疾病</th><th>方案</th><th>输注时间</th></tr>
+<tr class="hl-yellow"><td class="c-y b">KD标准</td><td class="c-y b">2 g/kg，单次（起病10天内）</td><td class="c-y b">10-12小时</td></tr>
+<tr><td>KD耐药</td><td>2 g/kg × 1-2次追加 + IVMP 10-30mg/kg/d × 1-3天</td><td>—</td></tr>
+<tr><td>JDM急性期</td><td>2 g/kg/d × 2天（每月可重复）</td><td>—</td></tr>
+<tr><td>急性ITP</td><td>1 g/kg/d × 1-2天，或 0.4 g/kg/d × 5天</td><td>—</td></tr>
+<tr><td>慢性ITP</td><td>1 g/kg/d × 2天，每3-4周重复</td><td>—</td></tr>
+<tr><td>sJIA-MAS</td><td>1-2 g/kg 辅助</td><td>—</td></tr>
+<tr><td>自身免疫性脑炎</td><td>0.4 g/kg/d × 5天</td><td>—</td></tr>
+</table>
+
+<!-- 输注方案 -->
+<div class="sh yellow">💉 输注方案</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="yellow-hd">步骤</th><th class="yellow-hd">参数</th></tr>
+<tr class="hl-yellow"><td class="c-y b">预处理</td><td class="c-y b">对乙酰氨基酚 10-15mg/kg + 苯海拉明 1mg/kg</td></tr>
+<tr><td>初始速度</td><td>0.5-1 mg/kg/min</td></tr>
+<tr><td>递增</td><td>每30分钟递增</td></tr>
+<tr class="hl-red"><td class="c-r b">最大速度</td><td class="c-r b">一般 ≤ 4-6 mg/kg/min</td></tr>
+<tr><td>监测频率</td><td><span class="c-r b">生命体征 q15-30min</span></td></tr>
+</table>
+</div>
+<div>
+<div class="sh red" style="margin-top:0;">⚠️ 快速输注风险</div>
+<table>
+<tr><th class="red-hd">反应</th><th class="red-hd">与速度关系</th></tr>
+<tr><td>面色潮红</td><td>过快相关</td></tr>
+<tr><td>头痛/寒战/发热</td><td>过快相关</td></tr>
+<tr><td>血压变化</td><td>过快相关</td></tr>
+<tr><td>血栓形成</td><td>高剂量+快速输注</td></tr>
+<tr class="hl-red"><td class="c-r b">急性肾损伤</td><td class="c-r b">渗透性肾病</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应（分级）</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">轻度 (1-10%)</th><th class="red-hd">处理</th></tr>
+<tr><td>头痛、寒战、发热</td><td>减慢速度，对症</td></tr>
+<tr><td>恶心、呕吐</td><td>止吐</td></tr>
+<tr><td>轻度过敏（荨麻疹）</td><td>抗组胺药</td></tr>
+<tr><td>背痛/肌痛</td><td>减慢速度</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">中度 (1-5%)</th><th class="red-hd">处理</th></tr>
+<tr><td>血栓形成风险</td><td>控制速度，充分水化</td></tr>
+<tr><td>无菌性脑膜炎</td><td>对症，停药可恢复</td></tr>
+<tr><td>溶血性贫血（IgA缺乏者）</td><td>选低IgA制剂</td></tr>
+<tr><td>肾功能一过性受损</td><td>监测Cr，选低渗产品</td></tr>
+</table>
+<table style="margin-top:4px;">
+<tr><th class="red-hd">重度 (&lt;1%)</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">过敏性休克</td><td class="c-r b">停药+肾上腺素+复苏</td></tr>
+<tr><td>血栓栓塞（卒中/DVT/PE）</td><td>抗凝治疗</td></tr>
+<tr><td>急性肾损伤/ARDS</td><td>ICU支持</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 监测 -->
+<div class="sh">🔬 监测时间表</div>
+<table>
+<tr><th>时间</th><th>检查项目</th></tr>
+<tr class="hl-yellow"><td class="c-y b">输注前</td><td class="c-y b">血压、心率、体温、<span class="c-r b">体重（精确）</span></td></tr>
+<tr><td>输注中 q15-30min</td><td><span class="c-r b">生命体征、过敏症状</span></td></tr>
+<tr><td>输注后24h</td><td>肾功能（BUN/Cr）、血常规</td></tr>
+<tr><td>KD患者第2周</td><td>超声心动图（评估冠脉）</td></tr>
+<tr><td>重复疗程前</td><td>血脂（高剂量可致高脂血症）、肾功能</td></tr>
+</table>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 禁忌</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">绝对禁忌</th></tr>
+<tr><td><span class="c-r b">既往IVIG严重过敏史</span></td></tr>
+<tr><td><span class="c-r b">IgA缺乏伴抗IgA抗体</span></td></tr>
+<tr><td class="c-r">（过敏性休克风险显著↑）</td></tr>
+<tr><td>高黏滞血症</td></tr>
+<tr><td><span class="c-r b">严重心力衰竭</span></td></tr>
+<tr><td>（液体负荷风险）</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">相对禁忌</th></tr>
+<tr><td>活动性血栓形成倾向</td></tr>
+<tr><td>肾功能不全（eGFR<30慎用）</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 相互作用 -->
+<div class="sh yellow">⚡ 相互作用</div>
+<table>
+<tr><th class="yellow-hd">药物/情况</th><th class="yellow-hd">影响</th><th class="yellow-hd">建议</th></tr>
+<tr class="hl-yellow"><td class="c-y b">减活疫苗</td><td class="c-y b">IVIG后3-6月内被动抗体中和</td><td class="c-y b">延迟接种减活疫苗</td></tr>
+<tr class="hl-red"><td class="c-r b">利尿剂</td><td class="c-r">急性肾损伤风险↑</td><td class="c-r b">避免同时使用</td></tr>
+<tr><td>肾毒性药物</td><td>联用增加肾损伤风险</td><td>避免联用</td></tr>
+<tr><td>抗凝/抗血小板药</td><td>出血风险（证据不一）</td><td>监测</td></tr>
+</table>
+
+<!-- 关键警示 -->
+<div class="sh red">🔴 关键警示</div>
+<div class="alert">
+<b>1. IgA缺乏者</b>：IgA缺乏伴抗IgA抗体 → <span class="c-r b">过敏性休克风险极高</span>，必须筛查IgA水平<br>
+<b>2. 体重精确计量</b>：2g/kg方案中体重必须精确（避免液体过负荷）<br>
+<b>3. 肾损伤预防</b>：选低渗透压产品（不含蔗糖制剂），避免同时用利尿剂<br>
+<b>4. 血栓风险</b>：高剂量+快速输注 → 血栓栓塞，严格控制输注速度<br>
+<b>5. 疫苗间隔</b>：IVIG后至少3-6月内减活疫苗可能无效，需延迟接种<br>
+<b>6. 肾功能不全</b>：eGFR<30慎用，必要时减量至1g/kg，选低渗产品
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  KD标准治疗 A级 (AHA 2017) · ITP A级 (ASH 2019) · JDM B级 · 半衰期21-25天
+</div>
+
+</div>
+</body>
+</html>

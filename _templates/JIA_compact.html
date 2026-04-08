@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIA — 幼年特发性关节炎</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif; background:#f5f6f8; color:#1a1a2e; font-size:13px; line-height:1.45; }
+.page { max-width:1100px; margin:12px auto; padding:0 8px; }
+
+/* Header */
+.header { background:linear-gradient(135deg,#2c3e50,#3498db); color:#fff; padding:14px 20px; border-radius:8px; display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; }
+.header h1 { font-size:20px; font-weight:700; }
+.header .sub { font-size:12px; opacity:0.85; margin-top:2px; }
+.header .meta { text-align:right; font-size:11.5px; line-height:1.5; opacity:0.9; }
+
+/* Grid */
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+.full { grid-column:1/-1; }
+.card { background:#fff; border-radius:6px; padding:12px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.card-title { font-size:13px; font-weight:700; color:#2c3e50; margin-bottom:6px; display:flex; align-items:center; gap:5px; }
+.card-title .emoji { font-size:14px; }
+
+/* Tables */
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#eef2f7; font-weight:600; text-align:left; padding:5px 7px; border-bottom:2px solid #d5dde8; white-space:nowrap; font-size:11.5px; }
+td { padding:4px 7px; border-bottom:1px solid #eef2f7; vertical-align:top; }
+tr:hover td { background:#f8fafc; }
+.tag { display:inline-block; padding:1px 5px; border-radius:3px; font-size:10.5px; font-weight:600; }
+.tag-red { background:#fde8e8; color:#c0392b; }
+.tag-blue { background:#e8f0fe; color:#2980b9; }
+.tag-green { background:#e8f8e8; color:#27ae60; }
+.tag-orange { background:#fff3e0; color:#e67e22; }
+.tag-purple { background:#f0e8fe; color:#8e44ad; }
+.highlight { font-weight:700; color:#c0392b; }
+
+/* Alert box */
+.alert { background:#fff5f5; border-left:3px solid #e74c3c; padding:8px 12px; border-radius:0 6px 6px 0; font-size:12px; margin-top:8px; }
+.alert-title { font-weight:700; color:#c0392b; margin-bottom:3px; }
+.alert ul { margin-left:16px; }
+.alert li { margin:1px 0; }
+
+/* Steps */
+.steps { display:flex; gap:6px; align-items:stretch; margin-top:6px; }
+.step { flex:1; background:#f0f4f8; border-radius:5px; padding:8px 10px; border-top:3px solid #3498db; }
+.step.s2 { border-top-color:#e67e22; }
+.step.s3 { border-top-color:#27ae60; }
+.step-label { font-weight:700; font-size:11px; color:#666; text-transform:uppercase; margin-bottom:3px; }
+
+/* SJIA pathway */
+.pathway { background:#fef9e7; border:1px solid #f9e79f; border-radius:5px; padding:10px 14px; margin-top:6px; font-size:12px; }
+.pathway-title { font-weight:700; color:#d68910; margin-bottom:4px; }
+.pathway .flow { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.pathway .node { background:#fff; border:1px solid #f0c040; border-radius:4px; padding:4px 10px; font-size:11.5px; }
+.pathway .arrow { color:#d68910; font-weight:700; }
+
+/* Footer */
+.footer { margin-top:10px; font-size:10.5px; color:#888; text-align:center; padding:6px; }
+
+@media (max-width:768px) { .grid { grid-template-columns:1fr; } .steps { flex-direction:column; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div>
+    <h1>JIA — 幼年特发性关节炎</h1>
+    <div class="sub">&lt;16岁 + 关节炎≥6周 + 排除其他原因 | 7个亚型</div>
+  </div>
+  <div class="meta">
+    发病率 1.6–23/10万/年<br>
+    男女 sJIA≈1:1 其余≈1:3<br>
+    双峰 1–3岁 / 8–12岁
+  </div>
+</div>
+
+<div class="grid">
+
+<!-- ILAR分类 - 全宽 -->
+<div class="card full">
+  <div class="card-title"><span class="emoji">🏷️</span> ILAR分类（2001）— 先排除感染/肿瘤/其他风湿病</div>
+  <table>
+    <tr><th>亚型</th><th>关节</th><th>核心特征</th><th>ANA</th><th>RF</th><th>B27</th><th>⚠️ 关键注意</th></tr>
+    <tr><td><b>sJIA</b></td><td>任意</td><td>每日高热≥2w + 一过性皮疹（39℃↑→烧降节律）</td><td>±</td><td>-</td><td>-</td><td>Ferritin/TG/Fbg排MAS</td></tr>
+    <tr><td>少关节-持续</td><td>≤4/前6m</td><td>无系统特征</td><td>+++</td><td>-</td><td>-</td><td class="highlight">葡萄膜炎20-30%，每3m裂隙灯</td></tr>
+    <tr><td>少关节-扩展</td><td>先≤4后>4</td><td>可转多关节型</td><td>++</td><td>-</td><td>-</td><td>同上</td></tr>
+    <tr><td>RF(+)多关节</td><td>≥5</td><td>似成人RA</td><td>±</td><td>++</td><td>-</td><td>侵蚀风险高</td></tr>
+    <tr><td>RF(-)多关节</td><td>≥5</td><td>异质性强</td><td>++</td><td>-</td><td>±</td><td>—</td></tr>
+    <tr><td>银屑病相关</td><td>任意</td><td>银屑病/指炎/甲脱离+一级亲属银屑病</td><td>±</td><td>-</td><td>±</td><td>—</td></tr>
+    <tr><td>附着点炎症相关</td><td>任意</td><td>附着点炎+≥2项：骶髂炎/B27+/炎性背痛/前葡萄膜炎</td><td>-</td><td>-</td><td>+++</td><td>男>女，可进展AS</td></tr>
+    <tr><td>未分化</td><td>—</td><td>不符以上或符合≥2个</td><td>—</td><td>—</td><td>—</td><td>需定期重评</td></tr>
+  </table>
+</div>
+
+<!-- 检查 + 诊断 -->
+<div class="card">
+  <div class="card-title"><span class="emoji">🔍</span> 首诊必做检查</div>
+  <table>
+    <tr><th>所有患者</th></tr>
+    <tr><td>CBC + CRP + ESR + 肝肾功 + 尿常规<br>ANA + RF + HLA-B27<br>受累关节 X线(正侧位+对侧) + 超声/MRI<br><b class="highlight">裂隙灯检查（确诊即做）</b></td></tr>
+    <tr><th>sJIA追加</th></tr>
+    <tr><td>Ferritin + TG + Fbg（排MAS）<br>血培养 + PCT（排感染）</td></tr>
+    <tr><th>附着点炎追加</th></tr>
+    <tr><td>脊柱MRI + 骶髂关节MRI</td></tr>
+  </table>
+</div>
+
+<!-- 治疗阶梯 -->
+<div class="card">
+  <div class="card-title"><span class="emoji">💊</span> 治疗阶梯（4-6w无效升级）</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">Step 1 · NSAIDs</div>
+      萘普生 10-15mg/kg/d bid<br>
+      布洛芬 30-40mg/kg/d tid<br>
+      塞来昔布 3-6mg/kg/d bid
+    </div>
+    <div class="step s2">
+      <div class="step-label">Step 2 · csDMARD</div>
+      <b>MTX ⭐</b> 10-15mg/m² qw<br>
+      <span class="tag tag-blue">SC首选</span> max 25mg<br>
+      +叶酸 1mg/d
+    </div>
+    <div class="step s3">
+      <div class="step-label">Step 3 · 生物制剂</div>
+      见右表 →
+    </div>
+  </div>
+</div>
+
+<!-- 生物制剂表格 - 全宽 -->
+<div class="card full">
+  <div class="card-title"><span class="emoji">💉</span> 生物制剂选择</div>
+  <table>
+    <tr><th>药物</th><th>靶点</th><th>剂量</th><th>途径/频率</th><th>首选指征</th><th>备注</th></tr>
+    <tr><td><b>阿达木单抗</b></td><td>TNF-α</td><td>≤30kg:20mg / >30kg:40mg</td><td>SC q2w</td><td>多关节型 + 葡萄膜炎⭐</td><td><span class="tag tag-green">一线首选</span></td></tr>
+    <tr><td>依那西普</td><td>TNF-α</td><td>0.8mg/kg max50mg</td><td>SC biw</td><td>多关节型</td><td><span class="tag tag-red">⚠️ 不用于葡萄膜炎</span></td></tr>
+    <tr><td><b>托珠单抗</b></td><td>IL-6R</td><td>≤30kg:12mg/kg / >30kg:8mg/kg</td><td>IV q4w</td><td><b>sJIA首选</b></td><td><span class="tag tag-green">sJIA一线</span></td></tr>
+    <tr><td>阿巴西普</td><td>CD28</td><td>10mg/kg &lt;75kg</td><td>IV q4w</td><td>TNF失败后</td><td>二线</td></tr>
+    <tr><td>托法替布</td><td>JAK</td><td>5mg bid ≥40kg</td><td>PO bid</td><td>≥2岁多关节型</td><td>口服方便</td></tr>
+  </table>
+
+  <div class="pathway">
+    <div class="pathway-title">⚡ sJIA特殊路径（不经MTX）</div>
+    <div class="flow">
+      <div class="node">NSAIDs + PDN 1-2mg/kg/d</div>
+      <span class="arrow">→</span>
+      <div class="node" style="border-color:#e74c3c; font-weight:700;">IL-1 (阿那白滞素 1-2mg/kg/d SC) <span style="color:#e74c3c">⭐</span> 或 IL-6 (托珠单抗)</div>
+      <span class="arrow">→</span>
+      <div class="node">TNF抑制剂 (效果有限)</div>
+      <span class="arrow">→</span>
+      <div class="node">JAK抑制剂</div>
+    </div>
+  </div>
+
+  <div style="margin-top:6px; font-size:12px;">
+    <b>关节内注射:</b> 曲安奈德 1mg/kg/关节 max40mg | 间隔≥4w | 年≤3次/关节 | 适用: ≤4个关节受累
+  </div>
+</div>
+
+<!-- 随访 + 警示 -->
+<div class="card">
+  <div class="card-title"><span class="emoji">📅</span> 随访 & Treat-to-Target</div>
+  <table>
+    <tr><th>状态</th><th>频率</th><th>核心检查</th></tr>
+    <tr><td>活动期</td><td>q2-4w</td><td>JADAS-27 + CBC + CRP + 肝功</td></tr>
+    <tr><td>稳定中</td><td>q1-3m</td><td>同上</td></tr>
+    <tr><td>缓解期</td><td>q3-6m</td><td>JADAS-27 + 生长评估</td></tr>
+    <tr><td><b class="highlight">眼科(ANA+)</b></td><td><b>每3月</b></td><td><b>裂隙灯</b></td></tr>
+  </table>
+  <div style="margin-top:6px;font-size:12px;">
+    <b>目标:</b> 3m内 ≥ACR Pedi 30 → 6m内 达到非活动性疾病
+  </div>
+</div>
+
+<div class="alert">
+  <div class="alert-title">🔴 紧急警示信号</div>
+  <ul>
+    <li><b>sJIA持续高热+退热药无效</b> → 立即查 Ferritin/TG/Fbg 排除 MAS</li>
+    <li><b>突发视力下降/眼红痛</b> → 紧急眼科（葡萄膜炎急性发作）</li>
+    <li><b>关节红肿热痛明显加重</b> → 排除感染性关节炎（关节穿刺培养）</li>
+    <li><b>新发出血点/瘀斑+血象下降</b> → 立即查MAS</li>
+  </ul>
+</div>
+
+</div><!-- grid -->
+
+<div class="footer">
+  ACR 2021 JIA治疗更新(Onel KB, Arthritis Rheumatol 2021) · sJIA IL-1/IL-6(De Benedetti F, NEJM 2012; Ruperto N, Lancet 2017) · Treat-to-Target(Anton J, Ann Rheum Dis 2018) · 葡萄膜炎SYCAMORE RCT(NEJM 2020)
+</div>
+
+</div><!-- page -->
+</body>
+</html>

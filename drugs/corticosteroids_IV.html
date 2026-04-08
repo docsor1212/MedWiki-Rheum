@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>静脉糖皮质激素 — IV Corticosteroids</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#d05040; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#fce5e1; color:#d05040; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.protocol { background:#faf3dc; border-left:3px solid var(--yellow); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; font-family:monospace; line-height:1.6; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>静脉糖皮质激素 — IVMP</h1>
+    <div class="sub">甲泼尼龙静脉方案 · 冲击+标准两种模式 · <span style="color:#ffe0d0;font-weight:700;">心电监测</span> · 不可骤停</div>
+  </div>
+  <div class="meta">
+    起效 数小时内<br>
+    JDM/MAS/SLE重度 A级<br>
+    输注≥1-2小时
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 两种给药模式 -->
+<div class="sh">💊 给药模式速查</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">冲击治疗 (Pulse)</th><th class="red-hd">参数</th></tr>
+<tr class="hl-red"><td class="c-r b">剂量</td><td class="c-r b">10-30 mg/kg/d（最大1g）</td></tr>
+<tr><td>溶媒</td><td>5%GS或0.9%NS，≤5mg/ml</td></tr>
+<tr><td>输注时间</td><td>≥1-2小时</td></tr>
+<tr><td>疗程</td><td>连续3天，必要时延至5天</td></tr>
+<tr><td>监测</td><td><span class="c-r b">心电、血压q4h、血糖</span></td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">标准剂量</th><th class="yellow-hd">参数</th></tr>
+<tr class="hl-yellow"><td class="c-y b">剂量</td><td class="c-y b">1-2 mg/kg/d（等效泼尼松）</td></tr>
+<tr><td>频率</td><td>qd或分2次</td></tr>
+<tr><td>疗程</td><td>3-7天后转口服</td></tr>
+<tr><td>适应</td><td>中度炎症控制</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 等效换算 -->
+<div class="sh yellow">🔄 激素等效换算</div>
+<table>
+<tr><th>药物</th><th>等效剂量(mg)</th><th>抗炎效力</th><th>盐皮质激素</th></tr>
+<tr><td>氢化可的松</td><td>20</td><td>1</td><td>强</td></tr>
+<tr class="hl-green"><td class="c-g b">泼尼松</td><td class="c-g b">5</td><td>4</td><td>弱</td></tr>
+<tr class="hl-red"><td class="c-r b">甲泼尼龙</td><td class="c-r b">4</td><td>5</td><td>极弱</td></tr>
+<tr><td>地塞米松</td><td>0.75</td><td>25-30</td><td>极弱</td></tr>
+</table>
+
+<!-- 各疾病方案 -->
+<div class="sh">📋 各疾病推荐方案</div>
+<div class="g2">
+<div>
+<div class="protocol">
+<b class="c-r">JDM急性期</b><br>
+IVMP 30mg/kg/d × 3天（最大1g/d）<br>
+→ 泼尼松口服 1-2mg/kg/d<br>
+→ 维持6-12周后开始缓慢减量<br>
+→ 总疗程 ≥ 1-2年
+</div>
+<div class="protocol" style="margin-top:6px;">
+<b class="c-r">sJIA合并MAS</b><br>
+IVMP 30mg/kg/d × 3天（最大1g/d）<br>
+→ 泼尼松 2mg/kg/d（可分次）<br>
+→ 联合 CsA/他克莫司 + Anakinra
+</div>
+</div>
+<div>
+<div class="protocol">
+<b class="c-r">JSLE狼疮性肾炎(IV型)</b><br>
+IVMP 500-1000mg/d × 3天<br>
+→ 泼尼松 1mg/kg/d（最大60mg/d）<br>
+→ 4-8周后每2-4周减10%<br>
+→ 联合 MMF 或 IVCY
+</div>
+<div class="protocol" style="margin-top:6px;">
+<b class="c-r">川崎休克综合征(KSS)</b><br>
+IVMP 30mg/kg/d × 3天（最大1g/d）<br>
+→ 联合 IVIG 2g/kg<br>
+→ 必要时加用 CsA 3-5mg/kg/d<br>
+→ 血管活性药物支持
+</div>
+</div>
+</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应（分级）</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">急性（冲击相关）</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">低钾血症 → 心律失常</td><td class="c-r b">补钾 + 心电监测</td></tr>
+<tr><td>高血压</td><td>一过性，监测</td></tr>
+<tr><td>高血糖</td><td>短暂，停药恢复</td></tr>
+<tr><td>面部潮红</td><td>输注过快相关</td></tr>
+<tr><td>行为改变</td><td>欣快、烦躁、失眠</td></tr>
+<tr><td>过敏反应</td><td>极罕见（含亚硫酸盐）</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">长期（>3月）</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">生长障碍</td><td class="c-r b">儿科最关注！尽早减量</td></tr>
+<tr class="hl-red"><td class="c-r b">骨质疏松/股骨头坏死</td><td class="c-r b">补钙+维生素D</td></tr>
+<tr><td>白内障/青光眼</td><td>定期眼科检查</td></tr>
+<tr><td>肾上腺抑制</td><td>逐步减量</td></tr>
+<tr><td>机会性感染(PCP)</td><td>TMP-SMX预防</td></tr>
+<tr><td>胰岛素抵抗/继发DM</td><td>监测血糖</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 监测 -->
+<div class="sh">🔬 监测时间表</div>
+<table>
+<tr><th>时间</th><th>检查项目</th></tr>
+<tr class="hl-yellow"><td class="c-y b">冲击前</td><td class="c-y b">血压、血钾、血糖、心电图（大剂量）、体重</td></tr>
+<tr><td>冲击中 q4h</td><td><span class="c-r b">血压、心率、血糖</span></td></tr>
+<tr><td>口服期每月</td><td>血压、体重、血糖（HbA1c q3月）、血钾</td></tr>
+<tr><td>口服期每3月</td><td>生长曲线、骨龄（>6月）、眼科检查</td></tr>
+<tr><td>长期</td><td>骨密度（>1年或累积剂量高者）</td></tr>
+</table>
+
+<!-- 减量原则 -->
+<div class="sh green">📉 口服过渡减量原则</div>
+<table>
+<tr><th>阶段</th><th>策略</th></tr>
+<tr><td>急性期控制后</td><td>每2-4周减10%</td></tr>
+<tr class="hl-yellow"><td class="c-y b">减至0.5mg/kg/d后</td><td class="c-y b">减速至每月减10%</td></tr>
+<tr><td>隔日方案</td><td>维持数月后再减</td></tr>
+<tr><td>最小维持</td><td>泼尼松 ≤0.1mg/kg/d 或 ≤5-7.5mg/d</td></tr>
+</table>
+<div class="note">JDM总疗程≥1-2年，SLE≥2-3年。联合免疫抑制剂可降低反弹风险。</div>
+
+<!-- 禁忌 -->
+<div class="sh red">🚫 禁忌</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">绝对禁忌</th></tr>
+<tr><td><span class="c-r b">系统性真菌感染</span></td></tr>
+<tr><td><span class="c-r b">活动性结核（未治疗）</span></td></tr>
+<tr><td>对激素过敏（极罕见）</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">相对禁忌</th></tr>
+<tr><td>活动性消化性溃疡</td></tr>
+<tr><td>未控制高血压</td></tr>
+<tr><td>未控制糖尿病</td></tr>
+<tr><td>精神病史</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 相互作用 -->
+<div class="sh yellow">⚡ 相互作用</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">影响</th><th class="yellow-hd">建议</th></tr>
+<tr><td>CYP3A4诱导剂（利福平/苯巴比妥）</td><td>激素代谢↑需增量</td><td>监测调整</td></tr>
+<tr><td>CYP3A4抑制剂（酮康唑/克拉霉素）</td><td>激素代谢↓毒性↑</td><td>减量监测</td></tr>
+<tr class="hl-red"><td class="c-r b">NSAIDs</td><td class="c-r">消化道出血风险叠加</td><td class="c-r b">联用加PPI</td></tr>
+<tr><td>排钾利尿剂</td><td>加重低钾血症</td><td>补钾监测</td></tr>
+<tr><td>减活疫苗</td><td>激素>2周期间禁用</td><td>推迟接种</td></tr>
+<tr><td>华法林</td><td>INR波动</td><td>频繁监测INR</td></tr>
+</table>
+
+<!-- 特殊人群 -->
+<div class="sh green">👶 特殊人群</div>
+<table>
+<tr><th class="green-hd">人群</th><th class="green-hd">要点</th></tr>
+<tr><td>肝功能不全</td><td>地塞米松经肝代谢→半衰期延长；甲泼尼龙轻中度无需调整</td></tr>
+<tr><td>肾功能不全</td><td>无需调整剂量，注意水钠潴留</td></tr>
+<tr><td>妊娠</td><td>泼尼松/甲泼尼龙可跨胎盘（~10%），重症可用；产程需应激剂量</td></tr>
+<tr><td>哺乳</td><td>泼尼松少量入乳汁（<0.1%），通常可哺乳</td></tr>
+</table>
+
+<!-- 关键警示 -->
+<div class="sh red">🔴 关键警示</div>
+<div class="alert">
+<b>1. 输注速度</b>：30mg/kg方案必须 ≥2小时，过快可致心律失常/心跳骤停<br>
+<b>2. 低钾风险</b>：冲击前必须查血钾，补钾+心电监测，<span class="c-r b">低钾+激素=致命心律失常</span><br>
+<b>3. 不可骤停</b>：长期用药>2周者必须逐步减量，肾上腺危象可致命<br>
+<b>4. PCP预防</b>：泼尼松≥0.5mg/kg/d ≥4周 → 必须TMP-SMX预防<br>
+<b>5. 感染筛查</b>：用药前必须筛查TB(TST/IGRA)和HBV/HCV
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  JDM/MAS/SLE重度 A级 · KD耐药 B级 · 输注≥1-2小时 · 心电监测 · 补钙+维D
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSLE — 儿童系统性红斑狼疮</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>JSLE — 儿童系统性红斑狼疮</h1>
+    <div class="sub">&lt;18岁发病 · EULAR/ACR 2019 ≥10分+ANA(+) · 脏器受累重于成人</div>
+  </div>
+  <div class="meta">
+    发病率 0.36–2.5/10万/年<br>
+    女:男 12–14岁 ≈ 7:1<br>
+    占全部SLE 15–20%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 与成人SLE差异 -->
+<div class="sh red">⚠️ 与成人SLE关键差异</div>
+<table>
+<tr><th class="red-hd" style="width:30%">维度</th><th class="red-hd">儿童cSLE</th><th class="red-hd">成人SLE</th></tr>
+<tr class="hl-red"><td class="c-r b">肾脏受累</td><td class="c-r b">60–80%</td><td>30–50%</td></tr>
+<tr class="hl-red"><td class="c-r b">神经精神</td><td class="c-r b">更多见</td><td>较少</td></tr>
+<tr class="hl-yellow"><td class="c-y b">血液系统</td><td class="c-y b">更严重</td><td>—</td></tr>
+<tr><td>复发率</td><td class="c-r">更高</td><td>—</td></tr>
+<tr><td>累积损伤SDI</td><td class="c-r b">更大</td><td>—</td></tr>
+<tr><td>特殊问题</td><td><span class="c-y b">生长障碍</span> + <span class="c-y b">青春期延迟</span></td><td>—</td></tr>
+</table>
+
+<!-- 狼疮性肾炎分型 -->
+<div class="sh">🫘 狼疮性肾炎分型（ISN/RPS 2003/2018）</div>
+<table>
+<tr><th>分型</th><th>病理</th><th style="width:12%">cSLE占比</th><th>治疗</th></tr>
+<tr><td>I</td><td>系膜轻微病变</td><td>罕见</td><td>—</td></tr>
+<tr><td>II</td><td>系膜增生性</td><td>10–15%</td><td>基础治疗</td></tr>
+<tr class="hl-red"><td class="c-r b">III</td><td class="c-r">局灶性（&lt;50%肾小球）</td><td class="c-r b">15–20%</td><td class="c-r b">免疫抑制诱导</td></tr>
+<tr class="hl-red"><td class="c-r b">IV ⭐</td><td class="c-r">弥漫性（≥50%肾小球）</td><td class="c-r b">40–60%</td><td class="c-r b">积极诱导+长程维持</td></tr>
+<tr class="hl-yellow"><td>V</td><td>膜性</td><td>10–15%</td><td>免疫抑制</td></tr>
+<tr><td>III+V / IV+V</td><td>混合型</td><td>5–10%</td><td>同III/IV</td></tr>
+<tr><td>VI</td><td>晚期硬化</td><td>罕见（初诊）</td><td>肾脏替代</td></tr>
+</table>
+<div class="note"><b>⭐ LN IV型最常见（40–60%），需积极诱导治疗</b></div>
+
+<div class="g2">
+
+<!-- 首诊检查 -->
+<div>
+<div class="sh yellow">🔍 首诊检查</div>
+<table>
+<tr><th style="background:#fce5e1;color:var(--red);">项目</th><th style="background:#fce5e1;color:var(--red);">内容</th></tr>
+<tr><td class="c-r b">必做</td><td>ANA + <span class="c-r b">anti-dsDNA</span> + 抗ENA全谱<br><span class="c-r b">C3/C4/CH50/C1q</span>（C1q↓→早发SLE）<br>CBC+网织 + <span class="c-r b">UPCR</span>+24h尿蛋白<br>Coombs + <span class="c-r b">抗磷脂抗体谱</span></td></tr>
+<tr class="hl-red"><td class="c-r b">LN确诊</td><td><span class="c-r b">⭐ 肾脏活检</span>（光镜+IF+电镜）</td></tr>
+<tr class="hl-yellow"><td class="c-y b">NP狼疮</td><td>头颅MRI + MRA</td></tr>
+<tr><td>可选</td><td>胸部HRCT + 心超 + <span class="c-a b">骨龄</span></td></tr>
+</table>
+</div>
+
+<!-- 鉴别诊断 -->
+<div>
+<div class="sh green">🩺 鉴别诊断</div>
+<table>
+<tr><th class="green-hd">疾病</th><th class="green-hd">鉴别要点</th></tr>
+<tr><td>MPGN/FSGS</td><td>无ANA/抗dsDNA，单纯肾</td></tr>
+<tr><td>MCTD</td><td>抗U1-RNP高滴度</td></tr>
+<tr><td>JDM</td><td>肌炎为主，CK↑</td></tr>
+<tr><td>IgAV</td><td>紫癜+腹痛+关节痛</td></tr>
+<tr class="hl-yellow"><td class="c-y b">ALL</td><td class="c-y">可模拟SLE血象↓，查骨髓</td></tr>
+<tr><td>EBV/CMV</td><td>病毒血清学</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 治疗阶梯 -->
+<div class="sh">💊 分层治疗</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">轻度 · 皮肤关节</div>
+    <span class="c-a b">羟氯喹</span> 4–5mg/kg/d ≤400mg<br>
+    NSAIDs + 局部激素<br>
+    <span class="tag t-a">基础用药</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">中度 · 血液/LN II</div>
+    <span class="c-r b">PDN</span> 0.5–1mg/kg/d<br>
+    <span class="c-r b">MMF</span> 600mg/m² BID max1g<br>
+    或 <span class="c-y b">AZA</span> 1–3mg/kg/d
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">重度 · LN III/IV/NP</div>
+    <span class="c-r b">PDN</span> 1–2mg/kg/d max60mg<br>
+    <span class="tag t-r">Euro-Lupus IVCY</span> 500mg/m²/mo×6<br>
+    或 <span class="tag t-r">MMF</span> 1200mg/m²/d max3g
+  </div>
+  <div class="stp s4">
+    <div class="stp-label">难治 · 生物制剂</div>
+    <span class="c-g b">贝利木单抗</span> 10mg/kg/mo ≥5岁<br>
+    <span class="c-g b">利妥昔单抗</span> 375mg/m²/w×4<br>
+    <span class="tag t-y">≥5岁FDA批准</span>
+  </div>
+</div>
+
+<!-- LN治疗路径 -->
+<div class="sh red">🫘 LN治疗路径（核心！）</div>
+<div class="path">
+  <b class="c-r">LN III/IV诱导期：</b>
+  <span class="node">PDN 1–2mg/kg/d → 4–6w渐减</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">IVCY 500mg/m²/mo×6（Euro-Lupus）或 MMF 1200mg/m²/d×6m</span>
+</div>
+<div class="path" style="margin-top:3px;">
+  <b class="c-g">LN维持期（≥3年，比成人更长）：</b>
+  <span class="node">MMF 600–900mg/m² BID</span> 或 <span class="node">AZA 1–3mg/kg/d</span> + <span class="node" style="border-color:var(--green);">羟氯喹持续</span>
+</div>
+
+<!-- NP狼疮 -->
+<div class="sh yellow">🧠 神经精神狼疮</div>
+<table>
+<tr><th class="yellow-hd">方案</th><th class="yellow-hd">药物</th><th class="yellow-hd">剂量</th><th class="yellow-hd">备注</th></tr>
+<tr class="hl-yellow"><td class="c-y b">一线</td><td><span class="c-y b">甲泼尼龙冲击</span></td><td>15–30mg/kg/d×3d</td><td>后改口服渐减</td></tr>
+<tr><td>联合</td><td><span class="c-a b">IVCY脉冲</span></td><td>500–1000mg/m²</td><td>—</td></tr>
+<tr><td>难治</td><td><span class="c-g b">利妥昔单抗</span></td><td>375mg/m²/w×4</td><td><span class="tag t-y">二线</span></td></tr>
+</table>
+
+<!-- 随访 -->
+<div class="sh green">📅 随访监测</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">频率</th></tr>
+<tr class="hl-red"><td class="c-r b">活跃LN</td><td class="c-r b">q2–4w</td></tr>
+<tr><td>稳定期</td><td>q4–8w</td></tr>
+<tr><td>缓解期</td><td>q1–3m</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">每次必查</th></tr>
+<tr><td>CBC + <span class="c-r b">UPCR</span> + <span class="c-r b">C3/C4</span> + anti-dsDNA</td></tr>
+<tr><td>肾功+eGFR + 白蛋白 + <span class="c-r b">血压</span></td></tr>
+<tr><td>SLEDAI-2K / BILAG评分</td></tr>
+<tr><td>生长指标 q3–6m + <span class="c-a b">骨龄</span></td></tr>
+<tr><td><span class="c-y b">羟氯喹OCT</span>：第5年起每年</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 儿童特殊 -->
+<div class="sh yellow">👶 儿童特殊管理</div>
+<table>
+<tr><th class="yellow-hd">问题</th><th class="yellow-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">生长障碍</td><td>避免PDN长期&gt;10mg/d；疾病稳定后评估<span class="c-r b">GH替代</span></td></tr>
+<tr><td>青春期延迟</td><td>评估<span class="c-a b">H-P-G轴</span>功能</td></tr>
+<tr><td>骨质疏松</td><td>Ca <span class="c-a b">1000–1300mg/d</span> + VD 800–1000IU/d；高危用<span class="c-y b">双膦酸盐</span></td></tr>
+<tr class="hl-yellow"><td class="c-y b">疫苗</td><td>免疫抑制期<span class="c-r b">禁活疫苗</span>；灭活不受限</td></tr>
+<tr><td>心理</td><td>容貌改变+激素副作用 → <span class="c-a b">心理评估</span></td></tr>
+<tr><td>过渡</td><td><span class="c-a b">13–15岁</span>开始向成人过渡计划</td></tr>
+</table>
+
+<!-- 预后 -->
+<div class="sh">📊 预后</div>
+<table>
+<tr><th>指标</th><th>数据</th></tr>
+<tr><td>5年生存率</td><td class="c-g b">~95%</td></tr>
+<tr><td>15年生存率</td><td class="c-y b">~85%</td></tr>
+<tr class="hl-red"><td class="c-r b">死因Top3</td><td class="c-r b">感染40% · 肾衰20% · 心血管10–15%</td></tr>
+<tr><td>LN IV型5年ESRD</td><td class="c-r">10–15%</td></tr>
+<tr><td>核心指标</td><td class="c-a b">累积损伤SDI</td></tr>
+</table>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>肾功能急剧恶化/少尿/水肿</b> → 紧急查<span class="c-r b">肾功+UPCR</span>，考虑LN活动</li>
+    <li><b>癫痫/意识改变/精神症状</b> → <span class="c-r b">NP狼疮</span>，紧急甲强龙冲击</li>
+    <li><b>溶血加重/血小板骤降</b> → 查Coombs+网织，评估<span class="c-r b">Evans综合征</span></li>
+    <li><b>高热</b> → <span class="c-r b">感染 vs 复发</span>，血培养+CRP+PCT</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR/ACR 2019(Aringer M, Ann Rheum Dis 2019) · SPRINT-JSLE RCT(Hiraki LT, Lancet Child Adolesc Health 2019) · CARRA共识 2018/2021 · SHARE共识(Wulffraat NM, Ann Rheum Dis 2018) · KDIGO 2024 LN · 贝利木单抗(Ruperto N, Arthritis Rheumatol 2021)
+</div>
+
+</div>
+</body>
+</html>
