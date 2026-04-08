@@ -1,7 +1,215 @@
 {
   "main": {
-    "id": "",
+    "id": "52ff0ff59944eb99",
     "type": "split",
-    "children": []
-  }
+    "children": [
+      {
+        "id": "b4847f2448f0b0f5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ac7e5665473bd2c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "literature/cat_paper.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "cat_paper"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4b74a00e2f04ea1e",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbeb12949a75d956",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b66358dd01afe01",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "dc3b3334298c5125",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "3d96e24048ed79a7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "23c38fd771b24112",
+    "type": "split",
+    "children": [
+      {
+        "id": "3fcecd97f62e5877",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46c36fe097108767",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "literature/cat_paper.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "cat_paper 的反向链接列表"
+            }
+          },
+          {
+            "id": "f18a54d026947f42",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "literature/cat_paper.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "cat_paper 的出链列表"
+            }
+          },
+          {
+            "id": "8b94fd2b250a30f5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "a95e2d6917d0a37c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "0642ae40ba041243",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "literature/cat_paper.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "cat_paper 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "1b66358dd01afe01",
+  "lastOpenFiles": [
+    "log.md",
+    "index.md",
+    "topics/JSLE.md",
+    "literature/cat_paper.md",
+    "topics/IgAV.md",
+    "topics/JDM.md",
+    "topics/AID.md",
+    "tools/vaccine.md",
+    "tools/SDAI.md",
+    "tools/MTX_dose.md",
+    "tools/liver_kidney.md",
+    "tools/JADAS71.md",
+    "tools/JADAS27.md",
+    "tools/followup.md",
+    "tools/ESR_CRP.md",
+    "tools/autoantibodies.md",
+    "schema/evidence_levels.md",
+    "schema/aliases.md",
+    "literature/paper_rheum.md",
+    "literature/paper.md",
+    "literature/guideline_jcs.md",
+    "literature/guideline_cn.md",
+    "drugs/NSAIDs.md",
+    "drugs/MTX.md",
+    "drugs/glucocorticoids.md",
+    "drugs/calcium_vitd.md"
+  ]
 }

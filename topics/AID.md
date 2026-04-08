@@ -2,6 +2,194 @@
 > 共找到 50 篇相关文献
 > 更新: 2026-04-08 17:54
 
+
+## 疾病概述
+
+**定义**：自身炎症性疾病（Autoinflammatory Diseases, AID）是一组由先天免疫系统失调引起的疾病，以反复或持续的无菌性炎症为特征，缺乏高滴度自身抗体和抗原特异性T细胞（与自身免疫性疾病的关键区别）。核心机制涉及炎症小体（inflammasome）过度激活导致IL-1β等促炎因子过度产生。
+
+**流行病学**：
+- 单基因AID多为罕见病（<1/10万），但总体患病率可能被低估
+- FMF：地中海人群患病率最高（土耳其1:400–1:1000）
+- TRAPS：欧洲1–2/百万
+- CAPS：极罕见（<1/100万）
+- sJIA和成人Still病（AID谱系疾病）发病率较高
+
+**病因与发病机制**：
+- **遗传突变**是核心（多数为常染色体显性遗传）：
+  - FMF：MEFV基因突变（pyrin蛋白，炎症小体调控）
+  - TRAPS：TNFRSF1A基因突变（TNF受体）
+  - CAPS：NLRP3基因突变（cryopyrin/NLRP3炎症小体→IL-1β）
+  - DIRA：IL1RN突变（IL-1受体拮抗剂缺乏）
+  - HIDS：MVK基因突变（甲羟戊酸激酶）
+  - PAPA：PSTPIP1突变
+  - SAVI：TMEM173/STING基因突变
+  - NLRC4-MAS：NLRC4炎症小体突变
+- 核心通路：炎症小体→caspase-1→IL-1β/IL-18过度释放→发热、浆膜炎、皮疹等
+- 先天免疫vs 获得免疫失调是AID区别于SLE/RA等自身免疫病的关键
+
+## 分类/分型
+
+### 单基因自身炎症性疾病
+
+| 疾病 | 基因 | 遗传方式 | 核心临床特征 |
+|------|------|---------|------------|
+| FMF（家族性地中海热） | MEFV | 常隐 | 反复发热（1–3天）+浆膜炎（腹膜炎最常见）+关节炎 |
+| TRAPS（TNF受体相关周期热综合征） | TNFRSF1A | 常显 | 长程发热（>1周）+迁移性皮疹+肌痛+眼部受累 |
+| CAPS（ cryopyrin相关周期性综合征） | NLRP3 | 常显 | FCAS/MWS/CINCA三表型谱；冷刺激诱发；荨麻疹样皮疹 |
+| MKD/HIDS（甲羟戊酸激酶缺乏症） | MVK | 常隐 | 周期性发热（3–7天）+淋巴结肿大+腹痛+腹泻 |
+| DIRA（IL-1受体拮抗剂缺乏症） | IL1RN | 常隐 | 新生儿起病；骨膜炎+皮疹+pustulosis |
+| Blau综合征 | NOD2 | 常显 | 肉芽肿性皮疹+关节炎+葡萄膜炎 |
+| PAPA综合征 | PSTPIP1 | 常显 | 化脓性无菌性关节炎+坏疽性脓皮病+痤疮 |
+| SAVI | TMEM173 | 常显 | 间质性肺病+皮肤血管炎+ mimic川崎病表现 |
+
+### CAPS严重度谱系
+
+| 表型 | 别名 | 严重度 | 特征 |
+|------|------|--------|------|
+| FCAS | 家族性冷自身炎症综合征 | 轻 | 冷刺激诱发发热+皮疹+关节痛 |
+| MWS | Muckle-Wells综合征 | 中 | 发热+皮疹+感音神经性耳聋+淀粉样变性 |
+| CINCA/NOMID | 慢性婴儿神经皮肤关节综合征 | 重 | 出生起病+慢性脑膜炎+关节过度生长+视力丧失 |
+
+### 复杂/多基因AID
+- 全身型JIA（sJIA）
+- 成人Still病（AOSD）
+- PFAPA综合征（周期性发热+口疮性口腔炎+咽炎+颈淋巴结炎）
+- CRMO/CNO（慢性非细菌性骨炎）
+
+## 诊断标准
+
+**FMF诊断（Tel Hashomer标准）**：
+典型发作：发热+浆膜炎（腹膜炎、胸膜炎、滑膜炎）+自限性（12h–3天）
+- 主要标准：复发发热≥3次+浆膜炎
+- 次要标准：不完全发作、运动后诱发、阳性家族史
+- 支持标准：FMF高发族裔、对秋水仙碱有效
+
+**CAPS诊断**：
+- 典型临床表型 + NLRP3基因检测（序列分析）
+- 发热 + 荨麻疹样皮疹 + 冷刺激诱发（FCAS）
+- 发热 + 皮疹 + 感音神经性耳聋 + 淀粉样变性（MWS）
+
+**TRAPS诊断**：
+- 反复长程发热（>1周）+ 迁移性红斑/皮疹 + 肌痛
+- TNFRSF1A基因检测
+- 血清可溶性TNFRSF1A降低
+
+**鉴别诊断**：
+- 感染性疾病（反复感染：结核、EBV、CMV）
+- 恶性肿瘤（淋巴瘤 — B症状类似）
+- 自身免疫性疾病（SLE, JIA）
+- 免疫缺陷（CVID, 高IgD综合征）
+- 周期性中性粒细胞减少症
+
+**推荐检查**：
+
+*必需检查*：
+- 血常规（急性期中性粒细胞升高）、ESR, CRP, SAA（血清淀粉样蛋白A，AID非常敏感）
+- 铁蛋白（CAPS、sJIA常升高）
+- 肝肾功能
+- 基因检测（靶向基因panel：MEFV, NLRP3, TNFRSF1A, MVK, IL1RN, NOD2, PSTPIP1, TMEM173）
+
+*可选*：
+- 免疫球蛋白（IgD升高→HIDS）
+- SAA持续监测（淀粉样变性风险）
+- 腹部超声（腹膜炎、脾大）
+- 关节影像学
+- 心脏评估
+- 听力测试（MWS）
+- 眼科检查（Blau、CAPS）
+- 骨髓穿刺（排除血液系统恶性疾病）
+
+## 治疗策略
+
+**治疗目标**：
+- 控制急性发作
+- 减少发作频率
+- 预防淀粉样变性（继发性AA型）
+- 保证正常生长发育
+
+**IL-1通路是AID治疗核心**
+
+### FMF
+- **一线**：秋水仙碱 0.5–1.5 mg/d（分2次），儿童0.02–0.03 mg/kg/d（最大1.5 mg/d）
+  - 需终身服用
+  - 有效率约65–70%，余30%为秋水仙碱抵抗型
+- **秋水仙碱抵抗/不耐受**：IL-1抑制剂
+  - 阿那白滞素 1–2 mg/kg/d SC
+  - 卡那单抗 2–4 mg/kg/4周 SC（最大150 mg）
+  - 利纳西普（IL-1 Trap）
+
+### CAPS
+- **一线**：IL-1抑制剂
+  - FCAS/MWS：卡那单抗 2 mg/kg/8周 SC（最大150 mg）→ 2012 FDA批准
+  - CINCA/NOMID：卡那单抗 4 mg/kg/4周 SC（最大300 mg）
+  - 阿那白滞素 1–5 mg/kg/d SC（重症需大剂量）
+  - 利纳西普（IL-1 Trap）：MWS 160 mg SC/周
+- **二线**：JAK抑制剂（托法替布、巴瑞替尼，个案报告）【需要验证】
+
+### TRAPS
+- **一线**：糖皮质激素（发作期桥接）
+- **二线**：IL-1抑制剂（阿那白滞素、卡那单抗）或 TNF抑制剂（依那西普，效果有限）
+- **三线**：托珠单抗（IL-6抑制剂）
+
+### HIDS/MKD
+- **发作期**：NSAIDs + 短期糖皮质激素
+- **预防**：阿那白滞素、卡那单抗、IL-1 Trap
+- **他汀类药物**（部分病例有效，抑制甲羟戊酸通路）
+
+### DIRA
+- **首选**：阿那白滞素（替代IL-1Ra功能）
+- 抗IL-1单抗（卡那单抗）
+
+### Blau综合征
+- **一线**：糖皮质激素 + MTX
+- **二线**：TNF抑制剂（阿达木单抗）
+- **三线**：IL-1抑制剂（眼部受累）、JAK抑制剂
+
+### PFAPA综合征
+- **一线**：单剂泼尼松 0.5–1 mg/kg（发作期，非常有效）
+- **二线**：扁桃体切除术（约80%治愈）
+- **西咪替丁**（部分有效，机制不明）
+
+## 随访要点
+
+**随访频率**：
+- 急性发作期：密切监测
+- 稳定期：每1–3个月
+- 秋水仙碱治疗：每3个月监测
+- 生物制剂治疗：每1–3个月
+
+**监测指标**：
+- SAA和CRP（每次随访）——SAA是淀粉样变性最佳预测指标
+- 尿蛋白/肌酐比值（监测淀粉样变性肾脏受累）
+- 肝肾功能（秋水仙碱毒性）
+- 血常规
+- 身高体重
+- 听力（MWS/CAPS）
+
+**需紧急就诊**：
+- 持续高热>7天
+- 严重腹痛（腹膜炎鉴别急腹症）
+- 感觉神经性耳聋新发或加重（MWS）
+- 关节红肿热痛（鉴别化脓性关节炎）
+- 尿量减少/蛋白尿（淀粉样变性）
+
+**预后**：
+- FMF：秋水仙碱有效者预后良好；AA淀粉样变性是主要远期并发症（秋水仙碱时代显著减少）
+- CAPS：IL-1抑制剂时代预后显著改善，但CINCA仍有累积损伤
+- TRAPS：淀粉样变性风险约15–25%
+- DIRA：IL-1替代治疗预后改善
+
+## 证据等级
+
+- **EULAR推荐（单基因AID管理，2023更新）**：Giancane G et al. Ann Rheum Dis 2023 [Level IV]
+- **卡那单抗CAPS试验**：Lachmann HJ et al. N Engl J Med 2009 [Level I RCT]
+- **阿那白滞素DIRA**：Aksentijevich I et al. N Engl J Med 2009 [Level III]
+- **FMF秋水仙碱**：Zemer D et al. N Engl J Med 1986 [Level I RCT] — 预防淀粉样变性里程碑
+- **Eurofever注册研究**：Giancane G et al. Ann Rheum Dis 2019 [Level III]
+- **Tel Hashomer标准**：Livneh A et al. Arthritis Rheum 1997 [Level IV]
+- **AID基因检测指南**：Masters SL et al. Nat Rev Rheumatol 2016 [Level IV]
+
+
 - [Awareness and attitudes of orthopedic surgeons and pediatricians about chronic non-bacterial osteomyelitis: a cross-sectional study.](../literature/cat_paper.md) — 2025 | Postgraduate medicine
   DOI: 10.1080/00325481.2025.2609388
 - [Colchicine prophylaxis in pediatric PFAPA: a systematic review.](../literature/cat_paper.md) — 2025 | European journal of pediatrics
