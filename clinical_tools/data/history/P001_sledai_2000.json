@@ -1,0 +1,17 @@
+[
+  {
+    "patient_id": "P001",
+    "total_score": 17,
+    "activity_level": "重度活动",
+    "activity_color": "darkred",
+    "item_scores": {
+      "发热": 1,
+      "关节炎": 4,
+      "蛋白尿": 4,
+      "癫痫": 8
+    },
+    "timestamp": "2026-04-08T18:33:50.389378",
+    "notes": "测试",
+    "tool": "sledai_2000"
+  }
+]

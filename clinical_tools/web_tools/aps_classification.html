@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ACR/EULAR APS分类标准详情卡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Libre+Baskerville:italic&display=swap');
+        
+        :root {
+            --nature-red: #C8102E;
+            --nature-black: #1A1A1A;
+            --nature-grey: #F8F8F8;
+            --nature-border: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #ECECEC;
+            color: var(--nature-black);
+            line-height: 1.4;
+        }
+
+        .card-container {
+            width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-top: 10px solid var(--nature-red);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+        }
+
+        .header {
+            padding: 25px 40px;
+            border-bottom: 2px solid var(--nature-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .journal-tag {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: var(--nature-red);
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header {
+            background-color: var(--nature-black);
+            color: white;
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content-body {
+            padding: 20px 40px 30px;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+        }
+
+        .domain-box {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--nature-border);
+            padding-bottom: 10px;
+        }
+
+        .domain-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--nature-red);
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 2px 0;
+            color: #333;
+        }
+
+        .score-pill {
+            font-weight: 700;
+            color: var(--nature-black);
+            min-width: 25px;
+            text-align: right;
+        }
+
+        .high-score {
+            color: var(--nature-red);
+        }
+
+        .entry-box {
+            background: var(--nature-grey);
+            border: 1px solid var(--nature-border);
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.88rem;
+        }
+
+        .lab-rules {
+            background-color: #FFF9F9;
+            border: 1px solid #F0D0D0;
+            padding: 15px;
+            font-size: 0.82rem;
+        }
+
+        .footer-glossary {
+            background: var(--nature-black);
+            color: #AAA;
+            padding: 15px 40px;
+            font-size: 0.7rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .condition-summary {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 15px;
+            padding: 10px;
+            border: 2px dashed var(--nature-red);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="header">
+        <div>
+            <span class="journal-tag">Classification Standards Update</span>
+            <h1 class="main-title">2023 ACR / EULAR 抗磷脂综合征标准</h1>
+        </div>
+        <div class="text-right text-xs font-bold text-gray-400">
+            VALIDATED FOR CLINICAL USE<br>RELEASED 2023
+        </div>
+    </div>
+
+    <div class="content-body">
+        <!-- 入选标准 -->
+        <div class="entry-box">
+            <strong>入选前提：</strong>满足至少一项临床领域标准 <strong>且</strong> 在临床标准发生前后 3 年内至少有一项 aPL 实验室检测阳性。
+        </div>
+
+        <div class="classification-grid">
+            <!-- 临床领域 -->
+            <div>
+                <div class="section-header">临床领域标准 (Clinical Domains) <span>Domain 1–6</span></div>
+                
+                <div class="domain-box">
+                    <div class="domain-title">领域 1: 静脉血栓栓塞 (VTE)</div>
+                    <div class="item-row"><span>无 CVD 高风险特征的 VTE</span><span class="score-pill high-score">3</span></div>
+                    <div class="item-row"><span>伴 CVD 高风险特征的 VTE</span><span class="score-pill">1</span></div>
+                </div>
+
+                <div class="domain-box">
+                    <div class="domain-title">领域 2: 动脉血栓 (AT)</div>
+                    <div class="item-row"><span>无 CVD 高风险特征的 AT</span><span class="score-pill high-score">4</span></div>
+                    <div class="item-row"><span>伴 CVD 高风险特征的 AT</span><span class="score-pill">2</span></div>
+                </div>
+
+                <div class="domain-box">
+                    <div class="domain-title">领域 3: 微血管受累 (Microvascular)</div>
+                    <div class="item-row"><span>疑似病变 (网状青斑/肾病变等)</span><span class="score-pill">2</span></div>
+                    <div class="item-row"><span>病理证实 (APS 肾病/肺泡出血等)</span><span class="score-pill high-score">5</span></div>
+                </div>
+
+                <div class="domain-box">
+                    <div class="domain-title">领域 4: 产科并发症 (Obstetric)</div>
+                    <div class="item-row"><span>连续 3 次及以上连续早期流产 (<10w)</span><span class="score-pill">1</span></div>
+                    <div class="item-row"><span>胎儿死亡 (≥10w 0d - 15w 6d)</span><span class="score-pill">1</span></div>
+                    <div class="item-row"><span>胎儿死亡 (≥16w 0d)</span><span class="score-pill">3</span></div>
+                    <div class="item-row"><span>严重先兆子痫/胎盘功能不全致早产 (<34w)</span><span class="score-pill">4</span></div>
+                </div>
+
+                <div class="domain-box">
+                    <div class="domain-title">领域 5/6: 心脏瓣膜与血小板</div>
+                    <div class="item-row"><span>心脏瓣膜增厚或赘生物</span><span class="score-pill">2</span></div>
+                    <div class="item-row"><span>血小板减少症 (最低值 <100×10⁹/L)</span><span class="score-pill">2</span></div>
+                </div>
+            </div>
+
+            <!-- 实验室领域 -->
+            <div>
+                <div class="section-header">实验室领域标准 (Laboratory Domains) <span>Domain 7–8</span></div>
+                
+                <div class="domain-box">
+                    <div class="domain-title">领域 7: 狼疮抗凝物 (LA) 检测</div>
+                    <div class="item-row"><span>单次 LA 阳性</span><span class="score-pill">1</span></div>
+                    <div class="item-row"><span>持续 LA 阳性 (间隔 ≥12周)</span><span class="score-pill high-score">5</span></div>
+                </div>
+
+                <div class="domain-box">
+                    <div class="domain-title">领域 8: aCL / anti-β2GPⅠ 滴度 (ELISA)</div>
+                    <div class="item-row"><span>中滴度 (40-79 units) 仅一次</span><span class="score-pill">1</span></div>
+                    <div class="item-row"><span>中滴度 (40-79 units) 持续性</span><span class="score-pill">4</span></div>
+                    <div class="item-row"><span>高滴度 (>80 units) 仅一次</span><span class="score-pill">4</span></div>
+                    <div class="item-row"><span>高滴度 (>80 units) 持续性</span><span class="score-pill high-score">7</span></div>
+                </div>
+
+                <div class="lab-rules">
+                    <p class="font-bold mb-1 border-b border-red-200">实验室评分核心规则：</p>
+                    <ul class="text-[0.78rem] space-y-1 text-gray-700">
+                        <li>• <strong>持续性定义：</strong>间隔至少 12 周。若两次结果滴度等级不同，按较低等级计分。</li>
+                        <li>• <strong>抗凝干扰：</strong>VKA/肝素/DOACs 治疗期间检测 LA 需由专家确认或参考停药后结果。</li>
+                        <li>• <strong>时限限制：</strong>aPL 确认需在临床事件前后 3 年内。</li>
+                        <li>• <strong>同质性：</strong>前瞻性研究要求最近一次 aPL 检测结果必须为阳性。</li>
+                    </ul>
+                </div>
+
+                <div class="condition-summary">
+                    分类诊断标准：临床总分 ≥ 3 分 且 实验室总分 ≥ 3 分
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-glossary">
+        <span><strong>aPL:</strong> 抗磷脂抗体</span>
+        <span><strong>aCL:</strong> 抗心磷脂抗体</span>
+        <span><strong>anti-β2GPⅠ:</strong> 抗β2糖蛋白I抗体</span>
+        <span><strong>LA:</strong> 狼疮抗凝物</span>
+        <span><strong>VKA:</strong> 维生素K拮抗剂</span>
+        <span><strong>DOACs:</strong> 直接口服抗凝药</span>
+        <span><strong>VTE:</strong> 静脉血栓栓塞</span>
+        <span><strong>AT:</strong> 动脉血栓</span>
+        <span><strong>CVD:</strong> 心血管疾病风险特征</span>
+        <span><strong>APS:</strong> 抗磷脂综合征</span>
+        <span><span><strong>BAL:</strong> 支气管肺泡灌洗</span></span>
+        <span><span><strong>Lab/Exam:</strong> 实验/体格检查</span></span>
+    </div>
+</div>
+
+</body>
+</html>
