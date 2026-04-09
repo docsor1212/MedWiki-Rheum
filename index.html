@@ -38,6 +38,13 @@ h1 { font-size:1.6rem; font-weight:700; color:var(--accent); margin-bottom:2px; 
 .stat.s2 .num { color:var(--green); }
 .stat.s3 .num { color:var(--yellow); }
 @media(max-width:768px){ .wrap{padding:0 4px;} .header,.stats{flex-direction:column;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;} .grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));} } </style>
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
 </head>
 <body>
 <div class="wrap">
@@ -130,5 +137,9 @@ h1 { font-size:1.6rem; font-weight:700; color:var(--accent); margin-bottom:2px; 
 <div class="footer">MedWiki-Rheum v6.1 · 归墟设计系统 · 42页 · 2026-04</div>
 
 </div>
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+</script>
 </body>
 </html>

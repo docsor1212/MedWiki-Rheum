@@ -82,6 +82,13 @@ font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 body{padding-top:42px !important;}
 
 </style>
+
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body class="pb-52 md:pb-40">
 <div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">SLEDAI-2000 疾病活动度助手</span></div>
@@ -311,5 +318,9 @@ body{padding-top:42px !important;}
         }
     </script>
 
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
 </body>
 </html>
