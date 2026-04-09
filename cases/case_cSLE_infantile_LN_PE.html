@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：12月龄男婴以肾病综合征起病的婴儿SLE</title>
+<title>病例：12月龄男婴以肾病综合征起病的婴儿SLE + IV型LN + 大面积肺栓塞</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 :root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.45; font-size:12.5px; padding-top:42px !important; }
 .wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
 .header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
+.header h1 { font-size:1.25rem; font-weight:700; }
 .header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 4px; }
 .sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.orange { background:#e65100; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
@@ -29,19 +30,27 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.note.red { border-left-color:var(--red); color:var(--red); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
 .timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
-.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item { margin-bottom:10px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
+.info-box { background:#e8f5e9; border:1px solid #a5d6a7; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.info-box .m-title { font-weight:700; font-size:12px; color:#2e7d32; }
+.warn-box { background:#fff3e0; border:1px solid #ffb74d; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.warn-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
 .ln-box { background:#e3f2fd; border:1px solid #90caf9; border-radius:8px; padding:8px 12px; margin:6px 0; }
 .ln-box .m-title { font-weight:700; font-size:12px; color:#1565c0; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.mech-box { background:#f3e5f5; border:1px solid #ce93d8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.mech-box .m-title { font-weight:700; font-size:12px; color:#7b1fa2; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+@media(max-width:768px){ .two-col{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -56,8 +65,8 @@ tr:hover td { background:#faf8f5; }
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>🔴 12月龄男婴以肾病综合征起病的婴儿SLE</h1>
-      <div class="sub">全身水肿2月 → IV型狼疮肾炎 + 大面积肺栓塞 — 1岁以内发病的极端罕见SLE</div>
+      <h1>🔴 12月龄男婴以肾病综合征起病的婴儿SLE + IV型狼疮肾炎 + 大面积肺栓塞</h1>
+      <div class="sub">ANA阴性 · 补体C1q降低 · "满堂亮"免疫荧光 · 全身水肿2月 → 完全缓解</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
   </div>
@@ -68,233 +77,487 @@ tr:hover td { background:#faf8f5; }
 
   <div class="body">
 
+    <!-- ===== 独特性 ===== -->
+    <div class="alert" style="margin-top:8px;">
+      <b>本病例5大独特性：</b><br>
+      ① <b>12个月男婴</b> — cSLE的极端低龄端，婴儿SLE（iSLE）全球仅零星报道<br>
+      ② 以<b>肾病综合征</b>为首发和唯一表现（无皮疹/关节痛/光过敏等典型SLE症状）<br>
+      ③ <b>ANA阴性</b> — SLE中仅约1-2%ANA阴性，婴儿SLE中更为常见，极大增加诊断难度<br>
+      ④ 住院期间合并<b>大面积肺血栓栓塞</b>（aPL阴性！仅因肾病综合征高凝状态）<br>
+      ⑤ 肾活检确诊为<b>IV型狼疮肾炎</b>（弥漫增殖性）+ <b>"满堂亮"免疫荧光</b> — 病理成为确诊关键
+    </div>
+
+    <!-- ===== 基本信息 ===== -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:130px">患者</td><td>12个月，男性</td></tr>
-      <tr><td class="b">就诊机构</td><td>安卡拉大学医学院，儿科肾脏科（土耳其安卡拉）</td></tr>
-      <tr><td class="b">主诉</td><td>全身水肿（Generalized Edema）2个月</td></tr>
-      <tr><td class="b">标签</td><td><span class="tag t-r">婴儿SLE</span> <span class="tag t-r">IV型狼疮肾炎</span> <span class="tag t-r">大面积肺栓塞</span> <span class="tag t-g">完全缓解</span></td></tr>
+      <tr><td class="b" style="width:140px">患者</td><td>12个月，男性</td></tr>
+      <tr><td class="b">就诊机构</td><td>安卡拉大学医学院 儿科肾脏科（Ankara University, Turkey）</td></tr>
+      <tr><td class="b">作者团队</td><td>Akar EM, Özçakar ZB, Çakar N, Kiremitçi S, Kurt-Şükür ED, Fitöz S, Yalçınkaya F</td></tr>
+      <tr><td class="b">发表</td><td>Turk J Pediatr. 2021;63(2):339-343</td></tr>
+      <tr><td class="b">主诉</td><td>全身水肿（Generalized Edema）进行性加重2个月</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">婴儿SLE</span> <span class="tag t-r">IV型LN</span> <span class="tag t-r">大面积PE</span> <span class="tag t-y">ANA阴性</span> <span class="tag t-a">C1q降低</span> <span class="tag t-g">完全缓解</span></td></tr>
     </table>
 
-    <div class="alert">
-      <b>本病例独特性：</b>① <b>12个月男婴</b>（cSLE的极端低龄端，婴儿SLE极为罕见）；② 以<b>肾病综合征</b>为首发表现（非典型）；③ ANA<b>阴性</b>（SLE伴ANA阴性极少见，增加了诊断难度）；④ 合并<b>大面积肺栓塞（Massive Pulmonary Thromboembolism）</b>；⑤ 肾活检为<b>IV型狼疮肾炎</b>（弥漫增殖性，最严重类型之一）。
+    <!-- ===== 流行病学背景 ===== -->
+    <div class="sh orange">📊 婴儿SLE（iSLE）流行病学背景</div>
+
+    <div class="info-box">
+      <div class="m-title">iSLE — 文献中极为罕见的实体</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>定义：</b>婴儿SLE（Infantile SLE, iSLE）= 发病年龄<b>＜1岁</b>的SLE<br><br>
+        <b>发病率：</b>cSLE（儿童系统性红斑狼疮）本身仅占所有SLE的<b>10-20%</b>；iSLE在cSLE中占比<b>＜1%</b>，全球文献仅零星个案报道<br><br>
+        <b>性别分布：</b>与大年龄cSLE（女:男 = 4-5:1）不同，iSLE的性别比<b>更接近1:1</b>（本例即为男婴）<br><br>
+        <b>临床特点（与cSLE对比）：</b>
+        <table>
+          <tr><th>特征</th><th>cSLE（≥5岁）</th><th>iSLE（＜1岁）</th></tr>
+          <tr><td>ANA阳性率</td><td>＞97%</td><td><b>较低（可阴性）</b></td></tr>
+          <tr><td>肾脏受累</td><td>50-75%</td><td><b>更高（＞80%）</b></td></tr>
+          <tr><td>血液系统</td><td>常见</td><td><b>几乎均有</b></td></tr>
+          <tr><td>严重程度</td><td>中-重度</td><td><b>更重，更多器官受累</b></td></tr>
+          <tr><td>预后（旧观念）</td><td>较好</td><td>曾认为"预后极差" — <b>本例挑战了这一观念</b></td></tr>
+        </table><br>
+        <b>鉴别诊断：</b>婴儿出现多系统自身免疫表现时，需与以下疾病鉴别：<br>
+        • <b>新生儿狼疮（NLE）</b> — 母体抗Ro/La抗体经胎盘传递，通常为暂时性<br>
+        • <b>Aicardi-Goutières综合征</b>（I型干扰素病）— 类似SLE的神经系统+免疫表现<br>
+        • <b>先天性补体缺陷</b>（C1q/C2/C4缺乏）— 可出现SLE样表现<br>
+        • <b>自身免疫性淋巴细胞增生综合征（ALPS）</b> — 淋巴结肿大+自身免疫血细胞减少
+      </div>
     </div>
 
-    <!-- 起病 -->
-    <div class="sh red">🔴 临床表现</div>
+    <!-- ===== 临床时间线 ===== -->
+    <div class="sh red">🔴 临床时间线</div>
     <div class="timeline">
       <div class="t-item yellow">
-        <div class="t-date">起病 — 全身水肿2个月</div>
+        <div class="t-date">10月龄 — 起病：全身水肿</div>
         <div class="t-content">
-          12个月男婴，出现<b>全身水肿（Generalized Edema）</b>，逐渐加重，持续2个月。<br>
-          家长和基层医生首先考虑<b>营养不良/低蛋白血症</b>。
+          男婴约10月龄起出现<b>全身水肿（Generalized Edema）</b>：<br>
+          • <b>眼睑</b>浮肿（晨起明显）<br>
+          • <b>双下肢</b>凹陷性水肿<br>
+          • <b>腹围</b>逐渐增大（腹水）<br>
+          • 体重持续增加<br><br>
+          基层就诊 → 考虑<b>"营养不良/低蛋白血症"</b> → 营养补充治疗 → <span class="tag t-r">无效</span>
         </div>
       </div>
+
       <div class="t-item red">
-        <div class="t-date">入院评估 — 多系统异常</div>
+        <div class="t-date">12月龄 — 转诊入院：多系统异常</div>
         <div class="t-content">
-          <b>肾脏：</b><br>
-          • <b>肾病范围蛋白尿（Nephrotic-range Proteinuria）</b><br>
-          • 低白蛋白血症<br>
-          → 符合肾病综合征（Nephrotic Syndrome，NS）<br><br>
+          因水肿持续加重2个月，转至安卡拉大学儿科肾脏科。<br><br>
 
-          <b>血液系统：</b><br>
-          • <b>溶血性贫血（Hemolytic Anemia）</b><br>
-          • <b>血小板减少（Thrombocytopenia）</b><br>
-          • 直接和间接Coombs试验<b>均阳性</b><br><br>
+          <b>体格检查：</b><br>
+          • <b>全身重度水肿</b>（眼睑、面部、四肢、腹壁、阴囊）<br>
+          • <b>腹水征阳性</b>（移动性浊音）<br>
+          • <b>肝脾肿大</b><br>
+          • <b>面色苍白</b>（贫血貌）<br>
+          • 生命体征：体温正常（入院初期无发热）<br>
+          • <b>无皮疹</b>、<b>无关节肿痛</b>、<b>无光过敏</b>（SLE典型症状均缺如！）<br><br>
 
-          <b>免疫学：</b><br>
-          • <b>ANA（抗核抗体）— 阴性</b>⚠️（SLE中极不寻常）<br>
-          • C3 <b>轻度降低</b><br>
-          • <b>C1q 降低</b>（补体经典途径早期成分消耗）<br>
-          • C4 <b>正常</b><br>
-          • 抗磷脂抗体（aPL）<b>阴性</b><br>
-          • 抗心磷脂抗体（aCL）<b>阴性</b><br><br>
+          <b>初步实验室检查：</b>
+          <table>
+            <tr><th>系统</th><th>检查</th><th>结果</th><th>解读</th></tr>
+            <tr><td class="b" rowspan="4">肾脏</td><td>尿蛋白定量</td><td><b>肾病范围</b>（Nephrotic-range）</td><td>蛋白尿＞50 mg/kg/d</td></tr>
+            <tr><td>血清白蛋白</td><td><b>↓ 显著降低</b></td><td>低白蛋白血症 → 水肿原因</td></tr>
+            <tr><td>血肌酐/尿素氮</td><td>正常范围</td><td>肾功能尚代偿</td></tr>
+            <tr><td>尿检红细胞</td><td>【原文未详细报告】</td><td>—</td></tr>
+            <tr><td class="b" rowspan="3">血液系统</td><td>血红蛋白</td><td><b>↓ 降低</b></td><td>溶血性贫血</td></tr>
+            <tr><td>血小板</td><td><b>↓ 降低</b></td><td>血小板减少</td></tr>
+            <tr><td>直接+间接Coombs</td><td><b>均阳性</b></td><td>免疫介导溶血 — AIHA</td></tr>
+            <tr><td class="b" rowspan="6">免疫学</td><td>ANA（抗核抗体）</td><td><b>阴性 ⚠️</b></td><td>SLE中极罕见</td></tr>
+            <tr><td>C3</td><td><b>↓ 轻度降低</b></td><td>补体消耗</td></tr>
+            <tr><td>C4</td><td><b>正常</b></td><td>经典途径下游未受累</td></tr>
+            <tr><td>C1q</td><td><b>↓ 降低</b></td><td>补体经典途径<b>最早期</b>成分消耗</td></tr>
+            <tr><td>抗磷脂抗体（aPL）</td><td><b>阴性</b></td><td>排除了APS相关血栓</td></tr>
+            <tr><td>抗心磷脂抗体（aCL）</td><td><b>阴性</b></td><td>同上</td></tr>
+          </table>
 
-          <span class="tag t-y">ANA阴性的SLE — 诊断极具挑战性</span>
+          <div class="note red" style="margin-top:6px;">
+            <b>⚠️ 诊断困境：</b>一个12个月男婴，表现为肾病综合征+溶血性贫血+血小板减少，但ANA阴性、aPL阴性、无典型SLE症状（皮疹、关节痛、光过敏）→ 仅凭临床+血清学<b>无法确诊SLE</b>。下一步：<b>肾活检</b>。
+          </div>
         </div>
       </div>
-      <div class="t-item red">
-        <div class="t-date">住院期间 — 大面积肺栓塞</div>
+
+      <div class="t-item">
+        <div class="t-date">入院期间 — 肾活检</div>
         <div class="t-content">
-          住院期间突发：<br>
-          • <b>呼吸困难（Dyspnea）</b><br>
-          • <b>缺氧（Hypoxia）</b><br>
-          • 影像学（CT肺动脉造影）：<b>大面积肺血栓栓塞（Massive Pulmonary Thromboembolism，PE）</b><br><br>
-          <span class="tag t-r">危及生命的并发症 — 肺栓塞</span>
+          <b>肾活检（Kidney Biopsy）结果：</b><br><br>
+          <b>光镜（Light Microscopy）：</b><br>
+          • 弥漫性肾小球病变 — <b>≥50%肾小球</b>受累<br>
+          • 毛细血管内细胞增生（Endocapillary Proliferation）<br>
+          • 可见白细胞浸润、基底膜增厚<br>
+          • 符合<b>ISN/RPS IV型</b>（弥漫增殖性狼疮肾炎）<br><br>
+
+          <b>免疫荧光（Immunofluorescence）：</b><br>
+          • <b>"满堂亮（Full House）"模式</b> — IgG、IgM、C3、C1q 全部阳性<br>
+          • 沉积部位：系膜区+毛细血管壁（内皮下+上皮下）<br>
+          • 这是SLE肾脏受累的<b>病理学金标准</b>表现<br><br>
+
+          <b>诊断确认：</b><b>IV型狼疮肾炎</b>（ISN/RPS分类）<br>
+          → 肾活检结果<b>直接证实了SLE的诊断</b>，弥补了ANA阴性的血清学不足
+        </div>
+      </div>
+
+      <div class="t-item red">
+        <div class="t-date">住院期间 — 突发大面积肺栓塞</div>
+        <div class="t-content">
+          在住院评估期间，患儿突发：<br><br>
+          <b>症状：</b><br>
+          • <b>急性呼吸困难（Acute Dyspnea）</b> — 呼吸频率明显增快<br>
+          • <b>低氧血症（Hypoxemia）</b> — 血氧饱和度下降<br>
+          • 可能伴有烦躁不安、心率增快<br><br>
+
+          <b>影像学：</b><br>
+          • <b>CT肺动脉造影（CTPA）</b>：确认<b>大面积肺血栓栓塞（Massive Pulmonary Thromboembolism）</b><br>
+          • 栓塞范围：大面积（累及主肺动脉或多个肺叶动脉）<br><br>
+
+          <b>⚡ 为什么一个12个月婴儿会发生大面积PE？</b><br>
+          ① 肾病综合征 → 大量蛋白尿 → <b>抗凝血酶从尿中丢失</b> → 抗凝能力下降<br>
+          ② 低白蛋白血症 → 肝脏代偿合成纤维蛋白原↑ → 血液粘稠度↑<br>
+          ③ SLE免疫复合物 → <b>内皮损伤</b> → 组织因子暴露 → 凝血级联激活<br>
+          ④ <b>补体C5b-9膜攻击复合物</b> → 内皮细胞溶解 → 促凝表面形成<br>
+          ⑤ <b>血小板活化</b>（高胆固醇+免疫复合物+补体共同作用）<br><br>
+
+          <div class="note" style="border-left-color:var(--red);">
+            <b>关键点：</b>aPL/anti-CL均<b>阴性</b> → 血栓<b>不是</b>APS所致。肾病综合征本身即为独立高凝状态，足以导致大面积PE。儿童肾病综合征合并PE的死亡率约<b>25-30%</b>。
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 肾活检 -->
-    <div class="sh">🔬 肾活检 — IV型狼疮肾炎</div>
+    <!-- ===== ISN/RPS分型 ===== -->
+    <div class="sh">🔬 狼疮肾炎ISN/RPS分型（详细参考）</div>
 
     <div class="ln-box">
-      <div class="m-title">📋 ISN/RPS 2003/2018 狼疮肾炎分类（简表）</div>
+      <div class="m-title">📋 ISN/RPS 2003/2018 狼疮肾炎病理分类</div>
       <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
         <table>
-          <tr><th>分型</th><th>病理特征</th><th>临床意义</th></tr>
-          <tr><td class="b">I型</td><td>微小系膜病变</td><td>光镜正常，免疫荧光可见沉积</td></tr>
-          <tr><td class="b">II型</td><td>系膜增殖性</td><td>系膜细胞增生+免疫沉积</td></tr>
-          <tr><td class="b">III型</td><td>局灶性（<50%肾小球）</td><td>局灶增殖±新月体</td></tr>
-          <tr><td class="b" style="color:var(--red)">IV型 ⬅ 本例</td><td><b>弥漫性（≥50%肾小球）</b></td><td>最严重常见型：弥漫增殖+内皮下沉积±新月体</td></tr>
-          <tr><td class="b">V型</td><td>膜性</td><td>上皮下沉积，肾病综合征</td></tr>
-          <tr><td class="b">VI型</td><td>晚期硬化（≥90%）</td><td>终末期肾病</td></tr>
+          <tr><th style="width:60px">分型</th><th>名称</th><th>光镜特征</th><th>免疫荧光</th><th>临床预后</th></tr>
+          <tr><td class="b">I</td><td>微小系膜性</td><td>光镜正常</td><td>系膜区免疫沉积</td><td>良好</td></tr>
+          <tr><td class="b">II</td><td>系膜增殖性</td><td>系膜细胞增生</td><td>系膜区±少量上皮下</td><td>较好</td></tr>
+          <tr><td class="b">III</td><td>局灶性</td><td>&lt;50%肾小球增殖/坏死/新月体</td><td>系膜+内皮下±上皮下</td><td>中等</td></tr>
+          <tr><td class="b" style="color:var(--red)">IV ⬅ 本例</td><td><b>弥漫增殖性</b></td><td><b>≥50%肾小球增殖/坏死/新月体</b></td><td><b>满堂亮：系膜+内皮下+上皮下</b></td><td><b>最差（需积极治疗）</b></td></tr>
+          <tr><td class="b">V</td><td>膜性</td><td>毛细血管壁增厚</td><td>上皮下弥漫沉积</td><td>中等（肾病综合征）</td></tr>
+          <tr><td class="b">VI</td><td>晚期硬化性</td><td>≥90%肾小球硬化</td><td>稀少</td><td>终末期肾病</td></tr>
+        </table>
+        <div class="note" style="margin-top:6px;">
+          <b>IV型分亚型：</b>IV-S（节段性）/ IV-G（全球性）；活动性（A）/ 慢性（C）/ 混合（A/C）。本例具体亚型原文未详述，但IV型是<b>最需要积极免疫抑制</b>的类型。
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 最终诊断 ===== -->
+    <div class="sh">✅ 最终诊断（共4项）</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <table>
+        <tr><th style="width:30px">#</th><th>诊断</th><th>关键依据</th></tr>
+        <tr><td class="b c-r">1</td><td class="b">婴儿SLE（Infantile SLE, iSLE）</td><td>NS+AIHA+血小板减少+C3/C1q↓+Coombs阳性+IV型LN（肾活检）。虽然ANA阴性，但肾活检"满堂亮"+多系统受累满足SLE诊断。</td></tr>
+        <tr><td class="b c-r">2</td><td class="b">IV型狼疮肾炎（Class IV LN）</td><td>肾活检：弥漫增殖性肾小球肾炎（≥50%肾小球受累）+"满堂亮"免疫荧光（IgG/IgM/C3/C1q阳性）。</td></tr>
+        <tr><td class="b c-r">3</td><td class="b">肾病综合征（Nephrotic Syndrome）</td><td>肾病范围蛋白尿+低白蛋白血症+全身水肿+体重增加。</td></tr>
+        <tr><td class="b c-r">4</td><td class="b">大面积肺栓塞（Massive PE）</td><td>CTPA确诊。病因：肾病综合征高凝状态（非APS，因aPL阴性）。</td></tr>
+      </table>
+
+      <div class="warn-box" style="margin-top:6px;">
+        <div class="m-title">⚠️ 本例的诊断逻辑 — 当ANA阴性时如何诊断SLE？</div>
+        <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+          <b>经典诊断路径（本例未走通）：</b>ANA阳性 → 抗dsDNA阳性 → 补体降低 → 满足SLICC/EULAR标准 → 诊断SLE<br><br>
+          <b>本例实际路径：</b>NS+Coombs阳性+血小板减少+补体降低 → <b>ANA阴性</b> → 诊断困难 → <b>肾活检</b> → IV型LN+"满堂亮" → 确诊SLE<br><br>
+          <b>教训：</b>当临床高度怀疑SLE但ANA阴性时，<b>肾活检是关键的确诊手段</b>。不要因为ANA阴性就放弃SLE的诊断。
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 治疗 ===== -->
+    <div class="sh green">💊 治疗方案（四阶段）</div>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">阶段1：急性期 — 糖皮质激素</div>
+        <div class="t-content">
+          <b>糖皮质激素（Glucocorticoid）</b> — 可能使用甲泼尼龙冲击后口服序贯<br>
+          • 作用：抑制免疫炎症、减少免疫复合物形成、控制AIHA<br>
+          • 对IV型LN：快速减轻肾小球炎症<br>
+          • 剂量：原文未详述具体方案，参照cSLE IV型LN标准方案推测为甲泼尼龙冲击（15-30 mg/kg/d × 3天）→ 口服泼尼松（1-2 mg/kg/d）<br>
+          • 对PE的作用：间接 — 控制SLE活动 → 减少免疫复合物对内皮的损伤
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-date">阶段2：诱导缓解 — 环磷酰胺（CTX）</div>
+        <div class="t-content">
+          <b>环磷酰胺（Cyclophosphamide, CTX）</b> 静脉冲击<br>
+          • 适应证：IV型LN的诱导缓解金标准<br>
+          • 方案（参照cSLE标准）：NIH方案（500-1000 mg/m²/月 × 6个月）或Euro-Lupus方案（500 mg × 6次，每2周）<br>
+          • 作用：清除增殖的B/T淋巴细胞 → 减少自身抗体和免疫复合物 → 控制肾小球炎症<br><br>
+
+          <div class="warn-box">
+            <div class="m-title">⚠️ 12个月男婴使用CTX的特殊考量</div>
+            <div style="font-size:11px; line-height:1.7; margin-top:3px;">
+              <b>性腺毒性：</b>CTX对生精细胞（Spermatogonia）有<b>剂量依赖性不可逆损伤</b>。12个月男婴的睾丸组织正处于发育关键期 → <b>远期不育风险</b>显著<br>
+              <b>感染风险：</b>婴儿免疫系统发育未成熟 + CTX骨髓抑制 → 严重感染风险极高<br>
+              <b>骨髓抑制：</b>婴儿骨髓储备低 → 对CTX的血液学耐受性更差<br>
+              <b>膀胱毒性：</b>CTX代谢产物丙烯醛 → 出血性膀胱炎 → 需充分水化+美司钠（Mesna）<br><br>
+              <b>权衡：</b>IV型LN不治疗 → 进展为终末期肾病 → <b>致死</b>。CTX虽有毒副作用，但这是挽救肾脏功能的必要代价。随后转换为MMF维持可减少累积毒性。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-date">阶段3：维持缓解 — 吗替麦考酚酯（MMF）</div>
+        <div class="t-content">
+          <b>吗替麦考酚酯（Mycophenolate Mofetil, MMF）</b><br>
+          • 在CTX诱导缓解后，转换为MMF长期维持<br>
+          • MMF优势：性腺毒性<b>远低于CTX</b>，适合长期使用<br>
+          • 机制：选择性抑制次黄嘌呤单核苷酸脱氢酶（IMPDH）→ 抑制淋巴细胞嘌呤从头合成 → <b>选择性抑制T/B淋巴细胞增殖</b><br>
+          • 剂量：cSLE通常 600 mg/m²/次，每日2次<br>
+          • 2024 KDIGO LN指南：MMF和硫唑嘌呤（AZA）均为一线维持方案，但MMF证据更强
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-date">阶段4：抗凝治疗</div>
+        <div class="t-content">
+          <b>抗凝治疗（Anticoagulation）</b><br>
+          • 适应证：大面积肺栓塞（aPL阴性，但NS高凝状态导致）<br>
+          • 方案（推测）：低分子肝素（LMWH）初始 → 华法林长期维持（INR 2.0-3.0）<br>
+          • NS缓解后高凝状态消除 → 可考虑停用抗凝<br>
+          • <b>关键</b>：与APS不同，NS相关血栓在NS缓解后血栓风险降低 → 抗凝时限相对较短
+        </div>
+      </div>
+
+      <div class="t-item green">
+        <div class="t-date">转归 — 完全缓解 ✅</div>
+        <div class="t-content">
+          经联合免疫抑制+抗凝治疗后，患儿达到<b>完全缓解（Complete Remission）</b>：<br><br>
+          <div class="two-col">
+            <div>
+              <b>肾脏：</b><br>
+              ✅ 蛋白尿消失<br>
+              ✅ 血清白蛋白恢复正常<br>
+              ✅ 水肿完全消退<br>
+              ✅ 肾功能保持正常
+            </div>
+            <div>
+              <b>血液系统：</b><br>
+              ✅ 溶血性贫血纠正（Hb正常）<br>
+              ✅ 血小板恢复正常<br>
+              ✅ Coombs试验转阴<br><br>
+              <b>肺栓塞：</b><br>
+              ✅ 栓塞溶解（抗凝治疗有效）
+            </div>
+          </div><br>
+          <span class="tag t-g">12个月男婴 + ANA阴性 + IV型LN + 大面积PE → 完全缓解</span><br>
+          <span class="tag t-g">挑战了"iSLE预后极差"的传统观念</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 深度机制解析 ===== -->
+    <div class="sh yellow">🔬 深度机制解析（6个维度）</div>
+
+    <!-- 维度1：ANA阴性 -->
+    <div class="mech-box">
+      <div class="m-title">维度1：为什么ANA阴性？— 4种可能机制</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>机制A — "免疫复合物海绵"假说（最可能）：</b><br>
+        大量自身抗体与核抗原形成免疫复合物 → ANA被"捆绑"在免疫复合物中 → <b>游离ANA浓度过低</b> → 间接免疫荧光法检测不到 → ANA报告"阴性"。<br>
+        支持点：本例C1q降低 = 免疫复合物大量消耗补体 → 提示免疫复合物负荷极高。<br><br>
+
+        <b>机制B — 婴儿免疫系统不成熟：</b><br>
+        12个月婴儿的B细胞 repertoire（抗体库）尚未完全发育 → 产生的ANA可能<b>亲和力低/滴度低</b> → 标准ANA检测（通常检测阈值≥1:80）无法捕获。<br><br>
+
+        <b>机制C — 抗体特异性局限：</b><br>
+        婴儿SLE可能产生<b>针对特定组织抗原</b>的自身抗体（如抗肾小球基底膜、抗红细胞），而非广谱的ANA → 标准ANA筛查（以HEp-2细胞为底物）可能漏检。<br><br>
+
+        <b>机制D — 先天性补体缺陷（需排除）：</b><br>
+        先天性<b>C1q缺乏</b>是SLE的强力危险因素（纯合缺失者＞90%患SLE），且通常表现为ANA阴性的SLE。本例C1q降低可能是<b>消耗性</b>（免疫复合物消耗）也可能是<b>先天性缺乏</b>。需检测抗C1q抗体和C1q基因测序来鉴别。<br><br>
+
+        <div class="note red">
+          <b>临床教训：</b>ANA阴性 ≠ 排除SLE。尤其当存在补体降低+多系统受累时，必须通过组织活检（肾/皮肤）寻找免疫复合物证据。ANA敏感性约95-97%，意味着<b>3-5%的SLE患者ANA为阴性</b>。
+        </div>
+      </div>
+    </div>
+
+    <!-- 维度2：C1q -->
+    <div class="mech-box">
+      <div class="m-title">维度2：C1q降低的特殊诊断价值</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>C1q是什么？</b><br>
+        C1q是补体经典途径的<b>识别分子</b>，由6个亚单位组成，形似"一束郁金香"。每个亚单位头部可结合IgG/IgM的Fc段 → 启动C1r→C1s→C4→C2→C3的级联反应。<br><br>
+
+        <b>C1q的三大生理功能：</b><br>
+        ① <b>清除免疫复合物</b> — C1q识别并结合免疫复合物 → 激活补体 → C3b调理化 → 巨噬细胞清除<br>
+        ② <b>清除凋亡小体</b> — C1q结合凋亡细胞表面的磷脂酰丝氨酸等 → 协助清除<br>
+        ③ <b>抑制自身免疫</b> — C1q缺陷 → 免疫复合物和凋亡小体堆积 → 自身抗原暴露 → 自身免疫<br><br>
+
+        <b>本例C1q降低的意义：</b><br>
+        • C1q降低 + C3降低 + C4正常 → 补体消耗主要发生在经典途径<b>最早期</b><br>
+        • 可能机制：大量含IgG/IgM的免疫复合物 → 持续结合C1q → C1q被消耗/清除 → 血清C1q水平降低<br>
+        • C4正常提示：消耗仅限于C1q→C1r→C1s阶段，未大量激活下游C4/C2<br>
+        • 或：抗C1q抗体加速了C1q的清除（原文未检测抗C1q抗体）<br><br>
+
+        <b>先天性C1q缺乏 vs 获得性C1q降低：</b>
+        <table>
+          <tr><th>特征</th><th>先天性C1q缺乏</th><th>获得性C1q降低（本例可能）</th></tr>
+          <tr><td>基因</td><td>C1QA/B/C基因突变</td><td>无基因突变</td></tr>
+          <tr><td>C1q水平</td><td>极低/测不到（ lifelong）</td><td>降低（活动期），缓解后可恢复</td></tr>
+          <tr><td>抗C1q抗体</td><td>通常阴性</td><td>可能阳性</td></tr>
+          <tr><td>SLE风险</td><td>＞90%（纯合）</td><td>SLE活动期一过性降低</td></tr>
+          <tr><td>治疗</td><td>补充新鲜冰冻血浆/重组C1q</td><td>免疫抑制 → C1q自行恢复</td></tr>
         </table>
       </div>
     </div>
 
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>本例肾活检结果：</b><br>
-      • <b>IV型（弥漫增殖性）狼疮肾炎</b> — ≥50%肾小球受累<br>
-      • 免疫荧光：免疫复合物沉积（IgG、IgM、C3、C1q — "<b>满堂亮（Full House）</b>"模式）<br>
-      → 这是SLE肾脏受累的<b>最严重且最常见类型</b>，需要积极免疫抑制治疗<br><br>
+    <!-- 维度3："满堂亮" -->
+    <div class="mech-box">
+      <div class="m-title">维度3："满堂亮（Full House）"免疫荧光 — SLE肾脏的指纹</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>什么是"满堂亮"？</b><br>
+        在肾活检免疫荧光检查中，同一标本<b>同时显示≥3种免疫球蛋白/补体成分阳性</b>（通常IgG、IgM、IgA、C3、C1q中至少3种），称为"满堂亮"（Full House）或"橄榄球球衣"（"Starry Sky" pattern）。<br><br>
 
-      <b>为什么这个活检是确诊的关键？</b><br>
-      本例ANA阴性，C4正常，aPL阴性 — 仅凭血清学<b>无法诊断SLE</b>。<br>
-      但肾活检显示典型的"满堂亮"免疫复合物沉积 + IV型弥漫增殖 → <b>肾脏病理弥补了血清学的不足</b>，成为确诊的关键依据。
+        <b>为什么SLE会产生"满堂亮"？</b><br>
+        SLE的特征是<b>多克隆B细胞活化</b> → 产生多种自身抗体（抗DNA、抗组蛋白、抗Sm、抗RNP等）→ 形成<b>多种不同抗原-抗体组成的免疫复合物</b> → 这些免疫复合物沉积在肾小球的不同部位（系膜区、内皮下、上皮下）→ 荧光染色显示多种免疫球蛋白和补体成分 → "满堂亮"。<br><br>
+
+        <b>其他肾小球疾病通常只有1-2种成分：</b><br>
+        • IgA肾病 → 只有IgA（+C3）<br>
+        • 膜性肾病 → 只有IgG（+C3）<br>
+        • 抗GBM病 → 只有IgG（线性沉积）<br>
+        • 微小病变 → 免疫荧光阴性<br><br>
+
+        <b>"满堂亮"≠SLE特异：</b><br>
+        也可见于：① 乙肝相关性肾小球肾炎 ② 丙肝相关性冷球蛋白血症肾炎 ③ C1q肾病 ④ 纤维样肾小球肾炎 ⑤ 感染后肾小球肾炎<br>
+        但在<b>临床SLE背景下</b>（即使ANA阴性），"满堂亮"对LN的诊断价值极高。
+      </div>
     </div>
 
-    <!-- 确诊 -->
-    <div class="sh">✅ 诊断</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>1. 婴儿SLE（Infantile SLE，iSLE）</b><br>
-      依据：肾病综合征+溶血性贫血+血小板减少+C3/C1q降低+Coombs阳性+IV型LN（肾活检）<br><br>
-      <b>2. IV型狼疮肾炎（Class IV LN）</b><br>
-      依据：肾活检 — 弥漫增殖性肾小球肾炎+"满堂亮"免疫荧光<br><br>
-      <b>3. 肾病综合征（Nephrotic Syndrome）</b><br>
-      依据：肾病范围蛋白尿+低白蛋白血症+全身水肿<br><br>
-      <b>4. 大面积肺栓塞（Massive PE）</b><br>
-      依据：CT肺动脉造影确诊<br>
-      <span class="note">⚠️ aPL阴性但出现PE → 探讨PE的其他可能机制（见下方机制解析）</span>
-    </div>
+    <!-- 维度4：高凝 -->
+    <div class="mech-box">
+      <div class="m-title">维度4：肾病综合征的高凝状态 — Virchow三要素的完美风暴</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>Virchow三要素（血栓形成三联征）：</b><br>
+        ① <b>血液成分改变（高凝）</b> ② <b>血流异常（淤滞）</b> ③ <b>血管壁损伤（内皮）</b><br><br>
 
-    <!-- 治疗 -->
-    <div class="sh green">💊 多阶段治疗方案</div>
-    <div class="timeline">
-      <div class="t-item">
-        <div class="t-date">阶段1：诱导缓解</div>
-        <div class="t-content">
-          <b>糖皮质激素（Steroid）</b><br>
-          → 控制免疫炎症，减少免疫复合物形成<br><br>
-          <b>环磷酰胺（CTX，Cyclophosphamide）</b> 静脉冲击<br>
-          → IV型LN的诱导缓解金标准（与大年龄儿童方案一致）<br><br>
-          <b>抗凝治疗（Anticoagulation）</b><br>
-          → 治疗大面积肺栓塞<br>
-          → 即使aPL阴性，肾病综合征本身是高凝状态 → 抗凝指征明确
-        </div>
-      </div>
-      <div class="t-item">
-        <div class="t-date">阶段2：维持缓解</div>
-        <div class="t-content">
-          <b>吗替麦考酚酯（MMF，Mycophenolate Mofetil）</b><br>
-          → CTX诱导后转换为MMF维持<br>
-          → IV型LN维持缓解的首选药物之一<br>
-          → 适用于长期免疫抑制，安全性优于CTX
-        </div>
-      </div>
-      <div class="t-item green">
-        <div class="t-date">转归 — 完全缓解</div>
-        <div class="t-content">
-          <b>完全缓解（Complete Remission）：</b><br>
-          • 蛋白尿消失<br>
-          • 肾功能正常<br>
-          • 溶血性贫血纠正<br>
-          • 血小板恢复正常<br>
-          • 肺栓塞溶解<br>
-          <span class="tag t-g">12个月男婴 + IV型LN + 大面积PE → 完全缓解</span>
+        本例中肾病综合征如何同时满足这三个要素：<br><br>
+
+        <table>
+          <tr><th>Virchow要素</th><th>NS中的具体机制</th><th>本例表现</th></tr>
+          <tr><td class="b">① 血液高凝</td><td>
+            • 抗凝血酶（AT）从尿中丢失 → 抗凝能力↓<br>
+            • 蛋白C/S可能降低<br>
+            • 纤维蛋白原↑（肝脏代偿合成）<br>
+            • 因子V、VIII↑（急性期反应物）<br>
+            • 纤溶酶原激活物抑制剂（PAI-1）↑ → 纤溶↓
+          </td><td>大面积PE</td></tr>
+          <tr><td class="b">② 血流淤滞</td><td>
+            • 低白蛋白血症 → 胶体渗透压↓ → 水肿/腹水 → 有效循环血量↓ → 血流缓慢<br>
+            • 严重水肿 → 活动减少 → 静脉淤滞
+          </td><td>全身重度水肿+腹水</td></tr>
+          <tr><td class="b">③ 内皮损伤</td><td>
+            • SLE免疫复合物 → 补体激活 → C5b-9膜攻击复合物 → 内皮溶解<br>
+            • 自身抗体直接损伤内皮<br>
+            • 高胆固醇血症 → 内皮功能异常
+          </td><td>SLE活动+补体消耗</td></tr>
+        </table><br>
+
+        <div class="note red">
+          <b>数据：</b>儿童肾病综合征血栓栓塞发生率约<b>1.8-3.3%</b>（成人更高约8-10%）。但一旦发生PE，儿童死亡率约<b>25-30%</b>。最常见部位：肺栓塞（PE）＞ 肾静脉血栓（RVT）＞ 深静脉血栓（DVT）＞ 脑窦血栓。<br><br>
+          <b>⚠️ 12个月婴儿PE极易被误诊</b>为"肺炎"/"哮喘"/"支气管炎" → 延误抗凝治疗 → 致死。任何NS患儿突发呼吸困难/低氧，<b>必须考虑PE</b>。
         </div>
       </div>
     </div>
 
-    <div class="sh yellow">🔬 婴儿SLE + 肺栓塞的机制（深度解析）</div>
+    <!-- 维度5：补体途径 -->
+    <div class="mech-box">
+      <div class="m-title">维度5：补体途径在iSLE中的作用 — 为什么C3低但C4正常？</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>补体经典途径级联：</b><br>
+        C1（C1q+C1r+C1s）→ C4 → C2 → C3 → C5 → C5b-9（膜攻击复合物）<br><br>
 
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+        <b>本例的补体谱：</b>C1q ↓ / C3 ↓ / C4 <b>正常</b><br><br>
 
-      <b>1. 婴儿SLE（iSLE）的特殊性</b><br>
-      ① iSLE = 发病年龄<b><1岁</b>的SLE，极为罕见（文献仅零星报道）<br>
-      ② iSLE比大年龄cSLE<b>更严重</b>：更高频率的关键器官受累（肾脏、血液、中枢）<br>
-      ③ iSLE曾被认为预后很差，但本例证明<b>积极免疫抑制可获完全缓解</b><br>
-      ④ iSLE需要与<b>先天性自身免疫病</b>（如Aicardi-Goutières综合征、I型干扰素病）鉴别<br><br>
+        <b>为什么C4正常但C3降低？</b><br>
+        通常SLE活动时C3和C4<b>同时降低</b>（经典途径全面激活）。但本例C4正常，可能的原因：<br><br>
 
-      <b>2. 为什么ANA阴性？— 补体消耗假说</b><br>
-      ⑤ 本例ANA阴性但C1q显著降低 → 可能机制：<br>
-      ⑥ <b>C1q被大量免疫复合物消耗</b> → 补体经典途径持续激活<br>
-      ⑦ ANA可能与免疫复合物结合形成<b>循环免疫复合物</b> → 游离ANA减少 → 检测阴性<br>
-      ⑧ 另一可能：婴儿期免疫系统发育不成熟 → 自身抗体谱不典型<br>
-      ⑨ <b>教训</b>：ANA阴性不能排除SLE，尤其在补体降低、多系统受累时<br><br>
+        ① <b>C1q抑制在极早期</b>：免疫复合物结合C1q → C1q被消耗（↓），但C1r/C1s的活化程度有限 → 仅部分激活C4 → C4消耗不多（正常）<br>
+        ② <b>旁路途径激活</b>：C3降低可能不仅来自经典途径，还有<b>旁路途径（Alternative Pathway）</b>的放大环参与 → C3持续消耗但C4不受影响<br>
+        ③ <b>甘露糖结合凝集素途径（MBL途径）</b>：也可能参与C3消耗但不经过C4<br>
+        ④ <b>C4基因多态性</b>：C4A/C4B null allele可影响C4基础水平，使得"正常"C4实际上已经相对降低<br><br>
 
-      <b>3. C1q降低的特殊意义</b><br>
-      ⑩ C1q是补体经典途径的<b>起始分子</b>，与免疫复合物的IgG/IgM结合启动级联<br>
-      ⑪ C1q降低 → 提示<b>大量免疫复合物持续消耗补体</b> = 高度免疫活动<br>
-      ⑫ C1q降低还见于<b>C1q肾病</b>和<b>低补体血症性荨麻疹性血管炎综合征（HUVS）</b><br>
-      ⑬ 本例C1q低+C3低但C4正常 → 可能提示补体消耗主要发生在经典途径<b>早期阶段</b><br><br>
-
-      <b>4. aPL阴性为什么出现肺栓塞？— 肾病综合征的高凝状态</b><br>
-
-      <table>
-        <tr><th>高凝因素</th><th>机制</th></tr>
-        <tr><td class="b">抗凝血酶（AT）丢失</td><td>肾病范围蛋白尿 → AT从尿中丢失 → 抗凝能力↓</td></tr>
-        <tr><td class="b">纤维蛋白原↑</td><td>肝脏代偿性合成增加 → 血液粘稠度↑</td></tr>
-        <tr><td class="b">血小板活化</td><td>高胆固醇+免疫复合物 → 血小板聚集↑</td></tr>
-        <tr><td class="b">纤溶抑制</td><td>纤溶酶原激活物抑制剂（PAI-1）↑ → 纤溶↓</td></tr>
-        <tr><td class="b">免疫复合物</td><td>SLE免疫复合物损伤内皮 → 组织因子暴露 → 凝血激活</td></tr>
-        <tr><td class="b">补体活化</td><td>C5b-9膜攻击复合物 → 内皮损伤 → 促凝表面</td></tr>
-      </table>
-
-      <div class="note" style="border-left-color:var(--red);margin-top:6px;">
-        <b>🔥 核心教训：</b>肾病综合征本身就是<b>独立的高凝状态</b>，即使没有APS/aPL，也足以导致大面积肺栓塞。儿童肾病综合征合并PE的死亡率高达<b>25-30%</b>。任何肾病综合征患儿出现呼吸困难/胸痛/低氧，必须<b>立即行CT肺动脉造影</b>。
-      </div><br>
-
-      <b>5. "满堂亮"免疫荧光 — SLE肾脏的标志</b><br>
-      ⑭ 本例肾活检免疫荧光显示<b>IgG、IgM、C3、C1q全部阳性</b> — 即"满堂亮（Full House）"<br>
-      ⑮ "满堂亮"是SLE肾脏受累的<b>特征性表现</b>（其他肾小球疾病通常只有1-2种）<br>
-      ⑯ 但"满堂亮"并非SLE特异 — 也可见于：<br>
-      　　• <b>感染后肾小球肾炎</b>（如乙肝相关）<br>
-      　　• <b>C1q肾病</b><br>
-      　　• <b>纤维样肾小球肾炎</b><br>
-      ⑰ 需结合临床+血清学综合判断<br><br>
-
-      <b>6. 婴儿狼疮肾炎的治疗考量</b><br>
-      ⑱ IV型LN需要积极诱导缓解：首选<b>糖皮质激素+CTX或MMF</b><br>
-      ⑲ 本例使用CTX诱导 → MMF维持 → 与大年龄cSLE方案一致<br>
-      ⑳ 但12个月婴儿使用CTX的特殊考量：<br>
-      　　• 性腺毒性（尤其男性患儿，CTX对生精细胞不可逆损伤）<br>
-      　　• 感染风险（婴儿免疫系统发育中）<br>
-      　　• 骨髓抑制耐受性更低<br>
-      ㉑ MMF维持是更安全的选择 — 本例成功转换为MMF长期维持
+        <div class="note">
+          <b>检测建议：</b>当遇到C3低但C4正常时，应检测CH50（总溶血补体活性）和AH50（旁路途径溶血活性），帮助判断哪条途径主导。还可检测抗C1q抗体和Bb片段（旁路途径激活标志）。
+        </div>
+      </div>
     </div>
 
+    <!-- 维度6：iSLE预后 -->
+    <div class="mech-box">
+      <div class="m-title">维度6：iSLE的预后 — 从"不治之症"到"完全缓解"</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>传统观点：</b>iSLE比cSLE更严重、预后更差。早期文献报告iSLE死亡率高、肾脏预后差。<br><br>
+
+        <b>本例的意义：</b><br>
+        一个12个月男婴，IV型LN+大面积PE（最严重组合），经过规范的免疫抑制治疗（激素+CTX→MMF）+ 抗凝 → <b>完全缓解</b>。<br><br>
+
+        <b>预后改善的可能原因：</b><br>
+        ① <b>更早诊断</b>（虽然本例延迟了2个月，但肾活检及时确诊）<br>
+        ② <b>更积极的治疗</b>（不再因为年龄小而"保守"治疗）<br>
+        ③ <b>CTX→MMF序贯方案</b>的优化（减少长期毒性同时保持疗效）<br>
+        ④ <b>支持治疗的进步</b>（抗凝、感染预防、营养支持）<br><br>
+
+        <b>长期随访仍需关注：</b><br>
+        • <b>肾脏远期预后</b>：IV型LN的10年肾脏存活率约70-85%<br>
+        • <b>CTX性腺毒性</b>：男婴的远期生育能力<br>
+        • <b>复发风险</b>：cSLE 5年复发率约30-50%<br>
+        • <b>生长/发育</b>：长期激素+免疫抑制对生长的影响<br>
+        • <b>心血管风险</b>：慢性SLE → 早发动脉粥样硬化
+      </div>
+    </div>
+
+    <!-- ===== 临床要点总结 ===== -->
     <div class="sh green">📚 临床要点总结</div>
+
     <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>诊断层面：</b><br>
-      ① <b>婴儿肾病综合征 + 多系统受累</b>必须考虑iSLE — 不能因年龄小而排除<br>
-      ② <b>ANA阴性不能排除SLE</b> — 尤其在补体降低时，行肾活检至关重要<br>
-      ③ "满堂亮"免疫荧光高度提示SLE肾脏受累<br>
-      ④ C1q降低是补体经典途径激活的重要线索<br><br>
-
-      <b>治疗层面：</b><br>
-      ⑤ iSLE的IV型LN治疗方案与大年龄cSLE一致（激素+CTX→MMF）<br>
-      ⑥ 婴儿使用CTX需特别注意性腺毒性和感染风险<br>
-      ⑦ <b>积极免疫抑制可获完全缓解</b> — iSLE并非"不治之症"<br>
-      ⑧ 肾病综合征合并PE → 免疫抑制 + 抗凝双管齐下<br><br>
-
-      <b>警示层面：</b><br>
-      ⑨ <b>肾病综合征 = 高凝状态</b>，无需aPL阳性也可发生血栓<br>
-      ⑩ 婴儿出现呼吸困难/低氧 → 必须排除PE<br>
-      ⑪ 儿童PE可无明显下肢DVT（深静脉血栓）— "沉默型"PE
+      <div class="two-col">
+        <div>
+          <b>🔍 诊断层面：</b><br>
+          ① 婴儿NS+多系统受累 → 必须考虑iSLE<br>
+          ② ANA阴性≠排除SLE → 补体降低+多系统受累时做肾活检<br>
+          ③ "满堂亮"免疫荧光 = SLE肾脏的"指纹"<br>
+          ④ C1q降低是补体经典途径激活的重要线索<br>
+          ⑤ NS+呼吸困难 → 必须排除PE<br>
+          ⑥ 鉴别NLE vs iSLE：NLE由母体抗体引起，通常自限
+        </div>
+        <div>
+          <b>💊 治疗层面：</b><br>
+          ⑦ iSLE的IV型LN治疗 = 与cSLE一致（激素+CTX→MMF）<br>
+          ⑧ 婴儿CTX需特别注意性腺毒性和感染风险<br>
+          ⑨ 积极免疫抑制可获完全缓解<br>
+          ⑩ NS合并PE → 免疫抑制+抗凝双管齐下<br>
+          ⑪ NS缓解后血栓风险降低 → 抗凝可减停<br>
+          ⑫ MMF维持优于长期CTX（安全性+耐受性）
+        </div>
+      </div>
     </div>
 
+    <!-- ===== 相关工具 ===== -->
     <div class="sh">🔗 相关工具</div>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
       <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
-      <a href="case_cSLE_AIHA_LAHPS.html" style="text-decoration:none"><span class="tag t-a">⬅ AIHA+LAHPS</span></a>
+      <a href="case_cSLE_AIHA_LAHPS.html" style="text-decoration:none"><span class="tag t-a">⬅ 病例6：AIHA+LAHPS</span></a>
     </div>
 
+    <!-- ===== 文献 ===== -->
     <div class="sh">📖 文献来源</div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
-      Akar EM, Özçakar ZB, Çakar N, et al. <i>Infantile systemic lupus erythematosus presenting as nephrotic syndrome in a 12-month-old boy: a case report</i>. Turk J Pediatr. 2021;63(2):339-343.<br>
-      PMID: 33929126 | DOI: 10.24953/turkjped.2021.02.021
+      <b>主要文献：</b><br>
+      Akar EM, Özçakar ZB, Çakar N, Kiremitçi S, Kurt-Şükür ED, Fitöz S, Yalçınkaya F.<br>
+      <i>Infantile systemic lupus erythematosus presenting as nephrotic syndrome in a 12-month-old boy: a case report</i>.<br>
+      Turk J Pediatr. 2021;63(2):339-343.<br>
+      PMID: 33929126 | DOI: 10.24953/turkjped.2021.02.021<br><br>
+
+      <b>扩展阅读：</b><br>
+      • Wenderfer SE, Cooper JC. Do we really need cyclophosphamide for lupus nephritis? <i>Pediatr Nephrol</i>. 2024;39:3193-3200. PMID: 38607424<br>
+      • Bajema IM, et al. Revision of the International Society of Nephrology/Renal Pathology Society classification for LN. <i>Kidney Int</i>. 2018;93:789-796.<br>
+      • Rovin BH, et al. KDIGO 2024 Clinical Practice Guideline for LN. <i>Kidney Int</i>. 2024.
     </div>
 
   </div>
