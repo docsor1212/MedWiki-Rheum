@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：cSLE以反复MAS为首发表现</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">反复MAS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：cSLE以反复MAS为首发表现</h1>
+      <div class="sub">14岁女孩 — 3次MAS发作，揭示cSLE与MAS的深层关联</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>14岁，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>印度加尔各答，Postgraduate Medical Education and Research研究所，临床免疫与风湿科</td></tr>
+      <tr><td class="b">起病表现</td><td>以<b>MAS</b>（巨噬细胞活化综合征）为首发表现，随后确诊SLE</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">反复MAS ×3</span> <span class="tag t-r">以MAS起病</span> <span class="tag t-a">cSLE</span> <span class="tag t-g">最终缓解</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>儿科SLE中反复MAS发作极为罕见。文献中仅报道过2例反复MAS的儿科SLE病例。本例MAS发作3次，是报道中次数最多的病例之一，为理解cSLE-MAS的病理机制提供了重要线索。
+    </div>
+
+    <!-- 第1次MAS -->
+    <div class="sh red">🔴 第1次MAS发作 — 疾病首发</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">入院 — 以"不明原因发热"就诊</div>
+        <div class="t-content">
+          14岁女孩，表现为<b>持续高热、全血细胞减少、肝脾肿大</b>。<br><br>
+          <b>实验室检查：</b><br>
+          • 血红蛋白 ↓、白细胞 ↓、血小板 ↓（三系减少）<br>
+          • 铁蛋白 <b>显著升高</b><br>
+          • 甘油三酯 ↑、纤维蛋白原 ↓<br>
+          • 肝酶（AST/ALT）↑<br>
+          <br>
+          <b>骨髓穿刺：</b>噬血现象阳性（巨噬细胞吞噬血细胞）<br><br>
+          <span class="tag t-r">HLH-2004标准确诊MAS</span>
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">MAS治疗期间 — SLE线索浮现</div>
+        <div class="t-content">
+          进一步免疫学检查发现：<br>
+          • <b>抗核抗体（ANA，Anti-Nuclear Antibody）阳性</b><br>
+          • <b>抗dsDNA抗体（Anti-double Stranded DNA Antibody，抗双链DNA抗体）阳性</b><br>
+          • <b>补体C3、C4降低</b><br>
+          • 尿检：蛋白尿阳性<br>
+          <br>
+          符合<b>SLICC-2012标准</b>（Systemic Lupus International Collaborating Clinics，系统性红斑狼疮国际协作组），确诊<b>cSLE</b>。<br>
+          <span class="tag t-a">cSLE诊断确立</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第1次MAS治疗与转归</div>
+        <div class="t-content">
+          <b>方案</b>：静脉甲泼尼龙冲击 + 环孢素A<br>
+          <b>结果</b>：MAS缓解。开始<b>羟氯喹（HCQ，Hydroxychloroquine）</b>+小剂量泼尼松维持治疗。
+        </div>
+      </div>
+    </div>
+
+    <!-- 第2次MAS -->
+    <div class="sh red">🔴 第2次MAS发作 — 维持治疗中</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">维持治疗数月后 — 再次高热+三系减少</div>
+        <div class="t-content">
+          在<b>羟氯喹+小剂量泼尼松</b>维持治疗期间，再次出现：<br>
+          • 持续高热<br>
+          • 全血细胞减少<br>
+          • 铁蛋白显著升高<br>
+          • 噬血现象再次阳性<br>
+          <span class="tag t-r">第2次MAS确诊</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第2次MAS治疗</div>
+        <div class="t-content">
+          <b>方案</b>：再次甲泼尼龙冲击 + 环孢素A<br>
+          <b>加用</b>：吗替麦考酚酯（MMF，Mycophenolate Mofetil，霉酚酸酯）<br>
+          <b>结果</b>：再次缓解。调整维持方案。
+        </div>
+      </div>
+    </div>
+
+    <!-- 第3次MAS -->
+    <div class="sh red">🔴 第3次MAS发作 — 调整方案后仍复发</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">第2次缓解后 — 第三次MAS</div>
+        <div class="t-content">
+          <b>第3次</b>出现MAS的典型临床表现。<br>
+          发作细节与第1、2次类似：高热+三系减少+铁蛋白升高+噬血现象。<br>
+          <span class="tag t-r">第3次MAS确诊</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第3次MAS治疗 — 强化方案</div>
+        <div class="t-content">
+          <b>方案</b>：甲泼尼龙冲击 + 环孢素A<br>
+          <b>调整维持方案</b>：加强免疫抑制，更积极的治疗策略<br>
+          <b>结果</b>：第3次缓解。
+        </div>
+      </div>
+    </div>
+
+    <div class="sh">📊 三次MAS发作对比</div>
+    <table>
+      <tr><th>特征</th><th>第1次</th><th>第2次</th><th>第3次</th></tr>
+      <tr><td class="b">触发因素</td><td>cSLE疾病活动（首诊）</td><td>维持治疗中疾病活动</td><td>疾病再次活动</td></tr>
+      <tr><td class="b">发热</td><td>持续高热</td><td>持续高热</td><td>持续高热</td></tr>
+      <tr><td class="b">血细胞减少</td><td>三系↓</td><td>三系↓</td><td>三系↓</td></tr>
+      <tr><td class="b">铁蛋白</td><td>显著↑</td><td>显著↑</td><td>显著↑</td></tr>
+      <tr><td class="b">噬血现象</td><td>阳性</td><td>阳性</td><td>阳性</td></tr>
+      <tr><td class="b">治疗方案</td><td>甲泼尼龙+CsA</td><td>甲泼尼龙+CsA+MMF</td><td>甲泼尼龙+CsA（强化）</td></tr>
+      <tr><td class="b">转归</td><td>缓解</td><td>缓解</td><td>缓解</td></tr>
+    </table>
+
+    <div class="sh yellow">🔬 cSLE-MAS的病理机制（本病例启示）</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 为什么cSLE容易并发MAS？</b><br>
+      ① cSLE本身存在IFN-γ（干扰素γ）和IL-6/IL-1等细胞因子的过度活化<br>
+      ② cSLE的免疫复合物沉积→巨噬细胞持续活化→吞噬功能亢进<br>
+      ③ NK细胞（Natural Killer细胞，自然杀伤细胞）功能和细胞毒性T细胞功能缺陷是核心<br><br>
+      <b>2. 为什么会反复发作？</b><br>
+      ④ 基础免疫异常未根除 — SLE的自身免疫过程持续存在<br>
+      ⑤ 维持治疗方案可能不够充分 — 单用HCQ+小剂量激素难以控制高活动度cSLE<br>
+      ⑥ 每次MAS缓解后需要更积极的维持治疗预防复发<br><br>
+      <b>3. cSLE-MAS vs sJIA-MAS 的异同</b><br>
+      ⑦ 共同点：高热、三系减少、铁蛋白升高、噬血现象、环孢素+激素有效<br>
+      ⑧ 不同点：cSLE-MAS常与疾病活动度相关（而非感染触发为主）；cSLE-MAS可能更难维持缓解<br>
+      ⑨ cSLE中反复MAS更罕见（文献仅2例报道），提示这类患者可能需要更个性化的治疗方案
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① <b>不明原因的HLH/MAS必须筛查SLE</b> — ANA、抗dsDNA、补体C3/C4、尿检<br>
+      ② MAS可能是cSLE的<b>首发表现</b>，尤其见于青春期女性<br>
+      ③ 骨髓穿刺是确诊MAS的关键（噬血现象）<br><br>
+      <b>治疗层面：</b><br>
+      ④ 甲泼尼龙冲击 + 环孢素A是cSLE-MAS的标准挽救方案<br>
+      ⑤ 反复MAS患者需要更积极的维持治疗（MMF/生物制剂）<br>
+      ⑥ 每次MAS缓解后应评估是否需要升级维持方案<br><br>
+      <b>随访层面：</b><br>
+      ⑦ 有MAS病史的cSLE患者是复发高危人群<br>
+      ⑧ 应定期监测铁蛋白、血细胞计数、纤维蛋白原<br>
+      ⑨ 疾病活动度控制不佳是MAS复发的最重要危险因素
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
+      <a href="../topics/SLE.html" style="text-decoration:none"><span class="tag t-a">📋 SLE专题</span></a>
+      <a href="../drugs/cyclosporine.html" style="text-decoration:none"><span class="tag t-a">📋 环孢素页</span></a>
+      <a href="../drugs/mycophenolate.html" style="text-decoration:none"><span class="tag t-a">📋 吗替麦考酚酯页</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Dey S, Roongta R, Mondal S, et al. <i>Recurrent macrophage activation syndrome as the initial manifestation of paediatric systemic lupus erythematosus</i>. Lupus. 2022;31(9):1132-1137.<br>
+      PMID: 35713230 | DOI: 10.1177/09612033221108852
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_MAS_neuro.html" style="display:inline-block;padding:6px 12px;background:var(--yellow);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：cSLE-MAS+广泛脑病变 ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 35713230）· 不构成诊疗建议 · cSLE病例专题 第1篇
+  </div>
+</div>
+
+</body>
+</html>
