@@ -24,7 +24,7 @@
 | **1. NSAIDs** | 萘普生 | 10-15mg/kg/d | po | bid | max 1g |
 | | 布洛芬 | 30-40mg/kg/d | po | tid-qid | max 2.4g |
 | | 塞来昔布 | 3-6mg/kg/d | po | bid | max 400mg |
-| **2. csDMARD** | **MTX** ⭐ | 10-15mg/m² | **SC首选** | qw | max 25mg，+叶酸1mg/d |
+| **2. csDMARD** | **MTX** ⭐ | 10-15mg/m² | **SC首选** | qw | max 25mg，+叶酸5mg/周（MTX后24h） |
 | | 柳氮磺吡啶 | 30-50mg/kg/d | po | bid | 4-8w起效 |
 | **3. 生物制剂** | 阿达木单抗 | ≤30kg:20mg >30kg:40mg | SC | q2w | 多关节+葡萄膜炎⭐首选 |
 | | 依那西普 | 0.8mg/kg max50mg | SC | biw | ⚠️不用于葡萄膜炎 |

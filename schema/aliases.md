@@ -7,7 +7,7 @@
 | Adalimumab | 阿达木单抗, Humira |
 | Etanercept | 依那西普, Enbrel |
 | Tocilizumab | 托珠单抗, Actemra |
-| Canakinumab | 卡那奴单抗, Ilaris |
+| Canakinumab | 卡那单抗, Ilaris |
 | Anakinra | 阿那白滞素, Kineret |
 | Prednisone | 泼尼松 |
 | Methylprednisolone | 甲泼尼龙 |

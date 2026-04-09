@@ -142,7 +142,7 @@ body{padding-top:42px !important;}
     <option value="adalimumab">阿达木单抗（TNFi）</option>
     <option value="tocilizumab">托珠单抗（IL-6）</option>
     <option value="anakinra">阿那白滞素（IL-1）</option>
-    <option value="canakinumab">卡那奴单抗（IL-1）</option>
+    <option value="canakinumab">卡那单抗（IL-1）</option>
     <option value="abatacept">阿巴西普（共刺激调节）</option>
     <option value="rituximab">利妥昔单抗（抗CD20）</option>
     <option value="MMF">吗替麦考酚酯（MMF）</option>
@@ -307,7 +307,7 @@ const DRUGS = {
       monthly_3:'CBC + 肝功能 + 肾功能（前3个月每月）',
       stable:'每2-3月 CBC + 肝功能 + 肾功能',
       longterm:'长期(>5年): 每年肝纤维化评估（FibroScan或肝活检）',
-      extra:'叶酸 1mg/d 必须联用'
+      extra:'叶酸 5mg 每周1次（MTX给药24h后）必须联用'
     },
     vaccine:{
       live:'可接种（MTX单药不禁止活疫苗，但需评估疾病活动度）。ACR 2022: 低剂量MTX(≤25mg/w)不视为活疫苗绝对禁忌',
@@ -430,7 +430,7 @@ const DRUGS = {
     }
   },
   canakinumab: {
-    name:'卡那奴单抗（IL-1β）', category:'bDMARD-IL1',
+    name:'卡那单抗（IL-1β）', category:'bDMARD-IL1',
     absContraindications:['活动性严重感染','已知过敏'],
     relContraindications:['中性粒细胞减少','复发性感染史'],
     riskFactors:{
