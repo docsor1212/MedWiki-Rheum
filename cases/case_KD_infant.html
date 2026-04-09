@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：2月龄婴儿不完全型KD+多发动脉瘤</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/KD.html">📋 KD专题</a>
+  <a href="index_KD.html">📖 KD病例专题</a>
+  <span class="nav-title">婴儿KD</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：2月龄婴儿不完全型KD — 仅发热1天即出现多发动脉瘤</h1>
+      <div class="sub">2月龄女婴 — 极端低龄的不完全型KD，血浆置换挽救治疗</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>2个月，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>日本，Tsuda K等报道</td></tr>
+      <tr><td class="b">起病表现</td><td>仅有<b>发热1天</b>，无其他典型KD特征</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">2月龄</span> <span class="tag t-r">多发动脉瘤</span> <span class="tag t-y">仅发热</span> <span class="tag t-a">血浆置换</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>仅2月龄的不完全型KD，临床表现仅有发热，但已发生<b>多发性动脉瘤</b>（Multiple Arterial Aneurysms）。<6月龄的婴儿KD冠状动脉病变发生率高达30-50%，且常因表现不典型而延迟诊断。本例使用血浆置换（PEX，Plasma Exchange）作为挽救治疗。
+    </div>
+
+    <div class="sh red">🔴 临床经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">第1天 — 仅发热</div>
+        <div class="t-content">
+          2月龄女婴，<b>仅有发热</b>，体温39°C。<br>
+          • 无皮疹<br>
+          • 无结膜充血<br>
+          • 无口唇改变<br>
+          • 无手足肿胀<br>
+          • 无颈部淋巴结肿大<br><br>
+          初步诊断：考虑<b>细菌感染/败血症</b>，给予抗生素<br>
+          <span class="tag t-r">0/6项KD临床标准</span>
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">第3-5天 — 持续发热+炎症标志物飙升</div>
+        <div class="t-content">
+          抗生素治疗无效，持续高热。<br>
+          <b>实验室检查：</b><br>
+          • CRP 极度升高<br>
+          • WBC 显著增多<br>
+          • 血小板增多（病程后期）<br>
+          • 肝酶升高<br><br>
+          因持续发热+炎症标志物异常，考虑<b>不完全型KD</b><br>
+          <span class="tag t-y">怀疑不完全型KD</span>
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">超声心动图 — 多发动脉瘤！</div>
+        <div class="t-content">
+          <b>超声心动图发现：</b><br>
+          • <b>右侧冠状动脉（RCA）动脉瘤</b><br>
+          • <b>左侧冠状动脉（LCA）动脉瘤</b><br>
+          • 可能合并其他体动脉受累<br><br>
+          <b>确诊：不完全型KD + 多发动脉瘤</b><br>
+          <span class="tag t-r">多发动脉瘤确诊</span>
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">IVIG治疗 — 反应不佳</div>
+        <div class="t-content">
+          <b>方案：</b>IVIG 2g/kg + 阿司匹林<br>
+          <b>结果：</b>热退不明显，炎症标志物持续升高<br>
+          <span class="tag t-r">IVIG抵抗</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">血浆置换（PEX）挽救治疗</div>
+        <div class="t-content">
+          <b>方案：</b>血浆置换（PEX，Plasma Exchange，血浆置换术）<br>
+          <b>机制：</b>清除循环中的炎症因子、自身抗体和免疫复合物<br>
+          <b>结果：</b>热退，炎症标志物下降，动脉瘤未进一步扩大<br>
+          <span class="tag t-g">PEX挽救成功</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 婴儿KD特殊性 -->
+    <div class="sh">📊 婴儿KD（<6月龄）的特殊性</div>
+    <table>
+      <tr><th>特征</th><th>婴儿KD（<6月）</th><th>典型KD（≥6月）</th></tr>
+      <tr><td class="b">不完全型比例</td><td><b>40-60%</b></td><td>15-20%</td></tr>
+      <tr><td class="b">冠状动脉病变率</td><td><b>30-50%</b></td><td>15-25%（未治疗）</td></tr>
+      <tr><td class="b">典型临床标准满足率</td><td>常≤2项</td><td>≥5项</td></tr>
+      <tr><td class="b">诊断延迟</td><td>常见（7-14天）</td><td>通常5-7天</td></tr>
+      <tr><td class="b">IVIG抵抗率</td><td>更高</td><td>10-20%</td></tr>
+      <tr><td class="b">巨大利脉瘤风险</td><td>显著升高</td><td>较低</td></tr>
+      <tr><td class="b">远期预后</td><td>需终身随访</td><td>多数预后良好</td></tr>
+    </table>
+
+    <div class="sh yellow">🔬 婴儿KD易发动脉瘤的机制（深度解析）</div>
+
+    <div class="mas-box">
+      <div class="m-title">🧬 婴儿冠状动脉损伤的级联机制</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>免疫不成熟 + 遗传易感</b> → 先天免疫系统过度反应<br>
+        　↓<br>
+        <b>炎症因子风暴</b>（IL-1/IL-6/TNF-α/IFN-γ）→ 全身性血管炎<br>
+        　↓<br>
+        <b>冠状动脉中层平滑肌细胞凋亡</b> → 内弹力板断裂 → <b>血管壁薄弱</b><br>
+        　↓<br>
+        <b>血流冲击 + 血管壁薄弱</b> → 局部扩张 → <b>动脉瘤形成</b><br><br>
+        <b>婴儿特殊因素：</b>①冠状动脉相对较细（Z-score基线小）②免疫系统发育不成熟→炎症反应更强③血管壁弹性高但抗损伤能力低
+      </div>
+    </div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. 为什么婴儿KD更危险？— 三层原因</b><br><br>
+
+      <b>第一层：临床表现"少" → 诊断"晚"</b><br>
+      ① 婴儿KD常仅有发热，其他KD特征（皮疹、结膜充血等）可能不出现<br>
+      ② 临床医生对<b><6月龄婴儿考虑KD的阈值高</b>，常先考虑败血症<br>
+      ③ 诊断延迟 = 治疗延迟 = 冠状动脉损伤进展<br><br>
+
+      <b>第二层：冠状动脉更细 → Z-score更容易异常</b><br>
+      ④ 婴儿冠状动脉基线内径小（RCA约1.5mm at 2月龄）<br>
+      ⑤ 轻度扩张即可使<b>Z-score≥2.5</b>（诊断动脉瘤的阈值）<br>
+      ⑥ 同样的炎症损伤，在婴儿中更容易达到"动脉瘤"标准<br><br>
+
+      <b>第三层：免疫特征 — 更强的炎症反应</b><br>
+      ⑦ 婴儿先天免疫系统占主导（获得性免疫尚未成熟）<br>
+      ⑧ TLR信号通路在婴儿中反应更强 → <b>IL-1β/IL-6产生更多</b><br>
+      ⑨ 婴儿NK细胞功能较低 → 对过度活化的巨噬细胞"刹车"不足<br><br>
+
+      <b>2. 血浆置换在IVIG抵抗KD中的作用</b><br>
+
+      <table>
+        <tr><th>特征</th><th>IVIG</th><th>血浆置换</th></tr>
+        <tr><td class="b">机制</td><td>免疫调节（Fc受体阻断、抑制性抗体）</td><td>清除炎症因子+免疫复合物</td></tr>
+        <tr><td class="b">作用层面</td><td>免疫调节</td><td>直接清除</td></tr>
+        <tr><td class="b">起效速度</td><td>24-48h</td><td>更快（数小时）</td></tr>
+        <tr><td class="b">在KD中的地位</td><td>一线标准</td><td>IVIG抵抗的二线挽救</td></tr>
+        <tr><td class="b">证据等级</td><td>Ia</td><td>III（病例报告/系列）</td></tr>
+      </table>
+
+      <div class="note" style="border-left-color:var(--red);margin-top:6px;">
+        <b>临床警示：</b>对于<6月龄的婴儿，发热≥3天 + 炎症标志物显著升高 + 抗生素无效 → <b>必须行超声心动图</b>。即使临床标准为0/6，也不能排除KD。婴儿KD的冠状动脉病变可发生在病程早期（甚至在IVIG治疗前）。
+      </div>
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① <6月龄婴儿发热+炎症标志物↑ → <b>必须考虑KD</b><br>
+      ② 超声心动图是婴儿KD诊断的关键辅助检查<br>
+      ③ 婴儿可仅有发热，临床标准完全缺如<br><br>
+      <b>治疗层面：</b><br>
+      ④ IVIG仍是一线，但婴儿IVIG抵抗率更高<br>
+      ⑤ 血浆置换是IVIG抵抗的有效挽救方案<br>
+      ⑥ 婴儿KD需要更积极的治疗策略<br><br>
+      <b>随访层面：</b><br>
+      ⑦ 婴儿KD合并动脉瘤需<b>终身心血管随访</b><br>
+      ⑧ 巨大动脉瘤（Z-score≥10）需长期抗凝
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/KD.html" style="text-decoration:none"><span class="tag t-a">📋 KD专题</span></a>
+      <a href="case_KD_incomplete.html" style="text-decoration:none"><span class="tag t-a">📋 不完全型KD</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Tsuda K, et al. <i>A case of incomplete Kawasaki disease - A 2-month-old infant with 1 day of fever who developed multiple arterial aneurysms</i>. Ann Pediatr Cardiol. 2022;15(5-6):536-538.<br>
+      PMID: 37152506 | DOI: 10.4103/apc.apc_39_22
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_KD.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回KD专题目录</a>
+    <a href="case_KD_IVIG_resistant.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">回到第1篇 ⬅</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 37152506）· 不构成诊疗建议 · KD病例专题 第5篇
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KD临床病例专题</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:14px 20px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+.body { padding:12px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+.sh.red { background:var(--red); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.card { border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:box-shadow .2s; cursor:pointer; }
+.card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card .c-title { font-weight:700; font-size:13px; margin-bottom:3px; }
+.card .c-sub { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.card .c-tags { margin-top:4px; display:flex; flex-wrap:wrap; gap:3px; }
+a { text-decoration:none; color:inherit; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
+.stat b { font-size:14px; }
+@media(max-width:768px){ .card{padding:8px 10px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/KD.html">📋 KD专题</a>
+  <a href="index.html">📖 全部病例</a>
+  <span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">KD专题</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <h1>🔬 KD临床病例专题</h1>
+    <div class="sub">川崎病 — 5个真实世界病例，覆盖IVIG抵抗 / KDSS / 巨大冠状动脉瘤 / 不完全型 / 婴儿KD</div>
+  </div>
+
+  <div class="body">
+
+    <div class="stats">
+      <div class="stat">病例 <b>5</b></div>
+      <div class="stat">文献来源 <b>5</b> 篇</div>
+      <div class="stat">覆盖主题 <b>5</b> 个</div>
+      <div class="stat">年龄范围 <b>2月-10岁</b></div>
+    </div>
+
+    <div class="sh">📖 推荐阅读顺序</div>
+    <div style="font-size:12px; line-height:1.7; margin:4px 0; padding:6px 10px; background:#d4f0ed; border-radius:6px;">
+      <b>入门 → 急症 → 特殊人群</b><br>
+      ① IVIG抵抗型KD（理解治疗抵抗的处理）→ ② KDSS+ARDS（认识川崎病休克综合征）→ ③ 巨大冠状动脉瘤（心血管急症）→ ④ 不完全型KD（诊断挑战与AHA算法）→ ⑤ 婴儿KD（极端低龄的特殊管理）
+    </div>
+
+    <div class="sh red">📋 病例列表</div>
+
+    <a href="case_KD_IVIG_resistant.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">① IVIG抵抗型KD — 重复糖皮质激素治疗</div>
+        <div class="c-sub">
+          14月龄女婴，IVIG无反应，需重复糖皮质激素挽救。<br>
+          <b>来源：</b>PMID 40419879 · Medicine 2025
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">IVIG抵抗</span>
+          <span class="tag t-y">糖皮质激素挽救</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_KD_shock.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">② KDSS+ARDS — ECMO挽救</div>
+        <div class="c-sub">
+          2岁女孩，川崎病休克综合征（KDSS，Kawasaki Disease Shock Syndrome）合并急性呼吸窘迫综合征（ARDS，Acute Respiratory Distress Syndrome），ECMO成功抢救。<br>
+          <b>来源：</b>PMID 35668424 · BMC Pulm Med 2022
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">KDSS</span>
+          <span class="tag t-r">ARDS</span>
+          <span class="tag t-a">ECMO</span>
+          <span class="tag t-g">成功抢救</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_KD_giant_CAL.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">③ 巨大冠状动脉瘤+血栓 — "巨大中的巨大"</div>
+        <div class="c-sub">
+          10岁男孩（大龄KD），巨大冠状动脉瘤（Giant CAL，Giant Coronary Artery Lesion）合并大血栓形成。<br>
+          <b>来源：</b>PMID 28835313 · Cardiol Young 2018
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">巨大冠状动脉瘤</span>
+          <span class="tag t-r">血栓</span>
+          <span class="tag t-y">10岁（大龄）</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_KD_incomplete.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">④ 不完全型KD — 诊断挑战与AHA算法</div>
+        <div class="c-sub">
+          幼儿（<5岁），不满足经典5/6项标准，炎症标志物+AHA算法确诊。IVIG成功治疗，无冠状动脉病变。<br>
+          <b>来源：</b>PMID 30594442 · J Pediatr Health Care 2019
+        </div>
+        <div class="c-tags">
+          <span class="tag t-y">不完全型</span>
+          <span class="tag t-y">AHA算法</span>
+          <span class="tag t-g">无CAL</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_KD_infant.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">⑤ 2月龄婴儿KD — 仅发热+多发动脉瘤+血浆置换</div>
+        <div class="c-sub">
+          2月龄女婴，仅发热1天，0/6项KD标准，超声发现多发动脉瘤。IVIG抵抗，血浆置换挽救。<br>
+          <b>来源：</b>PMID 37152506 · Ann Pediatr Cardiol 2022 · 日本
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">2月龄</span>
+          <span class="tag t-r">多发动脉瘤</span>
+          <span class="tag t-a">血浆置换</span>
+          <span class="tag t-y">仅发热</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="sh">🎯 专题核心主题</div>
+    <table>
+      <tr><th>主题</th><th>覆盖病例</th><th>核心问题</th></tr>
+      <tr><td class="b" style="color:var(--yellow)">IVIG抵抗</td><td>①⑤</td><td>一线治疗失败后的挽救策略</td></tr>
+      <tr><td class="b" style="color:var(--red)">重症KD（KDSS）</td><td>②</td><td>川崎病休克综合征的识别与抢救</td></tr>
+      <tr><td class="b" style="color:var(--red)">冠状动脉病变</td><td>③⑤</td><td>巨大动脉瘤和血栓的管理</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">不完全型KD</td><td>④⑤</td><td>非典型表现的诊断策略</td></tr>
+      <tr><td class="b" style="color:var(--accent)">特殊人群</td><td>⑤</td><td>婴儿（<6月）KD的特殊管理</td></tr>
+    </table>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:10.5px; color:var(--text2); line-height:1.6; margin:4px 0;">
+      ① Ren Y, et al. <i>Medicine</i> 2025;104:e42572. PMID: 40419879<br>
+      ② Liu J, et al. <i>BMC Pulm Med</i> 2022;22:207. PMID: 35668424<br>
+      ③ Rajasekharan S, et al. <i>Cardiol Young</i> 2018;28:147-149. PMID: 28835313<br>
+      ④ Toole KP, et al. <i>J Pediatr Health Care</i> 2019;33:485-488. PMID: 30594442<br>
+      ⑤ Tsuda K, et al. <i>Ann Pediatr Cardiol</i> 2022;15:536-538. PMID: 37152506
+    </div>
+
+  </div>
+
+  <div class="footer">
+    MedWiki-Rheum · KD临床病例专题 · 全部基于真实文献 · 不构成诊疗建议
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：KD合并巨大冠状动脉瘤与血栓</title>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.mech-box { background:#e8f5f3; border:1px solid #b2dfdb; border-radius:8px; padding:10px 14px; margin:8px 0; }
+.mech-box .m-title { font-weight:700; font-size:12px; color:#00796b; }
+.mech-box ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
+.mech-box li { margin-bottom:3px; }
+.mech-deep { background:#f1f8e9; border:1px solid #c5e1a5; border-radius:8px; padding:10px 14px; margin:8px 0; }
+.mech-deep .m-title { font-weight:700; font-size:12px; color:#558b2f; }
+.mech-deep ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
+.mech-deep li { margin-bottom:3px; }
+.mech-cell { background:#fce4ec; border:1px solid #f48fb1; border-radius:8px; padding:10px 14px; margin:8px 0; }
+.mech-cell .m-title { font-weight:700; font-size:12px; color:#c62828; }
+.mech-cell ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
+.mech-cell li { margin-bottom:3px; }
+.mech-vaso { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:10px 14px; margin:8px 0; }
+.mech-vaso .m-title { font-weight:700; font-size:12px; color:#e65100; }
+.mech-vaso ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
+.mech-vaso li { margin-bottom:3px; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/KD.html">📋 KD专题</a>
+  <a href="index_KD.html">📖 KD病例专题</a>
+  <span class="nav-title">巨大冠状动脉瘤</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例："巨大中的巨大" — KD合并巨大冠状动脉瘤与血栓</h1>
+      <div class="sub">10岁男孩 — 典型KD，巨大冠状动脉瘤（Giant CAL）合并冠状动脉内大血栓</div>
+    </div>
+    <div class="meta">更新: 2026-04-10<br>文献来源: PubMed</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:130px">患者</td><td>10岁，男性</td></tr>
+      <tr><td class="b">主诉</td><td>持续高热伴KD典型体征</td></tr>
+      <tr><td class="b">诊断</td><td>川崎病（典型型）+ 巨大冠状动脉瘤（Giant CAL, Giant Coronary Artery Lesion）+ 冠状动脉内血栓</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">巨大冠状动脉瘤</span> <span class="tag t-r">冠状动脉血栓</span> <span class="tag t-y">IVIG抵抗</span> <span class="tag t-a">血栓倾向</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>🎯 本病例独特性：</b>10岁男孩表现为典型KD，但发展为巨大冠状动脉瘤（冠状动脉内径≥8mm或Z值≥10），随访心脏超声发现冠状动脉内"巨大中的巨大"（giant within a giant）——即在巨大动脉瘤内形成大血栓。本病例同时展示了IVIG抵抗、遗传性血栓倾向（凝血因子V Leiden突变等）与KD的复杂交互。心脏超声虽敏感检测冠状动脉瘤，但<b>对冠状动脉内血栓的诊断能力有限</b>。
+    </div>
+
+    <div class="note">
+      本病例同时参考了PMC文章PMC10748654（8月龄男婴IVIG抵抗KD + 巨大冠状动脉瘤 + 多发大血栓 + 遗传突变阳性），以丰富病理机制讨论。
+    </div>
+
+    <div class="sh red">⏱️ 临床时间轴</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">发病</div>
+        <div class="t-content">10岁男孩出现<b>持续高热</b>，伴结膜充血、口腔黏膜改变、皮疹、四肢末端改变、颈部淋巴结肿大——<b>符合典型KD诊断标准</b>（≥5/6项）</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">确诊与初始治疗</div>
+        <div class="t-content">确诊KD，给予<b>IVIG 2g/kg + 阿司匹林</b>标准治疗</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">IVIG后评估</div>
+        <div class="t-content">心脏超声发现<b>巨大冠状动脉瘤</b>形成（RCA和LCA均受累，瘤体≥8mm）</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">随访发现</div>
+        <div class="t-content">随访心脏超声显示冠状动脉动脉瘤内出现<b>大块血栓</b>——"giant within a giant"</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">抗栓治疗</div>
+        <div class="t-content">启动强化抗栓方案：<b>华法林 + 阿司匹林</b>双联抗栓</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">遗传学检测</div>
+        <div class="t-content">凝血相关基因检测：发现<b>血栓倾向相关基因突变</b>【需要验证具体突变类型】</div>
+      </div>
+    </div>
+
+    <div class="sh">🔬 实验室检查与影像学</div>
+    <table>
+      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
+      <tr><td>心脏超声（急性期）</td><td>RCA和LCA巨大动脉瘤（≥8mm）</td><td>Giant CAL（Z值≥10）</td></tr>
+      <tr><td>心脏超声（随访）</td><td>动脉瘤内大块血栓</td><td>"Giant within a giant"</td></tr>
+      <tr><td>冠状动脉瘤分类</td><td>Z值≥10</td><td>巨大冠状动脉瘤</td></tr>
+      <tr><td>炎症标志物</td><td>CRP、ESR显著升高</td><td>系统性炎症</td></tr>
+      <tr><td>遗传学检测</td><td>血栓倾向相关基因突变阳性</td><td>血栓形成遗传易感性</td></tr>
+    </table>
+
+    <div class="sh">🧬 病理机制深度解析</div>
+
+    <div class="mech-box">
+      <div class="m-title">第一层：巨大冠状动脉瘤的形成机制</div>
+      <ul>
+        <li><b>血管壁三层结构渐进性破坏</b>：KD急性期→中性粒细胞和巨噬细胞浸润动脉壁→内弹力层断裂→中膜平滑肌细胞坏死→外膜纤维化→动脉壁失去结构支撑→在血流冲击下逐 渐扩张</li>
+        <li><b>MMP/TIMP失衡</b>：MMP-9（基质金属蛋白酶-9）和MMP-2的表达显著上调，而TIMP-1/TIMP-2（组织金属蛋白酶抑制剂）未能同步增加→胶原和弹力蛋白被过度降解→血管壁抗张强度下降</li>
+        <li><b>TGF-β信号异常</b>：TGF-β1在KD急性期过度激活→Smad2/3磷酸化→促进血管平滑肌细胞表型转化→产生过多的细胞外基质但排列紊乱→血管壁重塑异常</li>
+        <li><b>冠状动脉分段性受累</b>：由于冠状动脉近段与主动脉交界处血流剪切力最大，最易受损，因此CAL好发于RCA近段和LCA左主干/LAD近段</li>
+      </ul>
+    </div>
+
+    <div class="mech-deep">
+      <div class="m-title">第二层：动脉瘤内血栓形成的Virchow三要素</div>
+      <ul>
+        <li><b>血流异常（血流淤滞）</b>：巨大动脉瘤内血流由层流变为涡流→血流淤滞→红细胞和血小板易于聚集。瘤体越大（≥8mm），涡流越明显，血栓风险越高</li>
+        <li><b>内皮损伤（血管壁异常）</b>：动脉瘤壁内内皮细胞覆盖不完整→内皮下胶原暴露→血小板黏附和聚集→凝血级联启动</li>
+        <li><b>高凝状态（血液成分异常）</b>：KD急性期→血小板增多症（>450×10⁹/L）+ 纤维蛋白原升高 + 蛋白C/S活性降低→促凝环境。合并遗传性血栓倾向（如凝血因子V Leiden、MTHFR突变）时风险进一步升高</li>
+        <li><b>NETs促凝</b>：中性粒细胞胞外诱捕网（NETs）提供支架结构→捕获血小板和纤维蛋白→加速血栓形成。NETs还通过接触途径（factor XII）激活内源性凝血通路</li>
+      </ul>
+    </div>
+
+    <div class="mech-cell">
+      <div class="m-title">第三层：血栓风险的分层与影像学评估</div>
+      <ul>
+        <li><b>Z评分系统</b>：冠状动脉瘤根据Z值分层：小型（2.5&lt;Z&lt;5）→中型（5&lt;Z&lt;10）→巨大（Z≥10或内径≥8mm）。Z值越大，血栓风险越高</li>
+        <li><b>心脏超声的局限性</b>：超声对冠状动脉瘤检出敏感，但对瘤内血栓分辨率有限——特别是当血栓与瘤壁回声相近时易漏诊</li>
+        <li><b>CT血管造影（CTA）</b>：可清晰显示瘤内充盈缺损，是检测血栓的重要补充手段</li>
+        <li><b>心脏MRI</b>：可评估心肌灌注和瘤内血栓，无辐射，适合长期随访</li>
+      </ul>
+    </div>
+
+    <div class="mech-vaso">
+      <div class="m-title">第四层：遗传性血栓倾向与KD的交互</div>
+      <ul>
+        <li><b>凝血因子V Leiden突变</b>：使FVa对活化蛋白C（APC, Activated Protein C）抵抗→APC不能有效灭活FVa→凝血酶生成增加→高凝状态</li>
+        <li><b>凝血酶原G20210A突变</b>→凝血酶原水平升高→凝血酶生成增多</li>
+        <li><b>MTHFR C677T突变</b>→同型半胱氨酸升高→内皮损伤 + 氧化应激→促凝</li>
+        <li><b>蛋白C/蛋白S缺陷</b>→天然抗凝通路受损→KD的高凝环境进一步恶化</li>
+        <li><b>交互效应</b>：KD的炎症环境（IL-6→凝血酶原上调、TNF-α→内皮细胞血栓调节蛋白下调）与遗传性血栓倾向产生<b>叠加效应</b>，使血栓风险倍增</li>
+      </ul>
+    </div>
+
+    <div class="sh yellow">📊 对比：冠状动脉瘤严重程度分级</div>
+    <table>
+      <tr><th>分级</th><th>Z值</th><th>内径参考</th><th>血栓风险</th><th>抗栓策略</th></tr>
+      <tr><td>正常</td><td>Z ≤ 2.5</td><td>正常范围</td><td>无</td><td>阿司匹林（急性期）</td></tr>
+      <tr><td>小型</td><td>2.5 &lt; Z &lt; 5</td><td>&lt;5mm（≤5岁）</td><td>低</td><td>阿司匹林</td></tr>
+      <tr><td>中型</td><td>5 ≤ Z &lt; 10</td><td>5-7mm</td><td>中</td><td>阿司匹林 + 氯吡格雷</td></tr>
+      <tr><td class="c-r b">巨大（本例）</td><td class="c-r b">Z ≥ 10 或 ≥8mm</td><td class="c-r b">≥8mm</td><td class="c-r b">高</td><td class="c-r b">华法林 + 阿司匹林 / LMWH</td></tr>
+    </table>
+
+    <div class="sh green">✅ 临床要点总结</div>
+    <table>
+      <tr><td class="b" style="width:30px">1</td><td>巨大冠状动脉瘤（≥8mm或Z≥10）是KD最严重的并发症，<b>血栓和心肌梗死风险极高</b></td></tr>
+      <tr><td class="b">2</td><td>"Giant within a giant"——巨大瘤内形成血栓，<b>心脏超声可能低估血栓负荷</b>，CTA/MRI是重要补充</td></tr>
+      <tr><td class="b">3</td><td>巨大CAL需要<b>华法林 + 抗血小板双联治疗</b>，INR目标2.0-3.0</td></tr>
+      <tr><td class="b">4</td><td>应对IVIG抵抗型KD及巨大CAL患者进行<b>遗传性血栓倾向筛查</b></td></tr>
+      <tr><td class="b">5</td><td>长期随访至关重要——巨大CAL<b>消退概率低</b>，可能需要终身抗凝</td></tr>
+    </table>
+
+    <div class="sh">🔗 相关链接</div>
+    <div style="font-size:11.5px;">
+      <a href="index_KD.html" style="color:var(--accent)">📖 KD病例索引</a> ·
+      <a href="case_KD_IVIG_resistant.html" style="color:var(--accent)">🔴 IVIG抵抗型KD</a> ·
+      <a href="case_KD_shock.html" style="color:var(--accent)">🔴 KDSS</a>
+    </div>
+
+    <div class="sh red">📚 文献来源</div>
+    <table>
+      <tr><th>项目</th><th>内容</th></tr>
+      <tr><td class="b">PMID</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28835313/" target="_blank">28835313</a></td></tr>
+      <tr><td class="b">DOI</td><td><a href="https://doi.org/10.1017/S1047951117001329" target="_blank">10.1017/S1047951117001329</a></td></tr>
+      <tr><td class="b">标题</td><td>"Giant within a giant": a case of typical Kawasaki disease with a giant coronary aneurysm and a large coronary thrombus - a rare case report</td></tr>
+      <tr><td class="b">作者</td><td>Rajasekharan S 等</td></tr>
+      <tr><td class="b">期刊</td><td>Cardiology in the Young</td></tr>
+      <tr><td class="b">年份</td><td>2018</td></tr>
+      <tr><td class="b">完整引用</td><td>Rajasekharan S, et al. "Giant within a giant": a case of typical Kawasaki disease with a giant coronary aneurysm and a large coronary thrombus - a rare case report. Cardiol Young. 2018;28(1):147-149. PMID: 28835313.</td></tr>
+    </table>
+    <div class="note" style="margin-top:4px;">
+      <b>补充参考：</b>PMC10748654 — Giant Coronary Aneurysms with Multiple Large Resistant Thromboses in an 8-Month-Old Boy with IVIg-Resistant Kawasaki Disease. Cureus. 2023.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;">
+      <a href="case_KD_shock.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一个：KDSS</a>
+      <a href="index_KD.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回索引</a>
+      <a href="case_KD_incomplete.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个：不完全型KD →</a>
+    </div>
+
+  </div>
+  <div class="footer">MedWiki-Rheum · 川崎病临床病例系列 · 仅供学习参考 · 不构成诊疗建议</div>
+</div>
+</body>
+</html>

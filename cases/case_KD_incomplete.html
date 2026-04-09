@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：不完全型KD — 非典型表现的诊断挑战</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/KD.html">📋 KD专题</a>
+  <a href="index_KD.html">📖 KD病例专题</a>
+  <span class="nav-title">不完全型KD</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🟡 病例：不完全型KD — 非典型表现的诊断挑战</h1>
+      <div class="sub">幼儿 — 不满足经典KD诊断标准但发生冠状动脉病变</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>幼儿（<5岁）</td></tr>
+      <tr><td class="b">就诊机构</td><td>Toole KP等报道</td></tr>
+      <tr><td class="b">起病表现</td><td>发热 + <b>不满足经典KD 5/6项标准</b>的非典型表现</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-y">不完全型KD</span> <span class="tag t-y">非典型表现</span> <span class="tag t-r">冠状动脉风险</span> <span class="tag t-y">诊断挑战</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>约20%的KD患儿表现为不完全型（Incomplete KD，不能满足经典5/6项诊断标准），其中婴儿（<6月龄）尤其常见。不完全型KD的冠状动脉病变发生率反而更高，因为延迟诊断导致延迟治疗。本例展示了如何在标准不足时做出诊断决策。
+    </div>
+
+    <div class="sh red">🔴 临床经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">第1-3天 — 发热+部分KD特征</div>
+        <div class="t-content">
+          患儿出现<b>持续高热>5天</b>，伴：<br>
+          • 双侧结膜充血（无渗出）<br>
+          • 口唇改变（充血、皲裂）<br>
+          • <b>不满足</b>经典KD的全部5项临床标准（缺少皮疹、手足硬肿、颈淋巴结肿大中的部分项目）<br><br>
+          初步诊断考虑：<b>病毒感染？</b><br>
+          <span class="tag t-y">诊断不明确</span>
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">实验室检查 — 炎症标志物升高</div>
+        <div class="t-content">
+          <b>实验室特征支持KD：</b><br>
+          • CRP（C反应蛋白，C-Reactive Protein）显著升高<br>
+          • ESR（红细胞沉降率，Erythrocyte Sedimentation Rate）升高<br>
+          • 白细胞增多伴核左移<br>
+          • 血小板增多（病程后期）<br>
+          • 白蛋白降低<br>
+          • ALT/AST轻度升高<br><br>
+          <b>AHA不完全型KD诊断算法：</b>发热≥5天 + 2-3项临床标准 + 炎症标志物升高 → <b>符合不完全型KD</b><br>
+          <span class="tag t-a">不完全型KD诊断确立</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">超声心动图 + 治疗</div>
+        <div class="t-content">
+          <b>超声心动图：</b>冠状动脉未见明显扩张（Z-score正常范围）<br>
+          <b>但根据AHA指南</b>，不完全型KD不应等超声结果即可开始治疗<br><br>
+          <b>治疗：</b>IVIG（静脉丙种球蛋白，Intravenous Immunoglobulin）2g/kg + 阿司匹林<br>
+          <b>结果：</b>热退48小时内，临床改善<br>
+          <span class="tag t-g">治疗成功 · 无冠状动脉病变</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 诊断标准对比 -->
+    <div class="sh">📊 经典KD vs 不完全型KD诊断对比</div>
+    <table>
+      <tr><th>特征</th><th>经典KD</th><th>不完全型KD</th></tr>
+      <tr><td class="b">诊断标准</td><td>发热≥5天 + ≥5项临床特征</td><td>发热≥5天 + 2-4项临床特征</td></tr>
+      <tr><td class="b">发生率</td><td>~80%</td><td>~20%（婴儿中更高）</td></tr>
+      <tr><td class="b">冠状动脉病变风险</td><td>未治疗时25%</td><td><b>更高</b>（因延迟诊断）</td></tr>
+      <tr><td class="b">诊断难点</td><td>低</td><td>高 — 需要辅助检查支持</td></tr>
+      <tr><td class="b">AHA算法</td><td>临床标准直接诊断</td><td>需结合炎症标志物+超声心动图</td></tr>
+      <tr><td class="b">IVIG时机</td><td>确诊后立即</td><td>同样需要尽早，不应等待超声</td></tr>
+    </table>
+
+    <div class="sh yellow">🔬 不完全型KD的病理机制 — 为什么表现不典型？</div>
+
+    <div class="mas-box">
+      <div class="m-title">🧬 不完全型KD的免疫学特征</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>遗传易感（ITPKC、CASQ3等基因多态性）</b> → 免疫系统异常激活<br>
+        　↓<br>
+        <b>先天免疫过度激活</b> → TLR（Toll样受体）信号通路异常 → NF-κB活化 → IL-1/IL-6/TNF-α释放<br>
+        　↓<br>
+        <b>适应性免疫参与</b> → CD4+ T细胞分化为Th1/Th17 → 细胞因子放大<br>
+        　↓<br>
+        <b>血管内皮损伤</b> → 冠状动脉中层坏死+内弹力板破坏 → <b>动脉瘤形成</b><br><br>
+        <b>不完全型关键：</b>免疫激活的<b>强度和模式</b>可能不同 → 临床表现不完整但血管损伤仍在进行
+      </div>
+    </div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. 不完全型KD为何诊断困难？— 三大陷阱</b><br><br>
+
+      <b>陷阱A：与病毒感染混淆</b><br>
+      ① 发热+皮疹+结膜充血 = 许多病毒感染的共同表现（腺病毒、EBV、麻疹等）<br>
+      ② KD缺乏特异性诊断标志物 → 诊断依赖临床标准排除<br>
+      ③ 关键区别：KD的结膜充血<b>无渗出物</b>，皮疹为多形性而非水疱<br><br>
+
+      <b>陷阱B：标准"刚好不够"</b><br>
+      ④ 经典标准需要5/6项，不完全型可能只有2-3项<br>
+      ⑤ 婴儿（<6月龄）表现更不典型，甚至可能仅有发热<br>
+      ⑥ 这就是为什么AHA算法强调：<b>炎症标志物显著升高</b>可弥补临床标准的不足<br><br>
+
+      <b>陷阱C：等待超声心动图延误治疗</b><br>
+      ⑦ 超声心动图在病程早期可能正常<br>
+      ⑧ 冠状动脉病变通常在<b>第7-14天</b>才出现<br>
+      ⑨ <b>不能等超声异常再治疗</b> — AHA指南明确：不完全型KD应在临床判断后立即启动IVIG<br><br>
+
+      <b>2. AHA不完全型KD诊断算法（2017更新）</b><br>
+
+      <table>
+        <tr><th>步骤</th><th>内容</th><th>决策</th></tr>
+        <tr><td class="b">1</td><td>发热≥5天 + 2-3项临床标准</td><td>→ 进入评估流程</td></tr>
+        <tr><td class="b">2</td><td>检测CRP和ESR</td><td>CRP≥3.0或ESR≥40 → 继续</td></tr>
+        <tr><td class="b">3</td><td>评估补充实验室指标</td><td>白蛋白≤3.0 / 贫血 / ALT↑ / 血小板≥450K / WBC≥15K / 尿WBC≥10 → ≥3项阳性 → 诊断KD</td></tr>
+        <tr><td class="b">4</td><td>超声心动图</td><td>冠状动脉异常 → 确诊KD</td></tr>
+        <tr><td class="b">5</td><td>治疗决策</td><td class="c-g">满足条件即开始IVIG，不等超声</td></tr>
+      </table>
+
+      <div class="note" style="border-left-color:var(--yellow);margin-top:6px;">
+        <b>临床启示：</b>"宁可信其有"原则。5岁以下儿童发热≥5天 + 炎症标志物显著升高 + 抗生素无效 → 必须考虑不完全型KD。早期IVIG可将冠状动脉病变率从25%降至<5%。
+      </div>
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① 约20% KD为不完全型，婴儿比例更高<br>
+      ② 不完全型KD的冠状动脉病变风险不低反高<br>
+      ③ AHA算法是诊断不完全型KD的核心工具<br><br>
+      <b>治疗层面：</b><br>
+      ④ <b>不应等待超声心动图异常再治疗</b><br>
+      ⑤ IVIG越早越好（理想在第7-10天内）<br>
+      ⑥ 婴儿（<6月龄）尤其需要积极评估<br><br>
+      <b>鉴别层面：</b><br>
+      ⑦ 需排除腺病毒、EBV、麻疹、猩红热、药物反应<br>
+      ⑧ KD的结膜充血无渗出是关键鉴别点
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/KD.html" style="text-decoration:none"><span class="tag t-a">📋 KD专题</span></a>
+      <a href="case_KD_infant.html" style="text-decoration:none"><span class="tag t-a">📋 下一篇：婴儿KD</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Toole KP, et al. <i>Atypical or Incomplete Kawasaki Disease in a Young Child: A Case Report</i>. J Pediatr Health Care. 2019;33(4):485-488.<br>
+      PMID: 30594442 | DOI: 10.1016/j.pedhc.2018.10.004
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_KD.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回KD专题目录</a>
+    <a href="case_KD_infant.html" style="display:inline-block;padding:6px 12px;background:var(--yellow);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：婴儿KD ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 30594442）· 不构成诊疗建议 · KD病例专题 第4篇
+  </div>
+</div>
+
+</body>
+</html>
