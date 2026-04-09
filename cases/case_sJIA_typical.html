@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：sJIA典型起病 — 驰张热+皮疹+关节炎</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#3b82f6; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JIA.html">📋 JIA专题</a>
+  <a href="index.html">📖 sJIA/MAS专题</a>
+  <span class="nav-title">sJIA典型起病</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例1：sJIA典型起病</h1>
+      <div class="sub">驰张热+一过性皮疹+多关节炎 — 14岁女性，卡那单抗（canakinumab）治疗</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <!-- 免责声明 -->
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>女性，14岁</td></tr>
+      <tr><td class="b">就诊时间</td><td>2012年10月</td></tr>
+      <tr><td class="b">主诉</td><td>高热（>39℃）伴一过性皮疹、肌痛、关节痛3周，多关节受累</td></tr>
+      <tr><td class="b">受累关节</td><td>双膝、双踝、双手、双足（指趾炎）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">全身型JIA</span> <span class="tag t-y">IL-1通路</span> <span class="tag t-g">卡那单抗缓解</span></td></tr>
+    </table>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      14岁女孩因高热（>39℃）入院，伴一过性皮疹（热峰时出现，热退后消退）、肌痛、关节痛及多关节炎（膝、踝、手、足指趾炎）。发热呈典型的<b>一日一峰（驰张热）</b>模式。<br><br>
+      否认口腔溃疡、腹痛、光过敏。既往体健，家族史无特殊。
+    </p>
+
+    <div class="sh red">🔬 初始实验室检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>白细胞计数（WBC）</td><td>32,070/μL</td><td>4,500-13,000</td><td class="c-r">↑↑↑（显著白细胞增多）</td></tr>
+      <tr><td>中性粒细胞计数</td><td>29,100/μL</td><td>1,800-7,700</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>血红蛋白（Hb）</td><td>9.8 g/dL</td><td>12.0-16.0</td><td class="c-r">轻中度贫血</td></tr>
+      <tr><td>C反应蛋白（CRP）</td><td>33.26 mg/dL</td><td>&lt;0.5</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>红细胞沉降率（ESR）</td><td>86 mm/h</td><td>0-20</td><td class="c-r">↑↑</td></tr>
+      <tr><td>铁蛋白（Ferritin）</td><td>9,198 ng/mL</td><td>10-200</td><td class="c-r">↑↑↑（极度升高）</td></tr>
+      <tr><td>甘油三酯（TG）</td><td>446 mg/dL</td><td>&lt;150</td><td class="c-r">↑↑</td></tr>
+      <tr><td>乳酸脱氢酶（LDH）</td><td>760 U/L</td><td>140-280</td><td class="c-r">↑↑</td></tr>
+      <tr><td>纤维蛋白原</td><td>649 mg/dL</td><td>200-400</td><td class="c-r">↑（急性期反应物）</td></tr>
+      <tr><td>谷草转氨酶（AST）</td><td>146 IU/L</td><td>5-34</td><td class="c-r">↑</td></tr>
+      <tr><td>谷丙转氨酶（ALT）</td><td>741 IU/L</td><td>0-55</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>γ-谷氨酰转移酶（GGT）</td><td>120 IU/L</td><td>5-40</td><td class="c-r">↑</td></tr>
+    </table>
+    <div class="alert">
+      <b>关键警示：</b>铁蛋白极度升高（9,198 ng/mL）+ 甘油三酯升高 + AST/ALT升高 → 需警惕<b>巨噬细胞活化综合征（MAS）</b>可能。但纤维蛋白原升高（非降低），血小板未下降，不支持完全MAS。此为sJIA活动期与MAS的鉴别难点。
+    </div>
+    <div class="note">ANA（抗核抗体）、抗dsDNA、ANCA（抗中性粒细胞胞质抗体）、ASCA均阴性。感染筛查阴性。骨髓活检：多克隆白细胞激活，未见肿瘤细胞。基因检测：MEFV基因杂合突变c.442G>C（E148Q），但无家族性地中海热临床表现。</div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div style="font-size:12px;margin:4px 0;line-height:1.8;">
+      <b>全身型幼年特发性关节炎（sJIA）</b><br>
+      ILAR标准：关节炎 + 驰张热 + 一过性皮疹 + 急性期反应物显著升高 + 排除感染/肿瘤/其他风湿病<br><br>
+      <b>鉴别排除</b>：家族性地中海热（FMF）— 虽有MEFV突变但无FMF典型表现（无复发性口腔溃疡/腹痛/家族史）<br>
+      <b>MAS评估</b>：铁蛋白极度升高需密切监测，但纤维蛋白原升高（非降低）、无血细胞减少，暂不符合2016 Ravelli MAS诊断标准
+    </div>
+
+    <div class="sh yellow">💊 治疗经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">第1步：吲哚美辛（非甾体抗炎药）</div>
+        <div class="t-content">
+          <b>结果：无效</b>。CRP反而升至34.2 mg/dL，ESR升至120 mm/h，ALT升至820 IU/L。<br>
+          白细胞持续升高（30,890/μL），铁蛋白9,400 ng/mL。
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">第2步：糖皮质激素（口服泼尼松）</div>
+        <div class="t-content">
+          <b>1周后</b>：白细胞降至21,000，CRP降至8.5，ALT降至62，铁蛋白降至356。<br>
+          <b>2周后</b>：白细胞反弹至24,500，AST回升至145，ALT回升至165，GGT 132。<br>
+          <b>问题</b>：肝功能反复波动 + 糖皮质激素不良反应显现（血糖升高、体重增加）→ 需要替代方案。
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第3步：卡那单抗（canakinumab，抗IL-1β单抗）</div>
+        <div class="t-content">
+          <b>方案</b>：150 mg 皮下注射 每4周1次<br>
+          <b>结果</b>：白细胞 4,520，CRP 0.5，ESR 10，ALT 34，铁蛋白 76 — <b>全面正常化！</b><br>
+          <span class="tag t-g">✅ 临床症状完全缓解</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">长期随访（4年）</div>
+        <div class="t-content">
+          卡那单抗治疗2.5年，期间逐步延长给药间隔（>10周/次）。<br>
+          停药后随访<b>2年</b>，仍维持<b>完全缓解</b>，所有实验室指标正常。<br>
+          <span class="tag t-g">✅ 停药2年持续缓解</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 实验室变化趋势 -->
+    <div class="sh">📊 关键指标变化趋势</div>
+    <table>
+      <tr><th>指标</th><th>入院时</th><th>NSAIDs后</th><th>激素1周</th><th>激素2周</th><th>卡那单抗后</th><th>随访4年</th></tr>
+      <tr><td class="b">WBC（/μL）</td><td class="c-r">32,070</td><td>30,890</td><td>21,000</td><td>24,500</td><td class="c-g">4,520</td><td class="c-g">5,800</td></tr>
+      <tr><td class="b">CRP（mg/dL）</td><td class="c-r">33.26</td><td>34.2</td><td>8.5</td><td>0.5</td><td class="c-g">0.5</td><td class="c-g">0.05</td></tr>
+      <tr><td class="b">铁蛋白（ng/mL）</td><td class="c-r">9,198</td><td>9,400</td><td>356</td><td>205</td><td class="c-g">76</td><td class="c-g">87</td></tr>
+      <tr><td class="b">ALT（IU/L）</td><td class="c-r">741</td><td class="c-r">820</td><td>62</td><td>165</td><td class="c-g">34</td><td class="c-g">18</td></tr>
+      <tr><td class="b">TG（mg/dL）</td><td class="c-r">446</td><td>460</td><td>132</td><td>150</td><td class="c-g">125</td><td class="c-g">80</td></tr>
+    </table>
+
+    <div class="sh green">📚 病例要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. sJIA典型三联征</b><br>
+      ① 驰张热（每日1-2个高峰，热退后精神如常）+ 一过性皮疹（热峰出现、热退消退）+ 多关节炎<br>
+      ② 急性期反应物极度升高（WBC>30,000、CRP>30、铁蛋白>9,000）是sJIA活动期特征<br><br>
+      <b>2. 治疗策略</b><br>
+      ③ 非甾体抗炎药（NSAIDs）无效时不应拖延，应尽早升级治疗<br>
+      ④ 糖皮质激素虽有效但不良反应明显（肝功能波动、代谢异常）<br>
+      ⑤ IL-1抑制剂（卡那单抗）是sJIA一线生物制剂选择，早期使用可实现完全缓解并成功停药<br>
+      ⑥ 本例卡那单抗治疗2.5年后停药，持续缓解2年 — 提示早期积极治疗可能改变长期预后<br><br>
+      <b>3. 鉴别诊断要点</b><br>
+      ⑦ 基因变异（如MEFV E148Q）≠ 临床疾病，需结合临床表现判断<br>
+      ⑧ 铁蛋白极度升高时需始终警惕MAS，但需综合评估（纤维蛋白原降低+血小板下降才更支持MAS）<br><br>
+      <b>4. 监测要点</b><br>
+      ⑨ sJIA活动期需监测铁蛋白+纤维蛋白原+甘油三酯+血细胞计数（MAS早期预警）<br>
+      ⑩ IL-1抑制剂治疗期间需监测感染指标
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../tools/drug_risk_assessment.html?drug=canakinumab&tab=risk" style="text-decoration:none"><span class="tag t-y">🔍 卡那单抗风险评估</span></a>
+      <a href="../tools/drug_risk_assessment.html?drugs=canakinumab,NSAIDs,glucocorticoids&tab=ddi" style="text-decoration:none"><span class="tag t-r">⚠️ DDI检查</span></a>
+      <a href="../tools/vaccine.html" style="text-decoration:none"><span class="tag t-g">💉 疫苗建议</span></a>
+      <a href="../drugs/biologics.html" style="text-decoration:none"><span class="tag t-a">📋 生物制剂页</span></a>
+      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Cerullo A, et al. <i>Early Treatment of Systemic Juvenile Idiopathic Arthritis with Canakinumab and Complete Remission After 2 Years of Treatment Suspension: Case Report of an Adolescent Girl</i>. Pediatr Drugs. 2019;21(3):215-221.<br>
+      DOI: 10.1007/s40272-019-00341-9 | PMID: 30847869 | PMCID: PMC6478625
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_sJIA_MAS.html" style="display:inline-block;padding:6px 16px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;margin:2px;">📖 下一篇：sJIA并发MAS急重症</a>
+    <a href="index.html" style="display:inline-block;padding:6px 16px;background:#20a39e;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;margin:2px;">📋 返回专题目录</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 30847869）· 不构成诊疗建议 · sJIA/MAS专题 第1篇
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：sJIA生物制剂治疗中发生MAS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#3b82f6; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#b8891a;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid #b8891a; margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JIA.html">📋 JIA专题</a>
+  <a href="index.html">📖 sJIA/MAS专题</a>
+  <span class="nav-title">生物制剂与MAS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>⚠️ 病例3：生物制剂治疗中发生MAS</h1>
+      <div class="sub">2例sJIA患者 — Anakinra/Tocilizumab治疗中EBV感染触发MAS</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+  </div>
+
+  <div class="body">
+
+    <!-- 病例A -->
+    <div class="sh red">📋 病例A：Anakinra（阿那白滞素）治疗后发生MAS</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>女性，9岁诊断sJIA</td></tr>
+      <tr><td class="b">初始治疗</td><td>泼尼松 → MTX（甲氨蝶呤）（关节炎持续活动）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">Anakinra相关MAS</span> <span class="tag t-y">感染触发</span> <span class="tag t-g">环孢素+激素挽救成功</span></td></tr>
+    </table>
+
+    <div class="sh">📅 病例A时间线</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">9岁 — 初诊sJIA</div>
+        <div class="t-content">
+          根据ILAR标准诊断为sJIA。泼尼松+MTX治疗，关节炎持续活动。
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">数年后 — 启动Anakinra</div>
+        <div class="t-content">
+          因MTX疗效不佳，启动Anakinra（IL-1受体拮抗剂）。<br>
+          治疗5周后因<b>疑似化脓性关节炎</b>停药（后续排除感染）。
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">感染恢复后1月 — Anakinra重新启动</div>
+        <div class="t-content">
+          感染问题解决后重新启动Anakinra。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">重新启动后第8天 — 肝功能恶化</div>
+        <div class="t-content">
+          <b>ALT/AST进行性升高</b>，随后出现MAS典型临床表现：<br>
+          • 持续高热<br>
+          • 肝脾肿大<br>
+          • 铁蛋白显著升高、甘油三酯升高、纤维蛋白原降低<br>
+          <span class="tag t-r">MAS确诊</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">MAS治疗与转归</div>
+        <div class="t-content">
+          <b>方案</b>：环孢素A + 大剂量泼尼松<br>
+          <b>结果</b>：临床逐步改善，<b>完全缓解</b>。<br>
+          后续转换至托珠单抗（tocilizumab，抗IL-6受体单抗），<b>临床效果好，无新MAS发作</b>。
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="border-left-color:var(--yellow);margin-top:4px;">
+      <b>关键启示：</b>Anakinra重新启动后8天即出现MAS。推测机制：IL-1通路阻断后，感染→细胞因子网络失衡→替代通路激活→巨噬细胞过度活化。转换为抗IL-6通路（托珠单抗）后MAS未再发，提示换靶点可能是合理策略。
+    </div>
+
+    <!-- 分隔 -->
+    <div style="border-top:2px solid var(--border);margin:12px 0;"></div>
+
+    <!-- 病例B -->
+    <div class="sh red">📋 病例B：托珠单抗治疗中EBV感染触发MAS</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>男性，2岁诊断sJIA</td></tr>
+      <tr><td class="b">特殊病史</td><td>起病时即以<b>MAS</b>为首发表现（高活动期）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">Tocilizumab相关MAS</span> <span class="tag t-r">EBV感染触发</span> <span class="tag t-g">甲泼尼龙+环孢素挽救</span></td></tr>
+    </table>
+
+    <div class="sh">📅 病例B时间线</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">2岁 — 以MAS起病</div>
+        <div class="t-content">
+          根据ILAR标准诊断sJIA，<b>起病时即并发MAS</b>（典型临床表现+实验室+组织学确诊）。
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">4岁 — 依那西普（etanercept，TNF-α抑制剂）</div>
+        <div class="t-content">
+          启动依那西普治疗。1年后因<b>疗效不佳</b>停用。
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">8岁 — Anakinra有效</div>
+        <div class="t-content">
+          启动Anakinra，<b>临床反应良好</b>。维持至14岁。<br>
+          14岁时因<b>临床缓解+局部不良反应（注射部位疼痛）</b>停药。
+        </div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">停药6个月后 — 疾病复发</div>
+        <div class="t-content">
+          新的关节炎发作+系统性活动（发热等）。<br>
+          <b>启动托珠单抗（抗IL-6受体单抗）单药治疗</b>（未联合糖皮质激素）。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">托珠单抗第2次输注后 — 上呼吸道感染 → MAS</div>
+        <div class="t-content">
+          第2次托珠单抗输注后出现上呼吸道感染，口服阿莫西林+非甾体抗炎药。<br>
+          数日后因<b>高热+临床和实验室指标符合MAS</b>入院。<br>
+          <b>骨髓穿刺确认：噬血现象阳性</b><br>
+          <b>微生物检测：近期EB病毒（Epstein-Barr病毒）感染</b>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">MAS治疗与转归</div>
+        <div class="t-content">
+          <b>方案</b>：环孢素A + 静脉甲泼尼龙冲击<br>
+          <b>结果</b>：症状完全缓解。
+        </div>
+      </div>
+    </div>
+
+    <!-- 综合讨论 -->
+    <div class="sh blue">🔍 两例综合讨论</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 生物制剂治疗中的MAS — 矛盾但非罕见</b><br>
+      ① IL-1抑制剂（Anakinra）和IL-6抑制剂（托珠单抗）本用于治疗sJIA，但部分患者在治疗中仍发生MAS<br>
+      ② 机制假说：特定细胞因子通路被阻断后，其他促炎通路代偿性过度激活<br>
+      ③ 感染是关键触发因素（本两例均有感染诱因）<br><br>
+      <b>2. EBV感染与MAS</b><br>
+      ④ EB病毒是sJIA-MAS最常见的感染触发因素之一<br>
+      ⑤ 基础免疫异常（sJIA）+ 感染 → 细胞因子风暴 → MAS<br><br>
+      <b>3. 治疗策略</b><br>
+      ⑥ 环孢素A + 糖皮质激素冲击是生物制剂相关MAS的标准挽救方案<br>
+      ⑦ 病例A提示：同一患者从IL-1抑制剂转换为IL-6抑制剂后MAS未再发<br>
+      ⑧ 病例B提示：有MAS病史的患者是MAS复发的高危人群<br><br>
+      <b>4. 临床警示</b><br>
+      ⑨ sJIA患者使用生物制剂期间出现发热，不能简单视为"感染"<br>
+      ⑩ 必须监测铁蛋白、纤维蛋白原、甘油三酯、血细胞计数<br>
+      ⑪ 有MAS病史的患者应格外警惕
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
+      <a href="../drugs/biologics.html" style="text-decoration:none"><span class="tag t-a">📋 生物制剂页</span></a>
+      <a href="../drugs/tocilizumab.html" style="text-decoration:none"><span class="tag t-a">📋 托珠单抗页</span></a>
+      <a href="../drugs/cyclosporine.html" style="text-decoration:none"><span class="tag t-a">📋 环孢素页</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Boteanu AL, et al. <i>Macrophage activation syndrome during treatment with biological therapy in patients with systemic juvenile idiopathic arthritis</i>. Pediatr Rheumatol Online J. 2014;12(Suppl 1):P32.<br>
+      PMCID: PMC4191257 | Presented at PReS 2014
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_sJIA_MAS.html" style="display:inline-block;padding:6px 12px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 上一篇：sJIA并发MAS急重症</a>
+    <a href="case_sJIA_early_MAS.html" style="display:inline-block;padding:6px 12px;background:#3b82f6;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：sJIA-MAS早期识别 ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMCID: PMC4191257）· 不构成诊疗建议 · sJIA/MAS专题 第3篇
+  </div>
+</div>
+
+</body>
+</html>
