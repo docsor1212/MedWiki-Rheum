@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JDM临床病例专题</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:14px 20px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+.body { padding:12px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+.sh.red { background:var(--red); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.card { border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:box-shadow .2s; cursor:pointer; }
+.card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card .c-title { font-weight:700; font-size:13px; margin-bottom:3px; }
+.card .c-sub { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.card .c-tags { margin-top:4px; display:flex; flex-wrap:wrap; gap:3px; }
+a { text-decoration:none; color:inherit; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
+.stat b { font-size:14px; }
+@media(max-width:768px){ .card{padding:8px 10px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JDM.html">📋 JDM专题</a>
+  <a href="index.html">📖 全部病例</a>
+  <span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">JDM专题</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <h1>🔬 JDM临床病例专题</h1>
+    <div class="sub">幼年皮肌炎 — 5个真实世界病例，覆盖典型表现 / 钙质沉着 / ILD / 难治性治疗 / 罕见并发症</div>
+  </div>
+
+  <div class="body">
+
+    <div class="stats">
+      <div class="stat">病例 <b>5</b></div>
+      <div class="stat">文献来源 <b>5</b> 篇</div>
+      <div class="stat">覆盖主题 <b>5</b> 个</div>
+      <div class="stat">年龄范围 <b>5-12岁</b></div>
+    </div>
+
+    <div class="sh">📖 推荐阅读顺序</div>
+    <div style="font-size:12px; line-height:1.7; margin:4px 0; padding:6px 10px; background:#d4f0ed; border-radius:6px;">
+      <b>入门 → 进阶 → 专题</b><br>
+      ① 典型JDM（掌握核心临床表现和诊断标准）→ ② 钙质沉着（理解延迟诊断的严重后果）→ ③ ILD/间质性肺炎（认识致死性并发症）→ ④ 难治性JDM+Anifrolumab（前沿精准治疗）→ ⑤ 延迟识别+肾钙质沉着（罕见并发症和筛查重要性）
+    </div>
+
+    <div class="sh red">📋 病例列表</div>
+
+    <a href="case_JDM_typical.html">
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="c-title">① 典型JDM — Gottron丘疹 + Heliotrope疹 + 近端肌无力</div>
+        <div class="c-sub">
+          10岁女孩，印度裔。典型三联征：Gottron丘疹、Heliotrope疹、近端肌无力。肌肉活检确认淋巴细胞血管炎症。激素+MTX治疗缓解。<br>
+          <b>来源：</b>PMID 30937233 · Cureus 2019 · 印度
+        </div>
+        <div class="c-tags">
+          <span class="tag t-a">典型三联征</span>
+          <span class="tag t-g">治疗缓解</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JDM_calcinosis.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">② JDM合并严重钙质沉着</div>
+        <div class="c-sub">
+          12岁南亚男孩，3岁起病，延误治疗导致广泛钙质沉着。四肢多发皮下钙化结节。<br>
+          <b>来源：</b>PMID 37325178 · Clin Med Insights Case Rep 2023 · 巴基斯坦
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">广泛钙质沉着</span>
+          <span class="tag t-y">延迟诊断</span>
+          <span class="tag t-a">9年病程</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JDM_ILD.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">③ JDM合并致命性间质性肺炎</div>
+        <div class="c-sub">
+          5岁女孩，JDM发病2月后快速进展为间质性肺炎（ILD，Interstitial Lung Disease）。醛缩酶显著升高但CK正常。尽管积极治疗，预后不良。<br>
+          <b>来源：</b>PMID 20110203 · Eur J Dermatol 2010 · 日本
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">致命性ILD</span>
+          <span class="tag t-r">CK正常</span>
+          <span class="tag t-y">快速进展</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JDM_refractory.html">
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="c-title">④ 难治性JDM — Anifrolumab靶向I型干扰素突破治疗</div>
+        <div class="c-sub">
+          8岁女孩，激素+MTX+MMF+JAKi全部失败。Anifrolumab（抗IFNAR单抗）→ 6月持续缓解，无不良反应。全球第3例Anifrolumab治疗JDM。<br>
+          <b>来源：</b>PMID 40671636 · Pediatr Dermatol 2026 · 西班牙
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">多线治疗失败</span>
+          <span class="tag t-a">Anifrolumab</span>
+          <span class="tag t-a">IFN-I通路</span>
+          <span class="tag t-g">6月缓解</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JDM_special.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">⑤ JDM延迟识别 — 钙质沉着 + 双侧髓质肾钙质沉着</div>
+        <div class="c-sub">
+          儿童患者，以广泛钙质沉着首诊。JDM特征在体检中才被发现。腹部超声意外发现双侧髓质肾钙质沉着 — 全球首例报道。<br>
+          <b>来源：</b>PMID 33795282 · BMJ Case Rep 2021 · 印度
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">延迟识别</span>
+          <span class="tag t-r">钙质沉着</span>
+          <span class="tag t-y">肾钙质沉着</span>
+          <span class="tag t-a">全球首例</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="sh">🎯 专题核心主题</div>
+    <table>
+      <tr><th>主题</th><th>覆盖病例</th><th>核心问题</th></tr>
+      <tr><td class="b" style="color:var(--accent)">典型JDM诊断</td><td>①</td><td>Gottron丘疹+Heliotrope疹+肌无力的诊断价值</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">钙质沉着</td><td>②⑤</td><td>延迟诊断的严重后果 — 不可逆钙化</td></tr>
+      <tr><td class="b" style="color:var(--red)">间质性肺病（ILD）</td><td>③</td><td>JDM的致死性并发症 — 早期识别与治疗</td></tr>
+      <tr><td class="b" style="color:var(--accent)">精准治疗</td><td>④</td><td>IFN-I通路靶向治疗 — JDM治疗新范式</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">罕见并发症</td><td>⑤</td><td>肾钙质沉着 — JDM肾脏筛查的重要性</td></tr>
+    </table>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:10.5px; color:var(--text2); line-height:1.6; margin:4px 0;">
+      ① Gupta P, et al. <i>Cureus</i> 2019;11:e3935. PMID: 30937233<br>
+      ② Khan QA, et al. <i>Clin Med Insights Case Rep</i> 2023;16:11795476231180490. PMID: 37325178<br>
+      ③ Nagai Y, et al. <i>Eur J Dermatol</i> 2010;20:208-210. PMID: 20110203<br>
+      ④ Barrutia-Etxebarria A, et al. <i>Pediatr Dermatol</i> 2026;43:116-120. PMID: 40671636<br>
+      ⑤ Sangeetha G, et al. <i>BMJ Case Rep</i> 2021;14:bcr-2020-241152. PMID: 33795282
+    </div>
+
+  </div>
+
+  <div class="footer">
+    MedWiki-Rheum · JDM临床病例专题 · 全部基于真实文献 · 不构成诊疗建议
+  </div>
+</div>
+
+</body>
+</html>
