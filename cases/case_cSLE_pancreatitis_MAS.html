@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：cSLE急性胰腺炎并发MAS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.panc-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.panc-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">胰腺炎+MAS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：cSLE急性胰腺炎并发MAS</h1>
+      <div class="sub">11岁女孩 — 胰腺炎在MAS中出现，多学科抢救成功（附87例文献回顾）</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:130px">患者</td><td>11岁，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>苏州大学附属儿童医院，肾脏免疫科（中国江苏）</td></tr>
+      <tr><td class="b">基础疾病</td><td>已确诊cSLE</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">急性胰腺炎</span> <span class="tag t-r">MAS</span> <span class="tag t-y">甲泼尼龙冲击第2天发病</span> <span class="tag t-g">13个月随访稳定</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>① 胰腺炎在<b>甲泼尼龙冲击治疗第2天</b>出现（与治疗相关？）；② 合并文献回顾87例儿童SLE胰腺炎 — 死亡率33.3%，52.9%合并MAS；③ 提出SLE胰腺炎的<b>MAS高关联性</b>概念。
+    </div>
+
+    <!-- 起病 -->
+    <div class="sh red">🔴 临床经过</div>
+    <div class="timeline">
+      <div class="t-item yellow">
+        <div class="t-date">基础状态</div>
+        <div class="t-content">
+          11岁女孩，已确诊cSLE。因疾病活动入院，开始甲泼尼龙冲击治疗。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">甲泼尼龙冲击第2天 — 腹痛发作</div>
+        <div class="t-content">
+          <b>突发剧烈腹痛</b>，伴恶心、呕吐。<br><br>
+          <b>腹部检查：</b>上腹部压痛、反跳痛<br><br>
+          <b>实验室：</b><br>
+          • 血淀粉酶（Amylase，AMS）：<b>显著升高</b><br>
+          • 血脂肪酶（Lipase，LPS）：<b>显著升高</b><br>
+          • 腹部影像学（超声/CT）：<b>胰腺肿大、渗出</b><br><br>
+          <span class="tag t-r">急性胰腺炎（Acute Pancreatitis）确诊</span>
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">胰腺炎出现后 — MAS征象</div>
+        <div class="t-content">
+          同时出现MAS表现：<br>
+          • <b>持续高热</b><br>
+          • <b>全血细胞减少</b>（三系下降）<br>
+          • <b>铁蛋白显著升高</b><br>
+          • 肝酶升高<br>
+          • 甘油三酯升高<br>
+          • <span class="tag t-r">MAS确诊</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 治疗 -->
+    <div class="sh green">💊 治疗方案（多模式综合治疗）</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">阶段1：急性期控制</div>
+        <div class="t-content">
+          <b>继续甲泼尼龙冲击治疗</b>（500 mg/d）<br>
+          → 不因胰腺炎中断，因MAS是更紧急的威胁<br><br>
+          <b>DNA免疫吸附</b>（DNA Immunoadsorption）× 3次<br>
+          → 清除抗dsDNA抗体和免疫复合物<br><br>
+          <b>血液灌流</b>（Hemoperfusion）× 3次<br>
+          → 清除炎性细胞因子
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">阶段2：巩固治疗（第9天起）</div>
+        <div class="t-content">
+          <b>第二疗程甲泼尼龙冲击</b><br><br>
+          <b>环磷酰胺（CTX）冲击</b>：10 mg/kg/d × 2天/月 × 6个月<br>
+          → 控制SLE基础病<br><br>
+          之后转换为：<br>
+          <b>吗替麦考酚酯（MMF，Mycophenolate Mofetil）</b> 20 mg/kg/d<br>
+          → 长期维持治疗
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">转归</div>
+        <div class="t-content">
+          • 血淀粉酶、脂肪酶<b>逐步下降</b><br>
+          • MAS症状缓解<br>
+          • 病情稳定<br>
+          • <b>13个月随访期保持稳定</b><br>
+          <span class="tag t-g">成功抢救</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 文献回顾 -->
+    <div class="sh yellow">📚 87例儿童SLE胰腺炎文献回顾（本篇附带）</div>
+
+    <div class="panc-box">
+      <div class="m-title">📊 近30年87例儿童SLE胰腺炎汇总数据</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <table>
+          <tr><th>指标</th><th>数据</th></tr>
+          <tr><td class="b">文献范围</td><td>近30年报道的儿童SLE胰腺炎</td></tr>
+          <tr><td class="b">总病例数</td><td>127例报道，87例信息完整纳入分析</td></tr>
+          <tr><td class="b">死亡率</td><td><span class="c-r"><b>33.3%</b></span>（29/87）</td></tr>
+          <tr><td class="b">合并MAS比例</td><td><span class="c-r"><b>52.9%</b></span>（胰腺炎患者中超过一半同时有MAS）</td></tr>
+          <tr><td class="b">关键发现</td><td>MAS是SLE胰腺炎最常见的严重并发症之一</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sh yellow">🔬 SLE胰腺炎的病理机制（深度解析）</div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. SLE为什么会导致胰腺炎？— 多因素参与</b><br><br>
+
+      <b>机制A：免疫复合物介导的血管炎</b><br>
+      ① SLE的免疫复合物沉积于胰腺<b>微血管</b> → 血管炎 → 胰腺缺血 → 腺泡细胞损伤<br>
+      ② 胰腺微血管丰富，对免疫复合物沉积高度敏感<br>
+      ③ 血管炎导致胰酶外漏 → 自体消化 → 急性胰腺炎<br><br>
+
+      <b>机制B：aPL介导的血栓性微血管病变</b><br>
+      ④ 抗磷脂抗体（aPL）→ 胰腺微血管<b>血栓形成</b>→ 局部缺血坏死<br>
+      ⑤ 与APS相关的胰腺炎多表现为微血管血栓而非大血管栓塞<br><br>
+
+      <b>机制C：药物因素</b><br>
+      ⑥ <b>糖皮质激素</b>本身可诱发胰腺炎（增加血液粘稠度、高脂血症）<br>
+      ⑦ 本例胰腺炎在甲泼尼龙冲击第2天出现 → 不能排除激素相关的可能<br>
+      ⑧ 其他药物：硫唑嘌呤、利尿剂等也可诱发胰腺炎<br><br>
+
+      <b>机制D：MAS相关的胰腺损伤</b><br>
+      ⑨ MAS的<b>细胞因子风暴</b>（TNF-α、IL-1β、IL-6）直接损伤胰腺组织<br>
+      ⑩ 巨噬细胞浸润胰腺 → 局部噬血现象 → 加重胰腺损伤<br>
+      ⑪ 高甘油三酯血症（MAS常见）→ 脂源性胰腺炎<br><br>
+
+      <b>2. SLE胰腺炎与MAS的"恶性关联"</b><br>
+
+      <table>
+        <tr><th>维度</th><th>SLE胰腺炎</th><th>MAS</th><th>交互作用</th></tr>
+        <tr><td class="b">细胞因子</td><td>TNF-α、IL-1损伤胰腺</td><td>IFN-γ、IL-6风暴</td><td>叠加放大</td></tr>
+        <tr><td class="b">脂肪代谢</td><td>胰腺炎→高脂血症</td><td>MAS→高甘油三酯</td><td>互相加重</td></tr>
+        <tr><td class="b">凝血</td><td>消耗性凝血病</td><td>纤维蛋白原↓</td><td>DIC风险↑</td></tr>
+        <tr><td class="b">肝脏</td><td>胆源性肝损</td><td>MAS肝酶升高</td><td>肝功能恶化</td></tr>
+        <tr><td class="b">死亡率</td><td>单独33%</td><td>单独10-20%</td><td>合并时<b>显著升高</b></td></tr>
+      </table>
+
+      <div class="note" style="border-left-color:var(--red);margin-top:6px;">
+        <b>🔥 核心发现：</b>87例中52.9%合并MAS → SLE患者一旦出现胰腺炎，<b>必须立即筛查MAS</b>（铁蛋白、纤维蛋白原、甘油三酯、骨髓穿刺）。漏诊MAS是SLE胰腺炎高死亡率的重要原因。
+      </div>
+
+      <b>3. DNA免疫吸附的原理与作用</b><br>
+      ⑫ 本例使用了<b>DNA免疫吸附</b>（3次）— 一种特殊的血液净化技术<br>
+      ⑬ 原理：吸附柱中的DNA片段<b>特异性结合</b>抗dsDNA抗体 → 从循环中清除<br>
+      ⑭ 与血浆置换不同：选择性更高，不丢失凝血因子和白蛋白<br>
+      ⑮ 适用于高滴度抗dsDNA、免疫复合物介导的重症SLE<br>
+      ⑯ <b>血液灌流</b>（Hemoperfusion）则通过活性炭/树脂吸附清除炎性细胞因子<br>
+      ⑰ 两者联合：DNA免疫吸附清除抗体 + 血液灌流清除细胞因子 = 双通道清除策略
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① cSLE患者出现<b>腹痛</b>必须查淀粉酶/脂肪酶 → 排除胰腺炎<br>
+      ② 确诊SLE胰腺炎后<b>立即筛查MAS</b>（>50%合并！）<br>
+      ③ 胰腺炎可在治疗过程中出现（如激素冲击期间）<br>
+      ④ 腹部超声/CT是确诊胰腺炎的首选影像学检查<br><br>
+
+      <b>治疗层面：</b><br>
+      ⑤ SLE胰腺炎+MAS → 不能因胰腺炎而<b>停用免疫抑制</b>，MAS是更大威胁<br>
+      ⑥ 甲泼尼龙冲击 + 环磷酰胺是基础方案<br>
+      ⑦ DNA免疫吸附/血浆置换是重要的辅助手段（快速清除抗体/细胞因子）<br>
+      ⑧ CTX冲击6个月后转换为MMF维持<br><br>
+
+      <b>预后层面：</b><br>
+      ⑨ 死亡率33.3% — <b>早期识别和积极治疗</b>是降低死亡率的关键<br>
+      ⑩ 合并MAS是预后不良的标志<br>
+      ⑪ 本例13个月随访稳定 → 积极治疗可获长期缓解
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
+      <a href="case_cSLE_refractory_NPSLE.html" style="text-decoration:none"><span class="tag t-a">⬅ 难治性NP-SLE</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Lin Q, Zhang M, Tang H, et al. <i>Acute pancreatitis and macrophage activation syndrome in pediatric systemic lupus erythematosus: case-based review</i>. Rheumatol Int. 2020;40(5):811-819.<br>
+      PMID: 31377830 | DOI: 10.1007/s00296-019-04388-4
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_refractory_NPSLE.html" style="display:inline-block;padding:6px 12px;background:var(--text3);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 病例4：难治性NP-SLE</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 31377830）· 不构成诊疗建议 · cSLE病例专题 第5篇
+  </div>
+</div>
+
+</body>
+</html>

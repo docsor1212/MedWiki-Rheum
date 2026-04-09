@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cSLE临床病例专题</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:14px 20px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+.body { padding:12px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+.sh.red { background:var(--red); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.card { border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:box-shadow .2s; cursor:pointer; }
+.card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card .c-title { font-weight:700; font-size:13px; margin-bottom:3px; }
+.card .c-sub { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.card .c-tags { margin-top:4px; display:flex; flex-wrap:wrap; gap:3px; }
+a { text-decoration:none; color:inherit; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
+.stat b { font-size:14px; }
+@media(max-width:768px){ .card{padding:8px 10px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index.html">📖 全部病例</a>
+  <span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">cSLE专题</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <h1>🔬 cSLE临床病例专题</h1>
+    <div class="sub">儿童系统性红斑狼疮 — 5个真实世界病例，覆盖MAS / NP-SLE / CAPS / 难治性治疗</div>
+  </div>
+
+  <div class="body">
+
+    <div class="stats">
+      <div class="stat">病例 <b>5</b></div>
+      <div class="stat">文献来源 <b>5</b> 篇</div>
+      <div class="stat">覆盖主题 <b>4</b> 个</div>
+      <div class="stat">年龄范围 <b>8-14</b> 岁</div>
+    </div>
+
+    <div class="sh">📖 推荐阅读顺序</div>
+    <div style="font-size:12px; line-height:1.7; margin:4px 0; padding:6px 10px; background:#d4f0ed; border-radius:6px;">
+      <b>入门 → 进阶 → 专题</b><br>
+      ① 反复MAS（理解cSLE-MAS基础机制）→ ② MAS+脑病变（神经系统受累）→ ③ 灾难性APS（血管急症）→ ④ 急性胰腺炎+MAS（消化系统急症）→ ⑤ 难治性NP-SLE（前沿治疗：硼替佐米）
+    </div>
+
+    <div class="sh red">📋 病例列表</div>
+
+    <a href="case_cSLE_recurrent_MAS.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">① cSLE以反复MAS为首发表现</div>
+        <div class="c-sub">
+          14岁女孩，3次MAS发作。以MAS为首诊，随后确诊SLE。甲泼尼龙+环孢素反复挽救。<br>
+          <b>来源：</b>PMID 35713230 · Lupus 2022 · 印度加尔各答
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">反复MAS ×3</span>
+          <span class="tag t-r">以MAS起病</span>
+          <span class="tag t-g">最终缓解</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_cSLE_MAS_neuro.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">② cSLE-MAS伴广泛脑MRI病变</div>
+        <div class="c-sub">
+          11岁女孩，MAS+NP-SLE。MRI异常<b>先于</b>临床症状3天。甲泼尼龙+CTX+IVIG+鞘内地塞米松。30天完全缓解。<br>
+          <b>来源：</b>PMID 34970517 · Front Pediatr 2021 · 浙大儿院
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">NP-SLE</span>
+          <span class="tag t-r">广泛脑病变</span>
+          <span class="tag t-a">鞘内注射</span>
+          <span class="tag t-g">完全缓解</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_cSLE_CAPS.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">③ cSLE合并灾难性APS — 出血与血栓并存</div>
+        <div class="c-sub">
+          8岁男孩（极罕见：男性+低龄）。皮肤瘀斑+鼻衄+脑出血+脑梗+指端坏疽。甲泼尼龙+CTX+血浆置换成功抢救。<br>
+          <b>来源：</b>PMID 36035039 · Cureus 2022 · 印度Kalinga
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">CAPS</span>
+          <span class="tag t-r">出血+血栓</span>
+          <span class="tag t-a">血浆置换</span>
+          <span class="tag t-g">成功抢救</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_cSLE_pancreatitis_MAS.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">④ cSLE急性胰腺炎并发MAS</div>
+        <div class="c-sub">
+          11岁女孩。胰腺炎在甲泼尼龙冲击第2天出现。DNA免疫吸附+血液灌流+CTX。附87例文献回顾（死亡率33%，52%合并MAS）。<br>
+          <b>来源：</b>PMID 31377830 · Rheumatol Int 2020 · 苏大儿院
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">急性胰腺炎</span>
+          <span class="tag t-r">MAS</span>
+          <span class="tag t-a">DNA免疫吸附</span>
+          <span class="tag t-g">13月随访稳定</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_cSLE_refractory_NPSLE.html">
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="c-title">⑤ 难治性cNPSLE — 硼替佐米突破治疗（5例系列）</div>
+        <div class="c-sub">
+          5例儿童，常规治疗（MP+CTX+RTX+PEX）全部失败。硼替佐米 → 100%精神病缓解，0%复发，随访1-10年。首提LLPC假说。<br>
+          <b>来源：</b>PMID 36971919 · Clin Rheumatol 2023 · 佛罗里达大学
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">难治性</span>
+          <span class="tag t-a">硼替佐米</span>
+          <span class="tag t-a">LLPC假说</span>
+          <span class="tag t-g">100%缓解</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="sh">🎯 专题核心主题</div>
+    <table>
+      <tr><th>主题</th><th>覆盖病例</th><th>核心问题</th></tr>
+      <tr><td class="b" style="color:var(--red)">cSLE-MAS</td><td>①②④</td><td>MAS是cSLE的常见急症，反复发作如何管理？</td></tr>
+      <tr><td class="b" style="color:var(--red)">NP-SLE</td><td>②⑤</td><td>脑部受累的早期识别和前沿治疗</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">APS/CAPS</td><td>③</td><td>出血+血栓并存的诊断陷阱和抢救策略</td></tr>
+      <tr><td class="b" style="color:var(--accent)">难治性治疗</td><td>⑤</td><td>硼替佐米清除长寿命浆细胞 — 新范式</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">消化系统急症</td><td>④</td><td>SLE胰腺炎与MAS的恶性关联</td></tr>
+    </table>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:10.5px; color:var(--text2); line-height:1.6; margin:4px 0;">
+      ① Dey S, et al. <i>Lupus</i> 2022;31:1132-1137. PMID: 35713230<br>
+      ② Shi N, et al. <i>Front Pediatr</i> 2021;9:767115. PMID: 34970517<br>
+      ③ Rup AR, et al. <i>Cureus</i> 2022;14:e27205. PMID: 36035039<br>
+      ④ Lin Q, et al. <i>Rheumatol Int</i> 2020;40:811-819. PMID: 31377830<br>
+      ⑤ Modica RF, et al. <i>Clin Rheumatol</i> 2023;42:1965-1979. PMID: 36971919
+    </div>
+
+  </div>
+
+  <div class="footer">
+    MedWiki-Rheum · cSLE临床病例专题 · 全部基于真实文献 · 不构成诊疗建议
+  </div>
+</div>
+
+</body>
+</html>
