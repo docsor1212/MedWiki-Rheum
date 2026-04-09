@@ -10,7 +10,7 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #f8fafb;
+            background: #fcfcfd;
             color: #1e293b;
             -webkit-tap-highlight-color: transparent;
         }
@@ -19,31 +19,27 @@
 
         .glass-card {
             background: #ffffff;
-            border: 1px solid #e8f0ee;
-            box-shadow: 0 2px 8px rgba(32,163,158,0.06);
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             transition: all 0.25s ease;
         }
 
-        /* 分值权重色条 — teal系渐变 */
-        .weight-1 { border-top: 3px solid #a7d8d5; }
-        .weight-2 { border-top: 3px solid #f0a844; }
-        .weight-4 { border-top: 3px solid #e05a5a; }
-        .weight-8 { border-top: 3px solid #8b2020; }
+        /* 临床表现背景色区分 - 按照升序逻辑排列颜色深浅 */
+        .weight-1 { border-top: 3px solid #94a3b8; } /* 灰色 */
+        .weight-2 { border-top: 3px solid #f97316; } /* 橙色 */
+        .weight-4 { border-top: 3px solid #ef4444; } /* 红色 */
+        .weight-8 { border-top: 3px solid #7f1d1d; } /* 深红 */
 
         .clickable-item {
             cursor: pointer;
             transition: all 0.2s ease;
-            background: #f4fafa;
-        }
-
-        .clickable-item:hover {
-            background: #e6f5f4;
+            background: #f8fafc;
         }
 
         .selected {
-            background: linear-gradient(135deg, #20a39e 0%, #178f8a 100%) !important;
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
             color: white !important;
-            box-shadow: 0 4px 12px rgba(32,163,158,0.3);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
         }
 
         .selected .badge {
@@ -52,8 +48,8 @@
         }
 
         .badge {
-            background: #e2eceb;
-            color: #5f8a88;
+            background: #e2e8f0;
+            color: #64748b;
             font-size: 0.7rem;
             width: 24px;
             height: 18px;
@@ -66,9 +62,9 @@
         .sticky-footer {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: saturate(180%) blur(20px);
-            border-top: 1px solid #e0edec;
+            border-top: 1px solid rgba(226, 232, 240, 0.6);
             z-index: 50;
             padding-bottom: env(safe-area-inset-bottom);
         }
@@ -76,32 +72,16 @@
         @media (max-width: 640px) {
             .card-grid { grid-template-columns: 1fr; gap: 0.75rem; }
         }
+    
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
+padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
+font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
 
-        .nav-bar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: #20a39e; color: #fff;
-            padding: 6px 16px; display: flex; align-items: center; gap: 12px;
-            font-family: 'Noto Sans SC', sans-serif; font-size: 13px;
-            box-shadow: 0 2px 6px rgba(32,163,158,0.18);
-        }
-        .nav-bar a { color: #fff; text-decoration: none; opacity: .85; transition: opacity .2s; }
-        .nav-bar a:hover { opacity: 1; }
-        .nav-bar .nav-title { font-weight: 600; margin-left: auto; opacity: .7; font-size: 12px; }
-        body { padding-top: 42px !important; }
-
-        /* 计分规则区域 */
-        .rule-box {
-            background: linear-gradient(135deg, #f0fafa 0%, #e8f5f3 100%);
-            border: 1px solid #c8e6e3;
-        }
-        .rule-box li::before {
-            content: '●';
-            color: #20a39e;
-            margin-right: 6px;
-            font-size: 8px;
-            vertical-align: middle;
-        }
-    </style>
+</style>
 
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#20a39e">
@@ -111,28 +91,23 @@
     <link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body class="pb-52 md:pb-40">
-<div class="nav-bar">
-    <a href="../index.html">🏠 首页</a>
-    <a href="../index.html#topics">📖 疾病</a>
-    <a href="../index.html#drugs">💊 药物</a>
-    <a href="../index.html#tools">🔬 工具</a>
-    <span class="nav-title">SLEDAI-2000 疾病活动度助手</span>
-</div>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">SLEDAI-2000 疾病活动度助手</span></div>
 
     <header class="max-w-5xl mx-auto px-5 pt-8 pb-4">
-        <div class="flex items-baseline justify-between border-b-2 border-teal-100 pb-2">
+        <div class="flex items-baseline justify-between border-b-2 border-slate-100 pb-2">
             <h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
-                SLEDAI <span style="color:#20a39e">- 2000</span>
+                SLEDAI <span class="text-indigo-600">- 2000</span>
             </h1>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index — By DoctorQ 2026.01</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index --By DoctorQ 2026.01</span>
         </div>
         
-        <div class="rule-box mt-4 p-4 rounded-xl">
-            <h2 class="text-[11px] font-black uppercase tracking-widest mb-2" style="color:#20a39e">计分规则 (Scoring Rules)</h2>
+        <!-- 计分规则说明区 -->
+        <div class="mt-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
+            <h2 class="text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">计分规则 (Scoring Rules)</h2>
             <ul class="text-[11px] text-slate-600 space-y-1 font-medium leading-relaxed">
-                <li>评估患者在最近 10 天内出现的临床表现。</li>
-                <li>计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
-                <li>注意事项：除外感染、代谢紊乱或药物等非狼疮因素。</li>
+                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 评估患者在最近 10 天内出现的临床表现。</li>
+                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
+                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 注意事项：除外感染、代谢紊乱或药物等非狼疮因素。</li>
             </ul>
         </div>
     </header>
@@ -141,7 +116,7 @@
         
         <div class="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             
-            <!-- 第一列：低分值区 -->
+            <!-- 第一列：低分值区 (1分, 2分) -->
             <div class="flex flex-col gap-5">
                 <!-- 权重 1分 -->
                 <div class="glass-card weight-1 p-4 rounded-2xl">
@@ -164,9 +139,9 @@
 
                 <!-- 权重 2分 -->
                 <div class="glass-card weight-2 p-4 rounded-2xl">
-                    <h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#d4892a">
+                    <h3 class="text-[10px] font-black text-orange-600 uppercase mb-3 tracking-widest flex justify-between">
                         <span>皮肤、浆膜与免疫</span>
-                        <span class="px-1.5 rounded" style="background:#fef3e2;color:#d4892a">2 PTS</span>
+                        <span class="bg-orange-50 px-1.5 rounded text-orange-600">2 PTS</span>
                     </h3>
                     <div class="space-y-1.5">
                         <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="脱发" onclick="hit(this)">
@@ -194,11 +169,11 @@
                 </div>
             </div>
 
-            <!-- 第二列：权重 4分 -->
+            <!-- 第二列：权重 4分区 -->
             <div class="glass-card weight-4 p-4 rounded-2xl">
-                <h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#c94545">
+                <h3 class="text-[10px] font-black text-rose-600 uppercase mb-3 tracking-widest flex justify-between">
                     <span>肾脏、骨骼与肌肉</span>
-                    <span class="px-1.5 rounded" style="background:#fde8e8;color:#c94545">4 PTS</span>
+                    <span class="bg-rose-50 px-1.5 rounded text-rose-600">4 PTS</span>
                 </h3>
                 <div class="space-y-1.5">
                     <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="关节炎" onclick="hit(this)">
@@ -214,7 +189,7 @@
                         <span>血尿 (>5 RBC/HPF)</span><span class="badge rounded">4</span>
                     </div>
                     <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="蛋白尿" onclick="hit(this)">
-                        <span>蛋白尿 (>0.5g/24h)</span><span class="badge rounded">4</span>
+                        <span>蛋白质 (>0.5g/24h)</span><span class="badge rounded">4</span>
                     </div>
                     <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="脓尿" onclick="hit(this)">
                         <span>脓尿 (>5 WBC/HPF)</span><span class="badge rounded">4</span>
@@ -222,11 +197,11 @@
                 </div>
             </div>
 
-            <!-- 第三列：最高分值区 8分 -->
+            <!-- 第三列：最高分值区 (8分) -->
             <div class="glass-card weight-8 p-4 rounded-2xl">
-                <h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#8b2020">
+                <h3 class="text-[10px] font-black text-rose-900 uppercase mb-3 tracking-widest flex justify-between">
                     <span>中枢神经 & 血管系统</span>
-                    <span class="px-1.5 rounded" style="background:#f5dede;color:#8b2020">8 PTS</span>
+                    <span class="bg-rose-100 px-1.5 rounded text-rose-700">8 PTS</span>
                 </h3>
                 <div class="space-y-1.5">
                     <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="癫痫" onclick="hit(this)">
@@ -258,7 +233,7 @@
 
         </div>
 
-        <p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">SLEDAI-2000 Assessment System — 儿科分级标准</p>
+        <p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">SLEDAI-2000 Assessment System</p>
 
     </main>
 
@@ -269,19 +244,19 @@
                 
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-[10px] font-black uppercase tracking-widest" style="color:#20a39e">已选项目</span>
-                        <button onclick="clearAll()" class="text-[10px] font-black px-2 py-1 rounded transition-colors uppercase" style="color:#e05a5a" onmouseover="this.style.background='#fde8e8'" onmouseout="this.style.background='transparent'">Reset</button>
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-shadow-sm">Active Path (Selected)</span>
+                        <button onclick="clearAll()" class="text-[10px] font-black text-rose-500 hover:bg-rose-50 px-2 py-1 rounded transition-colors uppercase">Reset</button>
                     </div>
-                    <div id="pathLine" class="text-[11px] text-slate-600 font-bold italic py-2.5 px-3 rounded-lg border leading-relaxed break-words min-h-[40px]" style="background:#f0fafa;border-color:#d5edeb">请勾选最近 10 天内出现的临床表现...</div>
+                    <div id="pathLine" class="text-[11px] text-slate-600 font-bold italic bg-slate-50 py-2.5 px-3 rounded-lg border border-slate-100 leading-relaxed break-words min-h-[40px]">请勾选最近 10 天内出现的临床表现...</div>
                 </div>
 
                 <div class="flex items-center gap-8 justify-between md:justify-end">
                     <div class="flex flex-col items-center">
                         <span class="text-[10px] font-black text-slate-300 uppercase">Total Score</span>
-                        <span id="scoreNum" class="text-5xl font-black leading-none tracking-tighter" style="color:#20a39e">0</span>
+                        <span id="scoreNum" class="text-5xl font-black text-slate-800 leading-none tracking-tighter">0</span>
                     </div>
                     <div id="statusBox" class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm border border-slate-200 bg-white text-slate-400">
-                        无疾病活动
+                        Inactivity
                     </div>
                 </div>
 
@@ -318,34 +293,31 @@
             scoreNum.innerText = sum;
             pathLine.innerText = path.length > 0 ? path.join(' + ') : '请勾选最近 10 天内出现的临床表现...';
 
-            /* 儿科SLEDAI分级标准 */
+            // 评估等级 (更新后的标准)
             if (sum <= 4) {
+                // 0-4分：无疾病活动 (绿色)
                 statusBox.innerText = sum === 0 ? "无疾病活动" : "基本无活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#20a39e";
-                statusBox.style.boxShadow = "0 4px 14px rgba(32,163,158,0.25)";
-                scoreNum.style.color = "#20a39e";
+                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-emerald-500 text-white shadow-lg shadow-emerald-100";
+                scoreNum.className = "text-5xl font-black text-emerald-600 leading-none tracking-tighter";
             } else if (sum <= 9) {
+                // 5-9分：轻度活动 (橙色)
                 statusBox.innerText = "轻度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#f0a844";
-                statusBox.style.boxShadow = "0 4px 14px rgba(240,168,68,0.25)";
-                scoreNum.style.color = "#d4892a";
+                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-orange-500 text-white shadow-lg shadow-orange-100";
+                scoreNum.className = "text-5xl font-black text-orange-600 leading-none tracking-tighter";
             } else if (sum <= 14) {
+                // 10-14分：中度活动 (红色)
                 statusBox.innerText = "中度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#e05a5a";
-                statusBox.style.boxShadow = "0 4px 14px rgba(224,90,90,0.25)";
-                scoreNum.style.color = "#c94545";
+                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-rose-600 text-white shadow-lg shadow-rose-100";
+                scoreNum.className = "text-5xl font-black text-rose-600 leading-none tracking-tighter";
             } else {
+                // ≥15分：重度活动 (紫红色/深色)
                 statusBox.innerText = "重度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#8b2020";
-                statusBox.style.boxShadow = "0 4px 14px rgba(139,32,32,0.3)";
-                scoreNum.style.color = "#8b2020";
+                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-slate-900 text-white shadow-lg shadow-slate-200 animate-pulse";
+                scoreNum.className = "text-5xl font-black text-rose-800 leading-none tracking-tighter";
             }
         }
     </script>
+
 
 <script>
 if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
