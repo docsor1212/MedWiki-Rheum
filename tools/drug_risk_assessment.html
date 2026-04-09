@@ -764,10 +764,7 @@ function renderRiskFactors() {
 }
 
 function switchTab(name) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('tab-' + name).classList.add('active');
+  switchTabByName(name);
 }
 
 // ============================================================
@@ -1084,6 +1081,46 @@ renderRiskFactors();
 renderDrugChecks('ddi-drugs', 'checkDDI');
 renderDrugChecks('monitor-drugs', 'genMonitor');
 renderDrugChecks('vaccine-drugs', 'genVaccine');
+
+// URL参数支持: ?drug=MTX&tab=ddi
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const drug = params.get('drug');
+  const tab = params.get('tab');
+  const drugs = params.get('drugs'); // comma-separated for DDI/monitor/vaccine
+
+  if (tab) switchTabByName(tab);
+
+  if (drug && DRUGS[drug]) {
+    const sel = document.getElementById('risk-drug');
+    sel.value = drug;
+    assessRisk();
+  }
+
+  if (drugs) {
+    const ids = drugs.split(',');
+    const containerId = tab==='ddi'?'ddi-drugs':tab==='monitor'?'monitor-drugs':tab==='vaccine'?'vaccine-drugs':null;
+    if (containerId) {
+      ids.forEach(id => {
+        const cb = document.querySelector(`#${containerId} input[value="${id}"]`);
+        if (cb) { cb.checked = true; cb.closest('.drug-check').classList.add('checked'); }
+      });
+      if (tab==='ddi') checkDDI();
+      else if (tab==='monitor') genMonitor();
+      else if (tab==='vaccine') genVaccine();
+    }
+  }
+})();
+
+function switchTabByName(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['risk','ddi','monitor','vaccine','special'];
+    b.classList.toggle('active', tabs[i]===name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('tab-' + name);
+  if (panel) panel.classList.add('active');
+}
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{});}
 </script>
