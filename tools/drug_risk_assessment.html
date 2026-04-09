@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>药物风险评估 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; cursor:pointer; user-select:none; }
+.sh:hover { opacity:0.9; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.active { box-shadow:0 0 0 2px #fff,0 0 0 4px currentColor; }
+.tab-bar { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:10px; }
+.tab-btn { padding:6px 14px; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; border:1.5px solid var(--border); background:var(--surface); color:var(--text2); transition:all .15s; }
+.tab-btn:hover { border-color:var(--accent); color:var(--accent); }
+.tab-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.form-row { display:flex; gap:8px; align-items:center; margin:4px 0; flex-wrap:wrap; }
+.form-row label { font-size:11.5px; font-weight:500; min-width:70px; color:var(--text2); }
+.form-row input, .form-row select { padding:3px 8px; border:1px solid var(--border); border-radius:5px; font-size:12px; font-family:inherit; background:#fff; }
+.form-row input:focus, .form-row select:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-bg); }
+.result-box { margin-top:6px; padding:8px 12px; border-radius:var(--radius); font-size:12px; }
+.result-low { background:var(--green-bg); border-left:3px solid var(--green); }
+.result-med { background:var(--yellow-bg); border-left:3px solid var(--yellow); }
+.result-high { background:var(--red-bg); border-left:3px solid var(--red); }
+.ddi-card { padding:6px 10px; border-radius:6px; margin:4px 0; border-left:3px solid var(--border); }
+.ddi-card.severe { border-left-color:var(--red); background:var(--red-bg); }
+.ddi-card.moderate { border-left-color:var(--yellow); background:var(--yellow-bg); }
+.ddi-card.minor { border-left-color:var(--accent); background:var(--accent-bg); }
+.drug-check { display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border:1.5px solid var(--border); border-radius:5px; margin:2px; font-size:11px; cursor:pointer; user-select:none; transition:all .15s; }
+.drug-check:hover { border-color:var(--accent); }
+.drug-check.checked { background:var(--accent); color:#fff; border-color:var(--accent); }
+.drug-check input { display:none; }
+.monitor-item { display:flex; align-items:baseline; gap:6px; padding:3px 0; font-size:12px; }
+.monitor-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+.dot-red { background:var(--red); }
+.dot-yellow { background:var(--yellow); }
+.dot-green { background:var(--green); }
+.hidden { display:none !important; }
+@media(max-width:768px){ .g2,.g3{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} .form-row{flex-direction:column;align-items:flex-start;} .form-row label{min-width:auto;} }
+
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
+padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
+font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+</style>
+
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../index.html#topics">📖 疾病</a>
+  <a href="../index.html#drugs">💊 药物</a>
+  <a href="../index.html#tools">🔬 工具</a>
+  <span class="nav-title">药物风险评估 · MedWiki-Rheum</span>
+</div>
+
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>💊 药物风险评估</h1>
+    <div class="sub">用药前风险评级 · 药物相互作用 · 监测方案 · 疫苗建议 · 特殊情况</div>
+  </div>
+  <div class="meta">
+    儿童风湿免疫专用<br>
+    置信度上限 90%<br>
+    ⚠️ 不替代临床判断
+  </div>
+</div>
+
+<div class="body">
+
+<!-- ===== Tab Navigation ===== -->
+<div class="tab-bar">
+  <div class="tab-btn active" onclick="switchTab('risk')">🔍 用药前风险评估</div>
+  <div class="tab-btn" onclick="switchTab('ddi')">⚡ 药物相互作用</div>
+  <div class="tab-btn" onclick="switchTab('monitor')">📋 监测时间表</div>
+  <div class="tab-btn" onclick="switchTab('vaccine')">💉 疫苗建议</div>
+  <div class="tab-btn" onclick="switchTab('special')">⚠️ 特殊情况</div>
+</div>
+
+<!-- ===== TAB 1: 用药前风险评估 ===== -->
+<div id="tab-risk" class="tab-panel active">
+
+<div class="sh">📝 患者信息</div>
+<div class="form-row">
+  <label>选择药物</label>
+  <select id="risk-drug" onchange="assessRisk()">
+    <option value="">-- 请选择 --</option>
+    <option value="MTX">MTX（甲氨蝶呤）</option>
+    <option value="etanercept">依那西普（TNFi）</option>
+    <option value="adalimumab">阿达木单抗（TNFi）</option>
+    <option value="tocilizumab">托珠单抗（IL-6）</option>
+    <option value="anakinra">阿那白滞素（IL-1）</option>
+    <option value="canakinumab">卡那奴单抗（IL-1）</option>
+    <option value="abatacept">阿巴西普（共刺激调节）</option>
+    <option value="rituximab">利妥昔单抗（抗CD20）</option>
+    <option value="MMF">吗替麦考酚酯（MMF）</option>
+    <option value="cyclosporine">环孢素A（CsA）</option>
+    <option value="tacrolimus">他克莫司（FK506）</option>
+    <option value="azathioprine">硫唑嘌呤（AZA）</option>
+    <option value="NSAIDs">NSAIDs</option>
+    <option value="GC">糖皮质激素（口服/静脉）</option>
+  </select>
+</div>
+<div class="form-row">
+  <label>年龄(岁)</label>
+  <input type="number" id="risk-age" min="0" max="18" value="" onchange="assessRisk()" oninput="assessRisk()">
+</div>
+<div class="form-row">
+  <label>体重(kg)</label>
+  <input type="number" id="risk-weight" min="2" max="100" value="" onchange="assessRisk()" oninput="assessRisk()">
+</div>
+
+<div class="sh yellow" style="margin-top:10px;">🩺 合并症/危险因素（勾选适用项）</div>
+<div id="risk-factors" style="display:flex;flex-wrap:wrap;gap:3px;margin:4px 0;">
+</div>
+
+<div id="risk-result" class="hidden" style="margin-top:8px;">
+</div>
+
+</div>
+
+<!-- ===== TAB 2: 药物相互作用 ===== -->
+<div id="tab-ddi" class="tab-panel">
+
+<div class="sh">⚡ 选择正在使用/计划使用的药物（选2种以上）</div>
+<div id="ddi-drugs" style="display:flex;flex-wrap:wrap;gap:4px;margin:6px 0;">
+</div>
+
+<div id="ddi-result">
+  <div class="note">请选择至少2种药物以检查相互作用</div>
+</div>
+
+</div>
+
+<!-- ===== TAB 3: 监测时间表 ===== -->
+<div id="tab-monitor" class="tab-panel">
+
+<div class="sh">📋 选择药物生成个性化监测方案</div>
+<div id="monitor-drugs" style="display:flex;flex-wrap:wrap;gap:4px;margin:6px 0;">
+</div>
+
+<div id="monitor-result">
+  <div class="note">请选择药物以生成监测时间表</div>
+</div>
+
+</div>
+
+<!-- ===== TAB 4: 疫苗建议 ===== -->
+<div id="tab-vaccine" class="tab-panel">
+
+<div class="sh">💉 按当前用药方案查看疫苗建议</div>
+<div id="vaccine-drugs" style="display:flex;flex-wrap:wrap;gap:4px;margin:6px 0;">
+</div>
+
+<div id="vaccine-result">
+  <div class="note">请选择药物以生成疫苗建议</div>
+</div>
+
+<div class="alert" style="margin-top:10px;">
+  <b>重要原则：</b>活疫苗（MMR、水痘、轮状病毒、BCG、黄热病）在免疫抑制状态下<b>通常禁忌</b>。接种前必须评估免疫抑制程度。灭活疫苗可安全接种但可能免疫应答减弱。
+</div>
+
+</div>
+
+<!-- ===== TAB 5: 特殊情况 ===== -->
+<div id="tab-special" class="tab-panel">
+
+<div class="sh red">🦠 感染期间停药规则</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">药物</th><th class="red-hd">发热(>38°C)</th><th class="red-hd">严重感染</th></tr>
+<tr class="hl-red"><td class="b">MTX</td><td class="c-y">暂停1周</td><td class="c-r b">停药至感染控制</td></tr>
+<tr class="hl-red"><td class="b">生物制剂</td><td class="c-y">跳过当次</td><td class="c-r b">停药至感染控制+恢复期</td></tr>
+<tr><td class="b">MMF</td><td>继续</td><td class="c-r">暂停</td></tr>
+<tr><td class="b">CsA/他克莫司</td><td>继续</td><td class="c-y">评估是否减量</td></tr>
+<tr><td class="b">AZA</td><td class="c-y">暂停1周</td><td class="c-r">停药</td></tr>
+<tr><td class="b">NSAIDs</td><td class="c-g">通常继续</td><td class="c-g">继续（注意肾功能）</td></tr>
+<tr><td class="b">激素</td><td class="c-g">继续（不可骤停）</td><td class="c-y">可能需加量（应激剂量）</td></tr>
+</table>
+</div>
+<div>
+<div class="note" style="margin-top:0;">
+  <b>激素应激剂量规则：</b><br>
+  • 泼尼松 &lt;10mg/d 超过2周 → 应激时无需加量<br>
+  • 泼尼松 ≥10mg/d → 严重感染/手术时需应激剂量（氢化可的松50mg IV q8h）<br>
+  • 使用激素 &gt;2周 → <b>不可骤停</b>，感染期间继续维持量
+</div>
+</div>
+</div>
+
+<div class="sh yellow">🔪 手术前后用药调整</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">术前停药</th><th class="yellow-hd">术后恢复</th><th class="yellow-hd">备注</th></tr>
+<tr><td class="b">MTX</td><td>无需停药</td><td>继续</td><td>ACR/EULAR: 低剂量MTX手术前<b class="c-g">无需停药</b></td></tr>
+<tr class="hl-yellow"><td class="b">TNFi</td><td class="c-y">术前1-2个给药周期</td><td class="c-y">伤口愈合后(14天)</td><td>择期手术用半衰期计算</td></tr>
+<tr><td class="b">托珠单抗</td><td class="c-y">术前2-4周</td><td class="c-y">伤口愈合后</td><td>影响急性期反应，掩盖感染征象</td></tr>
+<tr><td class="b">阿巴西普</td><td class="c-y">术前1个周期</td><td class="c-y">伤口愈合后</td><td></td></tr>
+<tr><td class="b">利妥昔单抗</td><td class="c-y">术前4周</td><td class="c-y">术后≥4周</td><td>B细胞恢复需6-12月</td></tr>
+<tr><td class="b">MMF</td><td>术前24h</td><td>术后3-5天</td><td>大型手术</td></tr>
+<tr><td class="b">CsA/他克莫司</td><td class="c-g">继续</td><td class="c-g">继续</td><td>注意肾功能+药物浓度</td></tr>
+<tr><td class="b">AZA</td><td class="c-g">继续</td><td class="c-g">继续</td><td></td></tr>
+<tr><td class="b">NSAIDs</td><td class="c-y">术前5个半衰期</td><td>术后24-48h</td><td>出血风险</td></tr>
+<tr class="hl-yellow"><td class="b">激素</td><td class="c-r">不可骤停</td><td class="c-y">术中应激剂量</td><td>≥10mg/d → 术中氢化可的松50mg IV q8h</td></tr>
+</table>
+
+<div class="sh red">🤰 妊娠/备孕用药分级</div>
+<table>
+<tr><th class="red-hd">药物</th><th class="red-hd">FDA分级</th><th class="red-hd">备孕停药</th><th class="red-hd">妊娠可用?</th><th class="red-hd">哺乳</th></tr>
+<tr class="hl-red"><td class="b">MTX</td><td>X</td><td class="c-r b">≥3月</td><td class="c-r b">禁用</td><td class="c-r">禁用</td></tr>
+<tr class="hl-red"><td class="b">MMF</td><td>X</td><td class="c-r b">≥6周</td><td class="c-r b">禁用（致畸26%）</td><td class="c-r">禁用</td></tr>
+<tr><td class="b">AZA</td><td>D</td><td>—</td><td class="c-y">可用（SLE维持）</td><td class="c-g">可用（低暴露）</td></tr>
+<tr><td class="b">CsA/他克莫司</td><td>C</td><td>—</td><td class="c-y">可用（器官移植经验）</td><td class="c-y">可用</td></tr>
+<tr><td class="b">TNFi（尤其培塞利珠单抗）</td><td>B</td><td>—</td><td class="c-g">可用（低胎盘转运）</td><td class="c-g">可用</td></tr>
+<tr><td class="b">NSAIDs</td><td>C/D(晚期)</td><td>—</td><td class="c-y">早期可用，晚期禁用</td><td class="c-g">可用</td></tr>
+<tr><td class="b">激素(低剂量)</td><td>C</td><td>—</td><td class="c-g">可用</td><td class="c-g">可用</td></tr>
+<tr><td class="b">托珠单抗</td><td>C</td><td class="c-y">停药≥3月</td><td class="c-r">避免</td><td class="c-r">避免</td></tr>
+<tr><td class="b">利妥昔单抗</td><td>C</td><td class="c-y">停药≥6-12月</td><td class="c-y">必要时孕早期后用</td><td class="c-r">避免</td></tr>
+</table>
+<div class="note"><b>来源：</b>ACR 2020生殖指南、EULAR 2022妊娠指南、FDA drug labels。培塞利珠单抗因无Fc段、胎盘转运最少，为TNFi中妊娠首选。</div>
+
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  儿童风湿免疫药物风险评估 · 数据来源：ACR/EULAR/SHARE指南 · 置信度上限 90% · ⚠️ 不替代临床判断
+</div>
+
+</div><!-- wrap -->
+
+<script>
+// ============================================================
+// DRUG DATABASE — 所有临床数据来自MedWiki-Rheum已审核药物页
+// ============================================================
+const DRUGS = {
+  MTX: {
+    name:'MTX（甲氨蝶呤）', category:'csDMARD',
+    absContraindications:['严重肝肾功能不全','妊娠/备孕','已知过敏','严重免疫缺陷'],
+    relContraindications:['酒精性肝病','肥胖/糖尿病/NAFLD','既往肝毒性','消化性溃疡'],
+    riskFactors:{
+      '肝功能异常':{level:'high',msg:'MTX肝毒性风险显著升高。基线ALT>2×ULN → 禁用。活动性肝病 → 绝对禁忌'},
+      '肾功能不全':{level:'high',msg:'MTX经肾排泄，肾功能不全→蓄积中毒。CrCl<30ml/min → 禁用'},
+      '活动性感染':{level:'high',msg:'暂停MTX至感染完全控制'},
+      '结核潜伏感染':{level:'med',msg:'预防性抗结核治疗后方可启用MTX。MTX本身结核风险低，但常联用生物制剂'},
+      'HBV携带':{level:'high',msg:'HBsAg阳性 → 预防性恩替卡韦/替诺福韦，每月监测HBV DNA'},
+      '妊娠/备孕':{level:'high',msg:'MTX为X级致畸剂。停药≥3月方可妊娠。男性备孕也需停药3月'},
+      '血液系统异常':{level:'high',msg:'基线WBC<4.0或PLT<150 → 禁用。用药期间WBC<3.0 → 立即停药'},
+      '肺部疾病':{level:'med',msg:'MTX性肺炎风险（0.5-1%）。基线胸片+用药后新发咳嗽/呼吸困难→立即停药排查'},
+      '糖尿病':{level:'med',msg:'增加肝毒性风险，需更频繁监测肝功能'},
+      '肥胖(BMI>30)':{level:'med',msg:'NAFLD风险↑，MTX肝毒性叠加。基线肝脏超声+更频繁肝功能监测'}
+    },
+    monitor:{
+      baseline:'CBC + 肝功能(ALT/AST/ALP/GGT) + 肾功能(BUN/Cr) + HBsAg/HCV + 胸片 + PPD/T-SPOT',
+      monthly_3:'CBC + 肝功能 + 肾功能（前3个月每月）',
+      stable:'每2-3月 CBC + 肝功能 + 肾功能',
+      longterm:'长期(>5年): 每年肝纤维化评估（FibroScan或肝活检）',
+      extra:'叶酸 1mg/d 必须联用'
+    },
+    vaccine:{
+      live:'可接种（MTX单药不禁止活疫苗，但需评估疾病活动度）。ACR 2022: 低剂量MTX(≤25mg/w)不视为活疫苗绝对禁忌',
+      inactivated:'可安全接种，免疫应答可能略弱',
+      note:'联用生物制剂时 → 活疫苗禁忌'
+    }
+  },
+  etanercept: {
+    name:'依那西普（TNFi）', category:'bDMARD-TNFi',
+    absContraindications:['活动性严重感染','活动性结核','脱髓鞘疾病','中重度心衰(NYHA III-IV)','已知过敏'],
+    relContraindications:['结核潜伏感染（需预防治疗）','HBV携带','恶性肿瘤史'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'TNFi显著增加感染风险。严重感染发生率约2-4/100人年。活动性感染 → 禁用'},
+      '结核潜伏感染':{level:'high',msg:'TNFi结核再激活风险高。T-SPOT阳性 → 预防性抗结核(异烟肼×9月或利福平×4月)后才能启用'},
+      'HBV携带':{level:'high',msg:'HBsAg阳性 → 预防性抗病毒。抗CD20更危险，但TNFi也有再激活风险'},
+      '脱髓鞘疾病':{level:'high',msg:'TNFi可加重多发性硬化/视神经炎 → 绝对禁忌'},
+      '中重度心衰':{level:'high',msg:'NYHA III-IV → 禁用。TNFi可加重心衰'},
+      '恶性肿瘤史':{level:'med',msg:'既往恶性肿瘤 → 谨慎评估。TNFi与淋巴瘤风险轻度↑相关'},
+      '妊娠/备孕':{level:'low',msg:'TNFi(B级)。培塞利珠单抗胎盘转运最少为首选。依那西普孕晚期停药避免新生儿免疫抑制'},
+      '肝功能异常':{level:'low',msg:'TNFi肝毒性罕见，轻度异常非禁忌'},
+      '肾功能不全':{level:'low',msg:'无需调整剂量'},
+      '血液系统异常':{level:'med',msg:'罕见全血细胞减少/再障。用药期间定期CBC'}
+    },
+    monitor:{
+      baseline:'T-SPOT/PPD + HBsAg/HCV + HIV + IgG/IgA/IgM + CBC + 肝肾功能 + 心超(必要时)',
+      monthly_3:'CBC + 肝肾功能（前3个月）',
+      stable:'每3-6月 CBC + 肝肾功能',
+      longterm:'每年T-SPOT复查（高暴露风险者）',
+      extra:'注射部位反应最常见（10-30%）。每6月评估中和抗体'
+    },
+    vaccine:{
+      live:'禁用活疫苗。生物制剂期间活疫苗可导致播散性感染',
+      inactivated:'可安全接种，建议每年流感疫苗 + 肺炎疫苗',
+      note:'启用前≥4周完成活疫苗接种'
+    }
+  },
+  adalimumab: {
+    name:'阿达木单抗（TNFi）', category:'bDMARD-TNFi',
+    absContraindications:['活动性严重感染','活动性结核','脱髓鞘疾病','中重度心衰(NYHA III-IV)','已知过敏'],
+    relContraindications:['结核潜伏感染（需预防治疗）','HBV携带','恶性肿瘤史'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'同TNFi类。严重感染风险约2-4/100人年'},
+      '结核潜伏感染':{level:'high',msg:'TNFi结核再激活风险。预防性抗结核后方可启用'},
+      'HBV携带':{level:'high',msg:'预防性恩替卡韦/替诺福韦'},
+      '脱髓鞘疾病':{level:'high',msg:'绝对禁忌'},
+      '中重度心衰':{level:'high',msg:'NYHA III-IV 禁用'},
+      '妊娠/备孕':{level:'low',msg:'B级。全人源化IgG1，孕晚期胎盘转运量较大'},
+      '肝功能异常':{level:'low',msg:'罕见肝毒性'},
+      '肾功能不全':{level:'low',msg:'无需调整'},
+      '血液系统异常':{level:'med',msg:'罕见血细胞减少'},
+      '恶性肿瘤史':{level:'med',msg:'谨慎评估'}
+    },
+    monitor:{
+      baseline:'T-SPOT/PPD + HBsAg/HCV + HIV + IgG/IgA/IgM + CBC + 肝肾功能 + 心超',
+      monthly_3:'CBC + 肝肾功能',
+      stable:'每3-6月 CBC + 肝肾功能',
+      longterm:'每年T-SPOT复查',
+      extra:'注意注射部位反应和中和抗体'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'启用前≥4周完成活疫苗接种'
+    }
+  },
+  tocilizumab: {
+    name:'托珠单抗（IL-6R）', category:'bDMARD-IL6',
+    absContraindications:['活动性严重感染','已知过敏','活动性消化道穿孔/憩室炎'],
+    relContraindications:['肝功能异常(ALT>5×ULN)','ANC<2.0×10⁹/L','血小板<100×10⁹/L','高脂血症'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'IL-6阻断增加感染风险。特别注意：托珠单抗→CRP/ESR正常化，可能掩盖感染征象'},
+      '肝功能异常':{level:'high',msg:'托珠单抗肝酶升高较常见（5-10%）。基线ALT>5×ULN → 禁用。ALT>3×ULN → 减量/暂停'},
+      '血液系统异常':{level:'high',msg:'粒细胞减少常见。ANC<2.0 → 谨慎；<1.0 → 暂停。PLT<100 → 减量'},
+      '消化道穿孔史':{level:'high',msg:'IL-6阻断与GI穿孔相关（尤其憩室炎）。有穿孔史 → 禁用'},
+      '结核潜伏感染':{level:'med',msg:'IL-6抑制结核风险低于TNFi，但仍需基线筛查+必要时预防'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'},
+      '妊娠/备孕':{level:'med',msg:'C级。动物实验有致畸。停药≥3月方可妊娠'},
+      '高脂血症':{level:'med',msg:'托珠单抗可升高LDL/TG。基线血脂+每6月复查'},
+      '肾功能不全':{level:'low',msg:'轻度无需调整。重度需谨慎'},
+      '糖尿病':{level:'med',msg:'托珠单抗可能影响血糖代谢'}
+    },
+    monitor:{
+      baseline:'CBC+分类 + 肝功能 + 肾功能 + 血脂 + T-SPOT/PPD + HBsAg/HCV + IgG/IgA/IgM',
+      monthly_3:'CBC + 肝功能 + 肾功能（前3个月每月）',
+      stable:'每2-3月 CBC + 肝功能 + 肾功能 + 血脂',
+      longterm:'每6月血脂、IgG水平',
+      extra:'CRP/ESR在此药下不可靠——不反映真实感染状态'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'MAS一线用药时，感染控制后仍需继续监测细胞因子水平'
+    }
+  },
+  anakinra: {
+    name:'阿那白滞素（IL-1Ra）', category:'bDMARD-IL1',
+    absContraindications:['活动性严重感染','对大肠杆菌蛋白过敏','已知过敏'],
+    relContraindications:['哮喘（注射部位反应更重）','中性粒细胞减少'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'IL-1阻断增加感染风险，但低于TNFi'},
+      '血液系统异常':{level:'med',msg:'中性粒细胞减少发生率约5%。监测ANC'},
+      '肾功能不全':{level:'med',msg:'中重度肾功能不全 → 需减量(0.5-1mg/kg/d)'},
+      '妊娠/备孕':{level:'low',msg:'B级。短半衰期(~3h)，停药即可。动物实验无致畸'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '结核潜伏感染':{level:'low',msg:'IL-1抑制结核风险低于TNFi，仍建议筛查'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'},
+      '哮喘':{level:'low',msg:'注射部位反应可能更明显，非绝对禁忌'}
+    },
+    monitor:{
+      baseline:'CBC + 肝肾功能 + T-SPOT/PPD + HBsAg/HCV',
+      monthly_3:'CBC（重点ANC）+ 肝肾功能',
+      stable:'每2-3月 CBC + 肝肾功能',
+      longterm:'无特殊',
+      extra:'每日SC注射 → 依从性重点。注射部位红斑/硬结30-50%'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'短半衰期优势：停药后24-48h即可安全接种活疫苗'
+    }
+  },
+  canakinumab: {
+    name:'卡那奴单抗（IL-1β）', category:'bDMARD-IL1',
+    absContraindications:['活动性严重感染','已知过敏'],
+    relContraindications:['中性粒细胞减少','复发性感染史'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'IL-1阻断增加感染风险'},
+      '血液系统异常':{level:'med',msg:'中性粒细胞减少'},
+      '妊娠/备孕':{level:'med',msg:'C级。长半衰期(~26天)，停药后需等待>5个半衰期'},
+      '肾功能不全':{level:'low',msg:'无需调整'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '结核潜伏感染':{level:'low',msg:'建议筛查'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'}
+    },
+    monitor:{
+      baseline:'CBC + 肝肾功能 + T-SPOT/PPD + HBsAg/HCV',
+      monthly_3:'CBC + 肝肾功能',
+      stable:'每3-4月（与给药周期同步）',
+      longterm:'无特殊',
+      extra:'每4周1次 → 依从性好。sJIA/CAPS/AID首选之一'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'注意长半衰期，停药后需等待>5月才可接种活疫苗'
+    }
+  },
+  abatacept: {
+    name:'阿巴西普（CTLA4-Ig）', category:'bDMARD-共刺激',
+    absContraindications:['活动性严重感染','已知过敏'],
+    relContraindications:['COPD（可能加重）','恶性肿瘤史'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'T细胞共刺激阻断→感染风险↑。但研究显示感染率低于TNFi'},
+      'COPD':{level:'med',msg:'阿巴西普可能加重COPD症状。儿童罕见'},
+      '妊娠/备孕':{level:'low',msg:'C级。IgG1融合蛋白，孕晚期胎盘转运。动物实验安全'},
+      '恶性肿瘤史':{level:'med',msg:'免疫调节效应 → 谨慎'},
+      '结核潜伏感染':{level:'med',msg:'感染风险低于TNFi，仍建议筛查'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '肾功能不全':{level:'low',msg:'无需调整'}
+    },
+    monitor:{
+      baseline:'CBC + 肝肾功能 + T-SPOT/PPD + HBsAg/HCV + IgG',
+      monthly_3:'CBC + 肝肾功能',
+      stable:'每3月（与给药周期同步）',
+      longterm:'每年IgG评估',
+      extra:'适合合并感染倾向的患者（感染风险低于TNFi）'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种，但免疫应答可能弱于正常',
+      note:'T细胞依赖的疫苗应答可能减弱'
+    }
+  },
+  rituximab: {
+    name:'利妥昔单抗（抗CD20）', category:'bDMARD-抗CD20',
+    absContraindications:['活动性严重感染','已知过敏','活动性HBV(HBsAg+且DNA高)'],
+    relContraindications:['低IgG','进行性多灶性白质脑病(PML)风险','心功能不全(输注反应)'],
+    riskFactors:{
+      '活动性感染':{level:'high',msg:'B细胞清除→体液免疫受损。严重感染风险高。停药后B细胞恢复需6-12月'},
+      'HBV携带':{level:'high',msg:'HBV再激活风险极高。HBsAg+ → 预防性恩替卡韦+持续监测至B细胞恢复后12月'},
+      '血液系统异常':{level:'high',msg:'低IgG常见（尤其多次输注后）。IgG<4g/L → IVIG补充'},
+      '妊娠/备孕':{level:'med',msg:'C级。停药≥6-12月（B细胞恢复）。新生儿B细胞消耗→避免哺乳'},
+      '心功能不全':{level:'med',msg:'输注反应可能加重心衰。缓慢输注+预处理（地塞米松+抗组胺）'},
+      '结核潜伏感染':{level:'med',msg:'建议筛查'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '肾功能不全':{level:'low',msg:'无需调整'}
+    },
+    monitor:{
+      baseline:'CBC + 肝肾功能 + IgG/IgA/IgM + T-SPOT/PPD + HBsAg/HCV + CD19+B细胞计数',
+      monthly_3:'CBC + IgG（B细胞耗竭期）',
+      stable:'每3月 CBC + IgG + CD19',
+      longterm:'B细胞恢复后仍需监测IgG 12月',
+      extra:'输注反应预处理：地塞米松+氯雷他定。首次输注起始50mg/h，每30分钟加倍'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可接种但应答极差（B细胞耗竭→无法产生抗体）',
+      note:'启用前至少2周完成所有疫苗。利妥昔单抗后疫苗应答差→建议用药前接种+用药后测抗体滴度'
+    }
+  },
+  MMF: {
+    name:'吗替麦考酚酯（MMF）', category:'抗代谢类',
+    absContraindications:['妊娠/备孕（X级致畸剂）','严重骨髓抑制','严重活动性感染','已知过敏'],
+    relContraindications:['育龄女性未避孕','肾功能不全(eGFR<30)'],
+    riskFactors:{
+      '妊娠/备孕':{level:'high',msg:'X级致畸剂！先天畸形风险26%。备孕前停药≥6周。育龄女性必须避孕'},
+      '血液系统异常':{level:'high',msg:'WBC<3.0→减量25%；WBC<2.0→暂停。ANC<1.0→暂停'},
+      '活动性感染':{level:'high',msg:'机会性感染风险↑（CMV、PCP、带状疱疹）'},
+      '肾功能不全':{level:'med',msg:'eGFR<30→减量50%。eGFR 30-60→无需调整'},
+      '消化道疾病':{level:'med',msg:'MMF最常见不良反应为腹泻（10-30%）。严重腹泻/结肠炎→需停药鉴别'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '结核潜伏感染':{level:'med',msg:'建议筛查+必要时预防'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'}
+    },
+    monitor:{
+      baseline:'CBC + 肝肾功能 + 尿常规+蛋白定量 + 妊娠试验(育龄) + HBsAg/HCV',
+      monthly_3:'CBC（重点WBC）+ 肝肾功能（前3月每月）',
+      stable:'每2-3月 CBC + 肝肾功能',
+      longterm:'育龄女性每次随访确认避孕',
+      extra:'无浓度监测需求（优于CsA/他克莫司）'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'与CsA联用时注意：CsA可降低MPA AUC约30%'
+    }
+  },
+  cyclosporine: {
+    name:'环孢素A（CsA）', category:'CNI',
+    absContraindications:['严重肾功能不全(eGFR<30)','未控制高血压','活动性严重感染','恶性肿瘤','已知过敏'],
+    relContraindications:['高血压史','高脂血症','多毛症/牙龈增生关注','肝功能异常'],
+    riskFactors:{
+      '肾功能不全':{level:'high',msg:'CsA肾毒性是最重要不良反应。eGFR<30→禁用。用药后Cr较基线↑25%→减量'},
+      '高血压':{level:'high',msg:'CsA高血压发生率20-30%。未控制高血压→禁用。用药后需家庭血压监测'},
+      '活动性感染':{level:'high',msg:'免疫抑制增加感染风险'},
+      '肝功能异常':{level:'med',msg:'CsA经肝CYP3A4代谢。肝功能不全→浓度升高'},
+      '高脂血症':{level:'med',msg:'CsA可升高LDL/TG'},
+      '妊娠/备孕':{level:'low',msg:'C级。器官移植经验显示可用。哺乳可用'},
+      '电解质紊乱':{level:'med',msg:'高钾+低镁常见。补镁需监测'},
+      '结核潜伏感染':{level:'med',msg:'建议筛查'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'}
+    },
+    monitor:{
+      baseline:'血压 + 肾功能(BUN/Cr/eGFR) + 肝功能 + 血脂 + 电解质(K/Mg/UA) + CBC + 尿常规',
+      weekly_2:'谷浓度(C₀) 100-200ng/mL + 血压',
+      monthly_3:'谷浓度 + 肾功能 + 肝功能 + 血压 + 电解质',
+      stable:'每1-3月 谷浓度 + 肾功能 + 肝功能 + 血压 + 血脂 + 尿蛋白',
+      longterm:'家庭血压监测+每年肾功能评估',
+      extra:'浓度>250→减量10-25%；<80→增量0.5-1mg/kg/d'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'注意CYP3A4药物相互作用极多'
+    }
+  },
+  tacrolimus: {
+    name:'他克莫司（FK506）', category:'CNI',
+    absContraindications:['严重肾功能不全','未控制高血压','活动性严重感染','已知过敏'],
+    relContraindications:['糖尿病/高血糖','高血压史','低镁血症','CYP3A5*1携带者(需高剂量)'],
+    riskFactors:{
+      '肾功能不全':{level:'high',msg:'肾毒性与CsA相当。eGFR<30→慎用或避免'},
+      '高血压':{level:'high',msg:'发生率15-25%'},
+      '糖尿病/高血糖':{level:'high',msg:'他克莫司胰岛β细胞毒性→高血糖较CsA更多见。监测血糖/HbA1c'},
+      '活动性感染':{level:'high',msg:'免疫抑制增加感染风险'},
+      '低镁血症':{level:'med',msg:'低镁较CsA更多见→癫痫风险。常规补镁'},
+      '肝功能异常':{level:'med',msg:'CYP3A4代谢'},
+      '妊娠/备孕':{level:'low',msg:'C级。移植经验可用'},
+      '结核潜伏感染':{level:'med',msg:'建议筛查'},
+      'HBV携带':{level:'med',msg:'需预防性抗病毒'}
+    },
+    monitor:{
+      baseline:'肾功能 + 肝功能 + 血糖/HbA1c + 血压 + 电解质(K/Mg/UA) + CBC + 尿常规',
+      after_3d:'谷浓度(C₀) 5-10ng/mL',
+      monthly_3:'谷浓度 + 肾功能 + 血糖 + 血压 + 电解质',
+      stable:'每1-3月 谷浓度 + 肾功能 + 血糖/HbA1c + 血压 + 血脂',
+      longterm:'CYP3A5基因型指导剂量',
+      extra:'浓度>15→减量25-50%；<3→增量。与CsA不可互换'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'联用激素→高血糖风险叠加'
+    }
+  },
+  azathioprine: {
+    name:'硫唑嘌呤（AZA）', category:'抗代谢类',
+    absContraindications:['TPMT纯合子缺乏','严重骨髓抑制','严重活动性感染','已知过敏'],
+    relContraindications:['TPMT杂合子(需减量)','NUDT15 C415T(亚洲人群)','肾功能不全(eGFR<30)'],
+    riskFactors:{
+      'TPMT缺乏':{level:'high',msg:'TPMT纯合子缺乏 → 绝对禁忌（致死性骨髓抑制风险）。杂合子→减至1mg/kg/d'},
+      '血液系统异常':{level:'high',msg:'骨髓抑制最常见。WBC<2.0→暂停。ANC<1.5→暂停'},
+      '活动性感染':{level:'high',msg:'感染风险增加'},
+      '肾功能不全':{level:'med',msg:'eGFR<30→减量50%。30-60→减量25%'},
+      '肝功能异常':{level:'med',msg:'中重度→减量或避免'},
+      '别嘌醇使用':{level:'high',msg:'别嘌醇竞争XO酶 → AZA毒性↑↑↑。联用时AZA需减至原量25%'},
+      '妊娠/备孕':{level:'low',msg:'D级。可用于SLE妊娠期维持（优于MMF）'},
+      '胰腺炎史':{level:'med',msg:'AZA可致胰腺炎（5-10%）。既往AZA胰腺炎→永久停用'}
+    },
+    monitor:{
+      baseline:'TPMT活性/基因型(必须!) + NUDT15(可选) + CBC + 肝肾功能 + EBV/CMV',
+      week_1:'CBC（初次用药者）',
+      week_2:'CBC',
+      week_4:'CBC + 肝肾功能',
+      monthly_3:'CBC + 肝肾功能（前3月）',
+      stable:'每2-3月 CBC + 肝肾功能',
+      longterm:'无特殊',
+      extra:'起效慢(8-12周)。亚洲人群建议NUDT15基因检测'
+    },
+    vaccine:{
+      live:'禁用活疫苗',
+      inactivated:'可安全接种',
+      note:'SLE妊娠期维持首选（优于MMF的X级致畸）'
+    }
+  },
+  NSAIDs: {
+    name:'NSAIDs（非甾体抗炎药）', category:'对症治疗',
+    absContraindications:['活动性消化道出血','严重肾功能不全(eGFR<30)','已知过敏/哮喘','孕晚期'],
+    relContraindications:['消化道溃疡史','肾功能不全(eGFR 30-60)','高血压','哮喘','心血管疾病'],
+    riskFactors:{
+      '肾功能不全':{level:'high',msg:'NSAIDs减少肾血流。eGFR<30→禁用。30-60→短期+密切监测'},
+      '消化道溃疡':{level:'high',msg:'NSAIDs消化性溃疡/出血风险。联用PPI保护'},
+      '高血压':{level:'med',msg:'NSAIDs水钠潴留→血压升高'},
+      '哮喘':{level:'med',msg:'NSAID加重呼吸疾病(NERD/阿司匹林哮喘)→慎用'},
+      '肝功能异常':{level:'low',msg:'轻度异常非禁忌'},
+      '妊娠/备孕':{level:'med',msg:'孕早期可用，孕晚期(D级)→动脉导管早闭'},
+      '心血管疾病':{level:'med',msg:'长期NSAIDs增加CV事件风险（尤其COX-2选择性）'},
+      '活动性感染':{level:'low',msg:'通常继续使用'}
+    },
+    monitor:{
+      baseline:'肾功能 + 肝功能 + 血压 + CBC',
+      monthly_3:'肾功能 + 血压（前3月）',
+      stable:'每3-6月 肾功能 + 血压',
+      longterm:'注意长期使用累积肾毒性',
+      extra:'优选：布洛芬(10-15mg/kg tid)或萘普生(10-20mg/kg bid)'
+    },
+    vaccine:{
+      live:'可安全接种',
+      inactivated:'可安全接种',
+      note:'NSAIDs不显著抑制免疫，疫苗不受影响'
+    }
+  },
+  GC: {
+    name:'糖皮质激素（口服/静脉）', category:'对症治疗',
+    absContraindications:['全身性真菌感染','已知过敏（罕见）'],
+    relContraindications:['糖尿病','高血压','骨质疏松','消化道溃疡','精神病病史','活动性感染'],
+    riskFactors:{
+      '糖尿病':{level:'high',msg:'激素显著升高血糖。糖尿病→需增加胰岛素/口服降糖药剂量'},
+      '高血压':{level:'high',msg:'激素致水钠潴留→血压升高。联用NSAIDs→叠加'},
+      '骨质疏松':{level:'med',msg:'长期激素→骨密度↓。泼尼松>5mg/d×>3月→补充钙+维D+双膦酸盐'},
+      '消化道溃疡':{level:'med',msg:'激素增加溃疡/出血风险。联用NSAIDs→必须PPI保护'},
+      '活动性感染':{level:'high',msg:'激素抑制免疫但不可骤停。严重感染→可能需应激剂量加量'},
+      '精神病病史':{level:'med',msg:'激素可致情绪波动/精神症状复发'},
+      '妊娠/备孕':{level:'low',msg:'C级。低剂量泼尼松可用（胎盘11β-HSD代谢）'},
+      '肥胖/BMI>30':{level:'med',msg:'激素加重体重增加+代谢综合征。尽量短期使用'},
+      '生长（儿童）':{level:'high',msg:'泼尼松>0.1mg/kg/d×>3月→生长减速。每6月测身高Z评分'}
+    },
+    monitor:{
+      baseline:'血糖 + 血压 + 身高/体重/BMI + 骨密度(长期用药) + 眼科(白内障/青光眼)',
+      monthly_3:'血糖 + 血压 + 身高/体重（前3月）',
+      stable:'每1-3月 血糖 + 血压 + BMI',
+      longterm:'每6月 身高Z + 骨密度 + 眼科。每年骨龄',
+      extra:'原则：最低有效剂量、最短疗程。晨间单次给药减少HPA抑制'
+    },
+    vaccine:{
+      live:'泼尼松<2mg/kg/d（<20mg/d）→可接种活疫苗。≥2mg/kg/d或≥20mg/d→禁用活疫苗',
+      inactivated:'可安全接种，免疫应答可能减弱',
+      note:'激素减量原则：每1-2周减10-25%。不可骤停（肾上腺危象风险）'
+    }
+  }
+};
+
+// ============================================================
+// DDI DATABASE — 药物相互作用
+// ============================================================
+const DDI_PAIRS = [
+  {a:'MTX',b:'NSAIDs',severity:'moderate',effect:'NSAIDs ↑MTX血药浓度（减少肾排泄、竞争蛋白结合）',action:'短期可用，但需监测肾功能。避免长期联用大剂量NSAIDs'},
+  {a:'MTX',b:'GC',severity:'minor',effect:'联用常见（JIA标准方案）。肝毒性/感染风险轻度叠加',action:'常规联用，监测肝功能'},
+  {a:'MTX',b:'TMP-SMX',severity:'severe',effect:'竞争叶酸代谢→骨髓抑制↑↑↑',action:'🔴 禁止联用！PCP预防用TMP-SMX时需停MTX或换用其他预防方案（如阿托伐醌）'},
+  {a:'MTX',b:'etanercept',severity:'minor',effect:'联用为JIA标准方案（MTX+TNFi）。感染风险轻度↑',action:'常规联用。监测感染征象+CBC'},
+  {a:'MTX',b:'adalimumab',severity:'minor',effect:'同MTX+TNFi',action:'常规联用'},
+  {a:'MTX',b:'PPI',severity:'moderate',effect:'奥美拉唑↓MTX清除→蓄积风险',action:'换用H2RA（法莫替丁）或监测MTX毒性'},
+  {a:'MTX',b:'MMF',severity:'moderate',effect:'联用增加骨髓抑制+感染风险',action:'谨慎联用，需更频繁监测CBC。通常不同时使用'},
+  {a:'MTX',b:'azathioprine',severity:'moderate',effect:'联用增加骨髓抑制和肝毒性风险',action:'通常不联用。如必须联用→密切监测CBC+肝功能'},
+  {a:'MTX',b:'cyclosporine',severity:'moderate',effect:'CsA ↓MPA排泄（联用MMF时），MTX+CsA骨髓抑制叠加',action:'谨慎联用，监测CBC+肾功能'},
+  {a:'NSAIDs',b:'GC',severity:'moderate',effect:'消化性溃疡/出血风险显著↑↑',action:'必须联用PPI保护（奥美拉唑20mg/d）。短期联用+最低剂量'},
+  {a:'NSAIDs',b:'cyclosporine',severity:'moderate',effect:'肾毒性叠加',action:'短期可用+监测肾功能。避免长期联用'},
+  {a:'NSAIDs',b:'tacrolimus',severity:'moderate',effect:'肾毒性叠加',action:'慎用+监测肾功能'},
+  {a:'NSAIDs',b:'GC',severity:'moderate',effect:'消化道出血风险↑↑+水钠潴留↑',action:'PPI保护+最短疗程'},
+  {a:'GC',b:'tacrolimus',severity:'moderate',effect:'高血糖风险叠加',action:'更频繁监测血糖/HbA1c'},
+  {a:'GC',b:'tocilizumab',severity:'moderate',effect:'联用常见（sJIA/MAS方案）。托珠单抗+激素→感染+高血糖叠加',action:'尽快减量激素'},
+  {a:'GC',b:'MMF',severity:'minor',effect:'联用常见（SLE方案）',action:'常规联用'},
+  {a:'MMF',b:'cyclosporine',severity:'moderate',effect:'CsA ↓MPA AUC约30%',action:'可能需要增加MMF剂量。监测临床疗效'},
+  {a:'MMF',b:'azathioprine',severity:'moderate',effect:'联用骨髓抑制显著↑',action:'通常不联用。SLE方案二选一'},
+  {a:'cyclosporine',b:'tacrolimus',severity:'severe',effect:'两个CNI不可互换或联用，机制相同→毒性叠加',action:'🔴 不同时使用！换药需洗脱期'},
+  {a:'azathioprine',b:'allopurinol',severity:'severe',effect:'别嘌醇竞争XO酶→AZA活性代谢物↑↑↑→致死性骨髓抑制',action:'🔴 禁止联用或AZA减至原量25%'},
+  {a:'azathioprine',b:'MMF',severity:'moderate',effect:'联用骨髓抑制显著↑',action:'通常不联用'},
+  {a:'etanercept',b:'adalimumab',severity:'severe',effect:'两个TNFi不可联用→感染风险↑↑无额外获益',action:'🔴 不联用生物制剂同类药物'},
+  {a:'etanercept',b:'tocilizumab',severity:'severe',effect:'不同靶点生物制剂联用→严重感染风险↑↑',action:'🔴 不推荐联用不同靶点生物制剂'},
+  {a:'etanercept',b:'anakinra',severity:'severe',effect:'联用增加严重感染+中性粒细胞减少风险',action:'🔴 不推荐联用'},
+  {a:'etanercept',b:'abatacept',severity:'moderate',effect:'联用增加感染风险，无额外获益证据',action:'不推荐联用'},
+  {a:'adalimumab',b:'tocilizumab',severity:'severe',effect:'不同靶点联用→严重感染风险↑↑',action:'🔴 不推荐联用'},
+  {a:'adalimumab',b:'anakinra',severity:'severe',effect:'联用增加严重感染风险',action:'🔴 不推荐联用'},
+  {a:'tocilizumab',b:'anakinra',severity:'severe',effect:'IL-6+IL-1双重阻断→严重免疫抑制',action:'🔴 不推荐联用'},
+  {a:'tocilizumab',b:'canakinumab',severity:'severe',effect:'IL-6+IL-1双重阻断→严重免疫抑制',action:'🔴 不推荐联用'},
+  {a:'rituximab',b:'MMF',severity:'minor',effect:'联用常见（SLE诱导方案）。B细胞清除+抗代谢→感染风险↑',action:'监测IgG+B细胞。IgG<4→IVIG'},
+  {a:'rituximab',b:'MTX',severity:'minor',effect:'联用常见（RA方案，儿科较少）',action:'监测CBC+感染'},
+  {a:'rituximab',b:'GC',severity:'minor',effect:'联用常见（SLE/肾病方案）',action:'监测感染+血糖'},
+];
+
+// ============================================================
+// RISK FACTORS LIST
+// ============================================================
+const RISK_FACTOR_NAMES = [
+  '肝功能异常','肾功能不全','活动性感染','结核潜伏感染','HBV携带',
+  '妊娠/备孕','血液系统异常','肺部疾病','糖尿病','消化道溃疡',
+  '高血压','消化道穿孔史','脱髓鞘疾病','中重度心衰','恶性肿瘤史',
+  '肥胖(BMI>30)','精神病病史','TPMT缺乏','别嘌醇使用','低IgG',
+  '高脂血症','电解质紊乱','哮喘','COPD','胰腺炎史'
+];
+
+// ============================================================
+// RENDER FUNCTIONS
+// ============================================================
+function renderDrugChecks(containerId, onChange) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = '';
+  for (const [id, d] of Object.entries(DRUGS)) {
+    const label = document.createElement('label');
+    label.className = 'drug-check';
+    label.innerHTML = `<input type="checkbox" value="${id}" onchange="${onChange}"><span>${d.name.split('（')[0]}</span>`;
+    label.querySelector('input').addEventListener('change', function(){
+      label.classList.toggle('checked', this.checked);
+      window[onChange]();
+    });
+    c.appendChild(label);
+  }
+}
+
+function renderRiskFactors() {
+  const c = document.getElementById('risk-factors');
+  c.innerHTML = '';
+  RISK_FACTOR_NAMES.forEach(f => {
+    const label = document.createElement('label');
+    label.className = 'drug-check';
+    label.innerHTML = `<input type="checkbox" value="${f}"><span>${f}</span>`;
+    label.querySelector('input').addEventListener('change', function(){
+      label.classList.toggle('checked', this.checked);
+      assessRisk();
+    });
+    c.appendChild(label);
+  });
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+// ============================================================
+// TAB 1: RISK ASSESSMENT
+// ============================================================
+function assessRisk() {
+  const drugId = document.getElementById('risk-drug').value;
+  if (!drugId) { document.getElementById('risk-result').classList.add('hidden'); return; }
+  const drug = DRUGS[drugId];
+  const factors = [];
+  document.querySelectorAll('#risk-factors input:checked').forEach(cb => factors.push(cb.value));
+
+  let risks = [];
+  let highCount = 0, medCount = 0, lowCount = 0;
+  let absContraHit = [];
+
+  // Check absolute contraindications against selected factors
+  drug.absContraindications.forEach(ac => {
+    factors.forEach(f => {
+      if (ac.includes(f) || f.includes(ac.replace(/[/\\（）()]/g,''))) {
+        absContraHit.push(ac);
+      }
+    });
+  });
+
+  factors.forEach(f => {
+    if (drug.riskFactors[f]) {
+      risks.push({factor: f, ...drug.riskFactors[f]});
+      if (drug.riskFactors[f].level === 'high') highCount++;
+      else if (drug.riskFactors[f].level === 'med') medCount++;
+      else lowCount++;
+    }
+  });
+
+  // Determine overall risk level
+  let overallLevel, overallLabel;
+  if (absContraHit.length > 0 || highCount >= 2) {
+    overallLevel = 'high'; overallLabel = '高风险 — 不建议使用或需专家会诊';
+  } else if (highCount === 1 || medCount >= 2) {
+    overallLevel = 'med'; overallLabel = '中风险 — 需额外评估和监测';
+  } else if (medCount === 1 || lowCount > 0) {
+    overallLevel = 'low'; overallLabel = '低风险 — 可在标准监测下使用';
+  } else {
+    overallLevel = 'low'; overallLabel = '低风险 — 无额外危险因素';
+  }
+
+  let html = `<div class="result-box result-${overallLevel}">
+    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">
+      ${overallLevel==='high'?'🔴':overallLevel==='med'?'🟡':'🟢'} ${drug.name}：${overallLabel}
+    </div>`;
+
+  if (absContraHit.length > 0) {
+    html += `<div class="alert" style="margin:4px 0;"><b>绝对禁忌命中：</b>${absContraHit.join('、')}</div>`;
+  }
+
+  if (risks.length > 0) {
+    risks.sort((a,b) => a.level==='high'?-1:b.level==='high'?1:a.level==='med'?-1:1);
+    html += '<div style="margin-top:6px;">';
+    risks.forEach(r => {
+      const icon = r.level==='high'?'🔴':r.level==='med'?'🟡':'🟢';
+      html += `<div style="margin:3px 0;font-size:11.5px;"><b>${icon} ${r.factor}</b>：${r.msg}</div>`;
+    });
+    html += '</div>';
+  }
+
+  // Show monitoring schedule
+  if (drug.monitor) {
+    html += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid var(--border);">
+      <b style="color:var(--accent);">📋 监测方案：</b><br>
+      <span style="font-size:11px;">
+      基线：${drug.monitor.baseline}<br>`;
+    if(drug.monitor.weekly_2) html += `前2周：${drug.monitor.weekly_2}<br>`;
+    if(drug.monitor.monthly_3) html += `前3月：${drug.monitor.monthly_3}<br>`;
+    if(drug.monitor.stable) html += `稳定后：${drug.monitor.stable}<br>`;
+    if(drug.monitor.extra) html += `<span style="color:var(--red);">⚠️ ${drug.monitor.extra}</span>`;
+    html += '</span></div>';
+  }
+
+  // Absolute contraindications list
+  html += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid var(--border);font-size:11px;">
+    <b style="color:var(--red);">绝对禁忌：</b>${drug.absContraindications.join('、')}<br>
+    <b style="color:var(--yellow);">相对禁忌：</b>${drug.relContraindications.join('、')}
+  </div>`;
+
+  html += '</div>';
+  const el = document.getElementById('risk-result');
+  el.innerHTML = html;
+  el.classList.remove('hidden');
+}
+
+// ============================================================
+// TAB 2: DDI CHECK
+// ============================================================
+function checkDDI() {
+  const selected = [];
+  document.querySelectorAll('#ddi-drugs input:checked').forEach(cb => selected.push(cb.value));
+  const el = document.getElementById('ddi-result');
+
+  if (selected.length < 2) {
+    el.innerHTML = '<div class="note">请选择至少2种药物以检查相互作用</div>';
+    return;
+  }
+
+  let pairs = [];
+  for (let i = 0; i < selected.length; i++) {
+    for (let j = i+1; j < selected.length; j++) {
+      const a = selected[i], b = selected[j];
+      const match = DDI_PAIRS.find(p =>
+        (p.a===a && p.b===b) || (p.a===b && p.b===a) ||
+        (DRUGS[p.a]?.category === DRUGS[a]?.category && DRUGS[p.b]?.category === DRUGS[b]?.category &&
+         ((p.a==='etanercept'&&p.b==='adalimumab') && (a==='etanercept'&&b==='adalimumab' || a==='adalimumab'&&b==='etanercept')))
+      );
+      // Direct match
+      const directMatch = DDI_PAIRS.find(p =>
+        (p.a===a && p.b===b) || (p.a===b && p.b===a)
+      );
+      if (directMatch) {
+        pairs.push(directMatch);
+      }
+    }
+  }
+
+  // Also check biologic class rules
+  const bioClasses = {};
+  selected.forEach(id => {
+    const cat = DRUGS[id]?.category || '';
+    if (cat.startsWith('bDMARD')) bioClasses[id] = cat;
+  });
+  const bioIds = Object.keys(bioClasses);
+  if (bioIds.length >= 2) {
+    // Check if any two biologics are already in DDI
+    for (let i = 0; i < bioIds.length; i++) {
+      for (let j = i+1; j < bioIds.length; j++) {
+        const exists = pairs.find(p =>
+          (p.a===bioIds[i]&&p.b===bioIds[j])||(p.a===bioIds[j]&&p.b===bioIds[i])
+        );
+        if (!exists) {
+          pairs.push({
+            a: bioIds[i], b: bioIds[j], severity:'severe',
+            effect:'联用两种生物制剂→严重感染风险↑↑，无额外获益证据',
+            action:'🔴 不推荐联用不同生物制剂'
+          });
+        }
+      }
+    }
+  }
+
+  if (pairs.length === 0) {
+    const drugNames = selected.map(id => DRUGS[id]?.name.split('（')[0]).join(' + ');
+    el.innerHTML = `<div class="result-box result-low">
+      <b>🟢 ${drugNames}</b><br>
+      未发现已知显著药物相互作用。仍需注意：所有免疫抑制药物联用均增加感染风险。
+    </div>`;
+    return;
+  }
+
+  // Sort: severe first
+  pairs.sort((a,b) => a.severity==='severe'?-1:b.severity==='severe'?1:a.severity==='moderate'?-1:1);
+
+  let html = '';
+  pairs.forEach(p => {
+    const sev = p.severity==='severe'?'severe':p.severity==='moderate'?'moderate':'minor';
+    const icon = p.severity==='severe'?'🔴':p.severity==='moderate'?'🟡':'🟢';
+    html += `<div class="ddi-card ${sev}">
+      <div style="font-weight:700;font-size:12px;">${icon} ${DRUGS[p.a]?.name.split('（')[0] || p.a} ↔ ${DRUGS[p.b]?.name.split('（')[0] || p.b}</div>
+      <div style="font-size:11.5px;margin-top:2px;"><b>机制：</b>${p.effect}</div>
+      <div style="font-size:11.5px;"><b>建议：</b>${p.action}</div>
+    </div>`;
+  });
+
+  el.innerHTML = html;
+}
+
+// ============================================================
+// TAB 3: MONITOR SCHEDULE
+// ============================================================
+function genMonitor() {
+  const selected = [];
+  document.querySelectorAll('#monitor-drugs input:checked').forEach(cb => selected.push(cb.value));
+  const el = document.getElementById('monitor-result');
+
+  if (selected.length === 0) {
+    el.innerHTML = '<div class="note">请选择药物以生成监测时间表</div>';
+    return;
+  }
+
+  let html = '<table><tr><th>时间点</th>';
+  selected.forEach(id => { html += `<th>${DRUGS[id].name.split('（')[0]}</th>`; });
+  html += '</tr>';
+
+  const rows = [
+    {label:'基线', key:'baseline'},
+    {label:'第1-2周', key:'weekly_2'},
+    {label:'第1周', key:'week_1'},
+    {label:'第2周', key:'week_2'},
+    {label:'第4周', key:'week_4'},
+    {label:'3-5天后', key:'after_3d'},
+    {label:'前3月（每月）', key:'monthly_3'},
+    {label:'稳定后', key:'stable'},
+    {label:'长期', key:'longterm'},
+  ];
+
+  rows.forEach(row => {
+    let hasData = false;
+    selected.forEach(id => { if(DRUGS[id].monitor?.[row.key]) hasData = true; });
+    if (!hasData) return;
+
+    html += `<tr>`;
+    html += `<td class="b">${row.label}</td>`;
+    selected.forEach(id => {
+      const val = DRUGS[id].monitor?.[row.key];
+      html += `<td>${val || '—'}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</table>';
+
+  // Extra notes
+  let extras = [];
+  selected.forEach(id => {
+    if (DRUGS[id].monitor?.extra) extras.push(`<b>${DRUGS[id].name.split('（')[0]}：</b>${DRUGS[id].monitor.extra}`);
+  });
+  if (extras.length) {
+    html += '<div style="margin-top:6px;">';
+    extras.forEach(e => { html += `<div class="note">${e}</div>`; });
+    html += '</div>';
+  }
+
+  el.innerHTML = html;
+}
+
+// ============================================================
+// TAB 4: VACCINE
+// ============================================================
+function genVaccine() {
+  const selected = [];
+  document.querySelectorAll('#vaccine-drugs input:checked').forEach(cb => selected.push(cb.value));
+  const el = document.getElementById('vaccine-result');
+
+  if (selected.length === 0) {
+    el.innerHTML = '<div class="note">请选择药物以生成疫苗建议</div>';
+    return;
+  }
+
+  // Check if any drug prohibits live vaccines
+  let liveProhibited = false;
+  let liveDetails = [];
+  let inactivatedNote = [];
+
+  selected.forEach(id => {
+    const v = DRUGS[id].vaccine;
+    if (v.live.includes('禁用')) {
+      liveProhibited = true;
+      liveDetails.push(`<b>${DRUGS[id].name.split('（')[0]}</b>: ${v.live}`);
+    }
+    inactivatedNote.push(`<b>${DRUGS[id].name.split('（')[0]}</b>: ${v.inactivated}`);
+  });
+
+  let html = '';
+
+  // Live vaccine section
+  html += `<div class="sh red" style="margin-top:4px;">🦠 活疫苗</div>`;
+  if (liveProhibited) {
+    html += `<div class="alert"><b>🔴 当前方案下活疫苗禁忌</b><br>`;
+    liveDetails.forEach(d => { html += d + '<br>'; });
+    html += '</div>';
+    html += '<div class="note">活疫苗包括：MMR（麻疹-腮腺炎-风疹）、水痘、轮状病毒、BCG、黄热病、口服伤寒</div>';
+  } else {
+    html += '<div class="result-box result-low"><b>🟢 当前方案下活疫苗可能可以使用</b><br>';
+    selected.forEach(id => {
+      html += `<b>${DRUGS[id].name.split('（')[0]}</b>: ${DRUGS[id].vaccine.live}<br>`;
+    });
+    html += '</div>';
+  }
+
+  // Inactivated vaccine section
+  html += `<div class="sh green" style="margin-top:8px;">💉 灭活疫苗</div>`;
+  html += '<div class="result-box result-low">';
+  inactivatedNote.forEach(n => { html += n + '<br>'; });
+  html += '</div>';
+
+  // Recommended vaccines
+  html += `<div class="sh yellow" style="margin-top:8px;">📅 推荐接种</div>`;
+  html += `<table>
+    <tr><th class="yellow-hd">疫苗</th><th class="yellow-hd">类型</th><th class="yellow-hd">建议</th></tr>
+    <tr class="hl-green"><td class="b">流感疫苗</td><td>灭活</td><td class="c-g b">每年接种（免疫抑制患者强烈推荐）</td></tr>
+    <tr class="hl-green"><td class="b">肺炎疫苗</td><td>灭活</td><td class="c-g b">PCV13/PPSV23（免疫抑制推荐）</td></tr>
+    <tr><td class="b">HPV疫苗</td><td>灭活</td><td>适龄接种</td></tr>
+    <tr><td class="b">乙肝疫苗</td><td>灭活</td><td>基线查HBsAb，阴性→接种</td></tr>
+    <tr><td class="b">百白破(Tdap)</td><td>灭活</td><td>按计划加强</td></tr>
+    <tr class="hl-yellow"><td class="b">带状疱疹</td><td>灭活(Shingrix)</td><td class="c-y">≥50岁推荐。儿童不常规</td></tr>
+    <tr class="hl-red"><td class="b">COVID-19</td><td>灭活/mRNA</td><td class="c-g">推荐接种，可能应答减弱</td></tr>
+  </table>`;
+
+  // Per-drug notes
+  let notes = [];
+  selected.forEach(id => {
+    if (DRUGS[id].vaccine.note) notes.push(`<b>${DRUGS[id].name.split('（')[0]}</b>: ${DRUGS[id].vaccine.note}`);
+  });
+  if (notes.length) {
+    html += '<div style="margin-top:6px;">';
+    notes.forEach(n => { html += `<div class="note">${n}</div>`; });
+    html += '</div>';
+  }
+
+  el.innerHTML = html;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderRiskFactors();
+renderDrugChecks('ddi-drugs', 'checkDDI');
+renderDrugChecks('monitor-drugs', 'genMonitor');
+renderDrugChecks('vaccine-drugs', 'genVaccine');
+
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{});}
+</script>
+
+</body>
+</html>
