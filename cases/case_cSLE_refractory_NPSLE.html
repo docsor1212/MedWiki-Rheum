@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：难治性cNPSLE——硼替佐米突破治疗</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.drug-box { background:#e8f5e9; border:1px solid #a5d6a7; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.drug-box .m-title { font-weight:700; font-size:12px; color:#2e7d32; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">难治性NP-SLE</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 难治性儿童NP-SLE——硼替佐米突破治疗</h1>
+      <div class="sub">5例儿童系列 — 常规治疗无效的精神病性NP-SLE，硼替佐米带来突破</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 病例系列概述</div>
+    <table>
+      <tr><td class="b" style="width:130px">设计</td><td>5例回顾性病例系列（2011-2017年）</td></tr>
+      <tr><td class="b">机构</td><td>美国佛罗里达大学，儿科过敏/免疫/风湿科 + AdventHealth for Children, Orlando</td></tr>
+      <tr><td class="b">纳入标准</td><td>儿童起病的NP-SLE（cNPSLE），以<b>精神病（Psychosis）</b>为主要表现，常规免疫抑制治疗无效</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">难治性</span> <span class="tag t-r">NP-SLE精神病</span> <span class="tag t-a">硼替佐米</span> <span class="tag t-g">全部缓解</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本系列独特性：</b>① 首个<b>儿科</b>硼替佐米治疗NP-SLE的病例系列；② 5例患者均经过<b>充分常规治疗失败</b>（甲泼尼龙+环磷酰胺+利妥昔单抗+血浆置换）；③ 硼替佐米引入后<b>所有患者精神病症状快速改善</b>；④ 随访1-10年<b>无一复发</b>。
+    </div>
+
+    <!-- 难治过程 -->
+    <div class="sh red">🔴 治疗困境 — 常规方案全部失败</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>5例患者的共同特征：</b><br>
+      • 均确诊为cSLE合并<b>精神病性NP-SLE</b>（幻觉、妄想、行为异常、认知障碍）<br>
+      • 精神病症状<b>持续不缓解</b>，严重影响学习和生活<br>
+      • 均已接受<b>多种常规免疫抑制治疗</b>：<br><br>
+
+      <table>
+        <tr><th>治疗方案</th><th>机制</th><th>本系列中的效果</th></tr>
+        <tr><td class="b">甲泼尼龙冲击</td><td>广谱免疫抑制</td><td><span class="tag t-r">无效</span></td></tr>
+        <tr><td class="b">环磷酰胺（CTX）</td><td>B/T细胞抑制</td><td><span class="tag t-r">无效</span></td></tr>
+        <tr><td class="b">利妥昔单抗（RTX，Rituximab）</td><td>CD20+B细胞清除</td><td><span class="tag t-r">无效</span></td></tr>
+        <tr><td class="b">血浆置换（PEX）</td><td>清除自身抗体</td><td><span class="tag t-y">部分/短暂</span></td></tr>
+        <tr><td class="b">抗精神病药物</td><td>控制症状</td><td><span class="tag t-y">部分控制</span></td></tr>
+      </table>
+    </div>
+
+    <!-- 为什么常规方案失败 -->
+    <div class="sh yellow">🔬 为什么B细胞清除（利妥昔单抗）无效？— LLPC假说</div>
+
+    <div class="drug-box">
+      <div class="m-title">🧬 长寿命浆细胞（LLPC）假说 — 硼替佐米的理论基础</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>关键概念：</b><br><br>
+        <b>B细胞分化路径：</b><br>
+        ① 造血干细胞 → <b>初始B细胞（Naïve B Cell）</b> → 受抗原刺激 → <b>浆母细胞（Plasmablast）</b> → <b>浆细胞（Plasma Cell）</b><br>
+        ② 部分浆细胞迁移至<b>骨髓/炎症组织</b> → 成为<b>长寿命浆细胞（LLPC，Long-Lived Plasma Cell）</b><br>
+        ③ LLPC存活期可达<b>数年至数十年</b>，持续分泌抗体<br><br>
+
+        <b>利妥昔单抗（RTX）为什么无效？</b><br>
+        ④ RTX靶向<b>CD20抗原</b> — CD20表达于B细胞表面，但<b>浆细胞不表达CD20</b><br>
+        ⑤ RTX清除CD20+B细胞 → 但对已分化的浆细胞/LLPC<b>完全无效</b><br>
+        ⑥ LLPC继续分泌致病性自身抗体（如抗神经元抗体、抗NMDA受体抗体）<br>
+        ⑦ → 精神病症状持续不缓解<br><br>
+
+        <b>硼替佐米为什么有效？</b><br>
+        ⑧ 硼替佐米（Bortezomib）是<b>蛋白酶体抑制剂（Proteasome Inhibitor）</b><br>
+        ⑨ 抑制泛素-蛋白酶体通路 → 浆细胞内<b>错误折叠蛋白堆积</b> → <b>浆细胞凋亡</b><br>
+        ⑩ <b>直接杀灭LLPC</b>（包括RTX无法清除的抗体分泌细胞）→ 自身抗体滴度下降<br>
+        ⑪ → 精神病症状缓解
+      </div>
+    </div>
+
+    <!-- 硼替佐米方案 -->
+    <div class="sh green">💊 硼替佐米治疗方案</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>硼替佐米（Bortezomib，商品名Velcade/万珂）</b><br>
+      • <b>类别</b>：蛋白酶体抑制剂（多发性骨髓瘤一线用药）<br>
+      • <b>靶点</b>：26S蛋白酶体 → 浆细胞凋亡<br>
+      • <b>给药方式</b>：皮下注射或静脉注射<br>
+      • <b>方案</b>：1.3 mg/m²，每周2次×2周，休息1周（每周期4次）<br><br>
+
+      <b>在本系列中的应用：</b><br>
+      • 作为<b>辅助治疗</b>加入现有免疫抑制方案<br>
+      • 5例患者均在常规方案（激素+CTX+RTX±PEX）失败后引入<br>
+      • 硼替佐米与现有方案协同：B细胞清除（RTX）+ 浆细胞清除（硼替佐米）= <b>双重打击</b>
+    </div>
+
+    <!-- 疗效 -->
+    <div class="sh green">📊 疗效结果</div>
+    <table>
+      <tr><th>指标</th><th>结果</th></tr>
+      <tr><td class="b">精神病症状改善</td><td><span class="tag t-g">5/5（100%）快速改善</span></td></tr>
+      <tr><td class="b">改善速度</td><td>硼替佐米引入后<b>快速起效</b>（数日至数周）</td></tr>
+      <tr><td class="b">复发率</td><td><span class="tag t-g">0%</span> — 随访1-10年无一复发精神病</td></tr>
+      <tr><td class="b">激素减量</td><td>硼替佐米引入后<b>快速减量</b>糖皮质激素</td></tr>
+      <tr><td class="b">抗精神病药</td><td>可<b>逐步停用</b></td></tr>
+      <tr><td class="b">SLE活动度</td><td>整体改善</td></tr>
+    </table>
+
+    <div class="alert">
+      <b>⚠️ 主要不良反应：</b><b>继发性低丙种球蛋白血症（Secondary Hypogammaglobulinemia）</b> — 5/5（100%）患者出现，所有患者需要<b>静脉丙种球蛋白（IVIG）替代治疗</b>。这是因为硼替佐米清除浆细胞的同时也清除了正常产生保护性抗体的浆细胞。除此之外，<b>无其他严重不良反应</b>。
+    </div>
+
+    <!-- 机制深度 -->
+    <div class="sh yellow">🔬 NP-SLE精神病的免疫机制（深度解析）</div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. 抗NMDA受体抗体与精神病</b><br>
+      ① NMDA受体（N-methyl-D-aspartate Receptor，N-甲基-D-天冬氨酸受体）是脑内关键的兴奋性神经递质受体<br>
+      ② cSLE中抗dsDNA抗体与NMDA受体存在<b>分子模拟（Molecular Mimicry）</b>→ 产生抗NMDA受体抗体<br>
+      ③ 抗NMDA受体抗体结合海马和杏仁核神经元 → 破坏突触可塑性 → <b>精神病、认知障碍、情绪异常</b><br>
+      ④ 这一机制与抗NMDA受体脑炎类似，但在SLE中是<b>继发性</b>的<br><br>
+
+      <b>2. 为什么LLPC特别难清除？</b><br>
+      ⑤ LLPC定居在骨髓的"存活龛（Survival Niche）"中，受<b>APRIL和BAFF</b>细胞因子维持<br>
+      ⑥ LLPC高表达<b>BCMA（B-cell Maturation Antigen）</b> — 但不表达CD20<br>
+      ⑦ 因此RTX（抗CD20）和奥法妥木单抗（抗CD20）<b>对LLPC无效</b><br>
+      ⑧ 硼替佐米通过蛋白酶体抑制<b>绕过表面抗原限制</b>，直接诱导LLPC凋亡<br>
+      ⑨ 这也是为什么硼替佐米在RTX失败后仍能有效的根本原因<br><br>
+
+      <b>3. 硼替佐米治疗后低丙种球蛋白血症的管理</b><br>
+      ⑩ 所有5例均出现低丙种球蛋白血症 → 需要<b>定期IVIG替代</b><br>
+      ⑪ 监测IgG水平，维持IgG >4-5 g/L<br>
+      ⑫ 感染风险增加 → 接种疫苗（灭活）+ 预防性抗生素（部分患者）<br>
+      ⑬ 长期管理需要在<b>自身免疫控制</b>和<b>免疫缺陷风险</b>之间平衡<br><br>
+
+      <b>4. 硼替佐米在其他自身免疫病中的经验</b><br>
+      ⑭ 已用于：难治性SLE、自身免疫性溶血性贫血、血栓性血小板减少性紫癜、抗体介导的移植排斥<br>
+      ⑮ 在儿科自身免疫病中的经验仍在积累中<br>
+      ⑯ 本系列是目前最大的cNPSLE硼替佐米治疗队列（n=5）
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>何时考虑硼替佐米？</b><br>
+      ① cNPSLE以精神病为主要表现，<b>常规治疗（激素+CTX+RTX±PEX）充分失败后</b><br>
+      ② 持续存在高滴度自身抗体（抗dsDNA、抗神经元抗体等）<br>
+      ③ 高度怀疑LLPC驱动的抗体介导疾病<br><br>
+
+      <b>使用注意：</b><br>
+      ④ 硼替佐米为<b>超说明书用药（Off-label）</b>用于cNPSLE，需充分知情同意<br>
+      ⑤ <b>100%会出现低丙种球蛋白血症</b>，必须准备IVIG替代方案<br>
+      ⑥ 建议在有经验的中心使用<br>
+      ⑦ 可与RTX联用形成"B细胞+浆细胞"双重清除策略<br><br>
+
+      <b>监测指标：</b><br>
+      ⑧ 精神病症状（精神科评估）<br>
+      ⑨ SLE活动度（SLEDAI评分）<br>
+      ⑩ 自身抗体滴度（抗dsDNA、补体C3/C4）<br>
+      ⑪ 免疫球蛋白水平（IgG、IgA、IgM）<br>
+      ⑫ 感染监测（血常规、CRP、培养）
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/NPSLE.html" style="text-decoration:none"><span class="tag t-r">📋 NP-SLE专题</span></a>
+      <a href="../drugs/rituximab.html" style="text-decoration:none"><span class="tag t-a">📋 利妥昔单抗</span></a>
+      <a href="case_cSLE_CAPS.html" style="text-decoration:none"><span class="tag t-a">⬅ 灾难性APS</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Modica RF, Thatayatikom A, Bell-Brunson DH, Elder ME. <i>Bortezomib is efficacious in the treatment of severe childhood-onset neuropsychiatric systemic lupus erythematosus with psychosis: a case series and mini-review of B-cell immunomodulation in antibody-mediated diseases</i>. Clin Rheumatol. 2023;42(7):1965-1979.<br>
+      PMID: 36971919 | DOI: 10.1007/s10067-023-06559-y
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_CAPS.html" style="display:inline-block;padding:6px 12px;background:var(--text3);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 病例3：灾难性APS</a>
+    <a href="case_cSLE_pancreatitis_MAS.html" style="display:inline-block;padding:6px 12px;background:var(--yellow);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：急性胰腺炎+MAS ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 36971919）· 不构成诊疗建议 · cSLE病例专题 第4篇
+  </div>
+</div>
+
+</body>
+</html>
