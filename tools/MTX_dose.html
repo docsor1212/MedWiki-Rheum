@@ -3,165 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTX剂量计算 — MedWiki-Rheum</title>
+<title>MTX 甲氨蝶呤剂量计算器 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">MTX剂量计算 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">MTX 剂量计算</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>💊 MTX 剂量计算</h1>
-    <div class="sub">JIA/JSLE/JDM · SC首选 · mg/m²/周 · 最大25mg</div>
-  </div>
-  <div class="meta">
-    10–15 mg/m²/周<br>
-    SC生物利用度↑30%<br>
-    联用叶酸必须<br>
-    置信度上限 90%
-  </div>
+<div class="card">
+<h1>MTX <span>剂量计算</span></h1>
+<div class="sub">Methotrexate（甲氨蝶呤）· JIA一线DMARDs · 儿科剂量</div>
+
+<div class="section-title">📐 输入参数</div>
+
+<div class="input-group">
+<label>体重（kg）</label>
+<input type="number" id="weight" min="3" max="100" step="0.1" value="25" oninput="calc()">
 </div>
 
-<div class="body">
-
-<div class="sh green">💉 JIA皮下注射（首选）</div>
-<table>
-<tr><th class="green-hd">项目</th><th class="green-hd">方案</th></tr>
-<tr class="hl-green"><td class="c-g b">剂量</td><td class="c-g b">10–15 mg/m²/周，最大 25 mg/周</td></tr>
-<tr><td>起始</td><td>通常 10 mg/m²/周</td></tr>
-<tr><td>加量</td><td>每2–4周加 2.5–5 mg，至目标或最大</td></tr>
-<tr><td>途径</td><td><span class="c-a b">皮下注射</span>（生物利用度↑30%）</td></tr>
-</table>
-
-<div class="sh yellow">🧾 按疾病分类</div>
-<table>
-<tr><th class="yellow-hd">疾病</th><th class="yellow-hd">剂量</th><th class="yellow-hd">最大</th><th class="yellow-hd">备注</th></tr>
-<tr class="hl-green"><td class="c-g b">JIA</td><td class="c-g b">10–15 mg/m²/周</td><td>25mg</td><td class="c-a b">SC首选</td></tr>
-<tr><td>JSLE</td><td>10–15 mg/m²/周</td><td>25mg</td><td>皮肤/关节受累</td></tr>
-<tr><td>JDM</td><td class="c-y b">15 mg/m²/周</td><td>25mg</td><td>与激素联用</td></tr>
-<tr><td>川崎病</td><td>—</td><td>—</td><td>不常规使用</td></tr>
-</table>
-
-<div class="sh green">💚 叶酸补充方案</div>
-<table>
-<tr><th class="green-hd">方案</th><th class="green-hd">剂量</th><th class="green-hd">时机</th></tr>
-<tr class="hl-green"><td class="c-g b">国内推荐 ⭐</td><td class="c-g b">5 mg/次，每周1次</td><td class="c-g b">MTX后24h服用</td></tr>
-<tr><td>备选</td><td>1 mg/天</td><td>非MTX日每日</td></tr>
-<tr class="hl-red"><td class="c-r b">不推荐</td><td class="c-r">&gt;5mg/d</td><td class="c-r">可能降低MTX疗效</td></tr>
-</table>
-
-<!-- 不良反应 -->
-<div class="sh red">⚠️ 不良反应及处理</div>
-<div class="g2">
-<div>
-<table>
-<tr><th class="red-hd">不良反应</th><th class="red-hd">处理</th></tr>
-<tr><td>恶心/呕吐</td><td>改SC，加止吐药</td></tr>
-<tr><td>口腔溃疡</td><td>加叶酸，改SC</td></tr>
-<tr class="hl-yellow"><td class="c-y b">肝酶升高</td><td class="c-y b">减量/暂停，排查肝炎</td></tr>
-</table>
+<div class="input-group">
+<label>身高（cm）— 用于计算BSA</label>
+<input type="number" id="height" min="40" max="200" step="0.1" value="120" oninput="calc()">
 </div>
-<div>
-<table>
-<tr><th class="red-hd">严重反应</th><th class="red-hd">处理</th></tr>
-<tr class="hl-red"><td class="c-r b">骨髓抑制</td><td class="c-r b">暂停，恢复后减量</td></tr>
-<tr class="hl-red"><td class="c-r b">MTX肺炎</td><td class="c-r b">永久停药</td></tr>
-<tr><td>感染</td><td>暂停，评估感染控制</td></tr>
-</table>
+
+<div class="input-group">
+<label>计算方式</label>
+<select id="mode" onchange="calc()">
+<option value="bsa">按体表面积（推荐）</option>
+<option value="weight">按体重</option>
+</select>
+</div>
+
+<div class="section-title green">📊 推荐剂量</div>
+<div class="result-box">
+<div id="dose_info" style="font-size:0.78rem;color:#64748b;margin-bottom:4px"></div>
+<div class="result-num" id="dose">10.5</div>
+<div class="result-label">mg/周</div>
+<div id="range_info" style="font-size:0.72rem;color:#64748b;margin-top:6px"></div>
 </div>
 </div>
 
-<!-- 监测 -->
-<div class="sh yellow">🔬 监测方案</div>
-<table>
-<tr><th class="yellow-hd">时间点</th><th class="yellow-hd">检查项目</th></tr>
-<tr class="hl-red"><td class="c-r b">基线</td><td>CBC + 肝功 + 肌酐 + <span class="c-r b">HBsAg</span></td></tr>
-<tr><td>前3月</td><td class="c-y b">每月</td><td class="c-y b">每月 CBC + 肝功</td></tr>
-<tr><td>稳定后</td><td>每2–3月 CBC + 肝功</td><td></td></tr>
-<tr><td>警惕</td><td>WBC&lt;3.5×10⁹/L、ALT&gt;2×ULN</td><td></td></tr>
-</table>
+<div class="card">
+<div class="section-title yellow">📝 儿科MTX用药要点</div>
+<table><tr><th>项目</th><th>说明</th></tr>
+<tr><td>起始剂量</td><td>10-15 mg/m²/周 或 0.3-0.5 mg/kg/周</td></tr>
+<tr><td style="font-weight:700;color:#d45050">最大剂量</td><td style="font-weight:700;color:#d45050">25 mg/m²/周 或 1 mg/kg/周（上限25 mg/周）</td></tr>
+<tr><td>给药途径</td><td>口服为主，效果不佳可改为皮下注射</td></tr>
+<tr><td>叶酸补充</td><td>每周MTX后24-48h口服叶酸 1-5 mg</td></tr>
+<tr><td>起效时间</td><td>4-8周</td></tr>
+<tr><td>监测</td><td>每1-3月查血常规、肝肾功能</td></tr></table>
 
-<!-- 禁忌 -->
-<div class="sh red">🚫 禁忌症</div>
-<table>
-<tr><th class="red-hd">禁忌</th></tr>
-<tr class="hl-red"><td class="c-r b">严重肝肾功能不全</td></tr>
-<tr class="hl-red"><td class="c-r b">妊娠/备孕（需停药3–6月）</td></tr>
-<tr><td>活动性感染</td></tr>
-<tr><td>免疫缺陷（HIV）</td></tr>
-<tr><td>严重血液系统疾病</td></tr>
-</table>
-
-</div>
-
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="drug_risk_assessment.html?drug=MTX&tab=risk" style="display:inline-block;padding:6px 16px;background:#20a39e;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">🔍 MTX完整风险评估</a></div>
-<div class="footer">
-  JIA首选csDMARD · SC优于口服 · 叶酸必须联用 · 起效4–12周
-</div>
-
+<div class="section-title red">⚠️ 注意事项</div>
+<div style="background:#fde8e8;border-left:3px solid #d45050;padding:8px 12px;border-radius:0 10px 10px 0;font-size:0.72rem;color:#64748b">
+<ul style="padding-left:14px;margin:0">
+<li>肝功能异常时慎用或暂停</li>
+<li>合并感染时暂停</li>
+<li>育龄期女性需避孕</li>
+<li>避免与SMZ联用（增加骨髓抑制风险）</li></ul></div>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+function calc(){
+  const w=+document.getElementById('weight').value;
+  const h=+document.getElementById('height').value;
+  const mode=document.getElementById('mode').value;
+  const bsa=Math.sqrt(h*w/3600);
+  let startLow,startHigh,maxDose,unit;
+  if(mode==='bsa'){
+    startLow=bsa*10;startHigh=bsa*15;maxDose=Math.min(bsa*25,25);
+    unit='mg/m²/周';
+    document.getElementById('dose_info').textContent=`BSA = ${bsa.toFixed(2)} m² · 按${unit}计算`;
+    document.getElementById('range_info').innerHTML=`起始范围 <b>${startLow.toFixed(1)}-${startHigh.toFixed(1)} mg/周</b> · 最大 <b>${maxDose.toFixed(1)} mg/周</b>`;
+  }else{
+    startLow=w*0.3;startHigh=w*0.5;maxDose=Math.min(w*1,25);
+    unit='mg/kg/周';
+    document.getElementById('dose_info').textContent=`体重 = ${w} kg · 按${unit}计算`;
+    document.getElementById('range_info').innerHTML=`起始范围 <b>${startLow.toFixed(1)}-${startHigh.toFixed(1)} mg/周</b> · 最大 <b>${maxDose.toFixed(1)} mg/周</b>`;
+  }
+  const mid=(startLow+startHigh)/2;
+  document.getElementById('dose').textContent=mid.toFixed(1);
+  document.getElementById('footerScore').textContent=mid.toFixed(1)+' mg';
+  document.getElementById('footerStatus').textContent=`起始${startLow.toFixed(0)}-${startHigh.toFixed(0)} mg`;
+  document.getElementById('footerStatus').style.background='#20a39e';
+  document.getElementById('pathLine').textContent=`${w}kg / ${h}cm / BSA ${bsa.toFixed(2)}m²`;
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>

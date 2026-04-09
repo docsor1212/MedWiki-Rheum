@@ -3,148 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Z评分 — MedWiki-Rheum</title>
+<title>BMI Z-score 计算器 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2,.g3{grid-template-columns:1fr;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">BMI Z评分 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">BMI Z-score</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>📏 BMI 与 Z 评分</h1>
-    <div class="sub">WHO儿童生长标准 · 生长发育监测 · 激素影响评估</div>
-  </div>
-  <div class="meta">
-    BMI = 体重/身高²<br>
-    Z = (实测-均值)/SD<br>
-    置信度上限 90%
-  </div>
+<div class="card">
+<h1>BMI <span>Z-score</span></h1>
+<div class="sub">Body Mass Index · 体质量指数 · 儿童青少年百分位评估</div>
+
+<div class="section-title">📐 输入参数</div>
+
+<div class="input-group">
+<label>年龄（岁）</label>
+<input type="number" id="age" min="2" max="18" step="0.1" value="10" oninput="calc()">
 </div>
 
-<div class="body">
-
-<div class="sh">📐 Z评分核心公式</div>
-<div class="alert"><b>Z评分</b> = (实测值 − 同龄同性别均值) ÷ 标准差（SD）</div>
-
-<div class="sh yellow">📊 BMI Z评分解读</div>
-<table>
-<tr><th class="yellow-hd">Z值</th><th class="yellow-hd">分类</th><th class="yellow-hd">临床建议</th></tr>
-<tr class="hl-red"><td class="c-r b">&lt; −2.0</td><td class="c-r b">消瘦</td><td class="c-r">营养评估 + 疾病活动度评估</td></tr>
-<tr class="hl-green"><td class="c-g b">−2.0 ~ +1.0</td><td class="c-g b">正常</td><td class="c-g">继续常规监测</td></tr>
-<tr class="hl-yellow"><td class="c-y b">+1.0 ~ +2.0</td><td class="c-y b">超重</td><td class="c-y">饮食指导 + 运动</td></tr>
-<tr class="hl-red"><td class="c-r b">≥ +2.0</td><td class="c-r b">肥胖</td><td class="c-r">干预：饮食+运动，激素减量</td></tr>
-</table>
-
-<div class="g3">
-<div>
-<div class="sh green" style="margin-top:0;">📏 身高Z</div>
-<table>
-<tr><th class="green-hd">Z值</th><th class="green-hd">分类</th></tr>
-<tr class="hl-red"><td class="c-r">&lt;−2.0</td><td class="c-r b">生长迟缓</td></tr>
-<tr class="hl-green"><td class="c-g">−2.0~+2.0</td><td class="c-g b">正常</td></tr>
-<tr><td>&gt;+2.0</td><td class="c-y">需排查</td></tr>
-</table>
+<div class="input-group">
+<label>性别</label>
+<select id="sex" onchange="calc()">
+<option value="M">男</option><option value="F">女</option>
+</select>
 </div>
-<div>
-<div class="sh" style="margin-top:0;">⚖️ 体重Z</div>
-<table>
-<tr><th>Z值</th><th>分类</th></tr>
-<tr class="hl-red"><td class="c-r">&lt;−2.0</td><td class="c-r b">低体重</td></tr>
-<tr class="hl-green"><td class="c-g">−2.0~+2.0</td><td class="c-g b">正常</td></tr>
-<tr class="hl-yellow"><td class="c-y">&gt;+2.0</td><td class="c-y b">超重</td></tr>
-</table>
+
+<div class="input-group">
+<label>身高（cm）</label>
+<input type="number" id="height" min="50" max="200" step="0.1" value="140" oninput="calc()">
 </div>
-<div>
-<div class="sh red" style="margin-top:0;">⚠️ 激素对生长</div>
-<table>
-<tr><th class="red-hd">风险</th><th class="red-hd">阈值</th></tr>
-<tr class="hl-red"><td class="c-r b">生长减速</td><td class="c-r">泼尼松&gt;0.1mg/kg/d×&gt;3月</td></tr>
-<tr><td>需干预</td><td class="c-y">身高Z偏差&gt;−1.0</td></tr>
-<tr><td>GH评估</td><td>骨龄片</td></tr>
-</table>
+
+<div class="input-group">
+<label>体重（kg）</label>
+<input type="number" id="weight" min="3" max="150" step="0.1" value="35" oninput="calc()">
+</div>
+
+<div class="section-title green">📊 计算结果</div>
+<div class="result-box">
+<div class="result-label">BMI（kg/m²）</div>
+<div class="result-num" id="bmi_val">17.9</div>
+<div id="percentile" style="font-size:0.8rem;color:#64748b;margin-top:4px">百分位评估</div>
+<div class="result-status" id="status" style="background:#22a87e">正常体重</div>
 </div>
 </div>
 
-<div class="sh">👶 儿童风湿免疫生长监测</div>
-<table>
-<tr><th>疾病</th><th>监测频率</th><th>重点指标</th></tr>
-<tr class="hl-yellow"><td class="c-y b">JIA</td><td>每6月</td><td>身高Z + <span class="c-r b">骨龄</span>（激素治疗时）</td></tr>
-<tr class="hl-yellow"><td class="c-y b">JSLE</td><td>每6月</td><td>身高/体重/BMI Z评分</td></tr>
-<tr><td>JDM</td><td>每次随访</td><td>体重变化 → 反映疾病活动</td></tr>
-</table>
-<div class="note">长期激素 → 每<b class="c-r">6月测身高Z</b>，偏差&gt;−1.0需干预，考虑生长激素评估（骨龄片）</div>
+<div class="card">
+<div class="section-title red">🎯 儿童BMI百分位分类（2-18岁）</div>
+<table><tr><th>百分位</th><th>分类</th><th>建议</th></tr>
+<tr><td style="font-weight:700;color:#d45050">&lt; 第5百分位</td><td style="font-weight:700;color:#d45050">体重过低</td><td>评估营养状况</td></tr>
+<tr><td style="font-weight:700;color:#22a87e">第5 – 85百分位</td><td style="font-weight:700;color:#22a87e">正常体重</td><td>维持健康饮食运动</td></tr>
+<tr><td style="color:#d4892a;font-weight:700">第85 – 95百分位</td><td style="color:#d4892a;font-weight:700">超重</td><td>生活方式干预</td></tr>
+<tr><td style="color:#d45050;font-weight:700">&gt; 第95百分位</td><td style="color:#d45050;font-weight:700">肥胖</td><td>综合管理</td></tr></table>
 
-</div>
-
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="drug_risk_assessment.html?drug=MTX&tab=risk" style="display:inline-block;padding:6px 16px;background:#b8891a;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">⚠️ 肥胖患者药物风险提示</a></div>
-<div class="footer">
-  WHO儿童生长标准 · Z评分需对照同龄同性别参考值 · 激素治疗每6月评估身高Z
-</div>
-
+<div class="section-title yellow">📝 临床提示</div>
+<p style="font-size:0.72rem;color:#64748b">风湿免疫患儿长期使用糖皮质激素可导致体重增加和向心性肥胖。BMI监测是药物安全性评估的重要指标。建议每次随访记录BMI变化趋势。</p>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+/* Simplified BMI calculation with approximate percentile estimation */
+const REF_50={
+M:{2:16.5,3:15.7,4:15.5,5:15.4,6:15.4,7:15.5,8:15.7,9:15.9,10:16.2,11:16.6,12:17.2,13:17.8,14:18.4,15:19.0,16:19.5,17:19.9,18:20.2},
+F:{2:16.3,3:15.6,4:15.4,5:15.3,6:15.3,7:15.4,8:15.6,9:15.9,10:16.2,11:16.7,12:17.4,13:18.2,14:18.9,15:19.4,16:19.8,17:20.0,18:20.2}
+};
+function calc(){
+  const age=+document.getElementById('age').value;
+  const sex=document.getElementById('sex').value;
+  const h=+document.getElementById('height').value/100;
+  const w=+document.getElementById('weight').value;
+  if(h<=0||w<=0)return;
+  const bmi=w/(h*h);
+  document.getElementById('bmi_val').textContent=bmi.toFixed(1);
+  document.getElementById('footerScore').textContent=bmi.toFixed(1);
+  const p50=REF_50[sex][Math.round(age)]||18;
+  const diff=bmi-p50;
+  let cat,c,pLabel;
+  if(diff<-3){cat="体重过低";c="#d45050";pLabel="&lt; 第5百分位";}
+  else if(diff<-1.5){cat="偏瘦";c="#20a39e";pLabel="第5-25百分位";}
+  else if(diff<=2){cat="正常体重";c="#22a87e";pLabel="第25-75百分位";}
+  else if(diff<=3.5){cat="超重";c="#d4892a";pLabel="第85-95百分位";}
+  else{cat="肥胖";c="#d45050";pLabel="&gt; 第95百分位";}
+  document.getElementById('percentile').innerHTML=`约 <b>${pLabel}</b>`;
+  document.getElementById('status').textContent=cat;document.getElementById('status').style.background=c;
+  document.getElementById('footerStatus').textContent=cat;document.getElementById('footerStatus').style.background=c;
+  document.getElementById('pathLine').textContent=`${age}岁${sex==='M'?'男':'女'} · 身高${(h*100).toFixed(0)}cm · 体重${w.toFixed(1)}kg`;
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>

@@ -3,152 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESR/CRP 炎症指标 — MedWiki-Rheum</title>
+<title>ESR/CRP 参考值查询 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">ESR/CRP 炎症指标 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">ESR/CRP 参考值</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>🔬 ESR / CRP 炎症指标解读</h1>
-    <div class="sub">红细胞沉降率 · C反应蛋白 · 儿童正常值 · 疾病活动评估</div>
-  </div>
-  <div class="meta">
-    ESR: 慢性炎症标志<br>
-    CRP: 急性炎症标志<br>
-    两者互补评估<br>
-    置信度上限 90%
-  </div>
+<div class="card">
+<h1>ESR / <span>CRP</span></h1>
+<div class="sub">红细胞沉降率（Erythrocyte Sedimentation Rate）/ C反应蛋白（C-Reactive Protein）· 儿科参考值</div>
+
+<div class="section-title">📐 输入参数</div>
+
+<div class="input-group">
+<label>年龄（岁）</label>
+<input type="number" id="age" min="0" max="18" step="0.1" value="6" oninput="calc()">
 </div>
 
-<div class="body">
-
-<!-- ESR -->
-<div class="sh red">🩸 ESR 红细胞沉降率</div>
-<table>
-<tr><th class="red-hd">年龄</th><th class="red-hd">正常上限 (mm/h)</th></tr>
-<tr><td>新生儿</td><td>2</td></tr>
-<tr><td>&lt;1月</td><td>5</td></tr>
-<tr><td>1–12月</td><td>7</td></tr>
-<tr><td>1–5岁</td><td>10</td></tr>
-<tr><td>6–12岁</td><td>12</td></tr>
-<tr class="hl-yellow"><td class="c-y b">&gt;13岁</td><td>15(女) / 10(男)</td></tr>
-</table>
-<table style="margin-top:4px;">
-<tr><th class="red-hd">ESR (mm/h)</th><th class="red-hd">程度</th><th class="red-hd">临床提示</th></tr>
-<tr class="hl-green"><td class="c-g">&lt; 20</td><td class="c-g b">正常</td><td>无显著炎症</td></tr>
-<tr><td>20–50</td><td class="c-a">轻度升高</td><td>轻度炎症/感染</td></tr>
-<tr class="hl-yellow"><td>50–100</td><td class="c-y b">中度升高</td><td class="c-y">需排查风湿活动</td></tr>
-<tr class="hl-red"><td class="c-r b">&gt; 100</td><td class="c-r b">重度升高</td><td class="c-r b">排查感染/肿瘤/巨细胞动脉炎</td></tr>
-</table>
-<div class="note">ESR受多种因素影响（贫血、高球蛋白血症），单次正常<span class="c-r b">不排除</span>活动性疾病</div>
-
-<!-- CRP -->
-<div class="sh yellow">🔥 CRP C反应蛋白</div>
-<table>
-<tr><th class="yellow-hd">年龄</th><th class="yellow-hd">正常上限 (mg/L)</th></tr>
-<tr><td>新生儿</td><td>2</td></tr>
-<tr><td>婴儿</td><td>5</td></tr>
-<tr><td>&gt;1岁</td><td class="c-a b">10</td></tr>
-</table>
-<table style="margin-top:4px;">
-<tr><th class="yellow-hd">CRP (mg/L)</th><th class="yellow-hd">程度</th><th class="yellow-hd">临床提示</th></tr>
-<tr class="hl-green"><td class="c-g">&lt; 10</td><td class="c-g b">正常</td><td>无急性炎症</td></tr>
-<tr><td>10–40</td><td class="c-a">轻度升高</td><td>轻度炎症反应</td></tr>
-<tr class="hl-yellow"><td>40–100</td><td class="c-y b">中度升高</td><td>中度炎症</td></tr>
-<tr class="hl-red"><td class="c-r b">&gt; 100</td><td class="c-r b">重度升高</td><td class="c-r b">细菌感染可能大</td></tr>
-</table>
-
-<!-- CRP vs ESR -->
-<div class="sh">🔄 CRP vs ESR 对比</div>
-<table>
-<tr><th>维度</th><th class="c-r b">CRP</th><th class="c-a b">ESR</th></tr>
-<tr><td>反应速度</td><td class="c-r">6–12h升高 ⚡</td><td>24–48h升高</td></tr>
-<tr><td>半衰期</td><td class="c-g b">19h</td><td class="c-y">5–7天</td></tr>
-<tr><td>特异性</td><td class="c-g">较高</td><td class="c-y">较低</td></tr>
-<tr><td>预后价值</td><td class="c-g b">更好</td><td>一般</td></tr>
-<tr><td>影响因素</td><td>少</td><td class="c-r">贫血/球蛋白/妊娠</td></tr>
-</table>
-
-<!-- JIA -->
-<div class="sh green">👶 JIA活动性评估</div>
-<table>
-<tr><th class="green-hd">炎症指标</th><th class="green-hd">JIA提示</th><th class="green-hd">注意</th></tr>
-<tr class="hl-red"><td class="c-r b">CRP升高</td><td class="c-r b">全身型JIA或高活动度</td><td>sJIA特征性CRP↑↑</td></tr>
-<tr><td>ESR正常+CRP正常</td><td>不能排除活动性</td><td class="c-y">需结合关节数和VAS</td></tr>
-<tr><td>JADAS-27</td><td>使用ESR归一化值</td><td>≤20→0分，&gt;20→ESR/10</td></tr>
-</table>
-
+<div class="input-group">
+<label>性别</label>
+<select id="sex" onchange="calc()">
+<option value="M">男</option><option value="F">女</option>
+</select>
 </div>
 
-<div class="footer">
-  CRP反应快（6–12h），ESR半衰期长（5–7天）· 两者互补 · JIA中CRP正常不能排除活动
+<div class="input-group">
+<label>ESR实测值（mm/h）</label>
+<input type="number" id="esr" min="0" max="150" value="15" oninput="calc()">
 </div>
 
+<div class="input-group">
+<label>CRP实测值（mg/L）</label>
+<input type="number" id="crp" min="0" max="300" step="0.1" value="5" oninput="calc()">
+</div>
+
+<div class="section-title green">📊 参考范围评估</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+<div style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);padding:12px;border-radius:12px;text-align:center">
+<div style="font-size:0.7rem;color:#64748b;font-weight:700">ESR 参考范围</div>
+<div style="font-size:0.65rem;color:#64748b" id="esr_ref">0-10 mm/h</div>
+<div style="font-size:1.8rem;font-weight:900;margin:4px 0" id="esr_val" style="color:#22a87e">15</div>
+<div id="esr_status" style="display:inline-block;padding:3px 12px;border-radius:12px;font-size:0.7rem;font-weight:800;color:#fff;background:#22a87e">正常</div>
+</div>
+<div style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);padding:12px;border-radius:12px;text-align:center">
+<div style="font-size:0.7rem;color:#64748b;font-weight:700">CRP 参考范围</div>
+<div style="font-size:0.65rem;color:#64748b" id="crp_ref">&lt; 8 mg/L</div>
+<div style="font-size:1.8rem;font-weight:900;margin:4px 0" id="crp_val" style="color:#22a87e">5.0</div>
+<div id="crp_status" style="display:inline-block;padding:3px 12px;border-radius:12px;font-size:0.7rem;font-weight:800;color:#fff;background:#22a87e">正常</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="section-title yellow">📝 儿科ESR参考范围</div>
+<table><tr><th>年龄段</th><th>ESR正常上限</th></tr>
+<tr><td>新生儿（0-1月）</td><td>0-2 mm/h</td></tr>
+<tr><td>1-6月</td><td>4-12 mm/h</td></tr>
+<tr><td>6月-2岁</td><td>2-12 mm/h</td></tr>
+<tr><td>2-6岁</td><td>2-10 mm/h</td></tr>
+<tr><td>6-12岁</td><td>2-10 mm/h</td></tr>
+<tr><td>&gt;12岁 男</td><td>3-10 mm/h</td></tr>
+<tr><td>&gt;12岁 女</td><td>3-12 mm/h</td></tr></table>
+
+<div class="section-title yellow">📝 儿科CRP参考范围</div>
+<table><tr><th>CRP水平</th><th>临床意义</th></tr>
+<tr><td style="font-weight:700;color:#22a87e">&lt; 8 mg/L</td><td style="font-weight:700;color:#22a87e">正常</td></tr>
+<tr><td>8-20 mg/L</td><td>轻度升高（轻微感染/炎症）</td></tr>
+<tr><td style="color:#d4892a;font-weight:700">20-60 mg/L</td><td style="color:#d4892a;font-weight:700">中度升高</td></tr>
+<tr><td style="color:#d45050;font-weight:700">&gt; 60 mg/L</td><td style="color:#d45050;font-weight:700">显著升高（细菌感染/严重炎症）</td></tr></table>
+
+<div class="section-title">💡 临床提示</div>
+<p style="font-size:0.72rem;color:#64748b">JIA活动期ESR和CRP可升高，但sJIA/MAS危象时可能出现ESR正常而CRP极度升高（铁蛋白↑↑）的反常现象。CRP较ESR更敏感、更特异，但两者应联合评估。</p>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+function calc(){
+  const age=+document.getElementById('age').value;
+  const sex=document.getElementById('sex').value;
+  const esr=+document.getElementById('esr').value||0;
+  const crp=+document.getElementById('crp').value||0;
+  let esrMax;
+  if(age<0.08)esrMax=2;
+  else if(age<0.5)esrMax=12;
+  else if(age<2)esrMax=12;
+  else if(age<12)esrMax=10;
+  else esrMax=sex==='F'?12:10;
+  document.getElementById('esr_ref').textContent=`0-${esrMax} mm/h`;
+  document.getElementById('esr_val').textContent=esr;
+  document.getElementById('esr_val').style.color=esr<=esrMax?"#22a87e":"#d45050";
+  let esrLabel,esrC;
+  if(esr<=esrMax){esrLabel="正常";esrC="#22a87e";}
+  else if(esr<=esrMax*2){esrLabel="轻度升高";esrC="#d4892a";}
+  else{esrLabel="显著升高";esrC="#d45050";}
+  document.getElementById('esr_status').textContent=esrLabel;document.getElementById('esr_status').style.background=esrC;
+
+  document.getElementById('crp_ref').textContent='< 8 mg/L';
+  document.getElementById('crp_val').textContent=crp.toFixed(1);
+  let crpLabel,crpC;
+  if(crp<8){crpLabel="正常";crpC="#22a87e";}
+  else if(crp<20){crpLabel="轻度升高";crpC="#d4892a";}
+  else if(crp<60){crpLabel="中度升高";crpC="#e07a2a";}
+  else{crpLabel="显著升高";crpC="#d45050";}
+  document.getElementById('crp_val').style.color=crpC;
+  document.getElementById('crp_status').textContent=crpLabel;document.getElementById('crp_status').style.background=crpC;
+
+  document.getElementById('footerScore').textContent=`E${esr}/C${crp.toFixed(0)}`;
+  document.getElementById('footerStatus').textContent=esrLabel+' / '+crpLabel;
+  document.getElementById('footerStatus').style.background=(esr>esrMax||crp>=8)?"#d4892a":"#22a87e";
+  document.getElementById('pathLine').textContent=`${age}岁${sex==='M'?'男':'女'} · ESR ${esr} mm/h · CRP ${crp} mg/L`;
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>

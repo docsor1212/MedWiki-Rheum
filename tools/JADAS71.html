@@ -3,147 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JADAS-71 评分 — MedWiki-Rheum</title>
+<title>JADAS-71 交互式评分 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">JADAS-71 评分 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">JADAS-71 评分</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>📊 JADAS-71 评分</h1>
-    <div class="sub">Juvenile Arthritis Disease Activity Score · 全部71关节 · 研究用高灵敏度</div>
-  </div>
-  <div class="meta">
-    评估全部71个关节<br>
-    其余组成同JADAS-27<br>
-    临床通常用JADAS-27<br>
-    置信度上限 90%
-  </div>
+<div class="card">
+<h1>JADAS <span>- 71</span></h1>
+<div class="sub">Juvenile Arthritis Disease Activity Score · 71关节评估 · 扩展版</div>
+
+<div class="section-title">📐 输入参数</div>
+
+<div class="input-group">
+<label>活动关节数（Active Joint Count, 0-71）</label>
+<input type="range" id="joints" min="0" max="71" value="0" oninput="calc()">
+<div class="range-row"><span>0</span><span class="range-val" id="joints_val">0</span><span>71</span></div>
 </div>
 
-<div class="body">
-
-<div class="sh red">📐 JADAS-71公式</div>
-<div class="alert"><b>JADAS-71</b> = 活动关节数(0–71) + 医生VAS(0–10) + 患者/家长VAS(0–10) + ESR归一化(0–10)</div>
-
-<div class="sh yellow">🦴 71个关节列表</div>
-<table>
-<tr><th class="yellow-hd">关节区域</th><th class="yellow-hd">数量</th><th class="yellow-hd">具体关节</th></tr>
-<tr><td>颈椎</td><td>2</td><td>旋转、屈曲/伸展</td></tr>
-<tr><td>颞颌关节</td><td>2</td><td>左、右</td></tr>
-<tr><td>肩关节</td><td>2</td><td>左、右</td></tr>
-<tr><td>肘关节</td><td>2</td><td>左、右</td></tr>
-<tr><td>腕关节</td><td>2</td><td>左、右</td></tr>
-<tr class="hl-green"><td class="c-a b">掌指关节 MCP</td><td class="c-a b">10</td><td class="c-a b">左1–5、右1–5</td></tr>
-<tr class="hl-green"><td class="c-a b">近端指间 PIP</td><td class="c-a b">10</td><td class="c-a b">左1–5、右1–5</td></tr>
-<tr class="hl-green"><td class="c-a b">远端指间 DIP</td><td class="c-a b">10</td><td class="c-a b">左1–5、右1–5</td></tr>
-<tr><td>髋关节</td><td>2</td><td>左、右</td></tr>
-<tr><td>膝关节</td><td>2</td><td>左、右</td></tr>
-<tr><td>踝关节</td><td>2</td><td>左、右</td></tr>
-<tr class="hl-yellow"><td class="c-y b">跖趾关节 MTP</td><td class="c-y b">10</td><td class="c-y b">左1–5、右1–5</td></tr>
-<tr><td>跖趾间关节</td><td>10</td><td>左1–5、右1–5</td></tr>
-<tr><td>跖趾远端关节</td><td>2</td><td>左、右（拇趾）</td></tr>
-<tr class="hl-green"><td class="c-g b">合计</td><td class="c-g b">71</td><td></td></tr>
-</table>
-
-<div class="sh">🔄 JADAS-71 vs JADAS-27</div>
-<table>
-<tr><th>维度</th><th>JADAS-71</th><th class="c-a b">JADAS-27</th></tr>
-<tr><td>评估关节数</td><td>71（全部）</td><td class="c-g b">27（常用）</td></tr>
-<tr><td>其余组分</td><td>相同</td><td>相同</td></tr>
-<tr><td>灵敏度</td><td class="c-a b">更高</td><td>良好</td></tr>
-<tr><td>临床实用性</td><td class="c-y">较低（耗时）</td><td class="c-g b">高（快速）</td></tr>
-<tr><td>适用场景</td><td>研究/小关节为主型</td><td class="c-g b">日常临床</td></tr>
-</table>
-
-<div class="sh green">🎯 活动度分级</div>
-<table>
-<tr><th class="green-hd">JADAS-71</th><th class="green-hd">活动度</th></tr>
-<tr class="hl-green"><td class="c-g b">≤ 1.0</td><td class="c-g b">不活动 Inactive</td></tr>
-<tr><td>1.1–3.8</td><td>低活动度</td></tr>
-<tr class="hl-yellow"><td>3.9–10.5</td><td class="c-y b">中活动度</td></tr>
-<tr class="hl-red"><td class="c-r b">&gt; 10.5</td><td class="c-r b">高活动度</td></tr>
-</table>
-
-<div class="sh">🔍 何时用JADAS-71？</div>
-<table>
-<tr><th>适用场景</th><th>说明</th></tr>
-<tr><td>手/足小关节为主型JIA</td><td>JADAS-27覆盖不足</td></tr>
-<tr><td>临床研究</td><td>需要更高灵敏度</td></tr>
-<tr><td>疗效评估不一致时</td><td>补充JADAS-27</td></tr>
-</table>
-<div class="note"><b class="c-a">临床通常用JADAS-27足够</b>，JADAS-71主要用于研究或特殊需要</div>
-
+<div class="input-group">
+<label>医生整体评估 PhGA（0-10 cm VAS）</label>
+<input type="range" id="phga" min="0" max="10" step="0.1" value="0" oninput="calc()">
+<div class="range-row"><span>0</span><span class="range-val" id="phga_val">0.0</span><span>10</span></div>
 </div>
 
-<div class="footer">
-  JADAS-71评估全部71关节 · 灵敏度更高 · 日常临床首选JADAS-27 · 分级标准相同
+<div class="input-group">
+<label>患者/家长整体评估 PtGA（0-10 cm VAS）</label>
+<input type="range" id="ptga" min="0" max="10" step="0.1" value="0" oninput="calc()">
+<div class="range-row"><span>0</span><span class="range-val" id="ptga_val">0.0</span><span>10</span></div>
 </div>
 
+<div class="input-group">
+<label>ESR（红细胞沉降率, mm/h）</label>
+<input type="number" id="esr" min="0" max="150" value="10" oninput="calc()">
+</div>
+
+<div class="section-title green">📊 计算结果</div>
+<div class="result-box">
+<div class="result-label">JADAS-71 评分</div>
+<div class="result-num" id="score">0.0</div>
+<div class="result-status" id="status" style="background:#22a87e">不活动</div>
+</div>
+</div>
+
+<div class="card">
+<div class="section-title">ℹ️ JADAS-71 vs JADAS-27</div>
+<table><tr><th>版本</th><th>关节数</th><th>适用</th></tr>
+<tr><td>JADAS-27</td><td>27关节</td><td>日常临床首选</td></tr>
+<tr><td style="font-weight:700;color:#20a39e">JADAS-71</td><td>71关节</td><td>全面评估（含手足小关节）</td></tr></table>
+<p style="font-size:0.72rem;color:#64748b;margin-top:6px">JADAS-71使用相同的评分公式和分级标准，仅关节数上限不同（71 vs 27）。总分上限 = 71+10+10+10 = 101。</p>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+function calc(){
+  const j=+document.getElementById('joints').value;
+  const p=+document.getElementById('phga').value;
+  const t=+document.getElementById('ptga').value;
+  const e=+document.getElementById('esr').value||0;
+  document.getElementById('joints_val').textContent=j;
+  document.getElementById('phga_val').textContent=p.toFixed(1);
+  document.getElementById('ptga_val').textContent=t.toFixed(1);
+  const esrNorm=e<=20?0:Math.min(10,e/10);
+  const score=j+p+t+esrNorm;
+  document.getElementById('score').textContent=score.toFixed(1);
+  const fs=document.getElementById('footerScore');
+  const st=document.getElementById('status');
+  const fst=document.getElementById('footerStatus');
+  const path=document.getElementById('pathLine');
+  const parts=[`活动关节${j}`,`PhGA ${p.toFixed(1)}`,`PtGA ${t.toFixed(1)}`,`ESR归一化 ${esrNorm.toFixed(1)}`];
+  path.textContent=parts.join(' + ');
+  fs.textContent=score.toFixed(1);
+  let label,c;
+  if(score<=1.0){label="不活动";c="#22a87e";}
+  else if(score<=3.8){label="低活动度";c="#20a39e";}
+  else if(score<=10.5){label="中活动度";c="#d4892a";}
+  else{label="高活动度";c="#d45050";}
+  st.textContent=label;st.style.background=c;
+  fst.textContent=label;fst.style.background=c;
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>

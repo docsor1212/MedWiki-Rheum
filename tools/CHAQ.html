@@ -3,137 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHAQ 儿童健康评估问卷 — MedWiki-Rheum</title>
+<title>CHAQ 问卷评分 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">CHAQ 儿童健康评估问卷 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">CHAQ 问卷</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>📋 CHAQ 儿童健康评估问卷</h1>
-    <div class="sub">Childhood Health Assessment Questionnaire · 8功能区 · 0–3分制</div>
-  </div>
-  <div class="meta">
-    适用 1–18岁<br>
-    家长协助填写<br>
-    &gt;30种语言验证<br>
-    置信度上限 90%
-  </div>
+<style>
+.chaq-btn{padding:4px 6px;border:1.5px solid var(--border);border-radius:6px;font-size:0.6rem;font-weight:700;cursor:pointer;background:#f4fafa;color:var(--text2);min-width:52px;text-align:center;transition:all 0.15s;}
+.chaq-btn:hover{border-color:var(--accent);}
+.chaq-btn.sel{background:var(--accent);color:#fff;border-color:var(--accent);}
+</style>
+
+<div class="card">
+<h1>CHAQ <span>问卷</span></h1>
+<div class="sub">Childhood Health Assessment Questionnaire · 儿童健康评估问卷 · 8个功能域</div>
+
+<div style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);padding:10px 14px;border-radius:10px;margin-bottom:12px;font-size:0.72rem;color:#64748b">
+<b style="color:#20a39e">评分规则：</b>每个功能域取该域内<b>最高分</b>（0-3），8个域的平均值即为CHAQ残疾指数（0-3）。</div>
+
+<div class="section-title" style="margin-top:14px">穿衣与梳理（Dressing & Grooming）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">穿衣系扣拉拉链</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d1" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">洗头</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d1" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">剪指甲</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d1" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d1" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">起立（Rising）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">从床上站起来</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d2" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">从椅子上站起来</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d2" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">从马桶上站起来</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d2" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d2" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">进食（Eating）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">切肉</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d3" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">端杯子喝水</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d3" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">拧开瓶盖</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d3" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d3" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">行走（Walking）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">在平地行走</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d4" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">上楼梯</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d4" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">下楼梯</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d4" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d4" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">清洁卫生（Hygiene）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">洗澡擦干身体</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d5" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">上厕所</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d5" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">刷牙</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d5" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d5" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">伸手取物（Reach）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">伸手拿高处物品</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d6" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">弯腰捡地上物品</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d6" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d6" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">握力（Grip）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">开门</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d7" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">拧开罐头</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d7" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">握笔写字</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d7" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d7" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="section-title" style="margin-top:14px">日常活动（Activities）</div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">外出玩耍</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d8" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">骑自行车/做运动</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d8" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+<div class="click-row" style="display:flex;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f5f4">
+  <span style="flex:1;font-size:0.75rem;font-weight:500">和朋友一起玩</span>
+  <div style="display:flex;gap:3px">
+  <button class="chaq-btn" data-domain="d8" data-score="0" onclick="pick(this)">无困难<br><small>0</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="1" onclick="pick(this)">有些困难<br><small>1</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="2" onclick="pick(this)">很困难<br><small>2</small></button>
+  <button class="chaq-btn" data-domain="d8" data-score="3" onclick="pick(this)">做不到<br><small>3</small></button>
+  </div></div>
+
+
+<div class="section-title green" style="margin-top:16px">📊 各域得分与总分</div>
+<div id="domain_scores" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px"></div>
+
+<div class="result-box" style="margin-top:12px">
+<div class="result-label">CHAQ 残疾指数（0-3）</div>
+<div class="result-num" id="score">0.00</div>
+<div class="result-status" id="status" style="background:#22a87e">无功能障碍</div>
 </div>
 
-<div class="body">
-
-<div class="sh">📝 8个功能评估维度</div>
-<table>
-<tr><th>功能区</th><th>评估内容</th><th>典型困难表现</th></tr>
-<tr class="hl-green"><td class="c-g b">穿衣</td><td>系扣子、拉拉链、穿衣</td><td>手指关节受累时困难</td></tr>
-<tr><td>起身</td><td>从椅子上站起、起床</td><td>膝关节/髋关节受累</td></tr>
-<tr><td>进食</td><td>用餐具、端杯子</td><td>腕/手小关节</td></tr>
-<tr><td>行走</td><td>走路、跑步、爬楼梯</td><td>膝/踝关节</td></tr>
-<tr><td>卫生</td><td>洗手、洗澡、梳头</td><td>肩/肘关节</td></tr>
-<tr><td>提物</td><td>提书包、拿重物</td><td>上肢关节</td></tr>
-<tr><td>握力</td><td>开瓶盖、开门</td><td>手/腕关节</td></tr>
-<tr><td>活动</td><td>跑步、体育课、骑车</td><td>下肢多关节</td></tr>
-</table>
-
-<div class="sh yellow">📊 评分方法</div>
-<table>
-<tr><th class="yellow-hd">评分</th><th class="yellow-hd">含义</th><th class="yellow-hd">CHAQ-DI解读</th></tr>
-<tr class="hl-green"><td class="c-g b">0分</td><td class="c-g b">无困难</td><td class="c-g b">完全正常功能</td></tr>
-<tr><td>1分</td><td>有些困难</td><td>轻度功能障碍</td></tr>
-<tr class="hl-yellow"><td>2分</td><td class="c-y b">很多困难</td><td class="c-y">中度功能障碍</td></tr>
-<tr class="hl-red"><td class="c-r b">3分</td><td class="c-r b">做不到</td><td class="c-r b">严重功能障碍</td></tr>
-</table>
-<div class="alert"><b>CHAQ-DI</b> = 8项平均分（0–3），分数越高功能越差。如使用了辅助设备或需要帮助，该功能评分自动上调为2或3分。</div>
-
-<div class="sh green">📏 疼痛和总体评估（VAS）</div>
-<table>
-<tr><th class="green-hd">评估项</th><th class="green-hd">工具</th><th class="green-hd">范围</th></tr>
-<tr><td>疼痛</td><td>VAS视觉模拟</td><td>0–100mm</td></tr>
-<tr><td>患者总体</td><td>VAS</td><td>0–100mm</td></tr>
-<tr><td>家长总体</td><td>VAS</td><td>0–100mm</td></tr>
-</table>
-
-<div class="sh">🔬 临床应用</div>
-<table>
-<tr><th>用途</th><th>说明</th></tr>
-<tr class="hl-green"><td class="c-g b">JIA临床研究</td><td class="c-g b">核心结局指标（ACR Pedi 30/50/70/90）</td></tr>
-<tr><td>治疗反应评估</td><td>与JADAS联合使用</td></tr>
-<tr><td>生活质量监测</td><td>长期随访功能状态</td></tr>
-<tr><td>ACR Pedi标准</td><td>CHAQ-DI改善≥0.13为有意义改善</td></tr>
-</table>
-<div class="note">CHAQ已被<b class="c-a">广泛验证</b>（&gt;30种语言），是JIA临床试验的金标准功能评估工具</div>
-
+<div style="text-align:center;margin-top:8px">
+<button class="btn btn-reset" onclick="resetAll()">重置全部</button>
+</div>
 </div>
 
-<div class="footer">
-  CHAQ是JIA核心功能评估工具 · ACR Pedi 30/50/70/90标准 · 与JADAS联合评估治疗反应
-</div>
-
+<div class="card">
+<div class="section-title red">🎯 CHAQ分级</div>
+<table><tr><th>CHAQ</th><th>功能障碍程度</th></tr>
+<tr><td style="font-weight:700;color:#22a87e">0 – 0.5</td><td style="font-weight:700;color:#22a87e">轻度/无功能障碍</td></tr>
+<tr><td style="color:#d4892a;font-weight:700">0.6 – 1.5</td><td style="color:#d4892a;font-weight:700">中度功能障碍</td></tr>
+<tr><td style="color:#d45050;font-weight:700">&gt; 1.5</td><td style="color:#d45050;font-weight:700">重度功能障碍</td></tr></table>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+const domains={d1:[],d2:[],d3:[],d4:[],d5:[],d6:[],d7:[],d8:[]};
+const domainNames={d1:"穿衣",d2:"起立",d3:"进食",d4:"行走",d5:"卫生",d6:"取物",d7:"握力",d8:"活动"};
+
+function pick(btn){
+  const domain=btn.dataset.domain;
+  const score=+btn.dataset.score;
+  // deselect siblings with same domain+item (same parent div buttons)
+  const siblings=btn.parentElement.querySelectorAll('.chaq-btn');
+  siblings.forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  // update domain max
+  const row=btn.closest('.click-row');
+  const rowBtns=row.querySelectorAll('.chaq-btn.sel');
+  let maxInRow=0;
+  rowBtns.forEach(b=>{if(+b.dataset.score>maxInRow)maxInRow=+b.dataset.score;});
+  // recalculate domain max from ALL selected in this domain
+  const allDomainBtns=document.querySelectorAll(`.chaq-btn[data-domain="${domain}"].sel`);
+  let maxD=0;
+  allDomainBtns.forEach(b=>{if(+b.dataset.score>maxD)maxD=+b.dataset.score;});
+  domains[domain]=maxD;
+  calc();
+}
+
+function resetAll(){
+  document.querySelectorAll('.chaq-btn.sel').forEach(b=>b.classList.remove('sel'));
+  Object.keys(domains).forEach(k=>domains[k]=0);
+  calc();
+}
+
+function calc(){
+  const vals=Object.values(domains);
+  const allAnswered=vals.every(v=>v!==undefined);
+  const answered=vals.filter(v=>v>0||true);
+  const sum=vals.reduce((a,b)=>a+b,0);
+  const n=vals.length;
+  const chaq=sum/n;
+  document.getElementById('score').textContent=chaq.toFixed(2);
+  document.getElementById('footerScore').textContent=chaq.toFixed(2);
+  // domain scores display
+  let html='';
+  Object.keys(domains).forEach(k=>{
+    const v=domains[k];
+    const bg=v===0?'#e6f5f4':v<=1?'#fef3e2':v<=2?'#fde8e8':'#f5dede';
+    html+=`<div style="background:${bg};padding:6px 10px;border-radius:8px;font-size:0.7rem"><b>${domainNames[k]}</b>: ${v}</div>`;
+  });
+  document.getElementById('domain_scores').innerHTML=html;
+  let label,c;
+  if(chaq<=0.5){label="无/轻度障碍";c="#22a87e";}
+  else if(chaq<=1.5){label="中度障碍";c="#d4892a";}
+  else{label="重度障碍";c="#d45050";}
+  document.getElementById('status').textContent=label;document.getElementById('status').style.background=c;
+  document.getElementById('footerStatus').textContent=label;document.getElementById('footerStatus').style.background=c;
+  document.getElementById('pathLine').textContent=Object.keys(domains).map(k=>`${domainNames[k]}${domains[k]}`).join(' ');
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>

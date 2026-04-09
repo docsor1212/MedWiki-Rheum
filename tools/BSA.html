@@ -3,124 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>体表面积BSA计算 — MedWiki-Rheum</title>
+<title>BSA 体表面积计算器 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#b8891a; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#20a39e; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+input[type=range]{width:100%;accent-color:var(--accent);height:6px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.range-val{min-width:48px;text-align:center;font-weight:800;color:var(--accent);font-size:1.1rem;}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">体表面积BSA计算 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">BSA 体表面积</span></div>
 <div class="wrap">
 
-<div class="header">
-  <div>
-    <h1>📐 体表面积 BSA 计算</h1>
-    <div class="sub">Mosteller公式（最常用）· Du Bois公式 · 儿科速查表</div>
-  </div>
-  <div class="meta">
-    MTX剂量计算基础<br>
-    化疗/药物剂量依据<br>
-    置信度上限 90%
-  </div>
+<div class="card">
+<h1>BSA <span>体表面积</span></h1>
+<div class="sub">Body Surface Area · Mosteller公式 · 儿童药物剂量计算</div>
+
+<div class="section-title">📐 输入参数</div>
+
+<div class="input-group">
+<label>身高（cm）</label>
+<input type="number" id="height" min="40" max="200" step="0.1" value="120" oninput="calc()">
 </div>
 
-<div class="body">
-
-<div class="sh yellow">📐 计算公式</div>
-<table>
-<tr><th class="yellow-hd">公式</th><th class="yellow-hd">表达式</th><th class="yellow-hd">特点</th></tr>
-<tr class="hl-green"><td class="c-g b">Mosteller ⭐</td><td class="c-g b">BSA = √(身高cm × 体重kg ÷ 3600)</td><td>最常用，简便准确</td></tr>
-<tr><td>Du Bois</td><td>BSA = 0.007184 × 体重^0.425 × 身高^0.725</td><td>传统公式</td></tr>
-</table>
-
-<div class="sh">📋 儿科BSA速查表（m²）</div>
-<table>
-<tr><th>身高\体重</th><th>10kg</th><th>15kg</th><th>20kg</th><th>25kg</th><th>30kg</th><th>35kg</th><th>40kg</th></tr>
-<tr><td class="b">80cm</td><td class="c-a b">0.48</td><td class="c-a b">0.55</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td class="b">90cm</td><td>0.44</td><td class="c-a b">0.52</td><td class="c-a b">0.59</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td class="b">100cm</td><td>—</td><td>0.49</td><td class="c-a b">0.57</td><td class="c-a b">0.63</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td class="b">110cm</td><td>—</td><td>—</td><td>0.54</td><td class="c-a b">0.61</td><td class="c-a b">0.67</td><td>—</td><td>—</td></tr>
-<tr><td class="b">120cm</td><td>—</td><td>—</td><td>—</td><td>0.58</td><td class="c-a b">0.65</td><td class="c-a b">0.72</td><td>—</td></tr>
-<tr><td class="b">130cm</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.63</td><td class="c-a b">0.69</td><td class="c-a b">0.76</td></tr>
-</table>
-
-<div class="sh green">💊 临床用途</div>
-<table>
-<tr><th class="green-hd">用途</th><th class="green-hd">说明</th><th class="green-hd">相关工具</th></tr>
-<tr class="hl-green"><td class="c-g b">MTX剂量</td><td class="c-g b">10–15 mg/m²/周</td><td class="c-a b">→ MTX剂量计算</td></tr>
-<tr><td>化疗药物</td><td>按BSA计算剂量</td><td>—</td></tr>
-<tr><td>烧伤面积</td><td>BSA百分比评估</td><td>—</td></tr>
-<tr><td>肾功评估</td><td>eGFR按BSA标化</td><td>→ 肝肾监测</td></tr>
-</table>
-
-<div class="note">MTX剂量 = BSA × 单位剂量（mg/m²），JIA常用10–15 mg/m²</div>
-
+<div class="input-group">
+<label>体重（kg）</label>
+<input type="number" id="weight" min="2" max="150" step="0.1" value="25" oninput="calc()">
 </div>
 
-<div class="footer">
-  Mosteller公式最常用 · BSA是儿科药物剂量核心参数 · 详见MTX剂量计算工具
+<div class="section-title green">📊 计算结果</div>
+<div class="result-box">
+<div class="result-label">BSA（Mosteller公式, m²）</div>
+<div class="result-num" id="bsa_val">0.93</div>
+<div id="mtx_info" style="font-size:0.75rem;color:#64748b;margin-top:6px"></div>
+</div>
 </div>
 
+<div class="card">
+<div class="section-title">📝 Mosteller 公式</div>
+<div style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);padding:12px;border-radius:10px;font-size:0.85rem;text-align:center;font-weight:700;color:#20a39e">
+BSA (m²) = √( 身高cm × 体重kg ÷ 3600 )
+</div>
+
+<div class="section-title yellow">💊 常见BSA相关剂量参考</div>
+<table><tr><th>药物</th><th>剂量</th><th>说明</th></tr>
+<tr><td style="font-weight:700;color:#20a39e">MTX（甲氨蝶呤）</td><td>10-15 mg/m²/周</td><td>起始剂量，最大25 mg/m²/周</td></tr>
+<tr><td>环磷酰胺</td><td>500-1000 mg/m²</td><td>静脉冲击，每月1次</td></tr>
+<tr><td>IVIG</td><td>2 g/kg</td><td>KD方案：分2-5天</td></tr></table>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+function calc(){
+  const h=+document.getElementById('height').value;
+  const w=+document.getElementById('weight').value;
+  if(h<=0||w<=0)return;
+  const bsa=Math.sqrt(h*w/3600);
+  document.getElementById('bsa_val').textContent=bsa.toFixed(2);
+  document.getElementById('footerScore').textContent=bsa.toFixed(2)+' m²';
+  const mtLow=(bsa*10).toFixed(0);
+  const mtHigh=(bsa*15).toFixed(0);
+  const mtMax=(bsa*25).toFixed(0);
+  document.getElementById('mtx_info').innerHTML=`💡 MTX起始剂量参考：<b>${mtLow}-${mtHigh} mg/周</b>（最大${mtMax} mg/周）`;
+  document.getElementById('footerStatus').textContent=`${bsa.toFixed(2)} m²`;
+  document.getElementById('footerStatus').style.background='#20a39e';
+  document.getElementById('pathLine').textContent=`身高${h}cm · 体重${w}kg`;
+}
+calc();
 </script>
-</body>
-</html>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+</body></html>
