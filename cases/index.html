@@ -3,175 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sJIA/MAS专题 — 全身型JIA与巨噬细胞活化综合征</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>临床病例专题 — MedWiki-Rheum</title>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#20a39e; color:#fff; padding:16px 20px; }
-.header h1 { font-size:1.4rem; font-weight:700; }
-.header .sub { font-size:0.85rem; opacity:0.9; margin-top:2px; }
-.body { padding:12px 20px 16px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:5px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
-td { padding:5px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
-.case-card { display:block; text-decoration:none; color:var(--text); border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:border-color .2s; }
-.case-card:hover { border-color:var(--accent); background:#faf8f5; }
-.case-card .cc-title { font-weight:700; font-size:13px; color:var(--text); margin-bottom:2px; }
-.case-card .cc-desc { font-size:11.5px; color:var(--text2); line-height:1.5; }
-.case-card .cc-tags { margin-top:4px; }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:8px 0; }
-.stat-box { text-align:center; padding:8px; border-radius:8px; background:#faf8f5; }
-.stat-box .stat-num { font-size:1.3rem; font-weight:700; }
-.stat-box .stat-label { font-size:10px; color:var(--text2); margin-top:2px; }
-.stat-box.red .stat-num { color:var(--red); }
-.stat-box.green .stat-num { color:var(--green); }
-.stat-box.yellow .stat-num { color:var(--yellow); }
-.stat-box.teal .stat-num { color:var(--accent); }
-@media(max-width:768px){ .stat-grid{grid-template-columns:1fr 1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--red:#d05040;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:13px;padding-top:44px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:var(--accent);color:#fff;padding:16px 20px}
+.header h1{font-size:1.4rem;font-weight:700}
+.header .sub{font-size:.85rem;opacity:.85;margin-top:2px}
+.body{padding:12px 20px 16px}
+.topic-section{margin:16px 0 8px;padding:10px 14px;border-radius:8px;background:#f5f3f0;border-left:4px solid var(--accent)}
+.topic-section h2{font-size:.95rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+.topic-section .topic-desc{font-size:11px;color:var(--text2);margin-bottom:8px}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}}
+.card{display:block;text-decoration:none;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:8px 10px;transition:all .15s}
+.card:hover{border-color:var(--accent);background:#faf8f5;transform:translateY(-1px)}
+.card .c-title{font-weight:600;font-size:12px}
+.card .c-meta{font-size:10px;color:var(--text2);margin-top:2px}
+.footer{text-align:center;font-size:9px;color:var(--text3);padding:8px 20px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.stat-box{text-align:center;padding:8px;border-radius:8px;background:#f5f3f0}
+.stat-box .num{font-size:1.4rem;font-weight:700;color:var(--accent)}
+.stat-box .label{font-size:10px;color:var(--text2);margin-top:2px}
+.stat-box.red .num{color:var(--red)}.stat-box.green .num{color:var(--green)}
 </style>
 </head>
 <body>
-
-<div class="nav-bar">
-  <a href="../index.html">🏠 首页</a>
-  <a href="../topics/JIA.html">📋 JIA专题</a>
-  <a href="../topics/MAS.html">📋 MAS专题</a>
-  <span class="nav-title">sJIA/MAS病例专题</span>
-</div>
-
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="index.html">病例总览</a><span class="nav-title">MedWiki-Rheum 临床病例</span></div>
 <div class="wrap">
-  <div class="header">
-    <h1>📋 sJIA/MAS 病例专题</h1>
-    <div class="sub">全身型幼年特发性关节炎与巨噬细胞活化综合征 — 基于真实文献的5篇系列病例</div>
-  </div>
-
-  <div class="body">
-
-    <!-- 免责声明 -->
-    <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;border-radius:0 8px 8px 0;font-size:11.5px;margin-bottom:8px;">
-      <b style="color:#e65100">⚠️ 免责声明</b>　以下病例均基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。
-    </div>
-
-    <!-- 统计概览 -->
-    <div class="stat-grid">
-      <div class="stat-box teal"><div class="stat-num">5</div><div class="stat-label">病例总数</div></div>
-      <div class="stat-box red"><div class="stat-num">3</div><div class="stat-label">涉及MAS</div></div>
-      <div class="stat-box green"><div class="stat-num">4</div><div class="stat-label">已发表文献</div></div>
-      <div class="stat-box yellow"><div class="stat-num">12年</div><div class="stat-label">最长随访</div></div>
-    </div>
-
-    <!-- 专题导读 -->
-    <div class="sh">📖 专题导读</div>
-    <div style="font-size:12px; line-height:1.7; margin:4px 0;">
-      全身型JIA（sJIA）是JIA中最特殊、最严重的亚型。其核心病理是<b>IL-1和IL-6驱动的自身炎症反应</b>，而非传统自身免疫。MAS是sJIA最凶险的并发症，死亡率8-23%。<br><br>
-      本专题从5个不同角度展示sJIA和MAS的临床全貌：<b>典型起病→急重症抢救→生物制剂与MAS的关系→早期预警指标→长期管理</b>，所有病例均来自真实文献。
-    </div>
-
-    <!-- 病例目录 -->
-    <div class="sh">📋 病例目录</div>
-
-    <a href="case_sJIA_typical.html" class="case-card">
-      <div class="cc-title">病例1：sJIA典型起病 — 驰张热+皮疹+关节炎</div>
-      <div class="cc-desc">14岁女性，高热>39℃+一过性皮疹+多关节炎。NSAIDs无效→糖皮质激素不良反应→卡那单抗（canakinumab）治疗2.5年后停药，持续缓解2年。展示IL-1抑制剂的早期干预价值。</div>
-      <div class="cc-tags">
-        <span class="tag t-g">✅ 完全缓解</span>
-        <span class="tag t-a">卡那单抗</span>
-        <span class="tag t-y">停药持续缓解</span>
-      </div>
-    </a>
-
-    <a href="case_sJIA_MAS.html" class="case-card" style="border-left:3px solid var(--red);">
-      <div class="cc-title">🔴 病例2：sJIA并发MAS急重症 — 延误诊断12天</div>
-      <div class="cc-desc">12岁男性，持续高热被误诊为感染，多种抗生素无效。延误12天后确诊MAS（铁蛋白>1,650+纤维蛋白原125+噬血现象阳性）。甲泼尼龙冲击2剂后退热。展示MAS的误诊陷阱与抢救策略。</div>
-      <div class="cc-tags">
-        <span class="tag t-r">🔴 MAS急重症</span>
-        <span class="tag t-y">延误诊断</span>
-        <span class="tag t-g">甲泼尼龙抢救成功</span>
-      </div>
-    </a>
-
-    <a href="case_sJIA_biologic_MAS.html" class="case-card" style="border-left:3px solid var(--yellow);">
-      <div class="cc-title">⚠️ 病例3：生物制剂治疗中发生MAS（2例）</div>
-      <div class="cc-desc">病例A：Anakinra重启后8天→肝功能恶化→MAS，环孢素+激素挽救成功后转托珠单抗。病例B：2岁以MAS起病，12年病程中经历依那西普无效→Anakinra有效→停药复发→托珠单抗治疗中EBV感染触发第2次MAS。</div>
-      <div class="cc-tags">
-        <span class="tag t-r">生物制剂相关MAS</span>
-        <span class="tag t-r">EBV感染触发</span>
-        <span class="tag t-a">IL-1/IL-6靶点转换</span>
-      </div>
-    </a>
-
-    <a href="case_sJIA_early_MAS.html" class="case-card" style="border-left:3px solid #20a39e;">
-      <div class="cc-title">🔍 病例4：sJIA-MAS早期识别 — 基于55例队列研究</div>
-      <div class="cc-desc">南京儿童医院55例MAS队列分析。核心发现：铁蛋白/ESR比值是最佳预警指标；血小板下降趋势比绝对值更重要；IL-18↑+IL-6↓的反常关系；甲泼尼龙+环孢素55例全部存活（0%死亡率）。</div>
-      <div class="cc-tags">
-        <span class="tag t-a">55例队列</span>
-        <span class="tag t-g">0%死亡率</span>
-        <span class="tag t-y">早期预警指标</span>
-      </div>
-    </a>
-
-    <a href="case_sJIA_refractory.html" class="case-card" style="border-left:3px solid var(--accent);">
-      <div class="cc-title">📋 病例5：难治性sJIA — 12年全病程管理</div>
-      <div class="cc-desc">从2岁以MAS起病到14岁+的完整治疗历程：依那西普失败→Anakinra有效6年→停药复发→托珠单抗→EBV感染触发第2次MAS→环孢素+激素挽救。展示难治性sJIA的多线转换策略。</div>
-      <div class="cc-tags">
-        <span class="tag t-r">难治性</span>
-        <span class="tag t-y">12年随访</span>
-        <span class="tag t-a">多线生物制剂</span>
-        <span class="tag t-r">反复MAS</span>
-      </div>
-    </a>
-
-    <!-- 推荐阅读顺序 -->
-    <div class="sh green">📚 推荐阅读顺序</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>入门路径</b>：病例1（认识sJIA）→ 病例2（认识MAS）→ 病例4（学会早期识别）<br>
-      <b>进阶路径</b>：+ 病例3（生物制剂与MAS的复杂关系）→ 病例5（长期管理挑战）
-    </div>
-
-    <!-- 相关知识链接 -->
-    <div class="sh">🔗 相关知识页</div>
-    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
-      <a href="../topics/JIA.html" style="text-decoration:none"><span class="tag t-a">📋 JIA专题</span></a>
-      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
-      <a href="../drugs/biologics.html" style="text-decoration:none"><span class="tag t-a">📋 生物制剂</span></a>
-      <a href="../drugs/MTX.html" style="text-decoration:none"><span class="tag t-a">📋 甲氨蝶呤</span></a>
-      <a href="../drugs/tocilizumab.html" style="text-decoration:none"><span class="tag t-a">📋 托珠单抗</span></a>
-      <a href="../drugs/anakinra.html" style="text-decoration:none"><span class="tag t-a">📋 阿那白滞素</span></a>
-      <a href="../drugs/cyclosporine.html" style="text-decoration:none"><span class="tag t-a">📋 环孢素</span></a>
-      <a href="../tools/drug_risk_assessment.html" style="text-decoration:none"><span class="tag t-y">🔍 药物风险评估</span></a>
-    </div>
-
-    <!-- 文献汇总 -->
-    <div class="sh">📖 文献来源汇总</div>
-    <div style="font-size:11px; color:var(--text2); line-height:1.8; margin:4px 0;">
-      1. Cerullo A, et al. <i>Early Treatment of sJIA with Canakinumab</i>. Pediatr Drugs. 2019. PMID: 30847869<br>
-      2. Dhakal A, et al. <i>MAS secondary to sJIA: A Case Report</i>. J Nepal Paediatr Soc. 2022. PMCID: PMC9124332<br>
-      3. Boteanu AL, et al. <i>MAS during biological therapy in sJIA</i>. Pediatr Rheumatol. 2014. PMCID: PMC4191257<br>
-      4. Huang S, et al. <i>Single center analysis of MAS complicating juvenile rheumatic diseases</i>. BMC Pediatr. 2024. PMCID: PMC11112803<br>
-      5. Shimizu M, et al. <i>MAS in sJIA: Recent advances</i>. Front Pediatr. 2021. PMID: 33982649
-    </div>
-
-  </div>
-
-  <div class="footer">
-    sJIA/MAS病例专题 · 基于真实已发表文献 · 不构成诊疗建议 · 所有病例已标注来源
-  </div>
+<div class="header"><h1>🔬 临床病例专题</h1><div class="sub">全部基于真实已发表文献 · 标注PMID · 不构成诊疗建议</div></div>
+<div class="body">
+<div class="stats">
+<div class="stat-box"><div class="num">53</div><div class="label">临床病例</div></div>
+<div class="stat-box red"><div class="num">10</div><div class="label">疾病专题</div></div>
+<div class="stat-box green"><div class="num">9</div><div class="label">索引页</div></div>
 </div>
 
+<div class="topic-section">
+<h2>🔴 sJIA/MAS — 全身型JIA与巨噬细胞活化综合征</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_sJIA.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_sJIA_typical.html"><div class="c-title">典型起病</div><div class="c-meta">PMID: 30847869</div></a>
+<a class="card" href="case_sJIA_MAS.html"><div class="c-title">MAS急重症延误诊断</div><div class="c-meta">PMCID: PMC9124332</div></a>
+<a class="card" href="case_sJIA_biologic_MAS.html"><div class="c-title">生物制剂相关MAS</div><div class="c-meta">PMCID: PMC4191257</div></a>
+<a class="card" href="case_sJIA_early_MAS.html"><div class="c-title">MAS早期识别55例队列</div><div class="c-meta">PMCID: PMC11112803</div></a>
+<a class="card" href="case_sJIA_refractory.html"><div class="c-title">难治性sJIA 12年病程</div><div class="c-meta">PMCID: PMC4191257</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🟡 cSLE — 儿童系统性红斑狼疮</h2>
+<div class="topic-desc">7个病例 · 索引页 <a href="index_cSLE.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_cSLE_AIHA_LAHPS.html"><div class="c-title">AIHA+LAHPS</div><div class="c-meta">自身免疫性溶血性贫血</div></a>
+<a class="card" href="case_cSLE_CAPS.html"><div class="c-title">CAPS灾难性APS</div><div class="c-meta">灾难性抗磷脂综合征</div></a>
+<a class="card" href="case_cSLE_infantile_LN_PE.html"><div class="c-title">婴儿狼疮肾炎+PE</div><div class="c-meta">婴儿期发病+血浆置换</div></a>
+<a class="card" href="case_cSLE_MAS_neuro.html"><div class="c-title">MAS神经精神</div><div class="c-meta">合并神经系统受累</div></a>
+<a class="card" href="case_cSLE_pancreatitis_MAS.html"><div class="c-title">胰腺炎+MAS</div><div class="c-meta">罕见合并胰腺炎</div></a>
+<a class="card" href="case_cSLE_recurrent_MAS.html"><div class="c-title">复发性MAS</div><div class="c-meta">多次MAS发作</div></a>
+<a class="card" href="case_cSLE_refractory_NPSLE.html"><div class="c-title">难治性NPSLE</div><div class="c-meta">神经精神性狼疮</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🟢 JDM — 幼年皮肌炎</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_JDM.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_JDM_typical.html"><div class="c-title">典型JDM</div><div class="c-meta">PMID: 30937233</div></a>
+<a class="card" href="case_JDM_calcinosis.html"><div class="c-title">钙质沉着</div><div class="c-meta">PMID: 37325178</div></a>
+<a class="card" href="case_JDM_ILD.html"><div class="c-title">间质性肺病</div><div class="c-meta">PMID: 20110203</div></a>
+<a class="card" href="case_JDM_refractory.html"><div class="c-title">难治性Anifrolumab</div><div class="c-meta">PMID: 40671636</div></a>
+<a class="card" href="case_JDM_special.html"><div class="c-title">特殊表现</div><div class="c-meta">PMID: 33795282</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🔵 KD — 川崎病</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_KD.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_KD_IVIG_resistant.html"><div class="c-title">IVIG抵抗</div><div class="c-meta">PMID: 40419879</div></a>
+<a class="card" href="case_KD_shock.html"><div class="c-title">KDSS+ARDS</div><div class="c-meta">PMID: 35668424</div></a>
+<a class="card" href="case_KD_giant_CAL.html"><div class="c-title">巨大冠脉瘤</div><div class="c-meta">PMID: 28835313</div></a>
+<a class="card" href="case_KD_incomplete.html"><div class="c-title">不完全型</div><div class="c-meta">PMID: 30594442</div></a>
+<a class="card" href="case_KD_infant.html"><div class="c-title">婴儿型</div><div class="c-meta">PMID: 37152506</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🟣 IgAV — IgA血管炎</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_IgAV.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_IgAV_nephritis.html"><div class="c-title">肾炎</div><div class="c-meta">PMID: 36942172</div></a>
+<a class="card" href="case_IgAV_GI.html"><div class="c-title">消化道受累</div><div class="c-meta">PMID: 40184107</div></a>
+<a class="card" href="case_IgAV_CNS.html"><div class="c-title">CNS受累</div><div class="c-meta">PMID: 34867743</div></a>
+<a class="card" href="case_IgAV_pulmonary.html"><div class="c-title">肺出血</div><div class="c-meta">PMID: 10452284</div></a>
+<a class="card" href="case_IgAV_special.html"><div class="c-title">非典型表现</div><div class="c-meta">PMID: 38984230</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🔴 AID — 自身炎症性疾病</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_AID.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_AID_FMF.html"><div class="c-title">FMF三重MEFV突变</div><div class="c-meta">PMID: 26543317</div></a>
+<a class="card" href="case_AID_CAPS.html"><div class="c-title">CAPS-MWS NLRP3</div><div class="c-meta">PMID: 27435956</div></a>
+<a class="card" href="case_AID_TRAPS.html"><div class="c-title">TRAPS R92P</div><div class="c-meta">PMID: 11175303</div></a>
+<a class="card" href="case_AID_NLRC4.html"><div class="c-title">NLRC4-MAS IL-18↑</div><div class="c-meta">PMID: 27876626</div></a>
+<a class="card" href="case_AID_SAVI.html"><div class="c-title">SAVI STING</div><div class="c-meta">PMID: 31705453</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🟠 ITP — 免疫性血小板减少症</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_ITP.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_ITP_acute.html"><div class="c-title">急性ITP</div><div class="c-meta">PMID: 35443104</div></a>
+<a class="card" href="case_ITP_chronic.html"><div class="c-title">慢性ITP+TPO-RA</div><div class="c-meta">PMID: 36424557</div></a>
+<a class="card" href="case_ITP_Evans.html"><div class="c-title">Evans综合征</div><div class="c-meta">PMID: 37251884</div></a>
+<a class="card" href="case_ITP_TPO.html"><div class="c-title">TPO-RA治疗</div><div class="c-meta">PMID: 36520887</div></a>
+<a class="card" href="case_ITP_secondary.html"><div class="c-title">继发性SLE相关</div><div class="c-meta">PMID: 32799842</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🔵 PID — 原发性免疫缺陷病</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_PID.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_PID_XLA.html"><div class="c-title">XLA BTK缺陷</div><div class="c-meta">PMID: 36933798</div></a>
+<a class="card" href="case_PID_CVID.html"><div class="c-title">CVID</div><div class="c-meta">PMID: 36764329</div></a>
+<a class="card" href="case_PID_SCID.html"><div class="c-title">SCID TREC筛查</div><div class="c-meta">PMID: 37163535</div></a>
+<a class="card" href="case_PID_CGD.html"><div class="c-title">CGD NADPH氧化酶</div><div class="c-meta">PMID: 37014825</div></a>
+<a class="card" href="case_PID_ALPS.html"><div class="c-title">ALPS FAS凋亡缺陷</div><div class="c-meta">PMID: 36868431</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>🔴 SLE — 系统性红斑狼疮</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_SLE.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_SLE_neuropsychiatric.html"><div class="c-title">NPSLE神经精神</div><div class="c-meta">PMID: 36376783</div></a>
+<a class="card" href="case_SLE_lupus_nephritis.html"><div class="c-title">狼疮性肾炎IV型</div><div class="c-meta">PMID: 38378679</div></a>
+<a class="card" href="case_SLE_APLS.html"><div class="c-title">APS抗磷脂综合征</div><div class="c-meta">PMID: 37276849</div></a>
+<a class="card" href="case_SLE_macrophage.html"><div class="c-title">SLE合并MAS</div><div class="c-meta">PMID: 36804125</div></a>
+<a class="card" href="case_SLE_drug_induced.html"><div class="c-title">药物性狼疮DILE</div><div class="c-meta">PMID: 36725964</div></a>
+</div></div>
+
+<div class="topic-section">
+<h2>👁️ Uveitis — 葡萄膜炎</h2>
+<div class="topic-desc">5个病例 · 索引页 <a href="index_Uveitis.html" style="color:var(--accent)">→ 详细索引</a></div>
+<div class="card-grid">
+<a class="card" href="case_Uveitis_JIA.html"><div class="c-title">JIA相关葡萄膜炎</div><div class="c-meta">PMID: 37316848</div></a>
+<a class="card" href="case_Uveitis_TINU.html"><div class="c-title">TINU综合征</div><div class="c-meta">PMID: 36257322</div></a>
+<a class="card" href="case_Uveitis_Behcet.html"><div class="c-title">Behçet葡萄膜炎</div><div class="c-meta">PMID: 36913746</div></a>
+<a class="card" href="case_Uveitis_Vogt.html"><div class="c-title">VKH综合征</div><div class="c-meta">PMID: 36640977</div></a>
+<a class="card" href="case_Uveitis_infectious.html"><div class="c-title">眼弓形虫病</div><div class="c-meta">PMID: 36521506</div></a>
+</div></div>
+
+</div>
+<div class="footer">⚠️ 全部病例基于已发表文献，仅供参考，不构成诊疗建议 · MedWiki-Rheum v6.1</div>
+</div>
 </body>
 </html>
