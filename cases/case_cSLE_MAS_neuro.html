@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：cSLE-MAS伴广泛脑病变</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.mri-box { background:#e8f4fd; border:1px solid #90caf9; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.mri-box .m-title { font-weight:700; font-size:12px; color:#1565c0; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">MAS+脑病变</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：cSLE-MAS伴广泛神经系统影像学异常</h1>
+      <div class="sub">11岁女孩 — MAS + 广泛脑MRI病变，重症神经系统受累</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:130px">患者</td><td>11岁，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>浙江大学医学院附属儿童医院，风湿免疫过敏科（杭州）</td></tr>
+      <tr><td class="b">主诉</td><td>反复皮疹半年，发热2周</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">MAS</span> <span class="tag t-r">NP-SLE</span> <span class="tag t-r">广泛脑MRI病变</span> <span class="tag t-g">完全缓解</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>MAS合并广泛脑部影像学异常在cSLE中极为罕见。该患者入院时即有MRI异常，随后迅速出现嗜睡、淡漠、构音障碍等神经系统症状，需同时针对MAS和NP-SLE（Neuropsychiatric SLE，神经精神狼疮）进行双重治疗。
+    </div>
+
+    <!-- 起病与入院 -->
+    <div class="sh red">🔴 起病与入院评估</div>
+    <div class="timeline">
+      <div class="t-item yellow">
+        <div class="t-date">入院前6个月 — 反复皮疹</div>
+        <div class="t-content">反复出现皮疹，未明确诊断。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">入院前2周 — 持续发热</div>
+        <div class="t-content">开始出现持续发热，伴皮疹加重。</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">入院第1天</div>
+        <div class="t-content">
+          <b>体格检查：</b>发热，面部及躯干皮疹，肝脾肿大<br><br>
+          <b>实验室检查：</b><br>
+          <table>
+            <tr><th>指标</th><th>结果</th><th>参考值</th></tr>
+            <tr><td>血红蛋白（Hb，Hemoglobin）</td><td>↓ 降低</td><td>115-150 g/L</td></tr>
+            <tr><td>白细胞（WBC，White Blood Cell）</td><td>↓ 降低</td><td>4.5-13.5 ×10⁹/L</td></tr>
+            <tr><td>血小板（PLT，Platelet）</td><td>↓ 降低</td><td>150-400 ×10⁹/L</td></tr>
+            <tr><td>铁蛋白（Ferritin）</td><td><b>显著升高</b></td><td>7-140 ng/mL</td></tr>
+            <tr><td>甘油三酯（TG，Triglyceride）</td><td>↑ 升高</td><td>&lt;1.7 mmol/L</td></tr>
+            <tr><td>纤维蛋白原（Fbg，Fibrinogen）</td><td>↓ 降低</td><td>2-4 g/L</td></tr>
+            <tr><td>AST/ALT</td><td>↑ 升高</td><td>&lt;40 U/L</td></tr>
+            <tr><td>ANA（抗核抗体）</td><td><b>阳性</b></td><td>阴性</td></tr>
+            <tr><td>抗dsDNA抗体</td><td><b>阳性</b></td><td>阴性</td></tr>
+            <tr><td>补体C3</td><td>↓ 降低</td><td>0.9-1.8 g/L</td></tr>
+            <tr><td>补体C4</td><td>↓ 降低</td><td>0.1-0.4 g/L</td></tr>
+          </table>
+          <br>
+          <b>诊断：</b><br>
+          ① <span class="tag t-a">cSLE</span> — 符合SLICC-2012分类标准（ANA+、抗dsDNA+、补体低、皮疹、三系减少）<br>
+          ② <span class="tag t-r">MAS</span> — 符合HLH-2004标准（发热、脾大、三系减少≥2系、铁蛋白升高、噬血现象）
+        </div>
+      </div>
+    </div>
+
+    <!-- MRI发现 -->
+    <div class="sh red">🧠 神经系统受累 — MRI异常（入院第4天）</div>
+
+    <div class="mri-box">
+      <div class="m-title">📷 头颅MRI（T2/FLAIR序列）异常信号分布</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>广泛性白质病变：</b><br>
+        • <b>双侧额叶</b>白质 — T2/FLAIR高信号<br>
+        • <b>双侧顶叶</b>白质 — T2/FLAIR高信号<br>
+        • <b>双侧基底节</b>区 — 异常信号<br>
+        • <b>脑干</b> — 异常信号<br>
+        • <b>小脑</b> — 异常信号<br>
+        <br>
+        <b>影像学特征：</b>多发、对称、弥漫性白质病变，累及幕上+幕下结构，符合<b>NPSLE（神经精神狼疮）</b>的脑部表现。
+      </div>
+    </div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>⚠️ 关键时间线：</b>入院第4天MRI已显示异常信号，但此时患者尚无明显神经系统症状。第7天起迅速出现神经精神症状（见下文）→ MRI改变<b>先于</b>临床表现。
+    </div>
+
+    <!-- 神经症状进展 -->
+    <div class="sh red">⚡ 神经系统症状快速恶化（入院第5-8天）</div>
+    <div class="timeline">
+      <div class="t-item yellow">
+        <div class="t-date">入院第5天 — 开始激素治疗</div>
+        <div class="t-content">
+          开始<b>糖皮质激素</b>治疗。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">入院第7天 — 精神萎靡</div>
+        <div class="t-content">
+          患者出现<b>精神萎靡、乏力、嗜睡</b>，与此前发热+MAS状态不完全匹配。<br>
+          <span class="tag t-r">NP-SLE症状开始显现</span>
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">入院第8天 — 神经系统症状全面爆发</div>
+        <div class="t-content">
+          <b>快速进展为：</b><br>
+          • <b>头晕（Dizziness）</b><br>
+          • <b>嗜睡（Somnolence）</b> — 意识水平下降<br>
+          • <b>淡漠（Apathia）</b> — 情感反应迟钝<br>
+          • <b>构音障碍（Dysarthria）</b> — 言语不清<br>
+          <br>
+          <span class="tag t-r">急性脑病（Acute Encephalopathy）</span> <span class="tag t-r">NP-SLE确诊</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert">
+      <b>诊断要点：</b>该患者同时存在<b>MAS</b>（巨噬细胞活化→全身炎症）和<b>NP-SLE</b>（脑实质免疫性损伤），两者相互加重。MAS的细胞因子风暴可加重脑部血管炎症和血脑屏障破坏，而脑部病变又可能成为新的炎症源头。
+    </div>
+
+    <!-- 治疗 -->
+    <div class="sh green">💊 多学科综合治疗</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">全身治疗 — MAS + SLE控制</div>
+        <div class="t-content">
+          <b>大剂量甲泼尼龙冲击</b>（IV methylprednisolone pulse）<br>
+          → 抑制全身炎症反应和细胞因子风暴<br><br>
+          <b>环磷酰胺（CTX，Cyclophosphamide）静脉冲击</b><br>
+          → 控制SLE疾病活动，阻断免疫复合物形成<br><br>
+          <b>静脉丙种球蛋白（IVIG，Intravenous Immunoglobulin）</b><br>
+          → 调节免疫、中和自身抗体、辅助MAS治疗
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">鞘内注射 — 直接中枢干预</div>
+        <div class="t-content">
+          <b>鞘内注射地塞米松（Intrathecal Dexamethasone）</b><br>
+          → 直接作用于中枢神经系统，减轻脑部炎症<br>
+          → 针对NP-SLE的局部强化治疗
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">转归 — 逐步改善</div>
+        <div class="t-content">
+          治疗后神经系统症状逐步改善：<br>
+          • 意识水平恢复<br>
+          • 构音障碍消失<br>
+          • 精神状态恢复正常<br>
+        </div>
+      </div>
+    </div>
+
+    <!-- 出院 -->
+    <div class="sh green">🏠 出院与随访（入院第30天）</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>出院时状态：</b><br>
+      • 临床症状完全缓解 — 发热消退、神经系统症状消失<br>
+      • 实验室指标改善 — 血细胞计数恢复、炎症指标下降<br>
+      • 复查头颅MRI — <b>脑部异常信号较前明显改善</b><br><br>
+      <b>住院天数：</b>30天<br>
+      <b>最终转归：</b><span class="tag t-g">完全临床缓解 + 影像学改善</span>
+    </div>
+
+    <div class="sh yellow">🔬 cSLE-MAS合并NP-SLE的病理机制（深度解析）</div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. 为什么MAS和NP-SLE会同时出现？— 双重打击机制</b><br><br>
+
+      <b>第一次打击：血脑屏障（BBB，Blood-Brain Barrier）破坏</b><br>
+      ① cSLE的免疫复合物和自身抗体（抗神经元抗体、抗磷脂抗体等）直接损伤脑血管内皮<br>
+      ② MAS的细胞因子风暴（TNF-α、IL-1β、IL-6）进一步破坏BBB完整性<br>
+      ③ BBB破坏 → 血液中的自身抗体、免疫复合物、炎性细胞进入脑实质<br><br>
+
+      <b>第二次打击：脑内免疫活化</b><br>
+      ④ 进入脑内的免疫复合物激活<b>小胶质细胞（Microglia）</b>— 脑内的巨噬细胞<br>
+      ⑤ 小胶质细胞活化 → 产生IL-1β、TNF-α、IL-6等炎性因子 → 神经元损伤<br>
+      ⑥ 与外周MAS形成<b>正反馈环路</b>：外周炎症→BBB破坏→脑内炎症→进一步激活外周免疫<br><br>
+
+      <b>2. MRI异常先于临床症状的机制</b><br>
+      ⑦ 本例第4天MRI已异常，第7天才出现症状 → 影像学改变<b>早于</b>临床表现<br>
+      ⑧ 可能机制：早期白质水肿和脱髓鞘在MRI上可检出，但尚未达到引起临床症状的阈值<br>
+      ⑨ <b>临床启示</b>：cSLE-MAS患者即使无明显神经症状，也应<b>积极行头颅MRI检查</b>，早期发现亚临床脑部受累<br><br>
+
+      <b>3. 本例多发病变的病理基础</b><br>
+      ⑩ <b>白质病变</b>：免疫介导的脱髓鞘 + 小血管炎导致的缺血性损伤<br>
+      ⑪ <b>基底节受累</b>：该区域血供丰富，对免疫复合物沉积和缺血高度敏感<br>
+      ⑫ <b>脑干+小脑</b>：提示病变弥漫，不局限于某一血管分布区 → 支持<b>免疫介导</b>而非血管栓塞<br><br>
+
+      <b>4. 为什么鞘内注射有效？</b><br>
+      ⑬ 静脉用药受BBB限制，脑脊液中药物浓度不足<br>
+      ⑭ <b>鞘内注射地塞米松</b>直接作用于脑膜和脑脊液循环，局部浓度高<br>
+      ⑮ 在BBB已受损的情况下，鞘内给药与静脉给药形成<b>双通道</b>抗炎策略<br>
+      ⑯ 该方案在儿童NP-SLE中有成功经验，但需注意感染风险
+    </div>
+
+    <div class="sh">📊 NP-SLE的MRI表现分类（参考）</div>
+    <table>
+      <tr><th>MRI表现</th><th>病理基础</th><th>临床表现</th></tr>
+      <tr><td class="b">白质T2/FLAIR高信号</td><td>脱髓鞘、小血管炎</td><td>认知障碍、精神症状</td></tr>
+      <tr><td class="b">基底节异常信号</td><td>免疫复合物沉积、缺血</td><td>运动障碍、构音障碍</td></tr>
+      <tr><td class="b">脑干病变</td><td>血管炎、脑炎</td><td>颅神经麻痹、意识障碍</td></tr>
+      <tr><td class="b">皮质萎缩</td><td>慢性神经元丢失</td><td>认知功能下降</td></tr>
+      <tr><td class="b">脑萎缩（弥漫）</td><td>长期糖皮质激素+疾病损伤</td><td>慢性期表现</td></tr>
+    </table>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① cSLE-MAS患者应<b>常规行头颅MRI</b>，即使无神经系统症状<br>
+      ② MRI异常可早于临床症状 → <b>早期影像学评估至关重要</b><br>
+      ③ NP-SLE的MRI表现为多发白质病变，需与感染性脑炎、脱髓鞘疾病鉴别<br>
+      ④ 同时满足MAS和NP-SLE诊断标准时，应视为<b>双重急症</b>处理<br><br>
+
+      <b>治疗层面：</b><br>
+      ⑤ <b>全身治疗</b>（甲泼尼龙+CTX+IVIG）控制MAS和SLE活动<br>
+      ⑥ <b>鞘内注射地塞米松</b>是NP-SLE的有效辅助治疗<br>
+      ⑦ MAS的细胞因子控制对NP-SLE恢复有协同作用<br>
+      ⑧ 本例30天完全缓解，说明积极治疗预后良好<br><br>
+
+      <b>随访层面：</b><br>
+      ⑨ 复查MRI评估脑部病变恢复情况<br>
+      ⑩ 长期认知功能监测<br>
+      ⑪ NP-SLE复发风险较高，需更密切随访
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
+      <a href="../topics/NPSLE.html" style="text-decoration:none"><span class="tag t-r">📋 NP-SLE专题</span></a>
+      <a href="case_cSLE_recurrent_MAS.html" style="text-decoration:none"><span class="tag t-a">⬅ 反复MAS病例</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Shi N, Wang X, Zou L, et al. <i>Case Report: Macrophage Activation Syndrome and Widespread Neuroimaging Abnormality in Childhood-Onset Systemic Lupus Erythematosus</i>. Front Pediatr. 2021;9:767115.<br>
+      PMCID: PMC8713754 | PMID: 34970517 | DOI: 10.3389/fped.2021.767115
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_recurrent_MAS.html" style="display:inline-block;padding:6px 12px;background:var(--text3);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 病例1：反复MAS</a>
+    <a href="case_cSLE_CAPS.html" style="display:inline-block;padding:6px 12px;background:var(--yellow);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：灾难性APS ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 34970517）· 不构成诊疗建议 · cSLE病例专题 第2篇
+  </div>
+</div>
+
+</body>
+</html>
