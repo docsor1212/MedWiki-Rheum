@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：cSLE以AIHA起病合并LAHPS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.lahps-box { background:#fce4ec; border:1px solid #ef9a9a; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.lahps-box .m-title { font-weight:700; font-size:12px; color:#c62828; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">AIHA+LAHPS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：4岁女童以AIHA起病的cSLE合并LAHPS</h1>
+      <div class="sub">发热+溶血性贫血+出血+面瘫 — 一个"意料之外"的诊断历程</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:130px">患者</td><td>4岁，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>浙江大学医学院附属杭州市第一人民医院，儿科</td></tr>
+      <tr><td class="b">主诉</td><td>进行性面色苍白+间歇性高热1个月，鼻衄、黑便2天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">AIHA</span> <span class="tag t-r">LAHPS</span> <span class="tag t-r">面瘫</span> <span class="tag t-r">4岁起病</span> <span class="tag t-g">治愈</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>① <b>4岁</b>起病（cSLE极少在此年龄发病）② 以<b>AIHA</b>（自身免疫性溶血性贫血）为SLE首发表现③ 合并<b>LAHPS</b>（狼疮抗凝物-低凝血酶原血症综合征）— 导致凝血异常+出血④ 出现<b>左侧面神经麻痹</b>（NP-SLE表现）⑤ 最初被误诊为"缺铁性贫血"治疗4周无效。
+    </div>
+
+    <!-- 误诊阶段 -->
+    <div class="sh yellow">⚠️ 误诊阶段（入院前1个月）</div>
+    <div class="timeline">
+      <div class="t-item yellow">
+        <div class="t-date">1个月前 — 面色苍白就诊于当地医院</div>
+        <div class="t-content">
+          发现<b>贫血</b>，Hb 64 g/L。<br>
+          <b>当地诊断</b>：缺铁性贫血<br>
+          <b>治疗</b>：铁蛋白琥珀酰口服液，服用4周<br>
+          <b>结果</b>：<span class="tag t-r">贫血无改善</span><br><br>
+          <div class="note" style="border-left-color:var(--red);">
+            <b>误诊原因分析：</b>4岁儿童贫血首先考虑营养性贫血（缺铁性贫血最常见），未进一步检查网织红细胞、Coombs试验、溶血指标。若初诊时行Coombs试验，可提前4周确诊AIHA → SLE。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 症状恶化 -->
+    <div class="sh red">🔴 症状恶化（入院前2天→入院）</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">入院前2天 — 出血征象</div>
+        <div class="t-content">
+          出现<b>鼻衄（Epistaxis）</b>和<b>黑便（Melena）</b>。<br>
+          当地复查：Hb <b>39 g/L</b>（极重度贫血），凝血异常（PT、aPTT均延长）。<br>
+          粪便隐血弱阳性。转上级医院。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">入院查体 — 多系统受累</div>
+        <div class="t-content">
+          <b>生命体征：</b>T 39.8°C（高热）<br><br>
+          <b>皮肤/黏膜：</b><br>
+          • 面部<b>荨麻疹样红斑（Urticarial Erythema）</b><br>
+          • 四肢、背部、腹部<b>多处瘀斑（Ecchymoses）</b><br>
+          • 腮腺导管黏膜肿胀+红斑<br><br>
+          <b>神经系统：</b><br>
+          • <b>左侧面神经麻痹（Left Facial Palsy）</b>— 哭泣时左侧面肌无力<br>
+          • 睡眠时左眼不能完全闭合<br><br>
+          <b>腹部：</b>肝脾肿大<br>
+          <b>关节：</b>左足关节肿胀<br><br>
+          <span class="tag t-r">发热+贫血+出血+皮疹+面瘫+关节肿</span> — 多系统受累
+        </div>
+      </div>
+    </div>
+
+    <!-- 实验室 -->
+    <div class="sh">🔬 关键实验室检查</div>
+    <table>
+      <tr><th>指标</th><th>结果</th><th>临床意义</th></tr>
+      <tr><td class="b">血红蛋白（Hb）</td><td><b>39 g/L</b> ↓↓↓</td><td>极重度贫血</td></tr>
+      <tr><td class="b">白细胞（WBC）</td><td>↓ 降低</td><td>白细胞减少</td></tr>
+      <tr><td class="b">网织红细胞（Ret，Reticulocyte）</td><td>↑ 增高</td><td>骨髓代偿性增生 → 提示溶血</td></tr>
+      <tr><td class="b">直接/间接Coombs试验</td><td><b>均阳性</b></td><td>确诊AIHA（免疫介导溶血）</td></tr>
+      <tr><td class="b">外周血涂片</td><td>球形红细胞↑</td><td>AIHA特征性表现</td></tr>
+      <tr><td class="b">PT（凝血酶原时间）</td><td>↑ 延长</td><td>凝血异常</td></tr>
+      <tr><td class="b">aPTT</td><td>↑ 延长</td><td>凝血异常</td></tr>
+      <tr><td class="b">凝血因子II（Factor II）</td><td><b>↓ 降低</b></td><td>LAHPS特征！</td></tr>
+      <tr><td class="b">钙离子</td><td>1.68 mmol/L ↓</td><td>低钙血症</td></tr>
+      <tr><td class="b">ANA（抗核抗体）</td><td><b>阳性</b></td><td>SLE标志</td></tr>
+      <tr><td class="b">抗dsDNA抗体</td><td><b>阳性</b></td><td>SLE特异性</td></tr>
+      <tr><td class="b">抗磷脂抗体（aPL）</td><td><b>阳性</b></td><td>APS/LAHPS基础</td></tr>
+      <tr><td class="b">狼疮抗凝物（LA）</td><td><b>阳性</b></td><td>LAHPS关键指标</td></tr>
+      <tr><td class="b">补体C3/C4</td><td>↓ 降低</td><td>SLE活动</td></tr>
+      <tr><td class="b">尿检/肾功能</td><td>正常</td><td>无肾脏受累</td></tr>
+    </table>
+
+    <div class="lahps-box">
+      <div class="m-title">🔑 LAHPS（狼疮抗凝物-低凝血酶原血症综合征）详解</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>什么是LAHPS？</b><br>
+        LAHPS（Lupus Anticoagulant Hypoprothrombinemia Syndrome）= 狼疮抗凝物阳性 + 凝血因子II（凝血酶原）降低 → <b>出血倾向</b>。<br><br>
+
+        <b>为什么LA会导致出血而非血栓？</b><br>
+        • LA（狼疮抗凝物）在<b>体外</b>延长aPTT（"抗凝"假象）<br>
+        • 但LA在<b>体内</b>通常是<b>促凝</b>的（→ APS血栓）<br>
+        • <b>LAHPS的矛盾</b>：LA同时产生了抗凝血酶原（Factor II）的自身抗体 → <b>凝血酶原被清除</b>→ PT延长 → <b>真正的出血</b><br>
+        • 所以LAHPS = LA"意外"导致了出血而非血栓<br><br>
+
+        <b>与APS的区别：</b><br>
+        • APS：LA促凝 → 血栓（脑梗、深静脉血栓等）<br>
+        • LAHPS：LA同时中和凝血酶原 → 出血（鼻衄、消化道出血、瘀斑）<br>
+        • <b>两者可共存</b>！某些患者既有血栓又有出血<br><br>
+
+        <b>LAHPS在SLE中的意义：</b><br>
+        • SLE患者LA阳性率约15-30%<br>
+        • LAHPS（LA+低凝血酶原）远比APS罕见<br>
+        • 表现为<b>出血</b>时容易误诊为DIC、凝血因子缺乏、肝病凝血障碍<br>
+        • <b>关键检查</b>：aPTT延长 + 混合试验不纠正 + 凝血因子II降低 = LAHPS
+      </div>
+    </div>
+
+    <!-- 诊断 -->
+    <div class="sh">✅ 最终诊断</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断1：cSLE</b>（儿童系统性红斑狼疮）<br>
+      依据：ANA+、抗dsDNA+、补体C3/C4↓、AIHA、白细胞减少、皮疹、面神经麻痹（NP-SLE）<br><br>
+      <b>诊断2：AIHA</b>（自身免疫性溶血性贫血，Autoimmune Hemolytic Anemia）<br>
+      依据：Coombs试验直接/间接均阳性、球形红细胞↑、网织红细胞↑、Hb 39 g/L<br><br>
+      <b>诊断3：LAHPS</b>（狼疮抗凝物-低凝血酶原血症综合征）<br>
+      依据：LA阳性、凝血因子II降低、PT/aPTT延长、出血表现（鼻衄、黑便、瘀斑）<br><br>
+      <b>诊断4：NP-SLE</b>（面神经麻痹）<br>
+      依据：左侧面瘫，头颅MRI未见结构性病变，考虑免疫介导的周围神经受累
+    </div>
+
+    <!-- 治疗 -->
+    <div class="sh green">💊 治疗方案</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">联合免疫抑制治疗</div>
+        <div class="t-content">
+          <b>糖皮质激素</b>（控制全身免疫炎症+AIHA）<br>
+          → 抑制自身抗体产生，减少红细胞破坏<br><br>
+          <b>免疫抑制剂</b>（控制SLE基础病）<br>
+          → 减少ANA、抗dsDNA、aPL等自身抗体<br><br>
+          <b>对症支持</b>：输血纠正贫血、补钙、监测凝血<br><br>
+          <span class="tag t-y">注意：LAHPS的出血不可简单补充凝血因子</span> — 需要免疫抑制从根本上减少LA和抗凝血酶原抗体
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">转归 — 治愈</div>
+        <div class="t-content">
+          • <b>发热消退</b><br>
+          • <b>贫血纠正</b>（Hb恢复正常）<br>
+          • <b>出血停止</b>（凝血功能恢复）<br>
+          • <b>面瘫恢复</b><br>
+          • <b>皮疹消退</b><br>
+          <span class="tag t-g">联合免疫抑制治疗后所有症状完全缓解</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh yellow">🔬 AIHA在cSLE中的机制（深度解析）</div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. AIHA的发病机制 — 自身抗体介导的红细胞破坏</b><br><br>
+
+      <b>温抗体型AIHA（本例，最常见于SLE）：</b><br>
+      ① 自身抗体（多为IgG型）结合红细胞表面抗原<br>
+      ② IgG包被的红细胞通过脾脏时被<b>巨噬细胞Fc受体</b>识别<br>
+      ③ 巨噬细胞部分吞噬红细胞膜 → <b>球形红细胞（Spherocyte）</b>形成<br>
+      ④ 球形红细胞变形能力差 → 在脾脏中被<b>完全吞噬破坏</b>（血管外溶血）<br>
+      ⑤ Coombs试验（直接法）检测到红细胞表面的IgG → 确诊AIHA<br><br>
+
+      <b>2. 为什么AIHA可以是SLE的首发表现？</b><br>
+      ⑥ SLE产生多种自身抗体，其中部分与红细胞膜抗原有<b>交叉反应</b><br>
+      ⑦ 在儿童中，<b>血液系统异常</b>是SLE最常见的首发表现之一（发生率34-82.7%）<br>
+      ⑧ AIHA可以是SLE诊断前<b>数月甚至数年</b>的唯一表现<br>
+      ⑨ <b>教训</b>：任何儿童AIHA都应筛查ANA、抗dsDNA、补体C3/C4<br><br>
+
+      <b>3. 面神经麻痹与NP-SLE</b><br>
+      ⑩ 本例4岁女孩出现<b>左侧面神经麻痹（第七颅神经）</b><br>
+      ⑪ 头颅MRI未见脑实质病变 → 考虑<b>免疫介导的周围神经病变</b>（而非中枢病变）<br>
+      ⑫ 可能机制：自身抗体/免疫复合物损伤面神经的微血管供应<br>
+      ⑬ NP-SLE不仅包括中枢表现（癫痫、精神病），也包括<b>周围神经和颅神经病变</b><br>
+      ⑭ 面神经麻痹在cSLE中不常见但已有报道，通常对免疫抑制治疗反应良好<br><br>
+
+      <b>4. LAHPS的出血vs APS的血栓 — 同一抗体的不同表现</b><br>
+
+      <table>
+        <tr><th>特征</th><th>APS（血栓型）</th><th>LAHPS（出血型）</th></tr>
+        <tr><td class="b">LA作用</td><td>促凝（激活血小板/内皮）</td><td>促凝 + 中和凝血酶原</td></tr>
+        <tr><td class="b">凝血酶原水平</td><td>正常</td><td><b>显著降低</b></td></tr>
+        <tr><td class="b">临床表现</td><td>血栓（脑梗、DVT等）</td><td>出血（鼻衄、消化道、瘀斑）</td></tr>
+        <tr><td class="b">PT</td><td>正常</td><td><b>延长</b></td></tr>
+        <tr><td class="b">aPTT</td><td>延长（体外假象）</td><td><b>延长</b>（体外假象+体内真实）</td></tr>
+        <tr><td class="b">治疗</td><td>抗凝</td><td>免疫抑制（<b>不可抗凝</b>）</td></tr>
+        <tr><td class="b">在SLE中频率</td><td>较常见</td><td>罕见</td></tr>
+      </table>
+
+      <div class="note" style="border-left-color:var(--red);margin-top:6px;">
+        <b>🔥 临床陷阱：</b>当SLE患者同时出现aPTT延长和出血时，不能简单假设"凝血因子缺乏"或"DIC"→ 必须查LA和凝血因子II水平。LAHPS的诊断直接影响治疗选择：LAHPS需要免疫抑制而非抗凝，误诊为DIC而补充凝血因子可能延误根本治疗。
+      </div>
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① <b>儿童贫血必须查网织红细胞和Coombs试验</b> — 缺铁性贫血不会网织红升高<br>
+      ② AIHA作为SLE首发表现不少见，尤其在年幼儿童<br>
+      ③ SLE患者出现出血时，不要忘记LAHPS（查凝血因子II）<br>
+      ④ 面神经麻痹可以是NP-SLE的表现，即使MRI正常<br>
+      ⑤ 4岁起病的SLE极为少见但确实存在 → 幼儿贫血+发热+皮疹应警惕<br><br>
+
+      <b>治疗层面：</b><br>
+      ⑥ AIHA一线治疗：<b>糖皮质激素</b>（抑制自身抗体介导的溶血）<br>
+      ⑦ LAHPS的治疗核心是<b>免疫抑制</b>（减少LA和抗凝血酶原抗体）<br>
+      ⑧ <b>不可对LAHPS患者抗凝</b>（与APS治疗相反！）<br>
+      ⑨ 联合免疫抑制可有效控制多系统受累<br><br>
+
+      <b>本例教训：</b><br>
+      ⑩ <b>"简单的贫血"可能掩盖严重的自身免疫疾病</b> — 4周的延误诊断<br>
+      ⑪ 初诊贫血时应完善基本筛查（Ret、Coombs、LDH、间接胆红素）<br>
+      ⑫ cSLE的血液系统表现可以<b>先于</b>其他系统症状出现
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/APS.html" style="text-decoration:none"><span class="tag t-r">📋 APS专题</span></a>
+      <a href="case_cSLE_CAPS.html" style="text-decoration:none"><span class="tag t-a">📋 灾难性APS</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Lu Y, Huang XM. <i>Autoimmune hemolytic anemia as an initial presentation in children with systemic lupus erythematosus: two case reports</i>. J Int Med Res. 2022;50(8):3000605221115390.<br>
+      PMCID: PMC9386865 | PMID: 35971316 | DOI: 10.1177/03000605221115390
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_pancreatitis_MAS.html" style="display:inline-block;padding:6px 12px;background:var(--text3);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 病例5：胰腺炎+MAS</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 35971316）· 不构成诊疗建议 · cSLE病例专题 第6篇
+  </div>
+</div>
+
+</body>
+</html>
