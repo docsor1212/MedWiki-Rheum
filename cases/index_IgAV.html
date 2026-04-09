@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IgAV临床病例专题</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:14px 20px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+.body { padding:12px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+.b { font-weight:700; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.card { border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:box-shadow .2s; cursor:pointer; }
+.card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card .c-title { font-weight:700; font-size:13px; margin-bottom:3px; }
+.card .c-sub { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.card .c-tags { margin-top:4px; display:flex; flex-wrap:wrap; gap:3px; }
+a { text-decoration:none; color:inherit; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
+.stat b { font-size:14px; }
+</style>
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../topics/IgAV.html">📋 IgAV专题</a><a href="index.html">📖 全部病例</a><span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">IgAV专题</span></div>
+<div class="wrap">
+  <div class="header"><h1>🔬 IgAV临床病例专题</h1><div class="sub">IgA血管炎（过敏性紫癜）— 5个真实世界病例</div></div>
+  <div class="body">
+    <div class="stats"><div class="stat">病例 <b>5</b></div><div class="stat">文献 <b>5</b> 篇</div></div>
+    <div class="sh">📋 病例列表</div>
+    <a href="case_IgAV_nephritis.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">① IgAV肾炎 — 肾脏受累</div><div class="c-sub">PMID 36942172 · Cureus 2023</div><div class="c-tags"><span class="tag t-r">肾炎</span><span class="tag t-a">IgA沉积</span></div></div></a>
+    <a href="case_IgAV_GI.html"><div class="card" style="border-left:4px solid var(--yellow);"><div class="c-title">② IgAV消化道并发症</div><div class="c-sub">PMID 40184107 · Medicine 2025</div><div class="c-tags"><span class="tag t-y">消化道出血</span><span class="tag t-y">肠套叠风险</span></div></div></a>
+    <a href="case_IgAV_CNS.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">③ IgAV神经系统受累</div><div class="c-sub">PMID 34867743 · Front Neurol 2021</div><div class="c-tags"><span class="tag t-r">CNS受累</span><span class="tag t-y">癫痫</span></div></div></a>
+    <a href="case_IgAV_pulmonary.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">④ IgAV合并肺出血</div><div class="c-sub">PMID 10452284 · Pediatr Nephrol 1999</div><div class="c-tags"><span class="tag t-r">肺出血</span><span class="tag t-r">致死性</span></div></div></a>
+    <a href="case_IgAV_special.html"><div class="card" style="border-left:4px solid var(--yellow);"><div class="c-title">⑤ 非典型IgAV — 皮疹+肾功能异常</div><div class="c-sub">PMID 38984230 · HCA Healthc J Med 2024</div><div class="c-tags"><span class="tag t-y">非典型</span><span class="tag t-y">成人IgAV</span></div></div></a>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:10.5px;color:var(--text2);line-height:1.6;">
+      ① PMID: 36942172 ② PMID: 40184107 ③ PMID: 34867743 ④ PMID: 10452284 ⑤ PMID: 38984230
+    </div>
+  </div>
+  <div class="footer">MedWiki-Rheum · IgAV临床病例专题 · 不构成诊疗建议</div>
+</div>
+</body>
+</html>
