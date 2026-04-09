@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：cSLE合并灾难性抗磷脂综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.caps-box { background:#fce4ec; border:1px solid #ef9a9a; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.caps-box .m-title { font-weight:700; font-size:12px; color:#c62828; }
+@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JSLE.html">📋 cSLE专题</a>
+  <a href="index_cSLE.html">📖 cSLE病例专题</a>
+  <span class="nav-title">灾难性APS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：cSLE合并灾难性抗磷脂综合征（CAPS）</h1>
+      <div class="sub">8岁男孩 — 同时出现出血与血栓，向CAPS进展的危急历程</div>
+    </div>
+    <div class="meta">更新: 2026-04-10</div>
+  </div>
+
+  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:130px">患者</td><td>8岁，男性</td></tr>
+      <tr><td class="b">就诊机构</td><td>印度布巴内斯瓦尔，Kalinga Institute of Medical Sciences，儿科+风湿科</td></tr>
+      <tr><td class="b">既往史</td><td>既往体健，无特殊病史及家族史</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">CAPS</span> <span class="tag t-r">出血+血栓并存</span> <span class="tag t-r">8岁男童</span> <span class="tag t-g">成功抢救</span></td></tr>
+    </table>
+
+    <div class="alert">
+      <b>本病例独特性：</b>① <b>8岁男童</b>以APS为SLE首发表现（极为少见，SLE多见于青春期女性）；② 同时出现<b>出血（皮肤瘀斑、鼻衄、脑出血）和血栓（脑梗、指端坏疽）</b>，APS中罕见；③ 向<b>CAPS（Catastrophic Antiphospholipid Syndrome，灾难性抗磷脂综合征）</b>进展过程中成功抢救。
+    </div>
+
+    <!-- 起病 -->
+    <div class="sh red">🔴 起病表现 — 出血征象</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">就诊时</div>
+        <div class="t-content">
+          8岁男孩，既往体健，出现：<br>
+          • <b>皮肤瘀斑（Ecchymotic patches）</b> — 广泛皮下出血<br>
+          • <b>鼻衄（Epistaxis）</b> — 反复鼻出血<br>
+          • <b>右侧偏瘫（Right hemiparesis）</b> — 脑血管事件<br><br>
+          <b>首诊实验室检查：</b><br>
+          • 血小板（PLT，Platelet）：<b>重度减少</b><br>
+          • aPTT（Activated Partial Thromboplastin Time，活化部分凝血活酶时间）：<b>显著延长</b><br>
+          • <b>混合试验（Mixing Study）不纠正</b> → 提示存在<b>狼疮抗凝物（LA，Lupus Anticoagulant）</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="border-left-color:var(--yellow);">
+      <b>🔑 混合试验（Mixing Study）的临床价值：</b>aPTT延长+混合试验不纠正 = 存在抑制物（如狼疮抗凝物）。这是一个简单但关键的检查，可避免不必要的凝血因子检查，快速指向自身免疫方向。
+    </div>
+
+    <!-- 血栓事件 -->
+    <div class="sh red">⚡ 住院期间 — 血栓事件进展</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">住院第X天 — 脑出血</div>
+        <div class="t-content">
+          <b>神经影像学：</b>头颅影像显示<b>出血性脑卒中（Hemorrhagic Stroke）</b><br>
+          → 右侧偏瘫的原因：脑出血
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">住院进展 — 血栓事件</div>
+        <div class="t-content">
+          住院期间出现<b>两个新的血栓事件</b>：<br><br>
+          ① <b>左侧局灶性癫痫（Left focal seizure）</b><br>
+          　→ 神经影像：<b>双侧大脑中动脉（MCA，Middle Cerebral Artery）供血区脑梗死</b><br><br>
+          ② <b>指端坏疽（Digital Gangrene）</b><br>
+          　→ 手指末端缺血性坏死 — 外周动脉血栓<br><br>
+          <span class="tag t-r">出血+血栓并存</span> — <b>同时存在出血性和缺血性表现</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="caps-box">
+      <div class="m-title">⚠️ 为什么APS会"又出血又血栓"？（机制解析）</div>
+      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
+        <b>血栓方面（APS核心机制）：</b><br>
+        • 抗磷脂抗体（aPL，Antiphospholipid Antibody）与β2-GP1结合 → 激活血小板和内皮细胞<br>
+        • 内皮细胞活化 → 组织因子表达↑ → <b>外源性凝血途径激活 → 血栓形成</b><br>
+        • 同时抑制蛋白C/蛋白S/S系统 → 天然抗凝功能丧失<br><br>
+        <b>出血方面（本例特殊之处）：</b><br>
+        • <b>重度血小板减少</b>（aPL介导的血小板破坏）→ 出血倾向<br>
+        • <b>狼疮抗凝物</b>在体外延长aPTT（"抗凝"假象），但体内实际是<b>促凝</b>的<br>
+        • 脑出血可能因血小板减少+高血压（SLE肾损）共同导致<br>
+        • <b>凝血酶原时间（PT）</b>可能因肝脏受累或DIC而延长<br><br>
+        <b>出血+血栓共存 = CAPS的核心矛盾</b>：治疗上既要抗凝（防血栓）又要止血（防出血），极具挑战性。
+      </div>
+    </div>
+
+    <!-- 确诊 -->
+    <div class="sh">🔬 确诊依据</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>SLE诊断（SLICC-2012标准）：</b><br>
+      • ANA（抗核抗体）阳性<br>
+      • 抗dsDNA抗体阳性<br>
+      • 血小板减少<br>
+      • 神经精神受累（癫痫、脑卒中）<br>
+      • 皮肤表现（瘀斑/血管炎）<br>
+      → <span class="tag t-a">满足SLICC-2012分类标准 → 确诊cSLE</span><br><br>
+
+      <b>APS诊断（2006年修订悉尼标准）：</b><br>
+      • 临床标准：脑梗死 + 指端坏疽（血管血栓）<br>
+      • 实验室标准：狼疮抗凝物（LA）阳性、aPTT延长+混合试验不纠正<br>
+      → <span class="tag t-r">满足APS分类标准</span><br><br>
+
+      <b>CAPS评估：</b><br>
+      • ≥3个器官系统受累（中枢神经+外周血管+血液）<br>
+      • 短时间内快速进展<br>
+      • <span class="tag t-r">临床诊断：向CAPS进展</span>
+    </div>
+
+    <!-- 治疗 -->
+    <div class="sh green">💊 紧急抢救方案</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">三联抢救方案</div>
+        <div class="t-content">
+          <b>1. 静脉甲泼尼龙冲击（IV Pulse Methylprednisolone）</b><br>
+          → 快速抑制全身免疫炎症<br>
+          → 控制SLE活动和aPL介导的内皮损伤<br><br>
+
+          <b>2. 静脉环磷酰胺（IV Cyclophosphamide）</b><br>
+          → 针对SLE的基础免疫抑制<br>
+          → 减少自身抗体（包括aPL）的产生<br><br>
+
+          <b>3. 血浆置换（Plasmapheresis / Plasma Exchange, PEX）</b><br>
+          → <b>快速清除循环中的aPL、免疫复合物、炎性因子</b><br>
+          → CAPS的抢救核心措施之一<br>
+          → 同时补充新鲜冰冻血浆（FFP）纠正凝血异常
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">转归 — 成功抢救</div>
+        <div class="t-content">
+          <b>三联方案治疗后：</b><br>
+          • 血小板计数逐步恢复<br>
+          • 无新发血栓事件<br>
+          • 无新发出血事件<br>
+          • 神经系统症状稳定<br>
+          <span class="tag t-g">成功阻止CAPS进展，患者康复</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh yellow">🔬 cSLE-CAPS的病理机制（深度解析）</div>
+
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+      <b>1. 抗磷脂抗体（aPL）的多重致病作用</b><br><br>
+
+      <b>对内皮细胞的作用：</b><br>
+      ① aPL与内皮细胞表面的β2-GP1结合 → 上调<b>组织因子（TF）</b>表达<br>
+      ② TF激活外源性凝血途径 → 凝血酶生成 → 纤维蛋白沉积 → <b>血栓形成</b><br>
+      ③ 内皮细胞活化还释放vWF（von Willebrand Factor，血管性血友病因子）→ 促进血小板聚集<br><br>
+
+      <b>对血小板的作用：</b><br>
+      ④ aPL直接结合血小板膜磷脂 → 血小板活化聚集<br>
+      ⑤ 但同时也导致<b>血小板消耗和破坏</b>→ 血小板减少→ 出血倾向<br>
+      ⑥ 本例中重度血小板减少是出血的主要原因之一<br><br>
+
+      <b>对补体的作用：</b><br>
+      ⑦ aPL激活补体 cascade → C5a、C5b-9（膜攻击复合物）生成<br>
+      ⑧ 补体介导的血管损伤 → 加重血栓性微血管病变<br>
+      ⑨ 补体消耗也可影响凝血平衡<br><br>
+
+      <b>2. CAPS vs 单纯APS — 从"局部"到"全身风暴"</b><br>
+
+      <table>
+        <tr><th>特征</th><th>单纯APS</th><th>CAPS</th></tr>
+        <tr><td class="b">受累器官</td><td>通常1个（如深静脉、脑）</td><td>≥3个器官同时/序贯受累</td></tr>
+        <tr><td class="b">进展速度</td><td>慢性/反复</td><td>数小时至数天内快速恶化</td></tr>
+        <tr><td class="b">死亡率</td><td>&lt;5%</td><td>~50%（未经治疗）</td></tr>
+        <tr><td class="b">实验室</td><td>aPL阳性</td><td>aPL阳性 + DIC样表现</td></tr>
+        <tr><td class="b">治疗</td><td>抗凝为主</td><td>抗凝+激素+血浆置换/IVIG</td></tr>
+      </table>
+
+      <b>3. 儿童CAPS的特殊性</b><br>
+      ⑩ 儿童CAPS中，<b>SLE是最大宗的原发病</b>（约40-50%）<br>
+      ⑪ 儿童CAPS的感染触发比例高于成人<br>
+      ⑫ 本例8岁男童非常少见 — cSLE发病年龄中位数为12-13岁，<8岁男性更为罕见<br>
+      ⑬ CAPS的早期识别依赖于<b>多器官快速受累的警惕性</b>：当APS患者出现新的器官受累时，必须考虑CAPS可能<br><br>
+
+      <b>4. 血浆置换为什么是CAPS的"救命神器"？</b><br>
+      ⑭ <b>快速清除</b>循环中的aPL — 几小时内显著降低抗体滴度<br>
+      ⑮ 清除炎性细胞因子（TNF-α、IL-6）— 减轻"细胞因子风暴"<br>
+      ⑯ 清除免疫复合物 — 减少补体激活<br>
+      ⑰ 同时补充FFP — 补充凝血因子和天然抗凝物质（蛋白C/S、抗凝血酶）<br>
+      ⑱ 与静脉激素+CTX合用形成<b>三重打击</b>：清除（PEX）+ 抑制（激素）+ 根治（CTX）
+    </div>
+
+    <div class="sh green">📚 临床要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>诊断层面：</b><br>
+      ① <b>出血+血栓并存</b>时应高度怀疑APS — 不要被出血误导而忽略血栓<br>
+      ② aPTT延长+<b>混合试验不纠正</b> → 快速指向狼疮抗凝物<br>
+      ③ <b>简单出血可能掩盖严重的自身免疫疾病</b> — 本例以瘀斑和鼻衄起病<br>
+      ④ 儿童CAPS中SLE是最常见的原发病<br><br>
+
+      <b>治疗层面：</b><br>
+      ⑤ CAPS三联方案：<b>抗凝 + 激素冲击 + 血浆置换</b><br>
+      ⑥ 环磷酰胺用于控制SLE基础病，减少aPL持续产生<br>
+      ⑦ 出血+血栓并存的治疗矛盾需<b>个体化平衡</b>——先控制出血源，再抗凝<br>
+      ⑧ 血浆置换是CAPS抢救的核心措施<br><br>
+
+      <b>随访层面：</b><br>
+      ⑨ CAPS幸存者需要<b>长期抗凝</b>（华法林或DOAC）<br>
+      ⑩ 定期监测aPL滴度（LA、抗β2-GP1、抗心磷脂抗体）<br>
+      ⑪ 避免CAPS触发因素：感染、手术、停药
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/JSLE.html" style="text-decoration:none"><span class="tag t-a">📋 cSLE专题</span></a>
+      <a href="../topics/APS.html" style="text-decoration:none"><span class="tag t-r">📋 APS专题</span></a>
+      <a href="case_cSLE_MAS_neuro.html" style="text-decoration:none"><span class="tag t-a">⬅ MAS+脑病变</span></a>
+    </div>
+
+    <div class="sh">📖 文献来源</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      Rup AR, Dash AK, Behera JR, et al. <i>Antiphospholipid Antibody Syndrome in Childhood Systemic Lupus Erythematous With a Unique Presentation: A Case Report</i>. Cureus. 2022;14(7):e27205.<br>
+      PMCID: PMC9398199 | PMID: 36035039 | DOI: 10.7759/cureus.27205
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="index_cSLE.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">📋 返回cSLE专题目录</a>
+    <a href="case_cSLE_MAS_neuro.html" style="display:inline-block;padding:6px 12px;background:var(--text3);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 病例2：MAS+脑病变</a>
+    <a href="case_cSLE_refractory_NPSLE.html" style="display:inline-block;padding:6px 12px;background:var(--yellow);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：难治性NP-SLE ➡</a>
+  </div>
+
+  <div class="footer">
+    基于已发表文献（PMID: 36035039）· 不构成诊疗建议 · cSLE病例专题 第3篇
+  </div>
+</div>
+
+</body>
+</html>
