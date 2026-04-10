@@ -24,13 +24,6 @@ label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-
 .input-group{margin-bottom:10px;}
 input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
 input[type=number]:focus,select:focus{border-color:var(--accent);}
-.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
-.btn-primary{background:var(--accent);color:#fff;}
-.btn-primary:hover{background:var(--accent-dark);}
-.btn-reset{background:var(--red-bg);color:var(--red);}
-.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
-.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
-.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
 table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
 th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
 th.yellow-hd{background:var(--yellow-bg);color:var(--yellow);}
@@ -50,13 +43,17 @@ tr:hover td{background:#f8fafa;}
 .footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
 .footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
 .footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.8rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
 .formula-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:8px;margin-bottom:6px;transition:all 0.2s;}
 .formula-row:hover{transform:translateX(2px);}
-.formula-name{font-size:0.78rem;font-weight:700;min-width:140px;}
-.formula-val{font-size:1.1rem;font-weight:900;color:var(--accent);text-align:right;}
+.formula-name{font-size:0.78rem;font-weight:700;min-width:100px;}
+.formula-val{font-size:1.05rem;font-weight:900;text-align:right;}
 .formula-tag{font-size:0.6rem;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:6px;}
-.highlight-row{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);}
-@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}.formula-name{min-width:100px;font-size:0.72rem;}.formula-val{font-size:0.95rem;}}
+.step-box{background:#f4fafa;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.75rem;color:var(--text2);line-height:1.7;}
+.step-box b{color:var(--accent);}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}.formula-name{min-width:80px;font-size:0.72rem;}.formula-val{font-size:0.92rem;}}
 </style>
 <link rel="manifest" href="../manifest.json">
 <meta name="theme-color" content="#20a39e">
@@ -69,37 +66,76 @@ tr:hover td{background:#f8fafa;}
 <div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">BSA 体表面积</span></div>
 <div class="wrap">
 
-<div class="card">
+<!-- ===== 卡片1：中国教材公式（仅需体重）===== -->
+<div class="card" style="border-color:var(--accent);box-shadow:0 4px 16px rgba(32,163,158,0.12);">
 <h1>BSA <span>体表面积</span></h1>
-<div class="sub">Body Surface Area · 5种公式同时对比 · 儿科药物剂量计算</div>
+<div class="sub">中国教材公式 · 仅需体重 · 快速计算</div>
 
-<div class="section-title">📐 输入参数</div>
-
-<div class="input-group">
-<label>身高（cm）</label>
-<input type="number" id="height" min="40" max="200" step="0.1" value="120" oninput="calc()">
-</div>
+<div class="section-title">⭐ 中国教材公式（诸福棠《实用儿科学》第8版）</div>
 
 <div class="input-group">
 <label>体重（kg）</label>
-<input type="number" id="weight" min="2" max="150" step="0.1" value="25" oninput="calc()">
+<input type="number" id="cn_weight" min="2" max="150" step="0.1" value="25" oninput="calcCN()">
 </div>
 
-<div class="section-title green">📊 5种公式实时对比</div>
+<div class="result-box">
+<div class="result-label" id="cn_formula_used">≤30kg: BSA = 体重 × 0.035 + 0.1</div>
+<div class="result-num" id="cn_result">0.98</div>
+<div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-top:2px;">m²</div>
+</div>
 
-<div class="formula-row highlight-row" style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);">
+<div class="step-box" id="cn_steps"></div>
+
+<div id="cn_mtx" style="margin-top:10px;padding:10px 14px;background:#fef3e2;border-radius:10px;font-size:0.78rem;"></div>
+</div>
+
+<!-- ===== 卡片2：中国教材公式（体重>30kg分段）===== -->
+<div class="card" style="border-color:#7c3aed;box-shadow:0 4px 12px rgba(124,58,237,0.08);">
+<div class="section-title purple">📐 公式说明</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;">
+<div style="background:var(--accent-bg);border-radius:10px;padding:12px;">
+<div style="font-size:0.68rem;font-weight:700;color:var(--accent);margin-bottom:4px;">体重 ≤ 30kg</div>
+<div style="font-size:0.95rem;font-weight:800;color:var(--text);text-align:center;">BSA = W × 0.035 + 0.1</div>
+<div style="font-size:0.65rem;color:var(--text2);margin-top:4px;">例：15kg → 15×0.035+0.1 = <b>0.625 m²</b></div>
+</div>
+<div style="background:#ede5fc;border-radius:10px;padding:12px;">
+<div style="font-size:0.68rem;font-weight:700;color:#7c3aed;margin-bottom:4px;">体重 > 30kg</div>
+<div style="font-size:0.95rem;font-weight:800;color:var(--text);text-align:center;">BSA = (W-30)×0.02 + 1.05</div>
+<div style="font-size:0.65rem;color:var(--text2);margin-top:4px;">例：50kg → (50-30)×0.02+1.05 = <b>1.45 m²</b></div>
+</div>
+</div>
+<div style="font-size:0.68rem;color:var(--text2);margin-top:6px;padding:6px 8px;background:#faf8f5;border-radius:6px;">
+来源：诸福棠《实用儿科学》第8/9版、《儿科学》教材（人民卫生出版社）。国内儿科药物剂量计算最常用公式，仅需体重、无需身高。
+</div>
+</div>
+
+<!-- ===== 卡片3：5种公式对比（需身高+体重）===== -->
+<div class="card">
+<div class="section-title green">📊 5种公式实时对比（身高+体重）</div>
+
+<div class="input-group" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<div>
+<label>身高（cm）</label>
+<input type="number" id="height" min="40" max="200" step="0.1" value="120" oninput="calcAll()">
+</div>
+<div>
+<label>体重（kg）</label>
+<input type="number" id="weight" min="2" max="150" step="0.1" value="25" oninput="calcAll()">
+</div>
+</div>
+
+<div class="formula-row" style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);">
 <div style="display:flex;align-items:center;">
-<span class="formula-name" style="color:var(--accent);">中国教材公式</span>
-<span class="formula-tag" style="background:var(--accent-bg);color:var(--accent);">⭐ 推荐</span>
+<span class="formula-name" style="color:var(--accent);">中国教材</span>
+<span class="formula-tag" style="background:var(--accent-bg);color:var(--accent);">⭐仅需体重</span>
 </div>
-<div class="formula-val" id="cn_val">—</div>
+<div class="formula-val" id="cn_val" style="color:var(--accent);">—</div>
 </div>
-<div style="font-size:0.68rem;color:var(--text2);margin:-4px 0 6px 12px;padding:0 8px;" id="cn_formula_text">≤30kg: 体重×0.035+0.1 | >30kg: (体重-30)×0.02+1.05</div>
 
 <div class="formula-row" style="background:#fef3e2;border:1px solid #f5dfa0;">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:var(--yellow);">Mosteller</span>
-<span class="formula-tag" style="background:var(--yellow-bg);color:var(--yellow);">通用</span>
+<span class="formula-tag" style="background:var(--yellow-bg);color:var(--yellow);">√(H×W/3600)</span>
 </div>
 <div class="formula-val" id="mosteller_val" style="color:var(--yellow);">—</div>
 </div>
@@ -128,85 +164,92 @@ tr:hover td{background:#f8fafa;}
 <div class="formula-val" id="stevenson_val" style="color:#7c3aed;">—</div>
 </div>
 
-<div style="text-align:center;margin-top:10px;">
-<div id="mtx_info" style="font-size:0.75rem;color:#64748b;padding:8px;background:#f4fafa;border-radius:8px;"></div>
-</div>
+<div style="font-size:0.68rem;color:var(--text2);margin-top:4px;padding:4px 8px;">⚠️ 各公式差异约±3-8%，临床应遵循所在医院指定公式</div>
 </div>
 
 <!-- 公式详情 -->
 <div class="card">
-<div class="section-title purple">📐 公式详情</div>
+<div class="section-title purple">📋 公式来源</div>
 <table>
 <tr><th class="purple-hd">公式</th><th class="purple-hd">计算方法</th><th class="purple-hd">适用人群</th><th class="purple-hd">来源</th></tr>
-<tr style="background:#e6f5f4;"><td style="font-weight:700;color:var(--accent);">⭐ 中国教材公式</td><td>≤30kg: W×0.035+0.1<br>>30kg: (W-30)×0.02+1.05</td><td>儿科药物剂量计算<br>仅需体重</td><td style="font-size:0.68rem;">诸福棠《实用儿科学》<br>第8/9版<br>人卫《儿科学》教材</td></tr>
-<tr><td style="font-weight:700;color:var(--yellow);">Mosteller</td><td>√(H×W÷3600)</td><td>通用，成人儿童均可</td><td style="font-size:0.68rem;">N Engl J Med 1987<br>最简公式</td></tr>
-<tr><td style="font-weight:700;color:var(--green);">Haycock</td><td>0.024265×H<sup>0.3964</sup>×W<sup>0.5378</sup></td><td>⭐ 婴幼儿首选<br>新生儿-3岁精度最高</td><td style="font-size:0.68rem;">J Pediatr 1978<br>儿科文献引用最多</td></tr>
-<tr><td>Du Bois</td><td>0.007184×H<sup>0.725</sup>×W<sup>0.425</sup></td><td>经典公式<br>成人为主</td><td style="font-size:0.68rem;">Arch Intern Med 1916<br>最早的BSA公式</td></tr>
-<tr><td style="font-weight:700;color:#7c3aed;">Stevenson</td><td>0.0061×H + 0.0128×W - 0.1529</td><td>中国儿科常用<br>线性简便</td><td style="font-size:0.68rem;">国内儿科教材<br>仅身高体重线性</td></tr>
+<tr style="background:#e6f5f4;"><td style="font-weight:700;color:var(--accent);">⭐ 中国教材</td><td>≤30kg: W×0.035+0.1<br>>30kg: (W-30)×0.02+1.05</td><td>儿科药物剂量<br>仅需体重</td><td style="font-size:0.68rem;">诸福棠《实用儿科学》<br>人卫《儿科学》教材</td></tr>
+<tr><td style="font-weight:700;color:var(--yellow);">Mosteller</td><td>√(H×W÷3600)</td><td>通用</td><td style="font-size:0.68rem;">NEJM 1987</td></tr>
+<tr><td style="font-weight:700;color:var(--green);">Haycock</td><td>0.024265×H<sup>0.3964</sup>×W<sup>0.5378</sup></td><td>婴幼儿首选</td><td style="font-size:0.68rem;">J Pediatr 1978</td></tr>
+<tr><td>Du Bois</td><td>0.007184×H<sup>0.725</sup>×W<sup>0.425</sup></td><td>经典·成人</td><td style="font-size:0.68rem;">Arch Intern Med 1916</td></tr>
+<tr><td style="font-weight:700;color:#7c3aed;">Stevenson</td><td>0.0061×H+0.0128×W-0.1529</td><td>中国线性</td><td style="font-size:0.68rem;">国内儿科教材</td></tr>
 </table>
-<div style="font-size:0.68rem;color:var(--text2);margin-top:6px;padding:6px 8px;background:#faf8f5;border-radius:6px;">
-⚠️ 各公式结果差异约±3-8%。<b>中国教材公式</b>仅需体重、最简便，国内儿科药物剂量计算中广泛使用。<b>Haycock</b>在婴幼儿精度最高。<b>临床应遵循所在医院或指南指定的公式。</b>
-</div>
 </div>
 
 <!-- BSA相关剂量 -->
 <div class="card">
 <div class="section-title yellow">💊 常见BSA相关剂量参考</div>
 <table><tr><th class="yellow-hd">药物</th><th class="yellow-hd">剂量</th><th class="yellow-hd">说明</th></tr>
-<tr><td style="font-weight:700;color:#20a39e">MTX（甲氨蝶呤）</td><td>10-15 mg/m²/周</td><td>起始剂量，最大25 mg/m²/周</td></tr>
+<tr><td style="font-weight:700;color:#20a39e">MTX</td><td>10-15 mg/m²/周</td><td>起始剂量，最大25 mg/m²/周</td></tr>
 <tr><td>环磷酰胺</td><td>500-1000 mg/m²</td><td>静脉冲击，每月1次</td></tr>
 <tr><td>IVIG</td><td>2 g/kg</td><td>KD方案：分2-5天</td></tr></table>
 </div>
 
+<div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="MTX_dose.html" style="color:#20a39e;font-weight:600">MTX剂量</a> · <a href="BMI_Zscore.html" style="color:#20a39e;font-weight:600">BMI Z评分</a> · <a href="JADAS27.html" style="color:#20a39e;font-weight:600">JADAS-27</a></div>
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入体重后自动计算...</div>
+<div class="footer-score"><div class="lbl">BSA</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+
 <script>
-function calc(){
+function calcCN(){
+  const w=+document.getElementById('cn_weight').value;
+  if(w<=0)return;
+  let bsa,formula,steps;
+  if(w<=30){
+    bsa=w*0.035+0.1;
+    formula='≤30kg: BSA = '+w+' × 0.035 + 0.1';
+    steps='计算步骤：<b>'+w+' × 0.035 = '+(w*0.035).toFixed(3)+'</b><br>→ <b>'+(w*0.035).toFixed(3)+' + 0.1 = '+bsa.toFixed(4)+' m²</b>';
+  } else {
+    bsa=(w-30)*0.02+1.05;
+    formula='>30kg: BSA = ('+w+'-30) × 0.02 + 1.05';
+    steps='计算步骤：<b>'+w+' - 30 = '+(w-30).toFixed(1)+'</b><br>→ <b>'+(w-30).toFixed(1)+' × 0.02 = '+((w-30)*0.02).toFixed(3)+'</b><br>→ <b>'+((w-30)*0.02).toFixed(3)+' + 1.05 = '+bsa.toFixed(4)+' m²</b>';
+  }
+  document.getElementById('cn_result').textContent=bsa.toFixed(3);
+  document.getElementById('cn_formula_used').textContent=formula;
+  document.getElementById('cn_steps').innerHTML=steps;
+  
+  const mtLow=(bsa*10).toFixed(0), mtHigh=(bsa*15).toFixed(0), mtMax=(bsa*25).toFixed(0);
+  const cpmLow=(bsa*500).toFixed(0), cpmHigh=(bsa*1000).toFixed(0);
+  document.getElementById('cn_mtx').innerHTML='💡 MTX起始：<b>'+mtLow+'-'+mtHigh+' mg/周</b>（最大'+mtMax+' mg/周）&nbsp;&nbsp;|&nbsp;&nbsp;环磷酰胺：<b>'+cpmLow+'-'+cpmHigh+' mg</b>/月';
+  
+  document.getElementById('footerScore').textContent=bsa.toFixed(2)+' m²';
+  document.getElementById('footerStatus').textContent=bsa.toFixed(2)+' m²';
+  document.getElementById('footerStatus').style.background='#20a39e';
+  document.getElementById('pathLine').textContent='体重'+w+'kg'+(w<=30?' (≤30kg)':' (>30kg)');
+}
+
+function calcAll(){
   const h=+document.getElementById('height').value;
   const w=+document.getElementById('weight').value;
   if(h<=0||w<=0)return;
   
-  // 中国教材公式
-  const cn = w<=30 ? (w*0.035+0.1) : ((w-30)*0.02+1.05);
+  const cn=w<=30?(w*0.035+0.1):((w-30)*0.02+1.05);
   document.getElementById('cn_val').textContent=cn.toFixed(3)+' m²';
   
-  // Mosteller
-  const mosteller = Math.sqrt(h*w/3600);
+  const mosteller=Math.sqrt(h*w/3600);
   document.getElementById('mosteller_val').textContent=mosteller.toFixed(3)+' m²';
   
-  // Haycock
-  const haycock = 0.024265*Math.pow(h,0.3964)*Math.pow(w,0.5378);
+  const haycock=0.024265*Math.pow(h,0.3964)*Math.pow(w,0.5378);
   document.getElementById('haycock_val').textContent=haycock.toFixed(3)+' m²';
   
-  // Du Bois
-  const dubois = 0.007184*Math.pow(h,0.725)*Math.pow(w,0.425);
+  const dubois=0.007184*Math.pow(h,0.725)*Math.pow(w,0.425);
   document.getElementById('dubois_val').textContent=dubois.toFixed(3)+' m²';
   
-  // Stevenson
-  const stevenson = 0.0061*h + 0.0128*w - 0.1529;
+  const stevenson=0.0061*h+0.0128*w-0.1529;
   document.getElementById('stevenson_val').textContent=Math.max(0,stevenson).toFixed(3)+' m²';
-  
-  // 使用中国教材公式的MTX剂量
-  const mtLow=(cn*10).toFixed(0);
-  const mtHigh=(cn*15).toFixed(0);
-  const mtMax=(cn*25).toFixed(0);
-  document.getElementById('mtx_info').innerHTML=`💡 按中国教材BSA <b>${cn.toFixed(2)} m²</b> → MTX起始：<b>${mtLow}-${mtHigh} mg/周</b>（最大${mtMax} mg/周）`;
-  
-  // Footer
-  document.getElementById('footerScore').textContent=cn.toFixed(2)+' m²';
-  document.getElementById('footerStatus').textContent=`${cn.toFixed(2)} m²`;
-  document.getElementById('footerStatus').style.background='#20a39e';
-  document.getElementById('pathLine').textContent=`身高${h}cm · 体重${w}kg`;
 }
-calc();
+
+calcCN();
+calcAll();
 </script>
-
-<div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="MTX_dose.html" style="color:#20a39e;font-weight:600">MTX剂量</a> · <a href="BMI_Zscore.html" style="color:#20a39e;font-weight:600">BMI Z评分</a> · <a href="JADAS27.html" style="color:#20a39e;font-weight:600">JADAS-27</a></div>
-
-<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。<br>中国教材公式来源：诸福棠《实用儿科学》第8版、《儿科学》教材（人民卫生出版社）</div>
-</div>
-<div class="sticky-footer"><div class="sticky-inner">
-<div class="footer-path" id="pathLine">输入参数后自动计算...</div>
-<div class="footer-score"><div class="lbl">BSA</div><div class="num" id="footerScore">—</div></div>
-<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
-</div></div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 </body></html>
