@@ -1,18 +1,129 @@
-const CACHE_NAME = 'medwiki-v2';
-const ASSETS = ['./', './cases/case_AID_CAPS.html', './cases/case_AID_FMF.html', './cases/case_AID_NLRC4.html', './cases/case_AID_SAVI.html', './cases/case_AID_TRAPS.html', './cases/case_ITP_Evans.html', './cases/case_ITP_TPO.html', './cases/case_ITP_acute.html', './cases/case_ITP_chronic.html', './cases/case_ITP_secondary.html', './cases/case_IgAV_CNS.html', './cases/case_IgAV_GI.html', './cases/case_IgAV_nephritis.html', './cases/case_IgAV_pulmonary.html', './cases/case_IgAV_special.html', './cases/case_JDM_ILD.html', './cases/case_JDM_calcinosis.html', './cases/case_JDM_refractory.html', './cases/case_JDM_special.html', './cases/case_JDM_typical.html', './cases/case_JIA_polyarticular.html', './cases/case_KD_IVIG_resistant.html', './cases/case_KD_giant_CAL.html', './cases/case_KD_incomplete.html', './cases/case_KD_infant.html', './cases/case_KD_shock.html', './cases/case_PID_ALPS.html', './cases/case_PID_CGD.html', './cases/case_PID_CVID.html', './cases/case_PID_SCID.html', './cases/case_PID_XLA.html', './cases/case_SLE_APLS.html', './cases/case_SLE_drug_induced.html', './cases/case_SLE_lupus_nephritis.html', './cases/case_SLE_macrophage.html', './cases/case_SLE_neuropsychiatric.html', './cases/case_Uveitis_Behcet.html', './cases/case_Uveitis_JIA.html', './cases/case_Uveitis_TINU.html', './cases/case_Uveitis_Vogt.html', './cases/case_Uveitis_infectious.html', './cases/case_cSLE_AIHA_LAHPS.html', './cases/case_cSLE_CAPS.html', './cases/case_cSLE_MAS_neuro.html', './cases/case_cSLE_infantile_LN_PE.html', './cases/case_cSLE_pancreatitis_MAS.html', './cases/case_cSLE_recurrent_MAS.html', './cases/case_cSLE_refractory_NPSLE.html', './cases/case_sJIA_MAS.html', './cases/case_sJIA_biologic_MAS.html', './cases/case_sJIA_early_MAS.html', './cases/case_sJIA_refractory.html', './cases/case_sJIA_typical.html', './cases/index.html', './cases/index_AID.html', './cases/index_ITP.html', './cases/index_IgAV.html', './cases/index_JDM.html', './cases/index_KD.html', './cases/index_PID.html', './cases/index_SLE.html', './cases/index_Uveitis.html', './cases/index_cSLE.html', './clinical_tools/web_tools/aps_classification.html', './clinical_tools/web_tools/index.html', './clinical_tools/web_tools/sle_2019_eular_acr.html', './clinical_tools/web_tools/sledai_2000.html', './clinical_tools/web_tools/tma_card.html', './drugs/IVIG.html', './drugs/MTX.html', './drugs/NSAIDs.html', './drugs/anakinra.html', './drugs/azathioprine.html', './drugs/biologics.html', './drugs/calcium_vitd.html', './drugs/corticosteroids_IV.html', './drugs/cyclosporine.html', './drugs/glucocorticoids.html', './drugs/mycophenolate.html', './drugs/tacrolimus.html', './drugs/tocilizumab.html', './icons/icon-192.png', './icons/icon-512.png', './index.html', './manifest.json', './sw.js', './tools/APS_2023_ACR_EULAR.html', './tools/BMI_Zscore.html', './tools/BSA.html', './tools/CDAI.html', './tools/CHAQ.html', './tools/DAS28.html', './tools/ESR_CRP.html', './tools/JADAS27.html', './tools/JADAS71.html', './tools/MTX_dose.html', './tools/SDAI.html', './tools/SLE2K.html', './tools/SLE_2019_EULAR_ACR.html', './tools/TMA.html', './tools/autoantibodies.html', './tools/drug_risk_assessment.html', './tools/followup.html', './tools/liver_kidney.html', './tools/vaccine.html', './topics/AID.html', './topics/ITP.html', './topics/IgAV.html', './topics/JDM.html', './topics/JIA.html', './topics/JSLE.html', './topics/KD.html', './topics/MAS.html', './topics/PID.html', './topics/SLE.html', './topics/Uveitis.html'];
+const CACHE = 'medwiki-v3';
+const ASSETS = [
+  './',
+  './index.html',
+  './manifest.json',
+  './cases/index.html',
+  './cases/index_AID.html',
+  './cases/index_cSLE.html',
+  './cases/index_IgAV.html',
+  './cases/index_ITP.html',
+  './cases/index_JDM.html',
+  './cases/index_KD.html',
+  './cases/index_PID.html',
+  './cases/index_SLE.html',
+  './cases/index_Uveitis.html',
+  './cases/case_AID_CAPS.html',
+  './cases/case_AID_FMF.html',
+  './cases/case_AID_NLRC4.html',
+  './cases/case_AID_SAVI.html',
+  './cases/case_AID_TRAPS.html',
+  './cases/case_cSLE_AIHA_LAHPS.html',
+  './cases/case_cSLE_CAPS.html',
+  './cases/case_cSLE_infantile_LN_PE.html',
+  './cases/case_cSLE_MAS_neuro.html',
+  './cases/case_cSLE_pancreatitis_MAS.html',
+  './cases/case_cSLE_recurrent_MAS.html',
+  './cases/case_cSLE_refractory_NPSLE.html',
+  './cases/case_IgAV_CNS.html',
+  './cases/case_IgAV_GI.html',
+  './cases/case_IgAV_nephritis.html',
+  './cases/case_IgAV_pulmonary.html',
+  './cases/case_IgAV_special.html',
+  './cases/case_ITP_acute.html',
+  './cases/case_ITP_chronic.html',
+  './cases/case_ITP_Evans.html',
+  './cases/case_ITP_secondary.html',
+  './cases/case_ITP_TPO.html',
+  './cases/case_JDM_calcinosis.html',
+  './cases/case_JDM_ILD.html',
+  './cases/case_JDM_refractory.html',
+  './cases/case_JDM_special.html',
+  './cases/case_JDM_typical.html',
+  './cases/case_JIA_polyarticular.html',
+  './cases/case_KD_giant_CAL.html',
+  './cases/case_KD_incomplete.html',
+  './cases/case_KD_infant.html',
+  './cases/case_KD_IVIG_resistant.html',
+  './cases/case_KD_shock.html',
+  './cases/case_PID_ALPS.html',
+  './cases/case_PID_CGD.html',
+  './cases/case_PID_CVID.html',
+  './cases/case_PID_SCID.html',
+  './cases/case_PID_XLA.html',
+  './cases/case_sJIA_biologic_MAS.html',
+  './cases/case_sJIA_early_MAS.html',
+  './cases/case_sJIA_MAS.html',
+  './cases/case_sJIA_refractory.html',
+  './cases/case_sJIA_typical.html',
+  './cases/case_SLE_APLS.html',
+  './cases/case_SLE_drug_induced.html',
+  './cases/case_SLE_lupus_nephritis.html',
+  './cases/case_SLE_macrophage.html',
+  './cases/case_SLE_neuropsychiatric.html',
+  './cases/case_Uveitis_Behcet.html',
+  './cases/case_Uveitis_infectious.html',
+  './cases/case_Uveitis_JIA.html',
+  './cases/case_Uveitis_TINU.html',
+  './cases/case_Uveitis_Vogt.html',
+  './drugs/MTX.html',
+  './drugs/glucocorticoids.html',
+  './drugs/corticosteroids_IV.html',
+  './drugs/NSAIDs.html',
+  './drugs/IVIG.html',
+  './drugs/cyclosporine.html',
+  './drugs/tacrolimus.html',
+  './drugs/mycophenolate.html',
+  './drugs/azathioprine.html',
+  './drugs/anakinra.html',
+  './drugs/tocilizumab.html',
+  './drugs/biologics.html',
+  './drugs/calcium_vitd.html',
+  './tools/JADAS27.html',
+  './tools/JADAS71.html',
+  './tools/CHAQ.html',
+  './tools/DAS28.html',
+  './tools/CDAI.html',
+  './tools/SDAI.html',
+  './tools/BSA.html',
+  './tools/BMI_Zscore.html',
+  './tools/MTX_dose.html',
+  './tools/ESR_CRP.html',
+  './tools/SLE2K.html',
+  './tools/SLE2K_original.html',
+  './tools/SLE_2019_EULAR_ACR.html',
+  './tools/APS_2023_ACR_EULAR.html',
+  './tools/TMA.html',
+  './tools/autoantibodies.html',
+  './tools/liver_kidney.html',
+  './tools/followup.html',
+  './tools/vaccine.html',
+  './tools/drug_risk_assessment.html',
+  './topics/AID.html',
+  './topics/IgAV.html',
+  './topics/ITP.html',
+  './topics/JDM.html',
+  './topics/JIA.html',
+  './topics/JSLE.html',
+  './topics/KD.html',
+  './topics/MAS.html',
+  './topics/PID.html',
+  './topics/SLE.html',
+  './topics/Uveitis.html',
+];
 
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
-  );
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys => 
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
     )
   );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
