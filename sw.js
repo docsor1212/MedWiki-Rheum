@@ -1,4 +1,4 @@
-const CACHE = 'medwiki-v3';
+const CACHE = 'medwiki-v4';
 const ASSETS = [
   './',
   './index.html',
