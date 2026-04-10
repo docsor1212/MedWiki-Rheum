@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>自身抗体滴度解读 — MedWiki-Rheum</title>
+<title>自身抗体全面解读 — MedWiki-Rheum</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
@@ -11,22 +11,26 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
 .wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header { background:linear-gradient(135deg,#20a39e,#1a8a85); color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
 .header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.header .sub { font-size:0.78rem; opacity:0.85; margin-top:2px; }
+.header .meta { text-align:right; font-size:0.72rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 16px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:5px 12px; border-radius:6px; margin:10px 0 5px; }
 .sh.red { background:var(--red); }
 .sh.green { background:var(--green); }
 .sh.yellow { background:var(--yellow); }
+.sh.purple { background:#7c3aed; }
+.sh.orange { background:#c2762a; }
 .g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:4px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
 th.red-hd { background:#fce5e1; color:var(--red); }
 th.green-hd { background:#e2f3dd; color:var(--green); }
 th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+th.purple-hd { background:#ede5fc; color:#7c3aed; }
+th.orange-hd { background:#faebd7; color:#c2762a; }
+td { padding:3px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; word-break:break-word; }
 tr:hover td { background:#faf8f5; }
 tr.hl-green td { background:#e2f3dd; }
 tr.hl-red td { background:#fce5e1; }
@@ -45,46 +49,35 @@ tr.hl-yellow td { background:#faf3dc; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
 body{padding-top:42px !important;}
-
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{margin:0;border-radius:0;} .header{padding:10px 12px;} .body{padding:8px 10px 12px;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{padding:2px 5px;} .sh{font-size:0.72rem;padding:4px 8px;} .alert,.note{font-size:10.5px;} }
 </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">自身抗体滴度解读 · MedWiki-Rheum</span></div>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">自身抗体全面解读 · MedWiki-Rheum</span></div>
 <div class="wrap">
-
 <div class="header">
   <div>
-    <h1>🔬 自身抗体滴度解读</h1>
-    <div class="sub">ANA · dsDNA · Sm · CCP · 补体 · IIF金标准</div>
+    <h1>🔬 自身抗体全面解读</h1>
+    <div class="sub">ANA · ENA谱 · ANCA · aPL · 肌炎特异性抗体 · 儿科风湿免疫</div>
   </div>
-  <div class="meta">
-    辅助参考 · 非诊断标准<br>
-    以临床指南为准<br>
-    置信度上限 90%
-  </div>
+  <div class="meta">辅助参考 · 非诊断标准<br>以临床指南为准</div>
 </div>
-
 <div class="body">
 
-<!-- ANA -->
+<!-- ====== ANA ====== -->
 <div class="sh">🧬 ANA 抗核抗体</div>
-<div class="alert"><b>关键</b>：IIF（间接免疫荧光）为检测金标准，滴度≥1:160需结合临床重视</div>
+<div class="alert"><b>关键</b>：IIF（间接免疫荧光）为检测金标准（HEp-2细胞基质），滴度≥1:160需结合临床重视</div>
 <table>
 <tr><th>滴度</th><th>临床意义</th><th>建议</th></tr>
 <tr><td>&lt; 1:80</td><td>通常无临床意义</td><td class="c-g">无需特殊处理</td></tr>
@@ -92,77 +85,162 @@ body{padding-top:42px !important;}
 <tr class="hl-red"><td>1:320–1:640</td><td class="c-r b">中高滴度，意义较大</td><td class="c-r">风湿专科评估</td></tr>
 <tr class="hl-red"><td>&gt; 1:640</td><td class="c-r b">高滴度阳性</td><td class="c-r b">强烈建议风湿科就诊</td></tr>
 </table>
+<div class="note">ANA阳性≠自身免疫病。健康人群低滴度阳性率：1:40约20-30%，1:80约10-15%，随年龄增高。</div>
 
-<div class="sh" style="background:#20a39e;">👁️ ANA荧光模式</div>
+<!-- ====== ANA荧光模式 ====== -->
+<div class="sh">👁️ ANA荧光模式（IIF）</div>
 <table>
-<tr><th>荧光模式</th><th>相关疾病</th><th>关联抗体</th></tr>
-<tr class="hl-red"><td class="c-r b">均质型</td><td class="c-r">SLE、药物性狼疮</td><td>抗dsDNA、抗组蛋白</td></tr>
-<tr class="hl-yellow"><td class="c-y b">斑点型</td><td>SLE、干燥综合征、MCTD</td><td>抗Sm、抗RNP、抗SSA/SSB</td></tr>
-<tr><td>核仁型</td><td>硬皮病</td><td>抗Scl-70</td></tr>
-<tr><td>着丝点型</td><td>CREST综合征</td><td>抗着丝点抗体</td></tr>
-<tr><td>环状型</td><td>干燥综合征</td><td>抗SS-A/SS-B</td></tr>
+<tr><th>荧光模式</th><th>相关疾病</th><th>关联特异性抗体</th></tr>
+<tr class="hl-red"><td class="c-r b">均质型（Homogeneous）</td><td>SLE、药物性狼疮</td><td>抗dsDNA、抗组蛋白、抗核小体</td></tr>
+<tr class="hl-yellow"><td class="c-y b">斑点型（Speckled）</td><td>SLE、SS、MCTD、SD</td><td>抗Sm、抗RNP、抗SSA/Ro、抗SSB/La</td></tr>
+<tr><td><b>核仁型（Nucleolar）</b></td><td>系统性硬化症</td><td>抗Scl-70、抗RNA聚合酶Ⅲ、抗PM-Scl</td></tr>
+<tr><td><b>着丝点型（Centromere）</b></td><td>CREST综合征（局限型硬皮病）</td><td>抗着丝粒抗体（CENP-A/B/C）</td></tr>
+<tr><td><b>胞浆型（Cytoplasmic）</b></td><td>PBC、肌炎、AIH</td><td>抗线粒体（AMA）、抗Jo-1、抗SRP</td></tr>
+<tr><td><b>混合型</b></td><td>多种CTD重叠</td><td>需结合ENA谱确认</td></tr>
 </table>
 
-<!-- JIA中ANA -->
-<div class="sh green">👶 JIA中ANA</div>
+<!-- ====== ENA抗体谱 ====== -->
+<div class="sh red">💉 ENA抗体谱（可提取核抗原）</div>
 <table>
-<tr><th class="green-hd">JIA类型</th><th class="green-hd">ANA阳性率</th><th class="green-hd">临床意义</th></tr>
-<tr class="hl-green"><td class="c-g b">少关节型</td><td class="c-g b">70–80%</td><td><span class="c-r b">需定期眼科筛查</span>（葡萄膜炎风险↑↑）</td></tr>
-<tr><td>多关节型(RF-)</td><td>30–40%</td><td>眼科筛查</td></tr>
-<tr><td>多关节型(RF+)</td><td>60–75%</td><td>类成人RA</td></tr>
-<tr><td>全身型</td><td>&lt;10%</td><td>通常阴性</td></tr>
+<tr><th class="red-hd">抗体</th><th class="red-hd">主要相关疾病</th><th class="red-hd">特异性</th><th class="red-hd">敏感性</th><th class="red-hd">临床意义</th></tr>
+<tr class="hl-red"><td class="c-r b">抗dsDNA</td><td class="c-r">SLE（标志抗体）</td><td>★★★★★ (95%+)</td><td>50-70%</td><td class="c-r b">活动度监测 + 肾炎预测</td></tr>
+<tr class="hl-red"><td class="c-r b">抗Sm</td><td>SLE</td><td>★★★★★ (99%)</td><td>10-30%</td><td>SLE确诊标志，终生阳性</td></tr>
+<tr><td class="b">抗SSA/Ro52</td><td>SS、SLE、新生儿狼疮</td><td>★★</td><td>SS 60-70%</td><td>新生儿狼疮/先天性心脏传导阻滞风险</td></tr>
+<tr><td class="b">抗SSA/Ro60</td><td>SS、SLE</td><td>★★</td><td>SS 50-60%</td><td>光敏感、皮疹</td></tr>
+<tr><td class="b">抗SSB/La</td><td>SS、SLE</td><td>★★★</td><td>SS 40-50%</td><td>常与抗SSA共存</td></tr>
+<tr><td class="b">抗U1-RNP</td><td>MCTD（标志）、SLE</td><td>★★★</td><td>MCTD &gt;95%</td><td>高滴度→MCTD；SLE中雷诺现象</td></tr>
+<tr><td class="b">抗组蛋白</td><td>药物性狼疮、SLE</td><td>★★</td><td>药物性LE 95%</td><td>药物性狼疮标志（普鲁卡因胺/肼屈嗪）</td></tr>
+<tr><td class="b">抗核小体</td><td>SLE</td><td>★★★★</td><td>50-80%</td><td>早期SLE标志，优于dsDNA</td></tr>
+<tr><td class="b">抗核糖体P（rRNP）</td><td>SLE</td><td>★★★★</td><td>10-20%</td><td>NP-SLE（神经精神狼疮）标志</td></tr>
+<tr><td class="b">抗PCNA</td><td>SLE</td><td>★★★★★</td><td>2-10%</td><td>高特异性但罕见</td></tr>
+<tr><td class="b">抗C1q</td><td>SLE（狼疮肾炎）</td><td>★★★</td><td>LN 40-60%</td><td>增殖型LN标志 + 增殖性肾炎活动度</td></tr>
 </table>
-<div class="note">ANA(+)少关节型JIA → <b class="c-r">每3–6月眼科裂隙灯检查</b>（前葡萄膜炎可无症状）</div>
+<div class="note">抗dsDNA + 补体C3/C4 + 尿蛋白 = <b class="c-r">SLE活动三大监测指标</b>。抗Sm虽敏感性低但特异性极高，是SLE分类标准之一。</div>
 
-<!-- 抗dsDNA -->
-<div class="sh red">💉 抗dsDNA抗体 — SLE标志</div>
+<!-- ====== 肌炎特异性抗体 ====== -->
+<div class="sh purple">💪 肌炎特异性抗体（MSA）</div>
 <table>
-<tr><th class="red-hd">项目</th><th class="red-hd">说明</th></tr>
-<tr class="hl-red"><td class="c-r b">特异性</td><td class="c-r b">SLE高度特异性（95%+）</td></tr>
-<tr><td>活动性</td><td>滴度与疾病活动度<b class="c-r">正相关</b>，可用于监测</td></tr>
-<tr><td>阴性预测值</td><td class="c-g">高，用于排除SLE</td></tr>
-<tr><td>监测频率</td><td>活动期每1–3月，稳定期每3–6月</td></tr>
+<tr><th class="purple-hd">抗体</th><th class="purple-hd">相关疾病</th><th class="purple-hd">临床特征</th><th class="purple-hd">预后</th></tr>
+<tr class="hl-yellow"><td class="b">抗Mi-2</td><td>DM（皮肌炎）</td><td>V型/披肩征皮疹、肌力下降</td><td class="c-g b">预后较好，治疗反应佳</td></tr>
+<tr class="hl-red"><td class="c-r b">抗MDA5（CADM-140）</td><td class="c-r">临床无肌病性DM（CADM）</td><td class="c-r">快速进展性间质性肺病（RP-ILD）</td><td class="c-r b">预后差，死亡率高</td></tr>
+<tr><td class="b">抗Jo-1（ARS）</td><td>抗合成酶综合征</td><td>肌炎+间质性肺病+关节炎+发热+雷诺+"技工手"</td><td>慢性迁延</td></tr>
+<tr><td class="b">抗PL-7/PL-12/EJ/OJ</td><td>抗合成酶综合征</td><td>类似Jo-1，肺受累更突出</td><td>肺功能决定预后</td></tr>
+<tr><td class="b">抗SRP</td><td>IMNM（免疫介导坏死性肌病）</td><td>急性严重肌无力、CK极高</td><td>中等，需积极免疫抑制</td></tr>
+<tr><td class="b">抗HMGCR</td><td>IMNM（他汀相关/非他汀）</td><td>近端肌无力、CK显著升高</td><td>需长期免疫抑制</td></tr>
+<tr><td class="b">抗TIF1-γ（p155/140）</td><td>DM（儿童+成人）</td><td>儿童DM广泛皮损；成人需排除肿瘤</td><td>成人→肿瘤筛查</td></tr>
+<tr><td class="b">抗NXP-2（MJ）</td><td>儿童DM</td><td>严重肌无力、皮下钙化</td><td>钙化风险高</td></tr>
+<tr><td class="b">抗PM-Scl</td><td>PM/DM-硬皮病重叠</td><td>肌炎+局限性硬皮病</td><td>相对较好</td></tr>
+</table>
+<div class="note">⚠️ <b>抗MDA5阳性</b>→紧急评估肺部HRCT，RP-ILD可在数周内致死。儿童DM应常规查抗Mi-2/抗TIF1-γ/抗NXP-2/抗MDA5。</div>
+
+<!-- ====== ANCA ====== -->
+<div class="sh orange">🔬 ANCA（抗中性粒细胞胞浆抗体）</div>
+<table>
+<tr><th class="orange-hd">类型</th><th class="orange-hd">靶抗原</th><th class="orange-hd">主要疾病</th><th class="orange-hd">临床特点</th></tr>
+<tr class="hl-red"><td class="c-r b">c-ANCA</td><td class="c-r">PR3（蛋白酶3）</td><td class="c-r">肉芽肿性多血管炎（GPA）</td><td>上呼吸道+肺+肾受累，坏死性肉芽肿</td></tr>
+<tr class="hl-yellow"><td class="c-y b">p-ANCA</td><td class="c-y">MPO（髓过氧化物酶）</td><td>显微镜下多血管炎（MPA）、EGPA</td><td>肾小球肾炎+肺泡出血+紫癜</td></tr>
+<tr><td>非典型ANCA</td><td>多种（BPI/乳铁蛋白等）</td><td>溃疡性结肠炎、PSC、AIH</td><td>非血管炎相关，注意鉴别</td></tr>
+</table>
+<div class="note">ANCA相关血管炎（AAV）：GPA(c-ANCA/PR3) / MPA(p-ANCA/MPO) / EGPA(p-ANCA/MPO)。儿童AAV肾脏受累率高，需联合风湿/肾科管理。</div>
+
+<!-- ====== 抗磷脂抗体 ====== -->
+<div class="sh yellow">🩸 抗磷脂抗体（aPL）</div>
+<table>
+<tr><th class="yellow-hd">抗体</th><th class="yellow-hd">检测方法</th><th class="yellow-hd">临床意义</th></tr>
+<tr class="hl-red"><td class="b">狼疮抗凝物（LA）</td><td>功能试验（dRVVT/aPTT混合）</td><td class="c-r b">血栓风险最强预测因子</td></tr>
+<tr><td class="b">抗心磷脂抗体（aCL）</td><td>ELISA（IgG/IgM）</td><td>中高滴度→APS分类标准；SLE中常见</td></tr>
+<tr><td class="b">抗β₂糖蛋白Ⅰ（anti-β₂GPI）</td><td>ELISA（IgG/IgM）</td><td>APS特异性高于aCL；动脉血栓预测</td></tr>
+<tr><td>抗磷脂酰丝氨酸/凝血酶原（aPS/PT）</td><td>ELISA</td><td class="c-y">额外危险分层（非标准但临床有用）</td></tr>
+<tr><td>抗β₂GPI结构域I</td><td>ELISA</td><td class="c-y">最新标志，血栓预测更精确</td></tr>
+</table>
+<div class="alert"><b>APS诊断</b>需满足2006年修订Sydney分类标准：≥1项临床标准（血管血栓/病态妊娠）+ ≥1项实验室标准（LA/aCL中高滴度/anti-β₂GPI），间隔≥12周两次阳性。</div>
+<div class="note">儿科注意：aPL可一过性阳性（感染相关），确诊需持续阳性。儿童SLE应常规筛查aPL。</div>
+
+<!-- ====== 硬皮病相关抗体 ====== -->
+<div class="sh" style="background:#7c3aed">🧪 硬皮病（SSc）相关抗体</div>
+<table>
+<tr><th class="purple-hd">抗体</th><th class="purple-hd">SSc亚型</th><th class="purple-hd">器官受累倾向</th><th class="purple-hd">预后</th></tr>
+<tr><td class="b">抗着丝粒（CENP）</td><td>局限型皮肤SSc（CREST）</td><td>PAH、消化道运动障碍</td><td>相对较好</td></tr>
+<tr class="hl-red"><td class="c-r b">抗Scl-70（拓扑异构酶Ⅰ）</td><td>弥漫型皮肤SSc</td><td class="c-r">间质性肺病（ILD）</td><td class="c-r">预后较差</td></tr>
+<tr><td class="b">抗RNA聚合酶Ⅲ</td><td>弥漫型皮肤SSc</td><td>硬皮病肾危象</td><td class="c-r">肾危象风险</td></tr>
+<tr><td class="b">抗PM-Scl</td><td>SSc-肌炎重叠</td><td>肌炎+局限型SSc</td><td>相对较好</td></tr>
+<tr><td class="b">抗Th/To</td><td>局限型SSc</td><td>PAH、ILD</td><td>中等</td></tr>
+<tr><td class="b">抗U3-RNP（抗原纤维蛋白）</td><td>弥漫型SSc</td><td>心脏受累、PAH</td><td>中等</td></tr>
 </table>
 
-<!-- 抗Sm -->
-<div class="sh">📌 抗Sm抗体</div>
+<!-- ====== 其他重要抗体 ====== -->
+<div class="sh green">📋 其他重要自身抗体</div>
 <div class="g2">
 <table>
-<tr><th>特点</th><th>说明</th></tr>
-<tr><td>SLE特异性</td><td class="c-a b">确诊性标志</td></tr>
-<tr><td>敏感性</td><td>低（10–30%）</td></tr>
-<tr class="hl-yellow"><td>转阴</td><td class="c-y b">一旦阳性几乎不转阴</td></tr>
-<tr><td>监测价值</td><td>不用于活动度监测</td></tr>
+<tr><th class="green-hd">抗体</th><th class="green-hd">相关疾病</th><th class="green-hd">意义</th></tr>
+<tr><td class="b">抗CCP（环瓜氨酸肽）</td><td>RA / RF+多关节JIA</td><td>RA特异性95%+；JIA中鉴别RF+型</td></tr>
+<tr><td class="b">RF（类风湿因子）</td><td>RA、SS、SLE</td><td>敏感性高但特异性低；高滴度→侵蚀性关节病</td></tr>
+<tr><td class="b">AKA/APF</td><td>RA（早期）</td><td>早于RF出现，辅助早期RA诊断</td></tr>
+<tr><td class="b">抗GBM</td><td>Goodpasture综合征</td><td>肺出血+新月体肾炎</td></tr>
+<tr><td class="b">AMA（抗线粒体）</td><td>PBC</td><td>PBC标志性抗体（M2亚型特异95%+）</td></tr>
+<tr><td class="b">ASMA（抗平滑肌）</td><td>AIH（Ⅰ型）</td><td>自身免疫性肝炎</td></tr>
+<tr><td class="b">抗LKM-1</td><td>AIH（Ⅱ型）</td><td>儿童AIHⅡ型标志</td></tr>
+<tr><td class="b">抗甲状腺（TPO/Tg）</td><td>HT/GD</td><td>桥本甲状腺炎/Graves病；SLE/APS常合并</td></tr>
 </table>
 <table>
-<tr><th class="yellow-hd">抗CCP抗体</th><th class="yellow-hd">说明</th></tr>
-<tr><td>RA特异性</td><td class="c-a b">类风湿关节炎高度特异</td></tr>
-<tr><td>JIA意义</td><td>不如成人，鉴别RF(+)多关节型</td></tr>
+<tr><th class="green-hd">抗体</th><th class="green-hd">相关疾病</th><th class="green-hd">意义</th></tr>
+<tr><td class="b">抗内因子</td><td>恶性贫血</td><td>B12吸收障碍</td></tr>
+<tr><td class="b">抗壁细胞</td><td>萎缩性胃炎</td><td>自身免疫性胃炎标志</td></tr>
+<tr><td class="b">抗胰岛细胞（ICA）/GAD</td><td>T1DM</td><td>1型糖尿病自身免疫标志</td></tr>
+<tr><td class="b">抗tTG（组织谷氨酰胺转氨酶）</td><td>乳糜泻</td><td>乳糜泻一线筛查；IgA型特异性最高</td></tr>
+<tr><td class="b">抗肾上腺（21-羟化酶）</td><td>Addison病</td><td>原发性肾上腺皮质功能减退</td></tr>
+<tr><td class="b">抗AQP4</td><td>NMOSD</td><td>视神经脊髓炎谱系疾病；SLE合并NMOSD时需鉴别</td></tr>
+<tr><td class="b">抗MOG</td><td>MOG抗体病</td><td>儿童脱髓鞘疾病；ADEM/视神经炎</td></tr>
+<tr><td class="b">抗AcN（抗中性粒细胞）</td><td>AIH、AIHA</td><td>部分自身免疫性溶血相关</td></tr>
 </table>
 </div>
 
-<!-- 补体 -->
-<div class="sh yellow">🩸 补体 C3/C4</div>
+<!-- ====== JIA中ANA ====== -->
+<div class="sh green">👶 JIA中ANA</div>
+<table>
+<tr><th class="green-hd">JIA类型</th><th class="green-hd">ANA阳性率</th><th class="green-hd">临床意义</th></tr>
+<tr class="hl-green"><td class="c-g b">少关节型</td><td class="c-g b">70–80%</td><td><span class="c-r b">葡萄膜炎风险↑↑</span>，需每3月眼科裂隙灯</td></tr>
+<tr><td>多关节型(RF-)</td><td>30–40%</td><td>眼科筛查</td></tr>
+<tr><td>多关节型(RF+)</td><td>60–75%</td><td>类成人RA，侵蚀性关节病</td></tr>
+<tr><td>全身型(sJIA)</td><td>&lt;10%</td><td>通常阴性</td></tr>
+<tr><td>附着点炎相关</td><td>20-40%</td><td>鉴别IBD相关关节炎</td></tr>
+<tr><td>银屑病性关节炎</td><td>30-50%</td><td>皮肤+关节双重评估</td></tr>
+</table>
+<div class="note">ANA(+)少关节型JIA → <b class="c-r">每3–6月眼科裂隙灯检查</b>（前葡萄膜炎可无症状）</div>
+
+<!-- ====== 补体 ====== -->
+<div class="sh yellow">🧪 补体 C3/C4</div>
 <table>
 <tr><th>情况</th><th>C3</th><th>C4</th><th>意义</th></tr>
 <tr class="hl-red"><td class="c-r b">SLE活动</td><td class="c-r">↓</td><td class="c-r">↓</td><td class="c-r b">补体消耗 → 疾病活动</td></tr>
 <tr class="hl-green"><td>SLE缓解</td><td class="c-g">正常</td><td class="c-g">正常</td><td class="c-g">治疗有效</td></tr>
-<tr><td>低补体荨麻疹</td><td>↓</td><td>↓</td><td>C1q自身抗体相关</td></tr>
+<tr><td>低补体荨麻疹</td><td>↓</td><td>↓</td><td>抗C1q相关血管炎</td></tr>
+<tr><td>aHUS</td><td>↓</td><td>正常/↓</td><td>补体替代途径过度激活</td></tr>
 </table>
 <div class="note">补体 C3/C4 + 抗dsDNA + 尿蛋白 = <b class="c-r">SLE活动三大监测指标</b></div>
 
-</div>
+<!-- ====== 儿科抗体筛查建议 ====== -->
+<div class="sh" style="background:#7c3aed">🏥 儿科风湿免疫抗体筛查建议</div>
+<table>
+<tr><th class="purple-hd">临床场景</th><th class="purple-hd">推荐检测</th></tr>
+<tr><td class="b">不明原因关节痛/肿</td><td>ANA + RF + anti-CCP + ESR/CRP + HLA-B27</td></tr>
+<tr><td class="b">疑似SLE/cSLE</td><td>ANA + 抗dsDNA + 抗Sm + ENA谱 + 补体C3/C4 + aPL + Coombs + 尿常规</td></tr>
+<tr><td class="b">皮疹+肌无力</td><td>ANA + MSA（Mi-2/MDA5/TIF1-γ/NXP-2/Jo-1）+ CK + 肌电图</td></tr>
+<tr><td class="b">反复发热+皮疹</td><td>ANA + ENA + 血清铁蛋白 + sCD163 + IL-18（排除MAS/HLH）</td></tr>
+<tr><td class="b">雷诺现象</td><td>ANA + 抗着丝粒 + 抗Scl-70 + 抗RNP + 甲襞微循环</td></tr>
+<tr><td class="b">紫癜/血管炎</td><td>ANCA + aPL + 补体 + IgA + 冷球蛋白</td></tr>
+<tr><td class="b">血栓事件</td><td>aPL全套（LA + aCL + anti-β₂GPI）+ 同型半胱氨酸</td></tr>
+<tr><td class="b">反复感染</td><td>免疫球蛋白(IgG/IgA/IgM) + 淋巴细胞亚群 + HIV</td></tr>
+</table>
 
+</div>
 <div class="footer">
-  ANA检测以IIF为金标准 · 滴度解读需结合临床 · 葡萄膜炎筛查每3–6月(ANA+少关节型JIA)
+  ANA以IIF为金标准 · 抗体解读需结合临床 · 儿科参考值可能与成人不同 · 部分抗体可一过性阳性
 </div>
-
 </div>
-
 <script>
 if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
 </script>
-
-<div style="text-align:center;margin:12px 0;font-size:0.72rem;color:#64748b">🔢 交互式计算器：<a href="ESR_CRP.html" style="color:#20a39e;font-weight:600">ESR/CRP判读</a> · <a href="SLE_2019_EULAR_ACR.html" style="color:#20a39e;font-weight:600">SLE 2019分类</a> · <a href="SLE2K.html" style="color:#20a39e;font-weight:600">SLEDAI-2K</a> · <a href="followup.html" style="color:#20a39e;font-weight:600">随访计划</a></div>
+<div style="text-align:center;margin:12px 0;font-size:0.72rem;color:#64748b">🔢 相关工具：<a href="ESR_CRP.html" style="color:#20a39e;font-weight:600">ESR/CRP判读</a> · <a href="SLE_2019_EULAR_ACR.html" style="color:#20a39e;font-weight:600">SLE 2019分类</a> · <a href="SLE2K.html" style="color:#20a39e;font-weight:600">SLEDAI-2K</a> · <a href="followup.html" style="color:#20a39e;font-weight:600">随访计划</a></div>
 </body>
 </html>
