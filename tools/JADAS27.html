@@ -122,7 +122,7 @@ tr:hover td{background:#f8fafa;}
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="JADAS71.html" style="color:#20a39e;font-weight:600">JADAS-71</a> · <a href="CHAQ.html" style="color:#20a39e;font-weight:600">CHAQ</a> · <a href="ESR_CRP.html" style="color:#20a39e;font-weight:600">ESR/CRP判读</a> · <a href="DAS28.html" style="color:#20a39e;font-weight:600">DAS28</a></div>
 <table><tr><th>ESR值</th><th>归一化分数</th></tr>
 <tr><td>≤ 20 mm/h</td><td style="color:#22a87e;font-weight:700">0 分</td></tr>
-<tr><td>&gt; 20 mm/h</td><td>ESR ÷ 10，上限10分</td></tr></table>
+<tr><td>&gt; 20 mm/h</td><td>(ESR − 20) ÷ 10，上限10分</td></tr></table>
 
 <div class="section-title red">🎯 儿科疾病活动度分级</div>
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="JADAS71.html" style="color:#20a39e;font-weight:600">JADAS-71</a> · <a href="CHAQ.html" style="color:#20a39e;font-weight:600">CHAQ</a> · <a href="ESR_CRP.html" style="color:#20a39e;font-weight:600">ESR/CRP判读</a> · <a href="DAS28.html" style="color:#20a39e;font-weight:600">DAS28</a></div>
@@ -145,7 +145,7 @@ function calc(){
   document.getElementById('joints_val').textContent=j;
   document.getElementById('phga_val').textContent=p.toFixed(1);
   document.getElementById('ptga_val').textContent=t.toFixed(1);
-  const esrNorm=e<=20?0:Math.min(10,e/10);
+  const esrNorm=e<=20?0:Math.min(10,(e-20)/10);
   const score=j+p+t+esrNorm;
   document.getElementById('score').textContent=score.toFixed(1);
   const fs=document.getElementById('footerScore');

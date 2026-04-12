@@ -118,7 +118,7 @@ function calc(){
   document.getElementById('joints_val').textContent=j;
   document.getElementById('phga_val').textContent=p.toFixed(1);
   document.getElementById('ptga_val').textContent=t.toFixed(1);
-  const esrNorm=e<=20?0:Math.min(10,e/10);
+  const esrNorm=e<=20?0:Math.min(10,(e-20)/10);
   const score=j+p+t+esrNorm;
   document.getElementById('score').textContent=score.toFixed(1);
   const fs=document.getElementById('footerScore');

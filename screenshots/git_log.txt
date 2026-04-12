@@ -1,0 +1,20 @@
+7691e38 (HEAD -> master, origin/master) feat: add FastAPI clinical tools API backend (12 endpoints)
+1ae6667 fix: PWA — add manifest+sw.js to all case pages, bump cache v4
+edbc245 fix: BSA中国教材公式添加30kg断崖警示
+918e5b3 feat: BSA计算器重构 — 中国教材公式独立交互+优先置顶
+50c2363 feat: BSA计算器增加中国教材公式（诸福棠/儿科学教材）
+916289f feat: Issue 4+8 — 自身抗体扩展+生物制剂增加3药
+62d388c feat: Issue 4 — 自身抗体页面大幅扩展
+447c842 fix: Issues 1,2,3,5,6,7 — 首页UI重写+BMI/BSA参考标准+calcium_vitd响应式+JSLE→cSLE
+c468e6f feat: homepage restructure + cross-links + sw.js v3 + 归墟 sync
+40a977c feat: 10 interactive clinical calculators (Phase 4)
+606eb6b fix: enable pinch-zoom on all pages (accessibility)
+19ee3b7 fix: enable pinch-zoom on SLEDAI-2K for accessibility
+284995f feat: SLEDAI-2K teal UI redesign + preserve original
+982b044 docs: Phase 3 final test report
+ea20c75 fix: Phase 3 complete — CSS/PMID/responsive/PWA audit
+81e7a66 fix: Phase 3 - update homepage stats (53 cases/10 topics/19 tools), create unified case index
+2f98166 feat: complete ALL remaining disease case series (28 files)
+4fa0f27 feat: add IgAV case series (5 cases + index)
+cad1969 feat: add KD case series (5 cases + index)
+95cab5b feat: add JDM case series (5 cases + index)

@@ -52,3 +52,77 @@
 
 - `81e7a66` — 首页统计+总索引页
 - `ea20c75` — CSS/PMID/responsive/PWA全面审计修复
+
+---
+
+## 🔒 计算器代码安全规范（2026-04-13 新增）
+
+> **触发原因**：CHAQ得分膨胀至数千、JADAS ESR归一化公式错误（详见 log.md 2026-04-13）
+> **适用范围**：所有含 `<script>` 计算逻辑的 `.html` 工具文件
+
+### 规范1：数值初始化（防隐式类型转换）
+
+```javascript
+// ❌ 禁止
+const domains = { d1: [], d2: [], d3: null };
+let score;  // undefined
+
+// ✅ 必须
+const domains = { d1: 0, d2: 0, d3: 0 };
+let score = 0;
+```
+
+**原则**：所有参与算术运算的变量，初始化必须为数字类型 `0`，绝不用 `[]`、`null`、`undefined`、`""`。
+
+### 规范2：reduce 安全模式
+
+```javascript
+// ❌ 危险（当数组含非数字时触发字符串拼接）
+const sum = vals.reduce((a, b) => a + b, 0);
+
+// ✅ 安全（显式类型转换）
+const sum = vals.reduce((a, b) => a + Number(b), 0);
+```
+
+### 规范3：公式必须标注文献来源
+
+每个计算器的 `<script>` 块顶部，必须以注释标注原始公式出处：
+
+```javascript
+// DAS28-ESR: Prevoo ML et al., Arthritis Rheum 1995;38(1):44-48
+// Formula: 0.56*√TJC28 + 0.28*√SJC28 + 0.70*ln(ESR+1) + 0.014*GH
+function calc() { ... }
+```
+
+### 规范4：上线前必须通过标准case验证
+
+每个计算器必须内置至少1个**已知结果的标准测试用例**，以注释形式保留：
+
+```javascript
+// 验证用例: TJC=2, SJC=10, ESR=38, GH=56 → DAS28-ESR = 5.16 (Prevoo Table 3)
+// 验证用例: JADAS27 joints=5, PhGA=3.0, PtGA=2.5, ESR=40 → score=12.0 (Consolaro 2009)
+```
+
+开发者修改公式后，必须用该用例手动或脚本验证输出一致。
+
+### 规范5：单位标注强制要求
+
+所有涉及检验指标输入的字段，`<label>` 必须标注单位，且与公式所需单位一致：
+
+```html
+<!-- ✅ 正确 -->
+<label>CRP（C反应蛋白, mg/dL）</label>
+<label>CRP（C反应蛋白, mg/L）</label>
+
+<!-- ❌ 禁止 -->
+<label>CRP</label>
+```
+
+若公式所用单位与国内化验单常见单位不同，必须在输入框下方添加换算提示。
+
+### 规范6：变更记录
+
+修改任何计算器公式时，必须同步更新 `log.md`，记录：
+- 修改的文件名和具体公式
+- 修改前后对比
+- 验证结果
