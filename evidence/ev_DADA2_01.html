@@ -60,9 +60,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -166,7 +179,7 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+    <div class="mech-box">
       <p><b>一、核心免疫学通路：ADA2缺乏与血管内皮损伤</b></p>
       <p>DADA2由<b>CECR1基因</b>（位于22q11，编码腺苷脱氨酶2，ADA2）<b>双等位基因突变</b>引起，呈常染色体隐性遗传。ADA2是一种分泌型胞外酶，主要来源于单核细胞和巨噬细胞，负责降解腺苷和2'-脱氧腺苷。原文明确指出，ADA2参与<b>内皮细胞发育和分化</b>以及<b>单核细胞向巨噬细胞分化</b>。ADA2缺乏导致：①内皮细胞发育异常→血管壁结构脆弱→缺血性和出血性卒中；②M1型促炎巨噬细胞过度活化（因分化异常）→系统性炎症和血管炎。</p>
       <p><b>二、本病例特异性免疫异常</b></p>
@@ -174,7 +187,7 @@ tr:hover td { background:#faf8f5; }
       <p><b>三、病理生理学解释</b></p>
       <p>从分子层面看本例的完整临床谱：ADA2活性↓（10.9 vs 116.3）→ ①腺苷蓄积→中性粒细胞持续活化→中动脉血管壁纤维素样坏死→<b>皮肤PAN+网状青斑</b>；②内皮细胞发育障碍→脑血管壁脆弱→反复缺血性卒中（5月龄起）→最终大面积出血性梗死（22岁）；③巨噬细胞极化异常→肝脾肿大+门脉高压→食管静脉曲张；④B细胞功能受损→低丙种球蛋白→反复感染。抗TNF-α治疗（依那西普）在NIH队列中使17例患者无一再发卒中，提示TNF-α是DADA2血管炎症的关键效应因子。</p>
       <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC4959806原文 + Zhou Q等（N Engl J Med 2014;370:911-920）DADA2最初描述</p>
-    </div>
+    </div></div>
 
     <!-- 7. 诊断 -->
     <div class="sh green">✅ 诊断</div>
@@ -283,7 +296,9 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 12. 要点总结 -->
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断要点</b><br>
       ① DADA2三联征：早发卒中 + 网状青斑 + 皮肤PAN<br>
       ② 确诊依赖CECR1基因检测 + ADA2酶活性测定<br>
@@ -299,6 +314,8 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <!-- 13. 参考文献 -->
+</div>
+
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/27444081/" target="_blank">PMID 27444081</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4959806/" target="_blank">PMC4959806</a></div>
   <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

@@ -59,11 +59,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
+</style>
 </head>
 <body>
 
@@ -153,7 +166,7 @@ tr:hover td { background:#faf8f5; }
 </table>
 
 <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
-<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<div class="mech-box">
 <p><b>川崎病（KD）的核心免疫病理：</b>KD是一种以中等大小动脉（尤其冠状动脉）为靶点的系统性血管炎。其发病机制尚未完全阐明，目前认为与感染触发下的遗传易感性密切相关。原文引用McCrindle BW等（<i>Circulation</i> 2017）指出，KD在东亚（尤其日本）发病率最高，冬季和早春有季节聚集性，提示感染或环境触发因素的作用。原文明确提到"季节聚集性……提示可能的感染或环境触发因素"（"seasonal clustering…suggesting a possible infectious or environmental trigger"）。</p>
 <p><b>血管内皮损伤机制：</b>KD的核心病理是全身性血管炎，以冠状动脉为最严重的靶器官。原文讨论中指出，KDSS的发生与"exaggerated inflammatory response, increased capillary leak, and myocardial dysfunction"（放大的炎症反应、毛细血管渗漏增加和心肌功能障碍）相关。这一机制解释了本例患者的休克表现——全身毛细血管渗漏导致有效循环血量减少，心肌功能障碍进一步恶化血流动力学。</p>
 <p><b>本病例的免疫学特征：</b></p>
@@ -167,7 +180,7 @@ tr:hover td { background:#faf8f5; }
 </ul>
 <p><b>KDSS与脓毒症的鉴别机制：</b>原文讨论中强调，KDSS与脓毒症休克的鉴别至关重要。两者的重叠特征包括发热、低血压、炎症标志物升高和多器官受累。但KDSS的核心区别在于：（1）抗生素治疗无效；（2）血培养持续阴性；（3）进行性出现黏膜皮肤特征；（4）对IVIG和皮质类固醇快速反应——本例在启动第二剂IVIG+甲泼尼龙后24小时内热退，"marked clinical improvement was noted 24 hours after starting the steroids"。这种治疗反应本身也是免疫介导（而非感染性）机制的有力证据。</p>
 <p><b>IVIG抵抗的免疫学基础：</b>原文指出，KDSS患者初始IVIG抵抗率高于典型KD（引用Chen PS等，<i>J Microbiol Immunol Infect</i> 2015）。本例即表现为IVIG抵抗——第一剂IVIG后反而恶化出现休克，需第二剂IVIG联合系统性皮质类固醇。原文还提到，对于难治性KD，TNF-α抑制剂和IL-1阻断（如阿那白滞素）可能有益（引用Shafferman A等，<i>Pediatr Rheumatol Online J</i> 2014）。</p>
-</div>
+</div></div>
 
 <div class="sh green">✅ 诊断标准对照</div>
 <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
@@ -270,7 +283,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
   <b>1. 诊断要点</b><br>
   ① 不完全KD可仅以淋巴结炎为首发表现<br>
   ② KDSS模拟脓毒症，发生率2%-7%<br>
@@ -284,8 +297,7 @@ tr:hover td { background:#faf8f5; }
   ⑧ 关注IVIG后的急性恶化<br><br>
   <b>4. 预后</b><br>
   ⑨ KDSS心脏并发症风险高于典型KD<br>
-  ⑩ 早期识别和积极治疗可改善预后
-</div>
+  ⑩</div></div>
 
 <div class="sh ">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41909287/" target="_blank">PMID 41909287</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13032044/" target="_blank">PMC13032044</a>，以下为原文引用的参考文献。</div></div>
 <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

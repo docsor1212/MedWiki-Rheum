@@ -59,11 +59,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
+</style>
 </head>
 <body>
 
@@ -146,14 +159,14 @@ tr:hover td { background:#faf8f5; }
 </table>
 
 <div class="sh ">🧬 发病机制与免疫病理</div>
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="mech-box">
 <p><b>SLE的免疫发病机制</b></p>
 <p>SLE的本质是对多种核抗原丧失免疫耐受，导致T和B细胞自身激活，产生致病性自身抗体（主要为IgG型），形成循环免疫复合物（ICs），沉积于靶器官引发补体激活和组织损伤。原文指出："SLE pathophysiology involves a loss of tolerance toward nuclear antigens such as dsDNA, Sm, and RNP among others. This results in the auto-reactivation of T and B cells by autoantigens leading to the development of autoantibody-secreting plasmablasts." 本例抗dsDNA从119.8升至1,104 IU/mL，抗Smith阳性，C4从0.35降至0.04 g/L，充分展现了自身抗体的动态演变和补体消耗过程。</p>
 <p><b>高IgE在SLE中的角色</b></p>
 <p>本例IgE >5,000 KU/L，远超正常范围。原文详细讨论了IgE在SLE中的双重角色：<b>自反应性IgE</b>（autoreactive IgE）针对dsDNA、Ro/SSA、La/SSB、Sm等核抗原，与高SLE活动和狼疮肾炎相关，通过激活浆细胞样树突细胞（pDC）促进IFN-α产生；<b>非自反应性IgE</b>则与SLEDAI呈负相关。30-50%的SLE患者存在自反应性IgE。IgE还可通过增加血管通透性促进ICs在肾小球沉积，加剧肾炎。原文还指出："IgE levels inversely correlate with C4 levels"，本例C4极低（0.04）与IgE极高的一致性印证了这一关联。</p>
 <p><b>IV型狼疮肾炎的病理机制</b></p>
 <p>肾活检显示弥漫膜增生性病变+免疫荧光"满堂亮"（IgG/IgA/IgM/C3/C1q均阳性）+wire-loop（白金耳样）病变。wire-loop病变为内皮下大量免疫复合物沉积的特征性表现，见于活动性IV型LN。NIH活动指数6/12、慢性化指数0/12提示活动性病变为主，但最终仍进展至ESRD，反映了IV型LN的凶险预后。</p>
-</div>
+</div></div>
 
 <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出儿童系统性红斑狼疮（cSLE）合并弥漫增殖性狼疮肾炎IV型的诊断与分类标准，逐条对照本例。</div>
@@ -220,7 +233,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
   <b>1. 诊断要点</b><br>
   ① 高IgE可掩盖SLE，需持续随访<br>
   ② 自身抗体可随时间演变，单次阴性不能排除<br>
@@ -232,8 +245,7 @@ tr:hover td { background:#faf8f5; }
   ⑥ ANA/dsDNA/补体动态监测<br>
   ⑦ 肾功能+蛋白尿密切随访<br><br>
   <b>4. 预后</b><br>
-  ⑧ IV型LN预后差，早期诊断至关重要
-</div>
+  ⑧ IV</div></div>
 
 <div class="sh ">📖 参考文献</div>
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/36865980/" target="_blank">PMID 36865980</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9972904/" target="_blank">PMC9972904</a></div>

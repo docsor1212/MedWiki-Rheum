@@ -61,9 +61,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
 
 </style>
 </head>
@@ -143,7 +156,7 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh blue">🧬 发病机制与免疫病理</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="mech-box">
       <b>一、糖皮质激素对骨代谢的双重打击</b><br>
       糖皮质激素（GC）诱导骨质疏松（GIO）的发病机制涉及骨重建平衡的严重紊乱。原文STOPP研究数据显示GC启动后12月椎体骨折发生率6%（7/118），骨折者GC累积剂量高50%。核心机制分为两条通路：<br>
       <b>通路一：直接骨细胞效应</b>——GC通过基因组和非基因组途径作用于成骨细胞和破骨细胞。<b>①</b>抑制成骨细胞增殖、分化和功能→I型胶原和骨钙素合成减少→骨形成显著下降；<b>②</b>促进成骨细胞和骨细胞凋亡→骨重建单位数量减少；<b>③</b>间接增强破骨细胞活性（通过增加RANKL/OPG比值）→骨吸收相对增加。净效应：骨形成↓↓ + 骨吸收↑ = 骨重建负平衡。<br>
@@ -157,7 +170,7 @@ tr:hover td { background:#faf8f5; }
       <b>五、基础疾病（MCTD）的附加影响</b><br>
       MCTD本身可通过慢性炎症（IL-6、TNF-α促进破骨细胞分化）和活动受限降低骨量。GC与基础疾病炎症叠加形成"双重骨丢失"——这也是风湿病儿童GIO比其他疾病（如哮喘）更严重的原因。
       <div class="note">以上内容综合原文PMC4459856 STOPP研究数据及骨代谢文献整理。</div>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断标准对照</div>
     <table>
@@ -223,7 +236,9 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断</b><br>
       ① GC启动后椎体骨折可早至4月出现 ② 67%无症状→需主动筛查 ③ BMD正常不排除骨折风险<br><br>
       <b>2. 治疗</b><br>
@@ -231,6 +246,8 @@ tr:hover td { background:#faf8f5; }
       <b>3. 预防</b><br>
       ⑦ GC启动前基线脊柱X线 ⑧ 6月+12月复查 ⑨ 高GC剂量+快速BMI增加为高危因素
     </div>
+</div>
+
 
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/4459856/" target="_blank">PMID 22213727</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4459856/" target="_blank">PMC4459856</a></div><div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

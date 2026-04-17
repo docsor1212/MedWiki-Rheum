@@ -57,9 +57,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 
 </head>
@@ -119,13 +132,13 @@ tr:hover td { background:#faf8f5; }
       <tr><td>肺功能</td><td colspan="3">DLCO↓</td></tr>
     </table>
     <div class="sh purple">🧬 发病机制与免疫病理</div>
-    <div style="padding:8px;margin:4px 0;font-size:12px;">
+    <div class="mech-box">
       <p><b>核心免疫学通路：</b>MCTD的免疫病理核心是针对U1小核糖核蛋白（U1-snRNP）的自身免疫反应。抗U1-RNP抗体是该病的标志性自身抗体，其靶抗原包括70kD蛋白、U1-RNA及A、C蛋白组分。这些抗体与抗原形成免疫复合物，通过Fc受体介导的炎症级联反应，导致血管内皮损伤和组织纤维化。原文指出本例患儿存在高滴度抗U1-RNP抗体（ANA 1:2560斑点型），这与MCTD的免疫学特征高度一致。</p>
       <p><b>肺动脉高压（PAH）的免疫机制：</b>MCTD相关PAH的发病涉及多条通路：（1）抗U1-RNP抗体直接损伤肺血管内皮细胞，导致内膜增生和中膜肥厚；（2）免疫复合物沉积激活补体级联，引发血管炎性改变；（3）内皮功能障碍导致一氧化氮/内皮素平衡失调，引起肺血管持续收缩和重塑。原文描述患者DLCO显著降低、超声心动图示肺动脉压升高伴三尖瓣反流，这些是肺血管病变的功能学表现。儿童MCTD中PAH发生率约23-29%，高于成人，可能与儿童期免疫系统活跃度更高有关。</p>
       <p><b>本病例特异性免疫异常：</b>该11岁女孩同时呈现SLE样（多关节炎、高滴度ANA）、SSc样（手指硬化、面部紧绷、雷诺现象、食管受累致吞咽困难）和PM样（肌无力、CK升高）的混合表现。抗U1-RNP强阳性而抗dsDNA和抗Scl-70均为阴性，这一抗体谱特征性地将MCTD与单纯的SLE、SSc或PM区分开来。ESR升高反映系统炎症活跃。</p>
       <p><b>病理生理学解释：</b>雷诺现象的本质是免疫介导的血管痉挛和内皮功能障碍；手指硬化和面部紧绷反映了成纤维细胞活化导致的胶原蛋白过度沉积（类似SSc的纤维化通路）；肌无力和CK升高则提示肌纤维的直接免疫损伤。PAH可隐匿进展，早期可能仅表现为DLCO下降，因此定期超声心动图筛查对儿童MCTD至关重要。本例PAH经免疫抑制联合血管扩张剂治疗后成功逆转，提示炎症成分在其中占主导地位。</p>
       <div class="note">【原文为扫描件（scanned article），仅摘要可获取。上述机制描述基于摘要中"11岁女孩MCTD合并PAH"及已知MCTD免疫病理文献综合阐述。】</div>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断</div>
     <table>
@@ -186,12 +199,16 @@ tr:hover td { background:#faf8f5; }
       <p><b>教学价值：</b>本例展示了MCTD作为独立疾病的核心特征——抗U1-RNP高滴度+多种CTD重叠。更重要的是，PAH在免疫抑制联合血管扩张治疗后成功逆转，说明MCTD相关PAH中炎症成分是可逆的，早期积极干预可改变预后。</p>
     </div>
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
       <b>1. 诊断</b>：MCTD = SLE+SSc+PM重叠 + 抗U1-RNP高滴度<br>
       <b>2. PAH筛查</b>：儿童MCTD需定期超声+DLCO监测<br>
       <b>3. 治疗</b>：免疫抑制+血管扩张剂联合<br>
       <b>4. 预后</b>：早期积极治疗，PAH可逆
     </div>
+</div>
+
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/1417105/" target="_blank">PMID 1417105</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1004814/" target="_blank">PMC1004814</a></div><div style="font-size:11px;color:var(--text2);line-height:1.7;">
       1. Friedman DM, Mitnick HJ, Danilowicz D. Recovery from pulmonary hypertension in an adolescent with MCTD. <i>Ann Rheum Dis</i>. 1992;51(8):1001-1004. PMID: 1417105.<br>

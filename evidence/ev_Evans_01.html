@@ -60,8 +60,21 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
 
 </style>
 </head>
@@ -161,7 +174,7 @@ tr:hover td { background:#faf8f5; }
 <div class="note"><b>骨髓检查：</b>正常细胞增生，巨核细胞数量正常，红系明显增生（占76%），可见异常原始细胞和吞噬血细胞，无发育异常细胞 → 符合外周破坏性血细胞减少</div>
 
 <div class="sh blue">🧬 发病机制与免疫病理</div>
-<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<div class="mech-box">
 <b>一、Evans综合征的免疫学本质</b><br>
 Evans综合征（ES）是由Robert Evans于1951年首次描述的罕见自身免疫性血液病，核心特征为<b>免疫系统同时或序贯攻击两种以上血细胞系</b>——最典型为自身免疫性溶血性贫血（AIHA）和免疫性血小板减少（ITP）。原文指出ES的本质是"autoimmune destruction of at least two hematologic cell types after exclusion of other diagnoses"。<br><br>
 <b>二、自身抗体介导的双重破坏</b><br>
@@ -173,7 +186,7 @@ MCV 111.4 fL（大细胞性）的两种解释：①网织红细胞体积大，18
 <b>五、治疗反应的机制基础</b><br>
 高剂量糖皮质激素（甲泼尼龙10 mg/kg/d）通过抑制巨噬细胞FcγR吞噬、抑制自身抗体产生、诱导淋巴细胞凋亡起效。本例24h内Hb和PLT即显著回升。原文指出约60-70% ES患者复发，反映免疫失衡持续存在。
 <div class="note">以上内容依据原文PMC6298364整理。原文为病例报告，未含详细分子机制数据。</div>
-</div>
+</div></div>
 
 <div class="sh green">✅ 诊断标准对照</div>
 <table>
@@ -255,6 +268,8 @@ Evans综合征一线治疗为糖皮质激素，多数患者反应良好。难治
 </div>
 
 <div class="sh green">📚 要点总结</div>
+
+<div class="pts-box">
 <div style="font-size:12px;line-height:1.8;margin:4px 0;">
 <b>1. 诊断要点</b><br>
 ① AIHA（Coombs阳性+网织红↑+LDH↑+间接胆红素↑）+ ITP（PLT↓+骨髓巨核正常）= Evans综合征<br>
@@ -271,6 +286,8 @@ Evans综合征一线治疗为糖皮质激素，多数患者反应良好。难治
 ⑨ Evans综合征复发率高（约60-70%）<br>
 ⑩ 婴儿期发病者需长期随访
 </div>
+</div>
+
 
 <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/6298364/" target="_blank">PMID 30787781</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6298364/" target="_blank">PMC6298364</a></div><div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0;">

@@ -60,9 +60,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -165,7 +178,7 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 7. 发病机制 -->
     <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
-    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+        <div class="mech-box">
       <b>一、VEXAS综合征的分子基础</b><br>
       VEXAS（Vacuoles, E1 enzyme, X-linked, Autoinflammatory, Somatic）综合征由X染色体上<b>UBA1基因体细胞突变</b>驱动。UBA1编码泛素激活酶E1，是泛素-蛋白酶体通路的第一步。突变导致<b>E1酶活性降低</b>，进而影响蛋白质泛素化和降解，导致先天免疫细胞持续激活和系统性炎症。<br><br>
       <b>二、体细胞突变与克隆性造血</b><br>
@@ -174,9 +187,7 @@ tr:hover td { background:#faf8f5; }
       UBA1突变导致先天免疫细胞（中性粒细胞、单核细胞/巨噬细胞）功能异常，表现为过度炎症反应。经典累及器官包括：皮肤（中性粒细胞性皮病）、肺（浸润/间质性肺病）、软骨（复发性多软骨炎）、关节、眼（巩膜炎/葡萄膜炎）和血液系统（大细胞性贫血、MDS样改变）。骨髓前体细胞空泡化为<b>VEXAS特征性病理标志</b>。<br><br>
       <b>四、早发型的意义</b><br>
       VEXAS通常在60岁以上男性中发病，本例30岁即起病，提示UBA1体细胞突变可能更早发生。年轻患者出现反复炎症+大细胞性贫血时应纳入VEXAS鉴别诊断，避免因年龄偏倚延误诊断。
-    </div>
-
-    <!-- 8. 诊断 -->
+    </div></div>
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出VEXAS综合征的诊断与分类标准，逐条对照本例。</div>
     <table>
@@ -269,7 +280,9 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 12. 要点总结 -->
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断要点</b><br>
       ① VEXAS不仅见于老年男性，年轻男性亦可发病，年龄不应排除诊断<br>
       ② 反复炎症+大细胞性贫血+骨髓空泡化是VEXAS的"三联征"<br>
@@ -288,6 +301,8 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <!-- 13. 参考文献 -->
+</div>
+
     <div class="sh">📖 参考文献</div>
   <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/41710874/" target="_blank">PMID 41710874</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12910313/" target="_blank">PMC12910313</a></div>
   <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

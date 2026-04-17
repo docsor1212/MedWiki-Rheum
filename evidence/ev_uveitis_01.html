@@ -60,12 +60,25 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .sh.purple { background:#7b2d8e; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -132,12 +145,12 @@ tr:hover td { background:#faf8f5; }
     </table>
 
     <div class="sh purple">🧬 发病机制与免疫病理</div>
-    <div style="padding:8px;margin:4px 0;font-size:12px;">
+    <div class="mech-box">
       <p><b>核心免疫学通路：</b>JIA相关葡萄膜炎的发病以CD4+T细胞介导的自身免疫反应为核心。原文指出"TNF-α has also been reported to play a role in the pathogenesis of ocular inflammation, with high levels detected in the serum and aqueous humor of patients with uveitis"。TNF-α作为关键炎症介质，驱动前房炎症细胞浸润、房水蛋白渗出和虹膜后粘连形成。前葡萄膜炎的病理特征为虹膜和睫状体的慢性炎症，导致房水流出受阻（青光眼）、晶状体混浊（白内障）和角膜钙盐沉积（带状角膜病变）。</p>
       <p><b>葡萄膜炎的高危因素与流行病学：</b>原文明确列出了JIA相关葡萄膜炎的三大危险因素："The major risk factors for the development of uveitis in JIA patients are oligoarticular pattern of arthritis, onset of arthritis before 7 years of age and antinuclear antibody positivity"。约12-38%的JIA患者在发病后7年内出现葡萄膜炎。本例病例2为ANA阳性+HLA-B27阳性+少关节扩展型JIA，1岁9个月起病（远早于7岁），具备全部高危因素。关键的是，"In the initial stages of mild to moderate inflammation, uveitis is entirely asymptomatic"，这导致了诊断延迟——30-50%的JIA相关葡萄膜炎患儿在确诊时已存在结构性并发症。</p>
       <p><b>TNF抑制剂作用机制的差异：</b>原文讨论了不同TNF抑制剂对葡萄膜炎疗效差异的机制假设："these monoclonal antibodies (adalimumab and infliximab) would be more effective in suppressing ocular inflammation than etanercept, which is a synthetic receptor for TNF-α and does not act against cell-bound TNF"。阿达木单抗和英夫利西单抗作为单克隆抗体，不仅能中和游离TNF-α，还能通过补体介导的细胞毒性（CDC）和抗体依赖的细胞毒性（ADCC）清除表达膜结合TNF-α的炎症细胞。依那西普仅作为TNF受体竞争结合游离TNF，不作用于膜结合TNF，这可能解释其对眼内炎症效果差的原因。阿达木单抗优于英夫利西单抗的原因可能是其全人源设计降低了免疫原性和抗药抗体产生。</p>
       <p><b>本病例的治疗应答与免疫学关联：</b>病例2在英夫利西单抗治疗2年后出现失效，可能与嵌合型单抗产生抗药抗体有关。换用阿达木单抗后，按体表面积增加剂量（24 mg/m²）才达到有效控制，说明儿童需要更高体表面积标准化剂量。联合MTX不仅增强免疫抑制，还可能减少抗药抗体产生。激素成功减停后生长追赶（病例1体重从&lt;3rd百分位升至10th百分位）反映了有效控制炎症对儿童生长发育的积极影响。</p>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出JIA相关慢性前葡萄膜炎（少关节扩展型JIA）的诊断与分类标准，逐条对照本例。</div>
@@ -204,7 +217,9 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📋 病例要点总结</div>
-    <div class="g2">
+
+<div class="pts-box">
+<div class="g2">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -238,6 +253,8 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
+</div>
+
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/24886032/" target="_blank">PMID 24886032</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4045933/" target="_blank">PMC4045933</a>，以下为原文实际引用文献。</div></div>

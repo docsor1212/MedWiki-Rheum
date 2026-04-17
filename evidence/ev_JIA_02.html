@@ -60,11 +60,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -144,13 +157,13 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>双手X线：</b>腕骨骨质疏松，双侧桡骨远端弓状弯曲、桡骨倾斜角增大(~30°)、腕骨呈三角形 → 双侧Madelung畸形。<b>双手MRI：</b>腕关节及MCP关节炎性渗出，屈肌腱鞘炎。<b>基因检测：</b>MLPA示SHOX基因缺失766.5 kb → 确诊Leri-Weill综合征。</div>
 
     <div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div style="padding:8px;margin:4px 0;font-size:12px;">
+        <div class="mech-box">
 <p><b>一、多关节型JIA的炎症通路特征</b><br>原文指出，本例患者的治疗历程揭示了多关节型JIA的复杂炎症网络：先后经历TNF-α抑制剂（英夫利西单抗、阿达木单抗、依那西普）、IL-6受体抑制剂（托珠单抗）、T细胞共刺激调节剂（阿巴西普未使用但属同类）、B细胞清除剂（利妥昔单抗）等多种靶向治疗均仅获得短暂反应。实验室证实患者血清IL-6（最高75 pg/mL）和TNF-α（最高20 pg/mL）均显著升高，提示多条炎症通路并行激活。</p>
 <p><b>二、难治性JIA的免疫学机制</b><br>原文强调，当患者对≥2种生物制剂（包括TNF抑制剂和非TNF生物制剂）无效时，即定义为"难治性JIA"。可能的机制包括：①单一靶点阻断后其他促炎通路代偿性上调（TNF-α阻断后IL-6/IL-1上调）；②滑膜微环境中的纤维母细胞样滑膜细胞（FLS）具有类肿瘤样的侵袭性，可独立于免疫细胞产生基质金属蛋白酶和促炎因子；③遗传背景影响药物反应（SHOX基因缺失可能影响生长发育，但对免疫通路的影响尚不明确）。</p>
 <p><b>三、JAK-STAT通路——难治性JIA的治疗突破口</b><br>托法替布作为JAK1/3抑制剂，可同时阻断多种细胞因子信号传导：JAK1→IL-6、IFN-γ、IL-2信号；JAK3→γc细胞因子家族（IL-2/4/7/9/15/21）信号。相比单一靶点的生物制剂，JAK抑制剂覆盖更广谱的细胞因子信号，对多种生物制剂无效的患者可能有效。本例托法替布治疗成功减停GC并持续缓解，验证了这一策略。</p>
 <p><b>四、Leri-Weill综合征的合并意义</b><br>SHOX基因缺失→桡骨远端生长板异常→Madelung畸形。该综合征本身不加重关节炎，但活动性腕关节肿胀长期掩盖了骨骼畸形，GC减停消肿后才被发现。这提示：难治性JIA的"关节畸形"不一定全是炎症后果，需排除合并的遗传性骨骼疾病。</p>
 <p><b>五、长期GC依赖的多系统损害</b><br>GC通过抑制GH-IGF1轴、抑制骨形成、干扰性激素分泌导致：①医源性库欣综合征；②低骨密度；③生长迟缓；④青春期延迟。这些副作用与慢性炎症本身的危害叠加，强调了尽早减停GC的治疗目标。</p>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出RF阴性多关节型JIA（难治性）合并Leri-Weill综合征的诊断与分类标准，逐条对照本例。</div>
@@ -237,7 +250,9 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📋 病例要点总结</div>
-    <div class="g2">
+
+<div class="pts-box">
+<div class="g2">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -271,6 +286,8 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
+</div>
+
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/33451288/" target="_blank">PMID 33451288</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7809853/" target="_blank">PMC7809853</a>，以下为相关参考文献。</div></div>

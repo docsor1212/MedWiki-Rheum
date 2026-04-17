@@ -60,11 +60,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -138,7 +151,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note">PLT动态变化：GC冲击后快速回升至100→停药即降至5→加硫唑嘌呤后维持40-70（部分反应）→硫唑嘌呤致全血细胞减少→停药后PLT仍维持40-70，无症状。呈典型的慢性难治性ITP模式。</div>
 
     <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
-<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<div class="mech-box">
 <p><b>ITP的免疫病理基础：</b>ITP的核心机制是抗血小板自身抗体介导的血小板破坏增加和巨核细胞生成血小板不足。原文引用Provan D等（<i>Blood Adv</i> 2019;3:3780-3817）国际共识指南。本例骨髓活检结果——"巨核细胞增多、年轻、少多倍体"——是ITP的典型骨髓象：巨核细胞代偿性增生但成熟障碍，血小板生成减少。</p>
 <p><b>COVID-19继发ITP的免疫学机制：</b>原文讨论中描述了两种模式：（1）病毒血症期通过分子模拟或直接骨髓抑制导致血小板减少；（2）感染后免疫失调产生抗血小板自身抗体。本例特殊之处在于——患者为<b>完全无症状的COVID-19</b>感染（PCR阳性，Ct值27），4周后才出现血小板减少。这种"感染后"模式提示免疫失调是主导机制：SARS-CoV-2可能通过打破外周耐受，激活自身反应性B细胞产生抗血小板抗体。</p>
 <p><b>本病例的免疫学特征：</b></p>
@@ -149,7 +162,7 @@ tr:hover td { background:#faf8f5; }
 <li><b>骨髓巨核细胞"少多倍体"：</b>多倍体化是巨核细胞成熟的标志。少多倍体提示巨核细胞成熟障碍——尽管数量增多，但无法有效产生血小板，这是ITP的典型但非特异性发现。</li>
 </ul>
 <p><b>难治性机制的思考：</b>本例对GC和硫唑嘌呤仅部分反应（PLT波动40-70×10⁹），持续21个月+。这种难治性提示：（1）可能存在持续的自身免疫驱动力（如隐藏的SLE倾向）；（2）血小板生成不足可能比破坏更重要——这是TPO受体激动剂的理论基础。原文讨论提到TPO受体激动剂（艾曲波帕/罗米司亭）是二线选择，但因地区不可及未使用。</p>
-</div>
+</div></div>
 
 <div class="sh green">✅ 诊断标准对照</div>
     <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
@@ -253,7 +266,9 @@ tr:hover td { background:#faf8f5; }
 </div>
 
     <div class="sh green">📋 病例要点总结</div>
-    <div class="g2">
+
+<div class="pts-box">
+<div class="g2">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -287,6 +302,8 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
+</div>
+
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38145004/" target="_blank">PMID 38145004</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10746360/" target="_blank">PMC10746360</a>，以下为相关参考文献。</div></div>

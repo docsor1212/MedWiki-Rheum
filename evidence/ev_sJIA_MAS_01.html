@@ -59,11 +59,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
+</style>
 </head>
 <body>
 
@@ -148,7 +161,7 @@ tr:hover td { background:#faf8f5; }
 <div class="note">脑部影像（MRI/MRA/MRV）：可逆性广泛脑萎缩。</div>
 
 <div class="sh">🧬 发病机制与免疫病理</div>
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="mech-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
 <p><b>sJIA的自身炎症本质与MAS的病理生理</b></p>
 <p>sJIA传统上被归类为自身免疫病，但越来越多的证据支持其本质为自身炎症性疾病。涉及的免疫成分包括MHC和先天免疫系统——NK细胞、PMN和巨噬细胞，以及IL-1、IL-6和IL-18等关键细胞因子。</p>
 
@@ -165,8 +178,7 @@ tr:hover td { background:#faf8f5; }
 <p>本例在sJIA治疗第3天即出现癫痫持续状态和多器官衰竭，反映了CNS对细胞因子的高度敏感性。MAS早期实验室指标可接近正常（本例入院时血小板390），但病情可在数小时内急剧恶化。皮下给药向静脉持续输注的转换必要性，印证了危重状态下外周组织灌注不足对药物吸收的影响。</p>
 
 <p><b>新兴治疗靶点：emapalumab</b></p>
-<p>Emapalumab（抗IFN-γ单克隆抗体）是针对MAS/HLH细胞因子风暴发病机制中关键介质IFN-γ的靶向治疗。已获FDA批准用于原发性HLH，在sJIA-MAS中的应用正在研究中，为难治性病例提供了新的治疗选择。</p>
-</div>
+<p>Emapalumab（抗IFN-γ单克隆抗体）是针对MAS/HLH细胞因子风暴发病机制中关键介质IFN-γ的靶向治疗。已获FDA批准用于原发性HLH，在sJIA-MAS中的应用正在研究中，为难治性</div></div>
 
 <div class="sh green">✅ 诊断</div>
 <table><tr><th>标准名称</th><th>作者/年份/期刊</th><th>评分体系</th><th>逐条对照</th><th>本例符合情况</th></tr>
@@ -263,7 +275,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
   <b>1. 诊断要点</b><br>
   ① sJIA患者突发恶化+铁蛋白急剧升高→考虑MAS<br>
   ② MAS死亡率8%-23%，sJIA中发生率约10-15%<br>
@@ -282,8 +294,7 @@ tr:hover td { background:#faf8f5; }
   ⑬ 关注血细胞减少、凝血功能、肝功能、LDH<br><br>
   <b>4. 预后</b><br>
   ⑭ 多模式联合治疗可改善预后<br>
-  ⑮ 本例随访2年完全缓解：12个月SC阿那白滞素→6个月托珠单抗→2024年9月停药
-</div>
+  ⑮ 本例随访2年完全缓解：12个月SC阿那白滞素→6个</div></div>
 
 <div class="sh">📖 参考文献</div>
 <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

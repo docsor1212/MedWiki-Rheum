@@ -60,11 +60,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -143,7 +156,7 @@ tr:hover td { background:#faf8f5; }
     </table>
 
     <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+    <div class="mech-box">
       <p><b>一、核心免疫学通路：甲羟戊酸途径与炎症小体</b></p>
       <p>MVK基因编码<b>甲羟戊酸激酶（Mevalonate Kinase）</b>，是甲羟戊酸途径的关键酶，负责将甲羟戊酸转化为5-磷酸甲羟戊酸。该途径是胆固醇合成和<b>异戊烯化（isoprenylation）</b>的上游通路。原文指出，MVK功能缺陷导致甲羟戊酸途径中间产物（尤其是甲羟戊酸本身）大量蓄积，同时下游异戊烯化产物（如法尼基焦磷酸、香叶基香叶基焦磷酸）减少。异戊烯化缺陷直接影响<b>小GTP酶（如Rac1、RhoA）</b>的活化，这些蛋白的正常功能对NLRP3炎症小体的负性调控至关重要。</p>
       <p><b>二、本病例特异性免疫异常</b></p>
@@ -151,7 +164,7 @@ tr:hover td { background:#faf8f5; }
       <p><b>三、病理生理学解释</b></p>
       <p>从分子层面看，本例的完整临床谱可用"甲羟戊酸蓄积-炎症小体活化"轴解释：<b>MVK酶缺陷</b>→甲羟戊酸极度蓄积（尿液/血清升高数万倍）→异戊烯化底物缺乏→Rac1/RhoA未异戊烯化→失去对NLRP3炎症小体的抑制→<b>IL-1β过度产生</b>→系统性炎症（反复发热、CRP升高）。同时，异戊烯化缺陷影响<b>Geranylgeranylation</b>过程，导致细胞凋亡信号异常和淋巴细胞功能紊乱，解释了肝脾肿大、淋巴结肿大和血细胞减少。新生儿期起病的极早表型（vs HIDS的婴儿期起病）提示残余酶活性极低，预后也最差——本例最终3月龄因脱水和电解质紊乱死亡。</p>
       <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC12999955原文机制部分 + van der Hilst JC等（Medicine 2008）MKD长期随访数据</p>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出甲羟戊酸激酶缺乏症（MKD/MA）的诊断与分类标准，逐条对照本例。</div>
@@ -234,7 +247,9 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📋 病例要点总结</div>
-    <div class="g2">
+
+<div class="pts-box">
+<div class="g2">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -268,6 +283,8 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
+</div>
+
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41869348/" target="_blank">PMID 41869348</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12999955/" target="_blank">PMC12999955</a>，以下为相关参考文献。</div></div>

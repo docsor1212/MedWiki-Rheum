@@ -61,9 +61,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
 
 </style>
 </head>
@@ -153,7 +166,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>EULAR/PRINTO/PRES分类标准</b>：必须条件=血管造影异常 + 至少1项以下：①脉搏减弱/跛行 ②四肢血压差&gt;10mmHg ③大动脉杂音 ④高血压 ⑤ESR/CRP升高。本例满足全部条件。</div>
 
     <div class="sh blue">🧬 发病机制与免疫病理</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="mech-box">
       <b>一、大血管炎的免疫学本质</b><br>
       大动脉炎（Takayasu arteritis, TA）是以主动脉及其主要分支的肉芽肿性全层动脉炎为特征的自身免疫性大血管炎。病理表现为血管壁淋巴细胞、巨噬细胞和多核巨细胞浸润，伴内膜增厚和外膜纤维化，最终导致血管腔狭窄、闭塞或动脉瘤形成。原文通过CTA证实腹主动脉、腹腔动脉和右肾动脉狭窄，符合典型TA血管病变分布。<br><br>
       <b>二、发病机制：从免疫失调到血管重塑</b><br>
@@ -163,7 +176,7 @@ tr:hover td { background:#faf8f5; }
       <b>四、早期诊断的病理基础</b><br>
       原文强调"pulseless disease"（无脉病）名称的误导性。TA早期血管壁处于炎症活动期但尚未完全闭塞，此时脉搏仍可触及但血管病变已存在。炎症标志物（ESR/CRP）升高是活动期的唯一线索。<b>关键启示</b>：TA的诊断窗口在"有脉期"而非"无脉期"，早期影像学评估（CTA/MRA）是发现亚临床血管病变的核心手段。
       <div class="note">以上内容依据原文PMC8177979及其中引用的文献综合整理。原文以病例报告为主，机制部分为基于文献的推断。</div>
-    </div>
+    </div></div>
 
     <div class="sh green">✅ 诊断标准对照</div>
     <table>
@@ -251,7 +264,9 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断</b><br>
       ① 儿童TA最常见表现：高血压（82.6%） ② 脉搏存在≠排除TA ③ 四肢血压差&gt;10mmHg+血管杂音→关键线索 ④ CTA/MRA是确诊手段<br><br>
       <b>2. 治疗</b><br>
@@ -259,6 +274,8 @@ tr:hover td { background:#faf8f5; }
       <b>3. 预后</b><br>
       ⑧ 早期诊断→良好预后（本例5年持续缓解） ⑨ 延迟诊断→血管完全闭塞→不可逆损害 ⑩ 青少年高血压必须排除TA
     </div>
+</div>
+
 
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/8177979/" target="_blank">PMID 34136299</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8177979/" target="_blank">PMC8177979</a></div><div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

@@ -56,9 +56,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -160,7 +173,7 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 6.5 发病机制 -->
     <div class="sh blue">🧬 发病机制与免疫病理</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="mech-box">
       <b>一、血管炎核心病理</b><br>
       cPAN的病理本质为<b>中小肌性动脉的坏死性血管炎</b>，活检可见血管壁中性粒细胞浸润、纤维素样坏死及白细胞碎裂。与系统性PAN不同，cPAN的病变局限于皮肤、皮下组织、肌肉、关节和周围神经的血管，不累及肾、胃肠道、中枢神经系统等内脏器官。原文指出，皮肤活检显示"间隔性脂膜炎伴白细胞碎裂性血管炎（小-中等血管）"，是确诊cPAN的病理金标准。<br><br>
       <b>二、链球菌感染的触发作用</b><br>
@@ -172,7 +185,7 @@ tr:hover td { background:#faf8f5; }
       <b>五、治疗反应的免疫学启示</b><br>
       患儿对激素冲击有效但减量后复发，环磷酰胺部分有效，英夫利西单抗（抗TNF-α）效果不充分，最终利妥昔单抗（抗CD20/B细胞耗竭）成功控制。这一序贯治疗反应提示：B细胞及其产生的自身抗体在cPAN持续炎症中发挥核心作用，单纯抑制T细胞/巨噬细胞（TNF-α阻断）可能不足以控制B细胞驱动的慢性炎症。
       <div class="note">以上内容依据原文PMC3200074中病例描述、文献综述数据及病理/实验室结果推演。原文未直接阐述分子机制。</div>
-    </div>
+    </div></div>
 
     <!-- 7. 诊断 -->
     <div class="sh green">✅ 诊断标准对照</div>
@@ -301,7 +314,9 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 12. 要点总结 -->
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断要点</b><br>
       ① cPAN诊断依赖<b>皮肤活检</b>：中小血管坏死性血管炎<br>
       ② 排除系统性PAN：肾血管造影正常、无内脏受累<br>
@@ -319,6 +334,8 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <!-- 13. 参考文献 -->
+</div>
+
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/22046510/" target="_blank">PMID 22046510</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3200074/" target="_blank">PMC3200074</a></div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

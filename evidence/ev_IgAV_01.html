@@ -60,11 +60,24 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -150,7 +163,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>肾活检：</b>免疫荧光IgA++沉积于系膜区；光镜16个肾小球中4个新月体形成；电镜见电子致密物沉积+足突节段融合 → <b>HSPN/IgAVN IIIa</b><br><b>心肌标志物变化：</b>CK 976→25.2，CK-MB 71.6→18.7，肌钙蛋白I 9.77→0.43——心肌损伤在GC+MMF治疗后显著改善，但冠脉扩张持续进展。</div>
 
     <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
-<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<div class="mech-box">
 <p><b>IgA血管炎（IgAV）的核心免疫病理：</b>IgAV是最常见的儿童系统性小血管炎，以IgA1免疫复合物沉积于皮肤、关节、胃肠道和肾脏等器官的小血管壁为特征。原文引用2006 EULAR/PRES/PRINTO分类标准，IgAV的诊断基于可触及紫癜（必要条件）加至少一项以下表现：腹痛、IgA沉积（活检证实）、关节炎/关节痛、肾受累。</p>
 <p><b>冠状动脉受累的罕见机制：</b>本例极为罕见——IgAV合并冠状动脉瘤。原文指出"IgAV合并心脏受累极罕见（文献仅24例，儿童10例）"。其病理机制推测为：IgA-C3免疫复合物不仅沉积于皮肤和肾脏的小血管壁，也沉积于冠状动脉的中等大小血管壁→血管炎→血管壁中层破坏→冠脉扩张/瘤形成。这一机制与川崎病的冠脉损伤有相似之处（KD也是中等大小动脉的血管炎），但两者的触发因素和IgA的角色不同。</p>
 <p><b>本病例的免疫学特征：</b></p>
@@ -162,7 +175,7 @@ tr:hover td { background:#faf8f5; }
 <li><b>ANA/ANCA阴性：</b>排除SLE和ANCA相关血管炎——确认IgAV为唯一的血管炎诊断。</li>
 </ul>
 <p><b>不同脏器对免疫抑制反应的差异：</b>本例最具教学意义的是——GC+MMF使蛋白尿在22个月内消失（肾病变对免疫抑制反应良好），但冠脉瘤在治疗1个月后反而加重（冠脉病变对同样方案反应不佳）。这种差异提示冠脉血管壁的免疫损伤可能涉及与肾脏不同的机制（如血管壁中层弹性蛋白降解已不可逆），或需要更强力/更早期的干预（如IVIG或生物制剂）。</p>
-</div>
+</div></div>
 
 <div class="sh green">✅ 诊断标准对照</div>
     <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
@@ -266,7 +279,9 @@ tr:hover td { background:#faf8f5; }
 </div>
 
     <div class="sh green">📋 病例要点总结</div>
-    <div class="g2">
+
+<div class="pts-box">
+<div class="g2">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -300,6 +315,8 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
+</div>
+
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/35186817/" target="_blank">PMID 35186817</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8850625/" target="_blank">PMC8850625</a>，以下为相关参考文献。</div></div>

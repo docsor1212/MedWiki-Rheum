@@ -59,9 +59,22 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+/* ── 归墟配色：循证病例库排版优化 ── */
+.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
+.mech-box p { margin:3px 0; color:#451a03; }
+.mech-box b { color:#78350f; }
+.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
+.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
+.pts-box b { color:#052e16; }
+.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
+.diff-box b { color:#78350f; }
+
 </style>
 </head>
 <body>
@@ -150,7 +163,7 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 7. 发病机制 -->
     <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
-    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+        <div class="mech-box">
       <b>一、白塞病的血管炎本质</b><br>
       白塞病（Behçet disease, BD）是一种系统性血管炎，2012年国际Chapel Hill共识会议（CHCC）将其分类为<b>变异性血管炎（Variable vessel vasculitis）</b>——即可累及任何类型和大小的血管。原文指出，复发性口腔溃疡是最常见且有时是唯一的临床表现。其核心免疫病理为<b>中性粒细胞介导的血管内皮损伤</b>，表现为白细胞碎裂性血管炎——本例皮肤活检示真皮毛细血管破坏、肿胀的内皮细胞和中性粒细胞浸润伴核碎裂，与Chen等描述的白塞病皮肤血管炎病理特征一致。<br><br>
       <b>二、HLA-B51与遗传易感性</b><br>
@@ -159,9 +172,7 @@ tr:hover td { background:#faf8f5; }
       巨噬细胞活化综合征（MAS）是一种危及生命的过度炎症状态，特征为<b>T淋巴细胞和巨噬细胞的异常激活</b>导致细胞因子风暴。原文引用Alpsoy等的研究指出，白塞病患者血清可引起<b>巨噬细胞的经典（促炎）激活</b>，为MAS的发生提供了直接的理论依据。本例中骨髓活检发现<b>吞噬血细胞现象</b>，伴随血细胞进行性下降（Hb 10.8→9.7、WBC 3800→3400、PLT 303→229×10³）和转氨酶升高（AST 86、ALT 74），符合MAS的诊断框架。MAS在白塞病中极为罕见，成人仅有EBV相关的个案报道。<br><br>
       <b>四、针刺反应的病理生理</b><br>
       针刺反应（pathergy test）是白塞病的特征性表现，反映了<b>皮肤对微小创伤的过度炎症反应</b>——与中性粒细胞功能亢进和IL-8等趋化因子过度表达有关。本例中静脉穿刺部位出现溃疡（针刺反应的一种临床体现），进一步支持白塞病诊断。
-    </div>
-
-    <!-- 8. 诊断 -->
+    </div></div>
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出白塞病相关诊断与分类标准，逐条对照本例。</div>
     <table>
@@ -266,7 +277,9 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 12. 要点总结 -->
     <div class="sh green">📚 要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+
+<div class="pts-box">
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
       <b>1. 诊断要点</b><br>
       ① 口腔+生殖器溃疡+皮肤病变+针刺反应阳性 → 白塞病（PEDBD标准）<br>
       ② 儿童白塞病使用PEDBD标准（非成人标准）<br>
@@ -283,6 +296,8 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <!-- 13. 参考文献 -->
+</div>
+
     <div class="sh">📖 参考文献</div>
   <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/29644201/" target="_blank">PMID 29644201</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5885620/" target="_blank">PMC5885620</a>，以下为原文引用的参考文献。</div>
   <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
