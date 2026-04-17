@@ -30,8 +30,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "NLRP3炎症小体与CAPS谱系",
+        "mech": "NLRP3突变→Cryopyrin自激活→炎症小体持续组装→IL-1β大量释放→全身炎症。<br><b>CAPS谱系：</b>FCAS(寒冷诱发,最轻) → MWS(本例,中度) → NOMID/CINCA(最重)",
         "th": [
           "生命体征",
           "系统查体",
@@ -221,8 +221,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "NLRC4-MAS级联",
+        "mech": "NLRC4功能获得→炎症小体自激活→Caspase-1→IL-1β+IL-18大量释放→NK/T过度活化→巨噬细胞活化→细胞因子风暴→噬血。<br>关键：NLRC4-MAS IL-18远超其他MAS(>100,000 vs <5,000)。",
         "th": [
           "生命体征",
           "系统查体",
@@ -314,8 +314,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "cGAS-STING与I型干扰素病",
+        "mech": "STING功能获得→自激活→TBK1→IRF3→IFN-α/β大量→内皮损伤+肺成纤维细胞活化→血管病变+肺纤维化。<br>三大特征：①反复发热 ②血管病变(指端坏疽) ③ILD(进行性纤维化)。",
         "th": [
           "生命体征",
           "系统查体",
@@ -411,8 +411,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "TRAPS发病机制",
+        "mech": "突变TNFR1错误折叠→ER滞留→UPR/ER应激→ROS→NF-κB+MAPK→促炎因子(IL-6,IL-1β,TNFα)。R92P低外显率需第二信号。",
         "th": [
           "生命体征",
           "系统查体",
@@ -523,8 +523,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "双重免疫攻击",
+        "mech": "AIHA：温抗体IgG→红细胞→脾巨噬细胞→溶血。ITP：抗PLT抗体→PLT破坏。<br>共同抗原？免疫耐受打破→多系自身抗体。继发率30-50%。",
         "th": [
           "生命体征",
           "系统查体",
@@ -627,8 +627,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "TPO-RA机制",
+        "mech": "Romiplostin：肽类，皮下qw，与c-Mpl非竞争结合。<br>Eltrombopag：小分子口服qd，结合c-Mpl跨膜区，需空腹。<br>均→JAK2→STAT5→巨核细胞增殖→PLT释放。",
         "th": [
           "生命体征",
           "系统查体",
@@ -727,8 +727,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "ITP双重破坏机制",
+        "mech": "<b>外周破坏：</b>抗GPIIb/IIIa抗体→FcγR→脾脏巨噬细胞吞噬→PLT寿命缩短至数小时。<br><b>骨髓抑制：</b>自身抗体+CTL→巨核细胞损伤→产板减少。<br>儿童80%急性自限，成人80%慢性化。",
         "th": [
           "生命体征",
           "系统查体",
@@ -834,8 +834,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "慢性ITP免疫演进",
+        "mech": "抗PLT抗体→CD8+T直接杀伤→Treg缺陷→自身反应B/T逃逸→持续破坏。<br>TPO-RA：不抑制免疫→刺激巨核细胞增殖→增加PLT生成。Paradigm shift。",
         "th": [
           "生命体征",
           "系统查体",
@@ -933,8 +933,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "SLE相关ITP多重机制",
+        "mech": "四重打击：①抗PLT抗体→外周破坏 ②aPL→PLT活化→消耗+血栓 ③免疫复合物→补体→膜损伤 ④巨核细胞→产板减少。<br>所有新诊断ITP→查ANA+dsDNA+aPL。",
         "th": [
           "生命体征",
           "系统查体",
@@ -1188,8 +1188,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "CVID免疫缺陷谱",
+        "mech": "B细胞→浆细胞分化障碍→CSR障碍→低IgG+低IgA→反复感染。Treg↓→自身免疫30%。B细胞克隆→淋巴瘤5-10%。已知基因仅~10%。",
         "th": [
           "生命体征",
           "系统查体",
@@ -1275,8 +1275,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "SCID分型",
+        "mech": "X-SCID(45%)：IL2RG(γc)→IL-2/4/7/9/15/21信号全断→T⁻B⁺NK⁻。<br>分型：T⁻B⁺NK⁻(IL2RG/JAK3) | T⁻B⁻NK⁺(RAG1/2) | T⁻B⁻NK⁻(ADA) | T⁻B⁺NK⁺(IL7R)。",
         "th": [
           "生命体征",
           "系统查体",
@@ -1358,8 +1358,8 @@
             "c": "green"
           }
         ],
-        "mech_t": "",
-        "mech": "",
+        "mech_t": "BTK与B细胞发育",
+        "mech": "Pre-BCR→SYK→BLNK→BTK→PLCγ2→钙内流→增殖分化。无BTK→pre-B停滞→B细胞近零。CD19+近0%(关键诊断)，T细胞正常。",
         "th": [
           "生命体征",
           "系统查体",
