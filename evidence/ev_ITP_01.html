@@ -60,23 +60,19 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -159,7 +155,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note">PLT动态变化：IVIG后8天恢复正常→24天再次下降→持续2个月低水平（15-32）→108天恢复至121。呈典型的COVID-19后ITP延迟恢复模式。</div>
 
     <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>免疫性血小板减少症（ITP）的核心免疫病理：</b>ITP是一种以血小板免疫介导破坏增加和/或生成不足为特征的获得性疾病。原文引用Provan D等（<i>Blood Adv</i> 2019;3:3780-3817）的国际共识指南，ITP的诊断基于孤立性血小板减少（<100×10⁹/L）并排除其他原因。核心机制包括：（1）抗血小板自身抗体介导的血小板被巨噬细胞吞噬（主要通过Fcγ受体途径）；（2）CD8⁺ T细胞直接杀伤血小板；（3）巨核细胞损伤导致血小板生成减少。</p>
 <p><b>COVID-19继发ITP的机制：</b>原文讨论中指出，COVID-19相关ITP可能通过两种模式发生："①病毒血症期：分子模拟/直接骨髓抑制；②感染后：免疫失调产生抗血小板抗体。"本例中患儿SARS-CoV-2 RT-PCR阳性与ITP症状同日出现，提示两种机制均可能参与。</p>
 <p><b>本病例的免疫学特征：</b></p>
@@ -171,7 +167,7 @@ tr:hover td { background:#faf8f5; }
 <li><b>IVIG的作用机制：</b>IVIG通过（1）阻断巨噬细胞Fcγ受体减少血小板吞噬；（2）抑制自身抗体产生；（3）调节T细胞功能——从而快速提升血小板。本例IVIG后第8天PLT恢复至266×10³，符合典型IVIG反应模式。</li>
 </ul>
 <p><b>慢性化机制：</b>出院后PLT再次降至25×10³并持续2个月维持在15-32×10³，第108天才恢复至121×10³。这种慢性化趋势提示COVID-19可能诱发持续性的免疫紊乱，包括记忆B细胞持续产生抗血小板抗体和T细胞免疫监视失调。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断标准对照</div>
     <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
@@ -263,9 +259,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
     <div class="sh green">📋 病例要点总结</div>
-
-<div class="pts-box">
-<div class="g2">
+    <div class="g2 pts-box">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -299,8 +293,6 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
-</div>
-
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/37033169/" target="_blank">PMID 37033169</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10073461/" target="_blank">PMC10073461</a>，以下为相关参考文献。</div></div>

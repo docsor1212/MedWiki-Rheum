@@ -60,23 +60,19 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -146,7 +142,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>肾活检（Day 22）：</b>光镜示膜增生性损伤（60个肾小球中3个新月体）；电镜见GBM双轨征+电子致密物沉积；免疫荧光C3(2+)和IgA(2+)共沉积 → <b>膜增生性GN伴补体异常</b>。<b>补体详细检测：</b>Factor B/H/I均降低（替代途径激活），C3NeF阴性，sC5b-9正常（终端途径静止）。<br><b>趋势解读：</b>C3从66→84→117恢复正常；UPC从>19.8→8.1→1.3持续下降；白蛋白从1.8→3.4回升——GC+MMF+ACEI方案3个月显著有效。</div>
 
     <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>IgA血管炎（IgAV）的免疫病理基础：</b>IgAV（又称Henoch-Schönlein紫癜/HSP）是一种以IgA免疫复合物沉积于小血管壁为特征的系统性小血管炎。原文详细阐述了IgA免疫复合物的核心作用：抗原暴露后形成含IgA的免疫复合物，沉积于皮肤、关节、胃肠道和肾脏等器官的小血管（包括肾小球毛细血管和系膜），引发炎症细胞浸润。原文明确指出"IgA immune complexes are hypothesized to play a central role in the pathophysiology of IgAV"。</p>
 <p><b>IgA异常糖基化与补体激活：</b>原文提供了一个关键的发病机制——IgA铰链区异常糖基化（galactose-deficient IgA1, Gd-IgA1）。这种异常糖基化的IgA在IgAVN和IgA肾病中均有报道（引用Allen AC et al. <i>Nephrol Dial Transplant</i> 1998; Suzuki H et al. <i>Kidney Int</i> 2018）。含Gd-IgA1的免疫复合物通过<b>凝集素途径</b>激活补体系统——肾小球内C4d、甘露糖结合凝集素（MBL）、L-纤维胶凝蛋白和MBL相关丝氨酸蛋白酶的沉积与更重的蛋白尿和病理损害相关。更新的研究发现Collectin-11可结合IgA-抗体复合物并激活补体凝集素途径（引用Wei M et al. <i>Clin J Am Soc Nephrol</i> 2021）。</p>
 <p><b>本病例的非典型免疫学特征：</b></p>
@@ -157,7 +153,7 @@ tr:hover td { background:#faf8f5; }
 <li><b>肾病范围蛋白尿：</b>UPC>19.8 mg/mg+白蛋白1.8 g/dL→肾病综合征——在IgAVN中属重度肾受累。</li>
 </ul>
 <p><b>补体作为疾病修饰因子：</b>原文结论指出"complement modifies the pathogenesis of IgAV"——补体不仅是旁观者，而是疾病修饰因子。本例中补体替代途径的激活可能导致比典型IgAVN更严重的肾损伤模式（MPGN vs 系膜增生），并可能成为治疗靶点——原文提出"complement-targeted therapy"可能是难治性IgAV的治疗选择。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断标准对照</div>
     <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
@@ -261,9 +257,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
     <div class="sh green">📋 病例要点总结</div>
-
-<div class="pts-box">
-<div class="g2">
+    <div class="g2 pts-box">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -297,8 +291,6 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
-</div>
-
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/35757129/" target="_blank">PMID 35757129</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9218267/" target="_blank">PMC9218267</a>，以下为相关参考文献。</div></div>

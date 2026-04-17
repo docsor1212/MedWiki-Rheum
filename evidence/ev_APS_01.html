@@ -59,22 +59,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -167,7 +163,7 @@ tr:hover td { background:#faf8f5; }
 </table>
 
 <div class="sh " style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
   <b>一、抗磷脂抗体的致血栓机制</b><br>
   抗磷脂综合征（APS）是一种非炎症性自身免疫病，以反复血管血栓事件和病理妊娠为核心特征。原文指出，其核心致病因子为<b>抗磷脂抗体（aPL）</b>，包括狼疮抗凝物（LA）、抗心磷脂抗体（aCL）和抗β2糖蛋白I抗体（anti-β2GPI）。这些抗体通过多种机制促进血栓形成：①与血管内皮细胞表面的β2GPI结合，诱导内皮细胞活化和组织因子表达 ②激活血小板，促进聚集 ③干扰天然抗凝系统（蛋白C途径、annexin A5屏障）④激活补体级联反应，产生C3a、C5a等促炎介质。<br><br>
   <b>二、CAPS的"血栓风暴"机制</b><br>
@@ -176,7 +172,7 @@ tr:hover td { background:#faf8f5; }
   原文指出，CVST在APS患者中的患病率仅约0.7%，但却是APS的重要神经系统表现。CVST的发病机制为颅内静脉回流受阻导致颅内高压，常伴脑脊液吸收障碍。儿童CVST发生率约7/100万，感染是最常见病因，但APS是不可忽视的非感染性病因。本例中血栓迅速从横窦/乙状窦扩展至上矢状窦/直窦/颈内静脉，反映了CAPS的快速进展性。<br><br>
   <b>四、本例的特殊免疫学特征</b><br>
   本例LA阳性（dRVVT比值1.44）但aCL和anti-β2GPI均在正常范围，而<b>抗磷脂酰乙醇胺IgM阳性</b>。这种"血清学阴性"的aPL模式（仅LA阳性）是APS诊断的难点之一。原文引用的2023 ACR/EULAR新分类标准引入了加权评分系统，LA阳性的权重最高，强调了LA在APS诊断中的核心地位。
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断</div>
 <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出APS/CAPS相关诊断与分类标准，逐条对照本例。</div>
@@ -239,7 +235,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="
   <b>1. 诊断要点</b><br>
   ① 儿童CVST需全面筛查抗磷脂抗体谱<br>
   ② CAPS以短期内多部位血栓为特征<br>
@@ -251,7 +247,8 @@ tr:hover td { background:#faf8f5; }
   ⑥ D-二聚体动态监测血栓活动<br>
   ⑦ 全身血管超声筛查隐匿血栓<br><br>
   <b>4. 预后</b><br>
-  ⑧ 儿</div></div>
+  ⑧ 儿童CAPS死亡率33%-50%
+</div>
 
 <div class="sh ">📖 参考文献</div>
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/39722765/" target="_blank">PMID 39722765</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11668558/" target="_blank">PMC11668558</a>，以下为原文引用的参考文献。</div>

@@ -60,22 +60,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -161,7 +157,7 @@ tr:hover td { background:#faf8f5; }
     </table>
 
     <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div class="mech-box">
+    <div class="mech-box" style="
       <p><b>一、核心免疫学通路：Pyrin炎症小体与IL-1β过度激活</b></p>
       <p>FMF由<b>MEFV基因</b>（编码Pyrin蛋白）突变引起。Pyrin是固有免疫系统中的一种模式识别受体，正常情况下通过检测<b>Rho GTP酶失活</b>（常由细菌毒素引起）来感知危险信号，进而组装Pyrin炎症小体（Pyrin-ASC-Caspase-1复合体）→活化Caspase-1→切割pro-IL-1β为成熟IL-1β。MEFV致病突变（尤其M694V）导致Pyrin蛋白<b>结构异常</b>，使其在无Rho失活刺激下也能自发组装炎症小体→<b>IL-1β自主性过度产生</b>→反复发热和浆膜炎症。</p>
       <p><b>二、本病例特异性免疫异常</b></p>
@@ -169,7 +165,7 @@ tr:hover td { background:#faf8f5; }
       <p><b>三、病理生理学解释</b></p>
       <p>从分子到临床：M694V纯合→Pyrin自发组装炎症小体→IL-1β过度产生→①<b>急性期反应</b>：CRP/ESR/SAA升高（SAA是AA型淀粉样变前体蛋白）；②<b>浆膜炎</b>：腹膜炎（腹痛）、胸膜炎（胸痛）、滑膜炎（关节痛）；③<b>皮肤表现</b>：红斑性皮疹（丹毒样红斑）；④<b>肝脏受累</b>：IL-1β驱动的肝窦Kupffer细胞活化→肝脏急性期反应→AST/ALT升高+满天星肝超声表现。本例祖父因肾功能不全去世，高度怀疑AA型淀粉样变——SAA长期升高→AA型淀粉纤维沉积→肾脏损害。</p>
       <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC6749622原文 + Papa R等（Orphanet J Rare Dis 2017）Eurofever注册研究</p>
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出家族性地中海热（FMF）M694V纯合的诊断与分类标准，逐条对照本例。</div>
@@ -241,9 +237,7 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断</b><br>
       ① FMF典型：反复发热+腹痛+关节痛 ② M694V纯合→严重表型 ③ 确诊依赖MEFV基因<br><br>
       <b>2. 治疗</b><br>
@@ -251,8 +245,6 @@ tr:hover td { background:#faf8f5; }
       <b>3. 监测</b><br>
       ⑦ SAA是最重要指标 ⑧ 定期尿蛋白/肾功能 ⑨ M694V纯合+家族史→高危
     </div>
-</div>
-
 
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/31533789/" target="_blank">PMID 31533789</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749622/" target="_blank">PMC6749622</a></div>

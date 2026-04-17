@@ -55,21 +55,17 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 
@@ -140,7 +136,7 @@ tr:hover td { background:#faf8f5; }
       <tr><td class="b">PSMB8</td><td class="c-r">c.208A>T p.Thr70Ser（杂合）</td><td></td><td class="c-r">新发突变！</td></tr>
     </table>
     <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div class="mech-box">
+    <div class="mech-box" style="
       <p><b>一、核心免疫学通路：免疫蛋白酶体功能障碍与I型干扰素过度激活</b></p>
       <p>CANDLE综合征由<b>PSMB8基因</b>（编码免疫蛋白酶体β8亚基，proteasome subunit β type 8）突变引起。免疫蛋白酶体是在抗原提呈细胞中高表达的特殊蛋白酶体形式，负责降解胞内蛋白为短肽供MHC I类分子提呈。原文指出，PSMB8功能缺陷导致<b>免疫蛋白酶体组装障碍</b>→未降解蛋白（尤其是氧化/泛素化蛋白）在细胞内蓄积→激活内质网应激→<b>I型干扰素通路（IFN-α/β）过度激活</b>。因此CANDLE被归类为<b>I型干扰素病（Type I Interferonopathy）</b>。</p>
       <p><b>二、本病例特异性免疫异常</b></p>
@@ -148,7 +144,7 @@ tr:hover td { background:#faf8f5; }
       <p><b>三、病理生理学解释</b></p>
       <p>从分子层面看：免疫蛋白酶体缺陷→蛋白降解障碍→泛素化蛋白蓄积→NF-κB通路激活+STING通路异常活化→<b>IFN-α/β大量产生</b>→IFN刺激基因（ISG）上调→系统性炎症（发热、皮疹、关节痛）+组织损伤（脂膜炎→脂肪萎缩、肾小球损伤→蛋白尿）。这一机制解释了为何IL-1靶向治疗无效而<b>JAK抑制剂</b>（阻断IFN信号传导）在理论上有依据。</p>
       <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC4044283原文 + Liu Y等（J Allergy Clin Immunol 2012）CANDLE最初描述</p>
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出CANDLE（慢性非典型中性粒细胞皮肤病伴脂肪代谢障碍）的诊断与分类标准，逐条对照本例。</div>
@@ -219,16 +215,12 @@ tr:hover td { background:#faf8f5; }
       <p>本例对年轻医生的核心教学点：①"治疗反应"本身是诊断线索——IL-1拮抗剂无效应促使重新审视发病机制假说；②脂肪萎缩虽不常见，但一旦出现具有极高的疾病特异性；③I型干扰素病的概念正在扩展，CANDLE、SAVI、AGS等共享IFN通路过度激活这一核心机制，<b>JAK抑制剂可能是跨病种的共同治疗策略</b>；④新发突变（如本例Thr70Ser）需要功能验证，但临床表型一致性可作为诊断支持。</p>
     </div>
     <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断</b>：早发（&lt;1岁）发热+皮疹+脂肪萎缩 → 查PSMB8<br>
       <b>2. 发病机制</b>：免疫蛋白酶体障碍→IFN通路过度激活<br>
       <b>3. 治疗</b>：IL-1拮抗剂通常无效，JAK抑制剂有前景<br>
       <b>4. 并发症</b>：生长迟缓、肾病（新发现）、淀粉样变风险
     </div>
-</div>
-
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4044283/" target="_blank">PMC4044283</a></div>
   <div class="note" style="margin-bottom:4px;">⚠️ 本文为PReS 2013会议摘要（Poster P192），原文无正式参考文献列表。以下仅列出原文来源。</div>

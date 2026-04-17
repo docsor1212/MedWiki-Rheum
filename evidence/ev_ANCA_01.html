@@ -59,21 +59,17 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -167,7 +163,7 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 7. 发病机制 -->
     <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
-        <div class="mech-box">
+    <div class="mech-box" style="
       <b>一、ANCA相关血管炎的免疫发病机制</b><br>
       肉芽肿性多血管炎（GPA）是一种系统性疾病，属ANCA相关血管炎（AAV）范畴，其核心免疫病理特征为<b>抗中性粒细胞胞浆抗体（ANCA）</b>介导的小血管坏死性炎症。原文指出，GPA是儿童最常见的ANCA相关血管炎，但仅3.3%的病例在20岁前发病，年发病率在儿童中仅为0.1/10万。GPA的标志性自身抗体为<b>PR3-ANCA（c-ANCA）</b>，靶向中性粒细胞和单核细胞胞浆中的蛋白酶3（Proteinase 3）。<br><br>
       <b>二、ANCA-中性粒细胞相互作用机制</b><br>
@@ -176,7 +172,9 @@ tr:hover td { background:#faf8f5; }
       GPA经典累及上呼吸道（鼻息肉、声门下狭窄）、下呼吸道（肺结节/空洞/出血）和肾脏（坏死性新月体肾炎）。原文强调，<b>脾梗死</b>是GPA的罕见表现，其机制为坏死性血管炎累及脾动脉远端分支导致缺血性梗死。脾受累常被低估，与<b>年轻年龄、耳鼻喉受累和PR3阳性</b>相关，多在尸检中发现。本例中脾脏异常先于GPA诊断，是多学科讨论的重要线索。<br><br>
       <b>四、消化道模拟IBD的机制</b><br>
       原文指出，GPA的胃肠道受累在成人中发生率约5%-20%，可表现为腹痛、回结肠炎、胆囊炎、出血和肠穿孔，症状与IBD高度重叠。粪钙卫蛋白升高并非IBD特异性——本例中粪钙卫蛋白升高实际继发于肠道血管炎而非IBD，这一发现对鉴别诊断具有重要启示意义。
-    </div></div>
+    </div>
+
+    <!-- 8. 诊断 -->
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出GPA/ANCA相关血管炎的诊断与分类标准，逐条对照本例。</div>
     <table>
@@ -277,9 +275,7 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 12. 要点总结 -->
     <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断要点</b><br>
       ① GPA可模拟IBD，消化道症状+粪钙卫蛋白升高不代表一定是IBD<br>
       ② 多系统症状（鼻衄+皮疹+肺+肾）应高度警惕系统性血管炎<br>
@@ -297,8 +293,6 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <!-- 13. 参考文献 -->
-</div>
-
     <div class="sh">📖 参考文献</div>
   <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/39149179/" target="_blank">PMID 39149179</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11322005/" target="_blank">PMC11322005</a></div>
   <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

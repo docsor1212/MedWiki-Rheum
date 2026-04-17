@@ -60,22 +60,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -155,7 +151,7 @@ tr:hover td { background:#faf8f5; }
     </table>
 
     <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-    <div class="mech-box">
+    <div class="mech-box" style="
       <p><b>一、核心免疫学通路：STING组成性活化与I型干扰素病</b></p>
       <p>SAVI（STING-Associated Vasculopathy with Onset in Infancy）由<b>TMEM173基因</b>（编码STING蛋白，Stimulator of Interferon Genes）<b>功能获得性突变</b>引起。STING是胞质DNA感受器通路（cGAS-STING通路）的关键接头蛋白。正常情况下，胞质双链DNA结合cGAS→产生cGAMP→激活STING→STING从内质网转位至高尔基体→招募TBK1→磷酸化IRF3→I型IFN转录。SAVI相关突变（如V155M、V147L、N154S）导致STING<b>无需cGAMP刺激即可组成性活化</b>，持续激活TBK1-IRF3轴，导致I型IFN大量产生。</p>
       <p><b>二、本病例特异性免疫异常</b></p>
@@ -163,7 +159,7 @@ tr:hover td { background:#faf8f5; }
       <p><b>三、病理生理学解释</b></p>
       <p>从分子到临床的完整路径：STING V155M组成性活化→TBK1-IRF3持续磷酸化→<b>I型IFN（IFN-α/β）大量产生</b>→JAK-STAT信号通路持续激活→ISG上调→①血管内皮细胞炎症/损伤（皮疹、血管炎、指端坏死）；②肺泡上皮/间质细胞损伤（ILD、肺纤维化）；③系统性炎症（反复发热、CRP升高）。体细胞嵌合突变意味着突变仅存在于部分细胞，解释了表型的可变性和非家族遗传特征。</p>
       <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC5027210原文 + Liu Y等（N Engl J Med 2014;371:507-518）SAVI最初描述</p>
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出SAVI（STING相关血管病伴婴儿期起病）的诊断与分类标准，逐条对照本例。</div>
@@ -233,9 +229,7 @@ tr:hover td { background:#faf8f5; }
       <div class="t-item yellow"><div class="t-date">长期预后</div><div class="t-content">原文为Letter形式，未提供详细长期随访数据。ILD持续存在需密切监测肺功能和HRCT。</div></div>
     </div>
 <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断</b><br>
       ① SAVI三联征：早发ILD + 皮疹 + 发热 ② 确诊依赖TMEM173基因 ③ I型IFN签名升高是重要辅助<br><br>
       <b>2. 治疗</b><br>
@@ -243,8 +237,6 @@ tr:hover td { background:#faf8f5; }
       <b>3. 监测</b><br>
       ⑦ 肺功能+HRCT定期评估 ⑧ IFN签名监测治疗反应 ⑨ 体细胞嵌合≠家族遗传
     </div>
-</div>
-
 
     <div class="sh">📖 参考文献</div>
   <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/27552632/" target="_blank">PMID 27552632</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5027210/" target="_blank">PMC5027210</a></div>

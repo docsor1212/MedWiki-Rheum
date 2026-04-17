@@ -59,22 +59,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -183,14 +179,14 @@ tr:hover td { background:#faf8f5; }
 <div class="alert"><b>注意：</b>蛋白尿从1.499→0.333→0.785 g/24h，贝利尤单抗后UPTR接近正常但肌酐升至145（eGFR 32.8），需持续监测肾功能进展。</div>
 
 <div class="sh ">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>儿童SLE的免疫病理基础</b></p>
 <p>SLE是一种以自身抗体和循环免疫复合物为特征的自身免疫病。其发病核心是丧失对核抗原（dsDNA、Sm、RNP等）的免疫耐受，导致致病性自身抗体（主要为IgG型）的产生。免疫复合物沉积于靶器官（肾脏、皮肤、关节等），引发补体激活和组织损伤性炎症。原文指出："The hallmark of SLE is excessive production of antibodies to nuclear antigens (ANA), double-stranded DNA (dsDNA), ribonuclear proteins (RNP), Smith antigen (Sm)..."。本例ANA >1:3,200，补体C3显著降低（0.38 g/L），反映了高水平的自身免疫活性和补体消耗。</p>
 <p><b>Fanconi综合征的继发机制</b></p>
 <p>Fanconi综合征是近端肾小管多功能障碍（糖尿、磷酸盐尿、氨基酸尿、碳酸氢盐尿→肾小管酸中毒）。在SLE中，其发生机制为免疫复合物沉积于肾小管间质→炎症损伤近曲小管上皮细胞→重吸收功能障碍。本例表现为严重代谢性酸中毒（pH 7.21）、低钾（2.60）、低钙（1.69）、低磷（0.67）、碱性尿（pH>5.5）、糖尿（+++），均符合完全性Fanconi综合征。肾活检同时发现V型狼疮肾炎（膜性肾病），提示肾小球和肾小管同时受免疫损伤。</p>
 <p><b>本例特殊性：以肾小管功能障碍为唯一首发表现</b></p>
 <p>本例4岁8个月男童无发热、皮疹、脱发、关节炎等典型狼疮症状，仅表现为乏力、多饮、多尿和生长迟缓。5岁前发病的cSLE仅占约5%，以Fanconi综合征为首发表现更为极其罕见。这提示对不明原因的近端肾小管酸中毒，应筛查ANA和补体以排除潜在的自身免疫病。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出儿童系统性红斑狼疮（cSLE）合并狼疮肾炎V型+Fanconi综合征的诊断与分类标准，逐条对照本例。</div>
@@ -252,7 +248,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="
   <b>1. 诊断要点</b><br>
   ① 儿童SLE可无典型表现，以肾小管功能障碍为首发<br>
   ② 5岁前发病仅占cSLE 5%，需高度警惕<br>
@@ -264,7 +260,8 @@ tr:hover td { background:#faf8f5; }
   <b>3. 监测要点</b><br>
   ⑦ SLEDAI评分+蛋白尿+补体+电解质<br><br>
   <b>4. 预后</b><br>
-  </div></div>
+  ⑧ 早期积极治疗可改善长期预后
+</div>
 
 <div class="sh ">📖 参考文献</div>
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38250590/" target="_blank">PMID 38250590</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10796690/" target="_blank">PMC10796690</a></div>

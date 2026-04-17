@@ -60,23 +60,19 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -156,12 +152,12 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>关节液分析：</b>有核细胞 4,280/µL（明显升高），革兰染色阴性。<b>X线（右膝）：</b>未见异常。<b>超声：</b>复杂分叶状积液 4.7×1.3×3.7 cm。<b>MRI：</b>滑膜增厚，累及髌上隐窝、髌股关节区等多处。</div>
 
 <div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>一、JIA的自身免疫发病机制</b><br>原文引用Zaripova等（2021）的研究指出，JIA的发病涉及促炎性T细胞和自身抗体启动的细胞因子级联反应，驱动淋巴细胞、巨噬细胞和中性粒细胞浸润关节滑膜。该过程导致滑膜增生和肥厚，进而引起病理性血管新生、关节肿胀以及软骨和骨质损伤。</p>
 <p><b>二、遗传易感性</b><br>原文强调遗传因素在JIA发病中的关键作用：JIA患者的同胞患病风险是普通人群的30倍。HLA II类基因与少关节型和多关节型JIA的关联已被证实，同时非HLA基因也可能参与发病。本例虽无家族史，但ANA高滴度（1:320均质型）提示遗传易感性背景。</p>
 <p><b>三、本例特异性免疫异常</b><br>① <b>ESR 101 mm/h + CRP 1.3 mg/dL</b>：显著升高的炎症指标反映系统性炎症反应，少关节型JIA通常ESR轻度升高，本例极度升高提示炎症活动剧烈。<br>② <b>PLT 702 K/µL</b>：反应性血小板增多，机制为慢性炎症→IL-6升高→促血小板生成素（TPO）产生增加→血小板增多。原文引用文献指出这是慢性炎症性疾病的常见表现。<br>③ <b>ANA 1:320均质型</b>：与JIA相关，且是葡萄膜炎的高危标志。均质型与SLE和JIA相关（原文引用文献14），但本例dsDNA阴性、无关节外表现排除SLE。<br>④ <b>关节液有核细胞4,280/µL</b>：明显升高+革兰染色阴性，证实炎性而非感染性关节炎。<br>⑤ <b>MRI滑膜增厚</b>：累及髌上隐窝、髌股关节等多处，证实慢性滑膜炎的影像学特征。</p>
 <p><b>四、环境因素</b><br>原文指出感染（本例3周前上呼吸道感染）、母亲吸烟、母乳喂养方式等环境因素可能影响JIA的发生。本例上呼吸道感染可能是触发自身免疫反应的起始因素。</p>
-</div></div>
+</div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出少关节型幼年特发性关节炎（ANA高滴度阳性）的诊断与分类标准，逐条对照本例。</div>
@@ -234,9 +230,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
     <div class="sh green">📋 病例要点总结</div>
-
-<div class="pts-box">
-<div class="g2">
+    <div class="g2 pts-box">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -270,8 +264,6 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
-</div>
-
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/40964590/" target="_blank">PMID 40964590</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12439517/" target="_blank">PMC12439517</a>，以下为相关参考文献。</div></div>

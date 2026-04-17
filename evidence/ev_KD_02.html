@@ -59,22 +59,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -164,12 +160,12 @@ tr:hover td { background:#faf8f5; }
 </table>
 
 <div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>一、不完全KD的免疫学特征</b><br>原文指出，不完全KD的诊断极具挑战性，约20%患者对初始IVIG治疗无反应（IVIG抵抗），且IVIG抵抗患者发生冠状动脉异常和长期心血管并发症的风险显著升高。不完全KD在<6月婴儿中更为常见，因免疫系统发育不成熟，典型临床特征（皮疹、结膜炎、草莓舌等）常缺失或不明显。</p>
 <p><b>二、本例特异性免疫与炎症反应</b><br>① <b>CRP 142 mg/L + ESR 94 mm/h</b>：极显著升高的急性期反应物，反映强烈的全身炎症反应。<br>② <b>WBC 43,450/cu.mm（中性粒细胞为主）+ PLT 800,000/cu.mm</b>：显著白细胞增多和血小板增多是KD亚急性期的特征性表现，PLT升高在KD第2-3周达峰。<br>③ <b>LMCA Z-score 2.9→3.2的动态恶化</b>：首剂IVIG后冠状动脉继续扩张，证实IVIG抵抗，反映血管炎症未被控制。<br>④ <b>前囟膨隆+CSF间隙增宽</b>：KD血管炎累及颅内血管→血脑屏障通透性增加→颅内压增高。这是KD的非典型表现，在<6月婴儿中需特别警惕。</p>
 <p><b>三、IVIG抵抗的预测模型局限性</b><br>原文详细讨论了日本风险评分系统（Kobayashi、Sano、Egami评分）在非日本人群中的预测效能有限。本例采用了北美风险模型（Son MBF et al. 2019）：基线CA Z-score≥2.0 + 年龄<6月 + 亚洲裔 + CRP>13 mg/L。基线CA扩张是最强预测因子。<6月婴儿即使及时接受IVIG，CA瘤风险仍高达35%，这本身就构成了增强初始治疗的独立适应证。</p>
 <p><b>四、增强初始治疗的理论基础</b><br>RAISE研究证实，IVIG+泼尼松龙联合治疗可降低IVIG抵抗率（尤其高危人群）。其机制为：IVIG通过Fc受体调节免疫细胞功能+中和自身抗体+抑制补体激活；糖皮质激素则广泛抑制炎症因子转录（NF-κB通路），两者协同可更有效地控制血管炎症。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出不完全川崎病（IVIG抵抗型）的诊断与分类标准，逐条对照本例。</div>
@@ -238,7 +234,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="
   <b>1. 诊断要点</b><br>
   ① &lt;6月婴儿不完全KD诊断困难，需主动行超声心动图<br>
   ② 前囟膨隆可为KD非典型表现<br>
@@ -252,7 +248,8 @@ tr:hover td { background:#faf8f5; }
   ⑧ 关注PLT动态变化（亚急性期可进一步升高）<br><br>
   <b>4. 预后</b><br>
   ⑨ 早期积极治疗可改善冠状动脉结局<br>
-  ⑩ </div></div>
+  ⑩ 出院后需继续低剂量阿司匹林4周
+</div>
 
 <div class="sh ">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41804474/" target="_blank">PMID 41804474</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12967473/" target="_blank">PMC12967473</a>，以下为原文引用的参考文献。</div></div>
 <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">

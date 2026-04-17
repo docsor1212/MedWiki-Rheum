@@ -56,21 +56,17 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 
@@ -142,7 +138,7 @@ tr:hover td { background:#faf8f5; }
       <tr><td class="b">NLRC4基因</td><td class="c-r">c.A91C p.Asn31His（CARD域，杂合）</td><td><b>新发突变！首个CARD域AIFEC突变</b></td></tr>
     </table>
     <div class="sh blue">🧬 发病机制与免疫病理</div>
-    <div class="mech-box">
+    <div class="mech-box" style="
       <b>一、NLRC4炎性小体的结构与功能</b><br>
       NLRC4（NOD-like receptor family CARD-containing 4）是先天免疫系统中重要的胞质模式识别受体。原文指出NLRC4蛋白由<b>三个功能域</b>组成：<b>①</b>N端CARD域（caspase activating and recruitment domain）——与下游效应蛋白（如caspase-1）相互作用，启动信号转导；<b>②</b>中央NBD域（nucleotide-binding domain，又称NACHT域）——介导自身寡聚化，是激活的分子开关；<b>③</b>C端LRR域（leucine-rich repeat）——感受上游信号并维持自身抑制状态（LRR去除导致NLRC4持续活化）。正常状态下，LRR域通过自身折叠保持NLRC4处于自身抑制构象。<br><br>
       <b>二、功能增益（GOF）突变→炎性小体过度激活</b><br>
@@ -154,7 +150,7 @@ tr:hover td { background:#faf8f5; }
       <b>五、体细胞嵌合与迟发起病</b><br>
       原文还描述了NLRC4体细胞嵌合（somatic mosaicism）导致的迟发起病——成年后才出现反复发热、肌痛、皮疹。这与种系突变（本例母系遗传）的婴儿期起病形成对比，说明突变水平和嵌合比例直接影响发病年龄和严重程度。
       <div class="note">以上内容依据原文PMC11487858 Background和Discussion部分整理，所有机制描述均有原文依据。</div>
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断标准对照</div>
     <table>
@@ -227,16 +223,12 @@ tr:hover td { background:#faf8f5; }
       本例母亲和外祖母携带同一NLRC4突变但表型较轻（仅儿童期反复发热，已自限）。<b>决策建议</b>：<b>①</b>确诊先证者后→建议父母及一级亲属行Sanger验证；<b>②</b>无症状携带者——目前无需预防性治疗，但应告知发热发作时需就医评估；<b>③</b>计划生育——50%遗传概率，但外显率不完全（修饰基因/环境因素影响），产前诊断可行但需结合遗传咨询；<b>④</b>未来可能——NLRC4新突变（如本例CARD域）的临床意义判定需功能验证（VUS→likely pathogenic的升级证据）。
     </div>
     <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断</b>：婴儿期周期性发热+肠炎+MAS → 查NLRC4<br>
       <b>2. 基因</b>：首个CARD域致病突变，拓宽基因型-表型关系<br>
       <b>3. 治疗</b>：Adalimumab有效；IL-1拮抗剂可能不足<br>
       <b>4. 遗传</b>：常染色体显性，不完全外显，需遗传咨询
     </div>
-</div>
-
     <div class="sh">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/11487858/" target="_blank">PMID 39425177</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11487858/" target="_blank">PMC11487858</a></div>
 
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/11487858/" target="_blank">PMID 39425177</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11487858/" target="_blank">PMC11487858</a>，以下为相关参考文献。</div></div>

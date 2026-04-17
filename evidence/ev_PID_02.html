@@ -60,23 +60,19 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -149,7 +145,7 @@ tr:hover td { background:#faf8f5; }
     <div class="note"><b>肾活检：</b>光镜示系膜增生+单细胞纤维性新月体+局灶坏死+肾小管间质病变；免疫荧光C3(+++)星空样沉积，IgA/IgM/IgG/C1q均阴性。<b>胸部CT：</b>左肺下叶局限性支气管扩张。</div>
 
     <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
-        <div class="mech-box">
+    <div class="mech-box" style="
       <b>一、BTK基因与B细胞发育</b><br>
       X连锁无丙种球蛋白血症（XLA）是最常见的原发性抗体缺陷病之一，由<b>Bruton酪氨酸激酶（BTK）基因</b>突变所致。BTK基因位于X染色体长臂（Xq21.3-Xq22），全长37.5 kb，含19个外显子，编码659个氨基酸的蛋白。原文指出，BTK属于Tec家族非受体酪氨酸激酶，其缺陷阻碍了pro-B细胞向pre-B细胞后期阶段的成熟，导致外周血成熟B淋巴细胞显著减少，浆细胞生成障碍，各免疫球蛋白亚类全面低下。约1/3为家族性遗传，2/3为新发突变。<br><br>
       <b>二、免疫球蛋白缺陷与感染易感性</b><br>
@@ -158,7 +154,7 @@ tr:hover td { background:#faf8f5; }
       原文特别强调，XLA患者中约<b>15%</b>可合并自身免疫疾病，包括炎症性肠病（IBD）、自身免疫性溶血性贫血（AIHA）、硬皮病和免疫复合物介导的肾小球肾炎等。尽管XLA患者几乎缺乏免疫球蛋白，但肾活检可出现免疫复合物沉积或补体沉积（如本例C3(+++)星空样沉积），其机制可能与反复感染触发的免疫复合物形成、补体替代途径激活有关。<br><br>
       <b>四、肾损伤的病理机制</b><br>
       原文综述指出，XLA患者合并肾病变的机制尚不明确——可能是内源性微量Ig形成的免疫复合物、IVIG相关的肾损伤、或感染触发的补体介导肾损伤。本例双胞胎兄弟均出现肾病变（弟弟：C3星空样沉积+肾小管间质病变；哥哥：膜增生性肾小球肾炎），提示<b>BTK基因缺陷不仅影响B细胞发育，还参与Toll样受体信号和单核/巨噬细胞功能</b>，可能间接影响肾脏免疫稳态。
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出XLA/原发性免疫缺陷相关诊断标准，逐条对照本例。</div>
@@ -243,9 +239,7 @@ tr:hover td { background:#faf8f5; }
     </div>
 
     <div class="sh green">📋 病例要点总结</div>
-
-<div class="pts-box">
-<div class="g2">
+    <div class="g2 pts-box">
       <div>
         <p class="b" style="color:var(--accent)">诊断要点</p>
         <ol style="font-size:11.5px;padding-left:16px">
@@ -279,8 +273,6 @@ tr:hover td { background:#faf8f5; }
         </ol>
       </div>
     </div>
-</div>
-
 
     <div class="sh">📚 参考文献
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/39119334/" target="_blank">PMID 39119334</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11307147/" target="_blank">PMC11307147</a>，以下为相关参考文献。</div></div>

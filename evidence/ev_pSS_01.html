@@ -57,21 +57,17 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
 
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 
@@ -135,12 +131,12 @@ tr:hover td { background:#faf8f5; }
     </table>
     <div class="note"><b>AEC标准</b>：满足4/6条（口干+眼干+Schirmer+活检）。儿童pSS中ANA/抗SSA可阴性，<b>腮腺肿大比成人更常见</b>。</div>
     <div class="sh purple">🧬 发病机制与免疫病理</div>
-    <div class="mech-box">
+    <div class="mech-box" style="
       <p><b>核心免疫学通路：</b>干燥综合征（SS）的免疫病理核心是外分泌腺的淋巴细胞浸润和腺体功能丧失。原文指出"SS is a chronic autoimmune disorder mainly affects salivary and lacrimal glands, with varying degrees of systemic involvement"。其发病涉及：（1）上皮细胞作为抗原提呈细胞，将Ro/SSA和La/SSB抗原提呈给CD4+T细胞；（2）Th1/Th2细胞因子失衡，促炎因子（IFN-γ、IL-6、BAFF）驱动B细胞活化；（3）B细胞产生自身抗体（抗SSA/SSB、RF等）并形成生发中心样结构；（4）腺泡和导管上皮细胞凋亡增加，导致腺体功能不可逆丧失。</p>
       <p><b>本病例特异性免疫异常：</b>该9岁男孩的显著特征是自身抗体全面阴性——ANA阴性、抗SSA/SSB阴性、RF阴性、CRP阴性。原文讨论中指出"serology was negative. Probably serology in males may take some more time to become positive. Male patients seem to have less systemic manifestations and lower frequency of autoantibodies"。这一性别差异（男孩自身抗体阳性率低于女孩）是儿童pSS的重要特征。然而，其Schirmer试验阳性（右3mm/左4mm）、荧光素染色示浅层点状角膜炎，以及唇腺活检证实导管周围淋巴细胞和浆细胞浸润，直接证明了泪腺和唾液腺的免疫病理损伤。</p>
       <p><b>腺体病理与临床表现的关联：</b>唇腺活检显示"salivary acini and periductal lymphocytic and plasma cell infiltration"（唾液腺泡和导管周围淋巴细胞及浆细胞浸润），这是SS的病理金标准。淋巴细胞浸润导致腺泡破坏和导管阻塞→唾液分泌减少→口腔干燥和反复腮腺肿大（本例双侧腮腺肿大1年）。泪腺同样受累→泪液减少→Schirmer试验阳性+浅层点状角膜炎。MRI显示腮腺、颌下腺、舌下腺和泪腺均肿大（T1高信号），反映了多系统外分泌腺的广泛炎症。</p>
       <p><b>儿童pSS的特殊性：</b>原文引用Civilibal等对146例儿童SS的综述：69.9%有腮腺肿大、43.2%有口干、66.4%有眼部受累，而成人以口干/眼干为主。腮腺肿大在儿童中作为首发表现的比率远高于成人，这与儿童免疫系统发育特点有关。</p>
-    </div></div>
+    </div>
 
     <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出儿童原发干燥综合征（pSS）的诊断与分类标准，逐条对照本例。</div>
@@ -191,16 +187,12 @@ tr:hover td { background:#faf8f5; }
       <p><b>教学价值：</b>本例是典型的"抗体阴性但活检阳性"的儿童pSS，强调唇腺活检在儿童SS诊断中的决定性价值，以及腮腺肿大作为儿童SS首发表现的高敏感性。约30-40%儿童pSS可演变为其他CTD，需长期随访。</p>
     </div>
     <div class="sh green">📚 要点总结</div>
-
-<div class="pts-box">
-<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+    <div class="pts-box" style="
       <b>1. 诊断</b>：儿童pSS以腮腺肿大为首发，ANA/抗SSA可阴性<br>
       <b>2. 关键检查</b>：Schirmer+唇腺活检+腮腺US/MRI<br>
       <b>3. 治疗</b>：轻症局部对症，重症需免疫抑制<br>
       <b>4. 随访</b>：约30-40%可演变为其他CTD，需长期监测
     </div>
-</div>
-
     <div class="sh">📖 参考文献</div>
     <div style="font-size:11px;color:var(--text2);margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/26195996/" target="_blank">PMID 26195996</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506000/" target="_blank">PMC4506000</a></div>
     <div style="font-size:11px;color:var(--text2);line-height:1.7;">

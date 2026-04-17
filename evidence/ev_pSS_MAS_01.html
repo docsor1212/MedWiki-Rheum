@@ -59,22 +59,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -175,7 +171,7 @@ tr:hover td { background:#faf8f5; }
 <div class="note"><b>影像学：</b>胸部X线示双侧胸腔积液。脑部MRI示幕上/幕下脑萎缩+脑桥点状微出血（继发于凝血病）。腮腺MRI示双侧腮腺多发囊性病变→提示干燥病（偶然发现）。</div>
 
 <div class="sh ">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>MAS的病理生理机制</b></p>
 <p>MAS是一种严重的超炎症状态，属于噬血细胞性淋巴组织细胞增多症（HLH）谱系。其本质是免疫系统的过度激活导致的细胞因子风暴，可进展为多器官功能障碍综合征（MODS）。原文指出："MAS is a subset of secondary HLH triggered by autoimmune conditions that manifests as a severe inflammatory response known as a cytokine storm, often progressing to multisystem organ failure." 诊断依据包括持续发热、高铁蛋白血症、转氨酶升高、血细胞减少、类似DIC的凝血病和神经系统后遗症。</p>
 <p><b>MAS最常并发于sJIA，但也可继发于其他风湿免疫病</b></p>
@@ -184,7 +180,7 @@ tr:hover td { background:#faf8f5; }
 <p>成人干燥病以口干（xerostomia）和眼干（xerophthalmia）为典型表现，但这些症状在儿童中很少见，常导致诊断延迟（原文: "Sjogren's disease characteristically presents in adults with sicca manifestations; however, these symptoms are scarce in the pediatric population, often leading to delayed diagnosis"）。儿童干燥病常以反复腮腺炎、发热、淋巴结肿大和关节炎等非特异性表现为首发。目前尚无经儿科人群验证的分类标准。</p>
 <p><b>本例机制：干燥病炎症→巨噬细胞活化→细胞因子风暴</b></p>
 <p>本例8岁女童以高热、关节痛、肌痛起病，无口干眼干。铁蛋白峰值达28,650 ng/mL，骨髓活检证实噬血细胞现象。干燥病的自身免疫性炎症（自身抗体产生、淋巴细胞浸润）可能通过持续抗原刺激触发巨噬细胞异常活化，最终导致细胞因子风暴和多器官受累。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断</div>
 <table><tr><th>标准名称</th><th>作者/年份/期刊</th><th>评分体系</th><th>逐条对照</th><th>本例符合情况</th></tr>
@@ -280,7 +276,7 @@ HLH-2004诊断标准</td><td rowspan="10">Henter JI et al., 2007, <i>Pediatr Blo
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="
   <b>1. 诊断要点</b><br>
   ① 儿童干燥病常缺乏口干/眼干症状，以非特异性表现（发热、关节痛、反复腮腺炎）首发<br>
   ② MAS可继发于多种风湿免疫病，非限于sJIA；儿童干燥病并发MAS为本例首例报道<br>
@@ -296,7 +292,8 @@ HLH-2004诊断标准</td><td rowspan="10">Henter JI et al., 2007, <i>Pediatr Blo
   ⑩ 多器官功能评估（心肌肌钙蛋白、凝血、呼吸、CNS）<br><br>
   <b>4. 预后</b><br>
   ⑪ 本例随访18个月MAS无复发<br>
-  ⑫ 长期未治疗的干</div></div>
+  ⑫ 长期未治疗的干燥病可增加淋巴瘤和甲状腺癌风险
+</div>
 
 <div class="sh ">📖 参考文献</div>
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41439070/" target="_blank">PMID 41439070</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12719546/" target="_blank">PMC12719546</a></div>

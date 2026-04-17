@@ -59,22 +59,18 @@ tr:hover td { background:#faf8f5; }
 .score-box.high { background:#fce5e1; color:var(--red); }
 .score-box.mid { background:#faf3dc; color:var(--yellow); }
 .score-box.low { background:#e2f3dd; color:var(--green); }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
 .source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
 .source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
-/* ── 归墟配色：循证病例库排版优化 ── */
-.mech-box { background:linear-gradient(135deg,#fffbeb,#fef3c7); border-left:4px solid #d97706; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.mech-box .mech-title { font-weight:700; font-size:12.5px; color:#92400e; margin-bottom:4px; }
-.mech-box p { margin:3px 0; color:#451a03; }
-.mech-box b { color:#78350f; }
-.pts-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border-left:4px solid #16a34a; border-radius:0 8px 8px 0; padding:10px 14px; margin:6px 0; }
-.pts-box .pts-title { font-weight:700; font-size:12.5px; color:#14532d; margin-bottom:4px; }
-.pts-box b { color:#052e16; }
-.diff-box { background:linear-gradient(135deg,#fefce8,#fef9c3); border:1px solid #e5e0c8; border-left:4px solid #ca8a04; border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; }
-.diff-box .diff-title { font-weight:700; font-size:12px; color:#92400e; margin-bottom:3px; }
-.diff-box b { color:#78350f; }
+/* ── 归墟配色：循证病例库 ── */
+.mech-box { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-left: 4px solid #d97706; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.mech-box p { margin: 3px 0; color: #451a03; }
+.mech-box b { color: #78350f; }
+.pts-box { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; }
+.pts-box b { color: #052e16; }
+.diff-box { background: linear-gradient(135deg,#fefce8,#fef9c3); border: 1px solid #e5e0c8; border-left: 4px solid #ca8a04; border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 6px 0; }
+.diff-box .diff-title { font-weight: 700; font-size: 12px; color: #92400e; margin-bottom: 3px; }
+.diff-box b { color: #78350f; }
 
 </style>
 </head>
@@ -158,12 +154,12 @@ tr:hover td { background:#faf8f5; }
 </table>
 
 <div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
-<div class="mech-box">
+<div class="mech-box" style="
 <p><b>一、JDM与NMOSD的共同免疫学基础</b><br>原文指出，JDM和NMOSD均属B细胞介导的自身免疫病，各自产生致病性自身抗体（anti-MDA5和anti-AQP4）。B细胞清除疗法（如利妥昔单抗）对两种疾病均有效，支持这一共同通路（原文Discussion）。</p>
 <p><b>二、I型干扰素过度激活——双重疾病的核心驱动因子</b><br>原文明确阐述：anti-MDA5是一种双链RNA受体，识别胞质中病毒RNA复制后诱导I型干扰素（IFN-α）表达。在anti-MDA5阳性的DM患者中，IFN-α水平显著升高，且被认为是快速进展性间质性肺病（RP-ILD）的驱动因素。与此同时，NMOSD患者血清IFN-α水平同样升高并与疾病活动度相关，已有多例使用重组干扰素治疗后诱发NMOSD的报道。因此，原文假设anti-MDA5 JDM合并NMOSD时，I型干扰素过度激活可能是两种疾病近乎同时发生的共同病理基础。</p>
 <p><b>三、本例特异性免疫异常</b><br>① <b>anti-MDA5抗体阳性</b>：驱动IFN-α过度激活，与CK正常型肌炎、皮肤溃疡、多关节炎表型相关。本例CK 126 U/L正常但AST 86、LDH 636、Aldolase 14.0均显著升高，符合anti-MDA5亚型特征。<br>② <b>anti-AQP4抗体高滴度</b>：血清1:10,000，脑脊液1:2,048，直接结合星形胶质细胞水通道蛋白-4 → 补体介导的星形胶质细胞损伤 → 继发性少突胶质细胞脱失和髓鞘破坏 → 横贯性脊髓炎（C5-T5）。<br>③ <b>全血细胞减少+高铁蛋白血症</b>：WBC 3.4、Hb 10.0、PLT 122、Ferritin 932 ng/ml，可能反映免疫激活导致的骨髓抑制或慢性炎症性铁代谢紊乱。<br>④ <b>ANA 1:320均质型</b>：提示广泛的自身免疫倾向，但dsDNA和ENA均阴性，排除SLE。</p>
 <p><b>四、双重自身免疫病的病理生理学假说</b><br>原文推测可能共享遗传易感性（如HLA基因座）或分子模拟机制，导致免疫系统同时攻击肌肉/皮肤（MDA5靶器官）和CNS（AQP4靶器官）。全外显子测序未发现致病性变异，排除了单基因遗传病基础。</p>
-</div></div>
+</div>
 
 <div class="sh green">✅ 诊断</div>
     <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出幼年皮肌炎（JDM）anti-MDA5阳性amyopathic型合并NMOSD的诊断与分类标准，逐条对照本例。</div>
@@ -247,7 +243,7 @@ tr:hover td { background:#faf8f5; }
 </div>
 
 <div class="sh green">📚 病例要点总结</div>
-<div class="pts-box" style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="pts-box" style="
   <b>1. 诊断要点</b><br>
   ① 自身免疫病可重叠发生<br>
   ② anti-MDA5 JDM可表现为CK正常型<br>
@@ -259,7 +255,8 @@ tr:hover td { background:#faf8f5; }
   ⑥ 肺功能（RP-ILD风险）<br>
   ⑦ 脊髓MRI随访<br><br>
   <b>4. 预后</b><br>
-  ⑧ </div></div>
+  ⑧ 双重自身免疫病需多靶点联合治疗
+</div>
 
 <div class="sh ">📖 参考文献</div>
 <div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38948240/" target="_blank">PMID 38948240</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11211561/" target="_blank">PMC11211561</a></div>
