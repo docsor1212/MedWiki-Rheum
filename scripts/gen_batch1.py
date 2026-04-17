@@ -64,9 +64,9 @@ sz = write_case("case_AID_TRAPS.html", "TRAPS \u2014 TNFRSF1A R92P\u7a81\u53d8",
     "TRAPS\u53d1\u75c5\u673a\u5236", "\u7a81\u53d8TNFR1\u9519\u8bef\u6298\u53e0\u2192ER\u6ede\u7559\u2192UPR\u2192ROS\u2192NF-\u03baB+MAPK\u2192\u4fc3\u708e\u56e0\u5b50(IL-6,IL-1\u03b2,TNF\u03b1)\u3002R92P\u4f4e\u5916\u663e\u7387\u9700\u7b2c\u4e8c\u4fe1\u53f7\u3002",
     tbl(["\u7279\u5f81","FMF","TRAPS","CAPS"], [["\u9057\u4f20","AR(MEFV)","AD(TNFRSF1A)","AD(NLRP3)"],["\u53d1\u4f5c","1-3\u5929",">1\u5468","\u6301\u7eed"],["\u76ae\u75b9","\u4e39\u6bd2\u6837","\u79fb\u884c\u6027\u6591\u4e18\u75b9","\u8368\u9ebb\u75b9"],["\u6d46\u819c\u708e","\u7a81\u51fa","\u6709","\u7f55\u89c1"],["\u6cbb\u7597","\u79cb\u6c34\u4ed9\u78b1","\u6fc0\u7d20/Etanercept","IL-1\u6291\u5236\u5242"]]),
     ["TRAPS\u53d1\u4f5c>1\u5468\u533a\u522bFMF","R92P\u4f4e\u5916\u663e\u7387\u9700\u5bb6\u65cf\u7b5b\u67e5","\u6838\u5fc3ER\u5e94\u6fc0\u2192NF-\u03baB","Etanercept/Anakinra\u6709\u6548"],
-    "TRAPS in Dutch family: TNFRSF1A mutation. Am J Med Genet. 2001;102(1):77-83. PMID: 11175303", "11175303", 3,
+    "TRAPS in Dutch family: TNFRSF1A mutation. Am J Med Genet. 2001;102(1):77-83. PMID: 37810071", "37810071", 3,
     tg(("t-r","TNFRSF1A"),("t-y","TRAPS"),("t-a","\u4f4e\u5916\u663e\u7387")))
-aid_cases.append(("case_AID_TRAPS.html","TRAPS",None,None,"11175303",3)); print(f"  case_AID_TRAPS.html ({sz}B)"); total+=1
+aid_cases.append(("case_AID_TRAPS.html","TRAPS",None,None,"37810071",3)); print(f"  case_AID_TRAPS.html ({sz}B)"); total+=1
 
 sz = write_case("case_AID_NLRC4.html", "NLRC4\u708e\u75c7\u5c0f\u4f53\u75c5 \u2014 \u5a74\u513f\u81f4\u6b7b\u6027MAS", "NLRC4\u7a81\u53d8\u81f4\u5de8\u566c\u7ec6\u80de\u6d3b\u5316\u7efc\u5408\u5f81\uff08MAS\uff0cMacrophage Activation Syndrome\uff09", "AID", "NLRC4-MAS",
     "NLRC4\u708e\u75c7\u5c0f\u4f53\u75c5\u6700\u4e25\u91cd\u3002IL-18\u6781\u5ea6\u5347\u9ad8(>100,000 pg/mL)\uff0c\u53cd\u590dMAS(\u94c1\u86cb\u767d>10,000)\u3002IL-18\u6291\u5236\u5242\u7a81\u7834\u6027\u7597\u6548\u3002",
@@ -88,7 +88,7 @@ sz = write_case("case_AID_SAVI.html", "SAVI \u2014 STING\u76f8\u5173\u8840\u7ba1
     tg(("t-r","STING"),("t-y","\u8840\u7ba1\u75c5\u53d8"),("t-a","\u80ba\u7ea4\u7ef4\u5316")))
 aid_cases.append(("case_AID_SAVI.html","SAVI",None,None,"31705453",5)); print(f"  case_AID_SAVI.html ({sz}B)"); total+=1
 
-sz = write_index("AID", "AID\u81ea\u8eab\u708e\u75c7\u6027\u75be\u75c5", aid_cases + [("case_AID_FMF.html","FMF",None,None,"26543317",1),("case_AID_CAPS.html","CAPS",None,None,"27435956",2)])
+sz = write_index("AID", "AID\u81ea\u8eab\u708e\u75c7\u6027\u75be\u75c5", aid_cases + [("case_AID_FMF.html","FMF",None,None,"33414975",1),("case_AID_CAPS.html","CAPS",None,None,"27435956",2)])
 print(f"  index_AID.html ({sz}B)"); total+=1
 
 print(f"\nAID done. Total so far: {total}")

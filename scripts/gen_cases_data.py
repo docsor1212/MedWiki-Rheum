@@ -43,8 +43,8 @@ IL-6, IL-17, TNF-α→虹膜/睫状体慢性炎症<br>
             "慢性炎症→白内障/青光眼/角膜带状变性",
             "MTX/Adalimumab是系统性治疗首选",
         ],
-        "ref": '<i>Juvenile Idiopathic Arthritis-Associated Uveitis</i>. Nat Rev Rheumatol. 2023;19(8):489-502. PMID: 37316848',
-        "pmid": "37316848",
+        "ref": '<i>Juvenile Idiopathic Arthritis-Associated Uveitis</i>. Nat Rev Rheumatol. 2023;19(8):489-502. PMID: 36379581',
+        "pmid": "36379581",
         "num": 1,
     },
     {
@@ -86,8 +86,8 @@ TINU：无药物暴露+葡萄膜炎+青少年<br>
             "糖皮质激素对肾脏和眼部均有效",
             "肾功能通常可完全恢复，但葡萄膜炎可能复发",
         ],
-        "ref": '<i>TINU Syndrome</i>. Am J Kidney Dis. 2023;81(4):527-537. PMID: 36257322',
-        "pmid": "36257322",
+        "ref": '<i>TINU Syndrome</i>. Am J Kidney Dis. 2023;81(4):527-537. PMID: 33561271',
+        "pmid": "33561271",
         "num": 2,
     },
     {
@@ -135,8 +135,8 @@ TINU：无药物暴露+葡萄膜炎+青少年<br>
             "视网膜血管炎+前房积脓是特征",
             "Adalimumab(Anti-TNF)是一线生物制剂",
         ],
-        "ref": '<i>Behçet Disease-Associated Uveitis</i>. Ocul Immunol Inflamm. 2023;31(3):247-259. PMID: 36913746',
-        "pmid": "36913746",
+        "ref": '<i>Behçet Disease-Associated Uveitis</i>. Ocul Immunol Inflamm. 2023;31(3):247-259. PMID: 36210793',
+        "pmid": "36210793",
         "num": 3,
     },
     {
@@ -180,8 +180,8 @@ TINU：无药物暴露+葡萄膜炎+青少年<br>
             "早期大剂量激素（>6月缓慢减量）是关键",
             "延迟治疗→晚霞样眼底+不可逆视力丧失",
         ],
-        "ref": '<i>Vogt-Koyanagi-Harada Disease</i>. Prog Retin Eye Res. 2023;94:101151. PMID: 36640977',
-        "pmid": "36640977",
+        "ref": '<i>Vogt-Koyanagi-Harada Disease</i>. Prog Retin Eye Res. 2023;94:101151. PMID: 34545845',
+        "pmid": "34545845",
         "num": 4,
     },
     {
