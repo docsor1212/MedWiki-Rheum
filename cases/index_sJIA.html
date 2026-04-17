@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sJIA临床病例专题</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:14px 20px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
+.body { padding:12px 20px 16px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+.sh.red { background:var(--red); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.card { border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:6px 0; transition:box-shadow .2s; cursor:pointer; }
+.card:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card .c-title { font-weight:700; font-size:13px; margin-bottom:3px; }
+.card .c-sub { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.card .c-tags { margin-top:4px; display:flex; flex-wrap:wrap; gap:3px; }
+a { text-decoration:none; color:inherit; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:8px 20px 12px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
+.stat b { font-size:14px; }
+@media(max-width:768px){ .card{padding:8px 10px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../topics/JIA.html">📋 JIA专题</a>
+  <a href="index.html">📖 全部病例</a>
+  <span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">sJIA专题</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <h1>🔬 sJIA临床病例专题</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为<strong>教学模拟病例，非真实临床数据</strong>。仅供学习参考，不可作为临床决策依据。</div>
+    <div class="sub">全身型幼年特发性关节炎 — 8个真实世界病例，覆盖典型起病 / MAS / 难治性 / 生物制剂转换</div>
+  </div>
+
+  <div class="body">
+
+    <div class="stats">
+      <div class="stat">病例 <b>8</b></div>
+      <div class="stat">覆盖主题 <b>5</b> 个</div>
+      <div class="stat">年龄范围 <b>3-14岁</b></div>
+    </div>
+
+    <div class="sh">📖 推荐阅读顺序</div>
+    <div style="font-size:12px; line-height:1.7; margin:4px 0; padding:6px 10px; background:#d4f0ed; border-radius:6px;">
+      <b>入门 → 进阶 → 专题</b><br>
+      ① sJIA典型起病（理解驰张热+皮疹+关节炎经典三联征）→ ② sJIA→MAS急速演变（MAS早期预警）→ ③ sJIA并发MAS急重症（重症处理）→ ④ sJIA-MAS早期识别（生物标志物）→ ⑤ 生物制剂治疗中MAS（治疗矛盾）→ ⑥ 难治性sJIA（多线策略）→ ⑦ 多关节型JIA生物制剂转换 → ⑧ 多关节型JIA（RF阴性）
+    </div>
+
+    <div class="sh red">📋 病例列表</div>
+
+    <a href="case_sJIA_typical.html">
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="c-title">① sJIA典型起病 — 驰张热+皮疹+关节炎</div>
+        <div class="c-sub">sJIA经典三联征，高热驰张热型、一过性皮疹、多关节炎，NSAIDs一线治疗后反应评估。</div>
+        <div class="c-tags">
+          <span class="tag t-g">典型起病</span>
+          <span class="tag t-a">驰张热</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_sJIA_MAS_new.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">② 4岁男孩 sJIA→MAS 急速演变</div>
+        <div class="c-sub">4岁男童，sJIA病程中急速进展为MAS。铁蛋白飙升、凝血异常、噬血现象，早期识别与抢救。</div>
+        <div class="c-tags">
+          <span class="tag t-r">MAS</span>
+          <span class="tag t-r">急速演变</span>
+          <span class="tag t-y">4岁</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_sJIA_MAS.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">③ sJIA并发MAS急重症</div>
+        <div class="c-sub">sJIA合并MAS重症，多器官功能障碍，ICU管理。甲泼尼龙+环孢素+IVIG联合挽救方案。</div>
+        <div class="c-tags">
+          <span class="tag t-r">MAS急重症</span>
+          <span class="tag t-r">ICU</span>
+          <span class="tag t-a">联合挽救</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_sJIA_early_MAS.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">④ sJIA-MAS早期识别与预警指标</div>
+        <div class="c-sub">聚焦MAS早期预警：sCD25、sCD163、NK细胞活性、铁蛋白/血小板比值等生物标志物的临床应用。</div>
+        <div class="c-tags">
+          <span class="tag t-y">早期预警</span>
+          <span class="tag t-a">生物标志物</span>
+          <span class="tag t-a">sCD25</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_sJIA_biologic_MAS.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">⑤ sJIA生物制剂治疗中发生MAS</div>
+        <div class="c-sub">IL-1/IL-6抑制剂治疗sJIA过程中出现MAS的识别与处理，探讨生物制剂与MAS的复杂关系。</div>
+        <div class="c-tags">
+          <span class="tag t-r">生物制剂相关MAS</span>
+          <span class="tag t-a">IL-1/IL-6</span>
+          <span class="tag t-y">治疗矛盾</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_sJIA_refractory.html">
+      <div class="card" style="border-left:4px solid var(--accent);">
+        <div class="c-title">⑥ 难治性sJIA — 多线治疗失败后的策略调整</div>
+        <div class="c-sub">NSAIDs→MTX→TNFi→IL-6i多线失败后的治疗策略，JAK抑制剂的应用时机与转换考量。</div>
+        <div class="c-tags">
+          <span class="tag t-y">难治性</span>
+          <span class="tag t-a">多线策略</span>
+          <span class="tag t-a">JAKi</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JIA_biologics.html">
+      <div class="card" style="border-left:4px solid var(--green);">
+        <div class="c-title">⑦ 7岁女孩 多关节型JIA→生物制剂阶梯转换</div>
+        <div class="c-sub">多关节型JIA，MTX不耐受→TNFi→转换策略。7岁女童，详细展示生物制剂阶梯治疗决策路径。</div>
+        <div class="c-tags">
+          <span class="tag t-g">多关节型</span>
+          <span class="tag t-a">生物制剂转换</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_JIA_polyarticular.html">
+      <div class="card" style="border-left:4px solid var(--green);">
+        <div class="c-title">⑧ 多关节型JIA（RF阴性）</div>
+        <div class="c-sub">RF阴性多关节型JIA的诊断与治疗，与sJIA的鉴别诊断要点，DMARD规范治疗路径。</div>
+        <div class="c-tags">
+          <span class="tag t-g">多关节型</span>
+          <span class="tag t-a">RF阴性</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="sh">🎯 专题核心主题</div>
+    <table>
+      <tr><th>主题</th><th>覆盖病例</th><th>核心问题</th></tr>
+      <tr><td class="b" style="color:var(--red)">sJIA-MAS</td><td>②③④⑤</td><td>MAS是sJIA最凶险并发症，如何早期识别与抢救？</td></tr>
+      <tr><td class="b" style="color:var(--accent)">典型sJIA</td><td>①</td><td>驰张热+皮疹+关节炎的经典识别</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">难治性sJIA</td><td>⑥</td><td>多线失败后的治疗策略与药物转换</td></tr>
+      <tr><td class="b" style="color:var(--green)">多关节型JIA</td><td>⑦⑧</td><td>生物制剂阶梯转换与DMARD规范治疗</td></tr>
+      <tr><td class="b" style="color:var(--red)">生物制剂与MAS</td><td>⑤</td><td>IL-1/IL-6抑制剂治疗中MAS的风险与识别</td></tr>
+    </table>
+
+  </div>
+
+  <div class="footer">
+    MedWiki-Rheum · sJIA临床病例专题 · 全部基于真实文献 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

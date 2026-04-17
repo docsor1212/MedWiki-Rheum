@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>清除缓存...</title></head>
+<body style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif">
+<div style="text-align:center">
+<h2>🔄 正在清除缓存...</h2>
+<p id="msg">请稍候</p>
+</div>
+<script>
+(async function(){
+  var msg = document.getElementById('msg');
+  try {
+    // 1. Unregister all service workers
+    var regs = await navigator.serviceWorker.getRegistrations();
+    msg.textContent = '找到 ' + regs.length + ' 个Service Worker，正在注销...';
+    for(var r of regs) await r.unregister();
+    
+    // 2. Clear all caches
+    var keys = await caches.keys();
+    msg.textContent = '清除 ' + keys.length + ' 个缓存...';
+    for(var k of keys) await caches.delete(k);
+    
+    // 3. Wait and redirect
+    msg.textContent = '✅ 缓存已清除！2秒后跳转首页...';
+    setTimeout(function(){
+      location.href = './index.html?t=' + Date.now();
+    }, 2000);
+  } catch(e) {
+    msg.textContent = '❌ 错误: ' + e.message + ' — 点击 <a href="./index.html?t=' + Date.now() + '">这里</a>';
+  }
+})();
+</script>
+</body></html>

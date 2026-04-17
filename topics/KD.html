@@ -152,7 +152,7 @@ body{padding-top:42px !important;}
     <div class="stp-label">IVIG无反应（36h仍热）</div>
     <span class="c-r b">第2次IVIG</span> 2g/kg<br>
     或 <span class="c-r b">IVMP</span> 20–30mg/kg/d×3d<br>
-    或 <span class="c-y b">英夫利昔单抗</span> 5mg/kg IV<br>
+    或 <span class="c-y b">英夫利西单抗</span> 5mg/kg IV<br>
     <span class="tag t-r">RAISE方案</span>
   </div>
   <div class="stp s3">
@@ -227,11 +227,113 @@ body{padding-top:42px !important;}
   </ul>
 </div>
 
+<!-- ===== 新增深度内容 ===== -->
+
+<!-- 冠脉Z值评估详解 -->
+<div class="sh">📐 冠脉Z值评估详解</div>
+<div class="note" style="margin-bottom:6px;">
+  <b class="c-a">McCrindle 2007回归方程</b>：基于体表面积(BSA)计算冠脉内径的正常预期值，Z值 = (实测内径 - 预期均值) / 标准差。Z值消除了体型/年龄对冠脉内径的影响，是儿童冠脉评估的金标准。
+</div>
+<table>
+<tr><th class="red-hd">分级</th><th class="red-hd">Z值范围</th><th class="red-hd">内径标准</th><th class="red-hd">临床意义</th></tr>
+<tr class="hl-green"><td class="c-g b">正常</td><td>&lt;2</td><td>—</td><td class="c-g">无需特殊处理</td></tr>
+<tr class="hl-yellow"><td class="c-y b">轻度扩张</td><td>2 – 2.5</td><td>—</td><td class="c-y">多数6–8周恢复，密切随访</td></tr>
+<tr class="hl-yellow"><td class="c-y b">小动脉瘤</td><td>&gt;2.5</td><td>&lt;5mm</td><td class="c-y">抗栓治疗，定期超声</td></tr>
+<tr class="hl-red"><td class="c-r b">中动脉瘤</td><td>—</td><td>5 – 8mm</td><td class="c-r b">双抗/华法林，长期随访</td></tr>
+<tr class="hl-red"><td class="c-r b">巨大动脉瘤</td><td>—</td><td>≥8mm</td><td class="c-r b">终身抗栓+心内科随访</td></tr>
+</table>
+<div class="g2" style="margin-top:6px;">
+<div>
+<div class="note">
+  <b>BSA与冠脉内径参考</b>（近似值）：<br>
+  BSA 0.5m² → LAD ~2.5mm, RCA ~2.3mm<br>
+  BSA 1.0m² → LAD ~3.0mm, RCA ~2.8mm<br>
+  BSA 1.5m² → LAD ~3.4mm, RCA ~3.2mm<br>
+  （具体值以McCrindle回归方程计算为准）
+</div>
+</div>
+<div>
+<div class="note" style="border-left-color:var(--green);">
+  <a href="../tools/KD_CA_Zscore.html" style="color:var(--accent);font-weight:700;">🔗 冠脉Z值在线计算器</a><br>
+  输入BSA + 实测冠脉内径 → 自动计算Z值及分级
+</div>
+</div>
+</div>
+
+<!-- IVIG无反应预测 -->
+<div class="sh yellow">📊 IVIG无反应预测评分</div>
+<div class="g2">
+<div>
+<table>
+<tr><th colspan="2" class="yellow-hd">Kobayashi评分（日本模型，7项）</th></tr>
+<tr class="hl-yellow"><td class="c-y b">Na ≤ 133 mEq/L</td><td>2分</td></tr>
+<tr class="hl-yellow"><td class="c-y b">AST ≥ 100 IU/L</td><td>2分</td></tr>
+<tr class="hl-yellow"><td class="c-y b">发病 ≤ 4天即用IVIG</td><td>2分</td></tr>
+<tr><td>CRP ≥ 10 mg/dL</td><td>1分</td></tr>
+<tr><td>PLT ≤ 30 × 10⁴/μL</td><td>1分</td></tr>
+<tr><td>年龄 ≤ 12月</td><td>1分</td></tr>
+<tr><td>WBC ≥ 12000/μL</td><td>1分</td></tr>
+<tr class="hl-red"><td colspan="2" class="c-r b">≥5分 → IVIG无反应高危（敏感性~80%，日本数据）</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="yellow-hd">其他评分系统</th><th class="yellow-hd">特点</th></tr>
+<tr><td>Egami评分</td><td>日本模型，5项，年龄≤6月、男、CRP≥8、PLT≤30万、ALT≥80</td></tr>
+<tr><td>Sano评分</td><td>日本模型，3项：Na≤133、AST≥70、CRP≥8</td></tr>
+</table>
+<div class="alert" style="margin-top:6px;">
+  <b>⚠️ 适用性警告</b>：上述评分均在<b>日本人群</b>中开发验证。<b class="c-r">中国/欧美人群预测效能下降</b>，需结合临床判断，不宜作为唯一决策依据。
+</div>
+</div>
+</div>
+<div class="note" style="margin-top:6px;">
+  <b class="c-a">处理策略</b>：评分高危 → 可考虑起始<span class="c-a b">IVIG + 激素联合</span>（RAISE方案）预防性升级，而非等待无反应后再补救。IVIG无反应后补救方案见上文治疗阶梯。
+</div>
+
+<!-- 巨球星综合征 -->
+<div class="sh red">⭐ 巨球星综合征（Giant Star Syndrome）</div>
+<table>
+<tr><th class="red-hd">项目</th><th class="red-hd">详情</th></tr>
+<tr class="hl-yellow"><td class="c-y b">定义</td><td class="c-y b">IVIG后48–72小时再次发热 + CRP回升，但冠脉超声通常无恶化</td></tr>
+<tr><td>与IVIG无反应鉴别</td><td>IVIG无反应：持续发热不退或36h后仍热 + 炎症指标持续高位 + <span class="c-r">CAL风险↑</span><br>巨球星：短暂发热后自行退热，炎症指标"反弹"后回落</td></tr>
+<tr><td>处理方案</td><td>多数<b class="c-g">自限性</b>，仅需对症退热；若持续发热&gt;24h或CAL进展 → 按IVIG无反应升级治疗</td></tr>
+<tr><td>预后</td><td class="c-g b">通常不增加冠脉损害风险（与真正的IVIG无反应不同）</td></tr>
+</table>
+<div class="note"><b>关键鉴别</b>：巨球星综合征的发热是"一过性反弹"，IVIG无反应的发热是"持续不退"。超声随访是鉴别的重要手段。</div>
+
+<!-- 远期随访与管理 -->
+<div class="sh green">📅 远期随访与管理</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">随访方案</th></tr>
+<tr class="hl-green"><td class="c-g b">无CAL</td><td class="c-g b">ASA 3–5mg/kg/d × 6–8周后停药<br>超声：6–8周、6–12月各一次</td></tr>
+<tr class="hl-yellow"><td class="c-y b">CAL持续（扩张/小瘤）</td><td class="c-y b">抗栓方案持续<br>超声q1–3m至稳定<br>避免剧烈运动（抗栓期间）</td></tr>
+<tr class="hl-red"><td class="c-r b">中/巨大动脉瘤</td><td class="c-r b">终身抗栓+心内科联合随访<br>冠脉CTA/MRI q1–2年</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">青少年过渡期</th><th class="green-hd">建议</th></tr>
+<tr><td>运动评估</td><td><span class="c-a b">运动负荷试验</span>（有CAL者青春期必须完成）</td></tr>
+<tr><td>影像学</td><td>冠脉<span class="c-a b">CTA/MRI</span>：动脉瘤持续者推荐</td></tr>
+<tr><td>生活方式</td><td class="c-r">心血管风险教育：戒烟、控制体重、血脂管理</td></tr>
+</table>
+</div>
+</div>
+<div class="alert" style="background:var(--yellow-bg);border-left-color:var(--yellow);">
+  <b class="c-y">成人长期心血管风险</b>：既往有CAL的KD患者，成年后冠心病/心肌梗死风险增加。建议：<br>
+  • 终身心血管风险因素管理（血脂、血压、血糖）<br>
+  • 有动脉瘤病史者：成人期至少一次冠脉CTA评估<br>
+  • 向患者/家属充分告知远期风险，确保从儿科到成人心内科的顺利过渡
+</div>
+
 </div><!-- body -->
 
   <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="../tools/drug_risk_assessment.html?drugs=NSAIDs,GC&tab=ddi" style="display:inline-block;padding:6px 16px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">⚠️ 川崎病用药方案风险评估</a></div>
 <div class="footer">
-  AHA 2017(McCrindle BW, Circulation) · RAISE RCT(Kobayashi T, Lancet 2012) · 英夫利昔单抗(Burns JC, Lancet 2016) · 日本KD指南2020 · 中国KD指南2023(中华儿科杂志)
+  AHA 2017(McCrindle BW, Circulation) · RAISE RCT(Kobayashi T, Lancet 2012) · 英夫利西单抗(Burns JC, Lancet 2016) · 日本KD指南2020 · 中国KD指南2023(中华儿科杂志)
 </div>
 
 </div>

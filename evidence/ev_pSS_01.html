@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：儿童原发干燥综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.sh.purple { background:#7b2d8e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="ev_pSS_01.html">📖 本病例</a><span style="margin-left:auto;font-size:11px;opacity:.7">循证病例 · 儿童pSS</span></div>
+<div class="wrap"><div class="header"><div><h1>📋 病例：儿童原发干燥综合征（pSS）</h1><div class="sub">Pediatric Primary Sjogren Syndrome</div></div><div class="meta">Kumar KJ et al. 2015 · PMID:26195996 · PMC4506000</div></div>
+<div class="body">
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <b>PMID:</b> 26195996 &nbsp;|&nbsp; <b>PMC:</b> PMC4506000<br>
+      <b>DOI:</b> 10.5812/ijp.254<br>
+      <b>期刊:</b> Iranian Journal of Pediatrics | <b>年份:</b> 2015<br>
+      <b>作者:</b> Kumar KJ, Kudakesseril AS, Sheeladevi CS, Sowmya HV (JSS Medical College, Mysore, India)<br>
+      <b>标题:</b> <i>Primary Sjogren's Syndrome in a Child</i><br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4506000/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+    </div>
+
+<div class="alert"><b>流行病学提示：</b>儿童pSS较成人<b>罕见</b>，通常40岁后发病，女性9倍于男性。儿童中<b>腮腺肿大</b>发生率69.9%（成人仅约30%），ANA阳性率约78.2%，抗SSA阳性率74.4%。约<b>30-40%</b>儿童pSS可演变为其他结缔组织病。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>男，9岁</td></tr>
+      <tr><td class="b">主诉</td><td>双侧腮腺反复肿大1年，口眼干半年</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">原发干燥综合征</span> <span class="tag t-y">儿童</span> <span class="tag t-g">腮腺肿大</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">双侧腮腺反复肿大1年，口眼干半年</p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿<b>双侧腮腺反复肿大1年</b>，近6个月出现<b>口腔干燥、眼部干燥</b>。无关节痛、黄疸、皮疹。无药物史、放射暴露。<br><br>
+      无自身免疫病家族史。体重身高位于第25百分位。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：无特殊。<b>过敏史</b>：否认药物及食物过敏史。<br>
+  <b>家族史</b>：无自身免疫病。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无自身免疫病。</p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table><tr><th colspan="2">口腔检查</th></tr><tr><td>黏膜</td><td class="c-r">干燥</td></tr><tr><td>舌</td><td class="c-r">干燥皲裂</td></tr><tr><td>腮腺</td><td class="c-r">双侧肿大</td></tr></table>
+      <table><tr><th colspan="2">眼部检查</th></tr><tr><td>结膜</td><td class="c-r">无光泽</td></tr><tr><td>泪膜</td><td class="c-r">不均匀</td></tr><tr><td>BUT</td><td class="c-r">&lt;10秒</td></tr><tr><td>其余</td><td>正常</td></tr></table>
+    </div>
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>Hb</td><td>12 g/dL</td><td>11-14</td><td>正常</td></tr>
+      <tr><td>WBC</td><td>8800/μL</td><td>5-12K</td><td>正常</td></tr>
+      <tr><td>PLT</td><td>390K/μL</td><td>150-350K</td><td class="c-y">轻度↑</td></tr>
+      <tr><td>ESR</td><td>35 mm/h</td><td>0-20</td><td class="c-r">↑</td></tr>
+      <tr><td>CRP</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>RF</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td>【儿童pSS可ANA阴性】</td></tr>
+      <tr><td>抗SSA/SSB</td><td>阴性</td><td></td><td>【儿童抗体阳性率低于成人】</td></tr>
+      <tr><td>乙肝/丙肝/HIV</td><td>阴性</td><td></td><td>排除</td></tr>
+      <tr><td>Schirmer</td><td>右3mm/左4mm</td><td>≥5mm</td><td class="c-r">阳性</td></tr>
+      <tr><td>荧光素染色</td><td colspan="3" class="c-r">浅层点状角膜炎</td></tr>
+      <tr><td>唇腺活检</td><td colspan="3" class="c-r">导管周围淋巴细胞+浆细胞浸润</td></tr>
+      <tr><td>腮腺US</td><td colspan="3">低回声区伴肿大</td></tr>
+      <tr><td>MRI</td><td colspan="3">T1高信号：腮腺/颌下腺/舌下腺/泪腺肿大</td></tr>
+    </table>
+    <div class="note"><b>AEC标准</b>：满足4/6条（口干+眼干+Schirmer+活检）。儿童pSS中ANA/抗SSA可阴性，<b>腮腺肿大比成人更常见</b>。</div>
+    <div class="sh purple">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;">
+      <p><b>核心免疫学通路：</b>干燥综合征（SS）的免疫病理核心是外分泌腺的淋巴细胞浸润和腺体功能丧失。原文指出"SS is a chronic autoimmune disorder mainly affects salivary and lacrimal glands, with varying degrees of systemic involvement"。其发病涉及：（1）上皮细胞作为抗原提呈细胞，将Ro/SSA和La/SSB抗原提呈给CD4+T细胞；（2）Th1/Th2细胞因子失衡，促炎因子（IFN-γ、IL-6、BAFF）驱动B细胞活化；（3）B细胞产生自身抗体（抗SSA/SSB、RF等）并形成生发中心样结构；（4）腺泡和导管上皮细胞凋亡增加，导致腺体功能不可逆丧失。</p>
+      <p><b>本病例特异性免疫异常：</b>该9岁男孩的显著特征是自身抗体全面阴性——ANA阴性、抗SSA/SSB阴性、RF阴性、CRP阴性。原文讨论中指出"serology was negative. Probably serology in males may take some more time to become positive. Male patients seem to have less systemic manifestations and lower frequency of autoantibodies"。这一性别差异（男孩自身抗体阳性率低于女孩）是儿童pSS的重要特征。然而，其Schirmer试验阳性（右3mm/左4mm）、荧光素染色示浅层点状角膜炎，以及唇腺活检证实导管周围淋巴细胞和浆细胞浸润，直接证明了泪腺和唾液腺的免疫病理损伤。</p>
+      <p><b>腺体病理与临床表现的关联：</b>唇腺活检显示"salivary acini and periductal lymphocytic and plasma cell infiltration"（唾液腺泡和导管周围淋巴细胞及浆细胞浸润），这是SS的病理金标准。淋巴细胞浸润导致腺泡破坏和导管阻塞→唾液分泌减少→口腔干燥和反复腮腺肿大（本例双侧腮腺肿大1年）。泪腺同样受累→泪液减少→Schirmer试验阳性+浅层点状角膜炎。MRI显示腮腺、颌下腺、舌下腺和泪腺均肿大（T1高信号），反映了多系统外分泌腺的广泛炎症。</p>
+      <p><b>儿童pSS的特殊性：</b>原文引用Civilibal等对146例儿童SS的综述：69.9%有腮腺肿大、43.2%有口干、66.4%有眼部受累，而成人以口干/眼干为主。腮腺肿大在儿童中作为首发表现的比率远高于成人，这与儿童免疫系统发育特点有关。</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出儿童原发干燥综合征（pSS）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2002 AEC pSS分类标准</td><td>Vitali C 等/AEC</td><td>2002</td><td>Ann Rheum Dis</td><td>≥4/6条(需含条目4或6)</td><td>① 眼干≥3月 → <span class='c-g'>✅</span><br>② 口干≥3月 → <span class='c-g'>✅</span><br>③ Schirmer≤5mm → <span class='c-g'>✅ 右3/左4</span><br>④ 唇腺活检灶性浸润 → <span class='c-g'>✅</span><br>⑤ 唾液腺US/MRI → <span class='c-g'>✅</span><br>⑥ 抗SSA/SSB → <span class='c-r'>❌ 均阴性</span><br><b>5/6条(含条目4) ✅</b></td></tr>
+    </table>
+    <table><tr><th colspan="4">2002 AEC（美国-欧洲共识）pSS分类标准对照（Vitali C, et al. Ann Rheum Dis 2002;61:554-558）</th></tr>
+    <tr><td colspan="4" style="font-size:11px;color:var(--text2)">Vitali C, Bombardieri S, Jonsson R, et al. <i>Classification criteria for Sjogren's syndrome: a revised version of the European criteria proposed by the American-European Consensus Group.</i> Ann Rheum Dis. 2002;61(6):554-558. ≥4/6条分类为pSS（需包含条目4或6）。</td></tr>
+    <tr><th>条目</th><th>标准要求</th><th>本例情况</th><th>符合</th></tr>
+    <tr><td>1</td><td>眼干症状（≥3月）</td><td>眼干6月</td><td class="c-g">✅</td></tr>
+    <tr><td>2</td><td>口干症状（≥3月）</td><td>口干6月</td><td class="c-g">✅</td></tr>
+    <tr><td>3</td><td>眼部受累客观证据（Schirmer ≤5mm/5min）</td><td>Schirmer：右3mm/左4mm</td><td class="c-g">✅</td></tr>
+    <tr><td>4</td><td>唇腺活检灶性淋巴细胞浸润（≥1灶）</td><td>导管周围淋巴细胞+浆细胞浸润</td><td class="c-g">✅</td></tr>
+    <tr><td>5</td><td>唾液腺受累客观证据（造影/US/核素）</td><td>腮腺US低回声+MRI腺体肿大</td><td class="c-g">✅</td></tr>
+    <tr><td>6</td><td>自身抗体阳性（抗SSA或抗SSB）</td><td>抗SSA/SSB均阴性</td><td class="c-r">❌</td></tr>
+    <tr><td colspan="3" style="background:#e2f3dd"><b>满足5/6条（含条目4活检阳性）→ pSS分类成立</b></td><td style="background:#e2f3dd"><b>5/6</b></td></tr>
+    <tr><td colspan="4" style="font-size:11px">排除条件：HCV/HIV/辐射/药物 → 全部阴性 ✅</td></tr>
+    </table>
+    <div class="note"><b>诊断：儿童原发干燥综合征。</b>虽抗SSA/SSB阴性，但满足AEC标准5/6条且包含金标准（唇腺活检阳性）。儿童pSS自身抗体阳性率低于成人，不应因抗体阴性而排除诊断。</div>
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">SLE</td><td>反复腮腺肿大</td><td>ANA(-)/无关节/无肾炎→排除</td></tr>
+      <tr><td class="b">幼年复发性腮腺炎</td><td>反复腮腺肿大</td><td>伴口眼干+活检(+)>单纯腮腺炎</td></tr>
+      <tr><td class="b">继发性SS</td><td>腮腺肿大+口眼干</td><td>无其他CTD→原发</td></tr>
+    </table>
+    <div class="diff-box"><div class="diff-title">⚠️ 儿童pSS与成人的关键差异</div>
+    儿童：①<b>腮腺肿大更常见</b>（70% vs 30%）；②ANA/抗SSA阳性率更低；③口眼干症状可能不典型；④诊断标准中<b>腮腺肿大</b>应提高权重。</div>
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">人工泪液</td><td>按需使用</td><td>缓解干眼</td></tr>
+      <tr><td class="b">口腔润滑剂</td><td>按需使用</td><td>缓解口干</td></tr>
+      <tr><td class="b">定期随访</td><td>每3-6月</td><td>监测系统受累</td></tr>
+    </table>
+    <div class="note">本例为轻症pSS，仅需局部对症治疗。但需长期随访监测可能出现的系统受累（肾、肺、血液系统）。<b>约30-40%儿童pSS可演变为其他CTD</b>（如SLE、RA），需每3-6月随访自身抗体和系统评估。本例为男性患儿，自身抗体阳性率更低但同样需密切监测。</div>
+    <div class="sh">📅 随访时间线</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">初诊</div><div class="t-content">腮腺反复肿大1年+口眼干半年→pSS诊断</div></div>
+      <div class="t-item green"><div class="t-date">治疗</div><div class="t-content">人工泪液+口腔润滑剂，定期随访</div></div>
+    </div>
+    <div class="sh red">🧠 疑难剖析</div>
+    <div style="font-size:12px;margin:4px 0;">
+      <p><b>为什么难：</b>本例9岁男孩以反复腮腺肿大1年为主诉，口眼干症状在成人SS中典型但在儿童中可能不突出。鉴别逻辑链为：反复腮腺肿大 → 首先考虑感染性腮腺炎/JRP → 伴口眼干 → 检查Schirmer（阳性）+荧光素染色（角膜炎）→ 唇腺活检（淋巴细胞浸润）→ MRI示多腺体肿大 → 排除HIV/HCV → 确诊pSS。核心难点在于自身抗体全面阴性（ANA/抗SSA/SSB/RF均阴性），容易误判为排除SS。但AEC标准中满足4/6条且含活检即可诊断，本例实际满足5/6条。</p>
+      <p><b>易误诊/漏诊点：</b>（1）<b>误诊为幼年复发性腮腺炎（JRP）</b>：反复腮腺肿大+男孩→容易首先考虑JRP。但JRP无口眼干、自身抗体阴性且活检无淋巴细胞浸润，而本例活检阳性+Schirmer阳性+多腺体MRI异常支持SS。（2）<b>因自身抗体阴性而排除SS</b>：儿童pSS中ANA阳性率仅约50-60%（低于成人的80%+），抗SSA阳性率更低。男性患儿的自身抗体阳性率进一步降低。原文引用Drosos等发现"Male patients seem to have less systemic manifestations and lower frequency of autoantibodies"。（3）<b>忽略腮腺肿大作为儿童pSS的首发信号</b>：Civilibal等综述中69.9%儿童SS有腮腺肿大，仅43.2%有口干。腮腺肿大是儿童SS最敏感的临床线索。</p>
+      <p><b>决策启示：</b>遇到儿童反复腮腺肿大时：①查Schirmer试验+荧光素染色（无创快速）；②行唇腺活检（金标准）；③腮腺US/MRI评估腺体结构；④自身抗体检测但不过度依赖（儿童可阴性）；⑤排除HIV/HCV后考虑pSS诊断。即使抗体阴性，活检阳性即可确诊。</p>
+      <p><b>教学价值：</b>本例是典型的"抗体阴性但活检阳性"的儿童pSS，强调唇腺活检在儿童SS诊断中的决定性价值，以及腮腺肿大作为儿童SS首发表现的高敏感性。约30-40%儿童pSS可演变为其他CTD，需长期随访。</p>
+    </div>
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>1. 诊断</b>：儿童pSS以腮腺肿大为首发，ANA/抗SSA可阴性<br>
+      <b>2. 关键检查</b>：Schirmer+唇腺活检+腮腺US/MRI<br>
+      <b>3. 治疗</b>：轻症局部对症，重症需免疫抑制<br>
+      <b>4. 随访</b>：约30-40%可演变为其他CTD，需长期监测
+    </div>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/26195996/" target="_blank">PMID 26195996</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506000/" target="_blank">PMC4506000</a></div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7;">
+    <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/26195996/" target="_blank">PMID 26195996</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506000/" target="_blank">PMC4506000</a></div>
+      <ol style="padding-left:18px;">
+      <li>Eyal M. Pediatric Sjogren syndrome clinical presentation. <i>American Coll Rheumato</i>. 2009.</li>
+      <li>Firestein GS, Kelley WN. <i>Kelley's Textbook of Rheumatology</i>. 8th ed. Saunders/Elsevier; 2009.</li>
+      <li>Houghton K, et al. Primary Sjogren's syndrome in children and adolescents: are proposed diagnostic criteria applicable? <i>J Rheumatol</i>. 2005;32(11):2225-2232. PMID: 16265707.</li>
+      <li>Singer NG, et al. Sjogren's syndrome in childhood. <i>Curr Rheumatol Rep</i>. 2008;10(2):147-155. PMID: 18460271.</li>
+      <li>Civilibal M, et al. A child with primary Sjogren syndrome and a review of the literature. <i>Clin Pediatr</i>. 2007;46(8):738-742. PMID: 17507575.</li>
+      <li>Cimaz R, et al. Primary Sjogren syndrome in the paediatric age: a multicentre survey. <i>Eur J Pediatr</i>. 2003;162(10):661-665. PMID: 12898241.</li>
+      <li>Vitali C, et al. Classification criteria for Sjogren's syndrome: a revised version of the European criteria proposed by the AEC Group. <i>Ann Rheum Dis</i>. 2002;61(6):554-558. PMID: 12006334.</li>
+      <li>Stiller M, et al. Primary and secondary Sjogren's syndrome in children - a comparative study. <i>Clin Oral Investig</i>. 2000;4(3):176-182. PMID: 11000325.</li>
+      <li>Drosos AA, et al. Subgroups of primary Sjogren's syndrome. Sjogren's syndrome in male and paediatric Greek patients. <i>Ann Rheum Dis</i>. 1997;56(5):333-335. PMID: 9175937.</li>
+      </ol>
+    </div>
+    
+</div>
+<div class="footer">真实文献病例 · Kumar KJ et al. 2015 · PMID:26195996 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body></html>

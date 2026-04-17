@@ -29,6 +29,7 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
@@ -57,6 +58,7 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：cSLE-MAS伴广泛神经系统影像学异常</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">11岁女孩 — MAS + 广泛脑MRI病变，重症神经系统受累</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
@@ -72,9 +74,37 @@ tr:hover td { background:#faf8f5; }
     <table>
       <tr><td class="b" style="width:130px">患者</td><td>11岁，女性</td></tr>
       <tr><td class="b">就诊机构</td><td>浙江大学医学院附属儿童医院，风湿免疫过敏科（杭州）</td></tr>
-      <tr><td class="b">主诉</td><td>反复皮疹半年，发热2周</td></tr>
+      <tr><td class="b">主诉</td><td>反复皮疹6个月，持续发热2周</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">MAS</span> <span class="tag t-r">NP-SLE</span> <span class="tag t-r">广泛脑MRI病变</span> <span class="tag t-g">完全缓解</span></td></tr>
     </table>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      6个月前开始反复出现皮疹，未明确诊断。2周前开始持续发热伴皮疹加重，就诊于我院。入院后确诊cSLE合并MAS（符合HLH-2004标准）。入院第4天头颅MRI已显示广泛白质异常信号，第7天起迅速出现嗜睡、淡漠、构音障碍等神经系统症状。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查（入院时）</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.2℃</td></tr>
+        <tr><td>HR</td><td>120次/分</td></tr>
+        <tr><td>BP</td><td>105/65 mmHg</td></tr>
+        <tr><td>体重</td><td>35 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神萎靡，发热貌</td></tr>
+        <tr><td>皮肤黏膜</td><td>面部及躯干<b>皮疹</b></td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率120次/分，律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td><b>肝脾肿大</b></td></tr>
+        <tr><td>神经系统</td><td>入院时无异常；第7天起出现嗜睡、淡漠、构音障碍</td></tr>
+      </table>
+    </div>
 
     <div class="alert">
       <b>本病例独特性：</b>MAS合并广泛脑部影像学异常在cSLE中极为罕见。该患者入院时即有MRI异常，随后迅速出现嗜睡、淡漠、构音障碍等神经系统症状，需同时针对MAS和NP-SLE（Neuropsychiatric SLE，神经精神狼疮）进行双重治疗。
@@ -215,6 +245,19 @@ tr:hover td { background:#faf8f5; }
       • 复查头颅MRI — <b>脑部异常信号较前明显改善</b><br><br>
       <b>住院天数：</b>30天<br>
       <b>最终转归：</b><span class="tag t-g">完全临床缓解 + 影像学改善</span>
+    </div>
+
+    <div class="sh green">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item green">
+        <div class="t-date">入院第30天 — 出院</div>
+        <div class="t-content">
+          • 临床症状完全缓解 — 发热消退、神经系统症状消失<br>
+          • 实验室指标改善 — 血细胞计数恢复、炎症指标下降<br>
+          • 复查头颅MRI — 脑部异常信号较前明显改善<br>
+          <span class="tag t-g">完全临床缓解 + 影像学改善</span>
+        </div>
+      </div>
     </div>
 
     <div class="sh yellow">🔬 cSLE-MAS合并NP-SLE的病理机制（深度解析）</div>

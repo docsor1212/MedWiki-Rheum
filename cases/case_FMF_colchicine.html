@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：6岁男孩 FMF→秋水仙碱→早期淀粉样变预警</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--green); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); } .c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--green);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">FMF→秋水仙碱</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🟢 病例：FMF → 秋水仙碱 → 早期淀粉样变预警</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">6岁男孩 — 反复发热3年误诊→MEFV基因确诊→蛋白尿信号</div>
+    </div>
+    <div class="meta">更新: 2026-04-16</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。
+  </div>
+
+  <div class="body">
+
+    <!-- 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>6岁男孩</td></tr>
+      <tr><td class="b">就诊日期</td><td>6岁时风湿科初诊</td></tr>
+      <tr><td class="b">主诉</td><td>反复发热伴腹痛、关节痛3年</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">家族性地中海热（FMF）</span> <span class="tag t-r">早期淀粉样变</span> <span class="tag t-y">延误诊断3年</span></td></tr>
+    </table>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      自3岁起反复发热发作，每次持续1-3天，伴腹痛（多为全腹）、单侧踝/膝关节肿痛。发作间隔不规则（2-6周）。发作间期完全正常。曾多次就诊外院，先后诊断"急性胃肠炎""反复上呼吸道感染""肠系膜淋巴结炎""心理性腹痛"。一次剧烈腹痛曾被诊断"急性阑尾炎"，术前发热自行消退、腹痛缓解，手术取消。6岁时因踝关节肿痛发作转诊小儿风湿科，详细病史采集后疑诊FMF。<br><br>
+      <b>既往史</b>：按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：G1P1，足月顺产，生长发育正常。&nbsp;&nbsp;<b>家族史</b>：父母为近亲结婚（表亲）。叔叔有"肾病"病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征（发作期）</th></tr>
+        <tr><td>T</td><td>39.0℃</td></tr>
+        <tr><td>HR</td><td>120次/分</td></tr>
+        <tr><td>BP</td><td>90/60 mmHg</td></tr>
+        <tr><td>体重</td><td>20 kg（P25）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神倦，急性病容</td></tr>
+        <tr><td>皮肤粘膜</td><td>未见皮疹、出血点，无苍白</td></tr>
+        <tr><td>淋巴结</td><td>未触及肿大</td></tr>
+        <tr><td>心肺</td><td>心律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td class="c-r">全腹压痛，无反跳痛，无肌紧张，肝脾未触及</td></tr>
+        <tr><td>关节</td><td class="c-r">右踝关节肿胀、压痛、活动受限</td></tr>
+      </table>
+    </div>
+    <div class="alert">
+      <b>发作间期查体：</b>完全正常——这是FMF的特点：发作期症状重、间期完全正常。
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC（白细胞）</td><td class="c-r">升高（发作期）</td><td>5-12×10⁹/L</td><td>↑ 炎症反应</td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td class="c-r">升高（发作期）</td><td>0-20 mm/h</td><td>↑</td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td class="c-r">升高（发作期）</td><td>&lt;8 mg/L</td><td>↑↑</td></tr>
+      <tr><td>SAA（血清淀粉样蛋白A）</td><td class="c-r">显著升高</td><td>&lt;10 mg/L</td><td>↑↑ FMF活动指标</td></tr>
+      <tr><td>尿常规</td><td>尿蛋白（±）</td><td>阴性</td><td>需进一步检查</td></tr>
+      <tr><td>尿微量白蛋白/肌酐比（ACR）</td><td class="c-r">45 mg/g</td><td>&lt;30</td><td>↑ 早期淀粉样变信号</td></tr>
+      <tr><td>24h尿蛋白</td><td class="c-r">180 mg</td><td>&lt;150</td><td>↑</td></tr>
+      <tr><td class="b">MEFV基因</td><td colspan="3" class="c-r"><b>M694V纯合突变</b> — FMF最常见、最严重的突变类型</td></tr>
+      <tr><td>肾功能</td><td>正常</td><td></td><td></td></tr>
+    </table>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>Tel Hashomer临床标准</th><th>本例</th><th>符合</th></tr>
+      <tr><td>反复发热+腹痛+关节痛</td><td>3年反复发作，发热1-3天+腹痛+踝膝关节痛</td><td><span class="tag t-g">✅</span></td></tr>
+      <tr><td>发作间期完全正常</td><td>发作间期无症状、查体正常</td><td><span class="tag t-g">✅</span></td></tr>
+      <tr><td>近亲结婚/家族史</td><td>父母近亲结婚，叔叔有"肾病"</td><td><span class="tag t-g">✅</span></td></tr>
+      <tr><td>基因确认</td><td>MEFV M694V纯合突变</td><td><span class="tag t-g">✅</span></td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>诊断：家族性地中海热（FMF）</b>（Tel Hashomer标准确诊）。<br>
+      <b>合并：早期AA淀粉样变</b>（微量白蛋白尿+24h尿蛋白升高）。
+    </div>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>阶段</th><th>方案</th><th>理由</th></tr>
+      <tr><td class="b">初始</td><td>秋水仙碱 0.5→1mg/d（口服）</td><td>FMF唯一有效预防药物；预防发作+预防淀粉样变</td></tr>
+      <tr><td class="b">蛋白尿后</td><td class="c-r">加至1.5mg/d（分两次服用）</td><td>出现早期淀粉样变信号需最大耐受剂量</td></tr>
+      <tr><td class="b">长期</td><td>终身服用+每3月查尿蛋白</td><td>中断治疗=淀粉样变风险；M694V纯合风险最高</td></tr>
+    </table>
+    <div class="alert">
+      <b>用药前必须：</b>①血常规+肝肾功能基线 ②告知腹泻等常见副作用 ③强调<b>终身服药</b>不可自行停药
+    </div>
+
+    <!-- 随访 -->
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">3岁 — 首次发作</div>
+        <div class="t-content">发热39℃+腹痛+呕吐。诊断"急性胃肠炎"，3天后自行缓解</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">3-5岁 — 反复误诊</div>
+        <div class="t-content">反复发热+腹痛，3-5次/年。先后诊断"反复上感""肠系膜淋巴结炎""心理性腹痛"。一次误诊"急性阑尾炎"手术取消</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">6岁 — 风湿科转诊</div>
+        <div class="t-content">踝关节肿痛→骨科→小儿风湿科。MEFV基因：<b>M694V纯合突变</b>。确诊FMF</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">秋水仙碱治疗</div>
+        <div class="t-content">0.5mg/d起始→1mg/d。2周后发作频率显著降低，2月后<span class="c-g">发作消失</span></div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">⚠️ 蛋白尿预警</div>
+        <div class="t-content">常规随访尿检：ACR 45 mg/g↑，24h尿蛋白180mg↑。早期淀粉样变信号！秋水仙碱加至1.5mg/d</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">3月后 — 蛋白尿消退</div>
+        <div class="t-content">ACR 45→<span class="c-g">18 mg/g</span>（正常化），24h尿蛋白 180→<span class="c-g">85mg</span>。无FMF发作，耐受良好</div>
+      </div>
+    </div>
+
+    <!-- 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; line-height:1.8; margin:4px 0; padding-left:20px;">
+      <li><b>不明原因反复发热+腹痛需想到FMF</b>——尤其具备：发作自限（1-3天）、发作间期完全正常、腹痛+关节痛+发热、近亲结婚/家族史。<b>FMF不是地中海地区专属</b>，中国也有散发</li>
+      <li><b>尿蛋白监测不可少</b>——FMF患者每3-6个月必须查尿微量白蛋白。微量白蛋白尿=早期淀粉样变的红色警报，积极治疗仍可逆转</li>
+      <li><b>秋水仙碱需终身服用</b>——即使无症状也不能停药，亚临床炎症仍在持续，停药后淀粉样变风险显著增加</li>
+      <li>M694V纯合突变是FMF最严重类型，淀粉样变风险最高</li>
+      <li>发作间期完全正常是FMF的关键特征，也是容易误诊的原因</li>
+    </ul>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="index_AID.html" style="text-decoration:none"><span class="tag t-a">📋 自身炎症性疾病专题</span></a>
+      <a href="../drugs/colchicine.html" style="text-decoration:none"><span class="tag t-a">📋 秋水仙碱</span></a>
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Livneh A, et al. Criteria for the diagnosis of familial Mediterranean fever. <i>Arthritis Rheum</i>. 1997;40(10):1879-1880.<br>
+      2. Ozen S, et al. EULAR recommendations for the management of autoinflammatory diseases. <i>Ann Rheum Dis</i>. 2016;75(5):825-837.<br>
+      3. Hentgen V, et al. Evidence-based recommendations for the practical management of FMF. <i>Semin Arthritis Rheum</i>. 2022.
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_JIA_biologics.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ JIA生物制剂转换</a>
+  </div>
+
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：sJIA-MAS早期识别与预警指标</title>
+<title>病例4：sJIA-MAS早期识别</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
@@ -17,16 +17,17 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
 .sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
 .g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
 .b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
@@ -34,127 +35,126 @@ tr:hover td { background:#faf8f5; }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.warning-box { background:#fff8e1; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.warning-box .w-title { font-weight:700; font-size:12px; color:#e65100; margin-bottom:3px; }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
-
 <div class="nav-bar">
   <a href="../index.html">🏠 首页</a>
   <a href="../topics/JIA.html">📋 JIA专题</a>
   <a href="index.html">📖 sJIA/MAS专题</a>
-  <span class="nav-title">MAS早期识别</span>
+  <span class="nav-title">病例4：sJIA-MAS早期识别</span>
 </div>
-
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>🔍 病例4：sJIA-MAS早期识别</h1>
+      <h1>病例4：sJIA-MAS早期识别</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">基于55例MAS临床队列 — 早期预警指标与sJIA活动期 vs MAS鉴别</div>
     </div>
-    <div class="meta">更新: 2026-04-10</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
   <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的临床研究数据整理，为队列综合分析而非单个病例。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
-    <div class="sh blue">📊 研究概述</div>
+    <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:140px">研究单位</td><td>南京儿童医院（中国）</td></tr>
-      <tr><td class="b">时间跨度</td><td>2017年1月 — 2022年12月</td></tr>
-      <tr><td class="b">MAS病例数</td><td>55例（sJIA-MAS 34例 + KD-MAS 10例 + SLE-MAS 11例）</td></tr>
-      <tr><td class="b">关键发现</td><td>81.8%的MAS发生在基础疾病<b>初次诊断时</b></td></tr>
-      <tr><td class="b">死亡率</td><td>0%（55例全部存活）</td></tr>
+      <tr><td class="b" style="width:100px">患儿</td><td>队列研究（55例MAS）</td></tr>
+      <tr><td class="b">就诊日期</td><td>南京儿童医院，2017-2022</td></tr>
+      <tr><td class="b">主诉</td><td>队列综合分析（非单个病例）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">MAS早期识别</span> <span class="tag t-y">预警指标</span> <span class="tag t-g">0%死亡率</span></td></tr>
     </table>
 
-    <div class="sh red">🔑 sJIA活动期 vs sJIA-MAS — 关键鉴别指标</div>
-    <table>
-      <tr><th>指标</th><th>sJIA活动期</th><th>sJIA并发MAS</th><th>变化方向</th><th>临床意义</th></tr>
-      <tr><td class="b">血小板计数</td><td>正常或升高</td><td class="c-r">↓ 显著降低</td><td>↓</td><td><b>最敏感指标之一</b></td></tr>
-      <tr><td class="b">红细胞沉降率（ESR）</td><td>显著升高</td><td class="c-r">↓ 反常降低</td><td>↓↓</td><td>纤维蛋白原消耗→ESR降低</td></tr>
-      <tr><td class="b">纤维蛋白原</td><td>升高（急性期）</td><td class="c-r">↓ 显著降低</td><td>↓↓</td><td>消耗性凝血病</td></tr>
-      <tr><td class="b">铁蛋白</td><td>轻中度升高</td><td class="c-r">↑↑↑ 极度升高</td><td>↑↑↑</td><td><b>最敏感的MAS标志物</b></td></tr>
-      <tr><td class="b">铁蛋白/ESR比值</td><td>低</td><td class="c-r">↑↑↑ 极度升高</td><td>↑↑↑</td><td><b>最佳预警指标</b></td></tr>
-      <tr><td class="b">谷草转氨酶（AST）</td><td>正常或轻度升高</td><td class="c-r">↑↑ 显著升高</td><td>↑↑</td><td>肝损伤标志</td></tr>
-      <tr><td class="b">乳酸脱氢酶（LDH）</td><td>轻中度升高</td><td class="c-r">↑↑↑ 显著升高</td><td>↑↑</td><td>组织损伤/噬血活性</td></tr>
-      <tr><td class="b">D-二聚体</td><td>正常或轻度升高</td><td class="c-r">↑↑ 显著升高</td><td>↑↑</td><td>凝血激活</td></tr>
-      <tr><td class="b">IL-18</td><td>升高</td><td class="c-r">↑↑↑ 更高</td><td>↑↑</td><td>MAS发病核心因子</td></tr>
-      <tr><td class="b">IL-6</td><td>显著升高</td><td class="c-g">↓ 反而降低</td><td>↓</td><td>IL-6/MAS的反常关系</td></tr>
-    </table>
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      本篇为队列综合分析而非单个病例。<b>55例MAS</b>（sJIA-MAS 34例 + KD-MAS 10例 + SLE-MAS 11例），来自南京儿童医院2017年1月至2022年12月数据。<br><br>关键发现：81.8%的MAS发生在基础疾病<b>初次诊断时</b>。55例全部存活（0%死亡率）。
+    </p>
 
-    <div class="warning-box">
-      <div class="w-title">🚨 MAS早期预警三联征（临床实用）</div>
-      ① <b>血小板进行性下降</b>（即使仍在正常范围内，下降趋势即为信号）<br>
-      ② <b>铁蛋白/ESR比值急剧升高</b>（铁蛋白升高同时ESR反而下降）<br>
-      ③ <b>纤维蛋白原由高转低</b>（从急性期反应升高转为消耗性降低）<br><br>
-      <b>记忆口诀：血小板↓ + 铁蛋白↑↑ + 纤维蛋白原↓ = MAS三联预警</b>
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>—</td></tr>
+        <tr><td>HR</td><td>—</td></tr>
+        <tr><td>BP</td><td>—</td></tr>
+        <tr><td>体重</td><td>—</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>队列研究</td><td>55例MAS患者的综合分析</td></tr>
+      </table>
     </div>
 
-    <div class="sh yellow">📈 随机森林模型 — MAS预测因子重要性排序</div>
+    <div class="sh">🔬 辅助检查</div>
     <table>
-      <tr><th>排序</th><th>预测因子</th><th>重要性评分</th><th>临床提示</th></tr>
-      <tr><td>1</td><td class="b">铁蛋白水平</td><td class="c-r">最高</td><td>铁蛋白越高MAS可能性越大</td></tr>
-      <tr><td>2</td><td class="b">铁蛋白/ESR比值</td><td class="c-r">高</td><td>最佳综合预警指标</td></tr>
-      <tr><td>3</td><td class="b">血小板计数</td><td class="c-r">高</td><td>下降趋势比绝对值更重要</td></tr>
-      <tr><td>4</td><td>AST升高</td><td class="c-y">中高</td><td>肝损伤早于骨髓抑制</td></tr>
-      <tr><td>5</td><td>纤维蛋白原降低</td><td class="c-y">中</td><td>凝血消耗的标志</td></tr>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>血小板</td><td>sJIA活动期：正常/升高 → MAS：<b>显著降低</b></td><td>—</td><td><span class="c-r">最敏感指标之一</span></td></tr>
+      <tr><td>ESR</td><td>sJIA活动期：↑ → MAS：<b>反常降低</b></td><td>—</td><td><span class="c-r">纤维蛋白原消耗</span></td></tr>
+      <tr><td>铁蛋白</td><td>sJIA活动期：轻中度↑ → MAS：<b>极度升高</b></td><td>—</td><td><span class="c-r">最敏感MAS标志物</span></td></tr>
+      <tr><td>铁蛋白/ESR比值</td><td>sJIA活动期：低 → MAS：<b>极度升高</b></td><td>—</td><td><span class="c-r">最佳预警指标</span></td></tr>
+      <tr><td>纤维蛋白原</td><td>sJIA活动期：↑ → MAS：<b>显著降低</b></td><td>—</td><td><span class="c-r">消耗性凝血病</span></td></tr>
     </table>
 
-    <div class="sh">💊 治疗方案统计（55例MAS）</div>
+    <div class="sh green">✅ 诊断</div>
     <table>
-      <tr><th>方案</th><th>病例数</th><th>有效率</th><th>备注</th></tr>
-      <tr><td class="b">甲泼尼龙冲击 + 环孢素A</td><td>最多</td><td class="c-g">高</td><td>最常用的一线联合方案</td></tr>
-      <tr><td>甲泼尼龙冲击单药</td><td>部分</td><td class="c-y">中等</td><td>轻型MAS可能足够</td></tr>
-      <tr><td>IL-6拮抗剂维持</td><td>部分</td><td class="c-g">好</td><td>MAS控制后的长期维持方案</td></tr>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>81.8%的MAS发生在初诊时</td><td>✅ 对新诊断sJIA必须监测MAS指标</td></tr>
+      <tr><td>血小板下降趋势比绝对值更重要</td><td>✅ 即使仍在正常范围内</td></tr>
+      <tr><td>铁蛋白/ESR比值是最实用预警指标</td><td>✅</td></tr>
+      <tr><td>ESR反常下降 = 纤维蛋白原消耗</td><td>✅</td></tr>
     </table>
-    <div class="note"><b>关键数据</b>：55例MAS患者<b>全部存活</b>（0%死亡率），显著低于历史文献的8-23%。归因于早期识别+积极治疗。</div>
+    <div class="note" style="border-left-color:var(--green);"><b>MAS早期预警三联征</b>：血小板↓ + 铁蛋白↑↑ + 纤维蛋白原↓<br>记忆口诀：<b>血小板↓ + 铁蛋白↑↑ + 纤维蛋白原↓ = MAS三联预警</b></div>
 
-    <div class="sh green">📚 临床要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>1. 早期识别是降低死亡率的关键</b><br>
-      ① 81.8%的MAS在初诊时发生 → 对新诊断的sJIA患者必须从一开始就监测MAS指标<br>
-      ② 血小板下降趋势比绝对值更重要（即使仍在"正常范围"内）<br>
-      ③ 铁蛋白/ESR比值是最实用的综合预警指标<br><br>
-      <b>2. sJIA活动期 ≠ MAS，但有重叠</b><br>
-      ④ 两者都有发热、铁蛋白升高、肝脾肿大<br>
-      ⑤ 鉴别关键：<b>血小板↓ + 纤维蛋白原↓ + ESR↓</b>（三降 vs sJIA活动期的三升）<br>
-      ⑥ IL-18在MAS中更高，IL-6反而降低 — 可作为辅助鉴别<br><br>
-      <b>3. 治疗原则</b><br>
-      ⑦ 甲泼尼龙冲击 + 环孢素A是最常用的标准方案<br>
-      ⑧ 早期积极治疗可将死亡率降至接近0%<br>
-      ⑨ MAS控制后可使用IL-6拮抗剂（托珠单抗）长期维持
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">甲泼尼龙冲击 + 环孢素A</td><td>最常用一线联合方案</td><td>高有效率</td></tr>
+      <tr><td class="b">甲泼尼龙冲击单药</td><td>轻型MAS可能足够</td><td>中等有效率</td></tr>
+      <tr><td class="b">IL-6拮抗剂维持</td><td>MAS控制后长期维持</td><td>效果好</td></tr>
+    </table>
+
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item green">
+        <div class="t-date">关键发现</div>
+        <div class="t-content">55例MAS患者<b>全部存活</b>（0%死亡率），归因于早期识别+积极治疗。</div>
+      </div>
     </div>
 
-    <div class="sh">🔗 相关工具</div>
-    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
-      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
-      <a href="../drugs/cyclosporine.html" style="text-decoration:none"><span class="tag t-a">📋 环孢素页</span></a>
-      <a href="../drugs/tocilizumab.html" style="text-decoration:none"><span class="tag t-a">📋 托珠单抗页</span></a>
-    </div>
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:20px;">
+      <li>81.8%的MAS在初诊时发生 → 对新诊断的sJIA必须从一开始就监测MAS指标</li>
+      <li>血小板下降趋势比绝对值更重要（即使仍在正常范围内）</li>
+      <li>铁蛋白/ESR比值是最实用的综合预警指标</li>
+      <li><b>血小板↓ + 纤维蛋白原↓ + ESR↓</b>（三降 vs sJIA活动期的三升）是鉴别关键</li>
+      <li>甲泼尼龙冲击+环孢素A是最常用标准方案</li>
+    </ul>
 
-    <div class="sh">📖 文献来源</div>
+    <div class="sh">📖 参考文献</div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
-      Huang S, et al. <i>Single center clinical analysis of macrophage activation syndrome complicating juvenile rheumatic diseases</i>. BMC Pediatr. 2024;24:312.<br>
-      PMCID: PMID: 38783316 | DOI: 10.1186/s12887-024-04763-z
+      1. Huang S, et al. Single center clinical analysis of macrophage activation syndrome complicating juvenile rheumatic diseases. <i>BMC Pediatr</i>. 2024;24:312. PMID: 38783316.<br>
     </div>
 
-  </div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;"><a href="case_sJIA_biologic_MAS.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇</a><a href="index.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回目录</a><a href="case_sJIA_refractory.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇 →</a></div>
 
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
-    <a href="case_sJIA_biologic_MAS.html" style="display:inline-block;padding:6px 12px;background:#b8891a;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 上一篇：生物制剂与MAS</a>
-    <a href="case_sJIA_refractory.html" style="display:inline-block;padding:6px 12px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：难治性sJIA ➡</a>
   </div>
-
-  <div class="footer">
-    基于已发表文献（PMCID: PMID: 38783316）· 不构成诊疗建议 · sJIA/MAS专题 第4篇
-  </div>
+  <div class="footer">基于已发表文献（PMID: 38783316）· 不构成诊疗建议 · sJIA/MAS专题 第4篇</div>
 </div>
-
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 </body>
 </html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: COVID-19后难治性ITP — PMID 38145004</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 COVID-19后持续性、难治性ITP</h1>
+      <div class="sub">循证病例 · PMID 38145004</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="alert"><b>流行病学提示：</b>COVID-19继发ITP系统综述中仅<b>7%为儿童</b>，71%患者>50岁。成人中75%为中重度COVID-19，仅7%为无症状感染。约78%在COVID-19病程中被诊断，20%在感染3周后诊断。约58%完全缓解（PLT≥100×10⁹/L），仅9%复发。本例为<b>无症状COVID-19后持续性难治性ITP</b>，21个月仍维持低血小板，极为罕见。</div>
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 38145004 &nbsp; <span class="b">PMCID:</span> PMC10746360<br>
+      <span class="b">DOI:</span> 10.1155/2023/3298520<br>
+      <span class="b">期刊:</span> Case Reports in Infectious Diseases | <span class="b">年份:</span> 2023<br>
+      <span class="b">作者:</span> Mettananda C, Williams S<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10746360/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>14岁，亚洲男孩</td></tr>
+      <tr><td class="b">就诊日期</td><td>2021年9月</td></tr>
+      <tr><td class="b">主诉</td><td>发热1天，发现血小板减少</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">持续性/慢性ITP</span> <span class="tag t-y">无症状COVID-19后</span> <span class="tag t-a">难治性</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">发热1天</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      14岁男孩于2021年9月（当地COVID-19暴发期间）因发热1天就诊，查PLT，查PLT <b>18×10⁹/L</b>，初步拟诊登革热收入院。登革热相关检查阴性。<br><br>
+      追问病史：父亲4周前确诊COVID-19，该男孩当时PCR阳性（Ct值27）但<b>完全无症状</b>。抗SARS-CoV-2抗体125.3 ng/mL（≥0.8为阳性），确认既往无症状COVID-19感染。排除登革热、CMV/EBV、甲乙丙肝等感染后，临床诊断为ITP。<br><br>
+      此后21个月随访中，PLT在40-70×10⁹/L波动，对GC和硫唑嘌呤仅部分反应，呈复发-缓解病程。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。18个月前发热查血常规完全正常（PLT 316×10⁹/L）。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：否认自身免疫/血液病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <table>
+      <tr><th>检查</th><th>结果</th></tr>
+      <tr><td class="b">一般情况</td><td>良好，入院后第1天起无发热</td></tr>
+      <tr><td class="b">黏膜出血</td><td class="c-r">口腔少量出血点（GC减量后PLT降至5×10⁹/L时）</td></tr>
+      <tr><td class="b">肝脾/淋巴结</td><td>无肿大</td></tr>
+    </table>
+
+    <div class="sh">🔬 辅助检查（关键时间点对比）</div>
+    <table>
+      <tr><th>项目</th><th>初诊（2021.9）</th><th>GC冲击后3天</th><th>停GC后</th><th>硫唑嘌呤期</th><th>21个月随访</th><th>参考值</th></tr>
+      <tr><td>PLT</td><td class="c-r"><b>18×10⁹/L</b></td><td class="c-g">100×10⁹</td><td class="c-r">5×10⁹</td><td class="c-y">40-70×10⁹</td><td class="c-y">40-70×10⁹</td><td>150-400</td></tr>
+      <tr><td>Hb</td><td>122 g/L</td><td>—</td><td>—</td><td>—</td><td>正常</td><td>120-160</td></tr>
+      <tr><td>WBC</td><td>7.37×10⁹/L</td><td>—</td><td>—</td><td>—</td><td>正常</td><td>4-10</td></tr>
+      <tr><td>CRP</td><td class="c-r">24.4 mg/dL</td><td>—</td><td>—</td><td>—</td><td>—</td><td>&lt;1.0</td></tr>
+      <tr><td>LDH</td><td class="c-y">441 U/L</td><td>—</td><td>—</td><td>—</td><td>—</td><td>85-227</td></tr>
+      <tr><td>D-Dimer</td><td class="c-r">3000 ng/mL</td><td class="c-g">450（正常）</td><td>—</td><td>—</td><td>—</td><td>&lt;500</td></tr>
+      <tr><td>ANA</td><td class="c-y">1:160 阳性</td><td>—</td><td>—</td><td>—</td><td>需随访</td><td>&lt;1:80</td></tr>
+      <tr><td>anti-dsDNA</td><td>阴性</td><td>—</td><td>—</td><td>—</td><td>—</td><td>排除SLE</td></tr>
+      <tr><td>抗SARS-CoV-2抗体</td><td class="c-r">125.3 ng/mL</td><td>—</td><td>—</td><td>—</td><td>—</td><td>≥0.8阳性</td></tr>
+      <tr><td>骨髓活检</td><td colspan="5">巨核细胞增多、年轻、少多倍体 → 符合ITP，排除恶性</td><td></td></tr>
+    </table>
+    <div class="note">PLT动态变化：GC冲击后快速回升至100→停药即降至5→加硫唑嘌呤后维持40-70（部分反应）→硫唑嘌呤致全血细胞减少→停药后PLT仍维持40-70，无症状。呈典型的慢性难治性ITP模式。</div>
+
+    <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
+<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<p><b>ITP的免疫病理基础：</b>ITP的核心机制是抗血小板自身抗体介导的血小板破坏增加和巨核细胞生成血小板不足。原文引用Provan D等（<i>Blood Adv</i> 2019;3:3780-3817）国际共识指南。本例骨髓活检结果——"巨核细胞增多、年轻、少多倍体"——是ITP的典型骨髓象：巨核细胞代偿性增生但成熟障碍，血小板生成减少。</p>
+<p><b>COVID-19继发ITP的免疫学机制：</b>原文讨论中描述了两种模式：（1）病毒血症期通过分子模拟或直接骨髓抑制导致血小板减少；（2）感染后免疫失调产生抗血小板自身抗体。本例特殊之处在于——患者为<b>完全无症状的COVID-19</b>感染（PCR阳性，Ct值27），4周后才出现血小板减少。这种"感染后"模式提示免疫失调是主导机制：SARS-CoV-2可能通过打破外周耐受，激活自身反应性B细胞产生抗血小板抗体。</p>
+<p><b>本病例的免疫学特征：</b></p>
+<ul style="margin:2px 0 2px 16px;">
+<li><b>ANA 1:160阳性：</b>原文特别提及需长期随访排除SLE。抗dsDNA阴性+无其他SLE特征（皮疹/肾炎/关节炎/浆膜炎/补体下降）→暂不符合SLE，但ANA阳性ITP患者未来发展为SLE的风险增加。</li>
+<li><b>D-Dimer 3000 ng/mL：</b>显著升高。原文未详细阐述其机制，但在ITP中D-Dimer升高可能与血小板活化释放微囊泡、激活凝血级联有关。GC治疗后D-Dimer降至正常，支持炎症/免疫介导的凝血激活。</li>
+<li><b>LDH 441 U/L升高：</b>排除溶血后，LDH升高在ITP中可能反映血小板在脾脏破坏过程中释放的酶。</li>
+<li><b>骨髓巨核细胞"少多倍体"：</b>多倍体化是巨核细胞成熟的标志。少多倍体提示巨核细胞成熟障碍——尽管数量增多，但无法有效产生血小板，这是ITP的典型但非特异性发现。</li>
+</ul>
+<p><b>难治性机制的思考：</b>本例对GC和硫唑嘌呤仅部分反应（PLT波动40-70×10⁹），持续21个月+。这种难治性提示：（1）可能存在持续的自身免疫驱动力（如隐藏的SLE倾向）；（2）血小板生成不足可能比破坏更重要——这是TPO受体激动剂的理论基础。原文讨论提到TPO受体激动剂（艾曲波帕/罗米司亭）是二线选择，但因地区不可及未使用。</p>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+    <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
+<div class="sc-title" style="color:var(--green)">标准一：2019 ITP国际工作组共识（Provan D et al. Blood Adv 2019;3(22):3780-3817）</div>
+<b>诊断标准：</b>
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>① 血小板计数 <100×10⁹/L</td><td>PLT 18×10⁹/L</td><td class="c-g">✅</td></tr>
+<tr><td>② 排除假性血小板减少及其他继发原因</td><td>骨髓活检支持ITP+排除登革/CMV/EBV/肝炎+ANA阳性但无SLE证据</td><td class="c-g">✅</td></tr>
+<tr><td>③ 外周血涂片无异常细胞</td><td>无原始细胞，WBC/Hb正常</td><td class="c-g">✅</td></tr>
+</table>
+<b>病程分期标准：</b>
+<table style="margin-top:4px;">
+<tr><th>分期</th><th>定义</th><th>本例</th></tr>
+<tr><td>新诊断</td><td>病程<3个月</td><td>初诊时符合</td></tr>
+<tr><td>持续性</td><td>病程3-12个月</td><td>曾经过此期</td></tr>
+<tr><td class="b">慢性</td><td class="b">病程>12个月</td><td class="c-r">✅ 21个月→慢性ITP</td></tr>
+</table>
+<b>反应评估：</b>
+<table style="margin-top:4px;">
+<tr><th>反应</th><th>定义</th><th>本例</th></tr>
+<tr><td>完全反应（CR）</td><td>PLT ≥100×10⁹ + 无出血</td><td class="c-r">❌ 未达到（PLT 40-70）</td></tr>
+<tr><td>部分反应（R）</td><td>PLT ≥30×10⁹ + 增加≥2倍 + 无出血</td><td class="c-y">部分符合（PLT 40-70且无出血）</td></tr>
+<tr><td>无反应（NR）</td><td>PLT <30 或增加<2倍</td><td>停GC时PLT降至5→曾无反应</td></tr>
+</table>
+<b>难治性定义：</b>脾切除后仍无反应（或不可手术）——本例未行脾切除，属"药物难治性"慢性ITP。
+</div>
+
+<div class="source-card" style="background:#d4f0ed;">
+<div class="sc-title">继发因素与合并诊断</div>
+<b>继发于无症状COVID-19：</b>抗SARS-CoV-2抗体125.3 ng/mL + 既往PCR阳性（Ct 27）→ 确认感染<br>
+<b>ANA 1:160阳性：</b>需每6-12个月随访排除SLE（抗dsDNA阴性+无SLE特征→暂排除）<br>
+<b>硫唑嘌呤致全血细胞减少：</b>亚洲人群NUDT15/TPMT变异频率高，用药前应检测基因型
+</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">登革热</td><td>发热+PLT低+流行区</td><td>NS1/IgM阴性 → 排除</td></tr>
+      <tr><td class="b">SLE相关ITP</td><td>ANA 1:160+PLT低</td><td>抗dsDNA阴性+无其他SLE表现 → 需长期随访</td></tr>
+      <tr><td class="b">骨髓增生异常综合征</td><td>PLT低</td><td>骨髓无恶性证据+WBC/Hb正常 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：ANA阳性ITP需长期随访排除SLE</div>
+      本例ANA 1:160阳性但无其他SLE特征（无皮疹/肾炎/关节炎/浆膜炎/补体下降/抗dsDNA阴性）。需每6-12个月随访ANA/补体/尿检，因部分患者可能在数年后发展为SLE。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>时间</th><th>药物</th><th>方案</th><th>反应/分析</th></tr>
+      <tr><td>入院</td><td class="b">甲泼尼龙冲击</td><td>1 g/d × 3天</td><td class="c-a">PLT升至100×10⁹（3天），D-Dimer降至正常</td></tr>
+      <tr><td>出院后</td><td class="b">泼尼松</td><td>40 mg/d（1 mg/kg）</td><td class="c-y">PLT最高70×10⁹，2周后降至50×10⁹</td></tr>
+      <tr><td>停GC后</td><td>—</td><td>PLT降至5×10⁹</td><td class="c-r">少量口腔黏膜出血，行骨髓活检</td></tr>
+      <tr><td>确诊后</td><td class="b">GC+硫唑嘌呤</td><td>50 mg bid</td><td class="c-y">PLT波动于40-70×10⁹（部分反应）</td></tr>
+      <tr><td>2022年3月</td><td class="b">IVIG+美罗培南</td><td>牙龈感染诱发</td><td class="c-g">1周后PLT 120×10⁹</td></tr>
+      <tr><td>6个月后</td><td>停硫唑嘌呤</td><td>全血细胞减少</td><td class="c-r">药物不良反应→停药</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">目前</td><td>无免疫抑制剂</td><td>每月随访</td><td class="c-y">PLT 40-70×10⁹，无症状</td></tr>
+    </table>
+    <div class="alert"><b>关键用药注意事项：</b>硫唑嘹呤导致全血细胞减少，提示TPMT/NUDT15基因可能存在变异（亚洲人群高发）。亚洲患者使用硫唑嘌呤前建议检测TPMT/NUDT15基因型，避免严重骨髓抑制。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">2021年9月</div><div class="t-content">发热+PLT 18×10⁹，甲泼尼龙冲击后PLT升至100×10⁹</div></div>
+      <div class="t-item red"><div class="t-date">停GC后</div><div class="t-content">PLT降至5×10⁹，口腔黏膜出血，行骨髓活检确诊ITP</div></div>
+      <div class="t-item yellow"><div class="t-date">2021.10-2022.3</div><div class="t-content">GC+硫唑嘌呤，PLT波动40-70×10⁹，部分反应</div></div>
+      <div class="t-item yellow"><div class="t-date">2022年3月</div><div class="t-content">牙龈感染→PLT 30×10⁹+中性粒细胞减少，IVIG+美罗培南</div></div>
+      <div class="t-item red"><div class="t-date">硫唑嘌呤6个月后</div><div class="t-content">全血细胞减少→停硫唑嘌呤</div></div>
+      <div class="t-item green"><div class="t-date">目前（21个月+）</div><div class="t-content">无免疫抑制剂，PLT 40-70×10⁹，无症状，每月随访</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+<div style="padding:6px 0;font-size:12px;line-height:1.7;">
+
+<div class="diff-box"><div class="diff-title">❓ 为什么难——无症状COVID-19后慢性ITP的推理链</div>
+<b>初始诊断：</b>14岁男孩因发热查血发现PLT 18×10⁹——在登革热流行区首先考虑登革热，但NS1/IgM阴性排除。<br>
+<b>追问关键信息：</b>父亲4周前确诊COVID-19+男孩当时PCR阳性（Ct 27）但完全无症状——这提示ITP可能是COVID-19的迟发性免疫并发症。<br>
+<b>慢性化困境：</b>GC冲击有效（PLT升至100）但停药即复发（PLT降至5）→加用硫唑嘌呤后仍仅部分反应（PLT 40-70）→硫唑嘌呤导致全血细胞减少→被迫停药。21个月+仍在PLT 40-70波动。<br>
+<b>ANA阳性困扰：</b>ANA 1:160阳性但无SLE其他特征——是否为早期SLE？需长期随访。这一不确定性增加了治疗决策的复杂性。
+</div>
+
+<div class="diff-box"><div class="diff-title">⚠️ 最易误诊疾病及鉴别要点</div>
+<b>1. 登革热：</b>流行区+发热+PLT极低→高度疑似。但NS1抗原和IgM均阴性→排除。教训：流行区的血小板减少不应只考虑流行病。<br>
+<b>2. SLE相关ITP：</b>ANA 1:160+PLT低→需考虑。但抗dsDNA阴性+无皮疹/肾炎/关节炎/浆膜炎/补体下降→暂不支持，但需每6-12个月随访。<br>
+<b>3. MDS：</b>慢性血小板减少需排除。骨髓无恶性克隆证据+WBC/Hb正常→排除。
+</div>
+
+<div class="diff-box"><div class="diff-title">🔀 决策流程——慢性难治性ITP的管理</div>
+<b>Step 1：</b>一线GC冲击（甲泼尼龙1 g/d×3天）→有效但停药复发<br>
+<b>Step 2：</b>GC减量维持+二线免疫抑制剂（硫唑嘌呤）→部分反应。注意：亚洲人用硫唑嘌呤前<b>必须检测TPMT/NUDT15基因型</b>（本例发生全血细胞减少提示可能存在基因变异）<br>
+<b>Step 3：</b>硫唑嘌呤不耐受 → 考虑TPO受体激动剂（艾曲波帕/罗米司亭）→ 原文提到因地区不可及未使用<br>
+<b>Step 4：</b>PLT>30无黏膜出血 → 可"观察等待"（本例最终策略：无免疫抑制剂，PLT 40-70，无症状）<br>
+<b>Step 5：</b>每6-12个月随访ANA/补体/尿检 → 监测是否转化为SLE
+</div>
+
+<div class="diff-box"><div class="diff-title">📖 教学价值</div>
+① 无症状COVID-19后也可发生慢性ITP——对任何新诊断ITP患者都应筛查COVID-19抗体。<br>
+② ANA阳性ITP不等于SLE——但必须建立长期随访计划。<br>
+③ 亚洲人群使用硫唑嘌呤前必须检测TPMT/NUDT15基因型——本例的惨痛教训。<br>
+④ "PLT>30无出血"可观察等待——不必追求PLT正常化，避免过度免疫抑制。
+</div>
+</div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>无症状COVID-19后也可发生ITP</li>
+          <li>新诊断ITP应筛查COVID-19抗体</li>
+          <li>ANA阳性ITP需长期随访排除SLE</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>急性期GC冲击有效但不持久</li>
+          <li>PLT&gt;30无出血可观察等待</li>
+          <li>硫唑嘌呤前检测TPMT/NUDT15</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>每月监测PLT</li>
+          <li>硫唑嘌呤期间每周CBC</li>
+          <li>每6-12月随访ANA/补体</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>COVID-19后ITP慢性化比例较高</li>
+          <li>多数患者可无出血症状维持</li>
+          <li>TPO受体激动剂为有效二线选择</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38145004/" target="_blank">PMID 38145004</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10746360/" target="_blank">PMC10746360</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Mettananda C, Williams S. <i>Persistent, poorly responsive immune thrombocytopenia secondary to asymptomatic COVID-19 infection in a child</i>. Case Rep Infect Dis. 2023;2023:3298520. PMID: 38145004.<br>
+      2. Alharbi MG, Alanazi N, Yousef A, et al. <i>COVID-19 associated with immune thrombocytopenia: a systematic review and meta-analysis</i>. Expert Rev Hematol. 2022;15(2):157-166. PMID: 35025706.<br>
+      3. Bhattacharjee S, Banerjee M. <i>Immune thrombocytopenia secondary to COVID-19: a systematic review</i>. SN Compr Clin Med. 2020;2:2629-2636. PMID: 32984764.<br>
+      4. Kewan T, Gunaratne TN, Mushtaq K, et al. <i>Outcomes and management of immune thrombocytopenia secondary to COVID-19: Cleveland Clinic experience</i>. Transfusion. 2021;61(7):2014-2018. PMID: 33724474.<br>
+      5. Xu P, Zhou Q, Xu J. <i>Mechanism of thrombocytopenia in COVID-19 patients</i>. Ann Hematol. 2020;99(6):1205-1208. PMID: 32296910.<br>
+      6. Neunert C, Terrell DR, Arnold DM, et al. <i>American Society of Hematology 2019 guidelines for immune thrombocytopenia</i>. Blood Adv. 2019;3(23):3829-3866. PMID: 31794604.<br>
+      7. Zufferey A, Kapur R, Semple JW. <i>Pathogenesis and therapeutic mechanisms in immune thrombocytopenia (ITP)</i>. J Clin Med. 2017;6(2):16. PMID: 28208757.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

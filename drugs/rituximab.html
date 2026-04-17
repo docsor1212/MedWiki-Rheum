@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RTX — 利妥昔单抗</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+</style>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">RTX · 利妥昔单抗</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>RTX — 利妥昔单抗</h1>
+    <div class="sub">抗CD20单抗 · 难治性SLE/AIHA/ITP/ANCA血管炎 · <span style="color:#ffe0d0;font-weight:700;">输注反应+感染风险</span></div>
+  </div>
+  <div class="meta">
+    输注前预处理必须<br>
+    B细胞耗竭持续6–12月<br>
+    较CYC性腺毒性小
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 适应证 -->
+<div class="sh">🎯 适应证</div>
+<table>
+<tr><th>疾病</th><th>地位</th><th>备注</th></tr>
+<tr class="hl-red"><td class="c-r b">难治性SLE</td><td>SHARE initiative推荐</td><td>常规免疫抑制无效时</td></tr>
+<tr class="hl-red"><td class="c-r b">AIHA（自身免疫性溶血性贫血）</td><td>二线首选</td><td>激素依赖/无效时</td></tr>
+<tr class="hl-red"><td class="c-r b">ITP（免疫性血小板减少）</td><td>二线</td><td>难治性ITP</td></tr>
+<tr><td>ANCA相关性血管炎</td><td>诱导/维持缓解</td><td>非重症可替代CYC</td></tr>
+<tr><td>MCD（微小病变肾病）</td><td>激素依赖/频繁复发</td><td>儿童肾病综合征</td></tr>
+</table>
+
+<!-- 剂量 -->
+<div class="sh">💊 剂量方案</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">方案A（淋巴瘤方案）</th></tr>
+<tr class="hl-red"><td class="c-r b">375 mg/m² IV</td></tr>
+<tr><td>每周1次 × 4次</td></tr>
+<tr><td>儿童常用方案</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">方案B（成人RA方案适应）</th></tr>
+<tr class="hl-green"><td class="c-g b">750 mg/m² IV</td></tr>
+<tr><td>Day 1 + Day 15（共2次）</td></tr>
+<tr><td>ANCA血管炎常用</td></tr>
+</table>
+</div>
+</div>
+<div class="note">儿童剂量通常按375mg/m²方案，每次输注前必须预处理。输注速度：首剂起始50mg/h，耐受后每30min增加50mg/h，最大400mg/h。</div>
+
+<!-- 输注反应 -->
+<div class="sh red">💉 输注反应与预处理</div>
+<div class="alert">
+  <b>首剂输注反应发生率30–50%</b>（发热、寒战、皮疹、低血压），多发生在前30–120分钟。
+</div>
+<table>
+<tr><th class="red-hd">预处理药物</th><th class="red-hd">剂量</th><th class="red-hd">时机</th></tr>
+<tr class="hl-green"><td class="c-g b">对乙酰氨基酚</td><td class="c-g b">10–15 mg/kg（max 650mg）</td><td>输注前30min</td></tr>
+<tr class="hl-green"><td class="c-g b">抗组胺药（苯海拉明）</td><td class="c-g b">1 mg/kg（max 50mg）IV/PO</td><td>输注前30min</td></tr>
+<tr class="hl-green"><td class="c-g b">糖皮质激素</td><td class="c-g b">甲泼尼龙 1–2 mg/kg（max 80mg）IV</td><td>输注前30min</td></tr>
+</table>
+<div class="note"><b class="c-r">前30分钟慢滴</b>：起始50mg/h，无反应再逐步加速。出现反应→暂停→处理后减慢重启。</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应</div>
+<table>
+<tr><th class="red-hd">不良反应</th><th class="red-hd">说明</th><th class="red-hd">处理</th></tr>
+<tr class="hl-yellow"><td class="c-y b">输注反应</td><td class="c-y">常见（30–50%），多轻中度</td><td>预处理+慢滴+对症</td></tr>
+<tr class="hl-red"><td class="c-r b">感染风险增加</td><td class="c-r">B细胞耗竭期间机会性感染</td><td>监测IgG，必要时IVIG补充</td></tr>
+<tr class="hl-red"><td class="c-r b">低丙种球蛋白血症</td><td class="c-r">反复使用后IgG↓</td><td class="c-r b">定期查IgG，&lt;4g/L考虑IVIG</td></tr>
+<tr class="hl-red"><td class="c-r b">PML（进行性多灶性白质脑病）</td><td class="c-r">极罕见（&lt;0.1%），但致命</td><td>神经症状立即评估</td></tr>
+<tr><td>血清病样反应</td><td>输注后5–10天关节痛/发热</td><td>激素对症</td></tr>
+</table>
+
+<!-- 监测 -->
+<div class="sh">🔬 监测</div>
+<table>
+<tr><th>项目</th><th>频率/详情</th></tr>
+<tr class="hl-red"><td class="c-r b">输注反应</td><td class="c-r b">全程监测生命体征，首剂尤须密切</td></tr>
+<tr><td>CBC（CD19/CD20 B细胞）</td><td>每次输注前 + 每3月；确认B细胞耗竭</td></tr>
+<tr class="hl-red"><td class="c-r b">IgG水平</td><td class="c-r b">每3–6月；&lt;4g/L需IVIG补充</td></tr>
+<tr class="hl-yellow"><td class="c-y b">HBV筛查</td><td class="c-y b">用药前必须查（HBsAg/anti-HBc），阳性者抗病毒预防</td></tr>
+<tr><td>感染监测</td><td>每次随访评估感染迹象</td></tr>
+<tr><td>神经系统</td><td>警惕PML：新发认知/运动障碍</td></tr>
+</table>
+
+<!-- 特殊注意 -->
+<div class="sh yellow">⭐ 特殊注意</div>
+<div class="g2">
+<div>
+<div class="alert" style="background:var(--accent-bg);border-left-color:var(--accent);">
+  <b class="c-a">SHARE initiative推荐</b>：利妥昔单抗用于难治性cSLE（常规免疫抑制剂无效或不耐受时），是儿童风湿病领域有循证支持的选择。
+</div>
+</div>
+<div>
+<div class="alert" style="background:var(--green-bg);border-left-color:var(--green);">
+  <b class="c-g">与CYC比较优势</b>
+  <ul style="margin-left:14px;">
+    <li class="c-g b">性腺毒性显著低于CYC</li>
+    <li>无出血性膀胱炎风险</li>
+    <li>无需水化+Mesna</li>
+    <li>但感染风险（低丙种球蛋白血症）需长期监测</li>
+  </ul>
+</div>
+</div>
+</div>
+
+<!-- 疫苗注意 -->
+<div class="sh green">💉 疫苗注意事项</div>
+<table>
+<tr><th class="green-hd">疫苗</th><th class="green-hd">建议</th></tr>
+<tr class="hl-yellow"><td class="c-y b">灭活疫苗</td><td class="c-y">可接种，但B细胞耗竭期间免疫应答可能减弱</td></tr>
+<tr class="hl-red"><td class="c-r b">减毒活疫苗</td><td class="c-r b">B细胞耗竭期间禁止接种</td></tr>
+<tr><td>建议时机</td><td>RTX前≥4周完成疫苗接种，尤其是流感/肺炎疫苗</td></tr>
+</table>
+
+</div><!-- body -->
+
+<div class="footer">
+  SHARE initiative (van Vollenhoven R et al. Ann Rheum Dis 2021) · BregIDA study · ACR 2020 SLE管理指南
+</div>
+
+</div>
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

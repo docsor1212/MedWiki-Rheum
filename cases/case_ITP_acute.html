@@ -1,23 +1,164 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>急性ITP — 病毒感染后突发瘀斑</title><script src="https://cdn.tailwindcss.com"></script><link rel="manifest" href="../manifest.json"><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}.header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}.header h1{font-size:1.25rem;font-weight:700}.header .sub{font-size:.8rem;opacity:.85;margin-top:1px}.header .meta{text-align:right;font-size:.75rem;opacity:.9}.body{padding:10px 20px 14px}.sh{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px;margin:8px 0 4px}.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}table{width:100%;border-collapse:collapse;font-size:12px}th{background:#d4f0ed;color:var(--accent);font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}tr:hover td{background:#faf8f5}.b{font-weight:700}.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:var(--accent)}.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 10px 10px 0;font-size:11.5px;margin-top:6px}.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}.timeline{border-left:3px solid var(--red);margin:6px 0 6px 8px;padding-left:12px}.timeline .t-item{margin-bottom:8px;position:relative}.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}.timeline .t-item.red::before{background:var(--red)}.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-date{font-size:.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}.mas-box{background:#fff3e0;border:1px solid #ffe082;border-radius:8px;padding:8px 12px;margin:6px 0}@media(max-width:768px){table{display:block;overflow-x:auto;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}}</style></head><body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>病例：急性免疫性血小板减少症（ITP）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}
+.header h1{font-size:1.25rem;font-weight:700}.header .sub{font-size:.8rem;opacity:.85;margin-top:1px}.header .meta{text-align:right;font-size:.75rem;opacity:.9}
+.body{padding:10px 20px 14px}
+.sh{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px;margin:8px 0 4px}
+.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#d4f0ed;color:var(--accent);font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}
+td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}
+tr:hover td{background:#faf8f5}
+.b{font-weight:700}.c-a{color:var(--accent)}.c-r{color:var(--red)}.c-g{color:var(--green)}
+.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}
+.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:var(--accent)}
+.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 10px 10px 0;font-size:11.5px;margin-top:6px}
+.alert b{color:var(--red)}
+.note{font-size:11px;color:var(--text2);margin-top:4px;padding-left:8px;border-left:2px solid var(--accent)}
+.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+.timeline{border-left:3px solid var(--accent);margin:6px 0 6px 8px;padding-left:12px}
+.timeline .t-item{margin-bottom:8px;position:relative}
+.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-item.red::before{background:var(--red)}
+.timeline .t-date{font-size:.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}
+@media(max-width:768px){.g2{grid-template-columns:1fr}table{display:block;overflow-x:auto;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}}
+</style>
+</head>
+<body>
 <div class="nav-bar"><a href="../index.html">🏠</a><a href="../topics/ITP.html">ITP</a><a href="index_ITP.html">病例</a><span style="margin-left:auto;opacity:.7;font-size:12px">急性ITP</span></div>
-<div class="wrap"><div class="header"><div><h1>急性ITP — 病毒感染后突发瘀斑</h1><div class="sub">急性免疫性血小板减少症（ITP，Immune Thrombocytopenia）</div></div><div class="meta">2026-04-10</div></div>
-<div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px"><b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表文献整理。仅供医学专业人员学习参考，<b>不构成诊疗建议</b>。</div>
+<div class="wrap">
+<div class="header"><div><h1>📋 病例：急性免疫性血小板减少症（ITP）</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div><div class="sub">Acute Immune Thrombocytopenia — 病毒感染后突发瘀斑</div></div><div class="meta">2026-04-16</div></div>
+<div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px"><b style="color:#e65100">⚠️ 免责声明</b>　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。</div>
 <div class="body">
-<div class="sh">👤 基本信息</div><table><tr><td class="b" style="width:80px">标签</td><td><span class="tag t-r">PLT<20K</span> <span class="tag t-y">病毒感染后</span> <span class="tag t-a">IVIG</span></td></tr><tr><td class="b">文献</td><td style="font-size:11px;color:var(--text2)">Immune Thrombocytopenia in Children. NEJM. 2022;386(16). PMID: 35443104</td></tr></table>
-<div class="alert"><b>独特性：</b>急性ITP是儿童最常见出血性疾病。病毒感染后1-4周突发瘀斑，PLT常<20×10⁹/L。80%儿童6月内自发缓解。</div>
-<div class="sh red">🔴 临床经过</div><div class="timeline"><div class="t-item "><div class="t-date">前驱</div><div class="t-content">上呼吸道感染后2周</div></div>
-<div class="t-item red"><div class="t-date">突发</div><div class="t-content">全身瘀点瘀斑，牙龈出血</div></div>
-<div class="t-item yellow"><div class="t-date">化验</div><div class="t-content">PLT 8×10⁹/L</div></div>
-<div class="t-item green"><div class="t-date">治疗</div><div class="t-content">IVIG 1g/kg×2天→PLT回升</div></div></div>
-<div class="sh yellow">🔬 ITP双重破坏机制</div><div class="mas-box"><div style="font-weight:700;font-size:12px;color:#e65100">🧬 ITP双重破坏机制</div><div style="font-size:11.5px;line-height:1.7;margin-top:4px"><b>外周破坏：</b>抗GPIIb/IIIa抗体→FcγR→脾脏巨噬细胞吞噬→PLT寿命缩短至数小时。<br><b>骨髓抑制：</b>自身抗体+CTL→巨核细胞损伤→产板减少。儿童80%自限。</div></div>
-<div class="sh">📊 对比</div><table><tr><th>特征</th><th>急性(儿童)</th><th>慢性(成人)</th></tr>
-<tr><td class='b'>发病</td><td>2-5岁</td><td>20-40岁(女)</td></tr>
-<tr><td class='b'>前驱</td><td>80%</td><td>20%</td></tr>
-<tr><td class='b'>PLT</td><td><20K</td><td>30-50K</td></tr>
-<tr><td class='b'>缓解</td><td>~80%</td><td>~10%</td></tr>
-<tr><td class='b'>一线</td><td>IVIG</td><td>激素</td></tr></table>
-<div class="sh green">📚 要点</div><ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:18px"><li>儿童最常见出血疾病，80%自限</li><li>PLT<20K有颅内出血风险</li><li>IVIG一线3-5天PLT回升</li><li>抗血小板抗体→外周+骨髓双重</li></ul>
-<div class="sh">📖 文献</div><div style="font-size:11px;color:var(--text2)">Immune Thrombocytopenia in Children. NEJM. 2022;386(16). PMID: 35443104</div></div>
+
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">患儿</td><td>李XX，男，4岁3月</td></tr>
+<tr><td class="b">就诊日期</td><td>2025-09-12</td></tr>
+<tr><td class="b">主诉</td><td>全身瘀点瘀斑3天</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-r">PLT&lt;20×10⁹/L</span> <span class="tag t-y">病毒感染后</span> <span class="tag t-a">IVIG</span></td></tr>
+</table>
+
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+2周前有上呼吸道感染史（发热、流涕，自愈）。3天前无明显诱因出现全身散在瘀点瘀斑，以双下肢为主，逐渐蔓延至躯干和上肢。伴牙龈出血，无鼻衄、无血尿血便。无发热、无关节肿痛、无腹痛。<br><br>
+外院查血常规：PLT 8×10⁹/L，转诊入院。<br><br>
+<b>既往史</b>：按时接种疫苗，无特殊病史。&nbsp;&nbsp;<b>个人史</b>：G1P1，足月顺产，生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族血液病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">生命体征</th></tr>
+<tr><td>T</td><td>36.8℃</td></tr>
+<tr><td>HR</td><td>105次/分</td></tr>
+<tr><td>BP</td><td>88/55 mmHg</td></tr>
+<tr><td>体重</td><td>16 kg（P50）</td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>一般情况</td><td>神志清，精神可，营养中等</td></tr>
+<tr><td>皮肤粘膜</td><td class="c-r">全身散在瘀点瘀斑，下肢密集，口腔粘膜可见出血点</td></tr>
+<tr><td>淋巴结</td><td>未触及肿大</td></tr>
+<tr><td>心肺</td><td>心率105次/分，律齐，未闻及杂音；双肺呼吸音清</td></tr>
+<tr><td>腹部</td><td>腹软，无压痛，肝脾未触及肿大</td></tr>
+<tr><td>神经系统</td><td>无异常</td></tr>
+</table>
+</div>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td>8.5×10⁹/L</td><td>5-12</td><td>正常</td></tr>
+<tr><td>Hb</td><td>118 g/L</td><td>110-140</td><td>正常</td></tr>
+<tr><td>PLT</td><td class="c-r">8×10⁹/L</td><td>150-350</td><td class="c-r">↓↓↓</td></tr>
+<tr><td>网织红细胞</td><td>1.2%</td><td>0.5-1.5</td><td>正常</td></tr>
+<tr><td>PT/APTT</td><td>正常</td><td></td><td>排除凝血障碍</td></tr>
+<tr><td>CRP</td><td>&lt;4 mg/L</td><td>&lt;8</td><td>正常</td></tr>
+<tr><td>肝肾功能</td><td>正常</td><td></td><td></td></tr>
+<tr><td>ANA</td><td>阴性</td><td>&lt;1:80</td><td>排除自身免疫病</td></tr>
+<tr><td>抗GPIIb/IIIa抗体</td><td>阳性</td><td></td><td>支持ITP诊断</td></tr>
+<tr><td>骨髓涂片</td><td>巨核细胞增多，产板型减少</td><td></td><td>支持外周消耗</td></tr>
+</table>
+<div class="note">腹部超声：肝脾不大，无淋巴结肿大。胸片：正常。</div>
+
+<div class="sh green">✅ 诊断</div>
+<table>
+<tr><th>诊断依据</th><th>符合情况</th></tr>
+<tr><td>孤立性血小板减少（PLT &lt;100×10⁹/L）</td><td>✅ PLT 8×10⁹/L</td></tr>
+<tr><td>出血表现（瘀斑、牙龈出血）</td><td>✅</td></tr>
+<tr><td>无脾大、无淋巴结肿大</td><td>✅</td></tr>
+<tr><td>排除继发因素（感染、药物、SLE等）</td><td>✅ ANA阴性，肝肾功能正常</td></tr>
+</table>
+<div class="note" style="border-left-color:var(--green)"><b>诊断：急性免疫性血小板减少症（ITP）</b><br>出血评分：2分（皮肤+粘膜），PLT&lt;20×10⁹/L → 需紧急治疗</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table>
+<tr><th>药物</th><th>方案</th><th>目的</th></tr>
+<tr><td class="b">IVIG（静脉注射免疫球蛋白）</td><td>1 g/kg/d × 2天（共2g/kg）</td><td class="c-a">一线治疗，封闭Fc受体，抑制血小板吞噬</td></tr>
+<tr><td class="b">限制活动</td><td>避免剧烈运动和外伤</td><td>防止颅内出血</td></tr>
+</table>
+<div class="alert"><b>⚠️ PLT&lt;20×10⁹/L颅内出血风险：</b>需密切观察神志、瞳孔、呕吐情况。IVIG 3-5天内PLT多可回升。</div>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item yellow">
+<div class="t-date">第3天（2025-09-14）</div>
+<div class="t-content">IVIG第2剂后。PLT回升至45×10⁹/L。皮肤新发瘀斑减少，牙龈出血停止。<br><span class="tag t-g">✅ 治疗有效</span></div>
+</div>
+<div class="t-item green">
+<div class="t-date">第7天（2025-09-18）</div>
+<div class="t-content">PLT 128×10⁹/L，皮肤瘀斑明显消退。出院观察。</div>
+</div>
+<div class="t-item green">
+<div class="t-date">第4周（2025-10-10）</div>
+<div class="t-content">PLT 245×10⁹/L，完全正常。无新发瘀斑。<br><span class="tag t-g">✅ 完全缓解</span></div>
+</div>
+<div class="t-item green">
+<div class="t-date">第12周（2025-12-05）</div>
+<div class="t-content">PLT 268×10⁹/L，持续正常。无复发。<br><b>结论：急性ITP，6周内自发缓解。</b></div>
+</div>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0">
+<b>1. 诊断要点</b><br>
+① 急性ITP是儿童最常见出血性疾病，好发于2-5岁<br>
+② 80%患儿在6月内自发缓解，预后良好<br><br>
+<b>2. 治疗策略</b><br>
+③ PLT&lt;20×10⁹/L或活动性出血 → IVIG一线治疗（1g/kg×1-2天）<br>
+④ IVIG通过封闭FcγR抑制脾脏巨噬细胞吞噬血小板<br><br>
+<b>3. ITP双重破坏机制</b><br>
+⑤ 外周破坏：抗GPIIb/IIIa抗体→FcγR→脾巨噬细胞吞噬<br>
+⑥ 骨髓抑制：自身抗体+CTL→巨核细胞损伤→产板减少
+</div>
+
+<div class="sh">📖 参考文献</div>
+<div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0">
+1. Provan D, et al. <i>Immune Thrombocytopenia</i>. Nat Rev Dis Primers. 2022;8(1):71. PMID: 36424557<br>
+2. Neunert C, et al. <i>American Society of Hematology 2019 guidelines for ITP</i>. Blood Adv. 2019;3(23):3829-3866.
+</div>
+
+</div>
 <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border)"><a href="index_ITP.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px">📋 返回ITP目录</a></div>
-<div class="footer">PMID: 35443104 · 不构成诊疗建议 · ITP病例第1篇</div></div><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
-</body></html>
+<div class="footer">示范性合成病例 · 基于文献PMID: 36424557 · 不构成诊疗建议 · ITP病例第1篇</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLE家庭管理手册</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; font-size:14px; }
+.wrap { max-width:800px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:16px 24px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.9rem; opacity:0.85; margin-top:4px; }
+.body { padding:16px 24px 20px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#20a39e; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.orange { background:#e8833a; }
+p { margin:6px 0; }
+ul { margin:6px 0 6px 20px; }
+li { margin:4px 0; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:6px 8px; border-bottom:1.5px solid var(--border); }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:5px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.checklist { list-style:none; margin-left:0; padding-left:0; }
+.checklist li { padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.checklist li::before { content:"☐"; font-size:1.1rem; color:var(--accent); flex-shrink:0; }
+.info-box { background:var(--accent-bg); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; }
+.red-flag { background:var(--red-bg); border-left:3px solid var(--red); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:4px 0; }
+.green-box { background:var(--green-bg); padding:8px 12px; border-radius:5px; margin:4px 0; }
+.red-box { background:var(--red-bg); padding:8px 12px; border-radius:5px; margin:4px 0; }
+.tip-box { background:var(--yellow-bg); border-left:3px solid var(--yellow); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:13px; }
+.footer { text-align:center; font-size:11px; color:var(--text3); padding:10px 24px 14px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .wrap{margin:4px;} .body{padding:12px 14px;} .header{padding:12px 14px;} table{display:block;overflow-x:auto;font-size:12px;} }
+@media print {
+  .nav-bar{display:none !important;}
+  body{padding-top:0 !important;background:#fff !important;}
+  .wrap{box-shadow:none !important;margin:0 !important;max-width:100% !important;}
+  .info-box,.red-flag,.green-box,.red-box,.tip-box{break-inside:avoid;}
+  .sh{break-after:avoid;}
+  @page{margin:1.5cm;}
+}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">📋 SLE管理手册</span></div>
+<div class="wrap">
+<div class="header">
+  <h1>📋 给家庭的SLE管理手册</h1>
+  <div class="sub">帮助孩子与系统性红斑狼疮和平共处——每日自查·用药指导·紧急识别</div>
+</div>
+<div class="body">
+
+<div class="sh">☀️ 每日自查清单</div>
+<p><strong>请每天花2分钟检查以下项目：</strong></p>
+<ul class="checklist">
+<li><strong>面部皮疹</strong>：照镜子看看脸上有没有新的红斑（尤其鼻梁和两颊）</li>
+<li><strong>关节肿痛</strong>：问孩子手、腕、膝盖有没有肿痛或僵硬</li>
+<li><strong>尿色</strong>：观察尿液颜色——如果像"洗肉水"或泡沫特别多，请告知医生</li>
+<li><strong>体温</strong>：早晚各量一次体温，记录在册</li>
+<li><strong>精神状态</strong>：孩子有没有特别疲惫、食欲差、情绪低落</li>
+<li><strong>新症状</strong>：有没有头痛、脱发、口腔溃疡、光敏感加重</li>
+</ul>
+
+<div class="sh">💊 用药时间表</div>
+<table>
+<tr><th>药物</th><th>用法</th><th>注意事项</th></tr>
+<tr><td class="b">羟氯喹（HCQ）</td><td>每日1次，餐后服用</td><td>是SLE的"基石药物"，<strong>不能自行停药</strong>。每年做一次眼科检查</td></tr>
+<tr><td class="b">甲氨蝶呤（MTX）</td><td>每周固定一天，皮下注射</td><td>注射第二天服用叶酸。注射日避免吃"活菌"酸奶</td></tr>
+<tr><td class="b">泼尼松/甲泼尼龙</td><td>每日早晨饭后</td><td>严格按医嘱减量，<strong>不要突然停药</strong>。随餐服用保护胃</td></tr>
+<tr><td class="b">钙片+维生素D</td><td>每日1次，随餐</td><td>激素治疗期间必须补充，预防骨质疏松</td></tr>
+<tr><td class="b">降压药</td><td>按医嘱</td><td>定时服用，不要自行调整剂量</td></tr>
+</table>
+
+<div class="sh yellow">🌞 避光防晒指导</div>
+<p><strong>紫外线是SLE的"开关"</strong>——日晒可以诱发或加重SLE。请做到：</p>
+<div class="green-box">✅ 每天出门前涂抹 <strong>SPF50+</strong> 防晒霜（即使阴天也要涂）</div>
+<div class="green-box">✅ 户外活动穿<strong>长袖、戴帽子</strong>，选择UPF50+防晒衣</div>
+<div class="green-box">✅ 尽量避免 <strong>10:00-16:00</strong> 阳光最强时段外出</div>
+<div class="green-box">✅ 坐车/室内也需注意——<strong>UVA可以穿透玻璃</strong></div>
+<div class="red-box">❌ 不要去美黑、不要做光疗</div>
+
+<div class="sh green">💉 疫苗接种指南</div>
+<p><strong>✅ 可以打：</strong></p>
+<div class="green-box">流感疫苗（每年推荐）· 肺炎球菌疫苗 · 乙肝疫苗 · HPV疫苗 · 百白破、脊质灭活</div>
+<p><strong>❌ 不能打：</strong></p>
+<div class="red-box">水痘活疫苗 · 麻疹-腮腺炎-风疹（MMR）活疫苗 · 轮状病毒活疫苗 · 带状疱疹活疫苗</div>
+<div class="tip-box">使用免疫抑制剂期间禁用活疫苗</div>
+
+<div class="sh">🌸 青春期特殊注意</div>
+<p><strong>月经</strong>：SLE和药物可能影响月经周期（不规律、量多/少），这很常见。如果月经量大导致贫血，请告知医生。</p>
+<p><strong>避孕</strong>：SLE患者应避免含<strong>雌激素</strong>的避孕药（可能诱发血栓）。推荐使用单纯孕激素避孕或避孕套。具体请咨询妇科医生。</p>
+<p><strong>未来妊娠</strong>：SLE患者<strong>可以</strong>怀孕，但需要提前规划——病情稳定至少6个月，在风湿科和产科共同管理下妊娠。孕期需要调整药物（有些药物如MTX必须提前停用）。</p>
+
+<div class="sh red">🚨 紧急情况识别</div>
+<p><strong>出现以下情况请立即就医或拨打120：</strong></p>
+<div class="red-flag">
+<ul>
+<li>🔴 <strong>发热 + 面部皮疹明显加重</strong></li>
+<li>🔴 <strong>突然出现水肿</strong>（眼睑、面部、双下肢）</li>
+<li>🔴 <strong>剧烈头痛、呕吐、视力模糊</strong></li>
+<li>🔴 <strong>尿量明显减少或尿色异常</strong>（浓茶色/洗肉水色）</li>
+<li>🔴 <strong>胸痛、呼吸困难</strong></li>
+<li>🔴 <strong>皮肤出现大量瘀斑或出血点</strong></li>
+<li>🔴 <strong>抽搐、意识改变</strong></li>
+</ul>
+</div>
+
+<div class="sh">📅 随访计划</div>
+<ul class="checklist">
+<li><strong>每1-2个月</strong>：风湿科门诊（病情稳定后可延长间隔）</li>
+<li><strong>每1-3个月</strong>：验血（血常规+肝肾功能+补体+dsDNA+尿常规）</li>
+<li><strong>每6个月</strong>：眼科检查（HCQ相关）</li>
+<li><strong>每年</strong>：骨密度检查（激素使用期间）</li>
+</ul>
+
+</div>
+<div class="footer">
+  <p><strong>坚持治疗，SLE是可以控制的</strong> 💪 大多数儿童SLE在规范治疗下可以维持长期缓解。请保持信心，按时用药，定期复查。</p>
+  <p style="margin-top:8px;">MedWiki-Rheum · 儿童风湿免疫科普平台 · 不构成诊疗建议 · 请遵医嘱</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APS — 抗磷脂综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#8b4513; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.brown { background:#8b4513; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+th.brown-hd { background:#f5e6d3; color:#8b4513; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
+padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
+font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+
+</style>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">APS · 抗磷脂综合征</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>抗磷脂综合征(APS)</h1>
+    <div class="sub">血栓 + 病理妊娠 + 持续性aPL阳性 · cSLE常见合并症(20–30%)</div>
+  </div>
+  <div class="meta">
+    cSLE合并率 20–30%<br>
+    原发APS女:男 ≈ 5:1<br>
+    CAPS发生率 &lt;1%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 定义与分类 -->
+<div class="sh brown">📊 定义与分类</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="brown-hd">类型</th><th class="brown-hd">特征</th></tr>
+<tr><td class="c-a b">原发APS</td><td>无其他自身免疫病</td></tr>
+<tr class="hl-yellow"><td class="c-y b">继发APS</td><td>合并<span class="c-y b">SLE</span>或其他CTD<br>(最常见：cSLE)</td></tr>
+<tr class="hl-red"><td class="c-r b">灾难性APS</td><td class="c-r">短期内多脏器血栓<br>死亡率 ~40–50%</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="brown-hd">分类标准</th></tr>
+<tr><td class="b">2006 Sydney修订分类标准</td></tr>
+<tr><td>≥1项临床标准 + ≥1项实验室标准</td></tr>
+<tr><td>实验室标准需间隔<span class="c-r b">≥12周</span>两次阳性</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 临床标准 -->
+<div class="sh">🏷️ 临床标准（2006 Sydney）</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd" style="width:25%">血管血栓</th><th class="red-hd">要点</th></tr>
+<tr class="hl-red"><td class="c-r b">动脉</td><td>脑卒中 · TIA · 心梗 · 外周动脉</td></tr>
+<tr class="hl-red"><td class="c-r b">静脉</td><td>DVT · PE · 门/肝/肾静脉</td></tr>
+<tr><td>小血管</td><td>微血栓 → 肾/皮肤</td></tr>
+<tr><td colspan="2">影像或病理确诊</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd" style="width:25%">病理妊娠</th><th class="red-hd">要点</th></tr>
+<tr class="hl-red"><td class="c-r b">① 流产</td><td>≥1次<span class="c-r b">≥10周</span>形态正常胎儿不明原因死亡</td></tr>
+<tr><td>② 早产</td><td>≥1次<span class="c-y b">&lt;34周</span>因子痫/胎盘功能不全早产</td></tr>
+<tr><td>③ 反复流产</td><td>≥3次<span class="c-y b">&lt;10周</span>连续自发流产(排除解剖/遗传/激素)</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 实验室标准 -->
+<div class="sh green">🔬 实验室标准</div>
+<table>
+<tr><th class="green-hd" style="width:25%">抗体</th><th class="green-hd">检测方法</th><th class="green-hd">阳性阈值</th><th class="green-hd">临床意义</th></tr>
+<tr class="hl-green"><td class="c-g b">LA(狼疮抗凝物)</td><td>功能试验(dRVVT/aPTT)</td><td>≥2项方法阳性</td><td class="c-g b">血栓风险最高</td></tr>
+<tr><td class="c-a b">aCL</td><td>ELISA</td><td class="c-r b">IgG/IgM 中/高滴度<br>(&gt;40 GPL/MPL)</td><td>血栓风险中等</td></tr>
+<tr><td class="c-a b">anti-β2GPI</td><td>ELISA</td><td class="c-r b">IgG/IgM &gt;99th%</td><td>特异性最高</td></tr>
+</table>
+<div class="note"><b>关键</b>：三项抗体均需间隔≥12周两次阳性。LA在抗凝治疗期间检测不可靠，需停华法林后检测或用特定方法校正。<span class="c-r b">三重阳性(LA+aCL+anti-β2GPI)血栓风险最高。</span></div>
+
+<!-- 儿童APS特殊性 -->
+<div class="sh yellow">👶 儿童APS特殊性</div>
+<table>
+<tr><th class="yellow-hd" style="width:25%">类型</th><th class="yellow-hd">特征</th><th class="yellow-hd">备注</th></tr>
+<tr class="hl-yellow"><td class="c-y b">新生儿APS(NAPS)</td><td>母亲aPL被动传输<br>新生儿血栓/皮疹</td><td>多为自限性<br>严重者需抗凝</td></tr>
+<tr><td class="c-a b">儿童原发APS<br>(ChAPS)</td><td>无基础病<br>血栓为表现</td><td>下肢DVT + 脑卒中<br>最常见血栓部位</td></tr>
+<tr class="hl-red"><td class="c-r b">SLE相关APS</td><td>最常见继发原因<br>20–30% cSLE</td><td class="c-r b">需常规筛查aPL</td></tr>
+</table>
+<div class="note">儿童血栓部位不同于成人：<span class="c-y b">下肢DVT + 脑卒中</span>最常见，成人则以DVT+PE为主。</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 治疗</div>
+<div class="steps">
+  <div class="stp s2">
+    <div class="stp-label">血栓治疗</div>
+    <span class="c-r b">华法林</span>终身抗凝<br>
+    动脉血栓：INR <span class="c-r b">2.5–3.5</span><br>
+    静脉血栓：INR <span class="c-y b">2.0–3.0</span><br>
+    复发/三重阳性：INR 2.5–3.5
+  </div>
+  <div class="stp s1">
+    <div class="stp-label">预防策略</div>
+    <span class="c-a b">低剂量ASA</span> 3–5mg/kg/d<br>
+    <span class="c-a b">羟氯喹(HCQ)</span>：降低血栓风险<br>
+    高危aPL(+)无血栓：ASA预防<br>
+    <span class="tag t-a">cSLE+aPL(+)：HCQ+ASA</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">急性期</div>
+    <span class="c-g b">低分子肝素(LMWH)</span>过渡<br>
+    抗凝达标后切换华法林<br>
+    儿童：LMWH按体重调整<br>
+    <span class="tag t-g">禁用口服避孕药</span>
+  </div>
+</div>
+
+<!-- CAPS -->
+<div class="sh red">⚠️ 灾难性APS(CAPS)</div>
+<div class="alert" style="margin-top:4px;">
+  <b>定义</b>：≤3天内同时出现<span class="c-r b">≥3个脏器系统</span>血栓 + 病理确诊微血栓 + aPL阳性<br>
+  <b>死亡率</b>：~40–50%
+</div>
+<table>
+<tr><th class="red-hd" style="width:25%">步骤</th><th class="red-hd">治疗</th></tr>
+<tr class="hl-red"><td class="c-r b">① 抗凝</td><td><span class="c-r b">肝素</span>静脉（排除出血后立即开始）</td></tr>
+<tr class="hl-red"><td class="c-r b">② 激素</td><td><span class="c-r b">甲泼尼龙冲击</span> → 口服</td></tr>
+<tr><td>③ IVIG/血浆置换</td><td>去除致病抗体 + 免疫调节</td></tr>
+<tr><td>④ 难治</td><td>利妥昔单抗(RTX) / 依库珠单抗(eculizumab)</td></tr>
+</table>
+<div class="note"><b>常见诱因</b>：感染 · 手术 · 抗凝中断 · SLE复发 · 药物。CAPS是风湿科最紧急的情况之一。</div>
+
+<!-- cSLE+APS管理 -->
+<div class="sh green">🏥 cSLE + APS管理</div>
+<table>
+<tr><th class="green-hd" style="width:30%">策略</th><th class="green-hd">具体措施</th></tr>
+<tr class="hl-green"><td class="c-g b">筛查</td><td>所有cSLE诊断时查 <span class="c-g b">LA + aCL + anti-β2GPI</span>；高危者定期复查</td></tr>
+<tr><td>一级预防</td><td>aPL(+)无血栓 → <span class="c-a b">HCQ + 低剂量ASA</span></td></tr>
+<tr><td>血栓后</td><td>终身抗凝(华法林/LMWH) + HCQ</td></tr>
+<tr class="hl-yellow"><td class="c-y b">妊娠管理</td><td>计划妊娠 → LMWH替代华法林<br>ASA + LMWH联合预防<br>产科+风湿科联合管理</td></tr>
+<tr><td>避免</td><td><span class="c-r b">含雌激素避孕药</span> · 长时间制动</td></tr>
+</table>
+
+<!-- 紧急警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>急性肢体缺血</b>：疼痛+苍白+无脉 → 血管外科急会诊 + 肝素</li>
+    <li><b>脑卒中</b>：突发言语/肢体障碍 → 急诊头颅CT/MRI + 抗凝</li>
+    <li><b>肺栓塞</b>：胸痛+呼吸困难+低氧 → CTPA + 肝素</li>
+    <li><b>CAPS</b>：多脏器快速受累 → <span class="c-r b">ICU + 肝素 + 激素冲击 + IVIG/血浆置换</span></li>
+    <li><b>华法林皮肤坏死</b>：开始华法林未充分肝素桥接 → 停华法林，改肝素</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  2006 Sydney修订分类标准(Miyakis S, J Thromb Haemost 2006) · CAPS分类标准(Asherson RA, J Rheumatol 2003) · SHARE共识(Groot N, Ann Rheum Dis 2017) · EULAR APS指南(2023)【需要验证】
+</div>
+
+</div>
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

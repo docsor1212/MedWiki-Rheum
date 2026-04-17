@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物制剂治疗知情沟通</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; font-size:14px; }
+.wrap { max-width:800px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:16px 24px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.9rem; opacity:0.85; margin-top:4px; }
+.body { padding:16px 24px 20px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#20a39e; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.orange { background:#e8833a; }
+p { margin:6px 0; }
+ul { margin:6px 0 6px 20px; }
+li { margin:4px 0; }
+table { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+th, td { border:1px solid var(--border); padding:6px 10px; text-align:left; }
+th { background:var(--accent-bg); font-weight:600; }
+.step-box { background:var(--accent-bg); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; }
+.step-box .step-label { font-weight:700; color:var(--accent); }
+.red-flag { background:var(--red-bg); border-left:3px solid var(--red); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:4px 0; }
+.checklist { list-style:none; margin-left:0; padding-left:0; }
+.checklist li { padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.checklist li::before { content:"☐"; font-size:1.1rem; color:var(--accent); flex-shrink:0; }
+.qa-item { margin:8px 0; }
+.qa-q { font-weight:700; color:var(--accent); }
+.qa-a { color:var(--text); margin-left:8px; }
+.callout { background:var(--accent-bg); border-radius:var(--radius); padding:10px 14px; margin:8px 0; }
+.callout.red { background:var(--red-bg); }
+.callout.yellow { background:var(--yellow-bg); }
+.footer { text-align:center; font-size:11px; color:var(--text3); padding:10px 24px 14px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .wrap{margin:4px;} .body{padding:12px 14px;} .header{padding:12px 14px;} }
+@media print {
+  .nav-bar{display:none !important;}
+  body{padding-top:0 !important;background:#fff !important;}
+  .wrap{box-shadow:none !important;margin:0 !important;max-width:100% !important;}
+  .step-box,.red-flag,.callout{break-inside:avoid;}
+  .sh{break-after:avoid;}
+  @page{margin:1.5cm;}
+}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">💉 生物制剂知情沟通</span></div>
+<div class="wrap">
+<div class="header">
+  <h1>💉 生物制剂治疗知情沟通</h1>
+  <div class="sub">帮助您了解为什么需要生物制剂，以及它安全吗？</div>
+</div>
+<div class="body">
+
+<div class="sh">📖 什么是生物制剂？</div>
+<table>
+  <tr><th>传统药物（如甲氨蝶呤）</th><th>生物制剂</th></tr>
+  <tr><td>💣 像"地毯式轰炸"——抑制整个免疫系统，效果广泛但不够精准，副作用相对较多</td><td>🎯 像"精准制导"——只针对引起炎症的特定"靶点"（如TNF、IL-6等），更精准、更有效</td></tr>
+</table>
+<p>生物制剂是通过生物工程技术制造的蛋白质药物，能够<strong>精确地阻断引起关节发炎的"信号分子"</strong>。就像关闭了"错误报警器"，让免疫系统恢复正常。</p>
+
+<div class="sh">❓ 为什么需要生物制剂？</div>
+<p>您的孩子已经使用了甲氨蝶呤（MTX）一段时间，但<strong>效果不够理想</strong>——关节肿痛没有完全控制。</p>
+<p>研究表明，如果传统药物不能在3-6个月内使疾病达到<strong>"不活动状态"</strong>，继续等待只会让关节损伤加重。这时候加用生物制剂是<strong>国际指南推荐的标准做法</strong>。</p>
+<div class="callout">👉 <strong>目标：不只是"好一点"，而是让疾病完全安静下来</strong>。</div>
+
+<div class="sh yellow">💭 常见担忧与事实</div>
+
+<div class="qa-item">
+  <div class="qa-q">⚠️ 担忧1："感染风险会不会很大？"</div>
+  <div class="qa-a">生物制剂确实会轻度增加感染风险，但并非"免疫力全无"。<strong>大多数感染是普通的感冒、上呼吸道感染</strong>，严重的感染非常少见。</div>
+  <div class="qa-a"><strong>~3-5%</strong> 严重感染发生率（每年）——也就是说，100个用药的孩子中，95-97个不会发生严重感染。</div>
+  <div class="qa-a callout yellow">⚠️ 我们会定期验血监测，并在用药前筛查结核（TB），最大限度降低风险。</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">⚠️ 担忧2："长期安全性如何？"</div>
+  <div class="qa-a">生物制剂用于儿童风湿病已有<strong>超过20年的历史</strong>，全球数十万儿童使用过。长期随访数据显示：<strong>大多数儿童耐受良好</strong>，生长发育、生育能力不受影响。</div>
+</div>
+
+<div class="qa-item">
+  <div class="qa-q">⚠️ 担忧3："会不会增加肿瘤风险？"</div>
+  <div class="qa-a">这是家长最关心的问题之一。目前<strong>大规模研究没有发现生物制剂增加儿童肿瘤风险</strong>。类风湿疾病本身（如果控制不好）的淋巴瘤风险，反而比药物的风险更值得关注。</div>
+  <div class="qa-a"><strong>无显著增加</strong> —— 多项大样本注册研究（如德国BiKeR、美国CARRA）证实TNFi不增加儿童肿瘤发生率。</div>
+</div>
+
+<div class="sh green">💉 注射培训要点</div>
+<p>生物制剂需要<strong>皮下注射</strong>（打在肚皮或大腿的皮下脂肪层），不是打在血管里。</p>
+<p><strong>培训步骤</strong>（护士会手把手教您）：</p>
+<ul class="checklist">
+  <li>洗手，从冰箱取出药物，放置15-30分钟回温</li>
+  <li>选择注射部位（腹部或大腿），酒精棉签消毒</li>
+  <li>捏起皮肤，将针头以45°角刺入皮下</li>
+  <li>缓慢推注药物（约10-20秒）</li>
+  <li>拔针后用棉球按压，不要揉搓</li>
+</ul>
+<div class="callout">💡 <strong>小贴士</strong>：用冰袋敷注射部位2分钟可以减轻疼痛。每次更换注射部位。</div>
+
+<div class="sh">📋 监测计划</div>
+<ul class="checklist">
+  <li><strong>用药前</strong>：结核筛查（PPD/T-SPOT + 胸片）、乙肝/丙肝筛查、血常规</li>
+  <li><strong>开始用药后</strong>：每1-3个月验血（血常规+肝肾功能+炎症指标）</li>
+  <li><strong>每6个月</strong>：全面评估疾病活动度</li>
+  <li><strong>每年</strong>：结核复查（如有接触史）</li>
+</ul>
+
+<div class="sh yellow">⚠️ 为什么必须做TB（结核）筛查？</div>
+<p>生物制剂（特别是TNF抑制剂）会降低身体对结核菌的防御能力。如果您孩子体内有<strong>"潜伏结核"</strong>（以前感染过但没发病），用药后可能被"激活"。</p>
+<div class="callout yellow"><strong>所以用药前必须筛查</strong>——如果发现有潜伏结核，先用预防性抗结核药物治疗1个月，再开始生物制剂。<strong>这是安全保障，不是"有大问题"</strong>。</div>
+
+<div class="sh red">🛑 哪些情况需要停药</div>
+<p><strong>以下情况请暂停生物制剂，并联系医生：</strong></p>
+<div class="red-flag">
+<ul>
+  <li>🔴 <strong>发热 > 38.5℃</strong>（感冒发烧期间暂停，退烧后恢复）</li>
+  <li>🔴 <strong>需要手术前</strong>（术前2-4周停药，具体遵医嘱）</li>
+  <li>🔴 <strong>严重感染</strong>（如肺炎、严重腹泻）治疗期间</li>
+  <li>🔴 <strong>接种活疫苗前后</strong>（需提前与医生商量）</li>
+</ul>
+</div>
+<div class="callout red">⚠️ <strong>注意</strong>：停药是暂时的，感染控制后通常可以恢复用药。不要自行永久停药！</div>
+
+</div>
+<div class="footer">
+  <p><strong>有疑问随时问我们</strong> 💬 生物制剂是帮助孩子达标的有效工具。了解它、信任它、正确使用它——让我们一起守护孩子的关节健康。</p>
+  <p style="margin-top:8px;">MedWiki-Rheum · 儿童风湿免疫科普平台 · 不构成诊疗建议 · 请遵医嘱</p>
+</div>
+</div>
+</body>
+</html>

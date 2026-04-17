@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 少关节型JIA — PMID 40964590</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 少关节型幼年特发性关节炎（Oligoarticular JIA）</h1>
+      <div class="sub">循证病例 · PMID 40964590</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 40964590 &nbsp; <span class="b">PMCID:</span> PMC12439517<br>
+      <span class="b">DOI:</span> 10.7759/cureus.90285<br>
+      <span class="b">期刊:</span> Cureus | <span class="b">年份:</span> 2025<br>
+      <span class="b">作者:</span> Richa P, Thomas M, Keller O, Karastury S, Butala M<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12439517/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="alert"><b>流行病学提示：</b>JIA是儿童期最常见的慢性风湿病，全球患病率约<b>16-150/10万</b>儿童。少关节型JIA是JIA中最常见亚型（约占<b>40-50%</b>）。ANA阳性少关节型JIA患者葡萄膜炎发生率约<b>20-25%</b>。发病高峰年龄2-4岁，女性多见。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>2岁，女性</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确】</td></tr>
+      <tr><td class="b">主诉</td><td>右膝肿胀</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">少关节型JIA</span> <span class="tag t-y">ANA阳性</span> <span class="tag t-g">RF阴性</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">右膝肿胀</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿晨起发现右膝肿胀，行走跛行，无法伸直右膝负重。无外伤、发热、皮疹等系统症状。3周前有轻微上呼吸道感染史。首诊考虑反应性关节炎，予布洛芬对症处理。后经随访评估（详见随访章节），因症状持续超过6周且累及≥2个关节，修正诊断为少关节型JIA。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：否认自身免疫/血液病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>正常（未报告具体值）</td></tr>
+        <tr><td>一般情况</td><td>无急性窘迫</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">关节及四肢检查</th></tr>
+        <tr><td>右膝</td><td class="c-r">肿胀、变形、积液，压痛(+)，皮温升高</td></tr>
+        <tr><td>右手第二PIP</td><td class="c-r">肿胀，触痛(+)</td></tr>
+        <tr><td>右下肢</td><td class="c-y">大腿及小腿轻度肌萎缩</td></tr>
+        <tr><td>肌力/感觉</td><td>正常</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>ESR</td><td class="c-r">101 mm/h</td><td>3-13 mm/h</td><td class="c-r">↑↑↑ 显著升高</td></tr>
+      <tr><td>CRP</td><td class="c-r">1.3 mg/dL</td><td>0.5-1.0 mg/dL</td><td class="c-r">↑</td></tr>
+      <tr><td>Hb</td><td class="c-y">10.1 g/dL</td><td>11.2-14.3 g/dL</td><td class="c-y">轻度贫血</td></tr>
+      <tr><td>PLT</td><td class="c-r">702 K/µL</td><td>150-450 K/µL</td><td class="c-r">↑↑ 反应性血小板增多</td></tr>
+      <tr><td>WBC</td><td>9.5 K/µL</td><td>6.00-17.50</td><td>正常</td></tr>
+      <tr><td>ANA</td><td class="c-r">阳性（均质型）1:320</td><td>&lt;1:40</td><td class="c-r">↑↑ 高滴度</td></tr>
+      <tr><td>RF (IgM)</td><td>0.9 IU/mL</td><td>≤3.4</td><td>阴性</td></tr>
+      <tr><td>HLA-B27</td><td>阴性</td><td></td><td>阴性</td></tr>
+      <tr><td>抗dsDNA IgG</td><td>4.7 U/mL</td><td>≤14.9</td><td>阴性</td></tr>
+    </table>
+    <div class="note"><b>关节液分析：</b>有核细胞 4,280/µL（明显升高），革兰染色阴性。<b>X线（右膝）：</b>未见异常。<b>超声：</b>复杂分叶状积液 4.7×1.3×3.7 cm。<b>MRI：</b>滑膜增厚，累及髌上隐窝、髌股关节区等多处。</div>
+
+<div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>一、JIA的自身免疫发病机制</b><br>原文引用Zaripova等（2021）的研究指出，JIA的发病涉及促炎性T细胞和自身抗体启动的细胞因子级联反应，驱动淋巴细胞、巨噬细胞和中性粒细胞浸润关节滑膜。该过程导致滑膜增生和肥厚，进而引起病理性血管新生、关节肿胀以及软骨和骨质损伤。</p>
+<p><b>二、遗传易感性</b><br>原文强调遗传因素在JIA发病中的关键作用：JIA患者的同胞患病风险是普通人群的30倍。HLA II类基因与少关节型和多关节型JIA的关联已被证实，同时非HLA基因也可能参与发病。本例虽无家族史，但ANA高滴度（1:320均质型）提示遗传易感性背景。</p>
+<p><b>三、本例特异性免疫异常</b><br>① <b>ESR 101 mm/h + CRP 1.3 mg/dL</b>：显著升高的炎症指标反映系统性炎症反应，少关节型JIA通常ESR轻度升高，本例极度升高提示炎症活动剧烈。<br>② <b>PLT 702 K/µL</b>：反应性血小板增多，机制为慢性炎症→IL-6升高→促血小板生成素（TPO）产生增加→血小板增多。原文引用文献指出这是慢性炎症性疾病的常见表现。<br>③ <b>ANA 1:320均质型</b>：与JIA相关，且是葡萄膜炎的高危标志。均质型与SLE和JIA相关（原文引用文献14），但本例dsDNA阴性、无关节外表现排除SLE。<br>④ <b>关节液有核细胞4,280/µL</b>：明显升高+革兰染色阴性，证实炎性而非感染性关节炎。<br>⑤ <b>MRI滑膜增厚</b>：累及髌上隐窝、髌股关节等多处，证实慢性滑膜炎的影像学特征。</p>
+<p><b>四、环境因素</b><br>原文指出感染（本例3周前上呼吸道感染）、母亲吸烟、母乳喂养方式等环境因素可能影响JIA的发生。本例上呼吸道感染可能是触发自身免疫反应的起始因素。</p>
+</div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出少关节型幼年特发性关节炎（ANA高滴度阳性）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">ILAR JIA分类标准(少关节型)</td><td>Petty RE 等/ILAR</td><td>2004</td><td>J Rheumatol</td><td>≤4关节+<16岁+≥6周+RF阴性</td><td>① 关节炎1-4个 → <span class='c-g'>✅ 2个(右膝+右手PIP)</span><br>② <16岁 → <span class='c-g'>✅ 2岁</span><br>③ ≥6周 → <span class='c-g'>✅</span><br>④ RF阴性 → <span class='c-g'>✅</span><br>⑤ 排除标准 → <span class='c-g'>✅</span><br><b>确诊少关节型JIA ✅</b></td></tr>
+    </table>
+    <div style="font-size:12px;margin:4px 0 6px;"><b>诊断：少关节型幼年特发性关节炎（ANA高滴度阳性）</b></div>
+    <table>
+      <tr><th colspan="4">ILAR（国际抗风湿病联盟）JIA分类标准（Petty RE et al. <i>J Rheumatol</i> 2004;31:390-392）【补充知识】</th></tr>
+      <tr><th>ILAR少关节型标准条目</th><th>要求</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>关节炎（1-4个关节，发病前6个月）</td><td>受累关节数≤4</td><td>右膝+右手第二PIP = 2个关节</td><td class="c-g">✅</td></tr>
+      <tr><td>发病年龄&lt;16岁</td><td>必须</td><td>2岁</td><td class="c-g">✅</td></tr>
+      <tr><td>病程≥6周</td><td>必须</td><td>首诊后2个月仍持续肿胀</td><td class="c-g">✅</td></tr>
+      <tr><td>RF阴性</td><td>少关节型要求</td><td>RF 0.9 IU/mL（阴性）</td><td class="c-g">✅</td></tr>
+      <tr><td>排除全身型特征</td><td>无弛张热/皮疹/浆膜炎</td><td>无发热、皮疹、淋巴结肿大</td><td class="c-g">✅</td></tr>
+      <tr><td>排除银屑病/附着点炎</td><td>无银屑病家族史/指甲改变</td><td>无皮肤/指甲异常</td><td class="c-g">✅</td></tr>
+      <tr><td>排除其他疾病</td><td>排除感染/肿瘤/其他风湿病</td><td>关节液革兰阴性、无外伤、SLE指标阴性</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="2"><b>判定</b></td><td colspan="2">全部7项标准满足 → <span class="c-g"><b>✅ 确诊少关节型JIA</b></span></td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>附加特征</b>：ANA 1:320高滴度均质型 → <b>葡萄膜炎高危</b>。原文强调20-25%的少关节型JIA患者可并发葡萄膜炎，ANA阳性者风险更高（OR 2.5-4.0）。<b>需每3个月裂隙灯检查，持续至少5年。</b></div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">反应性关节炎</td><td>3周前上呼吸道感染史</td><td>症状持续&gt;6周且出现新关节 → 不符合自限性</td></tr>
+      <tr><td class="b">化脓性关节炎</td><td>单关节肿胀</td><td>关节液革兰染色阴性，无发热，病程迁延 → 排除</td></tr>
+      <tr><td class="b">少关节扩展型JIA</td><td>2个关节受累</td><td>目前仍在4个以内 → 尚属少关节型</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：单关节起病≠化脓性关节炎</div>
+      少关节型JIA最初可仅表现为单关节受累（monoarthritis），在幼儿中极易误诊为化脓性关节炎或反应性关节炎。关键鉴别：无发热、关节液革兰阴性、ESR显著升高、ANA高滴度阳性均指向慢性炎症而非急性感染。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>选择理由</th><th>疗效评估指标</th><th>不良反应监测</th></tr>
+      <tr><td class="b">布洛芬</td><td>按需</td><td>口服</td><td>NSAIDs一线桥接治疗，控制急性炎症</td><td>疼痛评分、关节肿胀改善</td><td>消化道症状、肾功能</td></tr>
+      <tr><td class="b">曲安奈德（右膝）</td><td>20 mg</td><td>关节腔注射 + 布比卡因 5mL</td><td>少关节型JIA首选——关节腔糖皮质激素注射（ACR 2021推荐），可快速缓解局部炎症</td><td>注射后关节肿胀消退时间、活动度恢复</td><td>注射后感染（罕见）、皮下萎缩、皮肤变色</td></tr>
+      <tr><td class="b">曲安奈德（右PIP）</td><td>8 mg</td><td>关节腔注射 + 布比卡因 0.8mL</td><td>第二受累关节同步注射</td><td>PIP关节肿胀消退</td><td>同上</td></tr>
+    </table>
+    <div class="alert">
+      <b>用药注意事项：</b>关节腔注射是少关节型JIA（≤4个关节）的一线治疗，可快速缓解局部炎症，避免全身用药副作用。注射后需休息24-48小时，注意无菌操作。<b>长期随访</b>：ANA高滴度（1:320）→葡萄膜炎高危，需每3个月裂隙灯检查。
+    </div>
+    <div class="note"><b>治疗策略分析：</b>少关节型JIA关节受累少，优先局部治疗（关节腔注射），而非系统用药。NSAIDs用于桥接期。本例未使用MTX，因受累关节数少。ANA高滴度阳性需严格眼科随访。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">首诊（Day 1）</div><div class="t-content">右膝肿胀跛行1天，拟诊反应性关节炎，予布洛芬</div></div>
+      <div class="t-item yellow"><div class="t-date">2个月后</div><div class="t-content">右膝持续肿胀，新发右手PIP肿胀（第二关节受累），ESR 101, PLT 702K, ANA 1:320 → 修正诊断少关节型JIA</div></div>
+      <div class="t-item"><div class="t-date">确诊后</div><div class="t-content">双关节腔曲安奈德注射，开始规律眼科随访（每3月裂隙灯）</div></div>
+    </div>
+    <div class="note">【原文未报告具体随访结果】建议：ANA高滴度阳性患儿需定期眼科筛查葡萄膜炎；少关节型JIA有进展为多关节型风险（通常在前2年内）。</div>
+
+    <div class="sh yellow">💡 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;">
+
+<p><b>❓ 为什么难</b><br>2岁女童以单侧膝关节肿胀急性起病，3周前有上呼吸道感染史。首诊高度怀疑反应性关节炎（感染后关节炎）并予布洛芬对症。然而2个月后右膝持续肿胀+新发右手PIP关节受累+ANA 1:320高滴度+ESR 101+PLT 702K，方才修正诊断为少关节型JIA。难点在于：①幼儿无法有效主诉疼痛，仅表现为跛行和拒负重；②单关节起病与化脓性关节炎/反应性关节炎高度重叠；③6周观察期内诊断不确定性高，家长依从性挑战大。</p>
+
+<p><b>⚠️ 易误诊/漏诊点</b><br>① <b>反应性关节炎</b>：3周前上呼吸道感染+急性单关节肿胀→最常见首诊诊断。鉴别要点：反应性关节炎通常自限（6周内缓解），本例持续>6周并出现新关节受累。<br>② <b>化脓性关节炎</b>：幼儿急性单关节肿胀需紧急排除。鉴别要点：本例无发热、关节液革兰染色阴性、有核细胞4,280/µL但以淋巴细胞为主（感染以中性粒细胞为主）、病程迁延。<br>③ <b>短暂性滑膜炎</b>：最常见的儿童髋/膝疼痛原因，通常1-2周自限。本例持续>6周可排除。<br>④ <b>ANA阳性的意义误判</b>：均质型ANA可出现在SLE和JIA，需结合dsDNA、补体、关节外表现排除SLE。本例dsDNA 4.7（阴性）+无皮疹/肾炎/血液系统严重受累排除SLE。</p>
+
+<p><b>🔀 决策启示</b><br>遇到幼儿单关节肿胀时的排查流程：<br>
+<b>Step 1</b>（急诊/首诊）：排除化脓性关节炎→关节液革兰染色+培养+白细胞分类。阴性→Step 2<br>
+<b>Step 2</b>（4周内）：考虑反应性关节炎/短暂性滑膜炎→NSAIDs对症+观察。4周后未缓解→Step 3<br>
+<b>Step 3</b>（4-6周）：行超声/MRI评估滑膜增厚+ANA/RF/HLA-B27检查+ESR/CRP<br>
+<b>Step 4</b>（≥6周）：满足JIA诊断标准→确定亚型→关节腔注射+眼科筛查<br>
+<b>Step 5</b>：ANA阳性→每3月裂隙灯检查；监测是否扩展为多关节型（前2年发生率约30%）</p>
+
+<p><b>📚 教学价值</b><br>① <b>"6周法则"</b>：关节炎持续>6周是JIA诊断的时间阈值，但不应被动等待6周，应在4周时主动评估滑膜病变和自身抗体；② <b>单关节≠简单</b>：少关节型JIA从单关节起病者占多数，需高度警惕；③ <b>ANA高滴度的双重意义</b>：既是JIA诊断支持，又是葡萄膜炎高危标志，要求严格眼科随访；④ <b>反应性血小板增多</b>：PLT 702K反映慢性炎症驱动，控制原发病后可恢复正常，无需抗血小板治疗。</p>
+</div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>幼儿单关节持续肿胀&gt;6周需警惕JIA</li>
+          <li>ANA高滴度阳性支持JIA诊断并提示葡萄膜炎高危</li>
+          <li>ESR显著升高+反应性血小板增多反映慢性炎症</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>少关节型首选关节腔糖皮质激素注射</li>
+          <li>NSAIDs作为桥接治疗</li>
+          <li>受累关节≤4个时无需系统DMARDs</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>ANA阳性者每3月裂隙灯检查</li>
+          <li>监测是否扩展为多关节型（前2年内）</li>
+          <li>随访关节功能及肌萎缩恢复</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>少关节型总体预后良好</li>
+          <li>20-25%可并发葡萄膜炎</li>
+          <li>约30%可扩展为多关节型</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/40964590/" target="_blank">PMID 40964590</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12439517/" target="_blank">PMC12439517</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Richa P, Thomas M, Keller O, et al. Oligoarticular Juvenile Idiopathic Arthritis in a Toddler. <i>Cureus</i>. 2025;17(4):e90285. PMID: 40964590.<br>
+      2. Zaripova LN, Midgley A, Beresford MW, et al. Juvenile idiopathic arthritis: from pathogenesis to clinical practice. <i>Pediatr Rheumatol Online J</i>. 2021;19(1):69. PMID: 34078778.<br>
+      3. Heiligenhaus A, Niewerth M, Ganser G, et al. Prevalence and complications of uveitis in juvenile idiopathic arthritis. <i>Rheumatology</i>. 2007;46(7):1152-1157. PMID: 17412726.<br>
+      4. Ravelli A, Martini A. Juvenile idiopathic arthritis. <i>Lancet</i>. 2007;369(9563):767-778. PMID: 17336656.<br>
+      5. Petty RE, Southwood TR, Manners P, et al. International League of Associations for Rheumatology classification of juvenile idiopathic arthritis: second revision. <i>J Rheumatol</i>. 2004;31(2):390-392. PMID: 15210784.<br>
+      6. Becker ML, Rose CD. Oligoarticular juvenile idiopathic arthritis. In: <i>UpToDate</i>. 2023.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

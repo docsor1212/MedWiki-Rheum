@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: XLA合并肾脏病变 — PMID 39119334</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 X连锁无丙种球蛋白血症合并肾脏病变——双胞胎</h1>
+      <div class="sub">循证病例 · PMID 39119334</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 39119334 &nbsp; <span class="b">PMCID:</span> PMC11307147<br>
+      <span class="b">DOI:</span> 10.3389/fimmu.2024.1376258<br>
+      <span class="b">期刊:</span> Frontiers in Immunology | <span class="b">年份:</span> 2024<br>
+      <span class="b">作者:</span> Wan S, Cao M, Zou J, Bai Y, Shi M, Jiang H (中国医科大学附属第一医院，沈阳)<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11307147/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>11岁，男（双胞胎弟弟）</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确】</td></tr>
+      <tr><td class="b">主诉</td><td>右下肢水疱性皮损、蜂窝织炎伴持续发热</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">XLA</span> <span class="tag t-y">BTK突变</span> <span class="tag t-a">肾脏病变</span></td></tr>
+    </table>
+    <div class="alert"><b>流行病学提示：</b>XLA是最常见的原发性抗体缺陷病之一，发病率约<b>1:100,000-1:200,000</b>。约<b>15%</b>的XLA患者可合并自身免疫疾病。肾脏受累虽少见（文献报告约14例肾活检证实的病例），但可导致肾衰竭甚至死亡，需定期监测。</div>
+
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">发热、咳嗽、头痛</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      11岁时因发热、咳嗽、头痛在外院住院治疗，期间出现肉眼血尿持续16天，伴双下肢红色皮疹。转入本院进一步诊治。入院后查体见双下肢散在非瘙痒性红色皮疹，压之不褪色。<br><br>
+      患者自幼反复呼吸道感染，脑炎后遗症（脑室扩张）。双胞胎哥哥同患XLA。母亲为BTK基因携带者。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：反复呼吸道感染；脑炎后遗症（脑室扩张）。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：双胞胎哥哥同患XLA；母亲为BTK携带者。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <table>
+      <tr><th>检查</th><th>结果</th></tr>
+      <tr><td class="b">皮肤</td><td class="c-r">双下肢散在非瘙痒性红色皮疹，压之不褪色</td></tr>
+      <tr><td class="b">其他</td><td>入院后反复发热（最高39.2°C），双下肢散在非瘙痒性红色皮疹</td></tr>
+    </table>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>尿蛋白</td><td class="c-r">+++（1.702 g/24h）</td><td>&lt;0.15</td><td class="c-r">肾病范围蛋白尿</td></tr>
+      <tr><td>尿RBC</td><td class="c-r">4/4 HPF（80%异常形态）</td><td></td><td class="c-r">肾小球源性血尿</td></tr>
+      <tr><td>β2-微球蛋白</td><td class="c-r">3.47 mg/L</td><td>0-0.23</td><td class="c-r">↑↑ 肾小管损伤</td></tr>
+      <tr><td>IgG</td><td class="c-r">2.08 g/L</td><td>7-16</td><td class="c-r">↓↓↓</td></tr>
+      <tr><td>IgA</td><td class="c-r">&lt;0.07 g/L</td><td>0.7-4.0</td><td class="c-r">↓↓↓</td></tr>
+      <tr><td>IgM</td><td class="c-r">&lt;0.04 g/L</td><td>0.4-2.3</td><td class="c-r">↓↓↓</td></tr>
+      <tr><td>CD19（B细胞）</td><td class="c-r"><b>0%</b>（0/μL）</td><td></td><td class="c-r">B细胞完全缺失</td></tr>
+      <tr><td>eGFR</td><td class="c-r">53.80 mL/min/1.73m²</td><td>&gt;90</td><td class="c-r">肾功能不全（失代偿）</td></tr>
+      <tr><td>肌酐</td><td class="c-r">114 μmol/L</td><td>27-62</td><td class="c-r">↑↑</td></tr>
+      <tr><td>基因检测</td><td class="c-r">BTK c.119A&gt;G</td><td></td><td class="c-r">确诊XLA</td></tr>
+    </table>
+    <div class="note"><b>肾活检：</b>光镜示系膜增生+单细胞纤维性新月体+局灶坏死+肾小管间质病变；免疫荧光C3(+++)星空样沉积，IgA/IgM/IgG/C1q均阴性。<b>胸部CT：</b>左肺下叶局限性支气管扩张。</div>
+
+    <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+      <b>一、BTK基因与B细胞发育</b><br>
+      X连锁无丙种球蛋白血症（XLA）是最常见的原发性抗体缺陷病之一，由<b>Bruton酪氨酸激酶（BTK）基因</b>突变所致。BTK基因位于X染色体长臂（Xq21.3-Xq22），全长37.5 kb，含19个外显子，编码659个氨基酸的蛋白。原文指出，BTK属于Tec家族非受体酪氨酸激酶，其缺陷阻碍了pro-B细胞向pre-B细胞后期阶段的成熟，导致外周血成熟B淋巴细胞显著减少，浆细胞生成障碍，各免疫球蛋白亚类全面低下。约1/3为家族性遗传，2/3为新发突变。<br><br>
+      <b>二、免疫球蛋白缺陷与感染易感性</b><br>
+      原文指出，XLA患者临床起病通常在出生6个月后，恰与母源IgG耗竭、自身不能产生免疫球蛋白的时间吻合。患者表现为上下呼吸道感染、胃肠道感染以及败血症、脑膜炎等侵袭性感染。虽然以细菌感染为主，但也可出现肠道病毒和蓝氏贾第鞭毛虫等病毒及寄生虫感染。<br><br>
+      <b>三、自身免疫并发症的免疫病理</b><br>
+      原文特别强调，XLA患者中约<b>15%</b>可合并自身免疫疾病，包括炎症性肠病（IBD）、自身免疫性溶血性贫血（AIHA）、硬皮病和免疫复合物介导的肾小球肾炎等。尽管XLA患者几乎缺乏免疫球蛋白，但肾活检可出现免疫复合物沉积或补体沉积（如本例C3(+++)星空样沉积），其机制可能与反复感染触发的免疫复合物形成、补体替代途径激活有关。<br><br>
+      <b>四、肾损伤的病理机制</b><br>
+      原文综述指出，XLA患者合并肾病变的机制尚不明确——可能是内源性微量Ig形成的免疫复合物、IVIG相关的肾损伤、或感染触发的补体介导肾损伤。本例双胞胎兄弟均出现肾病变（弟弟：C3星空样沉积+肾小管间质病变；哥哥：膜增生性肾小球肾炎），提示<b>BTK基因缺陷不仅影响B细胞发育，还参与Toll样受体信号和单核/巨噬细胞功能</b>，可能间接影响肾脏免疫稳态。
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出XLA/原发性免疫缺陷相关诊断标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">IUIS先天免疫错误分类（IEI）— 抗体缺陷类</td><td>Tangye SG 等 / IUIS专家委员会</td><td>2022</td><td>J Clin Immunol</td><td>基因+表型分类</td><td>
+        ① BTK基因突变（c.119A&gt;G）→ <span class="c-g">✅</span><br>
+        ② 外周血CD19+B细胞&lt;2%（本例0%）→ <span class="c-g">✅</span><br>
+        ③ 血清Ig全面低下（IgG/IgA/IgM）→ <span class="c-g">✅（IgG 2.08, IgA &lt;0.07, IgM &lt;0.04）</span><br>
+        ④ 男性+X连锁遗传+母亲携带 → <span class="c-g">✅</span><br>
+        ⑤ 生后6月后反复感染 → <span class="c-g">✅</span><br>
+        <b>结论：确诊XLA</b>
+      </td></tr>
+      <tr><td class="b">ESID/PAGID诊断标准</td><td>Conley ME 等</td><td>2005</td><td>J Allergy Clin Immunol</td><td>临床+实验室+基因三联</td><td>
+        ① 男性患者 → <span class="c-g">✅</span><br>
+        ② 生后反复细菌感染 → <span class="c-g">✅</span><br>
+        ③ 所有Ig亚类显著降低 → <span class="c-g">✅</span><br>
+        ④ B细胞缺失（CD19&lt;2%）→ <span class="c-g">✅</span><br>
+        ⑤ BTK基因突变 → <span class="c-g">✅</span><br>
+        <b>结论：确诊XLA</b>
+      </td></tr>
+    </table>
+    <div class="note">
+      <b>合并诊断：</b><br>
+      ① 急性肾损伤（C3星空样沉积+肾小管间质病变）— 肾活检+eGFR 53.8<br>
+      ② 社区获得性肺炎伴支气管扩张 — CT+反复感染史<br>
+      ③ 病例2（双胞胎哥哥）：XLA+膜增生性肾小球肾炎（MPGN）— 肾活检确诊
+    </div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">IgAVN</td><td>皮疹+血尿+蛋白尿</td><td>皮疹非可触及紫癜+IgA极低 → 不符合</td></tr>
+      <tr><td class="b">IVIG相关肾损伤</td><td>C3沉积+使用IVIG</td><td>C3沉积非IgG沉积 → IVIG可能性低</td></tr>
+      <tr><td class="b">感染后GN</td><td>血尿+蛋白尿+C3沉积</td><td>无前驱链球菌感染证据 → 不确定</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：XLA患者也可发生自身免疫/肾脏病变</div>
+      XLA患者中约15%可合并自身免疫疾病，肾脏受累虽少见但已有报道（MPGN、肾小管间质病变、膜性肾病等）。免疫球蛋白沉积来源尚不明确——可能是内源性微量Ig或IVIG相关。本例C3星空样沉积提示补体介导的肾损伤。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">美罗培南+阿奇霉素</td><td>美罗培南+阿奇霉素 IV</td><td>静脉</td><td class="c-a">经验性抗感染，3天后体温显著改善</td></tr>
+      <tr><td class="b">IVIG</td><td>15g（分3天输注，5g/d）</td><td>静脉</td><td class="c-a">补充免疫球蛋白，控制感染+免疫调节</td></tr>
+      <tr><td class="b">IVIG维持</td><td>10g/月</td><td>每月输注</td><td class="c-a">XLA需终身IVIG替代（标准400-600mg/kg/月）</td></tr>
+      <tr><td class="b">福辛普利钠</td><td>口服（剂量按年龄/体重）</td><td>口服</td><td class="c-a">ACEI降蛋白尿+保护肾功能</td></tr>
+      <tr><td class="b"> Calcium dobesilate</td><td>口服</td><td>口服</td><td class="c-a">改善微血管病变</td></tr>
+      <tr><td class="b">复方α-酮酸</td><td>口服</td><td>口服</td><td class="c-a">肾功能不全营养支持</td></tr>
+    </table>
+    <div class="alert"><b>用药注意事项：</b>IVIG剂量400-600 mg/kg/月为标准替代方案。本例初始大剂量（15g×3天）可能兼顾了感染控制。长期IVIG需监测肾功能（IVIG相关肾损伤风险）。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">入院</div><div class="t-content">肉眼血尿16天+双下肢皮疹+反复感染史</div></div>
+      <div class="t-item yellow"><div class="t-date">确诊</div><div class="t-content">BTK突变+B细胞0%+Ig全面低下→XLA；肾活检→C3沉积+肾小管间质病变</div></div>
+      <div class="t-item green"><div class="t-date">IVIG治疗后</div><div class="t-content">尿蛋白转阴，血尿减轻</div></div>
+      <div class="t-item yellow"><div class="t-date">每月IVIG维持期间</div><div class="t-content">间歇呼吸道感染+轻度蛋白尿/镜下血尿，经IVIG和抗炎治疗后改善</div></div>
+    </div>
+
+    <div class="note"><b>病例2（双胞胎哥哥）：</b>11岁，反复呼吸道感染（每年5-6次）。本次咳嗽流涕3天+发热2天入院。尿检示镜下血尿+蛋白尿2+。IgG/IgA/IgM更低（1.53/&lt;0.01/0.03）。出院7个月后因经济原因未规律IVIG，出现蛋白尿加重，肾活检确诊MPGN。开始IVIG 12.5g/月后症状改善。</div>
+
+    <div class="sh yellow">🧠 疑难剖析（决策导向）</div>
+    <div class="diff-box">
+      <div class="diff-title">🔴 决策点一：XLA患者出现血尿/蛋白尿→如何判断肾损伤机制？</div>
+      <b>临床情境：</b>11岁XLA男孩突发肉眼血尿16天+双下肢皮疹+蛋白尿1.702g/24h+eGFR 53.8。<br>
+      <b>决策路径：</b>①首先排除IgAVN（IgA血管炎肾炎）— 但本例IgA极低（&lt;0.07），IgAVN需IgA沉积→<b>不支持</b> ②考虑IVIG相关肾损伤 — 但肾活检为C3沉积而非IgG沉积→<b>可能性低</b> ③考虑感染后GN — 无前驱链球菌感染证据→<b>不确定</b> ④C3星空样沉积+无Ig沉积→<b>补体替代途径激活</b>（C3肾小球肾炎样改变）<br>
+      <b>关键决策：</b>XLA患者肾活检为鉴别金标准。C3星空样沉积提示补体介导而非免疫复合物介导的肾损伤，治疗以IVIG替代+ACEI保护肾功能为主。
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟡 决策点二：双胞胎同患XLA+肾病→遗传咨询与监测策略</div>
+      <b>临床情境：</b>双胞胎兄弟均患XLA+BTK突变，均出现肾病变但病理类型不同（弟弟C3沉积型、哥哥MPGN型）。<br>
+      <b>决策路径：</b>①<b>双胞胎共患</b>→证实X连锁遗传，母亲为携带者 → 遗传咨询（再生育风险50%男性患儿）②不同病理类型→提示肾损伤可能非BTK直接导致，而是继发于反复感染和免疫失调 ③<b>规律IVIG替代</b>是预防感染和肾脏并发症的关键 ④弟弟IVIG后尿蛋白转阴 → 支持感染触发假说<br>
+      <b>关键决策：</b>对所有XLA患者应<b>定期监测尿检和肾功能</b>（每3-6月），早期发现肾损伤。双胞胎病例为研究XLA肾损伤机制提供了独特视角。
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟢 决策点三：经济因素导致IVIG中断→如何应对？</div>
+      <b>临床情境：</b>哥哥因经济原因未规律IVIG，7个月后蛋白尿加重，肾活检确诊MPGN，预后较C3沉积型差。<br>
+      <b>决策路径：</b>①XLA需<b>终身IVIG替代</b>（400-600 mg/kg/月），中断治疗→反复感染+自身免疫并发症风险显著增加 ②MPGN进展为C3沉积型 → 说明感染持续触发肾脏免疫损伤 ③<b>处理策略：</b>与社会工作部门合作解决经济障碍；申请医保/慈善救助；考虑皮下IVIG（成本更低、更便捷）<br>
+      <b>关键决策：XLA患者不可因经济原因中断IVIG。临床医师有责任协助患者解决治疗可及性问题。</b>
+    </div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>男孩反复感染→查Ig+B细胞</li>
+          <li>XLA约15%合并自身免疫</li>
+          <li>双胞胎同患提示X连锁遗传</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>终身IVIG替代（400-600mg/kg/月）</li>
+          <li>肾病变加用ACEI</li>
+          <li>不可因经济原因中断IVIG</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>定期尿检和肾功能</li>
+          <li>IVIG期间监测肾损害</li>
+          <li>家族遗传咨询</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>规律IVIG可改善预后</li>
+          <li>肾病变需长期监测</li>
+          <li>MPGN预后较C3沉积型差</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/39119334/" target="_blank">PMID 39119334</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11307147/" target="_blank">PMC11307147</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Wan S, Cao M, Zou J, et al. Case report of renal manifestations in X-linked agammaglobulinemia. <i>Front Immunol</i>. 2024;15:1376258. PMID: 39119334.<br>
+      2. Tangye SG, Al-Herz W, Bousfiha A, et al. Human inborn errors of immunity: 2022 update. <i>J Clin Immunol</i>. 2022;42:1473-1507. PMID: 35748970.<br>
+      3. Cardenas-Morales M, Hernandez-Trujillo VP. Agammaglobulinemia: from X-linked to autosomal forms. <i>Clin Rev Allergy Immunol</i>. 2022;63:22-35. PMID: 34241796.<br>
+      4. Nomura K, Kanegane H, Karasuyama H, et al. Genetic defect in human XLA impedes a maturational evolution of pro-B cells. <i>Blood</i>. 2000;96:610-617. PMID: 10887125.<br>
+      5. Lougaris V, Soresina A, Baronio M, et al. Long-term follow-up of 168 patients with XLA. <i>J Allergy Clin Immunol</i>. 2020;146:429-437. PMID: 32169379.<br>
+      6. Ballow M, Zachariah T. Practical aspects of immunoglobulin replacement. <i>Ann Allergy Asthma Immunol</i>. 2017;119:299-303. PMID: 28958372.<br>
+      7. Caza TN, Hassen SI, Larsen CP. Renal manifestations of common variable immunodeficiency. <i>Kidney360</i>. 2020;1:491-500. PMID: 35368588.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

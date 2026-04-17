@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: IVIG抵抗型不完全川崎病</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">川崎病 · KD-02</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>4月龄女婴IVIG抵抗型不完全川崎病</h1>
+      <div class="sub">IVIG Resistant Incomplete Kawasaki Disease — 伴前囟膨隆</div>
+    </div>
+    <div class="meta">循证病例 · PMID 41804474</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 41804474 &nbsp;|&nbsp; <b>PMC:</b> PMC12967473<br>
+  <b>DOI:</b> 10.1002/ccr3.72229<br>
+  <b>期刊:</b> Clinical Case Reports | <b>年份:</b> 2026<br>
+  <b>作者:</b> 原文作者见文献<br>
+  <b>标题:</b> <i>Intravenous Immunoglobulin Resistant Incomplete Kawasaki Disease in a 4-Month-Old Infant</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/41804474/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>不完全KD约占KD的<b>15-20%</b>，在&lt;6月婴儿中比例更高。约<b>20%</b>KD患者对初始IVIG耐药。&lt;6月婴儿即使及时接受IVIG，冠状动脉瘤风险仍高达<b>35%</b>。不完全KD与完全KD采用相同治疗方案。</div>
+
+<div class="sh ">👤 基本信息</div>
+  <tr><td class="b">民族</td><td>亚洲裔</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-y">不完全KD</span> <span class="tag t-r">IVIG抵抗</span> <span class="tag t-y">前囟膨隆</span> <span class="tag t-r">&lt;6月</span></td></tr>
+</table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">高热8天</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  4月龄女婴因持续高热8天伴前囟膨隆，由外院转入PICU。转入后予3%高渗盐水降颅压。经感染排查（登革热、恙虫病快速检测阴性，血培养阴性）排除感染性疾病。超声心动图示冠状动脉扩张（详见辅助检查和诊断章节），临床诊断为不完全KD。</p>
+
+<div class="sh">📋 既往史</div>
+<p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">生命体征</th></tr>
+    <tr><td>T</td><td class="c-r">高热</td></tr>
+    <tr><td>HR</td><td>稳定（原文未报告具体值）</td></tr>
+    <tr><td>BP</td><td>稳定（原文未报告具体值）</td></tr>
+    <tr><td>体重</td><td>4月龄体重</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">系统查体</th></tr>
+    <tr><td>前囟</td><td class="c-r">膨隆</td></tr>
+    <tr><td>神经系统</td><td>烦躁</td></tr>
+    <tr><td>皮肤</td><td>无典型KD皮疹</td></tr>
+    <tr><td>淋巴结</td><td>【原文未提及】</td></tr>
+  </table>
+</div>
+<div class="alert"><b>前囟膨隆</b>为KD非典型表现，可由颅内压增高引起，在&lt;6月婴儿不完全KD中需警惕。</div>
+
+<div class="sh ">🔬 辅助检查</div><div style="padding:8px;font-size:12px;color:#888;">辅助检查数据详见原文。</div>
+
+<table><tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td><span class="c-r">43,450/cu.mm ↑↑</span></td><td>—</td><td>显著增多</td></tr>
+<tr><td>Hb</td><td><span class="c-r">8.1 g/dL ↓</span></td><td>—</td><td>贫血</td></tr>
+<tr><td>PLT</td><td><span class="c-r">800,000/cu.mm ↑↑</span></td><td>—</td><td>显著增多</td></tr>
+<tr><td>中性粒细胞</td><td>增多（WBC 43,450中以中性粒细胞为主）</td><td>—</td><td>中性粒细胞为主</td></tr>
+<tr><td>CRP</td><td><span class="c-r">142 mg/L ↑↑</span></td><td>&lt;13</td><td>极显著升高</td></tr>
+<tr><td>ESR</td><td><span class="c-r">94 mm/h ↑↑</span></td><td>—</td><td>显著升高</td></tr>
+<tr><td>LMCA直径</td><td>2.7 mm</td><td>Z-score &lt;2</td><td><span class="c-y">Z-score 2.9（异常）</span></td></tr>
+<tr><td>头颅CT</td><td>双额颞CSF间隙增宽</td><td>—</td><td>颅内压增高</td></tr>
+</table>
+
+<div class="sh yellow">📈 超声心动图演变</div>
+<table><tr><th>时间点</th><th>LMCA直径</th><th>Z-score</th><th>解读</th></tr>
+<tr><td>首次（诊断时）</td><td>2.7 mm</td><td><span class="c-y">2.9</span></td><td>冠状动脉扩张</td></tr>
+<tr><td>首次IVIG后（确认抵抗）</td><td>2.8 mm</td><td><span class="c-r">3.2</span></td><td>仍进展</td></tr>
+<tr><td>第二次IVIG后7天</td><td>2.2 mm</td><td><span class="c-g">1.2</span></td><td>显著改善</td></tr>
+<tr><td>1个月随访</td><td>进一步改善</td><td>—</td><td>持续好转</td></tr>
+</table>
+
+<div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>一、不完全KD的免疫学特征</b><br>原文指出，不完全KD的诊断极具挑战性，约20%患者对初始IVIG治疗无反应（IVIG抵抗），且IVIG抵抗患者发生冠状动脉异常和长期心血管并发症的风险显著升高。不完全KD在<6月婴儿中更为常见，因免疫系统发育不成熟，典型临床特征（皮疹、结膜炎、草莓舌等）常缺失或不明显。</p>
+<p><b>二、本例特异性免疫与炎症反应</b><br>① <b>CRP 142 mg/L + ESR 94 mm/h</b>：极显著升高的急性期反应物，反映强烈的全身炎症反应。<br>② <b>WBC 43,450/cu.mm（中性粒细胞为主）+ PLT 800,000/cu.mm</b>：显著白细胞增多和血小板增多是KD亚急性期的特征性表现，PLT升高在KD第2-3周达峰。<br>③ <b>LMCA Z-score 2.9→3.2的动态恶化</b>：首剂IVIG后冠状动脉继续扩张，证实IVIG抵抗，反映血管炎症未被控制。<br>④ <b>前囟膨隆+CSF间隙增宽</b>：KD血管炎累及颅内血管→血脑屏障通透性增加→颅内压增高。这是KD的非典型表现，在<6月婴儿中需特别警惕。</p>
+<p><b>三、IVIG抵抗的预测模型局限性</b><br>原文详细讨论了日本风险评分系统（Kobayashi、Sano、Egami评分）在非日本人群中的预测效能有限。本例采用了北美风险模型（Son MBF et al. 2019）：基线CA Z-score≥2.0 + 年龄<6月 + 亚洲裔 + CRP>13 mg/L。基线CA扩张是最强预测因子。<6月婴儿即使及时接受IVIG，CA瘤风险仍高达35%，这本身就构成了增强初始治疗的独立适应证。</p>
+<p><b>四、增强初始治疗的理论基础</b><br>RAISE研究证实，IVIG+泼尼松龙联合治疗可降低IVIG抵抗率（尤其高危人群）。其机制为：IVIG通过Fc受体调节免疫细胞功能+中和自身抗体+抑制补体激活；糖皮质激素则广泛抑制炎症因子转录（NF-κB通路），两者协同可更有效地控制血管炎症。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出不完全川崎病（IVIG抵抗型）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2017 AHA不完全KD诊断流程</td><td>McCrindle BW 等/AHA</td><td>2017</td><td>Circulation</td><td>发热≥5天+≤2项特征+实验室/超声支持</td><td>① 发热≥5天 → <span class='c-g'>✅ 8天</span><br>② ≤2项临床特征 → <span class='c-g'>✅</span><br>③ CRP≥30+CA Z≥2.5 → <span class='c-g'>✅ CRP 142+Z 2.9</span><br>④ 补充标准≥3项 → <span class='c-g'>✅ ≥4项</span><br><b>不完全KD ✅</b></td></tr>
+    </table>
+<table><tr><th>诊断</th><th>诊断标准及依据</th></tr>
+<tr><td class="b">不完全川崎病</td><td>
+  <b>依据：2017 AHA川崎病诊断指南</b>（McCrindle BW, 2017）<br>
+  <b>不完全KD诊断流程</b>：<br>
+  ① 持续发热 ≥5天 — <span class="c-g">✅ 符合（8天）</span><br>
+  ② 不满足完全KD标准（≤2项主要临床特征）— 符合（无皮疹、无结膜炎等典型表现）<br>
+  ③ 实验室/超声心动图支持标准：CRP≥30 mg/L或ESR≥40 mm/h + 超声心动图异常（Z-score≥2.5）— <span class="c-g">✅ CRP 142 + Z-score 2.9</span><br>
+  ④ 补充实验室标准（≥3项）：WBC≥15×10⁹/L、PLT≥450×10⁹/L、CRP≥30 mg/L、ESR≥40 mm/h、Hb≤正常低值、ALT升高、白蛋白≤30 g/L、尿WBC≥10/HPF — <span class="c-g">✅ 至少4项符合</span><br>
+  <b>注</b>：不完全KD在&lt;6月婴儿中更常见，&lt;6月持续发热应尽早行超声心动图。
+</td></tr>
+<tr><td class="b">IVIG抵抗型KD</td><td>
+  2017 AHA标准：首剂IVIG后36h仍发热（T&gt;38°C）+ CA Z-score恶化（2.9→3.2）
+</td></tr>
+<tr><td class="b">颅内压增高</td><td>前囟膨隆+头颅CT示CSF间隙增宽+颅缝增宽，排除感染性因素</td></tr>
+</table>
+<div class="note"><b>IVIG抵抗高危因素：</b>年龄&lt;6月、亚洲裔、CRP&gt;13 mg/L、基线CA Z-score&gt;2</div>
+
+<div class="sh blue">🔍 鉴别诊断要点</div>
+<table><tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td><b>细菌性脑膜炎</b></td><td>发热、前囟膨隆</td><td>LP为损伤性、培养阴性、抗生素无效 → 不支持</td></tr>
+<tr><td><b>脓毒症</b></td><td>高热、WBC升高</td><td>血培养阴性、无明确感染灶 → 不支持</td></tr>
+<tr><td><b>病毒感染</b></td><td>持续发热</td><td>登革热/恙虫病阴性、炎症标志物极高 → 不支持</td></tr>
+<tr><td><b>自身炎症性疾病</b></td><td>持续高热+炎症指标极高</td><td>4月龄起病+无反复发作史+CA扩张 → KD可能性远大于自身炎症病</td></tr>
+</table>
+<div class="diff-box"><div class="diff-title">⚠️ 易错点：<6月婴儿不完全KD诊断困难</div>不完全KD在&lt;6月婴儿中更常见，且缺乏典型临床特征。对任何&lt;6月不明原因持续发热婴儿，应高度考虑KD并尽早行超声心动图检查。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>治疗阶段</th><th>药物</th><th>剂量</th><th>选择理由</th><th>疗效评估指标</th><th>不良反应监测</th></tr>
+<tr><td class="b">增强初始治疗</td><td>IVIG</td><td>2 g/kg，单次12h输注</td><td>2017 AHA标准一线。高危患者（&lt;6月+亚洲裔+高CRP+CA Z&gt;2）推荐初始联合激素（RAISE研究：IVIG+泼尼松龙可降低IVIG抵抗率）</td><td>36h体温、CRP/ESR下降、CA Z-score</td><td>输注过敏反应、溶血（非O型血）</td></tr>
+<tr><td class="b">增强初始治疗</td><td>泼尼松龙</td><td>2 mg/kg/d口服</td><td>RAISE研究证实IVIG+激素联合可减少IVIG抵抗（尤其高危人群）</td><td>热退时间</td><td>血糖、血压、感染、消化道症状</td></tr>
+<tr><td class="b">增强初始治疗</td><td>阿司匹林</td><td>50 mg/kg/d，分4次口服（急性期）</td><td>KD标准用药，抗炎+抗血小板</td><td>体温、CRP</td><td>肝功能、Reye综合征（避免水痘/流感流行时使用）</td></tr>
+<tr><td class="b">IVIG抵抗后</td><td>第二剂IVIG</td><td>2 g/kg，单次</td><td>首剂IVIG后36h仍发热+CA恶化→二线选择</td><td>CA Z-score变化（2.8→2.2 mm）</td><td>同上</td></tr>
+<tr><td class="b">IVIG抵抗后</td><td>甲泼尼龙脉冲</td><td>脉冲剂量（原文未报告具体剂量），后转为口服减量</td><td>IVIG抵抗后强化免疫抑制</td><td>体温、炎症指标</td><td>血糖、血压</td></tr>
+<tr><td class="b">出院维持</td><td>泼尼松龙减量</td><td>3周渐减至停药</td><td>逐步减量避免反跳</td><td>体温、CA随访</td><td>同上</td></tr>
+<tr><td class="b">出院维持</td><td>阿司匹林</td><td>3-5 mg/kg/d（抗血小板剂量）×4周</td><td>CA异常者需低剂量阿司匹林至CA恢复正常</td><td>CA Z-score随访</td><td>肝功能、出血风险</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>高危患者（&lt;6月+亚洲裔+高CRP+CA Z-score&gt;2）应考虑增强初始治疗（IVIG+激素+阿司匹林），而非等待IVIG抵抗后再升级。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item red"><div class="t-date">首剂IVIG</div><div class="t-content">仍发热，LMCA从2.7→2.8 mm（Z-score 2.9→3.2），确认IVIG抵抗</div></div><div class="t-item green"><div class="t-date">第二剂IVIG+激素脉冲</div><div class="t-content">热退，血流动力学稳定</div></div><div class="t-item green"><div class="t-date">第二剂IVIG后7天</div><div class="t-content">LMCA从2.8→2.2 mm（Z-score 3.2→1.2），<span class='c-g'>显著改善</span></div></div><div class="t-item "><div class="t-date">出院时</div><div class="t-content">WBC 39,380、PLT升至1,199,000（亚急性期表现）</div></div><div class="t-item green"><div class="t-date">1个月随访</div><div class="t-content">无发热，CA进一步改善。WBC降至20,190，PLT降至811,000，CRP 2.1 mg/dL</div></div>
+<div class="t-item green"><div class="t-date">1个月随访超声</div><div class="t-content">LMCA 1.6 mm（Z-score 0.55）→ <span class="c-g">基本正常化</span></div></div></div>
+
+<div class="sh yellow">💡 疑难剖析与临床启示</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+
+<p><b>❓ 为什么难</b><br>4月龄女婴仅表现为发热+前囟膨隆，无皮疹、结膜炎、草莓舌等任何典型KD特征。感染排查（登革热、恙虫病阴性，血培养阴性）排除常见感染后，因持续炎症+超声心动图发现LMCA Z-score 2.9而确诊不完全KD。难点在于：①<6月婴儿不完全KD诊断困难，临床特征极度不典型；②前囟膨隆作为KD表现极为罕见，易被误诊为脑膜炎；③日本风险评分在非日本人群不适用，IVIG抵抗风险评估需依赖北美模型。</p>
+
+<p><b>⚠️ 易误诊/漏诊点</b><br>① <b>误诊为细菌性脑膜炎</b>：发热+前囟膨隆+CSF异常（腰穿损伤性）→最常见误诊。鉴别要点：CSF培养阴性+抗生素无效+炎症标志物极度升高+CA扩张。<br>② <b>误诊为脓毒症</b>：高热+WBC 43K+CRP 142→脓毒症考虑。鉴别要点：血培养阴性+无明确感染灶+PLT 800K（KD亚急性期特征性升高）。<br>③ <b>不完全KD漏诊</b>：仅发热1项满足完全KD标准（需发热+≥4项临床特征），容易延误诊断。关键决策点：<6月婴儿持续发热应<b>主动行超声心动图</b>。</p>
+
+<p><b>🔀 决策启示：<6月婴儿不明原因发热的KD排查流程</b><br>
+<b>Step 1</b>：<6月婴儿持续发热≥5天 + 感染排查阴性 → <b>立即行超声心动图</b>（不必等待典型KD特征）<br>
+<b>Step 2</b>：超声心动图发现CA Z-score≥2.5 → 按2017 AHA不完全KD诊断流程评估<br>
+<b>Step 3</b>：评估IVIG抵抗风险（北美模型：年龄<6月 + 亚洲裔 + CRP>13 + CA Z-score>2）→ 高危者直接采用<b>增强初始治疗</b>（IVIG+激素+阿司匹林）<br>
+<b>Step 4</b>：IVIG后36h仍发热 + CA Z-score恶化 → 确认IVIG抵抗 → 第二剂IVIG + 甲泼尼龙脉冲<br>
+<b>Step 5</b>：出院后低剂量阿司匹林×4周 + 1-2周/5-6周超声心动图随访<br>
+<b>关键原则</b>：不完全KD与完全KD采用<b>相同的治疗方案</b>，不必等待满足所有诊断标准后再启动治疗。</p>
+
+<p><b>📚 教学价值</b><br>① <6月婴儿持续发热+感染排查阴性 = <b>超声心动图适应证</b>，这一原则可避免不完全KD漏诊；② 日本IVIG抵抗评分在非日本人群效度有限，应采用适合人群的风险模型；③ 增强初始治疗（IVIG+激素）对高危患者可降低IVIG抵抗率，不必等到确认抵抗后再升级；④ 前囟膨隆可作为KD非典型表现出现在<6月婴儿中，KD血管炎累及颅内血管→血脑屏障通透性增加是其机制。</p>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① &lt;6月婴儿不完全KD诊断困难，需主动行超声心动图<br>
+  ② 前囟膨隆可为KD非典型表现<br>
+  ③ Z-score≥2.5提示冠状动脉受累<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ 高危患者首选增强初始治疗（IVIG+激素）<br>
+  ⑤ IVIG抵抗→第二剂IVIG+激素脉冲<br>
+  ⑥ 日本风险评分在非日本人群需谨慎应用<br><br>
+  <b>3. 监测要点</b><br>
+  ⑦ 超声心动图动态监测CA Z-score变化<br>
+  ⑧ 关注PLT动态变化（亚急性期可进一步升高）<br><br>
+  <b>4. 预后</b><br>
+  ⑨ 早期积极治疗可改善冠状动脉结局<br>
+  ⑩ 出院后需继续低剂量阿司匹林4周
+</div>
+
+<div class="sh ">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41804474/" target="_blank">PMID 41804474</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12967473/" target="_blank">PMC12967473</a>，以下为原文引用的参考文献。</div></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  1. Yadav S, Poudel A, Karki H, et al. Intravenous Immunoglobulin Resistant Incomplete Kawasaki Disease in a 4-Month-Old Infant. <i>Clin Case Rep</i>. 2026;14(3):e72229. PMID: 41804474.<br>
+  2. Kliegman RM, Stanton BF, St. Geme JW, et al. <i>Nelson Textbook of Pediatrics</i>. 20th ed. Elsevier; 2016:862-867.<br>
+  3. Uehara R, Belay ED, Maddox RA, et al. Analysis of Potential Risk Factors Associated With Nonresponse to Initial IVIG Treatment Among KD Patients in Japan. <i>Pediatr Infect Dis J</i>. 2008;27(2):155-160. PMID: 18174868.<br>
+  4. Mărginean CO, Meliț LE, Gozar L, et al. Incomplete Refractory Kawasaki Disease in an Infant—A Case Report. <i>Front Pediatr</i>. 2018;6:210. PMID: 30101141.<br>
+  5. Son MBF, Gauvreau K, Tremoulet AH, et al. Risk Model Development for Prediction of Coronary Artery Aneurysms in KD in a North American Population. <i>J Am Heart Assoc</i>. 2019;8(11):e011319. PMID: 31130036.<br>
+  6. Jone PN, Tremoulet A, Choueiter N, et al. Update on Diagnosis and Management of Kawasaki Disease: A Scientific Statement From the AHA. <i>Circulation</i>. 2024;150(23):e481-e500. PMID: 39534969.<br>
+  7. McCrindle BW, Rowley AH, Newburger JW, et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease. <i>Circulation</i>. 2017;135(17):e927-e999. PMID: 28356445.<br>
+  8. Piram M, Darce Bello M, Tellier S, et al. Defining the Risk of First IVIG Unresponsiveness in Non-Asian Patients With KD. <i>Sci Rep</i>. 2020;10(1):3125. PMID: 32080307.
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

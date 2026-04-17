@@ -1,4 +1,4 @@
-const CACHE = 'medwiki-v4';
+const CACHE = 'medwiki-v7';
 const ASSETS = [
   './',
   './index.html',
@@ -13,6 +13,7 @@ const ASSETS = [
   './cases/index_PID.html',
   './cases/index_SLE.html',
   './cases/index_Uveitis.html',
+  './cases/index_sJIA.html',
   './cases/case_AID_CAPS.html',
   './cases/case_AID_FMF.html',
   './cases/case_AID_NLRC4.html',
@@ -25,6 +26,7 @@ const ASSETS = [
   './cases/case_cSLE_pancreatitis_MAS.html',
   './cases/case_cSLE_recurrent_MAS.html',
   './cases/case_cSLE_refractory_NPSLE.html',
+  './cases/case_cSLE_LN.html',
   './cases/case_IgAV_CNS.html',
   './cases/case_IgAV_GI.html',
   './cases/case_IgAV_nephritis.html',
@@ -41,6 +43,7 @@ const ASSETS = [
   './cases/case_JDM_special.html',
   './cases/case_JDM_typical.html',
   './cases/case_JIA_polyarticular.html',
+  './cases/case_JIA_biologics.html',
   './cases/case_KD_giant_CAL.html',
   './cases/case_KD_incomplete.html',
   './cases/case_KD_infant.html',
@@ -54,6 +57,7 @@ const ASSETS = [
   './cases/case_sJIA_biologic_MAS.html',
   './cases/case_sJIA_early_MAS.html',
   './cases/case_sJIA_MAS.html',
+  './cases/case_sJIA_MAS_new.html',
   './cases/case_sJIA_refractory.html',
   './cases/case_sJIA_typical.html',
   './cases/case_SLE_APLS.html',
@@ -66,6 +70,7 @@ const ASSETS = [
   './cases/case_Uveitis_JIA.html',
   './cases/case_Uveitis_TINU.html',
   './cases/case_Uveitis_Vogt.html',
+  './cases/case_FMF_colchicine.html',
   './drugs/MTX.html',
   './drugs/glucocorticoids.html',
   './drugs/corticosteroids_IV.html',
@@ -79,6 +84,15 @@ const ASSETS = [
   './drugs/tocilizumab.html',
   './drugs/biologics.html',
   './drugs/calcium_vitd.html',
+  './drugs/hydroxychloroquine.html',
+  './drugs/cyclophosphamide.html',
+  './drugs/rituximab.html',
+  './drugs/etanercept.html',
+  './drugs/adalimumab.html',
+  './drugs/infliximab.html',
+  './drugs/tofacitinib.html',
+  './drugs/belimumab.html',
+  './drugs/colchicine.html',
   './tools/JADAS27.html',
   './tools/JADAS71.html',
   './tools/CHAQ.html',
@@ -98,6 +112,10 @@ const ASSETS = [
   './tools/liver_kidney.html',
   './tools/followup.html',
   './tools/vaccine.html',
+  './tools/vaccine_decision.html',
+  './tools/KD_CA_Zscore.html',
+  './tools/KD_IVIG_resistance.html',
+  './tools/MAS_HLH_screening.html',
   './tools/drug_risk_assessment.html',
   './topics/AID.html',
   './topics/IgAV.html',
@@ -110,6 +128,44 @@ const ASSETS = [
   './topics/PID.html',
   './topics/SLE.html',
   './topics/Uveitis.html',
+  './topics/ANCA_vasculitis.html',
+  './topics/APS.html',
+  'evidence/index.html',
+  'evidence/ev_KD_01.html',
+  'evidence/ev_KD_02.html',
+  'evidence/ev_KD_03.html',
+  'evidence/ev_sJIA_MAS_01.html',
+  'evidence/ev_sJIA_MAS_02.html',
+  'evidence/ev_cSLE_01.html',
+  'evidence/ev_cSLE_02.html',
+  'evidence/ev_APS_01.html',
+  'evidence/ev_JDM_01.html',
+  'evidence/ev_JDM_02.html',
+  'evidence/ev_JIA_01.html',
+  'evidence/ev_JIA_02.html',
+  'evidence/ev_uveitis_01.html',
+  'evidence/ev_ITP_01.html',
+  'evidence/ev_ITP_02.html',
+  'evidence/ev_IgAV_01.html',
+  'evidence/ev_IgAV_02.html',
+  'evidence/ev_PID_01.html',
+  'evidence/ev_PID_02.html',
+  'evidence/ev_AID_01.html',
+  'evidence/ev_ANCA_01.html',
+  'evidence/ev_Behcet_01.html',
+  'evidence/ev_jSSc_01.html',
+  'evidence/ev_Evans_01.html',
+  'evidence/ev_NLE_01.html',
+  'evidence/ev_DADA2_01.html',
+  'evidence/ev_FMF_01.html',
+  'evidence/ev_SAVI_01.html',
+  'evidence/ev_GIO_01.html',
+  'evidence/ev_Takayasu_01.html',
+  'evidence/ev_PAN_01.html',
+  'evidence/ev_MCTD_01.html',
+  'evidence/ev_pSS_01.html',
+  'evidence/ev_CANDLE_01.html',
+  'evidence/ev_VEXAS_01.html',
 ];
 
 self.addEventListener('install', e => {
@@ -126,8 +182,26 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
+// Network-first for HTML, cache-first for other assets
 self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request))
-  );
+  const url = new URL(e.request.url);
+  const isHTML = e.request.headers.get('accept')?.includes('text/html');
+  
+  if (isHTML) {
+    // Network-first: try network, fall back to cache
+    e.respondWith(
+      fetch(e.request)
+        .then(resp => {
+          const clone = resp.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+          return resp;
+        })
+        .catch(() => caches.match(e.request))
+    );
+  } else {
+    // Cache-first for CSS/JS/images
+    e.respondWith(
+      caches.match(e.request).then(r => r || fetch(e.request))
+    );
+  }
 });

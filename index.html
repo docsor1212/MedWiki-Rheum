@@ -3,176 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MedWiki-Rheum — 儿童风湿免疫临床知识库</title>
+<title>MedWiki-Rheum 🌿 儿童风湿免疫临床知识库</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#f5f3ef; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --accent2:#1a8a85; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:12px; --shadow:0 1px 4px rgba(0,0,0,0.06); }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased; }
-.wrap { max-width:960px; margin:0 auto; padding:20px; }
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--orange-bg:#ffe8d6;--accent-bg:#d4f0ed;--border:#e5e0d8;--radius:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+body{padding-top:42px!important;}
 
-/* Header */
-.header-area { text-align:center; padding:24px 0 16px; }
-.header-area h1 { font-size:1.8rem; font-weight:700; color:var(--accent); margin-bottom:4px; letter-spacing:-0.5px; }
-.header-area .subtitle { font-size:0.82rem; color:var(--text2); }
+/* Nav */
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
 
-/* Stats bar */
-.stats-bar { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
-.stats-bar a { text-decoration:none; }
-.stat-pill { background:var(--surface); border-radius:20px; padding:8px 16px; border:1px solid var(--border); display:flex; align-items:center; gap:6px; box-shadow:var(--shadow); transition:all 0.2s; }
-.stat-pill:hover { border-color:var(--accent); transform:translateY(-1px); box-shadow:0 3px 10px rgba(32,163,158,0.12); }
-.stat-pill .num { font-size:1.2rem; font-weight:700; line-height:1; }
-.stat-pill .label { font-size:0.65rem; color:var(--text2); line-height:1.1; }
-.s1 .num { color:var(--accent); } .s2 .num { color:var(--green); } .s3 .num { color:var(--yellow); } .s4 .num { color:#d05040; } .s6 .num { color:#8b5cf6; }
+/* Hero */
+.hero{background:linear-gradient(135deg,#20a39e 0%,#1a8580 100%);color:#fff;padding:40px 20px 30px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.06) 0%,transparent 60%);animation:pulse 8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.hero h1{font-size:2rem;font-weight:700;margin-bottom:4px;position:relative;}
+.hero .subtitle{font-size:.95rem;opacity:.85;margin-bottom:12px;position:relative;}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 14px;font-size:.75rem;position:relative;}
 
 /* Sections */
-.section { margin-bottom:20px; }
-.section-title { font-size:0.8rem; font-weight:700; color:#fff; padding:7px 14px; border-radius:8px; margin-bottom:10px; display:flex; align-items:center; gap:6px; letter-spacing:0.5px; }
-.section-title.s-topics { background:linear-gradient(135deg,var(--accent),var(--accent2)); }
-.section-title.s-drugs { background:linear-gradient(135deg,#5ab34e,#3d8a33); }
-.section-title.s-tools { background:linear-gradient(135deg,#d49b1f,#a07a15); }
-.section-title.s-featured { background:linear-gradient(135deg,#20a39e,#1a8a85); }
+.section{max-width:1100px;margin:0 auto;padding:20px 16px;}
+.section-title{display:flex;align-items:center;gap:8px;font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid var(--accent-bg);}
+.section-title .icon{font-size:1.2rem;}
 
-/* Card grid */
-.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(135px, 1fr)); gap:8px; }
-.card { display:block; background:var(--surface); border:1.5px solid var(--border); border-radius:var(--radius); padding:12px; text-decoration:none; color:var(--text); transition:all 0.15s; position:relative; box-shadow:var(--shadow); }
-.card:hover { border-color:var(--accent); box-shadow:0 4px 12px rgba(32,163,158,0.15); transform:translateY(-2px); }
-.card .name { font-size:0.82rem; font-weight:600; margin-bottom:2px; }
-.card .desc { font-size:0.68rem; color:var(--text2); }
-.card .badge { position:absolute; top:6px; right:8px; font-size:0.55rem; padding:1px 5px; border-radius:3px; font-weight:600; }
-.card[data-cat="topic"] .badge { background:var(--accent-bg); color:var(--accent); }
-.card[data-cat="drug"] .badge { background:var(--green-bg); color:var(--green); }
-.card[data-cat="tool"] .badge { background:var(--yellow-bg); color:var(--yellow); }
-.card[data-cat="calc"] .badge { background:#e6f5f4; color:var(--accent); }
-.card[data-cat="topic"] { border-left:3px solid var(--accent); }
-.card[data-cat="drug"] { border-left:3px solid var(--green); }
-.card[data-cat="tool"] { border-left:3px solid var(--yellow); }
-.card[data-cat="calc"] { border-left:3px solid var(--accent); background:linear-gradient(135deg,#fff 60%,#f0faf9); }
+/* Coverage Cards */
+.coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.cov-card{background:var(--surface);border-radius:var(--radius);padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--border);transition:transform .2s,box-shadow .2s;}
+.cov-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);}
+.cov-card .cat-icon{font-size:1.5rem;margin-bottom:4px;}
+.cov-card .cat-name{font-weight:600;font-size:.9rem;margin-bottom:2px;}
+.cov-card .cat-stat{font-size:.75rem;color:var(--text2);}
+.cov-bar{height:6px;background:#eee;border-radius:3px;margin-top:8px;overflow:hidden;}
+.cov-bar .fill{height:100%;border-radius:3px;transition:width .8s ease;}
+.fill-green{background:var(--green);}
+.fill-yellow{background:var(--yellow);}
+.fill-orange{background:#e87d2f;}
+.fill-red{background:var(--red);}
+.cov-pct{font-size:.8rem;font-weight:700;margin-top:4px;}
+
+/* Quick Access */
+.cat-section{margin-bottom:20px;}
+.cat-label{font-weight:600;font-size:.85rem;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;}
+.qa-card{display:block;background:var(--surface);border-radius:8px;padding:10px 12px;border:1px solid var(--border);text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.qa-card:hover{transform:scale(1.03);box-shadow:0 3px 10px rgba(32,163,158,.15);border-color:var(--accent);}
+.qa-card .qa-name{font-weight:600;font-size:.82rem;margin-bottom:2px;}
+.qa-card .qa-desc{font-size:.7rem;color:var(--text2);line-height:1.3;}
+.qa-card .qa-icon{font-size:1rem;float:left;margin-right:6px;margin-top:1px;}
+
+/* Timeline */
+.timeline{position:relative;padding-left:24px;}
+.timeline::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:var(--accent-bg);}
+.tl-item{position:relative;margin-bottom:14px;padding:10px 14px;background:var(--surface);border-radius:8px;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.tl-item::before{content:'';position:absolute;left:-21px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent-bg);}
+.tl-date{font-size:.7rem;color:var(--accent);font-weight:600;margin-bottom:2px;}
+.tl-text{font-size:.82rem;line-height:1.4;}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}
+.stat-card{background:var(--surface);border-radius:var(--radius);padding:14px;text-align:center;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.04);transition:transform .2s;}
+.stat-card:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.08);}
+.stat-num{font-size:1.6rem;font-weight:700;color:var(--accent);}
+.stat-label{font-size:.72rem;color:var(--text2);margin-top:2px;}
 
 /* Footer */
-.footer { text-align:center; font-size:0.7rem; color:var(--text3); margin-top:32px; padding:14px 0; border-top:1px solid var(--border); }
+.footer{text-align:center;padding:16px;font-size:.75rem;color:var(--text3);border-top:1px solid var(--border);margin-top:20px;background:var(--surface);}
+.footer a{color:var(--accent);text-decoration:none;}
+
+/* Print */
+@media print{.nav-bar{display:none!important;}body{padding-top:0!important;}.hero{padding:20px;}.qa-card:hover{transform:none;box-shadow:none;}}
 
 /* Mobile */
-@media(max-width:768px){
-  .wrap{padding:0 6px 16px;}
-  .header-area{padding:16px 0 10px;}
-  .header-area h1{font-size:1.4rem;}
-  .stats-bar{gap:5px;}
-  .stat-pill{padding:6px 10px;border-radius:16px;}
-  .stat-pill .num{font-size:1rem;}
-  .stat-pill .label{font-size:0.58rem;}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:6px;}
-  .card{padding:10px;}
-  .card .name{font-size:0.78rem;}
-  .section-title{font-size:0.74rem;padding:6px 10px;}
+@media(max-width:640px){
+.hero h1{font-size:1.4rem;}
+.coverage-grid{grid-template-columns:1fr 1fr;}
+.qa-grid{grid-template-columns:1fr 1fr;}
+.stats-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#20a39e">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MedWiki">
-<link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <link rel="manifest" href="manifest.json?v=7">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
 </head>
 <body>
-<div class="wrap">
-
-<div class="header-area">
-  <h1>🏥 MedWiki-Rheum</h1>
-  <div class="subtitle">儿童风湿免疫临床知识库 · v7.0</div>
+<div class="nav-bar">
+  <a href="index.html">🏠 首页</a>
+  <a href="#topics">📖 疾病</a>
+  <a href="#drugs">💊 药物</a>
+  <a href="#tools">🛠️ 工具</a>
+  <a href="#cases">📋 病例</a>
+  <span class="nav-title">MedWiki-Rheum</span>
 </div>
 
-<div class="stats-bar">
-  <a href="#topics"><div class="stat-pill s1"><div class="num">11</div><div class="label">疾病主题</div></div></a>
-  <a href="#drugs"><div class="stat-pill s2"><div class="num">13</div><div class="label">药物专页</div></div></a>
-  <a href="#tools"><div class="stat-pill s3"><div class="num">19</div><div class="label">临床工具</div></div></a>
-  <a href="#tools"><div class="stat-pill s6"><div class="num">10</div><div class="label">交互计算器</div></div></a>
-  <a href="cases/index.html"><div class="stat-pill s4"><div class="num">53</div><div class="label">临床病例</div></div></a>
+<!-- Hero -->
+<div class="hero">
+  <h1>MedWiki-Rheum 🌿</h1>
+  <div class="subtitle">儿童风湿免疫临床知识库 · Pediatric Rheumatology Clinical Knowledge Base</div>
+  <span class="badge">v1.0 · 2026-04-16</span>
 </div>
 
-<!-- Featured -->
-<div class="section">
-  <div class="section-title s-featured">⭐ 常用分类标准与评分工具</div>
-  <div class="grid">
-    <a class="card" data-cat="tool" href="tools/SLE_2019_EULAR_ACR.html"><div class="badge">TOOL</div><div class="name">SLE 2019</div><div class="desc">EULAR/ACR分类标准</div></a>
-    <a class="card" data-cat="tool" href="tools/APS_2023_ACR_EULAR.html"><div class="badge">TOOL</div><div class="name">APS 2023</div><div class="desc">ACR/EULAR分类标准</div></a>
-    <a class="card" data-cat="calc" href="tools/SLE2K.html"><div class="badge">🔢</div><div class="name">SLEDAI-2K</div><div class="desc">SLE活动度评分</div></a>
-    <a class="card" data-cat="tool" href="tools/TMA.html"><div class="badge">TOOL</div><div class="name">TMA</div><div class="desc">血栓性微血管病</div></a>
+<!-- Section 1: Coverage Map -->
+<div class="section" id="coverage">
+  <div class="section-title"><span class="icon">📊</span> 覆盖地图 Coverage Map</div>
+  <div class="coverage-grid">
+    <a href="#topics" class="cov-card" style="text-decoration:none;color:inherit;">
+      <div class="cat-icon">🔬</div>
+      <div class="cat-name">疾病专题</div>
+      <div class="cat-stat">13/13 已覆盖</div>
+      <div class="cov-bar"><div class="fill fill-green" style="width:100%"></div></div>
+      <div class="cov-pct" style="color:var(--green)">100%</div>
+    </a>
+    <a href="#drugs" class="cov-card" style="text-decoration:none;color:inherit;">
+      <div class="cat-icon">💊</div>
+      <div class="cat-name">药物手册</div>
+      <div class="cat-stat">22/22 已覆盖</div>
+      <div class="cov-bar"><div class="fill fill-green" style="width:100%"></div></div>
+      <div class="cov-pct" style="color:var(--green)">100%</div>
+    </a>
+    <a href="#tools" class="cov-card" style="text-decoration:none;color:inherit;">
+      <div class="cat-icon">🛠️</div>
+      <div class="cat-name">临床工具</div>
+      <div class="cat-stat">24/24 已覆盖</div>
+      <div class="cov-bar"><div class="fill fill-green" style="width:100%"></div></div>
+      <div class="cov-pct" style="color:var(--green)">100%</div>
+    </a>
+    <a href="#cases" class="cov-card" style="text-decoration:none;color:inherit;">
+      <div class="cat-icon">📋</div>
+      <div class="cat-name">病例学习</div>
+      <div class="cat-stat">53例 已覆盖</div>
+      <div class="cov-bar"><div class="fill fill-green" style="width:100%"></div></div>
+      <div class="cov-pct" style="color:var(--green)">100%</div>
+    </a>
+    <a href="#templates" class="cov-card" style="text-decoration:none;color:inherit;">
+      <div class="cat-icon">📝</div>
+      <div class="cat-name">医患沟通</div>
+      <div class="cat-stat">4/4 已覆盖</div>
+      <div class="cov-bar"><div class="fill fill-green" style="width:100%"></div></div>
+      <div class="cov-pct" style="color:var(--green)">100%</div>
+    </a>
   </div>
 </div>
 
-<!-- Topics -->
+<!-- Section 2: Quick Access -->
 <div class="section">
-  <div id="topics" class="section-title s-topics">📖 疾病主题</div>
-  <div class="grid">
-    <a class="card" data-cat="topic" href="topics/JIA.html"><div class="badge">TOPIC</div><div class="name">JIA</div><div class="desc">幼年特发性关节炎</div></a>
-    <a class="card" data-cat="topic" href="topics/JSLE.html"><div class="badge">TOPIC</div><div class="name">cSLE</div><div class="desc">儿童系统性红斑狼疮</div></a>
-    <a class="card" data-cat="topic" href="topics/SLE.html"><div class="badge">TOPIC</div><div class="name">SLE</div><div class="desc">系统性红斑狼疮</div></a>
-    <a class="card" data-cat="topic" href="topics/MAS.html"><div class="badge">TOPIC</div><div class="name">MAS/HLH</div><div class="desc">巨噬细胞活化综合征</div></a>
-    <a class="card" data-cat="topic" href="topics/JDM.html"><div class="badge">TOPIC</div><div class="name">JDM</div><div class="desc">幼年皮肌炎</div></a>
-    <a class="card" data-cat="topic" href="topics/KD.html"><div class="badge">TOPIC</div><div class="name">KD</div><div class="desc">川崎病</div></a>
-    <a class="card" data-cat="topic" href="topics/IgAV.html"><div class="badge">TOPIC</div><div class="name">IgAV/HSP</div><div class="desc">IgA血管炎</div></a>
-    <a class="card" data-cat="topic" href="topics/Uveitis.html"><div class="badge">TOPIC</div><div class="name">Uveitis</div><div class="desc">儿童葡萄膜炎</div></a>
-    <a class="card" data-cat="topic" href="topics/AID.html"><div class="badge">TOPIC</div><div class="name">AID</div><div class="desc">自身炎症性疾病</div></a>
-    <a class="card" data-cat="topic" href="topics/PID.html"><div class="badge">TOPIC</div><div class="name">PID</div><div class="desc">原发性免疫缺陷</div></a>
-    <a class="card" data-cat="topic" href="topics/ITP.html"><div class="badge">TOPIC</div><div class="name">ITP</div><div class="desc">免疫性血小板减少</div></a>
+  <div class="section-title"><span class="icon">⚡</span> 快速入口 Quick Access</div>
+
+  <!-- Topics -->
+  <div class="cat-section" id="topics">
+    <div class="cat-label">🔬 疾病专题（13个）</div>
+    <div class="qa-grid">
+      <a class="qa-card" href="topics/AID.html"><span class="qa-icon">🔥</span><div class="qa-name">AID 自身炎症性疾病</div><div class="qa-desc">FMF/TRAPS/CAPS/SAVI等</div></a>
+      <a class="qa-card" href="topics/ANCA_vasculitis.html"><span class="qa-icon">🩸</span><div class="qa-name">ANCA血管炎</div><div class="qa-desc">GPA/MPA/EGPA</div></a>
+      <a class="qa-card" href="topics/APS.html"><span class="qa-icon">🫀</span><div class="qa-name">APS 抗磷脂综合征</div><div class="qa-desc">血栓/病理妊娠</div></a>
+      <a class="qa-card" href="topics/IgAV.html"><span class="qa-icon">💜</span><div class="qa-name">IgAV 过敏性紫癜</div><div class="qa-desc">IgA血管炎/HSP</div></a>
+      <a class="qa-card" href="topics/ITP.html"><span class="qa-icon">🩸</span><div class="qa-name">ITP 免疫性血小板减少</div><div class="qa-desc">急慢性/难治性</div></a>
+      <a class="qa-card" href="topics/JDM.html"><span class="qa-icon">💪</span><div class="qa-name">JDM 幼年皮肌炎</div><div class="qa-desc">肌无力/皮疹/钙质沉着</div></a>
+      <a class="qa-card" href="topics/JIA.html"><span class="qa-icon">🦴</span><div class="qa-name">JIA 幼年特发性关节炎</div><div class="qa-desc">7个亚型/ILAR分类</div></a>
+      <a class="qa-card" href="topics/JSLE.html"><span class="qa-icon">🦋</span><div class="qa-name">cSLE 儿童狼疮</div><div class="qa-desc">儿童系统性红斑狼疮</div></a>
+      <a class="qa-card" href="topics/KD.html"><span class="qa-icon">❤️</span><div class="qa-name">KD 川崎病</div><div class="qa-desc">冠脉病变/IVIG抵抗</div></a>
+      <a class="qa-card" href="topics/MAS.html"><span class="qa-icon">⚠️</span><div class="qa-name">MAS 巨噬细胞活化综合征</div><div class="qa-desc">sJIA最凶险并发症</div></a>
+      <a class="qa-card" href="topics/PID.html"><span class="qa-icon">🛡️</span><div class="qa-name">PID 原发性免疫缺陷</div><div class="qa-desc">SCID/CVID/XLA/CGD等</div></a>
+      <a class="qa-card" href="topics/SLE.html"><span class="qa-icon">🦋</span><div class="qa-name">SLE 系统性红斑狼疮</div><div class="qa-desc">成人/儿童差异对比</div></a>
+      <a class="qa-card" href="topics/Uveitis.html"><span class="qa-icon">👁️</span><div class="qa-name">Uveitis 葡萄膜炎</div><div class="qa-desc">JIA相关/Behçet/TINU</div></a>
+    </div>
+  </div>
+
+  <!-- Drugs -->
+  <div class="cat-section" id="drugs">
+    <div class="cat-label">💊 药物手册（22个）</div>
+    <div class="qa-grid">
+      <!-- 🧬 生物制剂 — accent青绿 #20a39e / bg #d4f0ed -->
+      <a class="qa-card" href="drugs/biologics.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">🧬 生物制剂总览</div><div class="qa-desc">TNF/IL-6/IL-1/B细胞靶向</div></a>
+      <a class="qa-card" href="drugs/etanercept.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">依那西普 ETN</div><div class="qa-desc">TNF受体融合蛋白</div></a>
+      <a class="qa-card" href="drugs/adalimumab.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">阿达木单抗 ADA</div><div class="qa-desc">抗TNF-α全人源单抗</div></a>
+      <a class="qa-card" href="drugs/infliximab.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">英夫利西单抗 IFX</div><div class="qa-desc">抗TNF-α嵌合单抗</div></a>
+      <a class="qa-card" href="drugs/tocilizumab.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">托珠单抗 TCZ</div><div class="qa-desc">抗IL-6受体单抗</div></a>
+      <a class="qa-card" href="drugs/anakinra.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">阿那白滞素 AKR</div><div class="qa-desc">IL-1受体拮抗剂</div></a>
+      <a class="qa-card" href="drugs/rituximab.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">利妥昔单抗 RTX</div><div class="qa-desc">抗CD20/B细胞清除</div></a>
+      <a class="qa-card" href="drugs/belimumab.html" style="border-top:4px solid #20a39e;background:#d4f0ed;"><div class="qa-name">贝利尤单抗 BEL</div><div class="qa-desc">抗BAFF单抗/SLE</div></a>
+      <!-- 💊 小分子靶向 — yellow #b8891a / bg #faf3dc -->
+      <a class="qa-card" href="drugs/tofacitinib.html" style="border-top:4px solid #b8891a;background:#faf3dc;"><div class="qa-name">托法替布 TOF</div><div class="qa-desc">JAK抑制剂</div></a>
+      <!-- 💊 传统DMARD — green #4a9e3f / bg #e2f3dd -->
+      <a class="qa-card" href="drugs/MTX.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">甲氨蝶呤 MTX</div><div class="qa-desc">JIA/csDMARD首选</div></a>
+      <a class="qa-card" href="drugs/hydroxychloroquine.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">羟氯喹 HCQ</div><div class="qa-desc">SLE基础用药</div></a>
+      <a class="qa-card" href="drugs/mycophenolate.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">吗替麦考酚 MMF</div><div class="qa-desc">狼疮肾炎维持</div></a>
+      <a class="qa-card" href="drugs/azathioprine.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">硫唑嘌呤 AZA</div><div class="qa-desc">嘌呤类似物</div></a>
+      <a class="qa-card" href="drugs/cyclophosphamide.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">环磷酰胺 CYC</div><div class="qa-desc">重症狼疮/血管炎</div></a>
+      <a class="qa-card" href="drugs/cyclosporine.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">环孢素 CsA</div><div class="qa-desc">钙调磷酸酶抑制剂</div></a>
+      <a class="qa-card" href="drugs/tacrolimus.html" style="border-top:4px solid #4a9e3f;background:#e2f3dd;"><div class="qa-name">他克莫司 TAC</div><div class="qa-desc">钙调磷酸酶抑制剂</div></a>
+      <!-- 💊 糖皮质激素 — red #d05040 / bg #fce5e1 -->
+      <a class="qa-card" href="drugs/glucocorticoids.html" style="border-top:4px solid #d05040;background:#fce5e1;"><div class="qa-name">糖皮质激素总览</div><div class="qa-desc">口服/静脉/关节腔</div></a>
+      <a class="qa-card" href="drugs/corticosteroids_IV.html" style="border-top:4px solid #d05040;background:#fce5e1;"><div class="qa-name">静脉激素冲击</div><div class="qa-desc">甲泼尼龙冲击方案</div></a>
+      <!-- 💊 抗炎/辅助 — orange #e87d2f / bg #ffe8d6 -->
+      <a class="qa-card" href="drugs/NSAIDs.html" style="border-top:4px solid #e87d2f;background:#ffe8d6;"><div class="qa-name">非甾体抗炎药 NSAIDs</div><div class="qa-desc">一线对症治疗</div></a>
+      <a class="qa-card" href="drugs/colchicine.html" style="border-top:4px solid #e87d2f;background:#ffe8d6;"><div class="qa-name">秋水仙碱 Colchicine</div><div class="qa-desc">FMF一线/抗炎</div></a>
+      <a class="qa-card" href="drugs/IVIG.html" style="border-top:4px solid #e87d2f;background:#ffe8d6;"><div class="qa-name">静脉丙种球蛋白 IVIG</div><div class="qa-desc">川崎病/ITP/PID</div></a>
+      <a class="qa-card" href="drugs/calcium_vitd.html" style="border-top:4px solid #e87d2f;background:#ffe8d6;"><div class="qa-name">钙剂与维生素D</div><div class="qa-desc">骨保护基础用药</div></a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;font-size:0.68rem;color:var(--text2);">
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:16px;height:4px;background:#20a39e;border-radius:2px;display:inline-block;"></span>生物制剂</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:16px;height:4px;background:#b8891a;border-radius:2px;display:inline-block;"></span>小分子靶向</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:16px;height:4px;background:#4a9e3f;border-radius:2px;display:inline-block;"></span>传统DMARD</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:16px;height:4px;background:#d05040;border-radius:2px;display:inline-block;"></span>糖皮质激素</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:16px;height:4px;background:#e87d2f;border-radius:2px;display:inline-block;"></span>抗炎/辅助</span>
+    </div>
+  </div>
+
+  <!-- Tools -->
+  <div class="cat-section" id="tools">
+    <div class="cat-label">🛠️ 临床工具（24个）</div>
+    <div class="qa-grid">
+      <a class="qa-card" href="tools/JADAS27.html"><div class="qa-name">JADAS-27 评分</div><div class="qa-desc">JIA疾病活动度</div></a>
+      <a class="qa-card" href="tools/JADAS71.html"><div class="qa-name">JADAS-71 评分</div><div class="qa-desc">JIA详细关节评估</div></a>
+      <a class="qa-card" href="tools/BSA.html"><div class="qa-name">BSA 体表面积</div><div class="qa-desc">药物剂量计算</div></a>
+      <a class="qa-card" href="tools/MTX_dose.html"><div class="qa-name">MTX 剂量计算</div><div class="qa-desc">甲氨蝶呤个体化</div></a>
+      <a class="qa-card" href="tools/ESR_CRP.html"><div class="qa-name">ESR/CRP 参考值</div><div class="qa-desc">炎症标志物解读</div></a>
+      <a class="qa-card" href="tools/vaccine.html"><div class="qa-name">疫苗策略总览</div><div class="qa-desc">免疫抑制下疫苗接种</div></a>
+      <a class="qa-card" href="tools/vaccine_decision.html"><div class="qa-name">疫苗决策树</div><div class="qa-desc">交互式接种决策</div></a>
+      <a class="qa-card" href="tools/followup.html"><div class="qa-name">随访计划</div><div class="qa-desc">各病种随访方案</div></a>
+      <a class="qa-card" href="tools/KD_CA_Zscore.html"><div class="qa-name">冠脉Z值计算器</div><div class="qa-desc">川崎病冠脉标准化</div></a>
+      <a class="qa-card" href="tools/KD_IVIG_resistance.html"><div class="qa-name">IVIG无反应预测</div><div class="qa-desc">川崎病风险评分</div></a>
+      <a class="qa-card" href="tools/MAS_HLH_screening.html"><div class="qa-name">MAS/HLH 筛查</div><div class="qa-desc">早期识别工具</div></a>
+      <a class="qa-card" href="tools/SLE2K.html"><div class="qa-name">SLE2K 损伤指数</div><div class="qa-desc">狼疮累积损伤</div></a>
+      <a class="qa-card" href="tools/SLE_2019_EULAR_ACR.html"><div class="qa-name">SLE 2019 分类标准</div><div class="qa-desc">EULAR/ACR标准</div></a>
+      <a class="qa-card" href="tools/APS_2023_ACR_EULAR.html"><div class="qa-name">APS 2023 分类标准</div><div class="qa-desc">ACR/EULAR标准</div></a>
+      <a class="qa-card" href="tools/DAS28.html"><div class="qa-name">DAS28 评分</div><div class="qa-desc">成人RA活动度</div></a>
+      <a class="qa-card" href="tools/CDAI.html"><div class="qa-name">CDAI 评分</div><div class="qa-desc">临床疾病活动指数</div></a>
+      <a class="qa-card" href="tools/SDAI.html"><div class="qa-name">SDAI 评分</div><div class="qa-desc">简化疾病活动指数</div></a>
+      <a class="qa-card" href="tools/CHAQ.html"><div class="qa-name">CHAQ 量表</div><div class="qa-desc">儿童健康评估</div></a>
+      <a class="qa-card" href="tools/BMI_Zscore.html"><div class="qa-name">BMI Z值计算</div><div class="qa-desc">体格发育评估</div></a>
+      <a class="qa-card" href="tools/autoantibodies.html"><div class="qa-name">自身抗体解读</div><div class="qa-desc">ANA/dsDNA/ANCA等</div></a>
+      <a class="qa-card" href="tools/liver_kidney.html"><div class="qa-name">肝肾功能评估</div><div class="qa-desc">用药安全性监测</div></a>
+      <a class="qa-card" href="tools/drug_risk_assessment.html"><div class="qa-name">药物风险评估</div><div class="qa-desc">免疫抑制剂风险</div></a>
+      <a class="qa-card" href="tools/TMA.html"><div class="qa-name">TMA 血栓性微血管病</div><div class="qa-desc">诊断与鉴别</div></a>
+      <a class="qa-card" href="tools/SLE2K_original.html"><div class="qa-name">SLE2K 原版</div><div class="qa-desc">SLICC损伤指数原版</div></a>
+    </div>
+  </div>
+
+  <!-- Cases -->
+  <div class="cat-section" id="cases">
+    <div class="cat-label">📋 病例学习（53例 + 9个索引页）</div>
+    <div class="qa-grid">
+      <a class="qa-card" href="cases/index.html"><div class="qa-name">📁 病例总索引</div><div class="qa-desc">全部病例入口</div></a>
+      <a class="qa-card" href="cases/index_sJIA.html"><div class="qa-name">📁 sJIA病例集</div><div class="qa-desc">5例典型/MAS/难治</div></a>
+      <a class="qa-card" href="cases/index_JDM.html"><div class="qa-name">📁 JDM病例集</div><div class="qa-desc">4例典型/ILD/钙化</div></a>
+      <a class="qa-card" href="cases/index_SLE.html"><div class="qa-name">📁 SLE病例集</div><div class="qa-desc">5例狼疮肾炎/NPSLE</div></a>
+      <a class="qa-card" href="cases/index_cSLE.html"><div class="qa-name">📁 cSLE病例集</div><div class="qa-desc">6例儿童狼疮</div></a>
+      <a class="qa-card" href="cases/index_KD.html"><div class="qa-name">📁 KD病例集</div><div class="qa-desc">5例川崎病</div></a>
+      <a class="qa-card" href="cases/index_AID.html"><div class="qa-name">📁 AID病例集</div><div class="qa-desc">5例自身炎症</div></a>
+      <a class="qa-card" href="cases/index_IgAV.html"><div class="qa-name">📁 IgAV病例集</div><div class="qa-desc">5例过敏性紫癜</div></a>
+      <a class="qa-card" href="cases/index_ITP.html"><div class="qa-name">📁 ITP病例集</div><div class="qa-desc">5例ITP</div></a>
+      <a class="qa-card" href="cases/index_PID.html"><div class="qa-name">📁 PID病例集</div><div class="qa-desc">5例免疫缺陷</div></a>
+      <a class="qa-card" href="cases/index_Uveitis.html"><div class="qa-name">📁 Uveitis病例集</div><div class="qa-desc">5例葡萄膜炎</div></a>
+    </div>
+  </div>
+
+  <!-- Evidence Cases -->
+  <div class="cat-section" id="evidence">
+    <div class="cat-label">🔬 循证病例库（35例 · PubMed/PMC真实数据）</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+      <a class="qa-card" href="evidence/index.html" style="background:linear-gradient(135deg,#e0f5f4,#fff);">
+        <div class="qa-name">🔬 循证病例总索引</div>
+        <div class="qa-desc">20个真实PubMed病例 · 可溯源PMID</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Templates -->
+  <div class="cat-section" id="templates">
+    <div class="cat-label">📝 医患沟通模板（4个）</div>
+    <div class="qa-grid">
+      <a class="qa-card" href="templates/comm_JIA_diagnosis.html"><div class="qa-name">JIA 确诊沟通</div><div class="qa-desc">幼年关节炎确诊谈话</div></a>
+      <a class="qa-card" href="templates/comm_SLE_management.html"><div class="qa-name">SLE 管理手册</div><div class="qa-desc">狼疮长期管理指导</div></a>
+      <a class="qa-card" href="templates/comm_biologics_informed.html"><div class="qa-name">生物制剂知情</div><div class="qa-desc">生物制剂知情同意</div></a>
+      <a class="qa-card" href="templates/comm_KD_discharge.html"><div class="qa-name">KD 出院指导</div><div class="qa-desc">川崎病出院指导</div></a>
+    </div>
   </div>
 </div>
 
-<!-- Drugs -->
+<!-- Section 3: Recent Updates -->
 <div class="section">
-  <div id="drugs" class="section-title s-drugs">💊 药物专页</div>
-  <div class="grid">
-    <a class="card" data-cat="drug" href="drugs/MTX.html"><div class="badge">DRUG</div><div class="name">MTX</div><div class="desc">甲氨蝶呤</div></a>
-    <a class="card" data-cat="drug" href="drugs/glucocorticoids.html"><div class="badge">DRUG</div><div class="name">GC (口服)</div><div class="desc">糖皮质激素</div></a>
-    <a class="card" data-cat="drug" href="drugs/corticosteroids_IV.html"><div class="badge">DRUG</div><div class="name">GC (IV冲击)</div><div class="desc">静脉糖皮质激素</div></a>
-    <a class="card" data-cat="drug" href="drugs/NSAIDs.html"><div class="badge">DRUG</div><div class="name">NSAIDs</div><div class="desc">非甾体抗炎药</div></a>
-    <a class="card" data-cat="drug" href="drugs/IVIG.html"><div class="badge">DRUG</div><div class="name">IVIG</div><div class="desc">静脉免疫球蛋白</div></a>
-    <a class="card" data-cat="drug" href="drugs/cyclosporine.html"><div class="badge">DRUG</div><div class="name">CsA</div><div class="desc">环孢素A</div></a>
-    <a class="card" data-cat="drug" href="drugs/tacrolimus.html"><div class="badge">DRUG</div><div class="name">FK506</div><div class="desc">他克莫司</div></a>
-    <a class="card" data-cat="drug" href="drugs/mycophenolate.html"><div class="badge">DRUG</div><div class="name">MMF</div><div class="desc">吗替麦考酚酯</div></a>
-    <a class="card" data-cat="drug" href="drugs/azathioprine.html"><div class="badge">DRUG</div><div class="name">AZA</div><div class="desc">硫唑嘌呤</div></a>
-    <a class="card" data-cat="drug" href="drugs/anakinra.html"><div class="badge">DRUG</div><div class="name">ANA</div><div class="desc">阿那白滞素</div></a>
-    <a class="card" data-cat="drug" href="drugs/tocilizumab.html"><div class="badge">DRUG</div><div class="name">TCZ</div><div class="desc">托珠单抗</div></a>
-    <a class="card" data-cat="drug" href="drugs/biologics.html"><div class="badge">DRUG</div><div class="name">生物制剂总览</div><div class="desc">TNFi/IL-6/B细胞</div></a>
-    <a class="card" data-cat="drug" href="drugs/calcium_vitd.html"><div class="badge">DRUG</div><div class="name">钙+VitD</div><div class="desc">补充方案</div></a>
+  <div class="section-title"><span class="icon">🕐</span> 最近更新 Recent Updates</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">2026-04-16</div>
+      <div class="tl-text"><b>Phase B 完成</b> — ANCA血管炎、APS专题页、环磷酰胺/利妥昔单抗/秋水仙碱/贝利尤单抗/托法替布/英夫利西单抗药物页、IVIG无反应预测工具、疫苗决策树、APS/SLE分类标准工具</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2026-04-16</div>
+      <div class="tl-text"><b>Phase A 完成</b> — 冠脉Z值计算器、MAS/HLH筛查工具、HCQ/环孢素/他克莫司、KD深度补全、DAS28/CDAI/SDAI/CHAQ评分工具</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2026-04-08</div>
+      <div class="tl-text"><b>MedWiki-Rheum 初始Ingest完成</b> — 13个疾病专题、16个药物页、基础工具集、20+临床病例</div>
+    </div>
   </div>
 </div>
 
-<!-- Interactive Calculators -->
+<!-- Section 4: Stats -->
 <div class="section">
-  <div id="tools" class="section-title s-tools">🔢 交互式计算器</div>
-  <div class="grid">
-    <a class="card" data-cat="calc" href="tools/JADAS27.html"><div class="badge">🔢</div><div class="name">JADAS-27</div><div class="desc">JIA活动度评分</div></a>
-    <a class="card" data-cat="calc" href="tools/JADAS71.html"><div class="badge">🔢</div><div class="name">JADAS-71</div><div class="desc">71关节详评</div></a>
-    <a class="card" data-cat="calc" href="tools/CHAQ.html"><div class="badge">🔢</div><div class="name">CHAQ</div><div class="desc">儿童健康评估问卷</div></a>
-    <a class="card" data-cat="calc" href="tools/DAS28.html"><div class="badge">🔢</div><div class="name">DAS28</div><div class="desc">疾病活动指数</div></a>
-    <a class="card" data-cat="calc" href="tools/CDAI.html"><div class="badge">🔢</div><div class="name">CDAI</div><div class="desc">临床疾病活动</div></a>
-    <a class="card" data-cat="calc" href="tools/SDAI.html"><div class="badge">🔢</div><div class="name">SDAI</div><div class="desc">简化疾病活动</div></a>
-    <a class="card" data-cat="calc" href="tools/BSA.html"><div class="badge">🔢</div><div class="name">BSA</div><div class="desc">体表面积计算</div></a>
-    <a class="card" data-cat="calc" href="tools/BMI_Zscore.html"><div class="badge">🔢</div><div class="name">BMI Z评分</div><div class="desc">生长发育评估</div></a>
-    <a class="card" data-cat="calc" href="tools/MTX_dose.html"><div class="badge">🔢</div><div class="name">MTX剂量</div><div class="desc">按BSA速算</div></a>
-    <a class="card" data-cat="calc" href="tools/ESR_CRP.html"><div class="badge">🔢</div><div class="name">ESR/CRP</div><div class="desc">炎症指标判读</div></a>
+  <div class="section-title"><span class="icon">📈</span> 统计仪表盘 Statistics</div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">116+</div><div class="stat-label">总HTML页面</div></div>
+    <div class="stat-card"><div class="stat-num">13</div><div class="stat-label">疾病专题</div></div>
+    <div class="stat-card"><div class="stat-num">22</div><div class="stat-label">药物页面</div></div>
+    <div class="stat-card"><div class="stat-num">24</div><div class="stat-label">临床工具</div></div>
+    <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">病例学习</div></div>
+    <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">沟通模板</div></div>
+    <div class="stat-card"><div class="stat-num">3425</div><div class="stat-label">参考文献(归墟Hub)</div></div>
+    <div class="stat-card"><div class="stat-num">~800KB</div><div class="stat-label">HTML内容总量</div></div>
   </div>
 </div>
 
-<!-- Reference Tools -->
-<div class="section">
-  <div class="section-title s-tools">📋 参考工具</div>
-  <div class="grid">
-    <a class="card" data-cat="tool" href="tools/autoantibodies.html"><div class="badge">TOOL</div><div class="name">自身抗体</div><div class="desc">ANA/ENA/aPL解读</div></a>
-    <a class="card" data-cat="tool" href="tools/liver_kidney.html"><div class="badge">TOOL</div><div class="name">肝肾功能</div><div class="desc">药物监测</div></a>
-    <a class="card" data-cat="tool" href="tools/followup.html"><div class="badge">TOOL</div><div class="name">随访计划</div><div class="desc">按病种/药物</div></a>
-    <a class="card" data-cat="tool" href="tools/vaccine.html"><div class="badge">TOOL</div><div class="name">疫苗策略</div><div class="desc">免疫抑制下接种</div></a>
-    <a class="card" data-cat="tool" href="tools/drug_risk_assessment.html"><div class="badge">TOOL</div><div class="name">药物风险评估</div><div class="desc">DMARDs安全性</div></a>
-  </div>
+<!-- Footer -->
+<div class="footer">
+  归墟知识复利系统 · 儿童风湿免疫临床知识库<br>
+  Built with ❤️ for pediatric rheumatology · 最后更新: 2026-04-16
 </div>
 
-<div class="footer">MedWiki-Rheum v7.0 · 儿童风湿免疫临床知识库 · 2026-04</div>
-
-</div>
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+// Force SW update: unregister old, register new
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.getRegistrations().then(function(regs){
+    var found = false;
+    regs.forEach(function(r){
+      if(r.active && r.active.scriptURL.includes("sw.js")){
+        var url = new URL(r.active.scriptURL);
+        r.unregister().then(function(){ found=true; });
+      }
+    });
+    setTimeout(function(){
+      navigator.serviceWorker.register("sw.js").then(function(reg){
+        reg.addEventListener("updatefound", function(){
+          if(found) location.reload();
+        });
+        if(found) setTimeout(function(){ location.reload(); }, 1500);
+      });
+    }, 500);
+  });
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAVI（STING相关血管病）</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../evidence/">📚 循证病例</a>
+  <span class="nav-title">SAVI（STING相关血管病）</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：SAVI（STING相关血管病伴婴儿期起病）</h1>
+      <div class="sub">SAVI — TMEM173 V155M突变+早发间质性肺病+血管病变</div>
+    </div>
+    <div class="meta">文献病例 · PMID: 27552632</div>
+  </div>
+  <div class="body">
+
+    <div class="sh">📖 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">来源</td><td>Clarke SLN, Pellowe EJ, de Jesus AA, et al. Interstitial Lung Disease Caused by STING-associated Vasculopathy with Onset in Infancy. <i>Am J Respir Crit Care Med</i>. 2016;194(5):639-642.</td></tr>
+      <tr><td class="b">PMID</td><td>27552632</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC5027210</td></tr>
+      <tr><td class="b">DOI</td><td>10.1164/rccm.201510-2102LE</td></tr>
+    </table>
+
+    <div class="alert"><b>流行病学提示：</b>SAVI为极罕见I型干扰素病，全球报告<b>约40例</b>。由TMEM173（STING）功能获得性突变引起。<b>间质性肺病</b>见于11/12例（92%），3例因肺并发症死亡（死亡率约<b>25%</b>）。发病年龄多在<b>出生后数周至数月</b>。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>男性，哈萨克族后裔</td></tr>
+      <tr><td class="b">起病年龄</td><td>5周龄</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">间质性肺病</span> <span class="tag t-y">血管病变</span> <span class="tag t-a">TMEM173 V155M</span> <span class="tag t-r">I型干扰素病</span></td></tr>
+    </table>
+
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;"><b>皮疹35天</b></p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      足月产，出生体重3.5 kg（P50）。<b>5周龄</b>起出现<b>呼吸急促</b>，伴间歇性发热及持续性红斑性皮疹。<br><br>
+      胸部影像示弥漫性间质性浸润影，诊断为<b>间质性肺病（ILD）</b>。生长发育落后，反复呼吸道感染。多次抗生素治疗效果不佳。<br><br>
+      皮肤活检示坏死性小血管炎。常规免疫评估（免疫球蛋白、淋巴细胞亚群）基本正常，自身抗体阴性。<br><br>
+      鉴于ILD+系统性炎症+生后5周起持续皮疹的三联征，考虑SAVI。Sanger测序确诊：<b>TMEM173基因杂合突变（c.463G&gt;A, p.V155M）</b>，为体细胞嵌合突变。I型干扰素基因签名显著升高。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：原文未提供。&nbsp;&nbsp;<b>个人史</b>：足月产，出生体重3.5 kg（P50）。&nbsp;&nbsp;<b>家族史</b>：原文未提供。&nbsp;&nbsp;<b>过敏史</b>：原文未提供。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>呼吸</td><td class="c-r">持续急促</td></tr>
+        <tr><td>体温</td><td class="c-y">间歇性发热</td></tr>
+        <tr><td>体重</td><td class="c-y">生长发育落后</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">特征性表现</th></tr>
+        <tr><td>皮肤</td><td class="c-y">持续性红斑性皮疹</td></tr>
+        <tr><td>肺部</td><td class="c-r">双肺湿啰音，需氧</td></tr>
+        <tr><td>血管</td><td class="c-y">坏死性小血管炎</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>胸片/HRCT</td><td>弥漫性间质浸润</td><td></td><td class="c-r">ILD</td></tr>
+      <tr><td>I型IFN签名</td><td>显著升高</td><td></td><td class="c-r">↑↑↑ I型干扰素病</td></tr>
+      <tr><td>CRP</td><td>升高</td><td></td><td class="c-r">炎症活动</td></tr>
+      <tr><td>免疫球蛋白</td><td>正常</td><td></td><td>正常</td></tr>
+      <tr><td>自身抗体</td><td>阴性</td><td></td><td>正常</td></tr>
+      <tr><td>TMEM173</td><td>c.463G&gt;A (V155M)</td><td></td><td class="c-r">SAVI致病突变</td></tr>
+      <tr><td>皮肤活检</td><td>坏死性小血管炎</td><td></td><td class="c-r">血管病变</td></tr>
+    </table>
+
+    <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>一、核心免疫学通路：STING组成性活化与I型干扰素病</b></p>
+      <p>SAVI（STING-Associated Vasculopathy with Onset in Infancy）由<b>TMEM173基因</b>（编码STING蛋白，Stimulator of Interferon Genes）<b>功能获得性突变</b>引起。STING是胞质DNA感受器通路（cGAS-STING通路）的关键接头蛋白。正常情况下，胞质双链DNA结合cGAS→产生cGAMP→激活STING→STING从内质网转位至高尔基体→招募TBK1→磷酸化IRF3→I型IFN转录。SAVI相关突变（如V155M、V147L、N154S）导致STING<b>无需cGAMP刺激即可组成性活化</b>，持续激活TBK1-IRF3轴，导致I型IFN大量产生。</p>
+      <p><b>二、本病例特异性免疫异常</b></p>
+      <p>本例携带<b>TMEM173 c.463G>A p.V155M杂合突变</b>，为体细胞嵌合突变（非生殖细胞遗传）。V155M位于STING二聚体界面，是最常见的SAVI致病突变之一。原文强调本例I型IFN基因签名（IFN score）显著升高，直接证实了STING组成性活化→IFN过度产生的病理级联。本例以<b>间质性肺病（ILD）</b>为突出表现——文献报道11/12例SAVI有肺疾病，3例因肺并发症死亡，提示肺部是SAVI的重要靶器官。坏死性小血管炎反映了IFN驱动的<b>血管内皮损伤</b>。</p>
+      <p><b>三、病理生理学解释</b></p>
+      <p>从分子到临床的完整路径：STING V155M组成性活化→TBK1-IRF3持续磷酸化→<b>I型IFN（IFN-α/β）大量产生</b>→JAK-STAT信号通路持续激活→ISG上调→①血管内皮细胞炎症/损伤（皮疹、血管炎、指端坏死）；②肺泡上皮/间质细胞损伤（ILD、肺纤维化）；③系统性炎症（反复发热、CRP升高）。体细胞嵌合突变意味着突变仅存在于部分细胞，解释了表型的可变性和非家族遗传特征。</p>
+      <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC5027210原文 + Liu Y等（N Engl J Med 2014;371:507-518）SAVI最初描述</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出SAVI（STING相关血管病伴婴儿期起病）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">SAVI临床诊断标准</td><td>Liu Y 等</td><td>2014</td><td>N Engl J Med</td><td>临床+基因确诊</td><td>① 婴幼儿期起病 → <span class='c-g'>✅ 5周龄</span><br>② 血管病变 → <span class='c-g'>✅ 皮疹+坏死性小血管炎</span><br>③ ILD → <span class='c-g'>✅ 弥漫性ILD</span><br>④ I型IFN签名升高 → <span class='c-g'>✅</span><br>⑤ TMEM173 GOF → <span class='c-g'>✅ V155M</span><br><b>临床-基因-免疫三重确诊 ✅</b></td></tr>
+      <tr><td class="b">2022 IUIS分类</td><td>Tangye SG 等/IUIS</td><td>2022</td><td>J Clin Immunol</td><td>基因+免疫学分类</td><td>SAVI属于IUIS第VII类·I型干扰素病 → <span class='c-g'>✅ 符合</span></td></tr>
+    </table>
+    <table>
+      <tr><th>诊断标准</th><th>详情与对照</th></tr>
+      <tr><td class="b" rowspan="6">SAVI临床诊断标准<br>（Liu Y等，<i>N Engl J Med</i> 2014;371:507-518）<br>【补充知识】</td>
+        <td><b>临床特征+基因检测确诊</b></td></tr>
+      <tr><td>① 婴幼儿期起病（通常&lt;8周）的系统性炎症 — <span class="c-g">✅ 5周龄起病</span></td></tr>
+      <tr><td>② 血管病变表现（皮疹/指端坏死/血管炎）— <span class="c-g">✅ 持续皮疹+坏死性小血管炎</span></td></tr>
+      <tr><td>③ 间质性肺病 — <span class="c-g">✅ 弥漫性ILD</span></td></tr>
+      <tr><td>④ I型IFN基因签名升高 — <span class="c-g">✅ 显著升高</span></td></tr>
+      <tr><td>⑤ TMEM173功能获得性突变 — <span class="c-g">✅ V155M（体细胞嵌合）</span></td></tr>
+      <tr><td class="b" rowspan="2">2022 IUIS分类<br>（Tangye SG等，<i>J Clin Immunol</i> 2022）<br>【补充知识】</td>
+        <td><b>SAVI属于IUIS第VII类·I型干扰素病</b></td></tr>
+      <tr><td>TMEM173（STING）功能获得性突变 — <span class="c-g">✅ V155M</span></td></tr>
+      <tr><td class="b">确诊依据</td><td>① ILD+皮疹+发热三联征 + ② TMEM173 V155M + ③ I型IFN签名↑↑↑ → <b>临床-基因-免疫三重确诊</b></td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：SAVI（STING相关血管病伴婴儿期起病）</b>，以ILD为主要表现。</div>
+
+    <div class="sh yellow">🔍 鉴别诊断</div>
+    <div class="diff-box"><div class="diff-title">1. COPA综合征</div><b>相似点：</b>ILD+血管病变。<b>排除依据：</b>COPA基因突变阴性→排除。</div>
+    <div class="diff-box"><div class="diff-title">2. Aicardi-Goutières综合征（AGS）</div><b>相似点：</b>I型干扰素病+早发起病。<b>排除依据：</b>无颅内钙化、无脑脊液淋巴细胞增多、无白质病变→不符合。</div>
+    <div class="diff-box"><div class="diff-title">3. 肺表面活性物质蛋白缺陷（SFTPB/SFTPC/ABCA3）</div><b>相似点：</b>新生儿/婴儿期起病的ILD。<b>排除依据：</b>伴全身性皮疹+坏死性血管炎+I型IFN签名显著升高→不支持，基因检测排除。</div>
+    <div class="diff-box"><div class="diff-title">4. 新生儿肺炎/败血症</div><b>相似点：</b>呼吸急促+发热+皮疹。<b>排除依据：</b>多次抗生素治疗无效，培养阴性，伴血管炎和IFN签名↑→排除感染。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ SAVI呼吸系统主导表型</div>
+    本例缺乏典型SAVI严重外周皮疹（指端坏死/溃疡），以ILD为突出表现。11/12例SAVI有肺疾病，3例因肺部并发症死亡。呼吸科医师应将SAVI纳入早发ILD的鉴别。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ 体细胞嵌合突变</div>
+    V155M在本例为体细胞嵌合突变，非生殖细胞遗传。父母不携带突变，但患者体内不同组织突变比例不同。需高深度测序才能检出低比例嵌合。</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+      <tr><td class="b">靶向治疗</td><td>JAK抑制剂（Ruxolitinib/Baricitinib）</td><td>原文未提供具体剂量和种类</td><td class="c-a">阻断JAK-STAT通路→抑制IFN信号传导，理论依据最强</td></tr>
+      <tr><td class="b">急性期控制</td><td>糖皮质激素</td><td>短程使用（原文未提供精确剂量）</td><td>控制急性炎症</td></tr>
+      <tr><td class="b">呼吸支持</td><td>氧疗</td><td>按需</td><td>ILD相关低氧</td></tr>
+      <tr><td class="b">抗感染</td><td>反复抗生素</td><td>多次抗生素治疗</td><td>反复呼吸道感染（效果不佳）</td></tr>
+    </table>
+    <div class="alert"><b>⚠️ 治疗要点：</b>①SAVI无根治方案 ②JAK抑制剂（Ruxolitinib/Baricitinib）是目前最有前景的靶向治疗 ③ILD是SAVI主要死因（文献11/12例有肺病，3例死亡） ④传统免疫抑制剂（环孢素、MTX等）效果有限 ⑤早期启动JAK抑制剂可能预防不可逆肺纤维化</div>
+
+
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>❶ 为什么难——从主诉到诊断的完整推理链</b></p>
+      <p>本例以"新生儿呼吸急促+发热+皮疹"起病，初始最可能诊断为新生儿肺炎或败血症。然而，抗感染治疗无效+持续间质性浸润+常规免疫评估阴性，将鉴别方向引向非感染性ILD。<b>关键转折</b>在于识别ILD+皮疹+系统性炎症的"三联征"——这一组合在新生儿极为罕见，高度指向单基因自身炎症性疾病。I型IFN签名的检测进一步缩小范围至I型干扰素病。</p>
+
+      <p><b>❷ 易误诊/漏诊点</b></p>
+      <p>最易误诊的疾病：①<b>COPA综合征</b>——同样表现为ILD+血管病变，但由COPA基因突变引起，需基因鉴别；②<b>Aicardi-Goutières综合征（AGS）</b>——同为I型IFN病+早发，但AGS以颅内钙化+白质病变+脑脊液淋巴细胞增多为特征，本例无神经系统影像学异常；③<b>肺表面活性物质蛋白缺陷</b>——早发ILD的重要病因，但不伴皮疹和IFN签名升高。本例缺乏典型SAVI的严重外周血管表现（指端坏死/溃疡），以ILD为突出——<b>呼吸科医师应将SAVI纳入早发ILD的鉴别</b>（文献11/12例SAVI有肺疾病）。</p>
+
+      <p><b>❸ 决策启示——遇到类似患者的排查顺序</b></p>
+      <p>Step 1：新生儿/婴儿ILD → 排除感染（培养+PCR）+ 先天性肺发育异常；Step 2：查免疫球蛋白+淋巴细胞亚群+自身抗体 → 若阴性进入Step 3；Step 3：伴皮疹/血管炎 → 检测I型IFN签名（如有条件）；Step 4：IFN签名↑ → I型干扰素病鉴别（TMEM173/PSMB8/RNASEH2A等基因面板）；Step 5：注意体细胞嵌合突变可能 → 高深度NGS/ddPCR提高检出率。</p>
+
+      <p><b>❹ 教学价值</b></p>
+      <p>本例的核心教学点：①SAVI可无典型严重外周血管表现，以ILD为首发/主要表现时易被呼吸科漏诊；②体细胞嵌合突变（非遗传）意味着父母不携带突变，但患者体内突变比例因组织而异——<b>常规Sanger测序可能漏检</b>，需高深度测序；③JAK抑制剂通过阻断JAK-STAT通路抑制IFN信号传导，是目前最有前景的治疗策略；④早期诊断和JAK抑制剂启动可能预防不可逆肺纤维化。</p>
+    </div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">5周龄</div><div class="t-content">起病：呼吸急促+发热+皮疹→ILD诊断</div></div>
+      <div class="t-item"><div class="t-date">婴儿期</div><div class="t-content">发育落后，反复感染。皮肤活检示坏死性小血管炎。常规免疫评估阴性。</div></div>
+      <div class="t-item yellow"><div class="t-date">确诊</div><div class="t-content">ILD+炎症+皮疹三联征→TMEM173基因Sanger测序确诊V155M。I型IFN签名↑↑↑</div></div>
+      <div class="t-item"><div class="t-date">治疗</div><div class="t-content">JAK抑制剂治疗。呼吸急促有改善，氧需求稳定。</div></div>
+      <div class="t-item yellow"><div class="t-date">长期预后</div><div class="t-content">原文为Letter形式，未提供详细长期随访数据。ILD持续存在需密切监测肺功能和HRCT。</div></div>
+    </div>
+<div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断</b><br>
+      ① SAVI三联征：早发ILD + 皮疹 + 发热 ② 确诊依赖TMEM173基因 ③ I型IFN签名升高是重要辅助<br><br>
+      <b>2. 治疗</b><br>
+      ④ JAK抑制剂最有前景 ⑤ 传统免疫抑制剂效果有限 ⑥ ILD是主要死因<br><br>
+      <b>3. 监测</b><br>
+      ⑦ 肺功能+HRCT定期评估 ⑧ IFN签名监测治疗反应 ⑨ 体细胞嵌合≠家族遗传
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/27552632/" target="_blank">PMID 27552632</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5027210/" target="_blank">PMC5027210</a></div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+    <ol style="padding-left:18px;">
+    <li>Clarke SLN, Pellowe EJ, de Jesus AA, et al. Interstitial Lung Disease Caused by STING-associated Vasculopathy with Onset in Infancy. <i>Am J Respir Crit Care Med</i>. 2016;194(5):639-642. doi:10.1164/rccm.201510-2102LE. PMID: 27552632.</li>
+    <li>Liu Y, Jesus AA, Marrero B, et al. Activated STING in a vascular and pulmonary syndrome. <i>N Engl J Med</i>. 2014;371(6):507-518. PMID: 25029489. <span style="color:var(--text3)">【原文引用】</span></li>
+    <li>Jeronimo SMP, et al. STING-associated vasculopathy with onset in infancy. <i>Arthritis Rheumatol</i>. 2015;67(S10). <span style="color:var(--text3)">【原文提及SAVI队列数据】</span></li>
+    </ol>
+    <div style="margin-top:4px;font-size:10.5px;color:var(--text3);">注：原文为Letter形式，引用文献有限。上述为原文实际引用的核心文献。David 2022及Wu 2023为后续研究，非原文引用。</div>
+  </div>
+  </div>
+  <div class="footer">基于PMC5027210真实文献病例 · SAVI · TMEM173 V155M · JAK抑制剂 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

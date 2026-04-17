@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>川崎病出院后家庭指导</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; font-size:14px; }
+.wrap { max-width:800px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:16px 24px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.9rem; opacity:0.85; margin-top:4px; }
+.body { padding:16px 24px 20px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#20a39e; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.orange { background:#e8833a; }
+p { margin:6px 0; }
+ul { margin:6px 0 6px 20px; }
+li { margin:4px 0; }
+table { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+th, td { border:1px solid var(--border); padding:6px 10px; text-align:left; }
+th { background:var(--accent-bg); font-weight:600; }
+.red-flag { background:var(--red-bg); border-left:3px solid var(--red); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:4px 0; }
+.checklist { list-style:none; margin-left:0; padding-left:0; }
+.checklist li { padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.checklist li::before { content:"☐"; font-size:1.1rem; color:var(--accent); flex-shrink:0; }
+.callout { background:var(--accent-bg); border-radius:var(--radius); padding:10px 14px; margin:8px 0; }
+.callout.red { background:var(--red-bg); }
+.callout.yellow { background:var(--yellow-bg); }
+.callout.green { background:var(--green-bg); }
+.footer { text-align:center; font-size:11px; color:var(--text3); padding:10px 24px 14px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .wrap{margin:4px;} .body{padding:12px 14px;} .header{padding:12px 14px;} }
+@media print {
+  .nav-bar{display:none !important;}
+  body{padding-top:0 !important;background:#fff !important;}
+  .wrap{box-shadow:none !important;margin:0 !important;max-width:100% !important;}
+  .red-flag,.callout{break-inside:avoid;}
+  .sh{break-after:avoid;}
+  @page{margin:1.5cm;}
+}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">🏥 KD出院指导</span></div>
+<div class="wrap">
+<div class="header">
+  <h1>🏥 川崎病出院后家庭指导</h1>
+  <div class="sub">用药 · 监测 · 随访 · 活动 · 疫苗，一篇全讲清</div>
+</div>
+<div class="body">
+
+<p>恭喜您的孩子顺利出院！🎉 出院后的家庭护理同样重要。请仔细阅读以下内容，<strong>建议打印贴在家中显眼处</strong>。</p>
+
+<div class="sh">💊 出院后用药 — 阿司匹林减量计划</div>
+<table>
+  <tr><th>阶段</th><th>时间</th><th>剂量说明</th></tr>
+  <tr><td>🔴 高剂量期</td><td>出院~热退后48-72h</td><td>30-50mg/kg/d，分3-4次服用</td></tr>
+  <tr><td>🟡 减量期</td><td>热退后</td><td>减至抗血小板剂量（3-5mg/kg/d），每日1次</td></tr>
+  <tr><td>✅ 停药</td><td>遵医嘱</td><td><strong>冠脉正常</strong>：6-8周后复查超声正常可停药；<strong>冠脉异常</strong>：需长期服用</td></tr>
+</table>
+<div class="callout yellow">⚠️ <strong>注意</strong>：不要自行停药或改量。如果漏服，下次正常剂量服用，不要加倍。</div>
+
+<div class="sh red">🌡️ 体温监测</div>
+<p><strong>出院后前2周，每天早晚各量一次体温并记录。</strong></p>
+<div class="callout red">🔴 <strong>如果再次发热 ≥ 38.0℃ = 立即联系医生或复诊！</strong></div>
+<p>发热复发可能意味着：IVIG无反应（需要再次治疗）或其他并发症。</p>
+<div class="callout">👉 <strong>不要"先观察一天"——川崎病发热复发必须当天就诊</strong></div>
+
+<div class="sh">❤️ 冠脉随访时间表</div>
+<p><strong>心脏超声是监测冠脉的"金标准"，请严格按照以下时间复查：</strong></p>
+<ul class="checklist">
+  <li><strong>出院后2周</strong> —— 首次复查，看冠脉Z值</li>
+  <li><strong>出院后2个月</strong> —— 评估冠脉变化趋势</li>
+  <li><strong>出院后6个月</strong> —— 判断是否可以停ASA</li>
+  <li><strong>出院后1年</strong> —— 年度评估</li>
+  <li><strong>此后每年</strong> —— 长期随访（冠脉正常者可适当延长间隔）</li>
+</ul>
+<div class="callout">💡 <strong>带齐每次的心脏超声报告</strong>，方便医生对比冠脉Z值的变化趋势。</div>
+
+<div class="sh green">🏃 活动限制</div>
+<table>
+  <tr><th>冠脉情况</th><th>活动建议</th></tr>
+  <tr><td>✅ <strong>冠脉正常</strong></td><td>活动<strong>无限制</strong>。可以正常上体育课、跑步、游泳。</td></tr>
+  <tr><td>⚠️ <strong>小冠脉瘤</strong>（Z值2.5-5.0）</td><td><strong>避免剧烈运动3-6个月</strong>。可以散步、轻度活动。具体听医生建议。</td></tr>
+  <tr><td>🚫 <strong>中大冠脉瘤</strong>（Z值>5.0）</td><td>需要更严格的活动限制，可能需要抗凝治疗。<strong>具体方案请遵医嘱</strong>。</td></tr>
+</table>
+
+<div class="sh yellow">💉 疫苗延迟须知</div>
+<div class="callout red"><strong>IVIG后11个月内，不能接种活疫苗！</strong></div>
+<p>原因：IVIG中的抗体会"干扰"活疫苗的效果，导致疫苗白打了。</p>
+<p><strong>⚠️ 需要延迟的活疫苗：</strong></p>
+<ul>
+  <li>水痘疫苗</li>
+  <li>麻疹-腮腺炎-风疹（MMR）疫苗</li>
+  <li>轮状病毒疫苗</li>
+  <li>乙脑减毒活疫苗</li>
+</ul>
+<p><strong>✅ 可以正常打的：</strong>灭活疫苗（流感、肺炎、百白破等）不受影响。</p>
+<div class="callout">📅 <strong>建议</strong>：在出院时与医生确认疫苗计划，标注可以恢复接种的具体日期。</div>
+
+<div class="sh green">💚 心理支持</div>
+<p><strong>家长焦虑是完全正常的</strong>——孩子住院、诊断一个陌生的疾病、担心心脏……这些都是很自然的反应。</p>
+<ul>
+  <li><strong>了解=安心</strong>：川崎病经过规范治疗后，大多数孩子<strong>完全康复</strong>，冠脉正常的孩子远期预后非常好</li>
+  <li><strong>保持日常</strong>：尽量让孩子恢复正常的作息和生活，不要过度保护</li>
+  <li><strong>正面语言</strong>：告诉孩子"你的身体正在变强壮"，而不是"你生病了"</li>
+  <li><strong>家长互助</strong>：如果有需要，可以联系川崎病家长互助群</li>
+</ul>
+
+<div class="sh red">🚨 紧急就医指征</div>
+<p><strong>出现以下情况请立即就医或拨打120：</strong></p>
+<div class="red-flag">
+<ul>
+  <li>🔴 <strong>再次发热 ≥ 38.0℃</strong>（出院后任何时间）</li>
+  <li>🔴 <strong>胸痛、呼吸急促、面色苍白</strong></li>
+  <li>🔴 <strong>嘴唇/手指发紫</strong></li>
+  <li>🔴 <strong>眼睛红、手脚肿胀</strong>（可能是复发征象）</li>
+  <li>🔴 <strong>皮疹再次出现</strong></li>
+  <li>🔴 <strong>精神极差、嗜睡、不愿吃奶/进食</strong></li>
+</ul>
+</div>
+
+<div class="sh">📝 出院检查清单</div>
+<p>出院前请确认：</p>
+<ul class="checklist">
+  <li>已拿到出院小结和用药处方</li>
+  <li>已预约第一次心脏超声复查（出院后2周）</li>
+  <li>已了解ASA剂量和减量计划</li>
+  <li>已了解疫苗延迟计划</li>
+  <li>知道紧急情况联系谁</li>
+  <li>体温计已备好</li>
+</ul>
+
+</div>
+<div class="footer">
+  <p><strong>大多数川崎病孩子完全康复</strong> ❤️ 规范治疗+定期随访=最好的保障。如有任何疑问，随时联系您的风湿科/心血管科团队。</p>
+  <p style="margin-top:8px;">MedWiki-Rheum · 儿童风湿免疫科普平台 · 不构成诊疗建议 · 请遵医嘱</p>
+</div>
+</div>
+</body>
+</html>

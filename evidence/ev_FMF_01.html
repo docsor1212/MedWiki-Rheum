@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家族性地中海热（FMF）伴肝损害</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../evidence/">📚 循证病例</a>
+  <span class="nav-title">家族性地中海热（FMF）伴肝损害</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：家族性地中海热（FMF）伴肝损害</h1>
+      <div class="sub">FMF — M694V纯合突变+反复发热+腹痛+肝功能异常</div>
+    </div>
+    <div class="meta">文献病例 · PMID: 31533789</div>
+  </div>
+  <div class="body">
+
+    <div class="sh">📖 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">来源</td><td>Maggio MC, et al. Familial Mediterranean Fever: an unusual cause of liver disease. <i>Ital J Pediatr</i>. 2019;45:121.</td></tr>
+      <tr><td class="b">PMID</td><td>31530787</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC6749622</td></tr>
+      <tr><td class="b">DOI</td><td>10.1186/s13052-019-0712-0</td></tr>
+    </table>
+
+    <div class="alert"><b>流行病学提示：</b>FMF是最常见的遗传性自身炎症性疾病，全球约<b>10万+</b>例患者。高发于地中海人群（土耳其、亚美尼亚、阿拉伯、犹太），患病率<b>1/200-1/1000</b>。未治疗者AA型淀粉样变发生率高达<b>60%</b>，是主要死因。<b>M694V纯合</b>是最常见高外显率突变，与最严重表型相关。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>男孩，10.6岁（报道时）</td></tr>
+      <tr><td class="b">起病年龄</td><td>1岁</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">反复发热</span> <span class="tag t-y">腹痛</span> <span class="tag t-a">M694V纯合</span> <span class="tag t-g">秋水仙碱有效</span></td></tr>
+    </table>
+
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;"><b>反复发热、腹痛、皮疹5年</b></p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      自1岁起出现<b>反复发热</b>，伴<b>阿弗他口腔炎、红斑性皮疹、关节痛</b>，并有<b>腹痛、呕吐</b>及淋巴结肿大。发作持续1-3天，间歇期无症状，每2-4周发作1次。<br><br>
+      6岁时通过MEFV基因检测确诊FMF：<b>纯合M694V突变</b>（exon 10）。开始秋水仙碱0.03 mg/kg/d，发作部分控制，但仍有反复腹痛（无发热）+SAA持续升高。<br><br>
+      出现<b>肝功能异常</b>：AST/ALT间歇升高（最高1.5倍正常上限），与发作期同步，间歇期恢复。BMI 15.5（-1.3 SDS）。祖父因肾功能不全去世（疑AA型淀粉样变）。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：原文未提供。&nbsp;&nbsp;<b>个人史</b>：身高132.2 cm（-1.55 SDS），体重27 kg（-1.72 SDS），BMI 15.5（-1.3 SDS），无肥胖。&nbsp;&nbsp;<b>家族史</b>：祖父因肾功能不全去世（疑AA型淀粉样变），父母否认反复发热但拒绝基因检测。&nbsp;&nbsp;<b>过敏史</b>：原文未提供。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">一般情况</th></tr>
+        <tr><td>体重</td><td>偏瘦（BMI 15.5, -1.3 SDS）</td></tr>
+        <tr><td>体温（发作期）</td><td class="c-r">38-39°C</td></tr>
+        <tr><td>腹部</td><td class="c-y">弥漫性压痛</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">发作期特征</th></tr>
+        <tr><td>口腔</td><td class="c-y">阿弗他溃疡</td></tr>
+        <tr><td>皮肤</td><td class="c-y">红斑性皮疹</td></tr>
+        <tr><td>关节</td><td class="c-y">关节痛</td></tr>
+        <tr><td>淋巴结</td><td class="c-y">肿大</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（多期随访对比）</div>
+    <table>
+      <tr><th>项目</th><th>初诊时</th><th>6.9岁<br>（秋水仙碱0.03mg/kg/d）</th><th>8.2岁<br>（增量至0.05mg/kg/d）</th><th>10.6岁<br>（维持1.5mg/d）</th><th>趋势</th></tr>
+      <tr><td class="b">SAA (mg/L)</td><td class="c-r">33</td><td>32.4</td><td class="c-r">223.8 ↑↑</td><td class="c-g">1.77 ✅</td><td>先升后降→最终正常</td></tr>
+      <tr><td class="b">CRP (mg/dL)</td><td class="c-r">24.8</td><td class="c-g">0.23</td><td>7</td><td class="c-g">0.18 ✅</td><td>波动→最终正常</td></tr>
+      <tr><td class="b">ESR (mm/h)</td><td class="c-r">86</td><td>17</td><td class="c-y">42</td><td class="c-g">11 ✅</td><td>波动→最终正常</td></tr>
+      <tr><td class="b">AST</td><td class="c-r">82 ↑</td><td>26</td><td class="c-y">76 ↑</td><td class="c-g">24 ✅</td><td>与SAA同步波动</td></tr>
+      <tr><td class="b">ALT</td><td class="c-r">68 ↑</td><td>32</td><td class="c-y">62 ↑</td><td class="c-g">28 ✅</td><td>与SAA同步波动</td></tr>
+      <tr><td class="b">GGT</td><td>21</td><td>20</td><td class="c-y">33</td><td>12</td><td>波动</td></tr>
+      <tr><td class="b">微量白蛋白尿<br>(mg/L)</td><td class="c-r">9198 ↑↑↑</td><td class="c-r">9400 ↑↑↑</td><td>4</td><td class="c-g">10.5 ✅</td><td>先高后降→正常</td></tr>
+    </table>
+    <div class="note"><b>关键发现：</b>AST/ALT与SAA同步波动，秋水仙碱增量后同步改善→证实肝损害为炎症介导（非药物毒性）。8.2岁时SAA反跳至223.8 mg/L与秋水仙碱剂量不足相关。微量白蛋白尿在初诊时显著升高（9198 mg/L），后降至正常。</div>
+    <table style="margin-top:6px;">
+      <tr><th>项目</th><th>结果</th><th>解读</th></tr>
+      <tr><td class="b">MEFV基因</td><td class="c-r">M694V纯合（exon 10）</td><td>最常见高外显率致病突变</td></tr>
+      <tr><td class="b">腹部超声</td><td>淋巴结肿大+"满天星肝"</td><td>肝实质炎症改变，与SAA/AST/ALT升高同步</td></tr>
+    </table>
+
+    <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>一、核心免疫学通路：Pyrin炎症小体与IL-1β过度激活</b></p>
+      <p>FMF由<b>MEFV基因</b>（编码Pyrin蛋白）突变引起。Pyrin是固有免疫系统中的一种模式识别受体，正常情况下通过检测<b>Rho GTP酶失活</b>（常由细菌毒素引起）来感知危险信号，进而组装Pyrin炎症小体（Pyrin-ASC-Caspase-1复合体）→活化Caspase-1→切割pro-IL-1β为成熟IL-1β。MEFV致病突变（尤其M694V）导致Pyrin蛋白<b>结构异常</b>，使其在无Rho失活刺激下也能自发组装炎症小体→<b>IL-1β自主性过度产生</b>→反复发热和浆膜炎症。</p>
+      <p><b>二、本病例特异性免疫异常</b></p>
+      <p>本例携带<b>MEFV纯合M694V突变</b>（exon 10），这是FMF中最常见的高外显率致病突变。原文强调M694V纯合与更严重的临床表型相关：反复发热发作每2-4周1次、SAA持续升高（33-223.8 mg/L，参考值&lt;6.4）、CRP/ESR在发作期显著升高。<b>肝功能异常</b>（AST/ALT达1.5倍正常上限）与发作同步，秋水仙碱增量后改善——原文明确指出这不继发于秋水仙碱毒性（因增量后肝功能反改善），也不是肥胖相关（BMI 15.5，无肥胖），而是<b>inflammasome介导的肝脏炎症</b>。腹部超声示"满天星肝"（starry sky liver），与SAA/AST/ALT升高同步。</p>
+      <p><b>三、病理生理学解释</b></p>
+      <p>从分子到临床：M694V纯合→Pyrin自发组装炎症小体→IL-1β过度产生→①<b>急性期反应</b>：CRP/ESR/SAA升高（SAA是AA型淀粉样变前体蛋白）；②<b>浆膜炎</b>：腹膜炎（腹痛）、胸膜炎（胸痛）、滑膜炎（关节痛）；③<b>皮肤表现</b>：红斑性皮疹（丹毒样红斑）；④<b>肝脏受累</b>：IL-1β驱动的肝窦Kupffer细胞活化→肝脏急性期反应→AST/ALT升高+满天星肝超声表现。本例祖父因肾功能不全去世，高度怀疑AA型淀粉样变——SAA长期升高→AA型淀粉纤维沉积→肾脏损害。</p>
+      <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC6749622原文 + Papa R等（Orphanet J Rare Dis 2017）Eurofever注册研究</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出家族性地中海热（FMF）M694V纯合的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">Tel Hashomer标准</td><td>Livneh A 等</td><td>1997</td><td>QJM</td><td>主要+次要+支持标准</td><td>主要:① 反复短暂发热+浆膜炎 → <span class='c-g'>✅ 发热+腹痛+皮疹+关节痛</span><br>次要:② 家族史 → <span class='c-g'>✅</span><br>支持:③ 秋水仙碱有效 → <span class='c-g'>✅</span><br>④ 口腔炎/淋巴结肿大 → <span class='c-g'>✅</span><br><b>确诊 ✅</b></td></tr>
+      <tr><td class="b">Yalçinkaya-Ozen标准(EULAR/PRINTO/PRES)</td><td>Yalçinkaya F, Ozen S</td><td>2016</td><td>Ann Rheum Dis【需要验证】</td><td>临床+基因</td><td>① 典型临床发作 → <span class='c-g'>✅</span><br>② MEFV M694V纯合 → <span class='c-g'>✅</span><br><b>临床-基因-治疗反应三重确诊 ✅</b></td></tr>
+    </table>
+    <table>
+      <tr><th>诊断标准</th><th>详情与对照</th></tr>
+      <tr><td class="b" rowspan="8">Tel Hashomer标准<br>（Livneh A等，<i>QJM</i> 1997;90:561-568）<br>【补充知识】</td>
+        <td><b>主要标准+次要标准+支持标准</b></td></tr>
+      <tr><td><b>主要标准：</b></td></tr>
+      <tr><td>① 反复短暂发热发作（&lt;3天）+ 腹膜炎/胸膜炎/关节炎/皮疹任一 — <span class="c-g">✅ 发热+腹痛+皮疹+关节痛</span></td></tr>
+      <tr><td><b>次要标准：</b></td></tr>
+      <tr><td>② 反复发作+AA型淀粉样变家族史 — <span class="c-g">✅ 祖父肾功能不全去世</span></td></tr>
+      <tr><td>③ 秋水仙碱治疗有效 — <span class="c-g">✅ 增量后发作控制+SAA正常化</span></td></tr>
+      <tr><td><b>支持标准：</b></td></tr>
+      <tr><td>④ 阿弗他口腔炎、淋巴结肿大 — <span class="c-g">✅ 均存在</span></td></tr>
+      <tr><td class="b" rowspan="3">Yalçinkaya-Ozen标准<br>（EULAR/PRINTO/PRES共识 2016）<br>【补充知识】</td>
+        <td><b>临床拟诊+基因确诊</b></td></tr>
+      <tr><td>① 典型临床发作（发热+浆膜炎）— <span class="c-g">✅</span></td></tr>
+      <tr><td>② MEFV双等位基因致病突变 — <span class="c-g">✅ M694V纯合</span></td></tr>
+      <tr><td class="b">确诊依据</td><td>① Tel Hashomer主要标准满足 + ② M694V纯合突变 + ③ 秋水仙碱治疗有效 → <b>临床-基因-治疗反应三重确诊</b></td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：FMF，M694V纯合</b>，伴不典型肝损害。</div>
+
+    <div class="sh yellow">🔍 鉴别诊断</div>
+    <div class="diff-box"><div class="diff-title">1. TRAPS/HIDS（其他遗传性周期热）</div><b>相似点：</b>反复发热+腹痛。<b>排除依据：</b>MEFV纯合M694V突变确诊→基因层面排除TRAPS（TNFRSF1A）和HIDS（MVK）。</div>
+    <div class="diff-box"><div class="diff-title">2. 炎症性肠病（Crohn病）</div><b>相似点：</b>腹痛+消瘦+关节痛+口腔溃疡。<b>排除依据：</b>无腹泻、无便血、发作呈明确周期性（每2-4周）且间歇期完全正常→排除。</div>
+    <div class="diff-box"><div class="diff-title">3. 病毒性肝炎</div><b>相似点：</b>肝功能异常（AST/ALT升高）。<b>排除依据：</b>AST/ALT呈间歇性升高、与发热同步、秋水仙碱增量后改善→支持FMF相关肝损害而非病毒性肝炎。</div>
+    <div class="diff-box"><div class="diff-title">4. 秋水仙碱肝毒性</div><b>相似点：</b>长期服用秋水仙碱+AST/ALT升高。<b>排除依据：</b>秋水仙碱增量后AST/ALT反改善（而非加重）→排除药物毒性。BMI 15.5排除肥胖相关脂肪肝。</div>
+
+    <div class="diff-box"><div class="diff-title">⚠️ FMF相关肝损害</div>
+    FMF肝损害少见，可表现为发作期AST/ALT短暂升高或隐源性肝病。本例AST/ALT与发作同步，秋水仙碱增量后改善，支持inflammasome介导的肝脏炎症。随访中应常规监测肝功能。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ M694V纯合突变的高风险</div>
+    M694V是最常见高外显率突变，与更严重临床表现、AA型淀粉样变高风险、更大秋水仙碱需求量相关。本例祖父因肾功能不全去世，高度怀疑AA型淀粉样变。</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table><tr><th>治疗阶段</th><th>药物</th><th>剂量/方案</th><th>效果</th><th>选择理由</th></tr>
+      <tr><td class="b">一线初始（6岁确诊）</td><td>秋水仙碱</td><td><b>0.03 mg/kg/d</b>（0.75 mg/d）</td><td class="c-y">部分控制：发热消除，但腹痛持续+SAA↑</td><td>FMF一线终身治疗</td></tr>
+      <tr><td class="b">增量期（6.9→8.2岁）</td><td>秋水仙碱增量</td><td><b>0.05 mg/kg/d</b>（1.25→1.5 mg/d）</td><td class="c-g">逐步改善：SAA从223.8→1.77，AST/ALT恢复正常</td><td>M694V纯合需更高剂量</td></tr>
+      <tr><td class="b">维持期（10.6岁）</td><td>秋水仙碱维持</td><td><b>1.5 mg/d（0.05 mg/kg/d）</b></td><td class="c-g">完全生化缓解：SAA 1.77, CRP 0.18, ESR 11</td><td>按体重增量维持</td></tr>
+      <tr><td class="b">备选方案（未启动）</td><td>Canakinumab（抗IL-1β单抗）</td><td>待定</td><td>尚未需要</td><td>秋水仙碱不充分控制时的二线选择</td></tr>
+    </table>
+    <div class="alert"><b>治疗策略：</b>FMF的治疗为<b>初始剂量→按需增量→长期维持</b>的Treat-to-Target模式。治疗目标为消除发作+SAA恢复正常。M694V纯合患者常需更高剂量。秋水仙碱不充分控制时二线选择Canakinumab（抗IL-1β单抗）。<br><b>⚠️ 治疗要点：</b>①秋水仙碱需终身服用 ②治疗目标：消除发作+<b>SAA恢复正常</b>（Treat-to-Target） ③M694V纯合需更高剂量（本例0.03→0.05 mg/kg/d） ④监测SAA、肝肾功、尿蛋白 ⑤秋水仙碱增量后肝功能改善→排除药物毒性</div>
+
+    <div class="sh">📅 疾病时间线</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">1岁</div><div class="t-content">起病：反复发热+腹痛+阿弗他溃疡+皮疹+关节痛</div></div>
+      <div class="t-item"><div class="t-date">6岁</div><div class="t-content">MEFV基因确诊（M694V纯合）→秋水仙碱0.03 mg/kg/d，部分控制</div></div>
+      <div class="t-item yellow"><div class="t-date">随访</div><div class="t-content">仍有腹痛+SAA↑+AST/ALT间歇升高，秋水仙碱增至0.05 mg/kg/d→生化改善</div></div>
+      <div class="t-item green"><div class="t-date">持续随访</div><div class="t-content">发作减少，肝功能恢复，SAA改善</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>❶ 为什么难——从主诉到诊断的完整推理链</b></p>
+      <p>本例以"反复发热+腹痛"起病，这一表现在儿童期极为常见（感染、炎症性肠病、功能性腹痛均需考虑）。<b>关键线索</b>在于：①发作呈<b>周期性</b>（每2-4周）且间歇期完全正常——指向周期热而非持续性炎症；②伴<b>多浆膜炎</b>（腹痛=腹膜炎、关节痛=滑膜炎、皮疹=丹毒样红斑）——同时累及多个浆膜面的急性自限性炎症高度提示FMF；③<b>秋水仙碱有效</b>——这一治疗反应本身就是FMF的诊断支持。1岁起病至6岁确诊，5年延误主要因为FMF在地中海人群以外的认知不足。</p>
+
+      <p><b>❷ 易误诊/漏诊点</b></p>
+      <p>最易误诊的疾病：①<b>炎症性肠病（IBD）</b>——腹痛+消瘦+关节痛+口腔溃疡可模拟Crohn病，但FMF的发作呈明确周期性、间歇期完全正常、无腹泻/便血；②<b>TRAPS/HIDS</b>——同为遗传性周期热，需基因鉴别（本例TNFRSF1A/MVK阴性）；③<b>病毒性肝炎</b>——肝功能异常可被误诊为肝炎，但FMF的AST/ALT呈间歇性升高、与发热同步、秋水仙碱增量后改善。<b>本例的不典型之处</b>：肝损害——原文指出FMF肝损害罕见，文献仅少数报告，可表现为发作期AST/ALT短暂升高或隐源性肝硬化。超声"满天星肝"与炎症活动同步是重要发现。</p>
+
+      <p><b>❸ 决策启示——遇到类似患者的排查顺序</b></p>
+      <p>Step 1：儿童反复发热+腹痛 → 排除感染（血培养+影像）+ IBD（肠镜/粪钙卫蛋白）；Step 2：周期性发作+间歇期正常+多浆膜炎 → 高度怀疑FMF → 查CRP/ESR/SAA（发作期 vs 间歇期对比）；Step 3：秋水仙碱试验性治疗 → 有效则强支持；Step 4：MEFV基因检测确诊（M694V/M680I/V726A等高频突变）；Step 5：确诊后目标——<b>SAA恢复正常（Treat-to-Target）</b>，不满足此目标则增量或加用IL-1抑制剂。</p>
+
+      <p><b>❹ 教学价值</b></p>
+      <p>本例的核心教学点：①FMF可伴不典型肝损害，AST/ALT与发作同步+秋水仙碱增量后改善是鉴别要点（排除药物毒性和肥胖）；②<b>SAA是FMF管理的核心指标</b>——即使发作部分控制，SAA持续升高提示亚临床炎症和AA型淀粉样变风险；③M694V纯合是最严重表型，需要更高秋水仙碱剂量和更密切监测；④IL-1抑制剂（Canakinumab）是秋水仙碱无效/不耐受时的二线选择——本例已讨论但暂未启动。</p>
+    </div>
+
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断</b><br>
+      ① FMF典型：反复发热+腹痛+关节痛 ② M694V纯合→严重表型 ③ 确诊依赖MEFV基因<br><br>
+      <b>2. 治疗</b><br>
+      ④ 秋水仙碱终身治疗是基石 ⑤ 难治性→IL-1抑制剂 ⑥ 不典型表现（肝损害）纳入FMF谱<br><br>
+      <b>3. 监测</b><br>
+      ⑦ SAA是最重要指标 ⑧ 定期尿蛋白/肾功能 ⑨ M694V纯合+家族史→高危
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/31533789/" target="_blank">PMID 31533789</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749622/" target="_blank">PMC6749622</a></div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+    <ol style="padding-left:18px;">
+    <li>Maggio MC, Castiglia M, Corsello G. Familial Mediterranean Fever: an unusual cause of liver disease. <i>Ital J Pediatr</i>. 2019;45:121. doi:10.1186/s13052-019-0712-0. PMID: 31533789. <span style="color:var(--text3)">【本文】</span></li>
+    <li>Papa R, et al. Paediatric Rheumatology International Trials Organisation (PRINTO) and the Eurofever Project. A web-based collection of genotype-phenotype associations in hereditary recurrent fevers from the Eurofever registry. <i>Orphanet J Rare Dis</i>. 2017;12(1):167. PMID: 29047407. <span style="color:var(--text3)">【原文Ref 1】</span></li>
+    <li>Maggio MC, et al. Stevens-Johnson syndrome and cholestatic hepatitis induced by acute Epstein-Barr virus infection. <i>Eur J Gastroenterol Hepatol</i>. 2011;23(3):289. PMID: 21304320. <span style="color:var(--text3)">【原文Ref 2】</span></li>
+    <li>Tweezer-Zaks N, et al. Familial Mediterranean fever and cryptogenic cirrhosis. <i>Medicine</i>. 2007;86(6):355-362. PMID: 18004180. <span style="color:var(--text3)">【原文Ref 3】</span></li>
+    <li>Migita K, et al. Acute hepatitis in a patient with familial Mediterranean fever. <i>Liver Int</i>. 2008;28(1):140-142. PMID: 17971092. <span style="color:var(--text3)">【原文Ref 4】</span></li>
+    <li>Tzifi F, et al. Acute hepatitis in a child heterozygous for the I259V MEFV gene variant. <i>Prague Med Rep</i>. 2014;115(3-4):128-133. PMID: 25626331. <span style="color:var(--text3)">【原文Ref 5】</span></li>
+    <li>Unal F, et al. Liver involvement in children with Familial Mediterranean fever. <i>Dig Liver Dis</i>. 2012;44(8):689-693. PMID: 22333476. <span style="color:var(--text3)">【原文Ref 6】</span></li>
+    <li>Sota J, et al. Safety profile of the interleukin-1 inhibitors anakinra and canakinumab in real-life clinical practice. <i>Clin Rheumatol</i>. 2018;37(8):2233-2240. PMID: 29770930. <span style="color:var(--text3)">【原文Ref 7】</span></li>
+    </ol>
+  </div>
+  </div>
+  <div class="footer">基于PMC6749622真实文献病例 · FMF · M694V纯合 · 秋水仙碱治疗 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

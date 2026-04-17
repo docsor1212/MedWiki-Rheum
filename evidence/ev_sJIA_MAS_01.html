@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: sJIA并发难治性MAS（阿那白滞素+血浆置换）</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">sJIA+MAS · MAS-01</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>sJIA并发难治性MAS — 持续静脉阿那白滞素+血浆置换</h1>
+      <div class="sub">Refractory Cytokine Storm of sJIA — 6岁男童</div>
+    </div>
+    <div class="meta">循证病例 · PMID 41477438</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 41477438 &nbsp;|&nbsp; <b>PMC:</b> PMC12752814<br>
+  <b>DOI:</b> 10.1155/crpe/1075899<br>
+  <b>期刊:</b> Case Reports in Pediatrics | <b>年份:</b> 2025<br>
+  <b>作者:</b> Jashmi RA, Sawafi AA, Abrawi SA (Royal Hospital, Muscat, Oman)<br>
+  <b>标题:</b> <i>Rescue Therapy With Continuous Intravenous Anakinra Infusion and Plasma Exchange in Refractory Cytokine Storm of Systemic JIA: A Case Report</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/41477438/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>MAS是sJIA最常见且最严重的并发症之一，sJIA患者中MAS发生率约<b>10-15%</b>。死亡率达<b>8%-23%</b>，主要预后不良因素包括延迟诊断、CNS受累及难治性细胞因子风暴。</div>
+
+<div class="sh">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>6岁，男</td></tr>
+  <tr><td class="b">就诊地点</td><td>阿曼马斯喀特皇家医院（三级医院）</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-r">sJIA</span> <span class="tag t-r">MAS</span> <span class="tag t-r">难治性</span> <span class="tag t-a">阿那白滞素持续输注</span> <span class="tag t-y">血浆置换</span></td></tr>
+</table>
+
+<div class="sh red">🎯 主诉</div>
+<p style="font-size:12px;margin:4px 0;">发热、皮疹30天</p>
+
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">6岁男孩因持续发热1个月就诊，伴一过性皮疹、大小关节肿痛、颈部淋巴结肿大和肝脾肿大。经多学科评估（感染科、风湿科、血液肿瘤科），排除感染性和肿瘤性病因后，临床诊断为sJIA，予收入院治疗。</p>
+
+<div class="sh">📋 既往史</div>
+<p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">生命体征（入院）</th></tr>
+    <tr><td>T</td><td class="c-r">高热</td></tr>
+    <tr><td>HR</td><td>心动过速</td></tr>
+    <tr><td>BP</td><td>初始稳定</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">系统查体</th></tr>
+    <tr><td>皮肤</td><td>一过性皮疹（伴发热高峰出现）</td></tr>
+    <tr><td>淋巴结</td><td class="c-r">颈部+颌下肿大</td></tr>
+    <tr><td>腹部</td><td class="c-r">肝脾肿大（临床腹胀明显）</td></tr>
+    <tr><td>关节</td><td class="c-r">大小关节多发性关节炎（MCP/PIP/DIP）</td></tr>
+  </table>
+</div>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>入院时</th><th>MAS期</th><th>解读</th></tr>
+<tr><td>Hb</td><td><span class="c-r">8.3 g/dL ↓</span></td><td><span class="c-r">8.1 g/dL ↓</span></td><td>贫血</td></tr>
+<tr><td>PLT</td><td>390×10⁹/L</td><td><span class="c-r">127×10⁹/L ↓</span></td><td>MAS前正常→MAS时显著下降</td></tr>
+<tr><td>WBC</td><td><span class="c-r">17.1×10⁹/L ↑</span></td><td>7.5×10⁹/L</td><td>MAS期下降（ANC 1.9×10⁹/L）</td></tr>
+<tr><td>ESR</td><td><span class="c-r">91 mm/h ↑</span></td><td>67 mm/h</td><td>MAS期ESR反常下降（纤维蛋白原消耗）</td></tr>
+<tr><td>CRP</td><td><span class="c-r">108 mg/L ↑</span></td><td>22 mg/L</td><td>MAS期CRP下降</td></tr>
+<tr><td>铁蛋白</td><td><span class="c-r">1,825 μg/L ↑</span></td><td><span class="c-r" style="font-size:14px">26,195 μg/L ↑↑↑</span></td><td>极显著升高（MAS标志）</td></tr>
+<tr><td>LDH</td><td>402 iu/L</td><td><span class="c-r">1,681 iu/L ↑↑</span></td><td>显著升高</td></tr>
+<tr><td>ALT</td><td>14 iu/L（正常）</td><td><span class="c-r">287 iu/L ↑</span></td><td>入院正常→MAS期升高</td></tr>
+<tr><td>AST</td><td>19 iu/L（正常）</td><td><span class="c-r">226 iu/L ↑</span></td><td>显著升高</td></tr>
+<tr><td>甘油三酯</td><td>1.5 mmol/L</td><td><span class="c-r">5.84 mmol/L ↑</span></td><td>显著升高</td></tr>
+<tr><td>纤维蛋白原</td><td>4.68 g/L</td><td><span class="c-r">1.49 g/L ↓</span></td><td>消耗性下降</td></tr>
+<tr><td>D-dimer</td><td>—</td><td><span class="c-r">33.34 ↑</span></td><td>显著升高（DIC倾向）</td></tr>
+<tr><td>IL-2受体</td><td>—</td><td><span class="c-r">＞20 ng/mL ↑</span></td><td>T细胞活化标志</td></tr>
+</table>
+<div class="note">脑部影像（MRI/MRA/MRV）：可逆性广泛脑萎缩。</div>
+
+<div class="sh">🧬 发病机制与免疫病理</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<p><b>sJIA的自身炎症本质与MAS的病理生理</b></p>
+<p>sJIA传统上被归类为自身免疫病，但越来越多的证据支持其本质为自身炎症性疾病。涉及的免疫成分包括MHC和先天免疫系统——NK细胞、PMN和巨噬细胞，以及IL-1、IL-6和IL-18等关键细胞因子。</p>
+
+<p><b>IL-18的核心致病角色</b></p>
+<p>IL-18是sJIA-MAS最具特征性的细胞因子标志。sJIA患者IL-18水平显著高于其他JIA亚型，且与MAS的发生和严重程度密切相关。IL-18通过促进Th1分化、增强NK细胞和巨噬细胞活化，驱动细胞因子风暴。持续高水平的IL-18可预测MAS风险，是疾病监测的重要生物标志物。</p>
+
+<p><b>MAS的核心机制：细胞因子风暴</b></p>
+<p>MAS被视为继发性HLH（sHLH），其核心病理生理决定因素是巨噬细胞和T淋巴细胞的异常激活。在MAS中，Th1淋巴细胞过度增殖，产生大量IFN-γ和TNF-α，导致巨噬细胞异常活化和增殖（噬血现象），释放铁蛋白等急性期蛋白，造成高铁蛋白血症和广泛组织损伤。本例铁蛋白峰值达<b>26,195 μg/L</b>，IL-2受体浓度超过20 ng/mL，充分体现了细胞因子风暴的剧烈程度。MAS患儿死亡率达8%-23%。</p>
+
+<p><b>遗传易感性与穿孔素通路缺陷</b></p>
+<p>MAS患者中家族性HLH相关基因杂合突变检出率显著高于一般人群。涉及基因包括PRF1、LYST、RAB27A、UNC13D、STXBP2和STX11等，这些突变损害穿孔素依赖的细胞溶解通路，使细胞毒性淋巴细胞无法有效清除活化的抗原呈递细胞，导致促炎细胞因子过度释放。</p>
+
+<p><b>本例关键病理特征</b></p>
+<p>本例在sJIA治疗第3天即出现癫痫持续状态和多器官衰竭，反映了CNS对细胞因子的高度敏感性。MAS早期实验室指标可接近正常（本例入院时血小板390），但病情可在数小时内急剧恶化。皮下给药向静脉持续输注的转换必要性，印证了危重状态下外周组织灌注不足对药物吸收的影响。</p>
+
+<p><b>新兴治疗靶点：emapalumab</b></p>
+<p>Emapalumab（抗IFN-γ单克隆抗体）是针对MAS/HLH细胞因子风暴发病机制中关键介质IFN-γ的靶向治疗。已获FDA批准用于原发性HLH，在sJIA-MAS中的应用正在研究中，为难治性病例提供了新的治疗选择。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+<table><tr><th>标准名称</th><th>作者/年份/期刊</th><th>评分体系</th><th>逐条对照</th><th>本例符合情况</th></tr>
+<tr><td class="b" rowspan="7">ILAR分类标准（sJIA亚型）<br><small>Petty RE et al., 2004, 第2次修订</small></td><td rowspan="7">Petty RE et al., 2004, <i>J Rheumatol</i><br>ILAR Classification, 2nd revision<br>PMID: 15210784</td><td rowspan="7">必备条件+排除标准</td><td>① 关节炎≥1个关节</td><td><span class="c-g">✅ 符合</span>（多关节肿痛）</td></tr>
+<tr><td>② 发热≥2周（弛张热，每日发热至少3天）</td><td><span class="c-g">✅ 符合</span>（持续发热1个月）</td></tr>
+<tr><td>③ 伴随≥1项：一过性皮疹</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>④ 淋巴结肿大和/或肝脾肿大</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>⑤ 浆膜炎</td><td>【未提及】</td></tr>
+<tr><td>⑥ 排除：银屑病、HLA-B27相关、IBD等</td><td><span class="c-g">✅ 已排除</span></td></tr>
+<tr><td colspan="2" style="background:#e2f3dd"><b>结论：满足sJIA诊断标准</b></td></tr>
+
+<tr><td class="b" rowspan="8">2016 EULAR/ACR/PRINTO MAS分类标准</td><td rowspan="8">Ravelli A et al., 2016, <i>Ann Rheum Dis</i><br>DOI: 10.1136/annrheumdis-2015-208982<br>PMID: 26865703</td><td rowspan="8">仅适用于sJIA背景。满足特定阈值组合即可分类。</td><td>① 铁蛋白 &gt;684 ng/mL</td><td><span class="c-g">✅ 符合</span>（峰值26,195）</td></tr>
+<tr><td>② 血小板 ≤181×10⁹/L</td><td><span class="c-g">✅ 符合</span>（MAS期降至127）</td></tr>
+<tr><td>③ AST &gt;48 U/L</td><td><span class="c-g">✅ 符合</span>（226 U/L）</td></tr>
+<tr><td>④ 三酰甘油 &gt;156 mg/dL</td><td><span class="c-g">✅ 符合</span>（5.84 mmol/L）</td></tr>
+<tr><td>⑤ 纤维蛋白原 ≤360 mg/dL</td><td><span class="c-g">✅ 符合</span>（1.49 g/L）</td></tr>
+<tr><td>⑥ 骨髓噬血细胞现象</td><td>【未行骨穿】</td></tr>
+<tr><td>⑦ sCD25升高</td><td>【未检测】（IL-2R＞20 ng/mL间接支持）</td></tr>
+<tr><td colspan="2" style="background:#e2f3dd"><b>结论：满足MAS分类标准（铁蛋白+血小板+AST+TG+纤维蛋白原）</b></td></tr>
+</table>
+
+<div class="sh">📊 HLH-2004诊断标准对照</div>
+<div class="note" style="margin-bottom:4px;">HLH-2004标准（Henter JI et al., <i>Pediatr Blood Cancer</i>, 2007），满足8条中≥5条可诊断HLH。MAS本质为继发性HLH。</div>
+<table><tr><th>#</th><th>HLH-2004标准</th><th>本例数据</th><th>符合</th></tr>
+<tr><td>1</td><td>发热</td><td>持续高热1月余</td><td><span class="c-g">✅</span></td></tr>
+<tr><td>2</td><td>脾肿大</td><td>肝脾肿大明确</td><td><span class="c-g">✅</span></td></tr>
+<tr><td>3</td><td>血细胞减少≥2系</td><td>Hb 8.1✅, ANC 1.9（未达）, PLT 127（未达）</td><td><span class="c-y">部分</span></td></tr>
+<tr><td>4</td><td>高TG血症和/或低纤维蛋白原血症</td><td>TG 5.84 mmol/L ✅, 纤维蛋白原 1.49 g/L ✅</td><td><span class="c-g">✅</span></td></tr>
+<tr><td>5</td><td>噬血细胞现象</td><td>未行骨穿</td><td>【未检】</td></tr>
+<tr><td>6</td><td>低NK细胞活性</td><td>未检测</td><td>【未检】</td></tr>
+<tr><td>7</td><td>铁蛋白≥500 μg/L</td><td>26,195 μg/L</td><td><span class="c-g">✅</span></td></tr>
+<tr><td>8</td><td>sCD25升高</td><td>IL-2R＞20 ng/mL</td><td><span class="c-g">✅</span></td></tr>
+<tr><td colspan="4" style="background:#e2f3dd"><b>结论：至少满足5/8条（发热+脾大+TG/纤维蛋白原+铁蛋白+sCD25），符合HLH-2004诊断。</b></td></tr>
+</table>
+
+<div class="sh yellow">🔍 鉴别诊断</div>
+<div class="diff-box"><div class="diff-title">1. 感染相关HLH（尤其EBV-HLH）</div>
+<b>相似点：</b>发热、肝脾肿大、血细胞减少、铁蛋白升高。<b>鉴别要点：</b>需完善EBV-DNA定量、EBV血清学。本例败血症排查阴性，经验性抗感染后无感染证据。</div>
+<div class="diff-box"><div class="diff-title">2. 原发性/家族性HLH</div>
+<b>相似点：</b>临床表现几乎完全重叠。<b>鉴别要点：</b>发病通常更早（婴儿期），有家族史，需基因检测。本例6岁发病、既往体健、无家族史，不支持，但不能排除杂合突变携带。</div>
+<div class="diff-box"><div class="diff-title">3. 恶性肿瘤（白血病/淋巴瘤）</div>
+<b>相似点：</b>发热、淋巴结肿大、肝脾肿大、LDH升高。<b>鉴别要点：</b>本例经血液肿瘤科评估排除恶性病因。</div>
+<div class="diff-box"><div class="diff-title">4. sJIA疾病活动 vs MAS</div>
+<b>关键鉴别：</b>sJIA活动期ESR/CRP持续升高、血小板正常或升高；MAS则<b>ESR反常下降</b>、<b>铁蛋白暴增</b>、<b>血小板急降</b>。本例ESR 91→67、PLT 390→127，是MAS的关键线索。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td class="b">sJIA初始诱导</td><td>甲泼尼龙（IVMP）</td><td>30 mg/kg/d IV</td><td>sJIA标准诱导方案</td></tr>
+<tr><td class="b">sJIA初始诱导</td><td>阿那白滞素（SC）</td><td>3 mg/kg/d SC</td><td>IL-1受体拮抗剂，sJIA一线生物制剂</td></tr>
+<tr><td class="b">MAS升级治疗</td><td>阿那白滞素（SC加量）</td><td>6 mg/kg/d SC</td><td>皮下加量尝试，但MAS仍进展</td></tr>
+<tr><td class="b">MAS抢救（Day 3）</td><td>环孢素A（IV）</td><td><b>0.5 mg/kg BID</b> → 加量至 <b>1 mg/kg/dose BID</b></td><td>T细胞钙调磷酸酶抑制剂，HLH-2004方案二线药物</td></tr>
+<tr><td class="b">MAS抢救（Day 4）</td><td>阿那白滞素（IV持续输注）</td><td><b>8 mg/kg/day</b> IV continuous</td><td>危重MAS皮下吸收差，静脉持续输注维持稳定血药浓度</td></tr>
+<tr><td class="b">MAS抢救</td><td>地塞米松（IV）</td><td><b>5 mg/m²/day</b>（分两次给药）<br>（HLH-2004方案）</td><td>HLH方案标准糖皮质激素，替代甲泼尼龙</td></tr>
+<tr><td class="b">MAS抢救</td><td>血浆置换</td><td>×3次（连续3天每日1次）</td><td>快速清除循环中高浓度炎症因子（IL-6/IL-18/IFN-γ）</td></tr>
+<tr><td class="b">抗感染</td><td>美罗培南+万古霉素+阿昔洛韦</td><td>经验性三联抗感染</td><td>败血症排查阴性，但重症MAS感染风险极高，经验性覆盖</td></tr>
+<tr><td class="b">肾脏支持</td><td>CRRT（连续肾脏替代治疗）</td><td>无尿期透析</td><td>多器官衰竭伴肾功能不全</td></tr>
+<tr><td class="b">过渡期</td><td>阿那白滞素（IV bolus）</td><td><b>6 mg/kg/dose BID × 1周</b></td><td>静脉持续输注→皮下给药的阶梯过渡</td></tr>
+<tr><td class="b">过渡期</td><td>环孢素A（口服）</td><td><b>5 mg/kg/dose BID</b></td><td>IV→口服转换</td></tr>
+<tr><td class="b">过渡期</td><td>甲泼尼龙 IV</td><td>10 mg/kg/day（加用地塞米松之上）</td><td>第二次转SC失败后加用</td></tr>
+<tr><td class="b">出院维持</td><td>口服泼尼松</td><td><b>2 mg/kg/day</b></td><td>IV激素→口服转换</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>危重MAS患者（血小板减少、皮下水肿、神经功能障碍）推荐静脉持续输注阿那白滞素。从静脉到皮下的转换具有挑战性，本例两次失败后第三次在铁蛋白＜900 μg/L时成功。过渡路径：IV持续输注 → IV bolus（6 mg/kg BID×1周）→ SC给药。</div>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item"><div class="t-date">入院</div><div class="t-content">发热+关节炎+皮疹+淋巴结肿大+肝脾肿大→诊断sJIA</div></div>
+<div class="t-item red"><div class="t-date">治疗第3天</div><div class="t-content"><span class="c-r">癫痫持续状态→气管插管→多器官衰竭→透析（CRRT）</span></div></div>
+<div class="t-item red"><div class="t-date">MAS确认</div><div class="t-content">铁蛋白峰值<span class="score-box high">26,195 μg/L</span></div></div>
+<div class="t-item"><div class="t-date">升级治疗（Day 3-4）</div><div class="t-content">IV持续阿那白滞素8 mg/kg/d + 环孢素0.5→1 mg/kg BID + 地塞米松5 mg/m²/d + 血浆置换 + 经验性抗感染</div></div>
+<div class="t-item green"><div class="t-date">3次血浆置换后</div><div class="t-content"><span class="c-g">显著改善：拔管+撤除血管活性药物</span>，铁蛋白降至<span class="score-box mid">2,997 μg/L</span></div></div>
+<div class="t-item yellow"><div class="t-date">第一次转SC失败</div><div class="t-content">IV bolus尝试→发热复发→回退IV持续输注</div></div>
+<div class="t-item yellow"><div class="t-date">第二次转SC失败</div><div class="t-content">IV+SC重叠（6+6 mg/kg/d=12 mg/kg/d）→发热+皮疹复发→铁蛋白升至1,600</div></div>
+<div class="t-item green"><div class="t-date">铁蛋白降至900</div><div class="t-content">IV bolus 6 mg/kg BID ×1周 → 成功转SC</div></div>
+<div class="t-item green"><div class="t-date">出院</div><div class="t-content"><span class="c-g">完全临床和实验室缓解</span>，铁蛋白<span class="score-box low">127 μg/L</span>，口服环孢素5 mg/kg BID + 口服泼尼松2 mg/kg/d + SC阿那白滞素</div></div>
+<div class="t-item green"><div class="t-date">出院后3个月</div><div class="t-content">停抗癫痫药，脑MRI恢复正常</div></div>
+<div class="t-item green"><div class="t-date">随访12个月</div><div class="t-content">SC阿那白滞素100 mg/d维持，完全缓解</div></div>
+<div class="t-item green"><div class="t-date">随访12-18个月</div><div class="t-content">转为托珠单抗（IL-6抑制剂）SC 6个月</div></div>
+<div class="t-item green"><div class="t-date">2024年9月（停药）</div><div class="t-content"><span class="c-g">停药，完全临床和生化缓解，随访2年无复发</span></div></div>
+</div>
+
+<div class="sh">💡 疑难剖析</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="diff-box"><div class="diff-title">决策一：sJIA治疗过程中突发病情恶化——何时怀疑MAS？</div>
+<b>临床情境：</b>6岁男孩在sJIA治疗第3天突发癫痫持续状态，迅速进展为多器官衰竭。<br><b>决策路径：</b>sJIA患者突发病情恶化（尤其出现CNS症状）→立即查铁蛋白、血细胞、纤维蛋白原、TG→铁蛋白从1,825暴增至26,195→确诊MAS→立即升级治疗。原文强调MAS早期实验室指标可能正常（本例入院时血小板390），因此动态监测铁蛋白比单次数值更有价值。<br><b>关键决策点：</b>不要等到满足所有诊断条目才开始治疗——MAS可在数小时内致死。</div>
+
+<div class="diff-box"><div class="diff-title">决策二：皮下阿那白滞素失败后——何时转为静脉给药？</div>
+<b>临床情境：</b>皮下阿那白滞素加量至6 mg/kg/d后MAS仍进展，患者处于ICU（5种血管活性药物+CRRT）。<br><b>决策路径：</b>危重MAS患者存在外周水肿+灌注不足+血小板减少→皮下吸收不可靠→转为静脉持续输注（8 mg/kg/day）。皮下给药生物利用度约80%-92%，但在危重患者中更难预测。<br><b>关键决策点：</b>ICU中MAS患者应首选静脉持续输注，而非等待皮下给药失败后再转换。</div>
+
+<div class="diff-box"><div class="diff-title">决策三：静脉→皮下转换时机——如何避免复发？</div>
+<b>临床情境：</b>两次尝试转为皮下给药均失败（发热+皮疹+铁蛋白反弹），第三次在铁蛋白降至900后才成功。<br><b>决策路径：</b>持续输注→IV bolus（6 mg/kg BID ×1周）→皮下给药的阶梯式过渡。选择铁蛋白降至相对低值（<900）且临床稳定的时机。<br><b>关键决策点：</b>过早转换可导致MAS复发，铁蛋白趋势是重要的转换时机指标。</div>
+
+<div class="diff-box"><div class="diff-title">决策四：血浆置换的介入时机</div>
+<b>临床情境：</b>静脉阿那白滞素+环孢素+地塞米松联合使用后仍持续恶化（5种血管活性药物+无尿+CRRT）。<br><b>决策路径：</b>最大剂量药物治疗仍无效→启动血浆置换（3次），3次后显著改善（拔管+撤除血管活性药物，铁蛋白从26,195降至2,997）。血浆置换可快速清除循环中的IL-6、IL-18、IFN-γ等细胞因子，为免疫抑制剂起效争取时间窗口。<br><b>关键决策点：</b>血浆置换应作为药物治疗反应不足时的辅助手段，而非首选。</div>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① sJIA患者突发恶化+铁蛋白急剧升高→考虑MAS<br>
+  ② MAS死亡率8%-23%，sJIA中发生率约10-15%<br>
+  ③ 癫痫可为MAS首发表现（CNS受累）<br>
+  ④ ESR反常下降是MAS与sJIA活动的重要鉴别线索<br><br>
+  <b>2. 治疗策略</b><br>
+  ⑤ IL-1抑制剂（阿那白滞素）是MAS核心用药<br>
+  ⑥ 危重患者推荐静脉持续输注（8 mg/kg/day）<br>
+  ⑦ 环孢素A：IV 0.5→1 mg/kg BID，HLH-2004方案二线药物<br>
+  ⑧ 地塞米松5 mg/m²/day（HLH-2004方案）替代甲泼尼龙<br>
+  ⑨ 血浆置换可用于难治性MAS（3次后铁蛋白从26,195降至2,997）<br>
+  ⑩ 静脉→皮下转换需阶梯式过渡：IV持续→IV bolus→SC<br>
+  ⑪ Emapalumab（抗IFN-γ单抗）为难治性MAS新兴治疗选项<br><br>
+  <b>3. 监测要点</b><br>
+  ⑫ 铁蛋白是最重要的动态监测指标<br>
+  ⑬ 关注血细胞减少、凝血功能、肝功能、LDH<br><br>
+  <b>4. 预后</b><br>
+  ⑭ 多模式联合治疗可改善预后<br>
+  ⑮ 本例随访2年完全缓解：12个月SC阿那白滞素→6个月托珠单抗→2024年9月停药
+</div>
+
+<div class="sh">📖 参考文献</div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41477438/" target="_blank">PMID 41477438</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12752814/" target="_blank">PMC12752814</a></div>
+  <ol style="padding-left:18px;">
+  <li>Jashmi RA, Sawafi AA, Abrawi SA. Rescue Therapy With Continuous IV Anakinra and Plasma Exchange in sJIA. <i>Case Rep Pediatr</i>. 2025;2025:1075899. PMID: 41477438.</li>
+  <li>Ravelli A, Martini A. Juvenile Idiopathic Arthritis. <i>Lancet</i>. 2007;369(9563):767-778. PMID: 17336654.</li>
+  <li>Grom AA, Horne A, De Benedetti F. Macrophage Activation Syndrome in the Era of Biologic Therapy. <i>Nat Rev Rheumatol</i>. 2016;12(5):259-268. PMID: 27009539.</li>
+  <li>Ravelli A, et al. 2016 Classification Criteria for MAS in sJIA. <i>Ann Rheum Dis</i>. 2016;75(3):481-489. PMID: 26865703.</li>
+  <li>Minoia F, et al. Clinical Features, Treatment, and Outcome of MAS Complicating sJIA. <i>Arthritis Rheumatol</i>. 2014;66(11):3160-3169. PMID: 25077692.</li>
+  <li>Mehta P, Cron RQ, et al. Silencing the Cytokine Storm: IV Anakinra in HLH/MAS. <i>Lancet Rheumatol</i>. 2020;2(6):e358-e367. PMID: 32373790.</li>
+  <li>Monteagudo LA, et al. Continuous IV Anakinra Infusion to Calm the Cytokine Storm in MAS. <i>ACR Open Rheumatol</i>. 2020;2(5):276-282. PMID: 32267081.</li>
+  <li>Ravelli A, Grom AA, Behrens EM, et al. MAS as Part of sJIA: Diagnosis, Genetics, Pathophysiology and Treatment. <i>Genes Immun</i>. 2012;13(4):289-298. PMID: 22418018.</li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

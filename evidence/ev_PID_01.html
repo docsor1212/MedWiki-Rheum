@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: X-CGD合并重叠感染 — PMID 35057749</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 X连锁慢性肉芽肿病合并诺卡菌与曲霉菌感染</h1>
+      <div class="sub">循证病例 · PMID 35057749</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="alert"><b>流行病学提示：</b>慢性肉芽肿病（CGD）发病率约<b>1/20-25万</b>活产儿，X连锁CGD（X-CGD）约占<b>65-70%</b>。CGD以反复感染（过氧化氢酶阳性病原体）和肉芽肿形成为特征。未移植的X-CGD患者<b>死亡率高</b>，多数在儿童或青少年期因严重感染死亡。HSCT是唯一根治手段，生存率&gt;90%。</div>
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 35057749 &nbsp; <span class="b">PMCID:</span> PMC8772058<br>
+      <span class="b">DOI:</span> 10.1186/s12879-021-06968-x<br>
+      <span class="b">期刊:</span> BMC Infectious Diseases | <span class="b">年份:</span> 2022<br>
+      <span class="b">作者:</span> Tian X, Shi Q, Liu P, Pang L, Jia P, Xie L, Ma X, Li A, Yu Z, Wang H<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8772058/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>3岁8个月，男</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确】</td></tr>
+      <tr><td class="b">主诉</td><td><span class="c-r">唇肿、发热15天，颈部脓肿11天</span></td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">X-CGD</span> <span class="tag t-y">诺卡菌+曲霉菌</span> <span class="tag t-a">呼吸衰竭</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">唇肿、发热15天，颈部脓肿11天</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      因嘴唇肿胀伴发热半月、颈部脓肿11天入院。经全面检查，确诊重症肺炎、呼吸衰竭、口腔颌面部间隙感染及肛周脓肿。初始综合治疗后病情无改善。<br><br>
+      随后通过宏基因组二代测序（mNGS）鉴定出鼻疽诺卡菌（<i>Nocardia farcinica</i>）和烟曲霉（<i>Aspergillus fumigatus</i>）重叠感染。全外显子测序确诊X连锁慢性肉芽肿病（CYBB基因T缺失突变）。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：【原文未提及详细】。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：母亲为CYBB基因携带者。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">主要体征</th></tr>
+        <tr><td>嘴唇</td><td class="c-r">肿胀</td></tr>
+        <tr><td>颈部</td><td class="c-r">脓肿</td></tr>
+        <tr><td>肛周</td><td class="c-r">脓肿</td></tr>
+        <tr><td>呼吸</td><td class="c-r">呼吸衰竭，需呼吸支持</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">辅助检查</th></tr>
+        <tr><td>胸部CT</td><td class="c-r">双肺多发簇状及结节状高密度影</td></tr>
+        <tr><td>mNGS</td><td class="c-r">鼻疽诺卡菌+烟曲霉</td></tr>
+        <tr><td>WES</td><td class="c-r">CYBB基因T缺失（X连锁）</td></tr>
+      </table>
+    </div>
+
+    <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+      <b>一、NADPH氧化酶复合物与吞噬细胞杀菌机制</b><br>
+      慢性肉芽肿病（CGD）是一种罕见的原发性吞噬细胞功能缺陷病，其核心发病机制为吞噬细胞内<b>烟酰胺腺嘌呤二核苷酸磷酸（NADPH）氧化酶复合物</b>功能缺陷。正常情况下，吞噬细胞吞噬病原体后，NADPH氧化酶将电子从NADPH传递至分子氧，产生超氧阴离子（O₂⁻）及其下游的过氧化氢（H₂O₂）、次氯酸（HOCl）等活性氧（ROS），构成吞噬细胞杀灭病原体的主要氧化杀菌系统。CGD患者由于NADPH氧化酶各亚基编码基因突变，导致该酶活性丧失或显著降低，吞噬细胞虽能正常吞噬病原体，但无法产生足量ROS进行氧化杀菌。<br><br>
+      <b>二、致病基因与遗传模式</b><br>
+      原文指出，CGD的致病基因包括X连锁隐性遗传基因<b>CYBB</b>（编码gp91phox亚基，约占60%）及常染色体隐性遗传基因<b>CYBA、NCF1、NCF2和NCF4</b>（分别编码p22phox、p47phox、p67phox和p40phox亚基）。本例为CYBB基因第121位碱基T缺失突变（c.121delT），导致X连锁遗传，母亲为携带者。X-CGD约占所有CGD的60%-65%，是临床最常见的亚型，男性发病。<br><br>
+      <b>三、感染易感性的病原学特征</b><br>
+      原文强调，CGD患者的吞噬细胞不能杀灭<b>过氧化氢酶阳性</b>的细菌和真菌，因为这些病原体能分解自身产生的H₂O₂，逃避CGD患者吞噬细胞依赖外源性H₂O₂的代偿杀菌途径。北美地区以<b>曲霉</b>为主要病原体，其次为葡萄球菌、伯克霍尔德菌和诺卡菌；中国则以<b>曲霉和结核分枝杆菌</b>最为常见。本例中鼻疽诺卡菌（<i>N. farcinica</i>）与烟曲霉（<i>A. fumigatus</i>）的重叠感染，正是CGD特征性的机会性感染组合——两者均为过氧化氢酶阳性病原体。<br><br>
+      <b>四、肉芽肿形成的免疫病理</b><br>
+      CGD的命名源自其特征性病理改变——慢性肉芽肿形成。由于吞噬细胞无法有效清除病原体，持续存在的抗原刺激引发<b>慢性肉芽肿性炎症</b>，表现为巨噬细胞和T细胞聚集形成的肉芽肿结节，可累及肺、肝、脾、胃肠道等多个器官系统。本例中反复出现的肛周脓肿、颌面部间隙感染及双肺多发病灶，均反映了这一病理过程。
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出CGD相关诊断标准，逐条对照本例情况。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">IUIS先天免疫错误分类（IEI）</td><td>Tangye SG 等 / IUIS专家委员会</td><td>2022</td><td>J Clin Immunol</td><td>基因+功能分类体系</td><td>
+        ① CYBB基因突变（c.121delT）→ <span class="c-g">✅ X-CGD</span><br>
+        ② 吞噬细胞NADPH氧化酶活性缺陷 → <span class="c-g">✅</span><br>
+        ③ 男性+X连锁遗传+母亲携带 → <span class="c-g">✅</span><br>
+        ④ 反复严重机会性感染 → <span class="c-g">✅</span><br>
+        <b>结论：确诊X-CGD</b>
+      </td></tr>
+      <tr><td class="b">CGD功能诊断（DHR/NBT试验）</td><td>国际共识</td><td>—</td><td>—</td><td>定性+定量（DHR荧光强度）</td><td>
+        ① 中性粒细胞氧化呼吸爆发试验阴性 → 原文提及"中性粒细胞氧化爆发试验阴性"<span class="c-g">✅</span><br>
+        ② DHR 123荧光定量：残余活性&lt;10%为典型X-CGD → <span class="c-y">【原文未给具体数值】</span><br>
+        <b>结论：功能试验支持</b>
+      </td></tr>
+    </table>
+    <div class="note">
+      <b>合并诊断：</b><br>
+      ① 重症肺炎（诺卡菌+曲霉重叠感染）— mNGS确诊+CT表现<br>
+      ② 呼吸衰竭 — 需CPAP+气管插管呼吸支持<br>
+      ③ 口腔颌面部间隙感染+颈部脓肿+肛周脓肿 — 临床体检<br>
+      ④ 既往史：生后21天发热+肺曲霉感染；8月龄肛周脓肿 → 符合CGD早年发病特征
+    </div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">普通细菌感染</td><td>发热+脓肿+肺炎</td><td>多种抗生素无效+诺卡菌/曲霉 → 非普通感染</td></tr>
+      <tr><td class="b">免疫缺陷继发感染</td><td>反复/难治性感染+机会性病原体</td><td>CYBB突变确诊 → CGD</td></tr>
+      <tr><td class="b">肺结核</td><td>肺部阴影+抗感染无效</td><td>mNGS未检出结核分枝杆菌+无TB接触史+PPD阴性 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：诺卡菌+曲霉重叠感染→高度提示CGD</div>
+      CGD患儿吞噬细胞NADPH氧化酶功能缺陷，无法有效杀灭过氧化氢酶阳性病原体。诺卡菌和曲霉均为过氧化氢酶阳性，两者的重叠感染几乎是CGD的"标志"——遇到此类感染组合应高度怀疑CGD。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">亚胺培南</td><td>15-20 mg/kg/次 q8h（按CGD诺卡菌方案）</td><td>静脉</td><td class="c-a">广谱覆盖诺卡菌（碳青霉烯类为一线）</td></tr>
+      <tr><td class="b">利奈唑胺</td><td>10 mg/kg/次 q8h</td><td>静脉</td><td class="c-a">诺卡菌二联治疗（恶唑烷酮类）</td></tr>
+      <tr><td class="b">伏立康唑</td><td>8 mg/kg/d（分2次，首日负荷量后维持）</td><td>静脉→口服</td><td class="c-a">抗曲霉一线（三唑类）</td></tr>
+      <tr><td class="b">复方磺胺甲噁唑</td><td>5-10 mg TMP/kg/d（分2次）</td><td>口服</td><td class="c-a">抗诺卡菌维持+CGD预防用药</td></tr>
+    </table>
+    <div class="alert"><b>关键决策：</b>CGD的根本治疗为异基因造血干细胞移植（HSCT）。本例无HLA相合供体，家属要求转上级医院。CGD确诊后应尽早行HLA配型，寻找合适供体进行HSCT。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">入院</div><div class="t-content">唇肿+发热+颈部脓肿，初始抗生素无效</div></div>
+      <div class="t-item yellow"><div class="t-date">确诊</div><div class="t-content">mNGS检出诺卡菌+曲霉；WES确诊X-CGD</div></div>
+      <div class="t-item yellow"><div class="t-date">抗感染治疗</div><div class="t-content">亚胺培南+利奈唑胺+伏立康唑，病情一度改善</div></div>
+      <div class="t-item red"><div class="t-date">2个月随访</div><div class="t-content"><span class="c-r">因严重感染死亡</span>（无HLA相合供体，未行HSCT）</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析（决策导向）</div>
+    <div class="diff-box">
+      <div class="diff-title">🔴 决策点一：婴幼儿反复深部感染→何时启动免疫缺陷筛查？</div>
+      <b>临床情境：</b>3岁8月男童以唇肿+颈部脓肿起病，既往生后21天即有肺曲霉感染史、8月龄肛周脓肿，多次住院。初始被当作普通感染处理。<br>
+      <b>决策路径：</b>①婴幼儿出现<b>反复深部感染（≥2次需住院的严重感染）</b>→应考虑原发性免疫缺陷 ②<b>过氧化氢酶阳性病原体</b>（诺卡菌、曲霉、葡萄球菌）的反复/重叠感染 → 高度提示CGD ③立即送检<b>中性粒细胞呼吸爆发试验（DHR 123或NBT）</b>→ 阳性者行基因检测确诊<br>
+      <b>本例教训：</b>患儿生后21天即有肺曲霉感染，若当时即行DHR筛查，可提前3年确诊CGD，为HSCT争取时间。<b>关键决策：对婴幼儿反复严重感染，不应仅满足于抗感染治疗，应主动筛查免疫功能。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟡 决策点二：常规抗感染无效→如何选择病原学诊断策略？</div>
+      <b>临床情境：</b>入院后予美罗培南+万古霉素+氟康唑经验性抗感染，病情无改善，出现呼吸衰竭。<br>
+      <b>决策路径：</b>①经验性广谱抗感染<b>48-72h无效</b>→应考虑罕见/耐药病原体 ②传统培养阳性率低且耗时长 → <b>mNGS是首选快速诊断工具</b>（24-48h出结果） ③本例通过脓液mNGS 24h内检出鼻疽诺卡菌，BALF mNGS 48h内进一步检出烟曲霉<br>
+      <b>关键决策：常规抗感染无效时，尽早送检mNGS而非等待培养结果。mNGS对CGD等免疫缺陷患者的罕见病原体诊断有决定性价值。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟢 决策点三：CGD确诊后→治疗路径如何规划？</div>
+      <b>临床情境：</b>WES确诊X-CGD后，需制定长期治疗计划。<br>
+      <b>决策路径：</b>①<b>急性期</b>：针对性抗感染（亚胺培南+利奈唑胺抗诺卡菌，伏立康唑抗曲霉，SMZ-TMP口服维持）②<b>长期管理</b>：终身SMZ-TMP预防+伊曲康唑/伏立康唑预防真菌感染+IFN-γ预防 ③<b>根治性治疗</b>：<b>异基因造血干细胞移植（HSCT）</b>是唯一根治手段——确诊后立即HLA配型 ④<b>无相合供体</b>→寻找无关供体或半相合移植<br>
+      <b>本例教训：</b>确诊时患儿与父亲/兄长仅5/10 HLA相合，无合适供体。转院后2个月因严重感染死亡。<b>关键决策：CGD确诊后应立即启动HLA配型和供体寻找，不可等待。对无合适供体者，应考虑半相合移植。</b>
+    </div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>诺卡菌/曲霉感染→高度怀疑CGD</li>
+          <li>mNGS有助罕见病原体鉴定</li>
+          <li>NBT/DHR试验→基因检测确诊</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>碳青霉烯+利奈唑胺抗诺卡菌</li>
+          <li>伏立康唑抗曲霉</li>
+          <li>尽早HSCT是根治手段</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>CGD患儿需终身SMZ预防</li>
+          <li>定期肺部CT监测</li>
+          <li>家族遗传咨询</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>X-CGD未移植预后差</li>
+          <li>重症感染死亡率高</li>
+          <li>早期HSCT显著改善预后</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/35057749/" target="_blank">PMID 35057749</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8772058/" target="_blank">PMC8772058</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Tian X, Shi Q, Liu P, et al. <i>Nocardia farcinica and Aspergillus fumigatus co-infection in X-linked chronic granulomatous disease</i>. BMC Infect Dis. 2022;22(1):52. PMID: 35057749.<br>
+      2. Holland SM. <i>Chronic granulomatous disease</i>. Hematol Oncol Clin North Am. 2013;27(1):89-99. PMID: 23351991.<br>
+      3. Arnold DE, Heimall JR. <i>A review of chronic granulomatous disease</i>. Adv Ther. 2017;34(12):2543-2557. PMID: 29177772.<br>
+      4. Kuhns DB, Alvord WG, Heller T, et al. <i>Residual NADPH oxidase and survival in chronic granulomatous disease</i>. N Engl J Med. 2010;363(27):2600-2610. PMID: 21120047.<br>
+      5. Hsu AP, Ding J, Goussetis E, et al. <i>CGD-associated X-linked CYBB mutations in a patient with resolving Crohn disease</i>. J Clin Immunol. 2016;36(3):278-282. PMID: 26853280.<br>
+      6. Marciano BE, Spalding C, Fitzgerald A, et al. <i>Common severe infections in chronic granulomatous disease</i>. Clin Infect Dis. 2015;60(8):1176-1183. PMID: 25537876.<br>
+      7. Gungor T, Teira P, Slatter M, et al. <i>Reduced-intensity conditioning and HLA-matched haemopoietic stem-cell transplantation in patients with chronic granulomatous disease: a prospective multicentre study</i>. Lancet. 2014;383(9915):436-448. PMID: 24161820.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

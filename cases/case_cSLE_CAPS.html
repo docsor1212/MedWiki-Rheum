@@ -29,6 +29,7 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
@@ -57,6 +58,7 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：cSLE合并灾难性抗磷脂综合征（CAPS）</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">8岁男孩 — 同时出现出血与血栓，向CAPS进展的危急历程</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
@@ -72,12 +74,42 @@ tr:hover td { background:#faf8f5; }
     <table>
       <tr><td class="b" style="width:130px">患者</td><td>8岁，男性</td></tr>
       <tr><td class="b">就诊机构</td><td>印度布巴内斯瓦尔，Kalinga Institute of Medical Sciences，儿科+风湿科</td></tr>
-      <tr><td class="b">既往史</td><td>既往体健，无特殊病史及家族史</td></tr>
+      <tr><td class="b">主诉</td><td>皮肤瘀斑伴鼻衄5天，右侧偏瘫1天</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">CAPS</span> <span class="tag t-r">出血+血栓并存</span> <span class="tag t-r">8岁男童</span> <span class="tag t-g">成功抢救</span></td></tr>
     </table>
 
     <div class="alert">
       <b>本病例独特性：</b>① <b>8岁男童</b>以APS为SLE首发表现（极为少见，SLE多见于青春期女性）；② 同时出现<b>出血（皮肤瘀斑、鼻衄、脑出血）和血栓（脑梗、指端坏疽）</b>，APS中罕见；③ 向<b>CAPS（Catastrophic Antiphospholipid Syndrome，灾难性抗磷脂综合征）</b>进展过程中成功抢救。
+    </div>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      8岁男孩，既往体健。5天前出现<b>广泛皮肤瘀斑</b>和<b>反复鼻衄</b>，1天前突发<b>右侧偏瘫</b>。首诊查血小板重度减少，aPTT显著延长，混合试验不纠正。<br><br>
+      住院期间出现左侧局灶性癫痫（双侧MCA区脑梗死）和指端坏疽，表现为出血与血栓并存。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>37.8℃</td></tr>
+        <tr><td>HR</td><td>118次/分</td></tr>
+        <tr><td>BP</td><td>110/70 mmHg</td></tr>
+        <tr><td>体重</td><td>26 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神差</td></tr>
+        <tr><td>皮肤黏膜</td><td><b>广泛皮肤瘀斑</b>，手指末端<b>缺血性坏疽</b></td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率118次/分，律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>腹软，肝脾未触及明显肿大</td></tr>
+        <tr><td>神经系统</td><td class="c-r"><b>右侧偏瘫</b>；住院期间出现<b>左侧局灶性癫痫</b></td></tr>
+        <tr><td>外周血管</td><td class="c-r">指端<b>坏疽</b>（外周动脉血栓）</td></tr>
+      </table>
     </div>
 
     <!-- 起病 -->
@@ -240,6 +272,20 @@ tr:hover td { background:#faf8f5; }
       ⑯ 清除免疫复合物 — 减少补体激活<br>
       ⑰ 同时补充FFP — 补充凝血因子和天然抗凝物质（蛋白C/S、抗凝血酶）<br>
       ⑱ 与静脉激素+CTX合用形成<b>三重打击</b>：清除（PEX）+ 抑制（激素）+ 根治（CTX）
+    </div>
+
+    <div class="sh green">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item green">
+        <div class="t-date">三联方案治疗后</div>
+        <div class="t-content">
+          • 血小板计数逐步恢复<br>
+          • 无新发血栓事件<br>
+          • 无新发出血事件<br>
+          • 神经系统症状稳定<br>
+          <span class="tag t-g">成功阻止CAPS进展，患者康复</span>
+        </div>
+      </div>
     </div>
 
     <div class="sh green">📚 临床要点总结</div>

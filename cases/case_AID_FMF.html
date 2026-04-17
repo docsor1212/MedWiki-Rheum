@@ -3,243 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：家族性地中海热（FMF）</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
-<title>病例：家族性地中海热 FMF — MedWiki-Rheum</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 :root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
 .wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--red); color:#fff; padding:12px 20px; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
 .b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 10px 10px 0; font-size:11.5px; margin-top:6px; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
 .timeline .t-item { margin-bottom:8px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-item.red::before { background:var(--red); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
 
 <div class="nav-bar">
-<span>🏥 MedWiki-Rheum</span>
-<a href="index_AID.html">← AID系列</a>
-<a href="case_AID_CAPS.html">CAPS →</a>
+  <a href="../index.html">🏠 首页</a>
+  <a href="index_AID.html">📖 AID病例专题</a>
+  <a href="case_AID_FMF.html">📖 本病例</a>
+  <span class="nav-title">教学病例</span>
 </div>
 
 <div class="wrap">
-<div class="header">
-<h1 style="margin:0;font-size:1.1rem;">家族性地中海热 — Familial Mediterranean Fever (FMF)</h1>
-<div style="font-size:0.78rem;opacity:.85;margin-top:3px;">自身炎症性疾病系列 · 病例 1/5</div>
-</div>
+  <div class="header">
+    <div>
+      <h1>📋 病例：家族性地中海热（FMF）</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">Familial Mediterranean Fever — MEFV M694V纯合突变</div>
+    </div>
+    <div class="meta">更新: 2026-04-16</div>
+  </div>
 
-<div style="padding:12px 20px;">
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
 
-<!-- 基本信息 -->
-<div class="sh">📋 病例摘要</div>
-<table>
-<tr><td class="b" style="width:80px;">患者</td><td>12岁，男，土耳其裔</td></tr>
-<tr><td class="b">主诉</td><td>反复发热伴腹痛、关节肿痛3年，加重2周</td></tr>
-<tr><td class="b">现病史</td><td>自9岁起反复出现发热（38.5–40°C），每次持续1–3天，伴弥漫性腹痛、左侧胸痛及双膝/踝关节肿痛。发作间期完全正常。发作频率约每4–6周1次，夏季偶有缓解。曾于外院多次就诊，疑诊"阑尾炎""功能性腹痛""幼年特发性关节炎"。近2周发作频率增加，每2周发作1次，严重时需卧床。</td></tr>
-<tr><td class="b">家族史</td><td>父亲有类似反复发热史，未经确诊；一位堂兄有"肾病"史（疑AA型淀粉样变性）</td></tr>
-<tr><td class="b">体格检查</td><td>T 39.2°C，HR 112次/min，腹部弥漫性压痛，无反跳痛，双膝关节肿胀、活动受限，左踝关节压痛阳性。躯干可见散在红斑丘疹（丹毒样红斑，Erysipelas-like Erythema）。</td></tr>
-</table>
+  <div class="body">
 
-<!-- 发病机制 -->
-<div class="sh red">🧬 发病机制与病理生理</div>
+    <!-- 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>艾XX，男，12岁，土耳其裔</td></tr>
+      <tr><td class="b">就诊日期</td><td>2025-06-15</td></tr>
+      <tr><td class="b">主诉</td><td>反复发热伴腹痛、关节肿痛3年，加重2周</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">FMF</span> <span class="tag t-a">MEFV</span> <span class="tag t-y">M694V纯合</span> <span class="tag t-g">秋水仙碱</span></td></tr>
+    </table>
 
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">MEFV基因与Pyrin蛋白</h4>
-<p style="font-size:12px;margin:3px 0;">家族性地中海热（FMF，Familial Mediterranean Fever）是最常见的遗传性自身炎症性疾病（AID，Autoinflammatory Disease），由<span class="b">MEFV基因</span>（MEditerranean FeVer gene，地中海热基因）突变引起。MEFV位于<span class="b">第16号染色体短臂（16p13.3）</span>，编码<span class="b">Pyrin蛋白</span>（也称Marenostrin）。FMF主要呈<span class="b">常染色体隐性遗传</span>，但部分杂合子携带者亦可出现临床症状。</p>
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      3年前（9岁时）起无明显诱因出现发热，体温最高达39.0–40.0°C，每次持续1–3天可自行缓解。发作时伴<b>弥漫性腹痛</b>（腹膜炎样）、左侧胸痛（胸膜炎）及双膝、踝关节肿痛。发作间期完全正常。<br><br>
+      发作频率约每4–6周1次，夏季偶有缓解。曾于外院多次就诊，疑诊"急性胃肠炎""阑尾炎""功能性腹痛""幼年特发性关节炎（全身型）"，每次发作自行缓解后未进一步追查。试用NSAID效果不佳。<br><br>
+      近2周发作频率增加至每2周1次，严重时需卧床，左踝关节新受累。转诊至风湿免疫科。<br><br>
+      <b>既往史</b>：足月顺产，生长发育正常，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：无特殊。&nbsp;&nbsp;<b>家族史</b>：父亲有类似反复发热史，未经确诊；一位堂兄有"肾病"史（疑AA型淀粉样变性）。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
 
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">Pyrin炎症小体通路</h4>
-<p style="font-size:12px;margin:3px 0;">Pyrin蛋白是天然免疫系统中<span class="b">炎症小体（Inflammasome）</span>的重要调控组件。正常情况下，Pyrin通过检测Rho GTP酶的失活状态来感知病原体效应（如毒素介导的RhoA糖基化）。当RhoA被抑制时，Pyrin从抑制复合物中释放，与<span class="b">ASC（Apoptosis-associated Speck-like Protein，凋亡相关斑点样蛋白）</span>和<span class="b">Caspase-1</span>组装成<span class="b">Pyrin炎症小体</span>。</p>
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.2°C</td></tr>
+        <tr><td>HR</td><td>112次/分</td></tr>
+        <tr><td>BP</td><td>105/65 mmHg</td></tr>
+        <tr><td>体重</td><td>38 kg（P50）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>急性病容，神志清，精神差</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">躯干散在红斑丘疹（丹毒样红斑）</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率112次/分，律齐；左下肺呼吸音减低（胸膜炎）</td></tr>
+        <tr><td>腹部</td><td class="c-r">弥漫性压痛，无反跳痛，肝脾未触及</td></tr>
+        <tr><td>关节</td><td class="c-r">双膝关节肿胀、活动受限；左踝关节压痛阳性</td></tr>
+      </table>
+    </div>
 
-<p style="font-size:12px;margin:3px 0;">炎症小体激活后，Caspase-1切割pro-<span class="b">IL-1β（Interleukin-1β，白介素-1β）</span>和pro-<span class="b">IL-18（Interleukin-18，白介素-18）</span>为活性形式，导致大量促炎细胞因子释放。</p>
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>15.8×10⁹/L</td><td>4–10</td><td class="c-r">↑↑</td></tr>
+      <tr><td>中性粒细胞</td><td>82%</td><td>40–75%</td><td class="c-r">↑</td></tr>
+      <tr><td>Hb</td><td>105 g/L</td><td>110–140</td><td class="c-r">轻度贫血</td></tr>
+      <tr><td>PLT</td><td>398×10⁹/L</td><td>150–350</td><td class="c-r">↑</td></tr>
+      <tr><td>ESR</td><td>68 mm/h</td><td>0–15</td><td class="c-r">↑↑</td></tr>
+      <tr><td>CRP</td><td>120 mg/L</td><td>&lt;8</td><td class="c-r">↑↑</td></tr>
+      <tr><td>SAA</td><td>580 mg/L</td><td>0–3</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>纤维蛋白原</td><td>6.2 g/L</td><td>2.0–4.0</td><td class="c-r">↑</td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>RF</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>血培养</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>肝肾功能</td><td>正常</td><td></td><td></td></tr>
+      <tr><td>尿常规</td><td>蛋白阴性</td><td></td><td></td></tr>
+    </table>
+    <div class="note">腹部超声：少量腹腔游离积液。关节超声（双膝）：关节腔积液，滑膜增厚。</div>
+    <div class="note">基因检测：MEFV c.2080A&gt;G (p.Met694Val) <b>M694V纯合突变</b>。M694V纯合是FMF最常见且最严重的基因型。</div>
 
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">突变如何导致过度炎症</h4>
-<p style="font-size:12px;margin:3px 0;">MEFV致病突变（最常见：<span class="b">M694V、V726A、M680I、M694I</span>）导致Pyrin蛋白B30.2/SPRY结构域构象改变，使Pyrin炎症小体<span class="b">无需正常的RhoA失活信号即可自发组装</span>。这造成：</p>
-<ul style="font-size:12px;margin:2px 0 2px 16px;">
-<li><span class="b">IL-1β过度产生</span>：驱动发热、急性期反应</li>
-<li><span class="b">中性粒细胞趋化增强</span>：导致腹膜、胸膜、滑膜等浆膜腔炎症</li>
-<li><span class="b">SAA（Serum Amyloid A，血清淀粉样蛋白A）</span>持续升高：长期可致<span class="b">AA型淀粉样变性</span>，为最严重并发症</li>
-</ul>
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>Tel Hashomer标准（儿科适用）</th><th>符合情况</th></tr>
+      <tr><td>① 典型发作：反复发热（&gt;3次）+ 腹膜炎/胸膜炎/关节炎/丹毒样红斑中≥1项</td><td>✅ 反复发热+腹膜炎+胸膜炎+关节炎+丹毒样红斑</td></tr>
+      <tr><td>② 秋水仙碱治疗有效</td><td>✅（后续验证）</td></tr>
+      <tr><td>③ MEFV致病突变（双等位基因）</td><td>✅ M694V纯合突变</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>诊断：家族性地中海热（FMF），M694V纯合突变型</b><br>
+      满足≥2项主要标准。M694V纯合与高发作频率、关节炎及AA淀粉样变性风险密切相关。
+    </div>
 
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">炎症级联反应</h4>
-<p style="font-size:12px;margin:3px 0;">发作期炎症级联：<span class="b">MEFV突变 → Pyrin炎症小体过度激活 → Caspase-1活化 → IL-1β/IL-18释放 → 中性粒细胞浸润浆膜 → 发热+浆膜炎+关节炎</span>。同时IL-6、TNF-α等继发性炎症因子升高，进一步放大炎症反应。发作通常持续12小时至3天，可自行缓解，这与中性粒细胞凋亡和炎症小体自我调控机制有关。</p>
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">秋水仙碱（Colchicine）</td><td>起始0.5 mg/d 口服，渐增至1.0–1.5 mg/d</td><td class="c-a">FMF基石治疗，抑制Pyrin炎症小体</td></tr>
+      <tr><td class="b">NSAID</td><td>布洛芬 10 mg/kg 必要时</td><td>发作期桥接镇痛</td></tr>
+    </table>
+    <div class="alert">
+      <b>用药要点：</b>①秋水仙碱需终身服用 ②不依从可导致复发及AA淀粉样变性 ③腹泻常见，可从小剂量起始逐渐加量 ④每3月监测CRP/SAA/尿蛋白
+    </div>
 
-<div class="note">💡 FMF的"自身炎症"本质是先天免疫系统的固有过度激活，与自身免疫病的适应性免疫紊乱不同——不存在自身抗体或自身反应性T细胞。</div>
+    <!-- 随访时间线 -->
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">第0周（2025-06-15）</div>
+        <div class="t-content">
+          启动秋水仙碱 0.5 mg/d → 第3天加至 1.0 mg/d。
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">第2周</div>
+        <div class="t-content">
+          腹泻2–3次/天，可耐受。发作次数减少。
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第4周</div>
+        <div class="t-content">
+          秋水仙碱加至1.5 mg/d。近2周无发作，CRP正常。<br>
+          <span class="tag t-g">✅ 发作控制</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第3月</div>
+        <div class="t-content">
+          持续无发作，SAA恢复正常（&lt;3 mg/L）。体力活动恢复正常。<br>
+          <span class="tag t-g">✅ 完全缓解</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">长期随访</div>
+        <div class="t-content">
+          持续秋水仙碱1.5 mg/d，每3月监测CRP/SAA/尿蛋白。关注AA淀粉样变性风险。
+        </div>
+      </div>
+    </div>
 
-<!-- 鉴别诊断对比 -->
-<div class="sh yellow">⚖️ 鉴别诊断与对比</div>
-<table>
-<tr><th>特征</th><th>FMF</th><th>CAPS</th><th>TRAPS</th></tr>
-<tr><td class="b">致病基因</td><td>MEFV</td><td>NLRP3</td><td>TNFRSF1A</td></tr>
-<tr><td class="b">遗传方式</td><td>常隐</td><td>常显</td><td>常显</td></tr>
-<tr><td class="b">发作持续时间</td><td>12h–3天</td><td>数小时–持续</td><td>1–3周</td></tr>
-<tr><td class="b">发热特点</td><td>间歇性高热</td><td>寒冷诱发/持续低热</td><td>迁延性发热</td></tr>
-<tr><td class="b">皮疹</td><td>丹毒样红斑</td><td>荨麻疹</td><td>游走性红斑</td></tr>
-<tr><td class="b">腹部症状</td><td>腹膜炎样腹痛</td><td>少见</td><td>腹痛+浆膜炎</td></tr>
-<tr><td class="b">关节受累</td><td>急性关节炎（大关节）</td><td>关节痛/关节炎</td><td>关节炎+肌痛</td></tr>
-<tr><td class="b">特殊表现</td><td>AA淀粉样变性</td><td>感音神经性耳聋</td><td>眶周水肿</td></tr>
-<tr><td class="b">一线治疗</td><td>秋水仙碱</td><td>IL-1抑制剂</td><td>NSAID/IL-1阻断</td></tr>
-</table>
+    <!-- 要点 -->
+    <div class="sh green">📚 病例要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① 反复发热（1–3天自限）+ 浆膜炎（腹膜/胸膜）+ 关节炎 + 丹毒样红斑 → FMF<br>
+      ② 发作间期完全正常是FMF特征<br>
+      ③ M694V纯合突变是FMF最常见且最严重的基因型<br><br>
+      <b>2. 鉴别诊断</b><br>
+      ④ FMF发作持续1–3天，区别于TRAPS（&gt;1周）和CAPS（持续）<br>
+      ⑤ 秋水仙碱有效可反证诊断<br><br>
+      <b>3. 治疗与预后</b><br>
+      ⑥ 秋水仙碱是FMF基石治疗，需终身服用<br>
+      ⑦ 不依从可致AA淀粉样变性（最严重并发症）<br>
+      ⑧ 难治性FMF（5–10%）可考虑IL-1抑制剂（阿那白滞素/卡那单抗）
+    </div>
 
-<!-- 辅助检查 -->
-<div class="sh green">🔬 辅助检查</div>
-<table>
-<tr><th>检查项目</th><th>结果</th><th>参考范围</th></tr>
-<tr><td>WBC（白细胞计数）</td><td>15.8 × 10⁹/L <span class="tag t-r">↑</span></td><td>4.0–10.0</td></tr>
-<tr><td>中性粒细胞</td><td>82% <span class="tag t-r">↑</span></td><td>40–75%</td></tr>
-<tr><td>ESR（红细胞沉降率）</td><td>68 mm/h <span class="tag t-r">↑</span></td><td>0–15</td></tr>
-<tr><td>CRP（C反应蛋白）</td><td>120 mg/L <span class="tag t-r">↑↑</span></td><td>0–8</td></tr>
-<tr><td>SAA（血清淀粉样蛋白A）</td><td>580 mg/L <span class="tag t-r">↑↑</span></td><td>0–3</td></tr>
-<tr><td>Fibrinogen（纤维蛋白原）</td><td>6.2 g/L <span class="tag t-r">↑</span></td><td>2.0–4.0</td></tr>
-<tr><td>ANA（抗核抗体）</td><td>阴性</td><td>—</td></tr>
-<tr><td>RF（类风湿因子）</td><td>阴性</td><td>—</td></tr>
-<tr><td>血培养</td><td>阴性</td><td>—</td></tr>
-<tr><td>腹部超声</td><td>少量腹腔游离积液</td><td>—</td></tr>
-<tr><td>关节超声（双膝）</td><td>关节腔积液，滑膜增厚</td><td>—</td></tr>
-</table>
+    <!-- 文献 -->
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Ozen S, et al. <i>The Eurofever/PRINTO registry: FMF clinical features in children.</i> Arthritis Rheumatol. 2022. PMID: 35127599<br>
+      2. Demir S, et al. <i>Familial Mediterranean fever in childhood.</i> Pediatr Rheumatol. 2024. PMID: 39540697<br>
+      3. Yalcinkaya F, Ozen S. <i>A modified classification criteria for FMF in children.</i> Rheumatology (Oxford). 2024. PMID: 35812376
+    </div>
 
-<!-- 基因检测 -->
-<div class="sh">🧪 基因检测</div>
-<table>
-<tr><th>基因</th><th>变异</th><th>合子状态</th><th>致病性</th></tr>
-<tr><td>MEFV</td><td>c.2080A&gt;G (p.Met694Val) 即 <span class="b">M694V</span></td><td>纯合突变</td><td><span class="tag t-r">致病</span></td></tr>
-<tr><td>MEFV</td><td>c.2082G&gt;C (p.Met694Ile) 即 <span class="b">M694I</span></td><td>未检测到</td><td>—</td></tr>
-</table>
-<div class="note">💡 M694V纯合突变是FMF最常见且最严重的基因型，与高发作频率、关节炎及AA淀粉样变性风险密切相关。</div>
+  </div>
 
-<!-- 临床时间线 -->
-<div class="sh">📅 临床时间线</div>
-<div class="timeline">
-<div class="t-item red">
-<div class="t-date">9岁（约3年前）</div>
-<div class="t-content">首次发作：发热39°C + 弥漫性腹痛 + 膝关节肿痛，持续2天自行缓解。急诊就诊，疑诊"急性胃肠炎"。</div>
-</div>
-<div class="t-item red">
-<div class="t-date">9–11岁</div>
-<div class="t-content">反复发作，每4–8周1次。多次急诊就诊，疑诊"阑尾炎""功能性腹痛"。每次发作自行缓解，间歇期完全正常。</div>
-</div>
-<div class="t-item">
-<div class="t-date">11岁</div>
-<div class="t-content">外院风湿科就诊，查CRP/ESR升高，ANA阴性。疑诊"幼年特发性关节炎（系统性关节炎型）"，试用NSAID效果不佳。</div>
-</div>
-<div class="t-item red">
-<div class="t-date">12岁（本次就诊前2周）</div>
-<div class="t-content">发作频率增加至每2周1次，伴左侧胸痛（胸膜炎）、踝关节新受累。转诊至专科中心。</div>
-</div>
-<div class="t-item">
-<div class="t-date">确诊后</div>
-<div class="t-content">MEFV基因检测回报M694V纯合突变，确诊FMF。启动秋水仙碱治疗。</div>
-</div>
-</div>
+  <div style="display:flex; justify-content:space-between; margin:10px 20px 4px;">
+    <a href="case_AID_CAPS.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一个：CAPS</a>
+    <a href="index_AID.html" style="color:var(--accent);font-size:12px;text-decoration:none;">📖 AID病例索引</a>
+    <a href="case_AID_NLRC4.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个：NLRC4 →</a>
+  </div>
 
-<!-- 诊断标准 -->
-<div class="sh yellow">📝 诊断标准（Tel Hashomer标准，儿科适用）</div>
-<p style="font-size:12px;margin:3px 0;">FMF的诊断主要基于临床表现，基因检测为辅助确认。常用<span class="b">Tel Hashomer标准</span>或<span class="b">Yalcinkaya-Ozen标准（儿童专用，2018 Eurofever/PRINTO修订）</span>：</p>
-<table>
-<tr><th>主要标准</th><th>次要标准</th></tr>
-<tr><td>① 典型发作：反复发热（>3次）+ 腹膜炎/胸膜炎/关节炎/丹毒样红斑中≥1项</td><td>① 发作间期完全正常</td></tr>
-<tr><td>② 秋水仙碱治疗有效</td><td>② 一级亲属FMF病史</td></tr>
-<tr><td>③ MEFV致病突变（双等位基因）</td><td>③ 急性期CRP/SAA显著升高</td></tr>
-</table>
-<div class="note">诊断要求：≥2项主要标准，或1项主要+2项次要标准。本例满足①典型发作+②秋水仙碱有效+③MEFV纯合突变，确诊成立。</div>
-
-<!-- 治疗 -->
-<div class="sh green">💊 治疗方案</div>
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">一线治疗：秋水仙碱（Colchicine）</h4>
-<p style="font-size:12px;margin:3px 0;">秋水仙碱是FMF的<span class="b">基石治疗</span>，通过多种机制抑制Pyrin炎症小体激活：</p>
-<ul style="font-size:12px;margin:2px 0 2px 16px;">
-<li><span class="b">微管聚合抑制</span>：阻断ASC向炎症小体的募集和组装</li>
-<li><span class="b">RhoA-Pyrin通路调节</span>：恢复Pyrin的正常抑制调控</li>
-<li><span class="b">中性粒细胞功能抑制</span>：减少趋化、脱颗粒和NETosis</li>
-</ul>
-
-<table>
-<tr><th>药物</th><th>剂量</th><th>途径</th><th>注意事项</th></tr>
-<tr><td class="b">秋水仙碱</td><td>起始 0.5 mg/d，渐增至 1.0–1.5 mg/d</td><td>口服</td><td>需终身服用，依从性是关键</td></tr>
-</table>
-
-<div class="alert">⚠️ 秋水仙碱需终身服用！不依从或减量可导致复发及AA淀粉样变性进展。胃肠道不良反应（腹泻）常见，可从小剂量起始逐渐加量。</div>
-
-<h4 style="font-size:0.82rem;margin:6px 0 3px;">难治性FMF的治疗选择</h4>
-<p style="font-size:12px;margin:3px 0;">约5–10%患者对秋水仙碱不耐受或疗效不足，可考虑：</p>
-<ul style="font-size:12px;margin:2px 0 2px 16px;">
-<li><span class="b">IL-1抑制剂</span>：阿那白滞素（Anakinra）/卡那单抗（Canakinumab）——直接阻断IL-1β通路</li>
-<li><span class="b">IL-6抑制剂</span>：托珠单抗（Tocilizumab）——个案报道有效</li>
-<li><span class="b">TNF抑制剂</span>：依那西普（Etanercept）——部分有效</li>
-</ul>
-
-<!-- 本例预后 -->
-<div class="sh green">📈 本例治疗经过与随访</div>
-<div class="timeline">
-<div class="t-item">
-<div class="t-date">第0周</div>
-<div class="t-content">启动秋水仙碱 0.5 mg/d → 第3天加至 1.0 mg/d</div>
-</div>
-<div class="t-item">
-<div class="t-date">第2周</div>
-<div class="t-content">腹泻2–3次/d，可耐受。发作次数减少。</div>
-</div>
-<div class="t-item">
-<div class="t-date">第4周</div>
-<div class="t-content">秋水仙碱加至 1.5 mg/d。近2周无发作，CRP正常。</div>
-</div>
-<div class="t-item">
-<div class="t-date">第3个月</div>
-<div class="t-content">持续无发作，SAA恢复正常范围（<3 mg/L）。体力活动恢复正常。</div>
-</div>
-<div class="t-item">
-<div class="t-date">长期随访</div>
-<div class="t-content">持续秋水仙碱治疗，每3月监测CRP/SAA/尿蛋白。需关注淀粉样变性风险。</div>
-</div>
-</div>
-
-<!-- 并发症 -->
-<div class="sh red">⚠️ 并发症监测</div>
-<table>
-<tr><th>并发症</th><th>发生率</th><th>监测手段</th><th>备注</th></tr>
-<tr><td class="b">AA型淀粉样变性</td><td>未治疗者高达60%（高危人群）</td><td>尿蛋白/肌酐比、SAA持续监测</td><td>最严重的长期并发症，可致肾病综合征/肾衰竭</td></tr>
-<tr><td class="b">慢性关节炎</td><td>5–10%</td><td>关节影像学</td><td>髋关节最常受累，可致关节破坏</td></tr>
-<tr><td class="b">不孕（男性）</td><td>少见</td><td>精液分析</td><td>秋水仙碱高剂量可能影响精子</td></tr>
-<tr><td class="b">药物不良反应</td><td>腹泻5–20%</td><td>临床观察</td><div class="note" style="margin:0;padding:0;border:none;">肌病/神经毒性罕见，多见于肾功能不全者</div></td></tr>
-</table>
-
-<!-- 参考文献 -->
-<div class="sh">📚 参考文献</div>
-<table>
-<tr><td style="width:30px;">1.</td><td>Llobet-Agulló P, et al. Familial Mediterranean fever in the pediatric population. <i>Allergol Immunopathol (Madr)</i>. 2022;50(1):25-30. <span class="tag t-a">PMID: 34873893</span> DOI: 10.15586/aei.v50i1.446</td></tr>
-<tr><td>2.</td><td>Ozen S, et al. The Eurofever/PRINTO registry: FMF clinical features in children. <i>Arthritis Rheumatol</i>. 2022. <span class="tag t-a">PMID: 35127599</span></td></tr>
-<tr><td>3.</td><td>Demir S, et al. Familial Mediterranean fever in childhood. <i>Pediatr Rheumatol</i>. 2024. <span class="tag t-a">PMID: 39540697</span></td></tr>
-<tr><td>4.</td><td>Yalcinkaya F, Ozen S. A modified classification criteria for FMF in children. <i>Rheumatology (Oxford)</i>. 2024. <span class="tag t-a">PMID: 35812376</span></td></tr>
-<tr><td>5.</td><td> park JH, et al. Colchicine mechanisms in FMF and other inflammasome-related diseases. <i>Nat Rev Rheumatol</i>. 2023;19:145-158.</td></tr>
-</table>
-
-<!-- 免责声明 -->
-<div class="footer">
-<p style="margin:2px 0;">⚠️ <b>免责声明</b>：本病例仅用于医学教育目的，基于文献改编的虚拟病例。不构成任何诊疗建议。患者诊治请遵循临床指南和专科医师意见。</p>
-<p style="margin:2px 0;">MedWiki-Rheum © 2026 · 自身炎症性疾病系列</p>
-</div>
-
-</div>
+  <div class="footer">
+    示范性合成病例 · MEFV M694V纯合突变 · 秋水仙碱基石治疗 · AA淀粉样变性监测 · 不构成诊疗建议
+  </div>
 </div>
 
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>

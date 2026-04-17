@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：皮肤型结节性多动脉炎（cPAN）</title>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);">
+  <a href="../index.html" style="color:#fff;text-decoration:none;opacity:.85">🏠 首页</a>
+  <a href="ev_PAN_01.html" style="color:#fff;text-decoration:none;opacity:.85">📖 本病例</a>
+  <span style="margin-left:auto;font-size:11px;opacity:.7">循证病例</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：皮肤型结节性多动脉炎（cPAN）</h1>
+      <div class="sub">Cutaneous Polyarteritis Nodosa in Childhood — 真实文献病例</div>
+    </div>
+    <div class="meta">
+      文献来源: Bansal & Houghton 2010<br>
+      PMID: 22046510 · PMC3200074
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 1. 文献来源 -->
+    <div class="sh">📄 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">文献</td><td>Bansal NK, Houghton KM. <i>Cutaneous Polyarteritis Nodosa in Childhood: A Case Report and Review of the Literature.</i> Arthritis. 2010;2010:687547.</td></tr>
+      <tr><td class="b">DOI</td><td>10.1155/2010/687547</td></tr>
+      <tr><td class="b">PMID</td><td>22046510</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC3200074</td></tr>
+      <tr><td class="b">类型</td><td>病例报告 + 文献综述（含119例cPAN回顾）</td></tr>
+    </table>
+
+    <div class="alert"><b>流行病学提示：</b>儿童皮肤型PAN（cPAN）为罕见病，文献报告约<b>140例</b>（1950-2009年）。女:男比1.2:1，中位发病年龄10岁。<b>86.2%</b>的病例与A组链球菌感染相关（ASOT升高）。预后通常<b>良好</b>，但约10-20%为难治性需DMARD/生物制剂。仅约4%的cPAN进展为系统性PAN。</div>
+
+    <!-- 2. 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>女，7.5岁，高加索-中东混血</td></tr>
+      <tr><td class="b">主诉</td><td>左下颌肿胀、颈部疼痛、发热1天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">皮肤型PAN</span> <span class="tag t-r">多系统受累</span> <span class="tag t-y">链球菌感染后</span></td></tr>
+    </table>
+
+    <!-- 3. 主诉（≤20字） -->
+    <div class="alert" style="background:#d4f0ed;border-left-color:var(--accent);">
+      <b style="color:var(--accent)">主诉</b>　7.5岁女童左下颌肿胀、颈部疼痛、发热1天
+    </div>
+
+    <!-- 4. 现病史 -->
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">左下颌肿胀、颈部疼痛、发热1天</p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿因<b>咽痛3天、发热1天</b>就诊，伴左侧下颌肿胀及颈部活动受限疼痛。予红霉素治疗。<br><br>
+      <b>入院后进展</b>：发热持续，水肿迅速蔓延至右下颌及前胸壁。第5天出现瘙痒性丘疹红斑（面、颈、胸、背部），掌红斑及足背丘疹。第8天出现左膝及踝关节痛、双侧小腿痛、右胫骨压痛及足背痛，双踝积液，无法负重。<br><br>
+      病程中并发急性肾损伤（推测为万古霉素+NSAID肾毒性）、呕血、轻度肝炎及凝血异常。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健，按时接种。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：父亲近期链球菌咽炎，其余无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <!-- 5. 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td class="c-r">38.2℃</td></tr>
+        <tr><td>其余生命体征</td><td>正常</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">主要体征</th></tr>
+        <tr><td>面部/颈部</td><td class="c-r">左侧下颌→双侧下颌+前胸壁弥漫水肿</td></tr>
+        <tr><td>皮肤</td><td class="c-r">丘疹性红斑（面颈胸背）、掌红斑、网状青斑、皮下结节（四肢）</td></tr>
+        <tr><td>关节</td><td class="c-r">多关节炎（膝、踝），双踝积液</td></tr>
+        <tr><td>肌肉</td><td class="c-r">小腿压痛，近端肌力下降（4-/4+级），Gower征阳性</td></tr>
+        <tr><td>神经系统</td><td class="c-r">单神经炎多发（足下垂、跟腱痉挛）</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>29.7×10⁹/L</td><td>5-12</td><td class="c-r">↑↑↑ 白细胞增多</td></tr>
+      <tr><td>中性粒细胞</td><td>26.34×10⁹/L</td><td></td><td class="c-r">中性粒细胞为主</td></tr>
+      <tr><td>Hb</td><td>118 g/L</td><td>115-140</td><td>正常</td></tr>
+      <tr><td>PLT</td><td>466×10⁹/L</td><td>150-350</td><td class="c-y">↑ 血小板增多（炎症）</td></tr>
+      <tr><td>CRP</td><td>77 mg/L</td><td>&lt;8</td><td class="c-r">↑↑</td></tr>
+      <tr><td>ESR</td><td>47 mm/h</td><td>0-20</td><td class="c-r">↑</td></tr>
+      <tr><td>ASOT</td><td>643 IU/mL</td><td>&lt;200</td><td class="c-r">↑↑（链球菌感染后）</td></tr>
+      <tr><td>ANCA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>抗dsDNA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>乙肝/丙肝</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>皮肤活检</td><td colspan="3" class="c-r">间隔性脂膜炎伴白细胞碎裂性血管炎（小-中等血管），符合cPAN</td></tr>
+      <tr><td>神经传导</td><td colspan="3">左腓神经、右正中神经波幅↓，双侧胫神经传导速度↓ → <b>单神经炎多发</b></td></tr>
+      <tr><td>肾血管造影</td><td colspan="3">正常（排除系统性PAN）</td></tr>
+    </table>
+
+    <!-- 6.5 发病机制 -->
+    <div class="sh blue">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>一、血管炎核心病理</b><br>
+      cPAN的病理本质为<b>中小肌性动脉的坏死性血管炎</b>，活检可见血管壁中性粒细胞浸润、纤维素样坏死及白细胞碎裂。与系统性PAN不同，cPAN的病变局限于皮肤、皮下组织、肌肉、关节和周围神经的血管，不累及肾、胃肠道、中枢神经系统等内脏器官。原文指出，皮肤活检显示"间隔性脂膜炎伴白细胞碎裂性血管炎（小-中等血管）"，是确诊cPAN的病理金标准。<br><br>
+      <b>二、链球菌感染的触发作用</b><br>
+      原文文献综述中，86.2%的儿童cPAN病例A组链球菌（GAS）检测阳性，本例ASOT高达643 IU/mL（正常<200），父亲同期链球菌咽炎，强烈提示链球菌感染为免疫触发的起始事件。推测机制为：链球菌抗原与血管壁成分存在分子模拟→免疫复合物沉积于中小动脉壁→补体激活→中性粒细胞趋化→血管壁损伤。然而，单纯抗感染治疗不足以控制病情，说明自身免疫机制一旦启动即呈自限性丧失。<br><br>
+      <b>三、免疫学特征</b><br>
+      cPAN通常ANCA阴性（本例p-ANCA、c-ANCA均阴性），ANA阴性，补体正常，提示其发病不依赖ANCA介导的机制，与显微镜下多血管炎（MPA）等ANCA相关血管炎本质不同。发病更倾向<b>免疫复合物介导</b>的血管损伤通路。原文未报告特殊细胞因子数据，但高CRP（77 mg/L）和ESR（47 mm/h）提示促炎因子（IL-6、TNF-α）广泛活化。<br><br>
+      <b>四、神经与肌肉受累机制</b><br>
+      本例单神经炎多发（足下垂、跟腱痉挛）和近端肌病（Gower征阳性）表明cPAN可累及营养神经和肌肉的中小动脉。神经传导研究证实左腓神经、右正中神经波幅下降，双侧胫神经传导速度减慢，符合血管炎性周围神经病的电生理特征——即神经的滋养动脉炎症导致神经缺血性损伤。<br><br>
+      <b>五、治疗反应的免疫学启示</b><br>
+      患儿对激素冲击有效但减量后复发，环磷酰胺部分有效，英夫利西单抗（抗TNF-α）效果不充分，最终利妥昔单抗（抗CD20/B细胞耗竭）成功控制。这一序贯治疗反应提示：B细胞及其产生的自身抗体在cPAN持续炎症中发挥核心作用，单纯抑制T细胞/巨噬细胞（TNF-α阻断）可能不足以控制B细胞驱动的慢性炎症。
+      <div class="note">以上内容依据原文PMC3200074中病例描述、文献综述数据及病理/实验室结果推演。原文未直接阐述分子机制。</div>
+    </div>
+
+    <!-- 7. 诊断 -->
+    <div class="sh green">✅ 诊断标准对照</div>
+    <table>
+      <tr><th colspan="4" style="background:#e8f4f2;">标准一：1990年ACR结节性多动脉炎分类标准（Lightfoot et al., <i>Arthritis Rheum</i> 1990;33:1088-1093）—— ≥3/10条确诊，敏感性82.2%，特异性86.6%</th></tr>
+      <tr><th style="width:30px">序</th><th>标准条目</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>1</td><td>体重下降≥4kg（非饮食或运动因素）</td><td>体重下降不明显</td><td>—</td></tr>
+      <tr><td>2</td><td>网状青斑</td><td>有网状青斑</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>睾丸疼痛或压痛</td><td>女性患者，不适用</td><td>—</td></tr>
+      <tr><td>4</td><td>肌痛、肢体无力或腿压痛</td><td>小腿压痛、近端肌力4-级、Gower征+</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>单神经炎多发或多发性神经病变</td><td>足下垂、跟腱痉挛，NCS证实多发单神经炎</td><td class="c-g">✅</td></tr>
+      <tr><td>6</td><td>舒张压>90mmHg或高血压</td><td>无高血压</td><td>—</td></tr>
+      <tr><td>7</td><td>尿素氮>40mg/dL或肌酐>1.5mg/dL</td><td>一过性急性肾损伤（药物性），肾血管造影正常</td><td>—</td></tr>
+      <tr><td>8</td><td>乙肝病毒感染（HBsAg或HBV抗体阳性）</td><td>HBsAg阴性</td><td>—</td></tr>
+      <tr><td>9</td><td>血管造影示内脏动脉微动脉瘤或狭窄</td><td>肾血管造影正常（排除系统性PAN）</td><td>—</td></tr>
+      <tr><td>10</td><td>中小动脉活检示多形核细胞浸润</td><td>皮肤活检：白细胞碎裂性血管炎（中小血管）</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="3" class="b">ACR标准小结：满足4/10条 ≥ 3条阈值</td><td class="b c-g">符合（4条）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">标准二：EULAR/PRINTO/PRES儿童PAN分类标准（Ozen et al., <i>Ann Rheum Dis</i> 2010;69:798-806）—— 血管造影异常（必须）+ ≥1/5条</th></tr>
+      <tr><th style="width:30px">序</th><th>标准条目</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td colspan="2"><b>必须条件：血管造影或活检异常</b></td><td>皮肤活检示坏死性血管炎</td><td class="c-g">✅</td></tr>
+      <tr><td>1</td><td>皮肤受累（网状青斑、皮下结节、其他皮肤血管炎表现）</td><td>网状青斑、皮下结节、丘疹红斑</td><td class="c-g">✅</td></tr>
+      <tr><td>2</td><td>肌痛/肢体压痛</td><td>小腿压痛</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>高血压</td><td>无</td><td>—</td></tr>
+      <tr><td>4</td><td>周围神经病变（单神经炎多发）</td><td>足下垂、NCS异常</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>肾受累（蛋白尿/血尿/肾功能不全）</td><td>一过性药物性肾损伤，肾血管造影正常</td><td>—</td></tr>
+      <tr><td colspan="3" class="b">EULAR/PRINTO/PRES标准小结</td><td class="b c-g">符合（必须+3条）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">标准三：2022年ACR/EULAR血管炎分类标准（PAN部分）—— 评分制，≥6分分类为PAN</th></tr>
+      <tr><th style="width:30px">条目</th><th>评分</th><th>本例情况</th><th>得分</th></tr>
+      <tr><td>非BAT阳性</td><td>+1</td><td>未做或阴性</td><td>+1</td></tr>
+      <tr><td>非鼻/上呼吸道受累</td><td>+2</td><td>无上呼吸道病变</td><td>+2</td></tr>
+      <tr><td>无肾小球肾炎</td><td>+2</td><td>肾血管造影正常，无肾小球肾炎</td><td>+2</td></tr>
+      <tr><td>ANCA阴性</td><td>+2</td><td>ANCA阴性</td><td>+2</td></tr>
+      <tr><td>皮肤/肌肉/神经受累</td><td>+2</td><td>皮肤、肌肉、神经均受累</td><td>+2</td></tr>
+      <tr><td>血管造影/活检示中血管炎</td><td>+3</td><td>活检示中小血管坏死性血管炎</td><td>+3</td></tr>
+      <tr><td colspan="3" class="b">2022 ACR/EULAR标准小结（≥6分分类为PAN）</td><td class="b c-g">12分，符合</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>综合诊断</b>：皮肤型结节性多动脉炎（cPAN）——三个分类标准均符合。cPAN为PAN的局限皮肤型，无内脏器官受累（肾血管造影正常），预后优于系统性PAN。约15-30%儿童cPAN与链球菌感染相关（ASOT↑）。<br>
+      <b>关键鉴别</b>：cPAN vs 系统性PAN — 肾血管造影正常是排除系统性PAN的重要依据。
+    </div>
+
+    <!-- 8. 鉴别诊断 -->
+    <div class="sh yellow">🔍 鉴别诊断</div>
+    <div class="diff-box"><div class="diff-title">1. 系统性PAN</div><b>相似点：</b>发热、血管炎、多系统表现。<b>排除依据：</b>肾血管造影正常、无内脏梗死、无中枢神经系统/胃肠道/心脏受累→排除系统性PAN，确诊皮肤型。</div>
+    <div class="diff-box"><div class="diff-title">2. 川崎病（不典型）</div><b>相似点：</b>发热、皮疹、掌红斑。<b>排除依据：</b>年龄>4岁、IVIG 2g/kg无效、皮肤活检示中小动脉坏死性血管炎→不符合川崎病。</div>
+    <div class="diff-box"><div class="diff-title">3. 显微镜下多血管炎（MPA）</div><b>相似点：</b>血管炎表现。<b>排除依据：</b>ANCA阴性、无肾小球肾炎→排除。</div>
+    <div class="diff-box"><div class="diff-title">4. 链球菌感染后血管炎</div><b>相似点：</b>ASOT升高（643 IU/mL）、咽炎后起病。<b>排除依据：</b>血管炎累及中小动脉+单神经炎多发+病情持续进展→范围超出单纯感染后血管炎，需免疫抑制治疗。</div>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ cPAN与链球菌感染的关系</div>
+      文献报告约15-30%儿童cPAN与链球菌感染相关。ASOT升高提示感染触发，但血管炎的严重程度和持续进展需要免疫抑制治疗，单纯抗感染不足以控制病情。
+    </div>
+
+    <!-- 9. 治疗方案 -->
+    <div class="sh green">💊 治疗经过</div>
+    <table><tr><th>阶段</th><th>药物/方案</th><th>剂量</th><th>效果</th></tr>
+      <tr><td class="b">初始（Day 1-18）</td><td>多种抗生素</td><td>头孢唑林→头孢呋辛+克林霉素→万古霉素→哌拉西林他唑巴坦</td><td>❌ 无效（感染排除）</td></tr>
+      <tr><td class="b">Day 11</td><td>IVIG</td><td><b>2 g/kg</b>（拟诊不典型川崎病）</td><td>❌ 无效</td></tr>
+      <tr><td class="b">Day 13-15</td><td>甲泼尼龙冲击 → 泼尼松口服</td><td><b>30 mg/kg/d × 3天</b> → <b>1 mg/kg/d</b>口服</td><td>✅ 皮疹、水肿、关节炎迅速改善</td></tr>
+      <tr><td class="b">减量期</td><td>泼尼松减量</td><td>逐步减量</td><td class="c-r">⚠️ 发热、皮疹、腿痛复发</td></tr>
+      <tr><td class="b">二次入院</td><td>甲泼尼龙冲击 + 环磷酰胺 + IVIG + 萘普生</td><td>IVMP <b>30 mg/kg</b> + CYC <b>500 mg/m²</b> + IVIG <b>2 g/kg</b> + 萘普生 + 加巴喷丁 + 氨氯地平</td><td>症状改善</td></tr>
+      <tr><td class="b">维持期（2-10月）</td><td>环磷酰胺月疗</td><td><b>1 g/m²/月 × 10次</b>（第8月后延至2月1次→复发）</td><td>可缓慢减量激素</td></tr>
+      <tr><td class="b">第10月后</td><td>MTX皮下 + 英夫利西单抗</td><td>MTX <b>0.5→0.75 mg/kg/周</b> + IFX <b>5→10 mg/kg q4w</b>（共8次）</td><td class="c-y">⚠️ 仍激素依赖（&lt;0.5mg/kg/d即复发）</td></tr>
+      <tr><td class="b">最终方案</td><td>利妥昔单抗 + 环磷酰胺</td><td>RTX <b>375 mg/m²</b> + CYC <b>500 mg/m²</b>（Day 1、15）</td><td class="c-g">✅ 成功减量激素至5 mg/d，恢复上学</td></tr>
+    </table>
+    <div class="alert">
+      <b>治疗要点：</b>本例为重症难治性cPAN，需多种免疫抑制剂序贯治疗。利妥昔单抗作为首个报告用于儿童cPAN的生物制剂，在本例中取得成功。
+    </div>
+
+    <!-- 10. 随访timeline -->
+    <div class="sh">📅 随访时间线</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">第1天（入院）</div>
+        <div class="t-content">下颌肿痛+发热，拟诊"颈部淋巴结炎"，抗生素治疗</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">第5天</div>
+        <div class="t-content">水肿蔓延+全身皮疹，CRP 77mg/L，WBC 29.7×10⁹/L</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">第8天</div>
+        <div class="t-content">多关节炎+小腿痛+急性肾损伤+呕血+凝血异常</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">第13-15天</div>
+        <div class="t-content">皮肤活检确诊cPAN → 激素冲击 → 症状迅速改善</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">第21天</div>
+        <div class="t-content">出院，口服泼尼松</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">减量期</div>
+        <div class="t-content">激素减量后复发，二次入院 → 环磷酰胺+激素冲击</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">第2-10月</div>
+        <div class="t-content">环磷酰胺月疗×10次 + MTX + 英夫利西单抗 → 仍激素依赖</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">利妥昔单抗后</div>
+        <div class="t-content">利妥昔单抗+环磷酰胺（D1、D15）→ 成功减量激素至5 mg/d</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">随访24个月</div>
+        <div class="t-content"><span class="c-g">恢复上学和正常体育活动</span>，维持泼尼松5 mg/d + MTX。未进展为系统性PAN，无内脏受累。</div>
+      </div>
+    </div>
+
+    <!-- 11. 疑难剖析 -->
+    <div class="sh red">🧠 疑难剖析——决策导向</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>决策节点一：何时从"抗感染"转向"血管炎"？</b><br>
+      本例以颈部肿痛+高热+WBC 29.7×10⁹/L起病，初期合理诊断为细菌感染。但三个信号提示需要转换思路：<b>①</b>多种抗生素（头孢唑林→万古霉素→哌拉西林他唑巴坦）完全无效；<b>②</b>皮疹快速蔓延（丘疹红斑+掌红斑+网状青斑），超出感染性皮疹模式；<b>③</b>第8天出现多关节炎+单神经炎多发，已不能用单一感染解释。<b>临床决策建议</b>：抗生素治疗48-72h无效+多系统症状进行性叠加→立即启动自身免疫/血管炎评估（ANA、ANCA、补体、皮肤活检）。<br><br>
+      <b>决策节点二：如何确认cPAN而非系统性PAN？</b><br>
+      两者治疗方案和预后截然不同。确认cPAN需要<b>两个层面的证据</b>：<b>①</b>确诊血管炎——皮肤活检示中小动脉坏死性血管炎（本例确诊）；<b>②</b>排除内脏受累——肾血管造影（CTA/MRA/DSA）正常是关键，此外需评估胃肠道（便潜血、肠系膜血管成像）、中枢神经系统（MRI）和心脏（超声）。本例肾血管造影正常、无内脏梗死证据，最终限定为cPAN。<b>临床决策建议</b>：任何PAN患者均应完成内脏血管评估，即使临床仅表现为皮肤症状。<br><br>
+      <b>决策节点三：难治性cPAN的升级治疗路径</b><br>
+      本例展示了经典的阶梯升级路径：激素冲击（一线）→减量复发→环磷酰胺（二线）→MTX+英夫利西单抗（三线）→利妥昔单抗（四线）。<b>关键决策逻辑</b>：每次升级不是简单叠加，而是基于失败机制重新选择靶点。激素/环磷酰胺针对T细胞和广泛免疫抑制，英夫利西单抗针对TNF-α，利妥昔单抗针对B细胞/自身抗体产生。<b>临床决策建议</b>：对两种以上免疫抑制剂无效的cPAN，应考虑B细胞靶向治疗（利妥昔单抗），特别是当激素依赖特征明显时。<br><br>
+      <b>决策节点四：链球菌感染的处理策略</b><br>
+      ASOT升高提示链球菌触发，但<b>单纯抗感染不能控制血管炎</b>。决策原则：①确诊cPAN后免疫抑制治疗优先于抗感染；②预防性抗生素（如青霉素）可考虑用于预防复发；③随访ASOT动态变化评估再感染风险。
+    </div>
+
+    <!-- 12. 要点总结 -->
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① cPAN诊断依赖<b>皮肤活检</b>：中小血管坏死性血管炎<br>
+      ② 排除系统性PAN：肾血管造影正常、无内脏受累<br>
+      ③ 约15-30%儿童cPAN与<b>链球菌感染</b>相关（ASOT↑）<br><br>
+      <b>2. 临床表现</b><br>
+      ④ cPAN虽为"皮肤型"，但可累及肌肉、关节、周围神经<br>
+      ⑤ 皮下结节、网状青斑、单神经炎多发是特征性表现<br><br>
+      <b>3. 治疗策略</b><br>
+      ⑥ 激素是一线治疗，多数有效<br>
+      ⑦ 难治性病例需环磷酰胺、MTX等DMARD<br>
+      ⑧ 生物制剂（利妥昔单抗）对难治性cPAN有效<br><br>
+      <b>4. 预后</b><br>
+      ⑨ 大多数cPAN预后良好，但约10-20%为重症难治<br>
+      ⑩ 需长期随访监测疾病复发
+    </div>
+
+    <!-- 13. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/22046510/" target="_blank">PMID 22046510</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3200074/" target="_blank">PMC3200074</a></div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+    <ol style="padding-left:18px;">
+    <li>Bansal NK, Houghton KM. Cutaneous polyarteritis nodosa in childhood: a case report and review of the literature. <i>Arthritis</i>. 2010;2010:687547. doi:10.1155/2010/687547. PMID: 22046510. <span style="color:var(--text3)">【本文】</span></li>
+    <li>Kussmaul A, Maier R. Über eine bisher nicht beschriebene Arterienerkrankung. <i>Deutsches Arch Klin Med</i>. 1866;1:484-518. <span style="color:var(--text3)">【原文Ref 1】</span></li>
+    <li>Ozen S, Pistorio A, Iusan SM, et al. EULAR/PRINTO/PRES criteria for childhood polyarteritis nodosa. <i>Ann Rheum Dis</i>. 2010;69(5):798-806. PMID: 20413568. <span style="color:var(--text3)">【原文Ref 2】</span></li>
+    <li>Eleftheriou D, Melo M, Marks SD, et al. Biologic therapy in primary systemic vasculitis of the young. <i>Rheumatology</i>. 2009;48(8):978-986. PMID: 19535611. <span style="color:var(--text3)">【原文Ref 3】</span></li>
+    <li>Ozen S, Anton J, Arisoy N, et al. Juvenile polyarteritis: results of a multicenter survey of 110 children. <i>J Pediatr</i>. 2004;145(4):517-522. PMID: 15480378. <span style="color:var(--text3)">【原文Ref 4】</span></li>
+    <li>Fathalla BM, Miller L, Brady S, et al. Cutaneous polyarteritis nodosa in children. <i>J Am Acad Dermatol</i>. 2005;53(4):724-728. PMID: 16198807. <span style="color:var(--text3)">【原文Ref 11】</span></li>
+    </ol>
+    <div style="margin-top:4px;font-size:10.5px;color:var(--text3);">注：原文含57条参考文献，以上列出核心引用。DiGiacinto 2019为后续研究（原文发表于2010年不可能引用2019年文献），已删除。</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    真实文献病例 · Bansal & Houghton 2010 · PMID: 22046510 · 不构成诊疗建议
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

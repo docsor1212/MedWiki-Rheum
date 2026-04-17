@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belimumab — 贝利尤单抗</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">Belimumab · 贝利尤单抗</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>Belimumab — 贝利尤单抗</h1>
+    <div class="sub">抗BAFF(BLyS)单抗 · <span style="color:#ffe0d0;font-weight:700;">≥5岁cSLE(2024)</span> · 降低复发率 · 标准治疗基础上加用</div>
+  </div>
+  <div class="meta">
+    IV/SC双剂型<br>
+    PLUTO研究(儿童RCT)<br>
+    FDA 2024批准儿童
+  </div>
+</div>
+
+<div class="body">
+
+<div class="sh">💊 剂量速查</div>
+<table>
+<tr><th>剂型</th><th>剂量</th><th>途径</th><th>方案</th><th>维持</th></tr>
+<tr class="hl-green"><td class="c-g b">IV</td><td>10 mg/kg</td><td><span class="c-g b">IV ⭐</span></td><td>负荷：0, 2, 4周</td><td>q4w</td></tr>
+<tr><td>SC</td><td>200 mg</td><td>SC</td><td>每周×4周</td><td>q2w</td></tr>
+</table>
+<div class="note">用于标准治疗(激素+免疫抑制剂)基础上仍有活动性病变的cSLE患者</div>
+
+<div class="sh green">✅ 适应证</div>
+<table>
+<tr><th class="green-hd">适应证</th><th class="green-hd">说明</th></tr>
+<tr class="hl-green"><td class="c-g b">活动性cSLE(≥5岁)</td><td>标准治疗基础上加用，降低复发率</td></tr>
+<tr><td>狼疮肾炎</td><td>可作为联合治疗</td></tr>
+</table>
+
+<div style="background:var(--green-bg);border-left:3px solid var(--green);padding:5px 10px;border-radius:0 var(--radius) var(--radius) 0;font-size:11.5px;margin-top:6px;"><b style="color:var(--green);">⭐ PLUTO研究</b> 儿童SLE RCT(Brunner HI)显示：在标准治疗基础上加用Belimumab，显著降低复发率。该研究是FDA 2024批准儿童适应证的关键证据</div>
+
+<div class="sh red">⚠️ 不良反应</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见</th><th class="red-hd">处理</th></tr>
+<tr><td>输注/注射反应</td><td>前驱用药，减慢速度</td></tr>
+<tr><td>恶心/腹泻</td><td>对症处理</td></tr>
+<tr><td>感染</td><td>监测</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">需特别关注</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">抑郁/自杀意念</td><td>用药前评估精神病史，定期监测！</td></tr>
+<tr class="hl-red"><td class="c-r b">严重感染</td><td>停药 + 抗感染</td></tr>
+<tr><td>输注反应(IV)</td><td>前驱用药预防</td></tr>
+</table>
+</div>
+</div>
+
+<div class="alert"><b>⚠️ 精神健康监测</b> 抑郁和自杀意念是需特别关注的不良反应。用药前评估精神病史，治疗期间定期询问情绪变化</div>
+
+<div class="sh">🔬 监测</div>
+<table>
+<tr><th>时间</th><th>检查</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线</td><td>补体C3/C4 + dsDNA + 蛋白尿 + CBC + 肝肾功 + <span class="c-r b">HBV/HCV</span> + IgG</td></tr>
+<tr><td>每1–3月</td><td>补体C3/C4 + dsDNA + 蛋白尿 + CBC</td></tr>
+<tr><td>每次就诊</td><td>感染征象 + <span class="c-r b">情绪/精神状态</span></td></tr>
+</table>
+<div class="note">疗效指标：补体C3/C4回升、dsDNA滴度下降、蛋白尿减少 → 提示治疗有效</div>
+
+<div class="sh yellow">⚡ 相互作用</div>
+<table>
+<tr><th class="yellow-hd">注意</th><th class="yellow-hd">说明</th></tr>
+<tr><td>活疫苗</td><td>治疗期间<span class="c-r b">禁用</span></td></tr>
+<tr><td>其他生物制剂</td><td>避免联用</td></tr>
+<tr><td>IVIG</td><td>可能降低Belimumab疗效(竞争结合)</td></tr>
+</table>
+
+</div>
+
+<div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="../tools/drug_risk_assessment.html?drug=Belimumab&tab=risk" style="display:inline-block;padding:6px 16px;background:#20a39e;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">🔍 药物风险评估</a></div>
+<div class="footer">
+  PLUTO RCT(Brunner HI, NEJM 2024) · FDA 2024批准≥5岁cSLE · 标准治疗基础上加用
+</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

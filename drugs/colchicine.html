@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colchicine — 秋水仙碱</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">Colchicine · 秋水仙碱</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>Colchicine — 秋水仙碱</h1>
+    <div class="sub">FMF基石用药 · AID必备 · <span style="color:#ff8080;font-weight:700;">⚠️ 治疗指数窄</span> · 过量可致命</div>
+  </div>
+  <div class="meta">
+    口服 qd<br>
+    NLRP3炎症小体抑制<br>
+    终身用药(FMF)
+  </div>
+</div>
+
+<div class="body">
+
+<div class="alert"><b>🚨 中毒警告</b> 治疗指数窄！误服1–2 mg/kg即可中毒 → 多器官衰竭(肝/肾/骨髓/肌肉)。<b>必须妥善保管，远离儿童！</b>过量症状：严重腹泻/呕吐→脱水→多器官衰竭</div>
+
+<div class="sh">💊 剂量速查（体重分层）</div>
+<table>
+<tr><th>年龄</th><th>体重参考</th><th>剂量</th><th>途径</th><th>频率</th></tr>
+<tr class="hl-green"><td class="c-g b">&lt;5岁</td><td>—</td><td>0.5 mg</td><td><span class="c-g b">口服 ⭐</span></td><td>qd</td></tr>
+<tr class="hl-green"><td class="c-g b">5–10岁</td><td>—</td><td>1.0 mg</td><td>口服</td><td>qd</td></tr>
+<tr class="hl-green"><td class="c-g b">&gt;10岁</td><td>—</td><td>1.0–1.5 mg</td><td>口服</td><td>qd</td></tr>
+</table>
+<div class="note">FMF需终身用药，不可随意停药。可分次服用以减少胃肠道反应</div>
+
+<div class="sh green">🔬 作用机制</div>
+<table>
+<tr><th class="green-hd">环节</th><th class="green-hd">说明</th></tr>
+<tr><td>微管聚合抑制</td><td>与微管蛋白结合→抑制聚合</td></tr>
+<tr><td>↓NLRP3炎症小体</td><td>阻断中性粒细胞活化</td></tr>
+<tr><td>↓IL-1β</td><td>减少炎症因子释放</td></tr>
+<tr><td>↓中性粒细胞迁移</td><td>抑制趋化和吞噬</td></tr>
+</table>
+
+<div class="sh green">✅ 适应证</div>
+<table>
+<tr><th class="green-hd">适应证</th><th class="green-hd">说明</th><th class="green-hd">地位</th></tr>
+<tr class="hl-green"><td class="c-g b">FMF</td><td>家族性地中海热一线预防</td><td><span class="c-g b">基石用药 ⭐</span></td></tr>
+<tr><td>TRAPS</td><td>辅助治疗</td><td>部分有效</td></tr>
+<tr><td>PFAPA</td><td>辅助减少发作</td><td>可试用</td></tr>
+</table>
+
+<div class="sh red">⚠️ 不良反应</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见</th><th class="red-hd">处理</th></tr>
+<tr><td>腹泻 20–40%</td><td>分次服用，减量</td></tr>
+<tr><td>恶心/腹痛</td><td>餐后服用</td></tr>
+<tr><td>呕吐</td><td>减量或分次</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">严重/过量</th><th class="red-hd">处理</th></tr>
+<tr class="hl-red"><td class="c-r b">骨髓抑制(过量)</td><td>致命！血制品支持</td></tr>
+<tr class="hl-red"><td class="c-r b">肌病/横纹肌溶解</td><td>肾功能不全时风险↑</td></tr>
+<tr class="hl-red"><td class="c-r b">多器官衰竭</td><td>ICU支持治疗</td></tr>
+</table>
+</div>
+</div>
+
+<div class="sh yellow">⚡ CYP3A4/P-gp 相互作用（重要！）</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">影响</th><th class="yellow-hd">建议</th></tr>
+<tr class="hl-red"><td class="c-r b">克拉霉素/红霉素</td><td class="c-r">CYP3A4抑制→秋水仙碱毒性↑↑</td><td class="c-r b">禁止联用</td></tr>
+<tr class="hl-red"><td class="c-r b">环孢素</td><td class="c-r">P-gp抑制→秋水仙碱毒性↑↑</td><td class="c-r b">禁止联用</td></tr>
+<tr><td>酮康唑/氟康唑</td><td>CYP3A4抑制</td><td>减量50%</td></tr>
+<tr><td>维拉帕米</td><td>P-gp抑制</td><td>减量</td></tr>
+<tr><td>他汀类</td><td>叠加肌病风险</td><td>监测CK</td></tr>
+</table>
+
+<div class="sh">🔬 监测</div>
+<table>
+<tr><th>时间</th><th>检查</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线</td><td>CBC + 肝肾功 + CK</td></tr>
+<tr><td>每3–6月</td><td>CBC + 肝肾功</td></tr>
+<tr><td>肾功能不全者</td><td>更频繁监测，考虑减量</td></tr>
+</table>
+<table style="margin-top:4px;">
+<tr><th class="red-hd">特殊情况</th><th class="red-hd">处理</th></tr>
+<tr><td>肾功能不全(eGFR&lt;30)</td><td>减量或避免使用，肌病风险↑</td></tr>
+<tr><td>肝功能不全</td><td>减量，监测</td></tr>
+<tr><td>透析患者</td><td>禁用</td></tr>
+</table>
+
+</div>
+
+<div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="../tools/drug_risk_assessment.html?drug=Colchicine&tab=risk" style="display:inline-block;padding:6px 16px;background:#20a39e;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">🔍 药物风险评估</a></div>
+<div class="footer">
+  FMF国际共识 · EULAR AID建议 · 治疗指数窄：过量可致命 · CYP3A4/P-gp相互作用需警惕
+</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

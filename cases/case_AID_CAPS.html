@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：冷吡啉相关周期性发热综合征（CAPS）— 体细胞镶嵌NLRP3突变</title>
+<title>病例：冷吡啉相关周期性发热综合征（CAPS）</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
@@ -18,31 +18,45 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
 .timeline .t-item { margin-bottom:8px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
-.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mech-box { background:#e8f5f4; border:1px solid #b2dfdb; border-radius:8px; padding:10px 14px; margin:6px 0; }
-.mech-box h4 { color:var(--accent); font-size:13px; margin-bottom:4px; }
-.mech-box p { font-size:12px; margin:3px 0; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -50,149 +64,179 @@ tr:hover td { background:#faf8f5; }
 <div class="nav-bar">
   <a href="../index.html">🏠 首页</a>
   <a href="index_AID.html">📖 AID病例专题</a>
-  <span class="nav-title">CAPS / 冷吡啉相关周期性发热综合征</span>
+  <a href="case_AID_CAPS.html">📖 本病例</a>
+  <span class="nav-title">教学病例</span>
 </div>
 
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>📋 病例2：冷吡啉相关周期性发热综合征（CAPS）</h1>
-      <div class="sub">体细胞镶嵌NLRP3突变 · 复发性环状红斑 + 银屑病样皮损 · 冷诱发荨麻疹</div>
+      <h1>📋 病例：冷吡啉相关周期性发热综合征（CAPS）</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">Cryopyrin-Associated Periodic Syndrome — 体细胞镶嵌NLRP3突变</div>
     </div>
-    <div class="meta">更新: 2026-04-10<br>基于真实文献</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
   <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表文献改编的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
+    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>日本籍成人患者（具体年龄见文献）</td></tr>
-      <tr><td class="b">就诊机构</td><td>日本大学附属医院风湿免疫科</td></tr>
-      <tr><td class="b">主诉</td><td>反复发作性环状红斑伴低热，寒冷暴露后加重，银屑病样皮损</td></tr>
-      <tr><td class="b">家族史</td><td>无类似疾病家族史（体细胞镶嵌突变，非生殖系遗传）</td></tr>
+      <tr><td class="b" style="width:100px">患者</td><td>佐藤XX，女，28岁，日本籍</td></tr>
+      <tr><td class="b">就诊日期</td><td>2025-03-10</td></tr>
+      <tr><td class="b">主诉</td><td>反复寒冷诱发皮疹伴低热6年，银屑病样皮损3年</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">CAPS</span> <span class="tag t-y">体细胞镶嵌</span> <span class="tag t-a">NLRP3</span> <span class="tag t-g">IL-1拮抗剂</span></td></tr>
     </table>
 
-    <div class="alert">
-      <b>🔍 独特性</b>　本例为<b>体细胞镶嵌（somatic mosaic）NLRP3突变</b>导致的CAPS，区别于经典的生殖系突变（germline mutation）。体细胞镶嵌突变仅在部分细胞中携带变异，导致表型不典型、皮肤病变呈节段性分布、常规基因检测（外周血白细胞）可能漏诊。本例还合并复发性环状红斑性银屑病，为CAPS少见表现。
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      6年前（22岁）起无明显诱因出现寒冷暴露后皮肤荨麻疹样皮疹，以面部和四肢为主，伴低热（37.5–38.0°C）和双膝关节痛，持续数小时至1天可自行缓解。初诊考虑"寒冷性荨麻疹"，口服抗组胺药疗效不佳。<br><br>
+      3年前开始出现<b>环状红斑</b>（circinate erythema），皮损呈环形扩展、中央消退、边缘隆起，呈偏侧性分布。随后出现银屑病样鳞屑性斑块，分布亦呈偏侧性。多次皮肤活检示血管周围中性粒细胞浸润，非典型银屑病样改变。<br><br>
+      近半年发作频率增加，每月3–4次，寒冷刺激后尤为明显。外周血WBC升高、CRP升高、ESR增快，自身抗体阴性。外院曾诊断"非典型银屑病"，局部治疗无效。<br><br>
+      <b>既往史</b>：无特殊，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：无吸烟饮酒史。&nbsp;&nbsp;<b>家族史</b>：无类似疾病家族史（体细胞镶嵌突变，非生殖系遗传）。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>37.8°C</td></tr>
+        <tr><td>HR</td><td>88次/分</td></tr>
+        <tr><td>BP</td><td>118/72 mmHg</td></tr>
+        <tr><td>体重</td><td>52 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神可，营养中等</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">右侧躯干及右上肢见环状红斑，边缘隆起；左侧肘部银屑病样鳞屑性斑块。皮损呈偏侧性分布</td></tr>
+        <tr><td>淋巴结</td><td>未触及肿大</td></tr>
+        <tr><td>心肺</td><td>无异常</td></tr>
+        <tr><td>腹部</td><td>肝脾未触及，无压痛</td></tr>
+        <tr><td>关节</td><td>双膝关节轻度压痛，无肿胀</td></tr>
+        <tr><td>听力</td><td>粗测正常</td></tr>
+      </table>
     </div>
 
-    <div class="sh red">📅 临床时间线</div>
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>12.8×10⁹/L</td><td>4–10</td><td class="c-r">↑</td></tr>
+      <tr><td>中性粒细胞</td><td>78%</td><td>40–75%</td><td class="c-r">↑</td></tr>
+      <tr><td>Hb</td><td>118 g/L</td><td>115–150</td><td>正常</td></tr>
+      <tr><td>PLT</td><td>320×10⁹/L</td><td>150–350</td><td>正常</td></tr>
+      <tr><td>ESR</td><td>42 mm/h</td><td>0–20</td><td class="c-r">↑↑</td></tr>
+      <tr><td>CRP</td><td>28 mg/L</td><td>&lt;8</td><td class="c-r">↑</td></tr>
+      <tr><td>SAA</td><td>180 mg/L</td><td>0–3</td><td class="c-r">↑↑</td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>抗dsDNA</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>RF</td><td>阴性</td><td></td><td></td></tr>
+      <tr><td>肝肾功能</td><td>正常</td><td></td><td></td></tr>
+    </table>
+    <div class="note">皮肤活检：表皮轻度增生，真皮血管周围中性粒细胞浸润，非典型银屑病样改变。直接免疫荧光阴性。</div>
+    <div class="note">基因检测（外周血DNA）：未检出NLRP3突变。皮损组织深测序：检出NLRP3体细胞镶嵌突变（变异等位基因频率&lt;10%）。</div>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>CAPS诊断要点</th><th>符合情况</th></tr>
+      <tr><td>寒冷诱发荨麻疹样皮疹</td><td>✅ 6年寒冷诱发皮疹史</td></tr>
+      <tr><td>反复低热</td><td>✅ 发作期37.5–38°C</td></tr>
+      <tr><td>关节受累</td><td>✅ 双膝关节痛</td></tr>
+      <tr><td>炎症指标升高</td><td>✅ CRP/ESR/SAA均升高</td></tr>
+      <tr><td>NLRP3突变</td><td>✅ 皮损组织检出体细胞镶嵌突变</td></tr>
+      <tr><td>自身抗体阴性</td><td>✅ ANA/抗dsDNA/RF阴性</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>诊断：冷吡啉相关周期性发热综合征（CAPS），体细胞镶嵌NLRP3突变型</b><br>
+      本例为体细胞镶嵌突变，区别于经典生殖系突变。皮损偏侧性分布和常规基因检测阴性是重要线索。
+    </div>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">阿那白滞素（Anakinra）</td><td>100 mg 皮下注射 每日1次</td><td class="c-a">IL-1受体拮抗剂，CAPS一线靶向治疗</td></tr>
+      <tr><td class="b">外用润肤剂</td><td>皮损处局部使用</td><td>辅助皮肤护理</td></tr>
+    </table>
+    <div class="alert">
+      <b>治疗要点：</b>①IL-1靶向治疗是CAPS核心治疗 ②阿那白滞素（短效）或卡那单抗（长效，FDA批准用于CAPS） ③体细胞镶嵌突变治疗反应同生殖系突变
+    </div>
+
+    <!-- 随访时间线 -->
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
-      <div class="t-item yellow">
-        <div class="t-date">初始症状</div>
-        <div class="t-content">反复出现寒冷诱发的荨麻疹样皮疹，伴低热（37.5-38°C）和关节痛。初诊考虑"寒冷性荨麻疹"，抗组胺药疗效不佳</div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">进展期</div>
-        <div class="t-content">出现环状红斑（circinate erythema），皮损呈环形扩展，中央消退，边缘隆起。后出现银屑病样鳞屑性斑块，分布呈偏侧性（blateral分布模式提示镶嵌性）</div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">多次就诊</div>
-        <div class="t-content">外周血WBC升高、CRP升高、ESR增快。自身抗体阴性。皮肤活检示血管周围中性粒细胞浸润，非典型银屑病样改变</div>
-      </div>
       <div class="t-item">
-        <div class="t-date">基因确诊</div>
-        <div class="t-content">初始外周血DNA测序未检出NLRP3突变。经皮损组织深测序发现NLRP3体细胞镶嵌突变（变异等位基因频率<10%）</div>
+        <div class="t-date">第2周</div>
+        <div class="t-content">
+          皮疹明显减轻，体温恢复正常。CRP降至12 mg/L。<br>
+          注射部位轻微红肿，可耐受。
+        </div>
       </div>
       <div class="t-item green">
-        <div class="t-date">IL-1靶向治疗</div>
-        <div class="t-content">开始阿那白滞素（anakinra，IL-1受体拮抗剂）皮下注射后，皮疹和发热显著改善，炎症指标恢复正常</div>
+        <div class="t-date">第4周</div>
+        <div class="t-content">
+          皮疹基本消退，无新发环状红斑。关节痛消失。<br>
+          CRP 4 mg/L，ESR 15 mm/h，SAA 8 mg/L。<br>
+          <span class="tag t-g">✅ 炎症指标恢复正常</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第12周</div>
+        <div class="t-content">
+          持续缓解，无皮疹、无发热、无关节痛。<br>
+          CRP &lt;4 mg/L，SAA &lt;3 mg/L。<br>
+          银屑病样皮损明显改善。继续阿那白滞素维持治疗。
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第24周</div>
+        <div class="t-content">
+          持续完全缓解。考虑转换为卡那单抗（长效，每月1次皮下注射）以提高依从性。
+        </div>
       </div>
     </div>
 
-    <div class="sh yellow">📊 CAPS临床谱系对比表</div>
-    <table>
-      <tr><th>特征</th><th>FCAS（家族性寒冷性自身炎症综合征）</th><th>MWS（Muckle-Wells综合征）</th><th>NOMID/CINCA（慢性婴儿期神经皮肤关节综合征）</th></tr>
-      <tr><td>起病时间</td><td>出生至婴儿期</td><td>儿童-青少年</td><td>新生儿期</td></tr>
-      <tr><td>发热</td><td>寒冷诱发，<24h</td><td>发作性，持续数天</td><td class="c-r">持续性</td></tr>
-      <tr><td>皮疹</td><td>寒冷诱发荨麻疹</td><td>荨麻疹（非寒冷依赖）</td><td class="c-r">荨麻疹+肢体过度生长</td></tr>
-      <tr><td>关节受累</td><td>关节痛</td><td>关节炎</td><td class="c-r">骨骺过度增生</td></tr>
-      <tr><td>听力丧失</td><td>罕见</td><td class="c-r">感音神经性聋</td><td class="c-r">感音神经性聋</td></tr>
-      <tr><td>神经系统</td><td>无</td><td>偶有头痛</td><td class="c-r">慢性无菌性脑膜炎、视乳头水肿</td></tr>
-      <tr><td>淀粉样变性</td><td>罕见</td><td class="c-r">25%并发AA</td><td class="c-r">可并发</td></tr>
-      <tr><td>突变来源</td><td>生殖系</td><td>生殖系</td><td>生殖系/体细胞镶嵌</td></tr>
-    </table>
-
-    <div class="sh">🔬 机制深度解析：NLRP3炎症小体</div>
-
-    <div class="mech-box">
-      <h4>1. NLRP3/Cryopyrin炎症小体的结构与激活</h4>
-      <p><b>NLRP3基因</b>（1q44）编码<b>Cryopyrin蛋白</b>（也称NLRP3或NALP3），属于NOD样受体（NLR）家族。NLRP3蛋白含三个功能域：</p>
-      <ul style="font-size:12px;margin-left:16px">
-        <li><b>PYD（Pyrin结构域）</b>：N端，与ASC蛋白的PYD相互作用</li>
-        <li><b>NACHT结构域</b>：中央核苷酸结合/寡聚化域，含ATPase活性，是寡聚化的关键</li>
-        <li><b>LRR（富亮氨酸重复序列）</b>：C端，感知危险信号</li>
-      </ul>
-      <p><b>正常激活机制（两信号模型）：</b></p>
-      <p style="padding-left:12px">
-        <b>信号1（启动/priming）：</b>TLR或IL-1R激活 → NF-κB → 上调NLRP3和pro-IL-1β的转录<br>
-        <b>信号2（激活）：</b>多种危险信号触发NLRP3构象改变 → NLRP3通过NACHT域寡聚化 → 募集ASC → ASC形成斑点（speck） → 募集pro-caspase-1 → Caspase-1自激活
-      </p>
+    <!-- 要点 -->
+    <div class="sh green">📚 病例要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① 寒冷诱发荨麻疹+发热+关节痛三联征提示CAPS<br>
+      ② 皮损呈偏侧性分布应警惕体细胞镶嵌突变<br>
+      ③ 外周血基因检测阴性时不应排除CAPS，需行皮损组织深测序<br><br>
+      <b>2. 鉴别诊断</b><br>
+      ④ CAPS与寒冷性荨麻疹鉴别：前者有全身炎症指标升高，抗组胺药无效<br>
+      ⑤ 体细胞镶嵌解释了部分"基因检测阴性"的CAPS病例<br><br>
+      <b>3. 治疗策略</b><br>
+      ⑥ IL-1拮抗剂是CAPS的一线靶向治疗（阿那白滞素/卡那单抗/利洛纳塞）<br>
+      ⑦ 体细胞镶嵌突变患者治疗反应与生殖系突变相同
     </div>
 
-    <div class="mech-box">
-      <h4>2. 功能获得性突变的致病机制</h4>
-      <p>CAPS相关的NLRP3突变（如A352V、L353P、Q703K等）位于<b>NACHT结构域</b>，导致：</p>
-      <ul style="font-size:12px;margin-left:16px">
-        <li><b>自发性寡聚化：</b>突变降低NLRP3自抑制构象的稳定性，使NLRP3在无需信号2的情况下自发寡聚化</li>
-        <li><b>降低激活阈值：</b>更低的危险信号浓度即可触发炎症小体组装</li>
-        <li><b>ASC斑点形成增强：</b>更多的ASC被募集，导致更大规模的caspase-1激活</li>
-        <li><b>IL-1β和IL-18超量产生：</b>caspase-1大量切割pro-IL-1β和pro-IL-18，释放成熟形式的细胞因子</li>
-      </ul>
-      <p><b>体细胞镶嵌突变的特殊性：</b>突变仅存在于部分造血细胞（通常为髓系细胞）中，变异等位基因频率（VAF）可能低至1-5%。这导致：</p>
-      <ul style="font-size:12px;margin-left:16px">
-        <li>表型较轻或不典型（镶嵌比例低时）</li>
-        <li>皮损呈节段性/偏侧性分布</li>
-        <li>常规外周血测序可能漏诊 → 需要皮损组织深测序或超深度测序</li>
-      </ul>
-    </div>
-
-    <div class="mech-box">
-      <h4>3. IL-1β驱动的病理级联</h4>
-      <p>NLRP3炎症小体过度激活 → IL-1β大量释放 → 以下病理效应：</p>
-      <ul style="font-size:12px;margin-left:16px">
-        <li><b>发热：</b>IL-1β作用于下丘脑体温调节中枢（通过前列腺素E2）</li>
-        <li><b>荨麻疹样皮疹：</b>IL-1β诱导皮肤血管扩张和中性粒细胞浸润</li>
-        <li><b>关节破坏：</b>IL-1β激活破骨细胞和滑膜炎症</li>
-        <li><b>感音神经性聋：</b>IL-1β介导内耳炎症和耳蜗纤维化</li>
-        <li><b>AA淀粉样变性：</b>慢性IL-1β驱动的SAA升高（与FMF机制相同）</li>
-      </ul>
-      <p><b>治疗靶点：</b>IL-1β处于CAPS病理的核心节点，因此IL-1靶向治疗（阿那白滞素/anakinra、卡那单抗/canakinumab、利洛纳塞/rilonacept）对CAPS具有"精准治疗"效果。</p>
-    </div>
-
-    <div class="sh green">💡 临床要点</div>
-    <table>
-      <tr><td class="b" style="width:140px">诊断关键</td><td>寒冷诱发荨麻疹+发热+关节痛三联征提示CAPS；体细胞镶嵌突变需深测序或组织活检</td></tr>
-      <tr><td class="b">基因检测策略</td><td>外周血阴性时不应排除CAPS，需考虑皮损组织DNA深测序（VAF可能低至1%）</td></tr>
-      <tr><td class="b">治疗选择</td><td>IL-1拮抗剂是CAPS的一线靶向治疗：anakinra（短效）、canakinumab（长效，FDA批准用于CAPS）</td></tr>
-      <tr><td class="b">体细胞镶嵌意义</td><td>解释了部分"基因检测阴性"的CAPS病例，以及皮损节段性分布的原因</td></tr>
-      <tr><td class="b">鉴别要点</td><td>与寒冷性荨麻疹鉴别：CAPS有全身炎症指标升高（CRP、SAA），抗组胺药无效</td></tr>
-    </table>
-
-    <div class="sh red">📚 文献来源</div>
-    <div style="font-size:11.5px; margin:4px 0;">
-      <p class="b">主要文献：</p>
-      <p>1. Ando T, et al. <i>A case of cryopyrin-associated periodic syndrome due to somatic mosaic mutation complicated with recurrent circinate erythematous psoriasis.</i> Mod Rheumatol Case Rep. 2024;8(2):368-372. <b>PMID:</b> 38036300 | <b>DOI:</b> <a href="https://doi.org/10.1093/mrcr/rxad067">10.1093/mrcr/rxad067</a></p>
-      <p style="margin-top:4px" class="b">补充参考文献：</p>
-      <p>2. Kuemmerle-Deschner JB, Ozen S, Tyrrell PN, et al. <i>Diagnostic criteria for cryopyrin-associated periodic syndrome (CAPS).</i> Ann Rheum Dis. 2017;76(4):715. PMID: 27797741</p>
-      <p>3. Saito M, Nishikomori R, Kambe N, et al. <i>Somatic mosaicism in NLRP3 in patients with CAPS.</i> Blood. 2008;112(13):5033. PMID: 18796629</p>
-    </div>
-
-    <div style="display:flex; justify-content:space-between; margin:10px 0 4px;">
-      <a href="case_AID_FMF.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一个：FMF</a>
-      <a href="index_AID.html" style="color:var(--accent);font-size:12px;text-decoration:none;">📖 AID病例索引</a>
-      <a href="case_AID_TRAPS.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个：TRAPS →</a>
+    <!-- 文献 -->
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Ando T, et al. <i>A case of cryopyrin-associated periodic syndrome due to somatic mosaic mutation complicated with recurrent circinate erythematous psoriasis.</i> Mod Rheumatol Case Rep. 2024;8(2):368-372. PMID: 38036300<br>
+      2. Kuemmerle-Deschner JB, et al. <i>Diagnostic criteria for CAPS.</i> Ann Rheum Dis. 2017;76(4):715. PMID: 27797741<br>
+      3. Saito M, et al. <i>Somatic mosaicism in NLRP3 in patients with CAPS.</i> Blood. 2008;112(13):5033. PMID: 18796629
     </div>
 
   </div>
 
+  <div style="display:flex; justify-content:space-between; margin:10px 20px 4px;">
+    <a href="case_AID_FMF.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一个：FMF</a>
+    <a href="index_AID.html" style="color:var(--accent);font-size:12px;text-decoration:none;">📖 AID病例索引</a>
+    <a href="case_AID_TRAPS.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个：TRAPS →</a>
+  </div>
+
   <div class="footer">
-    © 2026 MedWiki-Rheum | 自身炎症性疾病病例系列 | 仅供学习参考，不构成医疗建议
+    示范性合成病例 · 基于文献改编 · 体细胞镶嵌NLRP3突变 · IL-1靶向治疗 · 不构成诊疗建议
   </div>
 </div>
 

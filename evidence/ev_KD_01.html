@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: IVIG抵抗型川崎病伴巨大冠状动脉瘤</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">川崎病 · KD-01</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>IVIG抵抗型川崎病伴巨大冠状动脉瘤及多发血栓</h1>
+      <div class="sub">Giant Coronary Aneurysms with Multiple Large Resistant Thromboses — 8月龄男婴</div>
+    </div>
+    <div class="meta">循证病例 · PMID 38146411</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 38146411 &nbsp;|&nbsp; <b>PMC:</b> PMC10748654<br>
+  <b>DOI:</b> 10.18502/jthc.v18i3.14118<br>
+  <b>期刊:</b> J Tehran Univ Heart Cent | <b>年份:</b> 2023<br>
+  <b>作者:</b> 原文作者见文献<br>
+  <b>标题:</b> <i>Giant Coronary Aneurysms with Multiple Large Resistant Thromboses in an 8-Month-Old Boy with IVIg-Resistant Kawasaki Disease</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/38146411/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>川崎病是5岁以下儿童获得性心脏病的主要原因。日本发病率最高（约<b>330/10万</b>0-4岁儿童）。约<b>10-20%</b>的KD患者对IVIG耐药。巨大冠状动脉瘤（&gt;8 mm）5年自限率仅15-20%，需终身抗凝+心外科随访。</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>8个月，男</td></tr>
+  <tr><td class="b">家族史</td><td>父母近亲婚配；母亲和姑母有反复流产史</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-r">IVIG抵抗</span> <span class="tag t-r">巨大冠状动脉瘤</span> <span class="tag t-y">THBD基因突变</span></td></tr>
+</table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">反复发热（出院15天后复发）</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  8月龄男孩，既往因COVID-19后典型川崎病首次住院，接受IVIG+皮质类固醇+英夫利西单抗治疗后好转出院。出院15天后再次出现反复发热，予再次收治入院。入院后超声心动图示多发冠状动脉瘤伴血栓形成（详见辅助检查），遗传学检测发现THBD基因突变。</p>
+
+<div class="sh">📋 既往史</div>
+<p style="font-size:12px;margin:4px 0;"><b>既往史</b>：COVID-19感染后发病。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：父母近亲婚配，母亲和姑母反复流产。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">生命体征</th></tr>
+    <tr><td>T</td><td>发热（具体数值【原文未提及】）</td></tr>
+    <tr><td>HR</td><td>稳定</td></tr>
+    <tr><td>BP</td><td>稳定</td></tr>
+    <tr><td>体重</td><td>8月龄体重</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">系统查体</th></tr>
+    <tr><td>心血管</td><td class="c-r">无特殊体征，依赖超声心动图</td></tr>
+    <tr><td>呼吸系统</td><td>正常</td></tr>
+    <tr><td>腹部</td><td>正常</td></tr>
+    <tr><td>皮肤</td><td>无皮疹</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div><div style="padding:8px;font-size:12px;color:#888;">辅助检查数据详见原文。</div>
+
+<table><tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td>11,500/μL</td><td>—</td><td>正常</td></tr>
+<tr><td>Hb</td><td><span class="c-r">8.1 g/dL ↓</span></td><td>9.5-14 g/dL</td><td>贫血</td></tr>
+<tr><td>PLT</td><td><span class="c-r">567,000/μL ↑</span></td><td>&lt;450,000</td><td>血小板增多</td></tr>
+<tr><td>ESR</td><td><span class="c-r">110 mm/h ↑↑</span></td><td>&lt;10</td><td>显著升高</td></tr>
+<tr><td>CRP</td><td><span class="c-r">64 mg/dL ↑</span></td><td>&lt;5</td><td>显著升高</td></tr>
+<tr><td>D-二聚体</td><td><span class="c-r">3,500 ng/mL ↑↑</span></td><td>&lt;250</td><td>高凝状态</td></tr>
+<tr><td>c-ANCA</td><td>150 AU/mL ↑</td><td>≥10 阳性</td><td>阳性</td></tr>
+<tr><td>p-ANCA</td><td>232 AU/mL ↑</td><td>≥10 阳性</td><td>阳性</td></tr>
+<tr><td>蛋白C</td><td><span class="c-r">15 IU/dL ↓</span></td><td>70-130</td><td>显著降低</td></tr>
+<tr><td>免疫球蛋白</td><td>正常</td><td>—</td><td></td></tr>
+<tr><td>补体</td><td>正常</td><td>—</td><td></td></tr>
+<tr><td>肌钙蛋白</td><td>正常</td><td>—</td><td></td></tr>
+<tr><td>NT-proBNP</td><td>正常</td><td>—</td><td></td></tr>
+</table>
+
+<div class="sh red">❤️ 超声心动图</div>
+<table><tr><th>部位</th><th>所见</th></tr>
+<tr><td>左主冠状动脉（LMCA）</td><td><span class="c-r">巨大动脉瘤 12.5 mm × 18.8 mm</span></td></tr>
+<tr><td>左前降支（LAD）</td><td>近端扩张 5 mm，远端 5.7 mm</td></tr>
+<tr><td>左回旋支（LCX）</td><td>近端扩张 4.1 mm，远端 2.3 mm</td></tr>
+<tr><td>右冠状动脉（RCA）</td><td><span class="c-r">巨大动脉瘤：近端 13 mm，开口 3.2 mm，中段 4.3 mm，远端 5.8 mm</span></td></tr>
+<tr><td>CTA</td><td><span class="c-r">LMCA+RCA巨大动脉瘤+LMCA→LAD线样血栓</span></td></tr>
+<tr><td>血栓</td><td><span class="c-r">LMCA及RCA内多发大型血栓</span></td></tr>
+</table>
+
+<div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>一、川崎病的血管炎发病机制</b><br>原文指出，KD是一种急性自限性全身性血管炎，主要影响5岁以下儿童的中型动脉，可导致冠状动脉瘤。KD的病因至今未明（1967年首次报道）。其病理特征为：血管壁全层炎症细胞浸润→内弹力层破坏→中膜变性→动脉瘤形成。在冠状动脉中，这种病理改变可导致血流变为湍流，促进血栓形成。</p>
+<p><b>二、IVIG抵抗的分子机制</b><br>原文强调约10-20%的KD患者对IVIG治疗无反应。已知的IVIG抵抗危险因素包括：血清钠≤133 mmol/L、白蛋白≤3.2 g/dL、丙氨酸转氨酶≥80 U/L、中性粒细胞百分比≥80%。IVIG抵抗型KD的冠状动脉损伤风险显著高于IVIG敏感型。本例为8月龄男婴（低龄本身为危险因素），且首次IVIG+激素+英夫利西单抗联合治疗后仍复发。</p>
+<p><b>三、COVID-19与KD的协同促栓效应</b><br>原文详细阐述了COVID-19感染与KD的相互作用：COVID-19增加血栓风险和促凝状态（虽在儿童中罕见），D-二聚体升高是血栓事件的预警指标。COVID-19可诱发类KD疾病，倾向于巨大冠状动脉瘤和血栓形成。本例中COVID-19感染先于KD发病，两者可能产生"协同效应"，解释了患者对标准治疗的反应不佳。</p>
+<p><b>四、THBD基因突变与易栓状态</b><br>基因检测发现THBD基因突变（exon1, 20号染色体，常染色体显性遗传）。凝血酶调节蛋白（Thrombomodulin, TM）是血管内皮细胞表面的抗凝蛋白，通过激活蛋白C途径发挥抗凝作用。THBD突变→蛋白C激活障碍→高凝状态。本例蛋白C活性仅15 IU/dL（正常70-130），D-二聚体3,500 ng/mL（正常<250），均支持严重的高凝状态。THBD突变+KD血管炎+COVID-19内皮损伤三者叠加，解释了本例异常严重的血栓形成。</p>
+<p><b>五、NFKB1突变的附加影响</b><br>原文还发现NFKB1（核因子κB亚基1）突变，该基因与冠状动脉疾病的易感性和严重程度相关（特别是冠状动脉内皮功能障碍），进一步验证了遗传背景对KD心血管预后的影响。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出川崎病复发（IVIG抵抗型）合并巨大冠状动脉瘤的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2017 AHA川崎病诊断指南</td><td>McCrindle BW 等/AHA</td><td>2017</td><td>Circulation</td><td>完全KD:发热≥5天+≥4/5临床特征</td><td>首次满足完全KD。复发:① 间隔≥2月第二次发作 → <span class='c-g'>✅</span><br>② IVIG抵抗 → <span class='c-g'>✅</span><br><b>KD复发+IVIG抵抗 ✅</b></td></tr>
+      <tr><td class="b">2017 AHA CA Z-score分类</td><td>McCrindle BW 等/AHA</td><td>2017</td><td>Circulation</td><td>Z-score≥10=巨大动脉瘤</td><td>LMCA 12.5mm Z≫10 → <span class='c-g'>✅ 巨大CA瘤</span></td></tr>
+    </table>
+<table><tr><th>诊断</th><th>诊断标准及依据</th></tr>
+<tr><td class="b">川崎病复发（IVIG抵抗型）</td><td>
+  <b>依据：2017 AHA川崎病诊断指南</b><br>
+  首次发作满足完全KD标准。本次复发：<br>
+  ① 发热 + 典型KD特征（前次有典型表现）<br>
+  ② 首剂IVIG+皮质类固醇+英夫利西单抗治疗后仍发热复发 → IVIG抵抗<br>
+  ③ 超声心动图新发/进展性CA病变 → 支持KD活动<br>
+  <b>KD复发定义</b>：同一患者间隔≥2个月出现第二次KD发作（2017 AHA）。
+</td></tr>
+<tr><td class="b">巨大冠状动脉瘤</td><td>
+  <b>依据：2017 AHA CA Z-score分类</b><br>
+  LMCA 12.5 mm → Z-score ≫10（巨大动脉瘤标准）<br>
+  日本标准：内径 &gt;8 mm = 巨大（与美国Z-score标准一致）<br>
+  巨大CA瘤5年内自限率仅15-20%，需终身抗凝+心外科随访。
+</td></tr>
+<tr><td class="b">多发冠状动脉血栓</td><td>超声心动图证实LMCA及LAD附壁血栓，与THBD基因突变导致的易栓状态相关</td></tr>
+<tr><td class="b">THBD基因突变（凝血酶调节蛋白）</td><td>基因检测确诊。THBD突变→蛋白C途径异常→血栓形成倾向。KD合并THBD突变可解释血栓的严重程度。</td></tr>
+</table>
+
+<div class="sh blue">🔍 鉴别诊断要点</div>
+<table><tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td><b>感染性心内膜炎</b></td><td>发热、血栓</td><td>血培养阴性、无心脏杂音、婴儿罕见 → 排除</td></tr>
+<tr><td><b>原发性血栓性微血管病</b></td><td>多发血栓</td><td>有明确KD基础病 → 继发性</td></tr>
+<tr><td><b>先天性冠状动脉畸形</b></td><td>冠状动脉扩张</td><td>既往KD病史明确 → 排除</td></tr>
+<tr><td><b>COVID-19相关多系统炎症综合征（MIS-C）</b></td><td>发热+冠状动脉病变+COVID-19暴露</td><td>患儿COVID-19 IgG/IgM阳性但PCR阴性，KD先于MIS-C概念；有典型KD特征（符合完全KD标准）→ 更符合IVIG抵抗型KD</td></tr>
+</table>
+
+<div class="diff-box"><div class="diff-title">⚠️ 易错点：COVID-19与KD的协同促栓效应</div>COVID-19可增加KD的血栓风险，本例合并THBD基因突变进一步加重高凝状态。对早期婴儿KD伴严重血栓者，应进行遗传学检测。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>阶段</th><th>药物</th><th>剂量/方案</th><th>给药途径</th><th>选择理由</th></tr>
+<tr><td class="b">首次住院</td><td>IVIG</td><td>2 g/kg 单次12h输注【AHA标准】</td><td>静脉输注</td><td>KD一线治疗</td></tr>
+<tr><td class="b">首次住院</td><td>皮质类固醇</td><td>剂量原文未详述【需要验证】</td><td>静脉</td><td>控制全身炎症</td></tr>
+<tr><td class="b">首次住院</td><td>英夫利西单抗</td><td>5 mg/kg 单次【需要验证】</td><td>静脉输注</td><td>IVIG抵抗型KD二线治疗（因严重药物反应停用）</td></tr>
+<tr><td class="b">再入院抗血小板</td><td>阿司匹林</td><td>30 mg/d</td><td>口服</td><td>巨大CA瘤抗血小板</td></tr>
+<tr><td class="b">再入院抗血小板</td><td>氯吡格雷</td><td>1.2 mg/d</td><td>口服</td><td>双重抗血小板</td></tr>
+<tr><td class="b">再入院抗凝</td><td>依诺肝素</td><td>7.5 mg q12h</td><td>皮下注射</td><td>巨大CA瘤抗凝</td></tr>
+<tr><td class="b">再入院抗凝</td><td>华法林</td><td>1 mg/d</td><td>口服</td><td>长期抗凝</td></tr>
+<tr><td class="b">再入院免疫抑制</td><td>泼尼松龙</td><td>2.5 mg q8h</td><td>口服</td><td>控制炎症</td></tr>
+<tr><td class="b">再入院免疫抑制</td><td>环孢素</td><td>25 mg/d</td><td>口服</td><td>严重扩大性动脉瘤</td></tr>
+<tr><td class="b">溶栓</td><td>阿替普酶</td><td>0.5 mg/kg/次（3 mg/6h）× 3天</td><td>静脉输注</td><td>溶解CA内血栓</td></tr>
+<tr><td class="b">出院维持</td><td>泼尼松龙+环孢素+氯吡格雷+阿司匹林+普萘洛尔+华法林</td><td>同上</td><td>口服</td><td>多药联合维持</td></tr>
+</table>
+<div class="alert"><b>治疗策略：</b>诱导缓解（IVIG+激素+英夫利西单抗）→再入院抗栓+免疫抑制维持。首次住院热退但15天复发提示初始治疗强度不足。</div>
+<div class="alert"><b>治疗要点：</b>IVIG抵抗型KD发生冠状动脉损害风险显著高于IVIG敏感型。危险因素：Na ≤133、Alb ≤3.2、ALT ≥80、ANC% ≥80%。本例使用阿替普酶溶栓3天，血栓消退但冠状动脉仍持续扩张。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item "><div class="t-date">首次住院</div><div class="t-content">IVIG+激素+英夫利西单抗治疗，热退出院</div></div><div class="t-item red"><div class="t-date">出院后15天</div><div class="t-content"><span class="c-r">再次发热入院</span>，超声心动图示巨大动脉瘤+血栓</div></div><div class="t-item "><div class="t-date">再入院治疗</div><div class="t-content">抗血栓+生物制剂+激素脉冲治疗</div></div><div class="t-item yellow"><div class="t-date">治疗后</div><div class="t-content">血栓消退，但冠状动脉仍持续扩张</div></div><div class="t-item yellow"><div class="t-date">出院后2个月</div><div class="t-content">超声心动图复查：LCA 11×30 mm + RCA 16.5×20 mm（远端7.5×8.8 mm），LMCA及RCA壁附血栓<span class="c-y">（冠状动脉扩张无显著改善，继续药物治疗）</span>。基因检测发现THBD基因突变（exon1，20号染色体，常染色体显性遗传）+ NFKB1突变</div></div>
+<div class="t-item "><div class="t-date">长期随访</div><div class="t-content">血栓消退，但冠状动脉仍持续扩张。继续口服抗凝+免疫抑制+心血管随访</div></div></div>
+
+<div class="sh yellow">💡 疑难剖析与临床启示</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+
+<p><b>❓ 为什么难</b><br>8月龄男婴COVID-19后典型KD经IVIG+激素+英夫利西单抗治疗后热退，但出院15天即复发，伴巨大冠状动脉瘤（LMCA 12.5×18.8 mm）+多发大型附壁血栓。难点在于：①IVIG抵抗且复发，需要更强的二线方案；②巨大动脉瘤内血栓对标准抗凝效果不佳；③遗传学发现THBD+NFKB1双重基因突变，使血栓风险远超KD常见范围；④COVID-19与KD的协同促栓效应使预后更加复杂。</p>
+
+<p><b>⚠️ 易误诊/漏诊点</b><br>① <b>IVIG抵抗未预判</b>：首诊时未充分评估IVIG抵抗危险因素（低钠、低白蛋白、高ALT、高中性粒细胞%）。本例CRP 64 mg/dL + PLT 567K + Hb 8.1已属高危，应考虑增强初始治疗。<br>② <b>COVID-19后KD的血栓风险低估</b>：COVID-19内皮损伤+促凝因子释放+KD血管炎叠加，血栓风险远超单纯KD。本例D-二聚体3,500 ng/mL + 蛋白C 15 IU/dL已提示严重高凝状态。<br>③ <b>遗传学检测延迟</b>：THBD和NFKB1突变是在严重血栓出现后才进行的基因检测发现的。原文建议对所有KD伴严重/复发血栓的婴儿行遗传学检测。</p>
+
+<p><b>🔀 决策启示：IVIG抵抗型KD伴血栓的处理流程</b><br>
+<b>Step 1</b>（首诊）：评估IVIG抵抗风险→高危者考虑增强初始治疗（IVIG+激素联合，RAISE方案）<br>
+<b>Step 2</b>（IVIG后36h仍发热）：确认IVIG抵抗→第二剂IVIG + 激素脉冲/英夫利西单抗/环孢素<br>
+<b>Step 3</b>（发现CA瘤/血栓）：按Z-score分层→巨大动脉瘤（Z≫10/>8mm）需积极抗凝（华法林+低分子肝素+抗血小板）<br>
+<b>Step 4</b>（严重/复发血栓）：行遗传学检测（THBD、蛋白C/S、Factor V Leiden等）→THBD突变需长期抗凝+家庭筛查<br>
+<b>Step 5</b>（长期管理）：巨大CA瘤5年自限率仅15-20%，需终身抗凝+心外科随访+限制剧烈运动</p>
+
+<p><b>📚 教学价值</b><br>① COVID-19后KD可能需要更强的抗血栓策略；② 巨大CA瘤（>8 mm）需多学科管理（心血管+血液+遗传+风湿免疫）；③ KD伴严重血栓应常规行遗传学检测，THBD/NFKB1等突变可解释并指导长期抗凝；④ 原文强调"医学治疗可消退血栓，但冠状动脉仍持续扩张"，需长期随访。</p>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① IVIG抵抗型KD需识别高危因素（低钠、低白蛋白、高ALT、高中性粒细胞%）<br>
+  ② 巨大动脉瘤（&gt;8 mm）需积极抗凝管理<br>
+  ③ 对严重血栓患儿应考虑遗传学检测（THBD等易栓基因）<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ IVIG抵抗 → 英夫利西单抗/环孢素/激素脉冲<br>
+  ⑤ 巨大动脉瘤 → 长期抗凝+抗血小板<br>
+  ⑥ 多学科协作（心血管+血液+遗传）<br><br>
+  <b>3. 监测要点</b><br>
+  ⑦ 定期超声心动图随访冠状动脉变化<br>
+  ⑧ 监测D-二聚体、蛋白C活性<br><br>
+  <b>4. 预后</b><br>
+  ⑨ 巨大动脉瘤血栓消退后仍持续扩张，需长期随访<br>
+  ⑩ COVID-19相关KD血栓风险高，预后需谨慎评估
+</div>
+
+<div class="sh ">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38146411/" target="_blank">PMID 38146411</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10748654/" target="_blank">PMC10748654</a>，以下为原文引用的参考文献。</div></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  1. Gorji M, Taraz M, Gharib B, Ziaee V. Giant Coronary Aneurysms with Multiple Large Resistant Thromboses in an 8-Month-Old Boy with IVIg-Resistant Kawasaki Disease. <i>J Tehran Univ Heart Cent</i>. 2023;18(3):224-227. PMID: 38146411.<br>
+  2. Mossberg M, Mohammad AJ, Kahn F, et al. High risk of coronary artery aneurysm in Kawasaki disease. <i>Rheumatology (Oxford)</i>. 2021;60(6):1910-1914. PMID: 33150451.<br>
+  3. Halyabar O, Friedman KG, Sundel RP, et al. Cyclophosphamide use in treatment of refractory Kawasaki disease with coronary artery aneurysms. <i>Pediatr Rheumatol Online J</i>. 2021;19(1):31. PMID: 33731148.<br>
+  4. Tahghighi F, Bakhtiari Koohsorkhi M, Ziaee V. Peripheral Gangrene, an Unusual Presentation of Infantile Kawasaki: A Case Report. <i>Case Rep Rheumatol</i>. 2021;2021:6629405. PMID: 33954004.<br>
+  5. Zaffanello M, Piacentini G, et al. Thrombotic risk in children with COVID-19 infection: A systematic review. <i>Thromb Res</i>. 2021;205:92-98. PMID: 34293539.<br>
+  6. Duignan S, Doyle SL, McMahon CJ. Refractory Kawasaki disease: diagnostic and management challenges. <i>Pediatric Health Med Ther</i>. 2019;10:131-139. PMID: 31802968.<br>
+  7. Yoshino S, Cilluffo R, et al. Sex-Specific Genetic Variants are Associated With Coronary Endothelial Dysfunction. <i>J Am Heart Assoc</i>. 2016;5(4):e002544. PMID: 27091178.
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

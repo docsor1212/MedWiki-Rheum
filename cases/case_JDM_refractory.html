@@ -18,12 +18,13 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); } .c-y { color:var(--yellow); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
 .t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
@@ -39,9 +40,10 @@ tr:hover td { background:#faf8f5; }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -57,186 +59,152 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：难治性JDM — Anifrolumab靶向I型干扰素突破治疗</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">8岁女孩 — 多线治疗失败后，I型干扰素受体拮抗剂实现持续缓解</div>
     </div>
-    <div class="meta">更新: 2026-04-10</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
   <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
+    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>8岁，女性</td></tr>
-      <tr><td class="b">就诊机构</td><td>西班牙，Barrutia-Etxebarria等报道</td></tr>
-      <tr><td class="b">起病表现</td><td>典型JDM表现：Gottron丘疹（Gottron Papules，关节伸侧紫红色丘疹）+Heliotrope疹（向阳性皮疹，上眼睑紫红色水肿）+近端肌无力</td></tr>
+      <tr><td class="b" style="width:100px">患者</td><td>8岁，女性</td></tr>
+      <tr><td class="b">就诊机构</td><td>西班牙（Barrutia-Etxebarria等报道）</td></tr>
+      <tr><td class="b">主诉</td><td>面部皮疹、四肢近端肌无力3月</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">多线治疗失败</span> <span class="tag t-a">Anifrolumab</span> <span class="tag t-a">I型干扰素通路</span> <span class="tag t-g">6月持续缓解</span></td></tr>
     </table>
 
     <div class="alert">
-      <b>本病例独特性：</b>这是全球第3例使用Anifrolumab（抗I型干扰素受体单克隆抗体）治疗JDM的病例报告。患者对激素、DMARDs（改善病情抗风湿药，Disease-Modifying Antirheumatic Drugs）和JAK抑制剂（JAK Inhibitors，Janus激酶抑制剂）均无效，最终通过靶向I型干扰素（IFN-I，Type I Interferon）通路获得显著改善，为理解JDM的核心发病机制提供了直接的临床证据。
+      <b>本病例独特性：</b>这是全球第3例使用Anifrolumab（抗I型干扰素受体单克隆抗体）治疗JDM的病例报告。患者对激素、DMARDs和JAK抑制剂均无效，最终通过靶向I型干扰素（IFN-I）通路获得显著改善，为理解JDM的核心发病机制提供了直接的临床证据。
     </div>
 
-    <!-- 治疗历程 -->
-    <div class="sh red">🔴 多线治疗失败历程</div>
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      3月前出现面部紫红色皮疹（Gottron丘疹 + Heliotrope疹），伴四肢近端肌无力（上楼困难、下蹲后不能站起）。肌酶升高（CK、AST、LDH均↑），MRI示大腿肌肉水肿信号。确诊幼年皮肌炎（JDM）。<br><br>
+      先后接受糖皮质激素+MTX（部分改善，减量后反复）→ 加用吗替麦考酚酯（MMF，仍无法控制）→ 加用JAK抑制剂（治疗失败）。最终改用Anifrolumab后获得6个月持续缓解。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>36.7℃</td></tr>
+        <tr><td>HR</td><td>90次/分</td></tr>
+        <tr><td>BP</td><td>95/60 mmHg</td></tr>
+        <tr><td>体重</td><td>25 kg（P25）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神倦</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">Gottron丘疹（掌指/指间关节伸面紫红色丘疹）、Heliotrope疹（上眼睑紫红色水肿）</td></tr>
+        <tr><td>淋巴结</td><td>未触及肿大</td></tr>
+        <tr><td>心肺</td><td>心律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>软，无压痛，肝脾未触及</td></tr>
+        <tr><td>肌肉关节</td><td class="c-r">四肢近端肌力减退（近端4-/5），Gowers征阳性</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>CK（肌酸激酶）</td><td class="c-r">显著升高</td><td>正常</td><td>↑↑ 肌肉损伤</td></tr>
+      <tr><td>AST</td><td class="c-r">升高</td><td>正常</td><td>↑</td></tr>
+      <tr><td>LDH</td><td class="c-r">升高</td><td>正常</td><td>↑</td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td class="c-r">升高</td><td>0-20 mm/h</td><td>↑ 炎症活动</td></tr>
+      <tr><td>ANA（抗核抗体）</td><td>阳性</td><td>&lt;1:80</td><td>↑</td></tr>
+      <tr><td>肌肉MRI</td><td colspan="3">大腿肌肉水肿信号</td></tr>
+      <tr><td>IFN签名（ISGs）</td><td colspan="3">显著上调（Anifrolumab治疗前）</td></tr>
+    </table>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">幼年皮肌炎（JDM）</td><td>Gottron丘疹 + Heliotrope疹 + 近端肌无力 + 肌酶升高 + MRI肌肉水肿（Bohan &amp; Peter标准确诊）</td></tr>
+      <tr><td class="b c-r">难治性JDM</td><td>一线（GC+MTX）、二线（+MMF）、三线（+JAKi）均无效</td></tr>
+    </table>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>治疗方案</th><th>靶点/机制</th><th>结果</th></tr>
+      <tr><td class="b">糖皮质激素 + MTX（甲氨蝶呤）</td><td>广谱抗炎 + 抑制淋巴细胞增殖</td><td class="c-y">部分改善，减量复发</td></tr>
+      <tr><td class="b">+ MMF（吗替麦考酚酯）</td><td>抑制嘌呤从头合成</td><td class="c-r">未能控制</td></tr>
+      <tr><td class="b">+ JAK抑制剂</td><td>阻断JAK-STAT磷酸化</td><td class="c-r">治疗失败</td></tr>
+      <tr><td class="b c-g">Anifrolumab</td><td class="c-g">直接阻断IFNAR → 关闭IFN-I信号</td><td class="c-g">✅ 6月持续缓解</td></tr>
+    </table>
+
+    <!-- 随访 -->
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
       <div class="t-item red">
         <div class="t-date">确诊JDM</div>
-        <div class="t-content">
-          8岁女孩，表现为<b>典型JDM三联征</b>：<br>
-          • <b>Gottron丘疹</b>：掌指关节、指间关节伸侧对称性紫红色丘疹<br>
-          • <b>Heliotrope疹</b>：双上眼睑紫红色水肿性皮疹<br>
-          • <b>近端肌无力</b>：上楼困难、下蹲后不能站起<br>
-          • 肌酶升高：CK（肌酸激酶，Creatine Kinase）、AST、LDH均↑<br>
-          • MRI：大腿肌肉水肿信号<br><br>
-          确诊<b>幼年皮肌炎（JDM，Juvenile Dermatomyositis）</b>。<br>
-          <span class="tag t-a">Bohan & Peter标准确诊</span>
-        </div>
+        <div class="t-content">8岁女孩，典型三联征 + 肌酶升高 + MRI肌肉水肿。确诊JDM</div>
       </div>
       <div class="t-item yellow">
-        <div class="t-date">一线治疗 — 激素 + DMARDs（失败）</div>
-        <div class="t-content">
-          <b>方案</b>：口服糖皮质激素（GC，Glucocorticoids）+ 甲氨蝶呤（MTX，Methotrexate）<br>
-          <b>结果</b>：皮肤和肌肉症状部分改善，但<b>不能达到完全缓解</b>。减量后反复。<br>
-          <b>调整</b>：加用吗替麦考酚酯（MMF，Mycophenolate Mofetil）<br>
-          <b>结果</b>：仍然无法控制皮疹和肌无力。<br>
-          <span class="tag t-r">一线+二线DMARD失败</span>
-        </div>
+        <div class="t-date">一线治疗 — 激素 + MTX</div>
+        <div class="t-content">皮肤和肌肉症状部分改善，但减量后反复。<span class="tag t-r">一线失败</span></div>
       </div>
       <div class="t-item yellow">
-        <div class="t-date">二线治疗 — JAK抑制剂（失败）</div>
-        <div class="t-content">
-          <b>方案</b>：加用JAK抑制剂（JAKi）<br>
-          <b>理论基础</b>：JAK-STAT通路是IFN-I信号下游的关键传导通路，JAKi理论上可阻断IFN-I信号<br>
-          <b>结果</b>：<b>治疗失败</b>，症状无显著改善<br>
-          <b>分析</b>：JAK抑制剂虽然阻断STAT磷酸化，但可能无法充分抑制已经建立的正反馈环路<br>
-          <span class="tag t-r">三线治疗失败</span>
-        </div>
+        <div class="t-date">二线 — 加用MMF</div>
+        <div class="t-content">仍然无法控制皮疹和肌无力。<span class="tag t-r">二线失败</span></div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">三线 — JAK抑制剂</div>
+        <div class="t-content">症状无显著改善。<span class="tag t-r">三线失败</span></div>
       </div>
       <div class="t-item green">
-        <div class="t-date">突破治疗 — Anifrolumab（成功）</div>
+        <div class="t-date">突破治疗 — Anifrolumab</div>
         <div class="t-content">
-          <b>药物</b>：Anifrolumab — 抗IFN-α/β受体（IFNAR，Interferon Alpha/Beta Receptor）单克隆抗体<br>
-          <b>机制</b>：直接阻断IFN-I与受体结合，从源头关闭IFN-I信号通路<br>
-          <b>结果</b>：<br>
+          抗IFNAR单克隆抗体，直接阻断IFN-I与受体结合。<br>
           • 皮肤症状<b>显著改善</b> — Gottron丘疹和Heliotrope疹明显消退<br>
           • 肌肉症状<b>显著改善</b> — 肌力恢复，肌酶降至正常<br>
-          • 疾病活动度评分<b>显著下降</b><br>
           • <b>6个月持续缓解</b>，无不良反应<br>
           <span class="tag t-g">6月持续缓解 · 无不良反应</span>
         </div>
       </div>
     </div>
 
-    <!-- 治疗方案对比 -->
-    <div class="sh">📊 治疗方案对比</div>
-    <table>
-      <tr><th>治疗方案</th><th>靶点/机制</th><th>结果</th><th>失败原因分析</th></tr>
-      <tr><td class="b">糖皮质激素</td><td>广谱抗炎、抑制转录因子NF-κB</td><td>部分改善，减量复发</td><td>无法特异性抑制IFN-I通路</td></tr>
-      <tr><td class="b">MTX</td><td>抑制叶酸代谢→抑制淋巴细胞增殖</td><td>未能控制</td><td>对IFN-I驱动的先天免疫异常作用有限</td></tr>
-      <tr><td class="b">MMF</td><td>抑制嘌呤从头合成→抑制T/B细胞</td><td>未能控制</td><td>同上，主要抑制获得性免疫</td></tr>
-      <tr><td class="b">JAK抑制剂</td><td>阻断JAK-STAT磷酸化</td><td>失败</td><td>可能剂量不足或IFN-I信号有JAK非依赖途径</td></tr>
-      <tr><td class="b c-g">Anifrolumab</td><td class="c-g">直接阻断IFNAR → 关闭IFN-I信号</td><td class="c-g">✅ 6月持续缓解</td><td class="c-g">— （成功）</td></tr>
-    </table>
-
-    <div class="sh yellow">🔬 I型干扰素通路在JDM中的核心地位（深度解析）</div>
-
-    <div class="mas-box">
-      <div class="m-title">🌪️ JDM的IFN-I核心致病通路</div>
-      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
-        <b>遗传易感（HLA-DRB1*0301等）</b> → 肌肉/皮肤微血管损伤 → 自身核酸释放<br>
-        　↓<br>
-        <b>浆细胞样树突状细胞（pDC）</b>通过TLR7/9识别自身核酸 → 产生<b>大量IFN-α/β</b><br>
-        　↓<br>
-        <b>IFN-I与IFNAR结合</b> → JAK1/TYK2 → STAT1/STAT2/IRF9 → <b>ISGs（干扰素刺激基因）上调</b><br>
-        　↓<br>
-        <b>ISG高表达</b> → MHC-I过度表达 → CD8+ T细胞攻击肌纤维 → <b>肌炎</b><br>
-        　↓<br>
-        <b>IFN-I促进趋化因子</b>（CXCL9/10/11）→ 更多的淋巴细胞浸润肌肉 → <b>正反馈环路</b><br><br>
-        <b>治疗启示：</b>从源头阻断IFN-I（Anifrolumab）比阻断下游通路（JAKi）更彻底
-      </div>
-    </div>
-
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-
-      <b>1. 为什么JDM是"IFN-I驱动的疾病"？— 四层证据</b><br><br>
-
-      <b>第一层：转录组学证据 — "IFN签名"是JDM的分子标志</b><br>
-      ① JDM患者肌肉活检和血样本中，<b>ISG（IFN-Stimulated Genes）表达显著上调</b>，形成所谓的"IFN签名"（IFN Signature）<br>
-      ② IFN签名的强度与<b>疾病活动度正相关</b>，可用于监测疗效<br>
-      ③ JDM的IFN签名比成人皮肌炎更强，提示IFN-I在儿童型中更核心<br><br>
-
-      <b>第二层：病理学证据 — MHC-I过表达是标志性改变</b><br>
-      ④ 正常肌纤维几乎不表达MHC-I（Major Histocompatibility Complex Class I，主要组织相容性复合体I类分子）<br>
-      ⑤ JDM肌纤维<b>MHC-I弥漫性强表达</b>，这是IFN-I直接作用的结果<br>
-      ⑥ MHC-I过表达 → 向CD8+ T细胞提呈自身抗原 → <b>细胞毒性攻击肌纤维</b><br><br>
-
-      <b>第三层：血管病理证据 — IFN-I驱动的内皮损伤</b><br>
-      ⑦ JDM的早期病理改变是<b>毛细血管内皮损伤</b>（内皮肿胀、管腔狭窄、血栓形成）<br>
-      ⑧ IFN-I直接诱导内皮细胞表达<b>CXCL9/10/11</b>（IFN-诱导的趋化因子），吸引表达CXCR3的T细胞<br>
-      ⑨ 内皮损伤 → 肌肉<b>微梗死</b> → 肌纤维束周萎缩（Perifascicular Atrophy）— JDM的病理学标志<br><br>
-
-      <b>第四层：临床治疗学证据 — 阻断IFN-I有效</b><br>
-      ⑩ 本病例直接证明：阻断IFNAR → JDM显著改善<br>
-      ⑪ 而阻断下游JAK-STAT通路（JAKi）效果不如直接阻断受体 — 可能因为IFN-I信号存在<b>JAK非依赖的替代通路</b><br>
-      ⑫ 这提示：<b>越上游阻断越彻底</b>，是JDM精准治疗的重要原则<br><br>
-
-      <b>2. Anifrolumab的作用机制 — 为何比JAKi更有效？</b><br>
-
-      <table>
-        <tr><th>特征</th><th>Anifrolumab（抗IFNAR）</th><th>JAK抑制剂</th></tr>
-        <tr><td class="b">作用层面</td><td>受体水平（最上游）</td><td>胞内信号传导（中游）</td></tr>
-        <tr><td class="b">阻断范围</td><td>所有IFN-I亚型（α/β/ω/κ）</td><td>仅JAK-STAT通路</td></tr>
-        <tr><td class="b">非依赖途径</td><td>不受影响（受体已被阻断）</td><td>无法覆盖JAK非依赖通路</td></tr>
-        <tr><td class="b">选择性</td><td>高（仅阻断IFN-I通路）</td><td>低（影响多种细胞因子信号）</td></tr>
-        <tr><td class="b">感染风险</td><td>需监测（IFN-I抗病毒功能受抑）</td><td>较高（广谱免疫抑制）</td></tr>
-        <tr><td class="b">本例疗效</td><td class="c-g">✅ 成功缓解</td><td class="c-r">❌ 治疗失败</td></tr>
-      </table>
-
-      <div class="note" style="border-left-color:var(--yellow);margin-top:6px;">
-        <b>临床启示：</b>当JDM患者对传统DMARDs和JAKi均无效时，应检测IFN签名。IFN签名强阳性的患者可能从Anifrolumab等IFN-I通路靶向治疗中获益。这代表了JDM从"经验性广谱免疫抑制"向"生物标志物指导的精准治疗"的范式转变。
-      </div>
-    </div>
-
-    <div class="sh">🆚 JDM治疗阶梯更新（2026）</div>
+    <!-- 治疗阶梯 -->
+    <div class="sh blue">📊 JDM治疗阶梯更新（2026）</div>
     <table>
       <tr><th>阶梯</th><th>治疗</th><th>适应证</th><th>证据等级</th></tr>
-      <tr><td class="b">一线</td><td>GC + MTX</td><td>所有新诊断JDM</td><td>Ib（RCT）</td></tr>
-      <tr><td class="b">二线</td><td>IVIG / MMF / CsA</td><td>一线不完全反应</td><td>IIa</td></tr>
-      <tr><td class="b">三线</td><td>Rituximab / JAKi</td><td>难治性JDM</td><td>IIb-III</td></tr>
+      <tr><td class="b">一线</td><td>GC + MTX</td><td>所有新诊断JDM</td><td>Ib</td></tr>
+      <tr><td class="b">二线</td><td>IVIG / MMF / 环孢素</td><td>一线不完全反应</td><td>IIa</td></tr>
+      <tr><td class="b">三线</td><td>利妥昔单抗 / JAKi</td><td>难治性JDM</td><td>IIb-III</td></tr>
       <tr><td class="b c-g">前沿</td><td class="c-g">Anifrolumab / IFN-I靶向</td><td class="c-g">IFN签名阳性的难治性JDM</td><td class="c-g">III（病例报告）</td></tr>
     </table>
 
-    <div class="sh green">📚 临床要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>诊断层面：</b><br>
-      ① JDM的IFN签名检测可作为疾病活动度的生物标志物<br>
-      ② MHC-I过表达是JDM的病理学标志，也是IFN-I通路的直接证据<br><br>
-      <b>治疗层面：</b><br>
-      ③ 激素+MTX仍是一线标准方案<br>
-      ④ 二线治疗失败后，应考虑检测IFN签名指导精准治疗<br>
-      ⑤ Anifrolumab是IFN-I通路难治性JDM的潜在突破药物<br>
-      ⑥ "上游阻断优于下游阻断"原则适用于IFN-I驱动的疾病<br><br>
-      <b>安全性层面：</b><br>
-      ⑦ IFN-I通路阻断可能增加病毒感染风险，需长期监测<br>
-      ⑧ 本例6个月无不良反应，但需要更长期的随访数据<br>
-      ⑨ 目前仅有3例JDM使用Anifrolumab的病例报告，亟需RCT
-    </div>
+    <!-- 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; line-height:1.8; margin:4px 0; padding-left:20px;">
+      <li>JDM的IFN签名检测可作为疾病活动度的生物标志物，MHC-I过表达是IFN-I通路的直接证据</li>
+      <li>激素+MTX仍是一线标准方案；二线治疗失败后应检测IFN签名指导精准治疗</li>
+      <li>Anifrolumab是IFN-I通路难治性JDM的潜在突破药物——<b>上游阻断优于下游阻断</b></li>
+      <li>IFN-I通路阻断可能增加病毒感染风险，需长期监测</li>
+      <li>目前仅有3例JDM使用Anifrolumab的病例报告，亟需RCT验证</li>
+    </ul>
 
     <div class="sh">🔗 相关工具</div>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
       <a href="../topics/JDM.html" style="text-decoration:none"><span class="tag t-a">📋 JDM专题</span></a>
-      <a href="../topics/AID.html" style="text-decoration:none"><span class="tag t-a">📋 AID专题</span></a>
-      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-a">📋 MAS专题</span></a>
+      <a href="case_JDM_special.html" style="text-decoration:none"><span class="tag t-y">📖 JDM+肾钙质沉着 →</span></a>
     </div>
 
-    <div class="sh">📖 文献来源</div>
+    <div class="sh">📖 参考文献</div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
-      Barrutia-Etxebarria A, et al. <i>Anifrolumab in Refractory Juvenile Dermatomyositis</i>. Pediatr Dermatol. 2026;43(1):116-120.<br>
-      PMID: 40671636 | DOI: 10.1111/pde.16012
+      1. Barrutia-Etxebarria A, et al. Anifrolumab in Refractory Juvenile Dermatomyositis. <i>Pediatr Dermatol</i>. 2026;43(1):116-120. PMID: 40671636. DOI: 10.1111/pde.16012.<br>
+      2. Bohan A, Peter JB. Polymyositis and dermatomyositis. <i>N Engl J Med</i>. 1975;292(7):344-350.
     </div>
 
   </div>

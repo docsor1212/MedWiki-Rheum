@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：儿童肉芽肿性多血管炎（GPA）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_ANCA_01.html">📖 本病例</a>
+  <span class="nav-title">循证病例 · ANCA相关血管炎</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：儿童肉芽肿性多血管炎（GPA）</h1>
+      <div class="sub">Granulomatosis with Polyangiitis — 伴脾梗死、模拟IBD的罕见表现</div>
+    </div>
+    <div class="meta">PMID: 39149179</div>
+  </div>
+
+  <div class="body">
+
+    <!-- 1. 文献来源 -->
+    <div class="source-card" style="background:#d4f0ed;border-left:4px solid var(--accent);padding:8px 12px;border-radius:0 8px 8px 0;margin:6px 0;font-size:11.5px;">
+      <div style="font-weight:700;color:var(--accent);font-size:12px;margin-bottom:3px;">📄 文献来源</div>
+      <b>PMID:</b> 39149179 &nbsp;|&nbsp; <b>PMC:</b> PMC11322005<br>
+      <b>DOI:</b> 10.1002/jpr3.12099<br>
+      <b>期刊:</b> JPGN Reports | <b>年份:</b> 2024<br>
+      <b>作者:</b> Pathania S, Rehman R, Ward M, Yalcindag A, Ross A, Herzlinger M, Gorbounova I<br>
+      <b>机构:</b> Hasbro Children's Hospital / Brown University, Providence, RI, USA<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11322005/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="alert"><b>流行病学提示：</b>GPA是儿童最常见的ANCA相关血管炎，但仅<b>3.3%</b>的GPA病例在20岁前发病，儿童年发病率约<b>0.1/10万</b>。脾梗死是GPA的罕见并发症，多在尸检中发现。儿童GPA死亡率约<b>5-10%</b>，主要死因为肺出血或肾衰竭。</div>
+
+    <!-- 2. 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">性别</td><td>男</td></tr>
+      <tr><td class="b">年龄</td><td>7岁</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">ANCA相关血管炎</span> <span class="tag t-a">GPA</span> <span class="tag t-y">PR3-ANCA阳性</span> <span class="tag t-r">脾梗死</span></td></tr>
+    </table>
+
+    <!-- 3. 主诉 -->
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:13px;font-weight:600;margin:4px 0;">腹痛4月，鼻衄3月</p>
+
+    <!-- 4. 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      既往体健的7岁男孩，因<b>4个月内体重下降20磅（约9kg）</b>伴乏力、食欲减退、弥漫性腹痛和腹泻就诊。<br><br>
+      伴口腔溃疡、关节痛，<b>近3月反复鼻出血伴咳嗽</b>。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健，无特殊。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：类风湿关节炎、多发性硬化家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <!-- 5. 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">一般情况</th></tr>
+        <tr><td>外观</td><td class="c-r">疲倦面容</td></tr>
+        <tr><td>腹部</td><td>上腹部及左侧压痛，无腹膜刺激征</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>耳鼻喉</td><td>鼻腔病变（后续喉镜：鼻息肉+声门下狭窄）</td></tr>
+        <tr><td>皮肤</td><td class="c-r">进展性上肢紫癜（皮肤血管炎）</td></tr>
+        <tr><td>呼吸</td><td class="c-r">呼吸窘迫（需转PICU）</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>Hb</td><td>10.9 g/dL</td><td>11.2-14.5</td><td class="c-y">轻中度贫血</td></tr>
+      <tr><td>PLT</td><td>737×10⁹/L</td><td>150-400</td><td class="c-r">血小板增多（炎症反应）</td></tr>
+      <tr><td>CRP</td><td>187 mg/L</td><td>0-10</td><td class="c-r">显著升高</td></tr>
+      <tr><td>ESR</td><td>105 mm/h</td><td>0-15</td><td class="c-r">显著升高</td></tr>
+      <tr><td>粪钙卫蛋白</td><td>199 mg/kg</td><td>0-49.9</td><td class="c-r">↑↑（疑IBD）</td></tr>
+      <tr><td>PR3-ANCA</td><td>阳性</td><td>阴性</td><td class="c-r">GPA标志性抗体</td></tr>
+      <tr><td>c-ANCA</td><td>阳性</td><td>阴性</td><td class="c-r">↑</td></tr>
+      <tr><td>尿常规</td><td>镜下血尿</td><td>阴性</td><td class="c-y">肾脏受累</td></tr>
+      <tr><td>腹部CT</td><td>脾脏弥漫性低密度伴分隔</td><td>正常</td><td class="c-r">脾梗死/血管病变</td></tr>
+    </table>
+    <div class="alert">
+      <b>关键发现：</b>c-ANCA/PR3阳性 + 鼻息肉/声门下狭窄 + 镜下血尿 + 脾梗死 → 高度提示GPA
+    </div>
+
+    <!-- 7. 发病机制 -->
+    <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+      <b>一、ANCA相关血管炎的免疫发病机制</b><br>
+      肉芽肿性多血管炎（GPA）是一种系统性疾病，属ANCA相关血管炎（AAV）范畴，其核心免疫病理特征为<b>抗中性粒细胞胞浆抗体（ANCA）</b>介导的小血管坏死性炎症。原文指出，GPA是儿童最常见的ANCA相关血管炎，但仅3.3%的病例在20岁前发病，年发病率在儿童中仅为0.1/10万。GPA的标志性自身抗体为<b>PR3-ANCA（c-ANCA）</b>，靶向中性粒细胞和单核细胞胞浆中的蛋白酶3（Proteinase 3）。<br><br>
+      <b>二、ANCA-中性粒细胞相互作用机制</b><br>
+      在GPA的发病过程中，PR3-ANCA与中性粒细胞表面的PR3抗原结合，导致中性粒细胞<b>脱颗粒和呼吸爆发</b>，释放大量蛋白酶、活性氧和促炎细胞因子，直接损伤血管内皮细胞。同时，激活的中性粒细胞在血管壁聚集，形成坏死性血管炎的病理基础。原文提及的破坏性淋巴细胞性血管炎和肉芽肿形成，正是这一免疫病理过程的直接体现——鼻和气管活检中可见<b>palisading组织细胞</b>围绕的<b>不良形式肉芽肿</b>伴淋巴细胞浸润。<br><br>
+      <b>三、多器官受累的病理机制</b><br>
+      GPA经典累及上呼吸道（鼻息肉、声门下狭窄）、下呼吸道（肺结节/空洞/出血）和肾脏（坏死性新月体肾炎）。原文强调，<b>脾梗死</b>是GPA的罕见表现，其机制为坏死性血管炎累及脾动脉远端分支导致缺血性梗死。脾受累常被低估，与<b>年轻年龄、耳鼻喉受累和PR3阳性</b>相关，多在尸检中发现。本例中脾脏异常先于GPA诊断，是多学科讨论的重要线索。<br><br>
+      <b>四、消化道模拟IBD的机制</b><br>
+      原文指出，GPA的胃肠道受累在成人中发生率约5%-20%，可表现为腹痛、回结肠炎、胆囊炎、出血和肠穿孔，症状与IBD高度重叠。粪钙卫蛋白升高并非IBD特异性——本例中粪钙卫蛋白升高实际继发于肠道血管炎而非IBD，这一发现对鉴别诊断具有重要启示意义。
+    </div>
+
+    <!-- 8. 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出GPA/ANCA相关血管炎的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">EULAR/ACR AAV分类标准（GPA项）</td><td>Suppiah R 等 / EULAR+ACR</td><td>2022</td><td>Ann Rheum Dis</td><td>加权评分制（≥5分分类为GPA）</td><td>
+        本例：①PR3-ANCA阳性(+3分) ②上呼吸道受累-鼻息肉/声门下狭窄(+2分) ③肺部受累-肺泡出血(+2分) ④肾脏受累-镜下血尿(+1分) ⑤病理-肉芽肿+坏死性血管炎(+3分)<br>
+        <b>总分≥5分 → 分类为GPA ✅</b>
+      </td></tr>
+      <tr><td class="b">儿童GPA诊断标准（参照成人标准）</td><td>Jariwala MP, Laxer RM</td><td>2018</td><td>Front Pediatr</td><td>≥3项标准</td><td>
+        ① ANCA血清学阳性 → <span class="c-g">✅ c-ANCA及PR3-ANCA阳性</span><br>
+        ② 坏死性血管炎（组织病理）→ <span class="c-g">✅ 鼻/气管活检确诊</span><br>
+        ③ 上呼吸道受累 → <span class="c-g">✅ 鼻息肉+声门下狭窄</span><br>
+        ④ 肺受累 → <span class="c-g">✅ 弥漫性肺泡出血</span><br>
+        ⑤ 肾受累 → <span class="c-g">✅ 镜下血尿</span><br>
+        <b>满足≥3项 → 确诊GPA ✅</b>
+      </td></tr>
+      <tr><td class="b">2012 CHCC血管炎命名</td><td>Jennette JC 等</td><td>2013</td><td>Arthritis Rheum</td><td>病理+临床分类</td><td>
+        GPA = 与ANCA相关的小血管炎+上呼吸道肉芽肿 → <span class="c-g">✅ 符合</span>
+      </td></tr>
+    </table>
+    <div class="note"><b>诊断：</b>肉芽肿性多血管炎（GPA/韦格纳肉芽肿）+ 脾梗死（罕见并发症）</div>
+
+    <!-- 8. 鉴别诊断 -->
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">炎症性肠病（IBD）</td><td>腹痛腹泻、体重下降、粪钙卫蛋白↑、血小板↑</td><td>c-ANCA/PR3阳性、声门下狭窄、肺泡出血、紫癜 → 不符合IBD</td></tr>
+      <tr><td class="b">MPA（显微镜下多血管炎）</td><td>小血管炎、肾受累</td><td>MPA通常PR3阴性、MPO-ANCA阳性、无肉芽肿 → 不符合</td></tr>
+      <tr><td class="b">淋巴瘤</td><td>体重下降、脾脏异常</td><td>无淋巴结肿大、无纵隔肿块、无肝大、病理无肿瘤细胞 → 排除</td></tr>
+      <tr><td class="b">感染性心内膜炎/败血症</td><td>脾脏病变</td><td>血培养阴性、无瓣膜病变 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：GPA模拟IBD</div>
+      GPA的胃肠道表现（腹痛、腹泻、体重下降、粪钙卫蛋白升高）可完全模拟IBD，尤其在缺乏典型上呼吸道症状时。本例早期粪钙卫蛋白升高误导了诊断方向。<b>关键鉴别：</b>鼻衄+声门下狭窄+紫癜+PR3-ANCA阳性 → 高度提示系统性血管炎而非IBD。
+    </div>
+
+    <!-- 9. 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+
+    <table>
+      <tr><th>阶段</th><th>药物/措施</th><th>剂量/方案</th><th>目的</th></tr>
+      <tr><td class="b">诱导缓解</td><td>大剂量糖皮质激素</td><td>甲泼尼龙冲击（按体重计算）</td><td class="c-a">一线诱导——抑制血管炎症</td></tr>
+      <tr><td class="b">诱导缓解</td><td>利妥昔单抗（Rituximab）</td><td>375 mg/m²/周 × 4周 或 1g × 2次（间隔2周）</td><td class="c-a">一线诱导——B细胞耗竭，清除ANCA产生细胞</td></tr>
+      <tr><td class="b">病情恶化</td><td>血浆置换（PLEX）</td><td>每日或隔日 × 5-7次</td><td class="c-r">肺泡出血→紧急清除循环ANCA</td></tr>
+      <tr><td class="b">病情恶化</td><td>环磷酰胺</td><td>15 mg/kg IV 每2-3周 × 3-6次</td><td class="c-r">利妥昔单抗无效后转为CYC方案</td></tr>
+      <tr><td class="b">病情恶化</td><td>甲泼尼龙冲击</td><td>30 mg/kg/d IV × 3天</td><td class="c-r">最大剂量1g/d，快速免疫抑制</td></tr>
+      <tr><td class="b">维持缓解</td><td>利妥昔单抗或硫唑嘌呤</td><td>长期维持方案</td><td>防止复发（儿童GPA复发率约50%）</td></tr>
+    </table>
+    <div class="alert">
+      <b>⚠️ 肺泡出血是GPA最凶险的并发症之一</b>，需要紧急血浆置换+环磷酰胺+激素冲击。儿童GPA的死亡率为5-10%，多因肺出血或肾衰竭。
+    </div>
+
+    <!-- 10. 随访 -->
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">入院初期</div>
+        <div class="t-content">因消化道症状收住，完善IBD相关检查。腹部超声/CT发现脾脏异常。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">住院期间 — 恶化</div>
+        <div class="t-content">出现恶化性鼻衄、紫癜、呼吸窘迫 → 转PICU。PR3-ANCA结果回报阳性。喉镜：鼻息肉+声门下狭窄。活检确诊GPA。</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">一线治疗</div>
+        <div class="t-content">大剂量激素 + 利妥昔单抗诱导缓解。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">1月后 — 弥漫性肺泡出血</div>
+        <div class="t-content">出现肺泡出血（GPA最严重并发症之一）→ 升级血浆置换 + 环磷酰胺 + 激素冲击。CT胸部证实大面积脾梗死。</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">后续随访</div>
+        <div class="t-content">腹痛腹泻缓解，食欲恢复，体重增加。继续维持治疗。</div>
+      </div>
+    </div>
+
+    <!-- 11. 疑难剖析 -->
+    <div class="sh yellow">🧠 疑难剖析（决策导向）</div>
+    <div class="diff-box">
+      <div class="diff-title">🔴 决策点一："IBD"治疗效果不佳+多系统症状→何时考虑系统性血管炎？</div>
+      <b>临床情境：</b>7岁男孩以腹痛、腹泻、体重下降、粪钙卫蛋白升高起病，高度模拟IBD。但治疗过程中出现鼻衄、紫癜、呼吸窘迫。<br>
+      <b>决策路径：</b>①消化道症状+粪钙卫蛋白升高 → 首先考虑IBD，但<b>正规IBD治疗效果不佳时应扩大鉴别范围</b> ②出现<b>鼻衄+紫癜+关节痛+呼吸症状</b>（多系统受累）→ 立即考虑系统性血管炎 ③急查ANCA谱+尿常规+胸部影像 → PR3-ANCA阳性+镜下血尿 → 高度提示GPA<br>
+      <b>关键决策："IBD"患者出现不能解释的多系统症状时，应立即检测ANCA和自身免疫指标，而非继续加强IBD治疗。延迟诊断的代价是致命的——GPA未治疗1年死亡率达90%。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟡 决策点二：影像学发现脾脏异常→如何正确解读？</div>
+      <b>临床情境：</b>腹部CT发现脾脏弥漫性低密度伴分隔，鉴别诊断包括脓肿、肿瘤、血管病变等。<br>
+      <b>决策路径：</b>①脾脏弥漫性低密度 → 鉴别：脓肿/梗死/肿瘤/血管病变 ②结合PR3-ANCA阳性+坏死性血管炎 → <b>脾梗死</b>最可能（GPA累及脾动脉分支）③确认：后续CT随访示脾脏缩小、中央低密度+周围保留 → 典型梗死演变<br>
+      <b>关键决策：系统性血管炎患者出现脾脏异常应首先考虑血管炎性梗死，而非独立疾病。脾梗死多为无症状性，不需要特殊处理，重点是治疗原发病。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟢 决策点三：GPA诱导缓解后出现肺泡出血→如何升级治疗？</div>
+      <b>临床情境：</b>利妥昔单抗+大剂量激素诱导缓解后1个月，突发弥漫性肺泡出血。<br>
+      <b>决策路径：</b>①肺泡出血=GPA<b>最凶险并发症</b>，需紧急处理 ②一线诱导失败 → <b>立即升级治疗</b>：血浆置换（清除ANCA）+环磷酰胺+甲泼尼龙冲击 ③利妥昔单抗无效 → 转为环磷酰胺方案<br>
+      <b>关键决策：GPA肺泡出血是危及生命的急症，需多学科协作（风湿+ICU+呼吸）。单纯增加激素剂量不足，必须联合血浆置换和环磷酰胺。</b>
+    </div>
+
+    <!-- 12. 要点总结 -->
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① GPA可模拟IBD，消化道症状+粪钙卫蛋白升高不代表一定是IBD<br>
+      ② 多系统症状（鼻衄+皮疹+肺+肾）应高度警惕系统性血管炎<br>
+      ③ PR3-ANCA/c-ANCA是GPA的核心血清学标志<br><br>
+      <b>2. 治疗策略</b><br>
+      ④ 利妥昔单抗或环磷酰胺+激素是一线诱导方案<br>
+      ⑤ 肺泡出血需紧急血浆置换+免疫抑制<br>
+      ⑥ 脾梗死多为自限性，重点治疗原发病<br><br>
+      <b>3. 监测要点</b><br>
+      ⑦ 定期监测肾功能、ANCA滴度、胸部影像<br>
+      ⑧ 警惕声门下狭窄导致气道梗阻<br><br>
+      <b>4. 预后</b><br>
+      ⑨ 儿童GPA预后较成人好，但复发率高（约50%）<br>
+      ⑩ 早期积极诱导缓解可显著降低死亡率和器官损害
+    </div>
+
+    <!-- 13. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/39149179/" target="_blank">PMID 39149179</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11322005/" target="_blank">PMC11322005</a></div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Pathania S, Rehman R, Ward M, et al. An unusual case of pediatric GPA complicated by splenic infarction presenting as IBD. <i>JPGN Rep</i>. 2024;5(3):398-401. PMID: 39149179.<br>
+      2. Jennette JC, Falk RJ, Bacon PA, et al. 2012 Revised CHCC Nomenclature of Vasculitides. <i>Arthritis Rheum</i>. 2013;65(1):1-11. PMID: 23045170.<br>
+      3. Suppiah R, Robson JC, Grayson PC, et al. 2022 ACR/EULAR classification criteria for GPA. <i>Ann Rheum Dis</i>. 2022;81(3):315-320. PMID: 34789103.<br>
+      4. Cabral DA, Canter DL, Muscal E, et al. Comparing the presentation and outcomes of childhood-onset AAV. <i>Arthritis Rheumatol</i>. 2024;76(4):562-572. PMID: 37946780.<br>
+      5. Jariwala MP, Laxer RM. An approach to the diagnosis and management of childhood vasculitis. <i>Front Pediatr</i>. 2018;6:260. PMID: 30320147.<br>
+      6. Euler M, Moorthy LN, Moorthy R, et al. Childhood-onset GPA: clinical course and outcomes. <i>Rheumatology</i>. 2020;59(5):1083-1090. PMID: 31504126.
+    </div>
+
+  </div>
+
+  <div class="footer">
+    基于PMC11322005真实病例 · Pathania S, et al. JPGN Rep 2024 · 仅供教学参考
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

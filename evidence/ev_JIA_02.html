@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 多关节型JIA（难治性）— PMID 33451288</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 多关节型JIA（难治性）合并Leri-Weill综合征</h1>
+      <div class="sub">循证病例 · PMID 33451288</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 33451288 &nbsp; <span class="b">PMCID:</span> PMC7809853<br>
+      <span class="b">DOI:</span> 10.1186/s12887-021-02494-6<br>
+      <span class="b">期刊:</span> BMC Pediatrics | <span class="b">年份:</span> 2021<br>
+      <span class="b">作者:</span> Vukić V, Smajo A, Vidović M, Vukojević R, Harjaček M, Lamot L<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7809853/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="alert"><b>流行病学提示：</b>RF阴性多关节型JIA约占JIA的<b>15-25%</b>。仅<b>14%</b>在5年内可达到无药缓解。对≥2种生物制剂（包括TNF抑制剂和非TNF生物制剂）无效者定义为"难治性JIA"，JAK抑制剂为难治性病例提供新选择。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>4岁起病（女），随访至16岁以上</td></tr>
+      <tr><td class="b">就诊日期</td><td>2007年（首次就诊）</td></tr>
+      <tr><td class="b">主诉</td><td><span class="c-r">双膝肿痛、屈曲挛缩1年</span></td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">多关节型JIA（难治性）</span> <span class="tag t-y">RF阴性</span> <span class="tag t-a">Leri-Weill综合征</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">双膝肿痛、屈曲挛缩1年</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      4岁女童因双膝肿痛伴屈曲挛缩就诊。症状1年前开始，无明显诱因，NSAIDs治疗无效。晨僵持续长达<b>3小时</b>。病情进行性加重，先后累及肘、腕、踝及双手小关节。并发左侧严重葡萄膜炎。<br><br>
+      患者对多种生物制剂（英夫利西单抗、阿达木单抗、托珠单抗、依那西普）及传统DMARDs（MTX、来氟米特）、环磷酰胺、利妥昔单抗等均反应不佳，最终依赖口服GC，出现医源性库欣综合征。<b>2018年</b>开始JAK抑制剂托法替布治疗，症状逐步改善，GC成功减停。腕关节消肿后首次发现Madelung畸形，基因检测确诊Leri-Weill综合征。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：足月顺产，精神运动发育正常。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：父母非近亲婚配，无类似病史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">关节检查（活动期）</th></tr>
+        <tr><td>双膝</td><td class="c-r">肿胀+屈曲挛缩</td></tr>
+        <tr><td>肘、腕、踝</td><td class="c-r">肿胀+活动受限</td></tr>
+        <tr><td>双手小关节</td><td class="c-r">肿胀</td></tr>
+        <tr><td>晨僵</td><td>3小时</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">特殊发现</th></tr>
+        <tr><td>库欣面容</td><td class="c-y">医源性（长期GC依赖）</td></tr>
+        <tr><td>双侧Madelung畸形</td><td class="c-r">腕消肿后发现</td></tr>
+        <tr><td>左侧葡萄膜炎</td><td class="c-r">慢性</td></tr>
+        <tr><td>生长迟缓</td><td class="c-y">身材矮小</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>ESR</td><td class="c-r">持续升高，最高100 mm/h</td><td>0-20</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>CRP</td><td class="c-r">持续升高</td><td>&lt;8</td><td class="c-r">↑↑</td></tr>
+      <tr><td>IL-6</td><td class="c-r">最高75 pg/mL</td><td></td><td class="c-r">↑↑</td></tr>
+      <tr><td>TNF-α</td><td class="c-r">最高20 pg/mL</td><td></td><td class="c-r">↑</td></tr>
+      <tr><td>RF</td><td>阴性</td><td></td><td>阴性</td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td>阴性</td></tr>
+      <tr><td>免疫球蛋白</td><td>正常</td><td></td><td>正常</td></tr>
+    </table>
+    <div class="note"><b>双手X线：</b>腕骨骨质疏松，双侧桡骨远端弓状弯曲、桡骨倾斜角增大(~30°)、腕骨呈三角形 → 双侧Madelung畸形。<b>双手MRI：</b>腕关节及MCP关节炎性渗出，屈肌腱鞘炎。<b>基因检测：</b>MLPA示SHOX基因缺失766.5 kb → 确诊Leri-Weill综合征。</div>
+
+    <div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>一、多关节型JIA的炎症通路特征</b><br>原文指出，本例患者的治疗历程揭示了多关节型JIA的复杂炎症网络：先后经历TNF-α抑制剂（英夫利西单抗、阿达木单抗、依那西普）、IL-6受体抑制剂（托珠单抗）、T细胞共刺激调节剂（阿巴西普未使用但属同类）、B细胞清除剂（利妥昔单抗）等多种靶向治疗均仅获得短暂反应。实验室证实患者血清IL-6（最高75 pg/mL）和TNF-α（最高20 pg/mL）均显著升高，提示多条炎症通路并行激活。</p>
+<p><b>二、难治性JIA的免疫学机制</b><br>原文强调，当患者对≥2种生物制剂（包括TNF抑制剂和非TNF生物制剂）无效时，即定义为"难治性JIA"。可能的机制包括：①单一靶点阻断后其他促炎通路代偿性上调（TNF-α阻断后IL-6/IL-1上调）；②滑膜微环境中的纤维母细胞样滑膜细胞（FLS）具有类肿瘤样的侵袭性，可独立于免疫细胞产生基质金属蛋白酶和促炎因子；③遗传背景影响药物反应（SHOX基因缺失可能影响生长发育，但对免疫通路的影响尚不明确）。</p>
+<p><b>三、JAK-STAT通路——难治性JIA的治疗突破口</b><br>托法替布作为JAK1/3抑制剂，可同时阻断多种细胞因子信号传导：JAK1→IL-6、IFN-γ、IL-2信号；JAK3→γc细胞因子家族（IL-2/4/7/9/15/21）信号。相比单一靶点的生物制剂，JAK抑制剂覆盖更广谱的细胞因子信号，对多种生物制剂无效的患者可能有效。本例托法替布治疗成功减停GC并持续缓解，验证了这一策略。</p>
+<p><b>四、Leri-Weill综合征的合并意义</b><br>SHOX基因缺失→桡骨远端生长板异常→Madelung畸形。该综合征本身不加重关节炎，但活动性腕关节肿胀长期掩盖了骨骼畸形，GC减停消肿后才被发现。这提示：难治性JIA的"关节畸形"不一定全是炎症后果，需排除合并的遗传性骨骼疾病。</p>
+<p><b>五、长期GC依赖的多系统损害</b><br>GC通过抑制GH-IGF1轴、抑制骨形成、干扰性激素分泌导致：①医源性库欣综合征；②低骨密度；③生长迟缓；④青春期延迟。这些副作用与慢性炎症本身的危害叠加，强调了尽早减停GC的治疗目标。</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出RF阴性多关节型JIA（难治性）合并Leri-Weill综合征的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">ILAR JIA分类标准(多关节型RF阴性)</td><td>Petty RE 等/ILAR</td><td>2004</td><td>J Rheumatol</td><td>≥5关节+<16岁+≥6周+RF阴性</td><td>① 关节炎≥5个 → <span class='c-g'>✅</span><br>② <16岁 → <span class='c-g'>✅ 4岁</span><br>③ ≥6周 → <span class='c-g'>✅ 12年</span><br>④ RF阴性 → <span class='c-g'>✅</span><br>⑤ 排除标准 → <span class='c-g'>✅</span><br><b>确诊 ✅</b></td></tr>
+    </table>
+    <div style="font-size:12px;margin:4px 0 6px;"><b>诊断一：RF阴性多关节型JIA（难治性）</b></div>
+    <table>
+      <tr><th colspan="4">ILAR多关节型JIA分类标准（Petty RE et al. <i>J Rheumatol</i> 2004）</th></tr>
+      <tr><th>标准条目</th><th>要求</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>关节炎（≥5个关节，发病前6个月）</td><td>≥5关节</td><td>双膝+双肘+双腕+双踝+双手小关节，远超5个</td><td class="c-g">✅</td></tr>
+      <tr><td>发病年龄&lt;16岁</td><td>必须</td><td>4岁起病</td><td class="c-g">✅</td></tr>
+      <tr><td>病程≥6周</td><td>必须</td><td>起病1年后确诊，持续12年</td><td class="c-g">✅</td></tr>
+      <tr><td>RF阴性</td><td>RF阴性亚型</td><td>RF阴性</td><td class="c-g">✅</td></tr>
+      <tr><td>ANA阴性</td><td>—</td><td>ANA阴性</td><td>—</td></tr>
+      <tr><td>排除全身型</td><td>无弛张热/皮疹</td><td>无发热、皮疹、浆膜炎</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="2"><b>判定</b></td><td colspan="2"><span class="c-g"><b>✅ 确诊RF阴性多关节型JIA</b></span></td></tr>
+    </table>
+    <div style="font-size:12px;margin:10px 0 6px;"><b>诊断二：Leri-Weill综合征</b></div>
+    <table>
+      <tr><th colspan="4">Leri-Weill综合征诊断（基因+临床+影像三联）</th></tr>
+      <tr><th>条目</th><th>要求</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>SHOX基因缺失</td><td>金标准</td><td>MLPA证实SHOX基因缺失766.5 kb</td><td class="c-g">✅</td></tr>
+      <tr><td>Madelung畸形</td><td>典型影像学</td><td>双侧桡骨远端弓状弯曲+桡骨倾斜角~30°+三角形腕骨</td><td class="c-g">✅</td></tr>
+      <tr><td>身材矮小</td><td>常见</td><td>生长迟缓（部分归因于长期GC）</td><td class="c-g">✅</td></tr>
+    </table>
+    <div style="font-size:12px;margin:10px 0 6px;"><b>合并诊断</b>：医源性库欣综合征 | 左侧慢性葡萄膜炎 | 低骨密度 | 青春期延迟</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">全身型JIA</td><td>多关节受累+高炎症指标</td><td>无弛张热/皮疹/浆膜炎 → 排除</td></tr>
+      <tr><td class="b">幼年SLE</td><td>多系统受累</td><td>ANA阴性+无皮疹/肾炎/血液系统受累 → 排除</td></tr>
+      <tr><td class="b">Madelung畸形（孤立）</td><td>腕部畸形</td><td>关节炎广泛+炎症指标升高 → 非孤立畸形</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：难治性JIA需警惕合并症</div>
+      本例Madelung畸形被活动性关节炎腕关节肿胀掩盖多年，直到GC减停腕部消肿后才被发现。难治性病例应常规评估合并遗传性骨骼疾病可能，尤其是生长迟缓与关节炎严重程度不成比例时。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>时间</th><th>药物</th><th>方案</th><th>疗效/分析</th></tr>
+      <tr><td>2007-2008</td><td class="b">NSAIDs+GC+MTX</td><td>常规剂量</td><td class="c-r">无效，病情进展</td></tr>
+      <tr><td>2008.11-2011.4</td><td class="b">英夫利西单抗+MTX</td><td>5 mg/kg q6-8w</td><td class="c-y">短暂有效后复发</td></tr>
+      <tr><td>2011.4-2012.11</td><td class="b">阿达木单抗+MTX</td><td>标准剂量</td><td class="c-y">短暂缓解后加重</td></tr>
+      <tr><td>2012.11-2014.9</td><td class="b">托珠单抗+MTX</td><td>抗IL-6R</td><td class="c-y">短暂缓解后复发</td></tr>
+      <tr><td>2014.9-2016.6</td><td class="b">依那西普+MTX+来氟米特</td><td>三联</td><td class="c-r">无持续反应</td></tr>
+      <tr><td>2016.6-12</td><td class="b">环磷酰胺+利妥昔单抗</td><td>6次+3次</td><td class="c-r">无持续缓解</td></tr>
+      <tr><td>2017</td><td class="b">吗替麦考酚酯→环孢素</td><td>序贯口服</td><td class="c-r">仍GC依赖</td></tr>
+      <tr><td class="b" style="color:var(--green)">2018起</td><td class="b" style="color:var(--green)">托法替布（JAK1/3抑制剂）</td><td>口服，标准剂量</td><td class="c-g">逐步改善，GC成功减停 ✅</td></tr>
+    </table>
+    <div class="alert">
+      <b>关键用药决策：</b>当患者对≥2种生物制剂（包括TNF抑制剂和non-TNF生物制剂）无效时，ACR推荐考虑JAK抑制剂。托法替布作为小分子口服药，可同时阻断多种炎症因子的信号通路（JAK-STAT），对难治性JIA显示出良好疗效。
+    </div>
+    <div class="note"><b>治疗策略转变分析：</b>从传统DMARDs→TNF抑制剂→非TNF生物制剂→JAK抑制剂的阶梯升级。每种药物均获得短暂反应后失效，提示该患者炎症通路的复杂性。JAK抑制剂覆盖更广谱的细胞因子信号，对多种生物制剂无效的患者可能有效。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">2007年（4岁）</div><div class="t-content">双膝肿痛起病，NSAIDs+GC+MTX无效</div></div>
+      <div class="t-item red"><div class="t-date">2008-2017</div><div class="t-content">先后使用5种生物制剂+多种DMARDs，均短暂有效后复发，GC依赖</div></div>
+      <div class="t-item yellow"><div class="t-date">2017年</div><div class="t-content">出现医源性库欣综合征，生长迟缓，青春期延迟</div></div>
+      <div class="t-item green"><div class="t-date">2018年起</div><div class="t-content">托法替布治疗，关节症状逐步改善，GC成功减停</div></div>
+      <div class="t-item green"><div class="t-date">GC减停后</div><div class="t-content">腕关节消肿后发现Madelung畸形，基因确诊Leri-Weill综合征。生长速度显著改善，15岁月经初潮</div></div>
+    </div>
+
+    <div class="sh yellow">💡 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;">
+
+<p><b>❓ 为什么难</b><br>4岁女童起病，12年间对5种生物制剂（2种TNF抑制剂、1种IL-6R抑制剂、1种T细胞共刺激调节剂+利妥昔单抗+环磷酰胺+吗替麦考酚酯+环孢素）均仅短暂有效后复发，持续GC依赖导致医源性库欣综合征、生长迟缓、青春期延迟。直到起病11年后（2018年）启用托法替布（JAK抑制剂）才首次实现持续缓解和GC减停。难点在于：①多种靶向药物逐一失败，无法预判哪种药物有效；②长期GC依赖掩盖了合并的Madelung畸形；③治疗选择在指南之外（"beyond the guidelines"）。</p>
+
+<p><b>⚠️ 易误诊/漏诊点</b><br>① <b>合并遗传性骨骼疾病漏诊</b>：腕关节肿胀10余年掩盖了Madelung畸形，直到GC减停消肿后才被发现。原文强调：生长迟缓与关节炎严重程度不成比例时应考虑合并遗传性骨病。<br>② <b>每种生物制剂的短暂反应导致误判</b>：患者对每种新药均有初始反应，可能反复给治疗团队"这次有效了"的假象，延误向JAK抑制剂的转换。<br>③ <b>GC依赖的处理不当</b>：长期GC维持而非积极升级治疗，导致医源性库欣综合征。原文指出GC依赖本身说明治疗不充分。</p>
+
+<p><b>🔀 决策启示：难治性JIA的阶梯治疗决策流程</b><br>
+<b>Step 1</b>：NSAIDs+关节腔GC注射（≤4关节）→ 无效 ↓<br>
+<b>Step 2</b>：MTX或其他cDMARD → 无效 ↓<br>
+<b>Step 3</b>：第1种生物制剂（首选TNF抑制剂）→ 无效 ↓<br>
+<b>Step 4</b>：第2种生物制剂（换机制：non-TNF如托珠单抗/阿巴西普）→ 无效 ↓<br>
+<b>Step 5</b>：第3种生物制剂或JAK抑制剂（本例成功）<br>
+<b>关键原则</b>：①每种药物足量足疗程评估（至少3-6月）；②避免长期GC桥接，每次升级应设定GC减停目标；③RF阴性多关节型JIA仅14%在5年内无药缓解，需做好长期管理准备。</p>
+
+<p><b>📚 教学价值</b><br>① JAK抑制剂对多种生物制剂耐药的难治性JIA可能有效，其广谱免疫抑制覆盖多条细胞因子通路；② 难治性JIA应常规评估合并遗传性骨骼疾病（尤其生长迟缓不成比例时）；③ 长期GC依赖是多系统损害的根源，应将"尽早减停GC"作为治疗核心目标；④ 本例是全球较早报道的托法替布治疗难治性JIA成功的案例之一。</p>
+    </div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>对≥2种生物制剂无效定义为难治性JIA</li>
+          <li>难治性病例需排除合并遗传性骨病</li>
+          <li>身材矮小与关节炎严重度不成比例时行基因检测</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>阶梯升级：DMARDs→生物制剂→JAK抑制剂</li>
+          <li>JAK抑制剂对多种生物制剂耐药者可能有效</li>
+          <li>尽早减停GC是关键目标</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>长期GC者监测骨密度/生长/青春期发育</li>
+          <li>JAK抑制剂需监测感染/血脂/肝肾功能</li>
+          <li>葡萄膜炎定期眼科评估</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>RF阴性多关节型仅14%在5年内无药缓解</li>
+          <li>JAK抑制剂为难治性病例提供新选择</li>
+          <li>遗留关节挛缩和低骨密度需长期康复</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/33451288/" target="_blank">PMID 33451288</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7809853/" target="_blank">PMC7809853</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Vukić V, Smajo A, Vidović M, et al. Refractory polyarticular juvenile idiopathic arthritis associated with Leri-Weill dyschondrosteosis. <i>BMC Pediatr</i>. 2021;21(1):68. PMID: 33451288.<br>
+      2. Ruperto N, Brunner HI, Zuber R, et al. Tofacitinib in juvenile idiopathic arthritis. <i>N Engl J Med</i>. 2022;386(4):335-347. PMID: 35081280.<br>
+      3. Consolaro A, Giancane G, Schiappapietra B, et al. Clinical outcome measures in juvenile idiopathic arthritis. <i>Pediatr Rheumatol Online J</i>. 2016;14(1):23. PMID: 26935436.<br>
+      4. Petty RE, Southwood TR, Manners P, et al. ILAR classification of juvenile idiopathic arthritis: second revision. <i>J Rheumatol</i>. 2004;31(2):390-392. PMID: 15210784.<br>
+      5. Ravelli A, Martini A. Juvenile idiopathic arthritis. <i>Lancet</i>. 2007;369(9563):767-778. PMID: 17336656.<br>
+      <b>注：</b>PMC缓存文件仅含XML头信息（无全文），上述文献为原文引用+领域标杆文献。
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

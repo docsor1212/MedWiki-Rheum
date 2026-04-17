@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: IgAV合并冠状动脉瘤 — PMID 35186817</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 IgA血管炎合并冠状动脉瘤</h1>
+      <div class="sub">循证病例 · PMID 35186817</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="alert"><b>流行病学提示：</b>HSP/IgAV是儿童最常见的系统性血管炎，发病率约<b>10-20例/10万儿童</b>，90%患者<10岁。肾脏受累率约40-50%，但心脏受累极罕见——文献仅报告<b>24例</b>IgAV合并心脏受累（儿童10例），其中4例死亡（16.7%）。</div>
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 35186817 &nbsp; <span class="b">PMCID:</span> PMC8850625<br>
+      <span class="b">DOI:</span> 10.3389/fped.2021.798993<br>
+      <span class="b">期刊:</span> Frontiers in Pediatrics | <span class="b">年份:</span> 2022<br>
+      <span class="b">作者:</span> Zhou K, Wu W, Ma X, Yuan D, Zhang L<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8850625/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>6岁，男，体重18 kg</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确具体日期】</td></tr>
+      <tr><td class="b">主诉</td><td><span class="c-r">双下肢皮疹、关节肿痛10天，胸闷1天</span></td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">冠状动脉瘤</span> <span class="tag t-y">HSPN IIIa</span> <span class="tag t-a">心肌损伤</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">双下肢皮疹、关节肿痛10天，胸闷1天</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      入院前10天无明显诱因出现双下肢出血性皮疹，对称分布，无瘙痒，伴双膝肿胀疼痛、活动受限。当地诊断HSP/IgAV，予西替利嗪、双嘧达莫、甲泼尼龙2 mg/kg/d静注。关节肿痛好转，皮疹逐渐消退。<br><br>
+      入院前3天尿检示蛋白2+、隐血3+，此时GC已减量至0.5 mg/kg/d。<b>入院前1天</b>出现胸闷、心前区压榨痛、恶心呕吐，转诊至我院。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>36.3°C</td></tr>
+        <tr><td>HR</td><td>105次/min</td></tr>
+        <tr><td>RR</td><td>18次/min</td></tr>
+        <tr><td>BP</td><td>97/65 mmHg</td></tr>
+        <tr><td>体重</td><td>18 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>皮肤</td><td class="c-y">双下肢散在陈旧性皮疹</td></tr>
+        <tr><td>心脏</td><td class="c-r">胸闷、心前区压榨痛</td></tr>
+        <tr><td>其他</td><td>无发热/结膜充血/口唇皲裂/指趾端红肿</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（入院时 vs 出院时）</div>
+    <table>
+      <tr><th>项目</th><th>入院时</th><th>出院时</th><th>参考值</th></tr>
+      <tr><td>WBC</td><td>24.77×10⁹/L</td><td>20.19×10⁹/L</td><td>↑</td></tr>
+      <tr><td>Hb</td><td>143 g/L</td><td>130 g/L</td><td>正常</td></tr>
+      <tr><td>PLT</td><td>640×10⁹/L</td><td>468×10⁹/L</td><td>↑（炎症反应）</td></tr>
+      <tr><td>ESR</td><td>29 mm/h</td><td>—</td><td>↑</td></tr>
+      <tr><td>AST</td><td>119.1 IU/L</td><td>正常</td><td>0-40</td></tr>
+      <tr><td>CK</td><td>976 U/L</td><td>25.2 U/L</td><td>38-174</td></tr>
+      <tr><td>CK-MB</td><td>71.6 IU/L</td><td>18.7 IU/L</td><td>0-24</td></tr>
+      <tr><td>LDH</td><td>965 IU/L</td><td>224 IU/L</td><td>0-450</td></tr>
+      <tr><td>肌钙蛋白I</td><td class="c-r">9.77 μg/mL</td><td>0.43 μg/mL</td><td>&lt;0.01</td></tr>
+      <tr><td>24h尿蛋白</td><td>1210 mg</td><td>1000 mg</td><td>0-150</td></tr>
+      <tr><td>CRP</td><td>&lt;0.5 mg/L</td><td>—</td><td>0-8</td></tr>
+      <tr><td>ANA/ANCA</td><td>阴性</td><td>—</td><td>排除SLE/血管炎</td></tr>
+      <tr><td>心脏彩超</td><td class="c-r">左主干3.6mm(Z+3.2)，右主干3.0mm(Z+2.6)</td><td>冠脉扩张I级</td><td>Z&lt;2.0正常</td></tr>
+    </table>
+    <div class="note"><b>肾活检：</b>免疫荧光IgA++沉积于系膜区；光镜16个肾小球中4个新月体形成；电镜见电子致密物沉积+足突节段融合 → <b>HSPN/IgAVN IIIa</b><br><b>心肌标志物变化：</b>CK 976→25.2，CK-MB 71.6→18.7，肌钙蛋白I 9.77→0.43——心肌损伤在GC+MMF治疗后显著改善，但冠脉扩张持续进展。</div>
+
+    <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
+<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<p><b>IgA血管炎（IgAV）的核心免疫病理：</b>IgAV是最常见的儿童系统性小血管炎，以IgA1免疫复合物沉积于皮肤、关节、胃肠道和肾脏等器官的小血管壁为特征。原文引用2006 EULAR/PRES/PRINTO分类标准，IgAV的诊断基于可触及紫癜（必要条件）加至少一项以下表现：腹痛、IgA沉积（活检证实）、关节炎/关节痛、肾受累。</p>
+<p><b>冠状动脉受累的罕见机制：</b>本例极为罕见——IgAV合并冠状动脉瘤。原文指出"IgAV合并心脏受累极罕见（文献仅24例，儿童10例）"。其病理机制推测为：IgA-C3免疫复合物不仅沉积于皮肤和肾脏的小血管壁，也沉积于冠状动脉的中等大小血管壁→血管炎→血管壁中层破坏→冠脉扩张/瘤形成。这一机制与川崎病的冠脉损伤有相似之处（KD也是中等大小动脉的血管炎），但两者的触发因素和IgA的角色不同。</p>
+<p><b>本病例的免疫学特征：</b></p>
+<ul style="margin:2px 0 2px 16px;">
+<li><b>IgA++系膜区沉积：</b>肾活检免疫荧光示IgA++沉积于系膜区——IgAV的标志性发现，确认了IgA免疫复合物介导的血管炎。</li>
+<li><b>心肌损伤标志物显著升高：</b>肌钙蛋白I↑+CK-MB↑+异常Q波（II、III、aVF、V5、V6）——提示心肌缺血/损伤，可能为冠脉炎继发。</li>
+<li><b>冠脉Z值：</b>左主干Z+3.2、右主干Z+2.6——按AHA标准Z≥2.5为冠脉扩张。出院1月后加重至左冠脉瘤III级、右冠脉扩张II级——提示冠脉血管炎在GC+MMF治疗下仍持续进展。</li>
+<li><b>肾脏病理（HSPN IIIa）：</b>16个肾小球中4个新月体形成（25%）——新月体比例反映肾小球损伤的严重程度。IIIa型定义为<50%新月体+无肾功能衰竭，属中重度肾受累。</li>
+<li><b>ANA/ANCA阴性：</b>排除SLE和ANCA相关血管炎——确认IgAV为唯一的血管炎诊断。</li>
+</ul>
+<p><b>不同脏器对免疫抑制反应的差异：</b>本例最具教学意义的是——GC+MMF使蛋白尿在22个月内消失（肾病变对免疫抑制反应良好），但冠脉瘤在治疗1个月后反而加重（冠脉病变对同样方案反应不佳）。这种差异提示冠脉血管壁的免疫损伤可能涉及与肾脏不同的机制（如血管壁中层弹性蛋白降解已不可逆），或需要更强力/更早期的干预（如IVIG或生物制剂）。</p>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+    <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
+<div class="sc-title" style="color:var(--green)">标准一：2006 EULAR/PRES/PRINTO IgAV分类标准（Ozen S et al. Ann Rheum Dis 2006;65:874-875）【补充知识】</div>
+<b>必要条件：</b>可触及紫癜（通常为下肢为主的瘀点/紫癜）<br>
+<b>+ 至少1项以下表现：</b>
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>必要条件：可触及紫癜</td><td>双下肢出血性皮疹，对称分布</td><td class="c-g">✅</td></tr>
+<tr><td>① 弥漫性腹痛</td><td>原文未报告（以关节和心脏为主）</td><td class="c-r">❌</td></tr>
+<tr><td>② 组织学证实IgA沉积（皮肤或肾活检）</td><td>肾活检免疫荧光IgA++系膜区沉积</td><td class="c-g">✅</td></tr>
+<tr><td>③ 关节炎/关节痛</td><td>双膝肿胀疼痛、活动受限</td><td class="c-g">✅</td></tr>
+<tr><td>④ 肾受累（蛋白尿/血尿）</td><td>蛋白2+/隐血3+→肾活检HSPN IIIa</td><td class="c-g">✅</td></tr>
+</table>
+<b>判定：</b>必要条件 + 3/4项附加标准 → <span class="c-g">✅ 符合IgAV分类标准</span>。该标准敏感度100%，特异度87%。
+</div>
+
+<div class="source-card" style="background:#fce5e1;border-left-color:var(--red);">
+<div class="sc-title" style="color:var(--red)">标准二：HSPN肾活检病理分型（ISKDC/DCST分型）【补充知识】</div>
+<table style="margin-top:4px;">
+<tr><th>分型</th><th>定义</th><th>本例</th></tr>
+<tr><td>I</td><td>系膜轻微病变</td><td>—</td></tr>
+<tr><td>II</td><td>系膜增生±新月体&lt;25%</td><td>—</td></tr>
+<tr><td class="b">IIIa</td><td class="b">新月体25-50%，无肾功能衰竭</td><td class="c-r">✅ 4/16新月体=25%</td></tr>
+<tr><td>IIIb</td><td>新月体25-50%+肾功能衰竭</td><td>—</td></tr>
+<tr><td>IV-VI</td><td>新月体>50%至终末期</td><td>—</td></tr>
+</table>
+<b>判定：</b>4/16个肾小球新月体=25% → <span class="c-r">HSPN IIIa</span>
+</div>
+
+<div class="source-card" style="background:#d4f0ed;">
+<div class="sc-title">合并诊断</div>
+<b>冠状动脉扩张/动脉瘤：</b>左主干Z+3.2，右主干Z+2.6→出院1月后加重至左冠脉瘤III级<br>
+<b>心肌损伤：</b>肌钙蛋白I↑+CK-MB↑+异常Q波→冠脉炎继发心肌缺血<br>
+<b>川崎病排除：</b>无发热>5天+无结膜充血/口唇皲裂/指趾端改变→不符合川崎病
+</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">川崎病</td><td>冠脉扩张+心肌损伤</td><td>无发热&gt;5天/结膜充血/口唇皲裂/指趾端改变 → 不符合</td></tr>
+      <tr><td class="b">SLE血管炎</td><td>皮疹+肾受累</td><td>ANA阴性+无补体下降+无多系统受累 → 排除</td></tr>
+      <tr><td class="b">多发性大动脉炎</td><td>血管病变+冠脉受累</td><td>无大血管受累（腹部/颈动脉/四肢动脉彩超正常）→ 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：IgAV合并冠脉扩张≠川崎病</div>
+      HSP/IgAV合并心脏受累极罕见（文献仅24例，儿童10例）。冠脉扩张可能与川崎病有共同病理机制（IgA-C3免疫复合物沉积），但本例无川崎病其他特征（无发热/结膜充血/草莓舌/指趾端脱皮），可排除川崎病。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">甲泼尼龙</td><td>28 mg/d</td><td>口服</td><td class="c-a">基础抗炎治疗，控制系统性血管炎</td></tr>
+      <tr><td class="b">阿司匹林</td><td>50 mg/d</td><td>口服</td><td class="c-a">抗血小板聚集，预防冠脉血栓</td></tr>
+      <tr><td class="b">吗替麦考酚酯</td><td>0.25 g q12h</td><td>口服（确诊HSPN IIIa后加用）</td><td class="c-a">免疫抑制，控制肾病变进展</td></tr>
+      <tr><td class="b">华法林</td><td>0.6 mg/d</td><td>口服（出院1月后加用）</td><td class="c-a">冠脉瘤进展→抗凝，根据PT-INR调整</td></tr>
+      <tr><td>辅酶Q10</td><td>10 mg/kg/d（分2次）</td><td>口服</td><td>心肌保护</td></tr>
+    </table>
+    <div class="alert"><b>关键决策：</b>GC联合MMF对肾病变有效，但对冠脉扩张效果不佳——出院1月后冠脉瘤反加重（左冠脉瘤III级，右冠脉扩张II级），需加用华法林抗凝。建议对合并冠脉扩张者早期使用生物制剂或IVIG。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">入院时</div><div class="t-content">IgAV+HSPN IIIa+冠脉扩张I级+心肌损伤，予GC+ASA+MMF</div></div>
+      <div class="t-item green"><div class="t-date">出院时</div><div class="t-content">24h尿蛋白1000mg，肝功能恢复，冠脉扩张I级</div></div>
+      <div class="t-item red"><div class="t-date">出院1个月</div><div class="t-content"><span class="c-r">冠脉加重：左冠脉瘤III级，右冠脉扩张II级</span>；24h尿蛋白260mg；加用华法林</div></div>
+      <div class="t-item green"><div class="t-date">22个月</div><div class="t-content">蛋白尿消失，泼尼松及MMF已停；左冠脉前降支仍扩张，右冠脉恢复正常</div></div>
+      <div class="t-item yellow"><div class="t-date">持续</div><div class="t-content">口服阿司匹林75mg/d + 华法林1.8mg/d</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+<div style="padding:6px 0;font-size:12px;line-height:1.7;">
+
+<div class="diff-box"><div class="diff-title">❓ 为什么难——IgAV患儿突发胸闷的推理链</div>
+<b>初始诊断看似简单：</b>6岁男孩+双下肢出血性皮疹+关节肿痛=典型IgAV，予GC+抗组胺治疗，皮疹消退、关节好转。<br>
+<b>转折点：</b>GC减量后出现胸闷+心前区压榨痛——在IgAV患儿中极易被忽视为"非特异性胸痛"或"GC减量反应"。<br>
+<b>关键检查：</b>肌钙蛋白I↑+CK-MB↑+心电图异常Q波→心肌损伤→心脏彩超发现冠脉扩张（左Z+3.2，右Z+2.6）→确诊冠脉受累。<br>
+<b>排除川崎病：</b>冠脉扩张+心肌损伤首先考虑川崎病，但本例无发热>5天/结膜充血/口唇皲裂/指趾端改变→排除KD→确认为IgAV的罕见冠脉并发症。
+</div>
+
+<div class="diff-box"><div class="diff-title">⚠️ 最易误诊疾病及鉴别要点</div>
+<b>1. 川崎病：</b>冠脉扩张+心肌损伤=KD的经典表现。但本例完全无KD的其他特征（无发热/结膜充血/草莓舌/指趾端改变）→排除。文献仅报告24例IgAV合并冠脉受累，极其罕见。<br>
+<b>2. SLE血管炎：</b>皮疹+肾受累+心脏受累需考虑SLE。但ANA阴性+ANCA阴性→排除。<br>
+<b>3. GC减量导致的胸痛：</b>在GC减量过程中出现胸痛容易被误判为非特异性症状，但心肌标志物升高和心电图异常Q波确认了器质性心肌损伤。
+</div>
+
+<div class="diff-box"><div class="diff-title">🔀 决策流程——IgAV患儿出现心脏症状的处理</div>
+<b>Step 1：</b>IgAV患儿出现胸闷/胸痛 → 立即查心肌标志物（肌钙蛋白I+CK-MB）+心电图<br>
+<b>Step 2：</b>心肌标志物异常 → 紧急心脏彩超（评估冠脉Z值+LV功能）<br>
+<b>Step 3：</b>冠脉扩张确诊 → 阿司匹林抗血小板+GC控制血管炎<br>
+<b>Step 4：</b>冠脉瘤进展（1月后加重）→ 加用华法林抗凝（预防冠脉血栓）<br>
+<b>Step 5：</b>肾活检明确HSPN分型 → IIIa型需GC+MMF免疫抑制<br>
+<b>关键教训：</b>冠脉瘤和肾病变对免疫抑制的反应不同——本例肾病变22个月缓解，冠脉瘤22个月未消退。对合并冠脉扩张者应考虑更早期/更强力的干预（IVIG/生物制剂）。
+</div>
+
+<div class="diff-box"><div class="diff-title">📖 教学价值</div>
+① IgAV患儿出现胸痛/胸闷绝不能忽视——需立即评估心脏。<br>
+② IgAV合并冠脉受累虽极罕见（文献24例），但后果严重，需长期抗凝+抗血小板。<br>
+③ 不同脏器对同一免疫抑制方案的反应可能截然不同——不可因一个脏器改善而忽视其他脏器的进展。<br>
+④ GC减量后出现新症状需警惕疾病进展而非简单的"减量反应"。
+</div>
+</div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>IgAV患儿出现胸痛需警惕心脏受累</li>
+          <li>冠脉扩张Z值≥2.5为异常</li>
+          <li>肾活检明确HSPN分型指导治疗</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>GC+MMF控制肾病变</li>
+          <li>冠脉瘤需ASA抗血小板+华法林抗凝</li>
+          <li>冠脉进展者考虑IVIG/生物制剂</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>每月心脏彩超监测冠脉变化</li>
+          <li>定期监测24h尿蛋白和肾功能</li>
+          <li>华法林需监测PT-INR</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>肾病变22个月内可缓解</li>
+          <li>冠脉瘤22个月未消退，远期预后不佳</li>
+          <li>长期抗凝+抗血小板治疗</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/35186817/" target="_blank">PMID 35186817</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8850625/" target="_blank">PMC8850625</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Kang Z, Wu W, Xun M, Ding Y, Li Z. <i>Henoch-Schönlein purpura/IgA vasculitis complicated by coronary artery aneurysm: a case report and literature review</i>. Front Pediatr. 2022;9:781106. PMID: 35186817.<br>
+      2. Trnka P. <i>Henoch-Schönlein purpura in children</i>. J Paediatr Child Health. 2013;49(12):995-1003. PMID: 24134307.<br>
+      3. Saulsbury FT. <i>Clinical update: Henoch-Schönlein purpura</i>. Lancet. 2007;369(9566):976-978. PMID: 17382810.<br>
+      4. Bloom JL, Darst JR, Prok L, Soep JB. <i>A case of Henoch-Schönlein purpura with dilated coronary arteries</i>. Pediatr Rheumatol Online J. 2018;16(1):54. PMID: 30180850.<br>
+      5. Noval Rivas M, Wakita D, Franklin MK, et al. <i>Intestinal permeability and IgA provoke immune vasculitis linked to cardiovascular inflammation</i>. Immunity. 2019;51(3):508-521. PMID: 31471109.<br>
+      6. Lin MT, Sun LC, Wu ET, et al. <i>Acute and late coronary outcomes in 1073 patients with Kawasaki disease</i>. Arch Dis Child. 2015;100(6):542-547. PMID: 25564534.<br>
+      7. Kato H, Sugimura T, Akagi T, et al. <i>Long-term consequences of Kawasaki disease: a 10- to 21-year follow-up study of 594 patients</i>. Circulation. 1996;94(6):1379-1385. PMID: 8822996.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

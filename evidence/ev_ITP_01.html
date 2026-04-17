@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: COVID-19后重症ITP — PMID 37033169</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 COVID-19后重症免疫性血小板减少症（ITP）</h1>
+      <div class="sub">循证病例 · PMID 37033169</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="alert"><b>流行病学提示：</b>儿童ITP发病率约<b>1-6/10万/年</b>，其中约10-20%为感染后继发性ITP。COVID-19相关ITP在系统综述中仅约<b>7%为儿童</b>，多数成人患者在感染后2-3周内诊断ITP。儿童ITP约70-80%在6个月内自发缓解，但重症ITP（PLT<20×10⁹/L伴黏膜出血）需紧急干预。</div>
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 37033169 &nbsp; <span class="b">PMCID:</span> PMC10073461<br>
+      <span class="b">DOI:</span> 10.3389/fped.2023.1120093<br>
+      <span class="b">期刊:</span> Frontiers in Pediatrics | <span class="b">年份:</span> 2023<br>
+      <span class="b">作者:</span> Shinno K, Banno Y, Kamimaki I<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10073461/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>6岁，女孩</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确，COVID-19流行期】</td></tr>
+      <tr><td class="b">主诉</td><td>发热、牙龈出血、双眼及胸部瘀点、右下肢瘀斑1天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">重症ITP</span> <span class="tag t-y">COVID-19继发</span> <span class="tag t-a">PLT 3×10³/µL</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">发热1天，牙龈出血、双眼及胸部瘀点、右下肢瘀斑</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      6岁女孩，既往体健，突发发热1天，牙龈出血、双眼及胸部瘀点、右下肢瘀斑。同日出现发热、咽痛、头痛、轻咳及流涕。父亲2天前SARS-CoV-2 RT-PCR阳性，患儿前1天RT-PCR亦为阳性。前1个月内无其他感染或疫苗接种，未用任何药物。<br><br>
+      因存在黏膜出血（重症ITP标志），收入院治疗。PLT 3×10³/µL，紧急予IVIG 1 g/kg。血小板于第8天恢复至266×10³/µL，第10天出院。出院后PLT第24天降至25×10³/µL，此后2个月维持在15-32×10³/µL。第108天PLT升至121×10³/µL。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健，未接种COVID-19疫苗。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：否认自身免疫/血液病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td class="c-r">40.2°C</td></tr>
+        <tr><td>HR</td><td>137次/min</td></tr>
+        <tr><td>RR</td><td>32次/min</td></tr>
+        <tr><td>BP</td><td>115/55 mmHg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>眼部</td><td class="c-r">双眼周围瘀点</td></tr>
+        <tr><td>口腔</td><td class="c-r">牙龈出血，咽部充血</td></tr>
+        <tr><td>皮肤</td><td class="c-r">胸部瘀点+右腿瘀斑</td></tr>
+        <tr><td>心肺</td><td>双肺呼吸音清</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（入院时 vs 随访）</div>
+    <table>
+      <tr><th>项目</th><th>Day 1（入院）</th><th>Day 8</th><th>Day 24</th><th>Day 108</th><th>参考值</th></tr>
+      <tr><td>PLT</td><td class="c-r"><b>3×10³/µL</b></td><td class="c-g">266×10³</td><td class="c-r">25×10³</td><td class="c-g">121×10³</td><td>150-400</td></tr>
+      <tr><td>WBC</td><td>5.1×10³/µL</td><td>—</td><td>—</td><td>—</td><td>6.0-17.5</td></tr>
+      <tr><td>Hb</td><td>12.5 g/dL</td><td>—</td><td>—</td><td>—</td><td>11.2-14.3</td></tr>
+      <tr><td>WBC分类</td><td>分叶79%，淋巴16%</td><td>—</td><td>—</td><td>—</td><td></td></tr>
+      <tr><td>原始细胞</td><td>未见</td><td>—</td><td>—</td><td>—</td><td>排除白血病</td></tr>
+      <tr><td>凝血功能</td><td>正常</td><td>—</td><td>—</td><td>—</td><td>排除DIC</td></tr>
+      <tr><td>ANA</td><td>阴性</td><td>—</td><td>—</td><td>—</td><td>排除SLE</td></tr>
+      <tr><td>PAIgG</td><td>—</td><td>—</td><td>24.3 ng/10⁷（Day 17）</td><td>—</td><td>正常范围</td></tr>
+      <tr><td>SARS-CoV-2 RT-PCR</td><td class="c-r">阳性</td><td>—</td><td>—</td><td>—</td><td class="c-r">确诊COVID-19</td></tr>
+    </table>
+    <div class="note">PLT动态变化：IVIG后8天恢复正常→24天再次下降→持续2个月低水平（15-32）→108天恢复至121。呈典型的COVID-19后ITP延迟恢复模式。</div>
+
+    <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
+<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<p><b>免疫性血小板减少症（ITP）的核心免疫病理：</b>ITP是一种以血小板免疫介导破坏增加和/或生成不足为特征的获得性疾病。原文引用Provan D等（<i>Blood Adv</i> 2019;3:3780-3817）的国际共识指南，ITP的诊断基于孤立性血小板减少（<100×10⁹/L）并排除其他原因。核心机制包括：（1）抗血小板自身抗体介导的血小板被巨噬细胞吞噬（主要通过Fcγ受体途径）；（2）CD8⁺ T细胞直接杀伤血小板；（3）巨核细胞损伤导致血小板生成减少。</p>
+<p><b>COVID-19继发ITP的机制：</b>原文讨论中指出，COVID-19相关ITP可能通过两种模式发生："①病毒血症期：分子模拟/直接骨髓抑制；②感染后：免疫失调产生抗血小板抗体。"本例中患儿SARS-CoV-2 RT-PCR阳性与ITP症状同日出现，提示两种机制均可能参与。</p>
+<p><b>本病例的免疫学特征：</b></p>
+<ul style="margin:2px 0 2px 16px;">
+<li><b>血小板极度降低：</b>PLT 3×10³/µL——反映极为活跃的免疫性血小板破坏。</li>
+<li><b>黏膜出血：</b>牙龈出血+球结膜瘀点+皮肤瘀点瘀斑——PLT<10×10³/µL时的典型出血表现，提示重度免疫性血小板消耗。</li>
+<li><b>PAIgG升高：</b>第17天检测PAIgG 24.3 ng/10⁷血小板（正常范围）——但原文未给出具体正常上限。PAIgG阳性支持免疫介导机制，但其敏感性高、特异性有限。</li>
+<li><b>凝血功能正常：</b>排除DIC（DIC导致血小板减少+凝血因子消耗），确认孤立性血小板减少。</li>
+<li><b>IVIG的作用机制：</b>IVIG通过（1）阻断巨噬细胞Fcγ受体减少血小板吞噬；（2）抑制自身抗体产生；（3）调节T细胞功能——从而快速提升血小板。本例IVIG后第8天PLT恢复至266×10³，符合典型IVIG反应模式。</li>
+</ul>
+<p><b>慢性化机制：</b>出院后PLT再次降至25×10³并持续2个月维持在15-32×10³，第108天才恢复至121×10³。这种慢性化趋势提示COVID-19可能诱发持续性的免疫紊乱，包括记忆B细胞持续产生抗血小板抗体和T细胞免疫监视失调。</p>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+    <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
+<div class="sc-title" style="color:var(--green)">标准一：2019 ITP国际工作组共识（Provan D et al. Blood Adv 2019;3(22):3780-3817）</div>
+<b>诊断标准（原发性ITP）：</b>
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>① 血小板计数 <100×10⁹/L</td><td>PLT 3×10³/µL</td><td class="c-g">✅</td></tr>
+<tr><td>② 排除其他原因（假性血小板减少、DIC、白血病、药物、感染相关消耗等）</td><td>凝血正常+无原始细胞+ANA阴性+血培养阴性</td><td class="c-g">✅</td></tr>
+<tr><td>③ 外周血涂片：无细胞形态异常</td><td>原文未报告异常细胞</td><td class="c-g">✅</td></tr>
+</table>
+<b>严重度分型：</b>
+<table style="margin-top:4px;">
+<tr><th>分型</th><th>定义</th><th>本例</th></tr>
+<tr><td>新诊断ITP</td><td>病程<3个月</td><td class="c-g">✅ 符合（急性起病）</td></tr>
+<tr><td>重症ITP</td><td>PLT <20×10⁹/L 和/或有临床相关出血需紧急治疗</td><td class="c-r">✅ PLT 3×10³ + 黏膜出血 → 重症</td></tr>
+</table>
+</div>
+
+<div class="source-card" style="background:#d4f0ed;">
+<div class="sc-title">继发因素与合并诊断</div>
+<b>继发于COVID-19：</b>SARS-CoV-2 RT-PCR阳性，ITP与COVID-19同时发病<br>
+<b>出血分级：</b>黏膜出血（牙龈出血+球结膜瘀点）= 重症ITP标志，需紧急治疗
+</div>
+    <div class="alert"><b>重症ITP定义：</b>PLT ≤20×10³/µL和/或有临床相关出血需紧急治疗。</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">DIC</td><td>PLT极低+瘀点瘀斑</td><td>凝血功能正常+无纤溶证据 → 排除</td></tr>
+      <tr><td class="b">急性白血病</td><td>PLT低+瘀点</td><td>WBC/Hb正常+无原始细胞 → 排除</td></tr>
+      <tr><td class="b">TTP/HUS</td><td>PLT极低</td><td>无微血管病性溶血性贫血+无神经症状+肾功能正常 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：COVID-19活动期ITP应首选IVIG而非GC</div>
+      本例同时患COVID-19需避免免疫抑制，故选择IVIG（而非糖皮质激素）快速提升血小板。IVIG通过阻断Fc受体和调节免疫，可快速（24-72h）提升血小板，且不增加病毒感染风险。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">IVIG</td><td>17.5 g（1 g/kg）</td><td>入院第1天单次输注</td><td class="c-a">重症ITP首选，快速提升PLT；避免GC抑制免疫</td></tr>
+      <tr><td class="b">COVID-19</td><td>未予抗病毒</td><td>密切监测</td><td class="c-a">年龄小+无肺炎+无重症风险因素，仅支持治疗</td></tr>
+      <tr><td class="b">后续</td><td>限制接触性运动</td><td>门诊监测PLT</td><td class="c-a">未追加治疗，观察等待策略</td></tr>
+    </table>
+    <div class="alert"><b>用药注意事项：</b>IVIG 1 g/kg输注需注意速率（前30分钟慢速），监测过敏反应。IVIG后PLT回升通常在24-72小时开始，本例第8天恢复正常。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">Day 1（入院）</div><div class="t-content">PLT 3×10³，IVIG 1 g/kg输注</div></div>
+      <div class="t-item yellow"><div class="t-date">Day 2</div><div class="t-content">PLT 19×10³/µL（开始回升）</div></div>
+      <div class="t-item green"><div class="t-date">Day 8</div><div class="t-content">PLT <span class="c-g">266×10³</span>（恢复正常）</div></div>
+      <div class="t-item green"><div class="t-date">Day 10</div><div class="t-content">出院，限制接触性运动</div></div>
+      <div class="t-item red"><div class="t-date">Day 24</div><div class="t-content">PLT 降至 25×10³（再次下降）</div></div>
+      <div class="t-item yellow"><div class="t-date">Day 24-90</div><div class="t-content">PLT 15-32×10³，小腿反复紫癜，无黏膜出血</div></div>
+      <div class="t-item green"><div class="t-date">Day 108</div><div class="t-content">PLT <span class="c-g">121×10³</span>（>100，持续恢复中）</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+<div style="padding:6px 0;font-size:12px;line-height:1.7;">
+
+<div class="diff-box"><div class="diff-title">❓ 为什么难——COVID-19活动期突发极低血小板的推理链</div>
+<b>初始困境：</b>6岁女孩急性发热+牙龈出血+全身瘀点瘀斑+PLT 3×10³/µL——急诊需立即鉴别：（1）DIC？（2）急性白血病？（3）TTP/HUS？（4）ITP？<br>
+<b>快速排除：</b>凝血功能正常→排除DIC；WBC/Hb正常+无原始细胞→排除白血病；无溶血+无神经症状+肾功能正常→排除TTP/HUS。<br>
+<b>锁定ITP：</b>孤立性极低血小板+黏膜出血+凝血正常=重症ITP。此时追问COVID-19接触史→父亲2天前阳性+患儿前1天阳性→COVID-19继发ITP。<br>
+<b>治疗困境：</b>同时患COVID-19（活动性病毒感染）——是否用糖皮质激素？GC抑制免疫可能延长病毒清除。最终选择IVIG，避免GC。
+</div>
+
+<div class="diff-box"><div class="diff-title">⚠️ 最易误诊疾病及鉴别要点</div>
+<b>1. DIC：</b>PLT极低+瘀点瘀斑极易误判为DIC。但DIC必有凝血异常（PT延长+纤维蛋白原降低+D-Dimer升高），本例凝血正常→排除。<br>
+<b>2. 急性白血病：</b>PLT极低+瘀点需排除。但白血病必伴WBC异常（原始细胞）和/或Hb降低+器官浸润表现→本例WBC/Hb正常+无原始细胞→排除。<br>
+<b>3. TTP：</b>PLT极低+瘀点需考虑。但TTP三联征为MAHA+血小板减少+神经症状，本例无溶血+无神经症状→排除。
+</div>
+
+<div class="diff-box"><div class="diff-title">🔀 决策流程——COVID-19活动期ITP的处理</div>
+<b>Step 1：</b>PLT<20×10³+黏膜出血 → 重症ITP，需紧急治疗<br>
+<b>Step 2：</b>评估COVID-19状态 → 活动性感染 → 避免GC（免疫抑制可能加重病毒感染）<br>
+<b>Step 3：</b>首选IVIG 1 g/kg → 不抑制抗病毒免疫+快速提升PLT（24-72h起效）<br>
+<b>Step 4：</b>PLT恢复后出院，每周监测至PLT>100×10³<br>
+<b>Step 5：</b>若PLT再次下降但无黏膜出血 → PLT 15-30×10³可观察等待（本例Day 24-90期间PLT 15-32×10³，无黏膜出血，仅观察）
+</div>
+
+<div class="diff-box"><div class="diff-title">📖 教学价值</div>
+① COVID-19活动期ITP首选IVIG而非GC——这一药物选择原则同样适用于其他活动性感染相关的ITP。<br>
+② "黏膜出血"是重症ITP的标志性表现（球结膜瘀点+牙龈出血），需紧急处理，与皮肤瘀点瘀斑的意义完全不同。<br>
+③ COVID-19后ITP可慢性化——本例3个月才恢复正常，提示需长期随访。<br>
+④ IVIG起效时间通常24-72h，本例第8天完全恢复属较慢，但仍在预期范围内。
+</div>
+</div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>COVID-19活动期出现PLT极低需警惕ITP</li>
+          <li>排除DIC/白血病/TTP后可临床诊断ITP</li>
+          <li>黏膜出血标志重症ITP</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>COVID-19活动期首选IVIG（避免GC）</li>
+          <li>IVIG 1 g/kg可快速提升PLT</li>
+          <li>无黏膜出血的PLT 15-30可观察等待</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>IVIG后每日监测PLT至稳定</li>
+          <li>出院后每周监测至PLT&gt;100</li>
+          <li>COVID-19恢复者约4周复查PLT</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>多数COVID-19后ITP对IVIG反应良好</li>
+          <li>PLT恢复正常可能需3个月+</li>
+          <li>慢性化风险需长期随访</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/37033169/" target="_blank">PMID 37033169</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10073461/" target="_blank">PMC10073461</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Shinno K, Banno Y, Kamimaki I. <i>Severe immune thrombocytopenia following COVID-19 in a child</i>. Front Pediatr. 2023;11:1120093. PMID: 37033169.<br>
+      2. Provan D, Arnold DM, Bussel JB, et al. <i>Updated international consensus report on the investigation and management of primary immune thrombocytopenia</i>. Blood Adv. 2019;3(22):3780-3817. PMID: 31727886.<br>
+      3. Rand ML, Wright JF. <i>Virus-associated idiopathic thrombocytopenic purpura</i>. Transfus Sci. 1998;19(3):253-259. PMID: 10351137.<br>
+      4. Tsao HS, Chason HM, Fearon DM. <i>Immune thrombocytopenia (ITP) in a pediatric patient positive for SARS-CoV-2</i>. Pediatrics. 2020;146(2):e20201419. PMID: 32439817.<br>
+      5. Soares ACCV, Loggetto SR, Manga FCM, et al. <i>Outcome of SARS-CoV-2 and immune thrombocytopenia in a pediatric patient</i>. Hematol Transfus Cell Ther. 2021;43(1):101-103. PMID: 32989428.<br>
+      6. Buchanan GR, Adix L. <i>Grading of hemorrhage in children with idiopathic thrombocytopenic purpura</i>. J Pediatr. 2002;140(6):689-690. PMID: 12072881.<br>
+      7. Lippi G, Plebani M. <i>The critical role of laboratory medicine during coronavirus disease 2019 (COVID-19) and other viral outbreaks</i>. Clin Chem Lab Med. 2020;58(7):1063-1069. PMID: 32191623.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

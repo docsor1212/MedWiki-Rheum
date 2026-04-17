@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 幼年皮肌炎并发肾病综合征(anti-NXP2)</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">幼年皮肌炎 · JDM-01</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>幼年皮肌炎并发肾病综合征（anti-NXP2阳性）</h1>
+      <div class="sub">JDM + Nephrotic Syndrome — 8岁女童</div>
+    </div>
+    <div class="meta">循证病例 · PMID 37205220</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 37205220 &nbsp;|&nbsp; <b>PMC:</b> PMC10185749<br>
+  <b>DOI:</b> 10.3389/fped.2023.1149785<br>
+  <b>期刊:</b> Frontiers in Pediatrics | <b>年份:</b> 2023<br>
+  <b>作者:</b> Zhou W, Dong L, Liu X, Dong C, Zhang H<br>
+  <b>标题:</b> <i>Juvenile Dermatomyositis and Nephrotic Syndrome: A Case Report</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/37205220/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>8岁，女</td></tr>
+  <tr><td class="b">肌炎抗体</td><td>anti-NXP2 阳性</td></tr>
+  <tr><td class="b">主诉</td><td>皮疹、双下肢水肿30天</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-a">JDM</span> <span class="tag t-y">anti-NXP2</span> <span class="tag t-r">肾病综合征</span> <span class="tag t-y">复发</span></td></tr>
+</table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">皮疹、双下肢水肿30天</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  主要表现为近端肌无力（以下肢为主）、低热、泡沫尿。无家族遗传病史。家属拒绝肾活检，肾脏病理类型不详。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">皮肤</th></tr>
+    <tr><td>向阳性皮疹</td><td class="c-r">阳性</td></tr>
+    <tr><td>Gottron丘疹</td><td class="c-r">阳性</td></tr>
+    <tr><td>下肢水肿</td><td class="c-r">阳性</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">肌力（MMT 0-5）</th></tr>
+    <tr><td>下肢</td><td class="c-r">4分（轻度无力）</td></tr>
+    <tr><td>上肢</td><td>5分（正常）</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div>
+<table><tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>CK</td><td><span class="c-r">1,665 U/L ↑↑</span></td><td>21-220</td><td>极显著升高</td></tr>
+<tr><td>LDH</td><td><span class="c-r">630 U/L ↑↑</span></td><td>114-240</td><td>显著升高</td></tr>
+<tr><td>AST</td><td><span class="c-r">107 U/L ↑↑</span></td><td>0-38</td><td>显著升高</td></tr>
+<tr><td>ALT</td><td>42 U/L</td><td>0-38</td><td>轻度升高</td></tr>
+<tr><td>尿蛋白</td><td><span class="c-r">4+</span></td><td>阴性</td><td>大量蛋白尿</td></tr>
+<tr><td>UPCR</td><td><span class="c-r">4.19</span></td><td>&lt;0.2</td><td>显著升高</td></tr>
+<tr><td>24h尿蛋白</td><td><span class="c-r" style="font-size:14px">9,448 mg/day</span></td><td>&lt;150</td><td>极大量蛋白尿</td></tr>
+<tr><td>血白蛋白</td><td><span class="c-r">21.2 g/L ↓↓</span></td><td>35-50</td><td>低白蛋白血症</td></tr>
+<tr><td>胆固醇</td><td>6.78 mmol/L</td><td>3.15-5.0</td><td>高脂血症</td></tr>
+<tr><td>anti-NXP2</td><td><span class="c-r">阳性</span></td><td>—</td><td>MSA</td></tr>
+<tr><td>ANA</td><td>阴性</td><td>—</td><td></td></tr>
+<tr><td>CK（治疗后恶化）</td><td><span class="c-r">4,546 U/L ↑↑↑</span></td><td>21-220</td><td>MTX治疗中肌酶反升</td></tr>
+</table>
+
+<div class="sh ">🧬 发病机制与免疫病理</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<p><b>幼年皮肌炎（JDM）的免疫病理基础</b></p>
+<p>JDM是一种以皮肤和肌肉受累为特征的特发性炎症性肌病，发病率约2-3/百万/年（原文引用Martin N, 2011）。其发病涉及T细胞和B细胞的异常激活，大量炎症因子（尤其是白介素和干扰素）的产生。这些炎症因子可下调内皮细胞黏附分子，导致内皮细胞肿胀、血管阻塞和组织缺血，加重肌肉、肾脏等器官的损伤（原文引用Papadopoulou C, 2018; Leung A, 2021）。JDM的血管病变（vasculopathy）是其核心病理特征之一。</p>
+<p><b>anti-NXP2抗体的致病角色</b></p>
+<p>anti-NXP2（抗核基质蛋白2）是最重要的肌炎特异性抗体（MSA）之一，与钙质沉着密切相关，是治疗反应差和死亡的高危因素（原文引用Yan TT, 2021; Wang X, 2021）。对23例JDM患儿肌肉组织的病理研究显示，anti-NXP2阳性患者的肌肉缺血更为严重，支持自身抗体参与血管损伤的观点（原文引用Aouizerate J, 2018）。自身抗体可直接作用于血管内皮细胞，导致补体激活和血管损伤（原文引用Tesfamariam B, 2007）。</p>
+<p><b>肾损伤的多因素机制</b></p>
+<p>JDM合并肾损伤极其罕见，文献仅报道4例。原文详细讨论了其多因素机制：①肌红蛋白尿致横纹肌溶解→急性肾小管坏死；②T/B细胞活化→大量炎症因子→内皮损伤→血管阻塞→组织缺血→肾损伤；③自身抗体、补体和细胞因子参与多种肾小球肾炎的发病；④免疫复合物在肾脏沉积。本例anti-NXP2阳性+大量蛋白尿+进行性肌肉损伤，提示自身抗体在肌肉和肾脏损伤中均发挥重要作用。</p>
+<p><b>本例治疗反应的特殊性</b></p>
+<p>本例蛋白尿对激素+MTX反应迅速（9,448→209 mg/24h），但肌力反而恶化（CK升至4,546 U/L），反映肾脏和肌肉病变的不同病理机制和对药物的不同敏感性。TNF-α在JDM患儿中过表达（原文引用Pachman LM, 2001），TNF-α-308A等位基因与IFN-α水平显著升高相关，为抗TNF治疗（阿达木单抗）提供了理论依据。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出幼年皮肌炎（JDM）anti-NXP2阳性合并肾病综合征的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2017 EULAR/ACR IIM分类标准(JDM)</td><td>Lundberg IE 等/EULAR+ACR</td><td>2017</td><td>Ann Rheum Dis</td><td>≥6.7分(含皮肤)确诊IIM</td><td>① Gottron丘疹 → <span class='c-g'>✅</span><br>② Heliotrope rash → <span class='c-g'>✅</span><br>③ 对称性近端肌无力 → <span class='c-g'>✅ MMT 4分</span><br>④ 肌酶升高(CK 1,665→4,546) → <span class='c-g'>✅</span><br>⑤ anti-NXP2阳性 → <span class='c-g'>✅</span><br><b>满足JDM分类 ✅</b></td></tr>
+      <tr><td class="b">Bohan &amp; Peter标准(1975)</td><td>Bohan A, Peter JB</td><td>1975</td><td>N Engl J Med</td><td>确定性DM需3条+皮疹</td><td>① 近端肌无力 ② 肌酶升高 ③ 皮疹 ④ 肌电图异常 → <span class='c-g'>✅ 均符合</span><br><b>确定性DM ✅</b></td></tr>
+    </table>
+<table><tr><th>标准名称</th><th>作者/年份/期刊</th><th>评分体系</th><th>逐条对照</th><th>本例符合情况</th></tr>
+<tr><td class="b" rowspan="6">2017 EULAR/ACR IIM分类标准（JDM亚型）</td><td rowspan="6">Lundberg IE et al., 2017, <i>Ann Rheum Dis</i><br>DOI: 10.1136/annrheumdis-2017-211468<br>PMID: 28821639</td><td rowspan="6">加权评分体系，包含临床+实验室+病理条目。亚分类依据皮疹和肌活检特征。</td><td>① Gottron丘疹（高度特异性）</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>② Heliotrope rash（向阳疹）</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>③ 对称性近端肌无力</td><td><span class="c-g">✅ 符合</span>（下肢MMT 4分）</td></tr>
+<tr><td>④ 肌酶升高（CK 1,665→4,546 U/L）</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>⑤ anti-NXP2抗体阳性（MSA）</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td colspan="2" style="background:#e2f3dd"><b>结论：满足JDM分类标准。Gottron+向阳疹+近端肌无力为最核心条目。</b></td></tr>
+
+<tr><td class="b" rowspan="2">Bohan & Peter诊断标准（1975）</td><td rowspan="2">Bohan A & Peter JB, 1975, <i>N Engl J Med</i><br>PMID: 1094803</td><td rowspan="2">经典5条标准：对称性近端肌无力+肌酶升高+肌电图异常+肌活检异常+皮疹。确定性PM需4条，确定性DM需3条+皮疹。</td><td>① 对称性近端肌无力</td><td><span class="c-g">✅ 符合</span></td></tr>
+<tr><td>② 肌酶升高 ③ Gottron/向阳疹 ④ 肌电图异常</td><td><span class="c-g">✅ 均符合</span>（肌电图：窄MUP+多相电位+不规则波）</td></tr>
+
+<tr><td class="b">肾病综合征（临床诊断）</td><td>KDIGO 2021 CKD评估指南</td><td>大量蛋白尿（>3.5g/24h或UPCR>3.5）+低白蛋白血症（<30g/L）+水肿+高脂血症</td><td>24h尿蛋白9,448mg+白蛋白21.2g/L+水肿+胆固醇6.78</td><td><span class="c-g">✅ 符合</span></td></tr>
+</table>
+<div class="note">注：家属拒绝肾活检，肾脏病理类型不详。JDM合并肾损害极其罕见，文献仅报道4例（IgAN×2、FSGS×1、膜性肾病×1+本例）。肾脏病理类型包括IgA肾病、膜性肾病、FSGS。</div>
+
+<div class="sh blue">🔍 鉴别诊断</div>
+<div class="diff-box"><div class="diff-title">1. 其他特发性炎症性肌病（多发性肌炎/包涵体肌炎）</div>
+<b>鉴别要点：</b>本例有典型Gottron丘疹+向阳疹→符合皮肌炎（非多发性肌炎）。儿童包涵体肌炎极罕见。</div>
+<div class="diff-box"><div class="diff-title">2. 感染性肌炎（病毒/细菌/寄生虫）</div>
+<b>鉴别要点：</b>ANA/anti-dsDNA/anti-ENA/ANCA/anti-GBM/CMV-Ab/HCV-Ab/HBS-Ag/HSV-DNA均阴性→排除感染性病因。</div>
+<div class="diff-box"><div class="diff-title">3. 系统性红斑狼疮（SLE）相关肌病</div>
+<b>鉴别要点：</b>C3/C4正常（1.22/0.4 g/L）+ANA阴性→排除SLE。SLE肾炎通常伴低补体。</div>
+<div class="diff-box"><div class="diff-title">4. 原发性肾病综合征</div>
+<b>鉴别要点：</b>肾病综合征与JDM同时发生，蛋白尿对激素反应极好（10天缓解）→肾损伤继发于JDM自身免疫过程。家族拒绝肾活检故病理类型不详。</div>
+<div class="alert"><b>流行病学提示：</b>JDM发病率2-3/百万儿童/年。约60-95% JDM患儿存在自身抗体。anti-NXP2是最常见的MSA之一，与钙质沉着相关。肾脏受累极其罕见，文献仅报道4例。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>阶段</th><th>药物</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td><b>初始（Day 1-10）</b></td><td>泼尼松+MTX</td><td>泼尼松口服（剂量原文未详述）+ MTX口服/SC</td><td>JDM标准一线方案。蛋白尿10天改善（9,448→209 mg）</td></tr>
+<tr><td><b>强化（肌力恶化）</b></td><td>甲泼尼龙冲击+IVIG</td><td>MP冲击（剂量原文未详述）×3d + IVIG（剂量原文未详述）×3d</td><td>MTX疗效不足+CK升至4,546→升级。肌力未显著改善</td></tr>
+<tr><td><b>强化（+1月）</b></td><td>MTX→换用MMF</td><td>MMF口服</td><td>MTX对肌肉病变反应差。换用后<span class="c-g">肌力逐渐改善</span></td></tr>
+<tr><td><b>复发（21月后）</b></td><td>甲泼尼龙+阿达木单抗</td><td>MP 32 mg/d 口服 + <b>阿达木单抗 40 mg q2w SC</b></td><td>抗TNF-α单抗。MRI示广泛肌肉损伤。UK 60例JDM队列证实阿达木单抗改善皮肤和肌肉病变</td></tr>
+<tr><td><b>维持（+10月）</b></td><td>阿达木单抗减频</td><td>40 mg q2w ×10月→q1月 ×5月</td><td>症状缓解后减频，无不良反应</td></tr>
+<tr><td><b>减量</b></td><td>MMF+MP减量</td><td>MMF→<b>0.125 g/d</b>，MP→<b>2 mg/d</b></td><td>阿达木单抗辅助下成功减量</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>GC+MTX治疗10天后蛋白尿迅速改善（9,448→209 mg），但肌力反而恶化（MMT下肢3分）→换用MMF。阿达木单抗在复发后有效改善肌力。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item yellow"><div class="t-date">初始治疗10天</div><div class="t-content">蛋白尿显著改善（9,448→209 mg），但<span class='c-r'>肌力恶化</span></div></div><div class="t-item yellow"><div class="t-date">MP冲击+IVIG</div><div class="t-content">肌力未见显著改善</div></div><div class="t-item green"><div class="t-date">换用MMF</div><div class="t-content"><span class="c-g">肌力逐渐改善</span></div></div><div class="t-item red"><div class="t-date">21个月后</div><div class="t-content"><span class="c-r">复发：皮疹+肌无力+MRI广泛肌肉损伤</span></div></div><div class="t-item green"><div class="t-date">阿达木单抗×15月</div><div class="t-content"><span class="c-g">肌力改善+MRI好转+MMF/MP成功减量</span></div></div></div>
+
+<div class="sh ">💡 疑难剖析</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="diff-box"><div class="diff-title">决策一：JDM患者出现蛋白尿——如何评估肾损伤？</div>
+<b>临床情境：</b>8岁女童确诊JDM（Gottron丘疹+向阳疹+肌酶升高+anti-NXP2+），同时发现大量蛋白尿（9,448 mg/24h）+低白蛋白（21.2 g/L）。<br><b>决策路径：</b>JDM确诊→查尿常规→4+蛋白→查24h尿蛋白→9,448 mg→评估为肾病综合征。家属拒绝肾活检→肾脏病理不详。文献中JDM合并肾损害仅4例，病理类型多样（IgAN、MN、FSGS）。<br><b>关键决策点：</b>JDM患者必须常规筛查尿蛋白。肾活检对明确病理类型和指导治疗有重要价值，但家属意愿也需尊重。蛋白尿对激素反应好可作为替代指标。</div>
+
+<div class="diff-box"><div class="diff-title">决策二：蛋白尿缓解但肌病恶化——如何调整方案？</div>
+<b>临床情境：</b>泼尼松+MTX治疗10天后，蛋白尿从9,448降至209 mg/24h，但肌力进行性恶化（MMT下肢4→3分，CK升至4,546 U/L）。<br><b>决策路径：</b>①蛋白尿迅速缓解→反映肾脏对激素敏感；②肌力恶化+CK升高→MTX对肌肉病变反应不足→升级为甲泼尼龙冲击+IVIG→效果仍不佳→换用MMF→肌力逐渐改善。蛋白质和肌肉病变的病理机制不同（肾脏以免疫复合物为主，肌肉以血管炎/缺血为主），需要独立的评估和治疗策略。<br><b>关键决策点：</b>不要被蛋白尿的改善所迷惑——JDM的核心是肌病，需独立监测肌力和CK。</div>
+
+<div class="diff-box"><div class="diff-title">决策三：21个月后复发——阿达木单抗的角色</div>
+<b>临床情境：</b>GC+MMF维持治疗21个月后，皮疹和肌无力复发，MRI示广泛肌肉损伤。<br><b>决策路径：</b>复发→增加甲泼尼龙至32 mg/d→加用阿达木单抗（抗TNF-α单抗，40 mg q2w）。TNF-α在JDM中过表达，与长期症状和IFN-α升高相关。英国60例JDM队列研究显示阿达木单抗可改善皮肤和肌肉病变（原文引用Campanilho-Marques R, 2020）。15个月后成功减量：MMF→0.125 g/d，MP→2 mg/d。<br><b>关键决策点：</b>anti-NXP2阳性患者复发风险高（与钙质沉着和预后差相关），抗TNF治疗为激素减量提供有效路径。</div>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① JDM合并肾损害极其罕见<br>
+  ② anti-NXP2与钙质沉着和预后差相关<br>
+  ③ 蛋白尿和肌病治疗反应可分离<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ MTX对肌病可能反应差→换用MMF<br>
+  ⑤ 阿达木单抗在复发后有效<br>
+  ⑥ IVIG可作为辅助治疗<br><br>
+  <b>3. 监测要点</b><br>
+  ⑦ CK和蛋白尿需独立监测<br>
+  ⑧ MRI评估肌肉损伤<br><br>
+  <b>4. 预后</b><br>
+  ⑨ 阿达木单抗有助于激素减量
+</div>
+
+<div class="sh ">📖 参考文献</div>
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/37205220/" target="_blank">PMID 37205220</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10185749/" target="_blank">PMC10185749</a></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <ol style="padding-left:18px;">
+  <li>Zhou W, Dong L, Liu X, Dong C, Zhang H. JDM and Nephrotic Syndrome: A Case Report. <i>Front Pediatr</i>. 2023;11:1149785. PMID: 37205220.</li>
+  <li>Martin N, et al. JDM National Registry: 10 Years' Experience. <i>Rheumatology</i>. 2011;50:137-145. PMID: 20823094.</li>
+  <li>Wu JQ, Lu MP, Reed AM. JDM: Advances in Clinical Presentation, MSAs and Treatment. <i>World J Pediatr</i>. 2020;16:31-43. PMID: 31556011.</li>
+  <li>Wang X, et al. Clinical Characteristics and Poor Predictors of anti-NXP2 JDM. <i>Pediatr Rheumatol Online J</i>. 2021;19:6. PMID: 33407621.</li>
+  <li>Moghadam-Kia S, Oddis CV, Aggarwal R. Modern Therapies for IIMs: Role of Biologics. <i>Clin Rev Allergy Immunol</i>. 2017;52:81-87. PMID: 26767526.</li>
+  <li>Campanilho-Marques R, et al. Anti-TNF Treatment in JDM: UK Cohort. <i>Rheumatology</i>. 2020. Referenced as Ref 24 in original.</li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

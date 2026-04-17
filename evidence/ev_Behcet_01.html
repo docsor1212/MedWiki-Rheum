@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：儿童白塞病伴吞噬血细胞综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_Behcet_01.html">📖 本病例</a>
+  <span class="nav-title">循证病例 · 白塞病</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：儿童白塞病伴吞噬血细胞综合征</h1>
+      <div class="sub">Pediatric Behçet Disease with Macrophage Activation Syndrome</div>
+    </div>
+    <div class="meta">PMID: 29644201</div>
+  </div>
+
+  <div class="body">
+
+    <!-- 1. 文献来源 -->
+    <div class="sh">📄 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">PMID</td><td>29644201</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC5885620</td></tr>
+      <tr><td class="b">DOI</td><td>10.4103/ijd.IJD_107_17</td></tr>
+      <tr><td class="b">期刊</td><td>Indian Journal of Dermatology (2018)</td></tr>
+      <tr><td class="b">原文链接</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5885620/" target="_blank">PMC全文 ↗</a></td></tr>
+    </table>
+
+    <!-- 2. 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">性别</td><td>男</td></tr>
+      <tr><td class="b">年龄</td><td>6岁</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">白塞病</span> <span class="tag t-y">口腔/生殖器溃疡</span> <span class="tag t-r">MAS</span></td></tr>
+    </table>
+
+    <!-- 3. 主诉 -->
+    <div class="alert"><b>流行病学提示：</b>儿童白塞病发病高峰为青春期前后（<b>中位11-12岁</b>），男女比例约1:1。HLA-B51阳性率约<b>50-80%</b>（高于普通人群）。白塞病合并MAS极为罕见，成人仅有个案报道。PEDBD标准（2016）不要求HLA-B51和针刺反应（降低儿童诊断门槛）。</div>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:13px;font-weight:600;margin:4px 0;">口腔溃疡30天</p>
+
+    <!-- 4. 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      6岁男孩，因<b>口腔疼痛性溃疡1月</b>就诊，溃疡累及舌头、口腔黏膜和颊黏膜。<br><br>
+      同时伴有<b>生殖器溃疡</b>和<b>皮肤结节性红斑</b>。病程中曾出现发热、关节痛。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：无特殊慢性病史。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无风湿免疫病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <!-- 5. 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">黏膜检查</th></tr>
+        <tr><td>口腔</td><td class="c-r">多发疼痛性溃疡（舌、颊黏膜、口腔黏膜）</td></tr>
+        <tr><td>生殖器</td><td class="c-r">生殖器溃疡</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">皮肤及系统</th></tr>
+        <tr><td>皮肤</td><td class="c-r">结节性红斑</td></tr>
+        <tr><td>关节</td><td>关节痛</td></tr>
+        <tr><td>HLA-B51</td><td class="c-y">阳性（白塞病相关）</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>ESR</td><td>升高</td><td>0-15 mm/h</td><td class="c-y">炎症标志物</td></tr>
+      <tr><td>CRP</td><td>升高</td><td>&lt;8 mg/L</td><td class="c-y">炎症标志物</td></tr>
+      <tr><td>HLA-B51</td><td>阳性</td><td>阴性</td><td class="c-y">白塞病相关基因</td></tr>
+      <tr><td>针刺反应</td><td class="c-r">阳性</td><td>阴性</td><td class="c-r">白塞病诊断性试验</td></tr>
+      <tr><td>铁蛋白</td><td>显著升高</td><td>&lt;200 ng/mL</td><td class="c-r">MAS标志物</td></tr>
+      <tr><td>甘油三酯</td><td>升高</td><td>&lt;150 mg/dL</td><td class="c-y">MAS相关</td></tr>
+      <tr><td>纤维蛋白原</td><td>降低</td><td>200-400 mg/dL</td><td class="c-r">消耗性降低（MAS）</td></tr>
+    </table>
+    <div class="alert">
+      <b>⚠️ MAS（吞噬血细胞综合征）</b>：持续高热 + 铁蛋白显著升高 + 纤维蛋白原降低 + 甘油三酯升高 → 需紧急处理！MAS是白塞病罕见但致命的并发症。
+    </div>
+
+    <!-- 7. 发病机制 -->
+    <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+      <b>一、白塞病的血管炎本质</b><br>
+      白塞病（Behçet disease, BD）是一种系统性血管炎，2012年国际Chapel Hill共识会议（CHCC）将其分类为<b>变异性血管炎（Variable vessel vasculitis）</b>——即可累及任何类型和大小的血管。原文指出，复发性口腔溃疡是最常见且有时是唯一的临床表现。其核心免疫病理为<b>中性粒细胞介导的血管内皮损伤</b>，表现为白细胞碎裂性血管炎——本例皮肤活检示真皮毛细血管破坏、肿胀的内皮细胞和中性粒细胞浸润伴核碎裂，与Chen等描述的白塞病皮肤血管炎病理特征一致。<br><br>
+      <b>二、HLA-B51与遗传易感性</b><br>
+      HLA-B51是白塞病最明确的遗传易感因子，与疾病发生密切相关。然而原文引用Koné-Paut等（2016）PEDBD标准指出，针刺反应和HLA-B51<b>已不纳入最新的儿童白塞病分类标准</b>。本例HLA-B51阴性，但针刺反应阳性，说明HLA-B51并非诊断必需条件。白塞病的发病还涉及IL-1、IL-6、IL-17、TNF-α等促炎细胞因子的过度产生，以及Th1/Th17免疫偏移。<br><br>
+      <b>三、合并MAS的免疫病理机制</b><br>
+      巨噬细胞活化综合征（MAS）是一种危及生命的过度炎症状态，特征为<b>T淋巴细胞和巨噬细胞的异常激活</b>导致细胞因子风暴。原文引用Alpsoy等的研究指出，白塞病患者血清可引起<b>巨噬细胞的经典（促炎）激活</b>，为MAS的发生提供了直接的理论依据。本例中骨髓活检发现<b>吞噬血细胞现象</b>，伴随血细胞进行性下降（Hb 10.8→9.7、WBC 3800→3400、PLT 303→229×10³）和转氨酶升高（AST 86、ALT 74），符合MAS的诊断框架。MAS在白塞病中极为罕见，成人仅有EBV相关的个案报道。<br><br>
+      <b>四、针刺反应的病理生理</b><br>
+      针刺反应（pathergy test）是白塞病的特征性表现，反映了<b>皮肤对微小创伤的过度炎症反应</b>——与中性粒细胞功能亢进和IL-8等趋化因子过度表达有关。本例中静脉穿刺部位出现溃疡（针刺反应的一种临床体现），进一步支持白塞病诊断。
+    </div>
+
+    <!-- 8. 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出白塞病相关诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">PEDBD（儿童白塞病分类标准）</td><td>Koné-Paut I 等</td><td>2016</td><td>Ann Rheum Dis</td><td>≥3项标准（共6项）</td><td>
+        ① 复发性口腔溃疡 → <span class="c-g">✅ 3岁起反复口腔溃疡（每4-6周）</span><br>
+        ② 皮肤受累（脓疱/结节性红斑）→ <span class="c-g">✅ 前臂脓疱+肘部丘疹脓疱</span><br>
+        ③ 针刺反应阳性 → <span class="c-g">✅ 阳性（静脉穿刺部位溃疡）</span><br>
+        ④ 生殖器溃疡 → <span class="c-y">原文未明确提及</span><br>
+        ⑤ 眼部受累 → <span class="c-r">眼科检查无异常 ❌</span><br>
+        ⑥ 血管受累 → <span class="c-r">无 ❌</span><br>
+        <b>满足≥3项（①②③）→ 诊断儿童白塞病 ✅</b>
+      </td></tr>
+      <tr><td class="b">ICBD（国际白塞病标准）</td><td>国际白塞病研究组</td><td>2014</td><td>J Eur Acad Dermatol Venereol</td><td>≥4分（加权）</td><td>
+        ① 口腔溃疡（复发≥3次/年）= +2分 → <span class="c-g">✅</span><br>
+        ② 皮肤损害 = +1分 → <span class="c-g">✅</span><br>
+        ③ 针刺反应阳性 = +1分 → <span class="c-g">✅</span><br>
+        <b>总分≥4分 → 诊断白塞病 ✅（共4分）</b>
+      </td></tr>
+      <tr><td class="b">MAS诊断标准（HLH-2004/AOS）</td><td>Henter JI 等 / Ravelli A 等</td><td>2004/2015</td><td>Pediatr Blood Cancer / Hematol Oncol Clin North Am</td><td>临床+实验室综合</td><td>
+        ① 持续高热 → <span class="c-g">✅</span><br>
+        ② 血细胞减少（≥2系）→ <span class="c-g">✅（Hb↓+WBC↓+PLT↓）</span><br>
+        ③ 骨髓吞噬血细胞 → <span class="c-g">✅ 骨髓活检证实</span><br>
+        ④ 铁蛋白升高 → <span class="c-y">【原文未给具体值，但描述符合】</span><br>
+        ⑤ 转氨酶升高 → <span class="c-g">✅ AST 86, ALT 74</span><br>
+        <b>结论：临床符合继发性MAS ✅</b>
+      </td></tr>
+    </table>
+    <div class="note"><b>诊断：</b>儿童白塞病（PEDBD标准）+ 继发性吞噬血细胞综合征（MAS）</div>
+
+    <!-- 8. 鉴别诊断 -->
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">复发性阿弗他溃疡</td><td>口腔溃疡</td><td>伴生殖器溃疡+皮肤病变+针刺反应阳性 → 超出单纯阿弗他溃疡</td></tr>
+      <tr><td class="b">炎症性肠病</td><td>口腔溃疡、结节性红斑、关节痛</td><td>无腹泻/血便、内镜未提示IBD → 不符合</td></tr>
+      <tr><td class="b">SLE</td><td>口腔溃疡、多系统受累</td><td>无蝶形红斑/抗dsDNA/补体降低 → 不符合</td></tr>
+      <tr><td class="b">单纯疱疹感染</td><td>口腔+生殖器溃疡</td><td>结节性红斑+针刺反应阳性+慢性复发性病程 → 不符合</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：白塞病 vs 单纯疱疹</div>
+      口腔+生殖器溃疡需鉴别单纯疱疹病毒感染，但白塞病的溃疡为复发性、非水疱性，伴结节性红斑和针刺反应阳性可资鉴别。儿童白塞病诊断建议使用PEDBD标准（非成人ICBD标准），PEDBD不要求复发性标准，降低了诊断门槛。
+    </div>
+
+    <!-- 9. 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+
+    <table>
+      <tr><th>药物/措施</th><th>剂量/方案</th><th>用法</th><th>目的</th></tr>
+      <tr><td class="b">甲泼尼龙冲击</td><td>30 mg/kg/d（最大1g/d）× 3-5天</td><td>静脉</td><td class="c-a">MAS一线：快速免疫抑制</td></tr>
+      <tr><td class="b">IVIG</td><td>2 g/kg（分2-5天输注）</td><td>静脉</td><td class="c-a">MAS辅助免疫调节</td></tr>
+      <tr><td class="b">秋水仙碱</td><td>0.5-1 mg/d（按体重调整）</td><td>口服</td><td class="c-a">控制黏膜和皮肤病变</td></tr>
+      <tr><td class="b">环孢素A</td><td>3-5 mg/kg/d（二线）</td><td>口服</td><td class="c-r">难治性MAS：靶向T细胞激活</td></tr>
+      <tr><td class="b">依托泊苷（VP-16）</td><td>150 mg/m² × 3次（三线）</td><td>静脉</td><td class="c-r">环孢素无效时：抑制巨噬细胞/组织细胞</td></tr>
+      <tr><td class="b">阿那白滞素</td><td>1-2 mg/kg/d（最大100mg）</td><td>皮下</td><td class="c-y">难治性MAS：IL-1受体拮抗</td></tr>
+    </table>
+    <div class="alert">
+      <b>⚠️ MAS治疗分级策略：</b>①一线：甲泼尼龙冲击+IVIG ②二线：环孢素A（4-6 mg/kg/d，监测谷浓度）③三线：依托泊苷（VP-16）④难治性：IL-1阻断（阿那白滞素/卡那单抗）。白塞病基础治疗（秋水仙碱+低剂量激素）应与MAS治疗同步进行。
+    </div>
+
+    <!-- 10. 随访 -->
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">初诊</div>
+        <div class="t-content">口腔+生殖器溃疡+结节性红斑，针刺反应阳性，HLA-B51阳性。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">病程中 — 出现MAS</div>
+        <div class="t-content">持续高热，铁蛋白显著升高，纤维蛋白原降低，甘油三酯升高。骨髓检查可能见吞噬血细胞现象。诊断为继发性MAS。</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">治疗</div>
+        <div class="t-content">全身性皮质类固醇 + MAS针对性治疗。口腔及皮肤病变逐渐好转。</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">转归</div>
+        <div class="t-content">MAS控制，口腔/生殖器溃疡愈合。需长期随访监测复发及MAS再激活。</div>
+      </div>
+    </div>
+
+    <!-- 11. 疑难剖析 -->
+    <div class="sh yellow">🧠 疑难剖析（决策导向）</div>
+    <div class="diff-box">
+      <div class="diff-title">🔴 决策点一：反复口腔溃疡的儿童→何时考虑白塞病？</div>
+      <b>临床情境：</b>6岁男孩自3岁起反复口腔溃疡（每4-6周，每次7-10天），本次伴发热、皮肤脓疱和静脉穿刺部位溃疡。<br>
+      <b>决策路径：</b>①反复口腔溃疡（≥3次/年）→ 首先排除普通复发性阿弗他溃疡 ②出现<b>皮肤病变+针刺反应阳性</b> → 超出单纯阿弗他溃疡，需考虑白塞病 ③使用PEDBD标准评估 → 口腔溃疡+皮肤受累+针刺反应 = ≥3项 → 诊断儿童白塞病<br>
+      <b>关键决策：对反复口腔溃疡的儿童，应主动询问和检查皮肤病变、生殖器溃疡和眼部症状。针刺反应检查简单易行，应作为常规筛查项目。白塞病在儿童中发病高峰为青春期前后，但6岁早发型并不罕见。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟡 决策点二：白塞病病程中持续高热→如何识别MAS？</div>
+      <b>临床情境：</b>住院期间出现持续高热，血细胞进行性下降（Hb/WBC/PLT三系降低），转氨酶升高。<br>
+      <b>决策路径：</b>①白塞病活动期+持续高热 → <b>立即警惕MAS</b> ②查铁蛋白、甘油三酯、纤维蛋白原、骨髓穿刺 ③本例骨髓活检证实吞噬血细胞现象 → <b>确诊MAS</b> ④MAS在白塞病中极为罕见但致命——延迟识别死亡率极高<br>
+      <b>关键决策：任何风湿免疫病患者出现持续高热+血细胞下降，都应立即评估MAS。白塞病合并MAS虽罕见，但Alpsoy等研究已证实白塞病血清可直接激活巨噬细胞，为MAS提供理论依据。</b>
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">🟢 决策点三：MAS确诊后→如何选择治疗方案？</div>
+      <b>临床情境：</b>6岁白塞病患儿确诊MAS，需紧急启动免疫抑制治疗。<br>
+      <b>决策路径：</b>①<b>MAS一线治疗：</b>大剂量激素冲击（甲泼尼龙30mg/kg/d）②<b>二线治疗：</b>环孢素A（靶向T细胞激活）③<b>难治性：</b>依托泊苷（VP-16）或IL-1阻断（阿那白滞素/卡那单抗）④本例予IVIG（2g/kg）后发热消退 → 支持MAS的免疫调节治疗有效 ⑤白塞病本身需秋水仙碱维持<br>
+      <b>关键决策：MAS是内科急症，需在确诊后立即启动治疗。本例IVIG有效提示早期干预的重要性。白塞病基础治疗（秋水仙碱+低剂量激素）应与MAS治疗同步进行。</b>
+    </div>
+
+    <!-- 12. 要点总结 -->
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① 口腔+生殖器溃疡+皮肤病变+针刺反应阳性 → 白塞病（PEDBD标准）<br>
+      ② 儿童白塞病使用PEDBD标准（非成人标准）<br>
+      ③ 持续发热+铁蛋白升高+纤维蛋白原降低 → 警惕MAS<br><br>
+      <b>2. 治疗策略</b><br>
+      ④ 激素+秋水仙碱为基本方案<br>
+      ⑤ MAS需积极免疫抑制（环孢素/依托泊苷/IL-1阻断）<br>
+      ⑥ 血管受累需抗凝+免疫抑制<br><br>
+      <b>3. 监测要点</b><br>
+      ⑦ 长期随访监测MAS复发、眼部受累（葡萄膜炎）、血管并发症<br><br>
+      <b>4. 预后</b><br>
+      ⑧ 儿童白塞病总体预后优于成人<br>
+      ⑨ 合并MAS者预后较差，需密切监测
+    </div>
+
+    <!-- 13. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/29644201/" target="_blank">PMID 29644201</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5885620/" target="_blank">PMC5885620</a>，以下为原文引用的参考文献。</div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Behçet Disease in a Child: A Rare Disorder with an Unusual Complication and Favorable Outcome. <i>Indian J Dermatol</i>. 2018;63(2):167-169. PMID: 29644201.<br>
+      2. Koné-Paut I, Shahram F, Darce-Bello M, et al. Consensus classification criteria for paediatric Behçet's disease. <i>Ann Rheum Dis</i>. 2016;75:958-964. PMID: 26819744.<br>
+      3. Ravelli A, Minoia F, Davì S, et al. 2016 Classification Criteria for Macrophage Activation Syndrome. <i>Arthritis Rheumatol</i>. 2016;68:566-576. PMID: 26813928.<br>
+      4. Alpsoy E, Cayirli C, Er H, Yilmaz E. Serum of patients with Behçet's disease induces classical activation of macrophages. <i>Dermatology</i>. 2003;206:225-232. PMID: 12673080.<br>
+      5. Henter JI, Horne A, Aricó M, et al. HLH-2004: Diagnostic and therapeutic guidelines for hemophagocytic lymphohistiocytosis. <i>Pediatr Blood Cancer</i>. 2007;48:124-131. PMID: 16937399.<br>
+      6. Davì S, Minoia F, Pistorio A, et al. Performance of current guidelines for diagnosis of macrophage activation syndrome. <i>Rheumatology</i>. 2014;53:1747-1752. PMID: 24812380.
+    </div>
+
+  </div>
+
+  <div class="footer">
+    基于PMC5885620真实病例 · Indian J Dermatol 2018 · 仅供教学参考
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

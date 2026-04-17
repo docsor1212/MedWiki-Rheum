@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：婴儿Evans综合征</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+
+</style>
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="ev_Evans_01.html">📖 本病例</a><span style="margin-left:auto;font-size:11px;opacity:.7">循证病例 · Evans综合征</span></div>
+
+<div class="wrap">
+<div class="header">
+<div><h1>📋 病例：4月龄婴儿Evans综合征</h1>
+<div class="sub">Early-onset Evans Syndrome — AIHA + ITP in a 4-month-old infant</div></div>
+<div class="meta">PMID: 30787781</div>
+</div>
+<div class="body">
+
+<div class="sh">📄 文献来源</div>
+<table>
+<tr><td class="b" style="width:100px">PMID</td><td>30787781</td></tr>
+<tr><td class="b">PMCID</td><td>PMC6298364</td></tr>
+<tr><td class="b">DOI</td><td>10.4103/1658-631X.204852</td></tr>
+<tr><td class="b">期刊</td><td>Saudi J Med Med Sci (2017)</td></tr>
+<tr><td class="b">作者</td><td>Mohamed K, Kamaleddin Al-Qurashi F, Al-Qahtani O, Osman MH, Shawki Y</td></tr>
+<tr><td class="b">机构</td><td>King Fahd Hospital of the University, Dammam, Saudi Arabia</td></tr>
+<tr><td class="b">原文</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6298364/" target="_blank">PMC全文 ↗</a></td></tr>
+</table>
+
+<div class="alert"><b>流行病学提示：</b>Evans综合征（ES）为罕见自身免疫性血液病，儿童ES在ITP/AIHA患者中仅占<b>约4.1%</b>。文献报告<b>&lt;12月龄婴儿仅约10例</b>。儿童ES死亡率<b>7%-36%</b>，以频繁复发-缓解为特征。无标准化管理指南。</div>
+
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">性别</td><td>女</td></tr>
+<tr><td class="b">年龄</td><td>4个月</td></tr>
+<tr><td class="b">出生体重</td><td>2850g（足月剖宫产）</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-r">Evans综合征</span> <span class="tag t-y">AIHA</span> <span class="tag t-r">ITP</span> <span class="tag t-y">婴儿期发病</span></td></tr>
+</table>
+
+<div class="sh red">🎯 主诉</div>
+<p style="font-size:13px;font-weight:600;margin:4px 0;">面色苍白、黄疸7天</p>
+
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+4个月女婴，因<b>急性面色苍白、黄疸和喂养困难7天</b>就诊。<br>
+足月儿，择期剖宫产出生，出生体重2850g，孕期无异常。<br>
+无出血倾向，无近期感染史，无病患接触史。<br>
+仅补充维生素D，无其他用药。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：足月顺产/剖宫产，无特殊。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：母亲无慢性病，无血液病/自身免疫病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">一般情况</th></tr>
+<tr><td>面色</td><td class="c-r">苍白+黄疸</td></tr>
+<tr><td>生长发育</td><td>符合年龄</td></tr>
+<tr><td>腹部</td><td>无腹胀、无肝脾肿大</td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>心肺</td><td>正常</td></tr>
+<tr><td>神经系统</td><td>正常</td></tr>
+<tr><td>淋巴结</td><td>无肿大</td></tr>
+</table>
+</div>
+<div class="alert"><b>重要体征：</b>急性苍白+黄疸+无肝脾肿大 → 提示溶血性贫血，但需排除先天性/感染性病因</div>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>Hb</td><td>5.4 g/dL</td><td>10-14（婴儿）</td><td class="c-r">极重度贫血</td></tr>
+<tr><td>RBC</td><td>1.62×10⁶/μL</td><td>3.5-5.0</td><td class="c-r">↓↓</td></tr>
+<tr><td>MCV</td><td>111.4 fL</td><td>70-90（婴儿）</td><td class="c-y">大细胞性</td></tr>
+<tr><td>MCH</td><td>33.5 pg</td><td>25-30</td><td class="c-y">↑</td></tr>
+<tr><td>网织红细胞</td><td>18.7%</td><td>0.5-2.5</td><td class="c-r">显著升高（溶血）</td></tr>
+<tr><td>PLT</td><td>62-72×10³/μL</td><td>150-400</td><td class="c-r">血小板减少</td></tr>
+<tr><td>WBC</td><td>20×10³/μL</td><td>6-17</td><td class="c-y">白细胞增多</td></tr>
+<tr><td>总胆红素</td><td>6.1 mg/dL</td><td>&lt;1.2</td><td class="c-r">↑↑（间接胆红素升高为主）</td></tr>
+<tr><td>LDH</td><td>1477 U/L</td><td>&lt;500</td><td class="c-r">↑↑↑（溶血标志）</td></tr>
+<tr><td>直接Coombs试验</td><td class="c-r">阳性（IgG型）</td><td>阴性</td><td class="c-r">自身免疫性溶血</td></tr>
+<tr><td>ANA</td><td>阴性</td><td>阴性</td><td>排除SLE</td></tr>
+<tr><td>血涂片</td><td>无RBC碎片</td><td></td><td>排除微血管病性溶血</td></tr>
+<tr><td>Hb电泳</td><td>正常</td><td></td><td>排除血红蛋白病</td></tr>
+</table>
+<div class="sh" style="margin-top:8px;">📊 住院期间血常规动态变化</div>
+<table>
+<tr><th>Day</th><th>WBC (k/μL)</th><th>Hb (g/dL)</th><th>PLT (k/μL)</th><th>Retic (%)</th><th>事件</th></tr>
+<tr><td>1</td><td>13.8</td><td class="c-r">5.4</td><td class="c-y">聚集</td><td class="c-r">18.7</td><td>入院+紧急输血</td></tr>
+<tr><td>2</td><td>17.8</td><td>9.4</td><td class="c-y">聚集</td><td>—</td><td>输血后Hb回升</td></tr>
+<tr><td>3</td><td>10.6</td><td>8.5</td><td>72</td><td class="c-r">14.9</td><td>Hb开始下降</td></tr>
+<tr><td>4</td><td>16.8</td><td>8.2</td><td>62</td><td class="c-r">11.7</td><td>再次输血</td></tr>
+<tr><td>5</td><td>12.1</td><td class="c-r">6.8</td><td>64</td><td class="c-r">15.3</td><td class="c-r">启动甲泼尼龙10 mg/kg/d</td></tr>
+<tr><td>6</td><td>6.5</td><td class="c-g">11.7</td><td class="c-g">136</td><td>11.6</td><td class="c-g">激素显效！Hb+PLT均回升</td></tr>
+<tr><td>8</td><td>14.3</td><td>11.5</td><td class="c-g">202</td><td>—</td><td>稳定，无需再输血</td></tr>
+<tr><td>9</td><td>7.8</td><td>10.5</td><td class="c-g">223</td><td>12.2</td><td>继续改善</td></tr>
+<tr><td>11</td><td>9</td><td>10.4</td><td class="c-g">277</td><td>7.8</td><td>激素减量至4 mg/kg/d</td></tr>
+</table>
+
+<div class="note"><b>骨髓检查：</b>正常细胞增生，巨核细胞数量正常，红系明显增生（占76%），可见异常原始细胞和吞噬血细胞，无发育异常细胞 → 符合外周破坏性血细胞减少</div>
+
+<div class="sh blue">🧬 发病机制与免疫病理</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<b>一、Evans综合征的免疫学本质</b><br>
+Evans综合征（ES）是由Robert Evans于1951年首次描述的罕见自身免疫性血液病，核心特征为<b>免疫系统同时或序贯攻击两种以上血细胞系</b>——最典型为自身免疫性溶血性贫血（AIHA）和免疫性血小板减少（ITP）。原文指出ES的本质是"autoimmune destruction of at least two hematologic cell types after exclusion of other diagnoses"。<br><br>
+<b>二、自身抗体介导的双重破坏</b><br>
+AIHA的机制为IgG自身抗体结合红细胞表面抗原→抗体包裹的红细胞被脾脏巨噬细胞通过Fcγ受体识别并吞噬→血管外溶血。本例DCT阳性（IgG型）+网织红细胞18.7%+LDH 1477 U/L+间接胆红素6.1 mg/dL，构成完整免疫溶血证据链。ITP机制类似——抗血小板自身抗体（多为IgG）结合血小板膜糖蛋白（GPIIb/IIIa）→脾脏巨噬细胞FcγR介导吞噬→血小板减少。骨髓巨核细胞正常确认外周破坏而非生成障碍。<br><br>
+<b>三、免疫调节失衡的深层机制</b><br>
+原文指出以下机制假说：<b>①</b>调节性T细胞（Treg）功能缺陷——丧失对自身反应性B/T细胞的抑制；<b>②</b>B细胞耐受检查点失效——允许自身反应性B细胞成熟并产生多系自身抗体；<b>③</b>约50%儿童ES为特发性，其余可继发于SLE、免疫缺陷（ALPS、CVID）。原文强调"autoimmune cytopenia may indicate the presence of an underlying primitive immunodeficiency"。<br><br>
+<b>四、大细胞性贫血的机制</b><br>
+MCV 111.4 fL（大细胞性）的两种解释：①网织红细胞体积大，18.7%的网织红细胞推高MCV（假性大细胞增多）；②AIHA时红细胞凝集干扰自动计数。<br><br>
+<b>五、治疗反应的机制基础</b><br>
+高剂量糖皮质激素（甲泼尼龙10 mg/kg/d）通过抑制巨噬细胞FcγR吞噬、抑制自身抗体产生、诱导淋巴细胞凋亡起效。本例24h内Hb和PLT即显著回升。原文指出约60-70% ES患者复发，反映免疫失衡持续存在。
+<div class="note">以上内容依据原文PMC6298364整理。原文为病例报告，未含详细分子机制数据。</div>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+<table>
+<tr><th colspan="4" style="background:#e8f4f2;">Evans综合征诊断（Norton & Roberts, <i>Br J Haematol</i> 2006;132:125-137）—— 无统一分类标准，采用公认定义</th></tr>
+<tr><th style="width:30px">序</th><th>诊断条件</th><th>本例情况</th><th>符合</th></tr>
+<tr><td>1</td><td>AIHA证据：DCT阳性+溶血标志</td><td>DCT阳性（IgG）+网织红细胞18.7%+LDH 1477+间接胆红素6.1+骨髓红系76%</td><td class="c-g">✅</td></tr>
+<tr><td>2</td><td>ITP证据：PLT↓+骨髓巨核正常+排除其他</td><td>PLT 62-72×10³/μL+巨核细胞正常+无脾大</td><td class="c-g">✅</td></tr>
+<tr><td>3</td><td>AIHA和ITP同时或序贯出现</td><td>同时出现</td><td class="c-g">✅</td></tr>
+<tr><td>4</td><td>排除其他诊断（同种免疫/TMA/感染/肿瘤）</td><td>母婴同血型(A Rh+);CMV/EBV/HIV(-);血涂片无碎片;Hb电泳正常;骨髓无异常</td><td class="c-g">✅</td></tr>
+<tr><td colspan="3" class="b">诊断</td><td class="b c-g">Evans综合征确诊</td></tr>
+</table>
+<table style="margin-top:4px;">
+<tr><th colspan="4" style="background:#e8f4f2;">AIHA亚型（Petz & Garratty, <i>Immune Hemolytic Anemias</i> 2004）</th></tr>
+<tr><th>项目</th><th>结果</th><th>解读</th></tr>
+<tr><td>DCT分型</td><td>阳性（仅IgG）</td><td>温抗体型AIHA（wAIHA）</td></tr>
+<tr><td>AIHA机制</td><td colspan="2">IgG型wAIHA——自身抗体37°C最活跃，主要介导血管外溶血（脾脏巨噬细胞吞噬）</td></tr>
+</table>
+<div class="note" style="border-left-color:var(--green);"><b>综合诊断</b>：Evans综合征（早发型，4月龄）——wAIHA（IgG型）+ ITP同时存在。Evans综合征无统一分类标准，诊断依赖：①≥2系血细胞自身免疫性破坏 ②DCT阳性 ③排除继发。婴儿期发病极罕见（&lt;12月龄文献约10例）。</div>
+
+<div class="sh blue">🔍 鉴别诊断</div>
+<table>
+<tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td class="b">同种免疫性溶血（ABO/Rh不相容）</td><td>新生儿黄疸+贫血</td><td>母婴血型相同（A Rh+）、4月龄发病 → 排除</td></tr>
+<tr><td class="b">遗传性球形红细胞增多症</td><td>溶血性贫血</td><td>Coombs阳性 → 自身免疫性而非遗传性</td></tr>
+<tr><td class="b">血栓性微血管病（TMA/HUS）</td><td>贫血+血小板减少</td><td>血涂片无碎片、LDH升高幅度与溶血一致、无肾功能不全 → 排除</td></tr>
+<tr><td class="b">先天性感染（TORCH）</td><td>婴儿黄疸+贫血+血小板减少</td><td>CMV/EBV/HIV IgM阴性 → 排除</td></tr>
+</table>
+<div class="diff-box">
+<div class="diff-title">⚠️ 易错点：Evans综合征 vs 同种免疫性溶血</div>
+新生儿/小婴儿溶血需首先排除同种免疫性溶血（ABO/Rh不相容），但本例母婴血型相同（A Rh+），直接Coombs为IgG型自身抗体（非同种抗体），且4月龄发病（非新生儿期），可排除同种免疫。<b>小婴儿Evans综合征极易漏诊，因很少考虑到自身免疫病。</b>
+</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table>
+<tr><th>阶段</th><th>药物/措施</th><th>目的</th></tr>
+<tr><td class="b">紧急处理</td><td>红细胞输注</td><td class="c-r">Hb 5.4 g/dL → 极重度贫血，紧急输血</td></tr>
+<tr><td class="b">一线治疗</td><td>甲泼尼龙 10 mg/kg/d 静脉</td><td class="c-a">抑制自身免疫</td></tr>
+<tr><td class="b">维持/减量</td><td>4天内逐步减至 4 mg/kg/d</td><td>避免激素副作用</td></tr>
+</table>
+<div class="alert">
+<b>⚠️ 治疗反应：</b>激素治疗第5天开始，Hb从6.8→11.7 g/dL，PLT从64→136×10³/μL → 显著改善！<br>
+Evans综合征一线治疗为糖皮质激素，多数患者反应良好。难治性可选用IVIG、利妥昔单抗、脾切除。
+</div>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item red">
+<div class="t-date">第1-2天</div>
+<div class="t-content">Hb 5.4 g/dL → 紧急红细胞输注 → Hb升至9.4 g/dL。PLT聚集无法计数。</div>
+</div>
+<div class="t-item red">
+<div class="t-date">第3-5天</div>
+<div class="t-content">Hb进行性下降至6.8 g/dL（输血后溶血持续）→ 再次输血。PLT降至64×10³/μL。确诊Evans综合征。</div>
+</div>
+<div class="t-item yellow">
+<div class="t-date">第5天 — 启动激素</div>
+<div class="t-content">甲泼尼龙10 mg/kg/d开始。骨髓检查回报：红系增生76%，巨核细胞正常，支持外周破坏。</div>
+</div>
+<div class="t-item green">
+<div class="t-date">第6天</div>
+<div class="t-content"><b>Hb 11.7 g/dL, PLT 136×10³/μL</b> → 激素治疗显效！</div>
+</div>
+<div class="t-item green">
+<div class="t-date">第8-11天</div>
+<div class="t-content">Hb 10.4-11.5 g/dL稳定，PLT升至202-277×10³/μL。无需再输血。激素逐步减量。</div>
+</div>
+</div>
+
+<div class="sh yellow">🧠 疑难剖析——决策导向</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<b>决策节点一：4月龄婴儿贫血+黄疸+血小板减少——鉴别诊断路径</b><br>
+小婴儿血两系减少的鉴别诊断宽度极大，决策路径：<b>第一步</b>查DCT——阳性即可锁定免疫介导（本例IgG阳性），阴性则转向遗传/感染/骨髓衰竭方向。<b>第二步</b>查母婴血型——同型(A Rh+)排除同种免疫性溶血。<b>第三步</b>感染筛查（CMV/EBV/HIV）排除先天性感染。<b>第四步</b>骨髓检查——区分外周破坏（巨核正常+红系增生）与骨髓衰竭。<b>临床决策建议</b>：婴儿不明原因≥2系血细胞减少→DCT应为第一优先检查，阳性结果可将鉴别范围从10+种缩窄至自身免疫性。<br><br>
+<b>决策节点二：骨髓检查是否必须？</b><br>
+原文指出骨髓检查是排除恶性肿瘤和确认诊断的关键步骤。<b>决策原则</b>：①DCT阳性+明确溶血+血小板减少+无脾大→临床可诊断ES，骨髓并非绝对必要条件；②但以下情况骨髓不可省略：a.婴儿/儿童初诊（需排除白血病/骨髓增生异常）；b.发现噬血细胞需警惕MAS；c.对治疗反应不典型时重新评估诊断。本例骨髓示红系76%增生+巨核正常+噬血细胞→同时确认了外周破坏机制和MAS预警信号。<br><br>
+<b>决策节点三：激素剂量和减量策略</b><br>
+原文使用甲泼尼龙10 mg/kg/d（远高于常规1-2 mg/kg），4天内快速减至4 mg/kg/d。婴儿期ES的激素策略需平衡：<b>①</b>起病急骤（Hb 5.4 g/dL有生命危险）→需高剂量快速起效；<b>②</b>婴儿对激素副作用敏感（生长抑制、免疫抑制）→需尽快减量。<b>决策建议</b>：危及生命的贫血/出血→高剂量起始（10 mg/kg）→有效后72h内快速阶梯减量→维持最低有效剂量。<br><br>
+<b>决策节点四：何时启动二线治疗和长期随访</b><br>
+原文指出ES复发率高达60-70%，无标准化管理指南。<b>决策路径</b>：①首次缓解后密切随访血常规（前3月每周→每月）；②复发或激素依赖→首选IVIG；③IVIG无效→利妥昔单抗（一线生物制剂）；④所有儿童ES均需长期随访排查继发原因（SLE、ALPS、CVID），即使初始ANA阴性，Evans综合征可能是SLE的首发表现。
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<b>1. 诊断要点</b><br>
+① AIHA（Coombs阳性+网织红↑+LDH↑+间接胆红素↑）+ ITP（PLT↓+骨髓巨核正常）= Evans综合征<br>
+② 婴儿期Evans综合征极罕见，需排除同种免疫/感染/遗传性病因<br>
+③ 直接Coombs试验（IgG型）是确诊关键<br><br>
+<b>2. 治疗策略</b><br>
+④ 糖皮质激素是一线治疗，多数反应良好<br>
+⑤ 重度贫血需输血支持<br>
+⑥ 难治性：IVIG、利妥昔单抗、脾切除<br><br>
+<b>3. 监测要点</b><br>
+⑦ 长期随访排查继发原因（SLE、免疫缺陷）<br>
+⑧ 监测血常规、网织红细胞、LDH<br><br>
+<b>4. 预后</b><br>
+⑨ Evans综合征复发率高（约60-70%）<br>
+⑩ 婴儿期发病者需长期随访
+</div>
+
+<div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/6298364/" target="_blank">PMID 30787781</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6298364/" target="_blank">PMC6298364</a></div><div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0;">
+1. Mohamed K, et al. Early-onset Evans Syndrome in a 4-Month-Old Infant. <i>Saudi J Med Med Sci</i>. 2017;5(2):177-180. PMID: 30787781.<br>
+2. Evans RS, et al. Primary thrombocytopenic purpura and acquired hemolytic anemia. <i>AMA Arch Intern Med</i>. 1951;87:48-65. PMID: 14782741.<br>
+3. Norton A, Roberts I. Management of Evans syndrome. <i>Br J Haematol</i>. 2006;132:125-137. PMID: 16398647.<br>
+4. Michel M, et al. The spectrum of Evans syndrome in adults. <i>Blood</i>. 2009;114:3167-3172. PMID: 19638626.<br>
+5. Mathew P, et al. Evans syndrome: results of a national survey. <i>J Pediatr Hematol Oncol</i>. 1997;19:433-437. PMID: 9329465.<br>
+6. Pui CH, et al. Evans syndrome in childhood. <i>J Pediatr</i>. 1980;97:754-758. PMID: 7191890.<br>
+7. Aladjidi N, et al. Evans syndrome in children: long-term outcome. <i>Front Pediatr</i>. 2015;3:79. PMID: 26484337.<br>
+8. Jaime-Perez JC, et al. Experience with Evans syndrome in an academic referral center. <i>Rev Bras Hematol Hemoter</i>. 2015;37:230-235. PMID: 26190425.<br>
+</div>
+
+</div>
+<div class="footer">基于PMC6298364真实病例 · Mohamed K, et al. Saudi J Med Med Sci 2017 · 仅供教学参考</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

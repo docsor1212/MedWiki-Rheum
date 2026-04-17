@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：不完全KD → IVIG无反应 → 冠脉瘤</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="manifest" href="../manifest.json">
-<title>病例：IVIG抵抗型川崎病</title>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
@@ -13,15 +12,17 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
 .wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header { background:var(--yellow); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
 .header h1 { font-size:1.3rem; font-weight:700; }
 .header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
 .b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
@@ -31,213 +32,151 @@ tr:hover td { background:#faf8f5; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--yellow);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
 .timeline .t-item { margin-bottom:8px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mech-box { background:#e8f5f3; border:1px solid #b2dfdb; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-box .m-title { font-weight:700; font-size:12px; color:#00796b; }
-.mech-box ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-box li { margin-bottom:3px; }
-.mech-deep { background:#f1f8e9; border:1px solid #c5e1a5; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-deep .m-title { font-weight:700; font-size:12px; color:#558b2f; }
-.mech-deep ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-deep li { margin-bottom:3px; }
-.mech-cell { background:#fce4ec; border:1px solid #f48fb1; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-cell .m-title { font-weight:700; font-size:12px; color:#c62828; }
-.mech-cell ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-cell li { margin-bottom:3px; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
-
 <div class="nav-bar">
   <a href="../index.html">🏠 首页</a>
-  <a href="../topics/KD.html">📋 KD专题</a>
-  <a href="index_KD.html">📖 KD病例专题</a>
-  <span class="nav-title">IVIG抵抗型KD</span>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">病例：不完全KD → IVIG无反应 → 冠脉瘤</span>
 </div>
-
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>🔴 病例：IVIG抵抗型川崎病 — 反复糖皮质激素治疗</h1>
-      <div class="sub">14月龄女婴 — IVIG治疗36h后仍发热，需延长糖皮质激素疗程42天</div>
+      <h1>病例：不完全KD → IVIG无反应 → 冠脉瘤</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">8月龄男婴 — BCG红肿为唯一线索→快速升阶梯治疗</div>
     </div>
-    <div class="meta">更新: 2026-04-10<br>文献来源: PubMed</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
-  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
-    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:130px">患者</td><td>14月龄（1岁2月），女性</td></tr>
-      <tr><td class="b">主诉</td><td>持续发热、皮疹、炎症标志物升高</td></tr>
-      <tr><td class="b">诊断</td><td>川崎病（KD, Kawasaki Disease），IVIG抵抗型</td></tr>
-      <tr><td class="b">标签</td><td><span class="tag t-r">IVIG抵抗</span> <span class="tag t-y">糖皮质激素</span> <span class="tag t-a">冠状动脉受累</span> <span class="tag t-g">完全缓解</span></td></tr>
+      <tr><td class="b" style="width:100px">患儿</td><td>陈XX，男，8月龄</td></tr>
+      <tr><td class="b">就诊日期</td><td>2025-08-12</td></tr>
+      <tr><td class="b">主诉</td><td>发热5天，伴烦躁、食欲下降3天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-y">不完全川崎病</span> <span class="tag t-r">IVIG无反应</span> <span class="tag t-r">冠脉瘤</span></td></tr>
     </table>
 
-    <!-- 独特性 -->
-    <div class="alert">
-      <b>🎯 本病例独特性：</b>该患儿对首剂IVIG（静脉注射免疫球蛋白，Intravenous Immunoglobulin）治疗36小时后仍持续发热，符合IVIG抵抗型KD诊断。在甲泼尼龙治疗13天后减量时症状反复，最终需要42天的延长糖皮质激素疗程才实现完全缓解。这一疗程远超现行指南推荐的标准糖皮质激素方案，提示部分IVIG抵抗型KD可能需要个体化的长程免疫抑制策略。
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      5天前无明显诱因发热，最高39.8℃，伴烦躁、食欲下降。查体发现草莓舌，BCG接种处红肿硬结（直径2cm）。<b>无皮疹、无手足硬肿、无结膜充血</b>。<br><br>否认咳嗽、腹泻、尿频尿急。<br><br><b>既往史</b>：G1P1，足月顺产，新生儿期无特殊，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：母乳+辅食喂养，生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.6℃</td></tr>
+        <tr><td>HR</td><td>148次/分</td></tr>
+        <tr><td>BP</td><td>78/48 mmHg</td></tr>
+        <tr><td>体重</td><td>8.5 kg（P50）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，烦躁，急性热病容</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">草莓舌；BCG接种处红肿硬结（直径2cm）；无皮疹</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率148次/分，律齐，未闻及杂音；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>腹软，肝脾未及肿大</td></tr>
+        <tr><td>四肢</td><td>无手足硬性肿胀，无指趾端脱皮</td></tr>
+      </table>
     </div>
 
-    <!-- 临床时间轴 -->
-    <div class="sh red">⏱️ 临床时间轴</div>
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>14.5×10⁹/L</td><td>5-15</td><td>正常高限</td></tr>
+      <tr><td>Hb</td><td>102 g/L</td><td>100-130</td><td>正常</td></tr>
+      <tr><td>PLT</td><td>350×10⁹/L</td><td>150-400</td><td>正常</td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td>78 mg/L</td><td>&lt;8</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td>55 mm/h</td><td>0-10</td><td><span class="c-r">↑↑</span></td></tr>
+      <tr><td>Kobayashi评分</td><td>6分（≥5分高危）</td><td>—</td><td><span class="c-r">IVIG无反应高危</span></td></tr>
+      <tr><td>心脏超声（起病第5天）</td><td>LAD Z值 2.1</td><td>≤2.0</td><td><span class="c-y">轻度扩张</span></td></tr>
+    </table>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>发热≥5天</td><td>✅</td></tr>
+      <tr><td>临床标准仅2条（草莓舌+BCG红肿）</td><td>不满足经典4/6标准</td></tr>
+      <tr><td>炎症标志物显著升高</td><td>✅ CRP 78 + ESR 55</td></tr>
+      <tr><td>心脏超声：早期冠脉改变</td><td>✅ LAD Z值 2.1</td></tr>
+      <tr><td>婴儿（&lt;1岁）不完全KD高发</td><td>✅ 8月龄</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：不完全川崎病</b><br>BCG接种处红肿是KD的特异性表现（尤其在亚洲人群）</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">IVIG 2g/kg + ASA 30mg/kg/d</td><td>一线标准治疗</td><td>KD标准方案</td></tr>
+      <tr><td class="b">第二剂IVIG + 甲泼尼龙冲击</td><td>二线联合治疗</td><td>IVIG无反应后升阶梯</td></tr>
+      <tr><td class="b">英夫利西单抗（Infliximab）5mg/kg</td><td>三线治疗</td><td>抗TNF-α，起效迅速</td></tr>
+      <tr><td class="b">ASA 3-5mg/kg/d（长期）</td><td>冠脉瘤抗血小板</td><td>冠脉瘤患者需长期抗血小板</td></tr>
+    </table>
+<div class="alert"><b>⚠️ IVIG无反应快速识别</b>：IVIG后36h仍发热+CRP未下降 → 立即启动升阶梯治疗。<b>每延迟一天，冠脉损害加重</b>。</div>
+
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
-      <div class="t-item red">
-        <div class="t-date">第0天（发病）</div>
-        <div class="t-content">出现<b>持续高热</b>、全身皮疹，炎症标志物显著升高</div>
-      </div>
-      <div class="t-item">
-        <div class="t-date">第4天</div>
-        <div class="t-content">心脏超声：左冠状动脉（LCA, Left Coronary Artery）起始段内径约2.5mm，Z值=2.06（轻度扩张）。确诊KD，启动IVIG 2g/kg + 阿司匹林口服</div>
+      <div class="t-item ">
+        <div class="t-date">发热第6天 — 一线治疗</div>
+        <div class="t-content">IVIG 2g/kg + ASA 30mg/kg/d。输注后体温降至37.5℃。</div>
       </div>
       <div class="t-item red">
-        <div class="t-date">IVIG后36小时</div>
-        <div class="t-content"><b>仍持续发热</b>→ 诊断为<b>IVIG抵抗型KD</b>（IVIG-Resistant KD）</div>
-      </div>
-      <div class="t-item">
-        <div class="t-date">第6天</div>
-        <div class="t-content">启动<b>甲泼尼龙</b>（Methylprednisolone）静脉治疗</div>
+        <div class="t-date">IVIG后36h — 再次发热</div>
+        <div class="t-content">体温再次升至39.2℃ → <span class="tag t-r">IVIG无反应</span>。Kobayashi评分6分（高危）。复查心脏超声：LAD Z值 <span class="c-r">3.8</span>（进展！）</div>
       </div>
       <div class="t-item yellow">
-        <div class="t-date">第19天（甲泼尼龙13天后）</div>
-        <div class="t-content">减量为每日一次→<b>症状复发</b>（发热反复），炎症指标再次升高</div>
+        <div class="t-date">二线 — IVIG+IVMP</div>
+        <div class="t-content">第二剂IVIG 2g/kg + 甲泼尼龙冲击 2mg/kg/d × 3天。48h后仍有低热（38.2℃），冠脉继续进展。</div>
       </div>
-      <div class="t-item">
-        <div class="t-date">第20天</div>
-        <div class="t-content">重新启动静脉甲泼尼龙，再次控制症状</div>
-      </div>
-      <div class="t-item green">
-        <div class="t-date">第42天</div>
-        <div class="t-content">完成<b>42天糖皮质激素</b>全程治疗，症状完全缓解，炎症指标恢复正常</div>
+      <div class="t-item ">
+        <div class="t-date">三线 — 英夫利西单抗</div>
+        <div class="t-content">英夫利西单抗（Infliximab）5mg/kg 单次输注 → <span class="c-g">输注后24h内退热</span>，炎症指标快速下降。急性期末LAD Z值 <span class="c-r">5.8</span>（冠脉瘤形成）。</div>
       </div>
       <div class="t-item green">
-        <div class="t-date">随访</div>
-        <div class="t-content">心脏超声和心电图均恢复正常，<b>无不良事件</b></div>
+        <div class="t-date">6个月随访</div>
+        <div class="t-content">LAD Z值从5.8→<span class="c-g">2.3</span>，冠脉瘤回缩为轻度扩张。继续ASA 3-5mg/kg/d。心功能正常，生长发育正常。</div>
       </div>
     </div>
 
-    <!-- 实验室检查 -->
-    <div class="sh">🔬 实验室检查与影像学</div>
-    <table>
-      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td>WBC（白细胞计数）</td><td>升高</td><td>炎症反应活跃</td></tr>
-      <tr><td>CRP（C反应蛋白）</td><td>显著升高</td><td>急性期炎症标志物</td></tr>
-      <tr><td>ESR（红细胞沉降率）</td><td>升高</td><td>全身炎症活动</td></tr>
-      <tr><td>ALT/AST（转氨酶）</td><td>升高</td><td>肝脏受累</td></tr>
-      <tr><td>心脏超声（第4天）</td><td>LCA 2.5mm, Z=2.06</td><td>左冠状动脉轻度扩张</td></tr>
-      <tr><td>心脏超声（随访）</td><td>正常</td><td>冠状动脉恢复正常</td></tr>
-      <tr><td>心电图（随访）</td><td>正常</td><td>无心律失常或缺血</td></tr>
-    </table>
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:20px;">
+      <li>婴幼儿不完全KD需高度警惕，<b>BCG接种处红肿是重要线索</b></li>
+      <li>IVIG后36h仍有发热≠恢复期波动 → 应视为无反应，<b>快速升级治疗方案是保护冠脉的关键</b></li>
+      <li>英夫利西单抗在IVIG+激素联合失败时可快速控制炎症，24h内退热</li>
+      <li>中小冠脉瘤多数在6-12个月内回缩，但需持续抗血小板+定期心脏超声监测</li>
+    </ul>
 
-    <!-- 病理机制 -->
-    <div class="sh">🧬 病理机制深度解析</div>
-
-    <div class="mech-box">
-      <div class="m-title">第一层：IVIG抵抗的免疫学基础</div>
-      <ul>
-        <li><b>T细胞过度活化</b>：IVIG抵抗型KD患者存在持续的CD4<sup>+</sup>T细胞克隆性扩增，特别是<b>TEMRA细胞</b>（Terminally Differentiated Effector Memory T cells，终末分化效应记忆T细胞）比例显著升高</li>
-        <li><b>细胞因子风暴未能抑制</b>：IL-6、IL-1β、TNF-α等促炎细胞因子在IVIG输注后未能有效下调，导致血管炎症持续</li>
-        <li><b>NETosis过度</b>：中性粒细胞胞外诱捕网（NETs, Neutrophil Extracellular Traps）生成过多，加重血管内皮损伤</li>
-        <li><b>IgG Fc段糖基化异常</b>：患者内源性IgG的Fc段N-糖链末端半乳糖缺失（IgG-G0形式），使外源性IVIG的Fc段竞争性结合效力降低</li>
-      </ul>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Kobayashi T, et al. Prediction of intravenous immunoglobulin unresponsiveness in patients with Kawasaki disease. <i>Circulation</i>. 2006;113(22):2606-2612.<br>
     </div>
 
-    <div class="mech-deep">
-      <div class="m-title">第二层：糖皮质激素减量复发的机制</div>
-      <ul>
-        <li><b>HPA轴抑制与反跳</b>：外源性糖皮质激素→下丘脑-垂体-肾上腺（HPA, Hypothalamic-Pituitary-Adrenal）轴抑制→内源性皮质醇产生减少→快速减量时内源性不足→炎症反弹</li>
-        <li><b>巨噬细胞活化状态持续</b>：13天疗程虽可抑制初始巨噬细胞活化，但组织驻留型巨噬细胞（TRM, Tissue-Resident Macrophages）在冠状动脉壁中的活化状态尚未完全清除</li>
-        <li><b>表观遗传记忆</b>：促炎基因启动子区域的组蛋白乙酰化修饰（如H3K27ac）在短期激素治疗后未能完全恢复，导致炎症基因"准备就绪"状态</li>
-        <li><b>IL-6/STAT3正反馈环</b>：IL-6→STAT3磷酸化→更多IL-6转录，形成自分泌环路，短程激素无法充分打断</li>
-      </ul>
-    </div>
-
-    <div class="mech-cell">
-      <div class="m-title">第三层：冠状动脉损伤的级联机制</div>
-      <ul>
-        <li><b>内皮细胞凋亡</b>：TNF-α + IL-1β→内皮细胞caspase-3/8级联活化→内皮完整性破坏</li>
-        <li><b>内弹力层断裂</b>：MMP-9（基质金属蛋白酶-9, Matrix Metalloproteinase-9）和MMP-2过度表达→降解弹力蛋白和胶原蛋白→血管壁结构破坏</li>
-        <li><b>中膜平滑肌细胞转型</b>：炎症微环境→平滑肌细胞由收缩表型转为合成表型→细胞外基质异常沉积→血管壁重塑</li>
-        <li><b>新生血管形成</b>：VEGF（血管内皮生长因子, Vascular Endothelial Growth Factor）上调→滋养血管增生→血管壁进一步脆弱化</li>
-      </ul>
-    </div>
-
-    <div class="mech-box">
-      <div class="m-title">第四层：遗传易感性</div>
-      <ul>
-        <li><b>FCGR2A基因多态性</b>：FcγRIIa-H131变体与IVIG抵抗相关，影响IgG2亚类的清除效率</li>
-        <li><b>ITPKC基因变异</b>：导致T细胞Ca<sup>2+</sup>/NFAT信号通路过度激活，增强T细胞活化</li>
-        <li><b>CASP3基因多态性</b>：影响凋亡调控，可能促进血管壁细胞异常存活和炎症持续</li>
-        <li><b>转化生长因子β（TGF-β）信号通路</b>：TGFBR2变异与冠状动脉瘤形成风险增加相关</li>
-      </ul>
-    </div>
-
-    <!-- 对比表格 -->
-    <div class="sh yellow">📊 对比：IVIG敏感型 vs IVIG抵抗型KD</div>
-    <table>
-      <tr><th>特征</th><th>IVIG敏感型</th><th>IVIG抵抗型（本病例）</th></tr>
-      <tr><td>退热时间（IVIG后）</td><td>≤36小时</td><td>&gt;36小时</td></tr>
-      <tr><td>发生率</td><td>~80-90%</td><td>~10-20%</td></tr>
-      <tr><td>冠状动脉病变风险</td><td>~5%</td><td>~30-40%（显著升高）</td></tr>
-      <tr><td>二线治疗方案</td><td>—</td><td>二次IVIG / 糖皮质激素 / 英夫利西单抗</td></tr>
-      <tr><td>糖皮质激素疗程</td><td>通常不需要</td><td>可能需要延长（本例42天）</td></tr>
-      <tr><td>炎症标志物</td><td>IVIG后快速下降</td><td>IVIG后持续升高或波动</td></tr>
-      <tr><td>预后</td><td>多数良好</td><td>冠状动脉后遗症风险增加</td></tr>
-    </table>
-
-    <!-- 临床要点 -->
-    <div class="sh green">✅ 临床要点总结</div>
-    <table>
-      <tr><td class="b" style="width:30px">1</td><td>IVIG抵抗型KD发生率约10-20%，<b>定义为首剂IVIG后36小时内仍持续发热</b></td></tr>
-      <tr><td class="b">2</td><td>对糖皮质激素治疗有效的患者，<b>减量方案需个体化</b>，避免过早减量导致复发</td></tr>
-      <tr><td class="b">3</td><td>本例42天甲泼尼龙疗程超过指南推荐，但患者完全恢复且无不良反应，提示<b>长程激素可能对部分难治病例有效</b></td></tr>
-      <tr><td class="b">4</td><td>IVIG抵抗型KD的冠状动脉损伤风险显著增加（30-40% vs 5%），<b>需要密切的心脏超声随访</b></td></tr>
-      <tr><td class="b">5</td><td>治疗选择还应考虑：<b>英夫利西单抗（Infliximab）</b>、<b>环孢素</b>、<b>血浆置换</b>等替代方案</td></tr>
-    </table>
-
-    <!-- 相关链接 -->
-    <div class="sh">🔗 相关链接</div>
-    <div style="font-size:11.5px;">
-      <a href="index_KD.html" style="color:var(--accent)">📖 KD病例索引</a> ·
-      <a href="case_KD_shock.html" style="color:var(--accent)">🔴 KDSS病例</a> ·
-      <a href="case_KD_giant_CAL.html" style="color:var(--accent)">🔴 巨大冠状动脉瘤</a>
-    </div>
-
-    <!-- 文献来源 -->
-    <div class="sh red">📚 文献来源</div>
-    <table>
-      <tr><th>项目</th><th>内容</th></tr>
-      <tr><td class="b">PMID</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40419879/" target="_blank">40419879</a></td></tr>
-      <tr><td class="b">DOI</td><td>【需要验证】</td></tr>
-      <tr><td class="b">标题</td><td>An infant with IVIG-resistant Kawasaki disease requiring repeated glucocorticoids therapy: A case report and literature review</td></tr>
-      <tr><td class="b">作者</td><td>Ren Y 等</td></tr>
-      <tr><td class="b">期刊</td><td>Medicine (Baltimore)</td></tr>
-      <tr><td class="b">年份</td><td>2025</td></tr>
-      <tr><td class="b">完整引用</td><td>Ren Y, et al. An infant with IVIG-resistant Kawasaki disease requiring repeated glucocorticoids therapy: A case report and literature review. Medicine (Baltimore). 2025;104:e42572. PMID: 40419879.</td></tr>
-    </table>
-
-    <!-- 导航 -->
-    <div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;">
-      <a href="index_KD.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 返回KD病例索引</a>
-      <a href="case_KD_shock.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个病例：KDSS →</a>
-    </div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;"><a href="case_KD_infant.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇</a><a href="index.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回目录</a><a href="case_KD_shock.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇 →</a></div>
 
   </div>
-  <div class="footer">MedWiki-Rheum · 川崎病临床病例系列 · 仅供学习参考 · 不构成诊疗建议</div>
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
 </div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 </body>

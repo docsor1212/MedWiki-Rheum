@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 早发型甲羟戊酸尿症 — PMID 41869348</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 新生儿早发型甲羟戊酸尿症（MVK新变异）</h1>
+      <div class="sub">循证病例 · PMID 41869348</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 41869348 &nbsp; <span class="b">PMCID:</span> PMC12999955<br>
+      <span class="b">DOI:</span> 10.3389/fimmu.2026.1773017<br>
+      <span class="b">期刊:</span> Frontiers in Immunology | <span class="b">年份:</span> 2026<br>
+      <span class="b">作者:</span> Xue S, Shi W, He X, Hao L (中国医科大学附属第一医院，沈阳)<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12999955/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>新生儿（胎龄38⁴⁷周，男），阴道分娩</td></tr>
+      <tr><td class="b">就诊日期</td><td>出生后第1天起病</td></tr>
+      <tr><td class="b">主诉</td><td><span class="c-r">发热1天</span></td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">甲羟戊酸尿症</span> <span class="tag t-y">MVK基因新变异</span> <span class="tag t-a">新生儿起病</span></td></tr>
+    </table>
+    <div class="alert"><b>流行病学提示：</b>甲羟戊酸激酶缺陷症（MKD/MA）属罕见自身炎症性疾病，IUIS分类第VII类。HIDS型（高IgD综合征）发病率约<b>1/100万</b>，经典型甲羟戊酸尿症（MA）更罕见。新生儿MA文献仅报告<b>约17例</b>，预后极差——本例为文献首报MVK c.928G>A纯合变异。新生儿MA全部以"败血症"为初始诊断，确诊中位时间严重延迟。</div>
+
+    <div class="sh red">🎯 主诉</div>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      出生第1天出现发热（37.8°C），CRP升高（29.39 mg/L），血小板减少（78×10⁹/L），初始诊断新生儿败血症继发于胎粪吸入综合征，予抗生素治疗。第4天热退，CRP降至15.2 mg/L，7天疗程后停药。<br><br>
+      <b>停药次日</b>再次发热，CRP反弹至18.6 mg/L，疑诊院内感染转入上级医院。转入后体检见全身麻疹样皮疹和瘀点，肝脾肿大（肋下5cm），颈部/腋窝/腹股沟无痛性淋巴结肿大。经多种抗生素（头孢、美罗培南、利奈唑胺）治疗<b>2周无效</b>，持续反复发热、喂养困难、间歇性腹泻、肝脾肿大、炎症指标持续升高。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：轻度窒息（Apgar 7-7-9），羊水混浊，口咽鼻吸引+正压通气复苏。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：父母均健康，MVK基因c.928G&gt;A杂合携带者。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">主要体征</th></tr>
+        <tr><td>皮疹</td><td class="c-r">全身麻疹样皮疹+瘀点</td></tr>
+        <tr><td>肝脾</td><td class="c-r">肝脾肿大（肋下5cm）</td></tr>
+        <tr><td>淋巴结</td><td class="c-r">颈部/腋窝/腹股沟无痛性肿大</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">重要指标</th></tr>
+        <tr><td>CRP</td><td class="c-r">11.35-47.1 mg/L波动</td></tr>
+        <tr><td>铁蛋白</td><td class="c-r">765.6 ng/mL ↑↑</td></tr>
+        <tr><td>ALT/AST</td><td class="c-r">173/126 U/L ↑（肝损伤）</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>CRP</td><td class="c-r">11.35-47.1 mg/L</td><td>&lt;8</td><td class="c-r">↑↑ 波动</td></tr>
+      <tr><td>铁蛋白</td><td class="c-r">765.6 ng/mL</td><td></td><td class="c-r">↑↑ 巨噬细胞活化</td></tr>
+      <tr><td>ALT/AST</td><td class="c-r">173/126 U/L</td><td></td><td class="c-r">↑↑ 肝损伤</td></tr>
+      <tr><td>PLT</td><td class="c-y">52-189×10⁹/L</td><td></td><td class="c-y">波动降低</td></tr>
+      <tr><td>尿液甲羟戊酸(GC-MS)</td><td class="c-r">4,750 mM/M肌酐</td><td>&lt;0.1</td><td class="c-r">↑↑↑↑↑ 确诊关键</td></tr>
+      <tr><td>血清甲羟戊酸(ELISA)</td><td class="c-r">425 ng/mL</td><td>&lt;10</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>MVK酶活性</td><td>降低</td><td></td><td class="c-r">功能缺陷</td></tr>
+      <tr><td>WGS</td><td class="c-r">MVK c.928G&gt;A 纯合</td><td></td><td class="c-r">新变异（致病性）</td></tr>
+      <tr><td>头颅MRI</td><td class="c-y">硬膜下积液+左脑室扩张</td><td></td><td class="c-y">神经系统受累</td></tr>
+      <tr><td>欧洲MKD评分</td><td><span class="score-box high">49分</span></td><td></td><td>高度提示MKD</td></tr>
+    </table>
+
+    <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>一、核心免疫学通路：甲羟戊酸途径与炎症小体</b></p>
+      <p>MVK基因编码<b>甲羟戊酸激酶（Mevalonate Kinase）</b>，是甲羟戊酸途径的关键酶，负责将甲羟戊酸转化为5-磷酸甲羟戊酸。该途径是胆固醇合成和<b>异戊烯化（isoprenylation）</b>的上游通路。原文指出，MVK功能缺陷导致甲羟戊酸途径中间产物（尤其是甲羟戊酸本身）大量蓄积，同时下游异戊烯化产物（如法尼基焦磷酸、香叶基香叶基焦磷酸）减少。异戊烯化缺陷直接影响<b>小GTP酶（如Rac1、RhoA）</b>的活化，这些蛋白的正常功能对NLRP3炎症小体的负性调控至关重要。</p>
+      <p><b>二、本病例特异性免疫异常</b></p>
+      <p>本例携带<b>MVK c.928G>A纯合突变</b>（新发变异），导致甲羟戊酸激酶活性显著降低。尿液甲羟戊酸水平极度升高至4,750 mM/M肌酐（参考值&lt;0.1），血清甲羟戊酸达425 ng/mL（参考值&lt;10），这一水平远超典型HIDS（高IgD综合征）患者，符合<b>经典型甲羟戊酸尿症（MA）</b>而非轻型MKD。铁蛋白升高至765.6 ng/mL反映<b>巨噬细胞活化</b>，CRP波动于11.35-47.1 mg/L提示持续IL-1/IL-6驱动急性期反应。原文分析17例新生儿MA文献发现，反复发热（15/17）、肝脾肿大（14/17）和消化道症状（14/17）是核心表型。</p>
+      <p><b>三、病理生理学解释</b></p>
+      <p>从分子层面看，本例的完整临床谱可用"甲羟戊酸蓄积-炎症小体活化"轴解释：<b>MVK酶缺陷</b>→甲羟戊酸极度蓄积（尿液/血清升高数万倍）→异戊烯化底物缺乏→Rac1/RhoA未异戊烯化→失去对NLRP3炎症小体的抑制→<b>IL-1β过度产生</b>→系统性炎症（反复发热、CRP升高）。同时，异戊烯化缺陷影响<b>Geranylgeranylation</b>过程，导致细胞凋亡信号异常和淋巴细胞功能紊乱，解释了肝脾肿大、淋巴结肿大和血细胞减少。新生儿期起病的极早表型（vs HIDS的婴儿期起病）提示残余酶活性极低，预后也最差——本例最终3月龄因脱水和电解质紊乱死亡。</p>
+      <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC12999955原文机制部分 + van der Hilst JC等（Medicine 2008）MKD长期随访数据</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出甲羟戊酸激酶缺乏症（MKD/MA）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">欧洲MKD诊断评分</td><td>van der Hilst JCH 等</td><td>2008</td><td>Neth J Med</td><td>≥30分高度提示MKD</td><td>① CRP升高(>10mg/L) → <span class='c-g'>✅ CRP 11.35-47.1</span><br>② 发热&lt;14天 → <span class='c-g'>✅ 反复短程发热</span><br>③ 消化道症状 → <span class='c-g'>✅ 间歇性腹泻</span><br>④ 婴儿期起病 → <span class='c-g'>✅ 新生儿第1天起病</span><br><b>总分49分 → 高度提示MKD ✅</b></td></tr>
+      <tr><td class="b">Yalçinkaya-Ozen儿童AID标准</td><td>Yalçinkaya F, Ozen S / EULAR/PRINTO/PRES</td><td>2016</td><td>Ann Rheum Dis【需要验证】</td><td>临床拟诊+基因确诊</td><td>① 典型反复发热 → <span class='c-g'>✅</span><br>② MVK双等位基因突变 → <span class='c-g'>✅ c.928G&gt;A纯合</span><br>③ 甲羟戊酸显著升高 → <span class='c-g'>✅</span><br><b>临床+基因+生化三重确诊 ✅</b></td></tr>
+      <tr><td class="b">2022 IUIS自身炎症性疾病分类</td><td>Tangye SG 等 / IUIS</td><td>2022</td><td>J Clin Immunol</td><td>基因+免疫学分类</td><td>MKD/MA属于IUIS第VII类(自身炎症性疾病) → <span class='c-g'>✅ 符合</span></td></tr>
+    </table>
+    <table>
+      <tr><th>诊断标准</th><th>详情与对照</th></tr>
+      <tr><td class="b" rowspan="5">欧洲MKD诊断评分<br>（van der Hilst JC等，<br>【补充知识】）</td>
+        <td><b>本例评分：49分（高度提示MKD）</b></td></tr>
+      <tr><td>① 发作期CRP升高（>10 mg/L）— <span class="c-g">✅</span> CRP 11.35-47.1 mg/L</td></tr>
+      <tr><td>② 发热持续时间<14天 — <span class="c-g">✅</span> 反复短程发热</td></tr>
+      <tr><td>③ 消化道症状（腹痛/腹泻/呕吐）— <span class="c-g">✅</span> 间歇性腹泻+喂养困难</td></tr>
+      <tr><td>④ 婴儿期起病 — <span class="c-g">✅</span> 新生儿第1天起病</td></tr>
+      <tr><td class="b" rowspan="4">2022 IUIS自身炎症性疾病分类<br>（Tangye SG等，<i>J Clin Immunol</i> 2022）<br>【补充知识】</td>
+        <td><b>MKD/MA属于IUIS第VII类（自身炎症性疾病）</b></td></tr>
+      <tr><td>① MVK基因致病性双等位基因突变 — <span class="c-g">✅ c.928G>A纯合</span></td></tr>
+      <tr><td>② 甲羟戊酸水平显著升高 — <span class="c-g">✅</span> 尿4,750 mM/M肌酐，血清425 ng/mL</td></tr>
+      <tr><td>③ 甲羟戊酸激酶活性降低 — <span class="c-g">✅</span></td></tr>
+      <tr><td class="b">确诊依据</td><td>① MVK纯合致病突变 + ② 甲羟戊酸极度升高 + ③ 酶活性降低 → <b>基因-生化双重确诊</b></td></tr>
+    </table>
+    <table style="margin-top:6px;">
+      <tr><th>合并诊断</th><th>依据</th></tr>
+      <tr><td>新生儿肝损伤</td><td>ALT 173 / AST 126 U/L ↑↑ + 肝脾肿大（肋下5cm）</td></tr>
+      <tr><td>贫血/血小板减少</td><td>Hb波动 + PLT 52-189×10⁹/L</td></tr>
+      <tr><td>听力损失（右侧轻-中度）</td><td>脑干听觉诱发电位异常</td></tr>
+    </table>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">新生儿败血症</td><td>发热+CRP升高+PLT低</td><td>多种抗生素2周无效+血培养阴性 → 排除</td></tr>
+      <tr><td class="b">新生儿HLH</td><td>发热+肝脾肿大+铁蛋白升高+PLT低</td><td>无噬血细胞证据+甲羟戊酸极度升高 → MKD</td></tr>
+      <tr><td class="b">川崎病（不完全型）</td><td>发热+皮疹+淋巴结肿大</td><td>新生儿极罕见+无口唇/结膜/肢端改变 → 不符合</td></tr>
+      <tr><td class="b">先天性感染（TORCH）</td><td>发热+肝脾肿大+皮疹+PLT低</td><td>弓形虫/风疹/CMV/梅毒筛查阴性+甲羟戊酸极度升高 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：新生儿MA极易误诊为败血症</div>
+      新生儿MA常见特征（17例分析）：反复发热(15/17)、肝脾肿大(14/17)、消化道症状(14/17)、发育迟缓(12/17)。抗生素治疗无效+停药即复发是关键线索。对"败血症"抗生素无效的新生儿应考虑自身炎症性疾病。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">醋酸泼尼松</td><td>0.91 mg/kg/d × 7天</td><td>口服</td><td class="c-a">减轻发作严重程度，但不能预防复发</td></tr>
+      <tr><td class="b">IVIG</td><td>2次</td><td>静脉</td><td class="c-a">辅助免疫调节</td></tr>
+      <tr><td class="b">保肝治疗</td><td>葡醛内酯+双环醇</td><td>口服</td><td class="c-a">ALT/AST显著升高</td></tr>
+      <tr><td>深度水解蛋白配方奶</td><td>营养支持</td><td>口服</td><td class="c-a">减少蛋白负荷</td></tr>
+      <tr><td>红细胞输注</td><td>2次</td><td>静脉</td><td class="c-a">贫血治疗</td></tr>
+    </table>
+    <div class="alert"><b>关键决策：</b>MA的根本治疗为IL-1受体拮抗剂（阿那白滞素）或TNF-α抑制剂（依那西普），但本例因地区限制无法获得。根治手段为异基因骨髓移植，家属拒绝。糖皮质激素仅能减轻发作严重程度，不能预防复发。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">Day 1</div><div class="t-content">发热37.8°C+CRP 29.39+PLT 78，诊断新生儿败血症，抗生素7天</div></div>
+      <div class="t-item red"><div class="t-date">停药次日</div><div class="t-content">再次发热+CRP反弹，转入上级医院</div></div>
+      <div class="t-item yellow"><div class="t-date">转入后</div><div class="t-content">皮疹+肝脾肿大+淋巴结肿大，多种抗生素2周无效</div></div>
+      <div class="t-item yellow"><div class="t-date">确诊</div><div class="t-content">甲羟戊酸极度升高+MVK纯合突变 → MA/MKD</div></div>
+      <div class="t-item green"><div class="t-date">泼尼松治疗</div><div class="t-content">体温恢复+肝功能改善+皮疹消退，但炎症指标反复</div></div>
+      <div class="t-item red"><div class="t-date">住院67天</div><div class="t-content">间歇发热+喂养困难+腹泻+嗜睡，体重增长不佳</div></div>
+      <div class="t-item red"><div class="t-date">3个月龄</div><div class="t-content"><span class="c-r">因脱水和电解质紊乱死亡</span></div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>❶ 为什么难——从主诉到诊断的完整推理链</b></p>
+      <p>本例以"新生儿发热"这一极常见主诉起病，初始完全符合新生儿败血症的临床路径（发热+CRP升高+血小板减少+胎粪吸入史）。<b>关键转折点</b>出现在两个时间节点：①停抗生素次日立即复发——败血症经足疗程抗生素后极少如此迅速反弹；②多种广谱抗生素（头孢→美罗培南→利奈唑胺）2周完全无效。此时鉴别框架应从"感染"转向"非感染性炎症"，而新生儿期的非感染性炎症中，自身炎症性疾病（如MA/MKD）和HLH是核心考虑。</p>
+
+      <p><b>❷ 易误诊/漏诊点</b></p>
+      <p>原文汇总17例新生儿MA发现，<b>全部以"败血症"为初始诊断</b>，确诊中位时间远超合理范围。最易误诊的三种疾病：①<b>新生儿败血症</b>（抗生素无效+血培养阴性可排除）；②<b>新生儿HLH</b>（本例铁蛋白765.6 ng/mL↑+肝脾肿大+PLT低，但纤维蛋白原/甘油三酯正常，无噬血细胞，不完全符合HLH-2004标准）；③<b>不完全型川崎病</b>（新生儿极罕见+无口唇/结膜/肢端改变）。<b>关键筛查手段</b>：欧洲MKD评分（本例49分，高度提示）+尿甲羟戊酸GC-MS检测。</p>
+
+      <p><b>❸ 决策启示——遇到类似患者的排查顺序</b></p>
+      <p>Step 1：新生儿发热+CRP升高 → 完善血培养+感染筛查（必做，不能跳过）；Step 2：抗生素72h无效或停药即复发 → 扩展鉴别：自身炎症+HLH+免疫缺陷；Step 3：查铁蛋白+纤维蛋白原+甘油三酯+骨髓涂片（排查HLH）；Step 4：若HLH不成立 → 查尿甲羟戊酸（GC-MS）+炎症评分；Step 5：甲羟戊酸升高 → 全外显子测序（WGS）确认MVK突变。</p>
+
+      <p><b>❹ 教学价值</b></p>
+      <p>本例对年轻医生的核心教学点：①"抗生素无效"本身就是诊断线索，不要无限升级抗生素；②HLH与MAS/继发性巨噬细胞活化的鉴别需要完整评估（不能仅凭铁蛋白一项）；③自身炎症性疾病可发生于新生儿期，MKD诊断评分是实用的筛查工具；④IL-1拮抗剂是MKD的一线靶向治疗，但HSCT是唯一根治手段——<b>早期诊断直接影响治疗窗口</b>。</p>
+    </div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>新生儿抗生素无效→考虑自身炎症</li>
+          <li>甲羟戊酸检测为确诊关键</li>
+          <li>MKD诊断评分有助筛查</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>IL-1拮抗剂为一线靶向治疗</li>
+          <li>GC可减轻发作但不能预防</li>
+          <li>HSCT为根治手段</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>监测肝功能+生长发育</li>
+          <li>听力评估</li>
+          <li>神经系统影像学随访</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>新生儿MA预后极差</li>
+          <li>本例3月龄死亡</li>
+          <li>早期HSCT可改善预后</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41869348/" target="_blank">PMID 41869348</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12999955/" target="_blank">PMC12999955</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Xue S, Shi W, He X, Hao L. Early-onset mevalonic aciduria in neonates with inflammatory marker elevated. <i>Front Immunol</i>. 2026;17:1773017. PMID: 41869348.<br>
+      2. van der Hilst JC, Bodar EJ, Barron KS, et al. Long-term follow-up, clinical features, and quality of life in 103 patients with HIDS. <i>Medicine</i>. 2008;87(6):301-310. PMID: 19018244.<br>
+      3. Tangye SG, Al-Herz W, Bousfiha A, et al. Human inborn errors of immunity: 2022 update. <i>J Clin Immunol</i>. 2022;42:1473-1507. PMID: 35748970.<br>
+      4. Henter JI, Horne A, Aricó M, et al. HLH-2004: Diagnostic and therapeutic guidelines. <i>Pediatr Blood Cancer</i>. 2007;48:124-131. PMID: 16937399.<br>
+      5. Bader-Meunier B, Florkin B, Sibilia J, et al. Mevalonate kinase deficiency: a survey of 50 patients. <i>Pediatrics</i>. 2011;128:e152-159. PMID: 21669892.<br>
+      6. D'Osualdo A, Picco P, Caroli F, et al. MVK mutations and associated clinical features in Italian patients. <i>Arthritis Rheum</i>. 2005;52:2770-2775. PMID: 16142740.<br>
+      7. Jeyaratnam J, Ter Haar N, Laxer R, et al. 2016 Pediatric rheumatology European Society diagnostic criteria for MKD. <i>Rheumatology</i>. 2023;62:1854-1862. PMID: 36204790.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 不完全川崎病并发休克综合征(KDSS)</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">川崎病 · KD-03</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>不完全川崎病并发川崎病休克综合征（KDSS）</h1>
+      <div class="sub">Incomplete KD Complicated by Shock — 8岁男童</div>
+    </div>
+    <div class="meta">循证病例 · PMID 41909287</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 41909287 &nbsp;|&nbsp; <b>PMC:</b> PMC13032044<br>
+  <b>DOI:</b> 10.7759/cureus.104268<br>
+  <b>期刊:</b> Cureus | <b>年份:</b> 2026<br>
+  <b>作者:</b> 原文作者见文献<br>
+  <b>标题:</b> <i>Incomplete Kawasaki Disease Complicated by Shock: A Diagnostic Challenge in a Child</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/41909287/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>川崎病休克综合征（KDSS）发生率约<b>2%-7%</b>的KD患儿。KDSS患者IVIG初始抵抗率高于典型KD，冠状动脉异常风险和左室收缩功能障碍发生率显著增加。以颈部淋巴结炎为主的不完全KD是一种公认表型，常导致诊断延迟。</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>8岁，男</td></tr>
+  <tr><td class="b">旅行史</td><td>1周前从乍得抵达阿联酋</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-y">不完全KD</span> <span class="tag t-r">KDSS</span> <span class="tag t-y">误诊为淋巴结炎</span></td></tr>
+</table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">高热、左颈部肿痛2天</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  8岁男孩，1周前从乍得到达阿联酋。因高热2天、左侧颈痛和肿胀就诊。初始查体除左侧颈部淋巴结肿大外无特殊。初步诊断为颈部淋巴结炎，予静脉克林霉素治疗，但疗效不佳。后经进一步评估（详见诊断章节），诊断为不完全KD。</p>
+  <b>第3天：</b>出现弥漫性斑丘疹、非脓性结膜炎、草莓舌，炎症标志物持续升高。疑似不完全KD，给予IVIG治疗。<br><br>
+  <b>IVIG后急性恶化：</b>出现低血压和呼吸困难，需ICU和血管活性药物支持。复查超声心动图示<span class="c-r">冠状动脉扩张+左室收缩功能减低</span>，确诊KD并发休克（KDSS）。</p>
+
+<div class="sh">📋 既往史</div>
+<p style="font-size:12px;margin:4px 0;"><b>既往史</b>：未接种疫苗。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">入院时</th></tr>
+    <tr><td>T</td><td class="c-r">高热</td></tr>
+    <tr><td>颈部</td><td>左颈淋巴结肿大</td></tr>
+    <tr><td>皮肤</td><td>初期无皮疹</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">第3天后</th></tr>
+    <tr><td>皮肤</td><td class="c-r">弥漫性斑丘疹</td></tr>
+    <tr><td>眼部</td><td class="c-r">非脓性结膜炎</td></tr>
+    <tr><td>口腔</td><td class="c-r">草莓舌</td></tr>
+    <tr><td>血流动力学</td><td class="c-r">低血压（KDSS）</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div>
+<table><tr><th>项目</th><th>入院时</th><th>第3天</th><th>第5天</th><th>第7天</th><th>第9天</th><th>2周随访</th><th>解读</th></tr>
+<tr><td>WBC (10³/μL)</td><td>10.1</td><td>6</td><td>12.2</td><td>10.5</td><td>8.8</td><td>9.7</td><td>正常范围</td></tr>
+<tr><td>Hb (g/dL)</td><td>13.2</td><td>12.1</td><td class="c-r">10.1 ↓</td><td class="c-r">9.6 ↓</td><td>10.8</td><td>13.3</td><td>进行性贫血</td></tr>
+<tr><td>PLT (10³/μL)</td><td>275</td><td>193</td><td>202</td><td>378</td><td>526</td><td>390</td><td>亚急性期升高</td></tr>
+<tr><td>CRP (mg/L)</td><td class="c-r">107 ↑</td><td class="c-r">205 ↑</td><td class="c-r" style="font-size:13px">333 ↑↑</td><td>—</td><td>61.4</td><td class="c-g">&lt;0.6</td><td>峰值333</td></tr>
+<tr><td>PCT (ng/mL)</td><td class="c-r">3.4 ↑</td><td class="c-r">3.7 ↑</td><td class="c-r" style="font-size:13px">22.5 ↑↑</td><td>2.8</td><td>—</td><td>—</td><td>峰值22.5</td></tr>
+<tr><td>钠 (mmol/L)</td><td class="c-r">131 ↓</td><td>—</td><td>—</td><td>133</td><td>134</td><td>—</td><td>低钠血症</td></tr>
+<tr><td>白蛋白 (g/dL)</td><td>4.1</td><td>—</td><td class="c-r">2.3 ↓</td><td>2.5</td><td>2.9</td><td>—</td><td>毛细血管渗漏</td></tr>
+<tr><td>铁蛋白 (ng/mL)</td><td>—</td><td class="c-r">1283 ↑</td><td class="c-r">1113 ↑</td><td>—</td><td>910</td><td class="c-g">131</td><td>显著升高（警惕MAS）</td></tr>
+<tr><td>pro-BNP (pg/mL)</td><td>—</td><td>—</td><td class="c-r" style="font-size:13px">9422 ↑↑</td><td>—</td><td>—</td><td>—</td><td>心肌功能障碍</td></tr>
+</table>
+<div class="note"><b>呼吸道病毒Panel：</b>肠道病毒/鼻病毒阳性。血培养、尿培养、疟疾、A群链球菌拭子均阴性。<b>颈部超声：</b>左侧多发小淋巴结（最大4.8 mm短轴），无脓肿。</div>
+
+<div class="sh">📈 超声心动图演变</div>
+<table><tr><th>时间</th><th>LMCA</th><th>Z-score</th><th>LAD</th><th>Z-score</th><th>EF</th><th>解读</th></tr>
+<tr><td>第4天（IVIG后）</td><td>2.7 mm</td><td>0.53</td><td>2.3 mm</td><td>1.1</td><td>正常</td><td>CA正常</td></tr>
+<tr><td>第5天（KDSS时）</td><td class="c-r">3.6 mm</td><td class="c-r">2.9</td><td class="c-y">2.75 mm</td><td>2.4</td><td class="c-r">43%</td><td>CA扩张+LV功能减低</td></tr>
+<tr><td>第7天（治疗后）</td><td class="c-g">3.4 mm</td><td class="c-g">1.9</td><td class="c-g">2.4 mm</td><td>1.0</td><td class="c-g">61%</td><td>CA改善+LV恢复</td></tr>
+</table>
+
+<div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
+<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<p><b>川崎病（KD）的核心免疫病理：</b>KD是一种以中等大小动脉（尤其冠状动脉）为靶点的系统性血管炎。其发病机制尚未完全阐明，目前认为与感染触发下的遗传易感性密切相关。原文引用McCrindle BW等（<i>Circulation</i> 2017）指出，KD在东亚（尤其日本）发病率最高，冬季和早春有季节聚集性，提示感染或环境触发因素的作用。原文明确提到"季节聚集性……提示可能的感染或环境触发因素"（"seasonal clustering…suggesting a possible infectious or environmental trigger"）。</p>
+<p><b>血管内皮损伤机制：</b>KD的核心病理是全身性血管炎，以冠状动脉为最严重的靶器官。原文讨论中指出，KDSS的发生与"exaggerated inflammatory response, increased capillary leak, and myocardial dysfunction"（放大的炎症反应、毛细血管渗漏增加和心肌功能障碍）相关。这一机制解释了本例患者的休克表现——全身毛细血管渗漏导致有效循环血量减少，心肌功能障碍进一步恶化血流动力学。</p>
+<p><b>本病例的免疫学特征：</b></p>
+<ul style="margin:2px 0 2px 16px;">
+<li><b>炎症标志物极度升高：</b>原文Table 1显示，CRP从入院107 mg/L升至第5天333 mg/L；PCT从3.4 ng/mL升至22.5 ng/mL——提示超急性炎症反应。这种极端的炎症标志物升高与KDSS的"exaggerated inflammatory response"一致。</li>
+<li><b>铁蛋白显著升高：</b>第3天1283 ng/mL（正常14-124），第5天1113 ng/mL——原文未特别解读此数值，但如此高水平提示可能存在巨噬细胞活化综合征（MAS）的背景，需在KDSS患者中保持警惕。</li>
+<li><b>低白蛋白血症：</b>从入院4.1 g/dL降至第5天2.3 g/dL——反映全身毛细血管渗漏和肝脏合成功能下降。</li>
+<li><b>pro-BNP极度升高：</b>9422 pg/mL（正常<125）——原文将此归因于"myocardial dysfunction"，直接反映心室壁张力增加和心肌损伤。</li>
+<li><b>冠状动脉改变：</b>左主干从2.7mm（Z=0.53）扩张至3.6mm（Z=2.9）——这一快速进展体现了血管壁炎症的急性加重。</li>
+<li><b>肠道病毒/鼻病毒合并感染：</b>原文提到呼吸道病毒Panel阳性，病毒感染可能是KD发病的触发因素（"possible infectious or environmental trigger"）。</li>
+</ul>
+<p><b>KDSS与脓毒症的鉴别机制：</b>原文讨论中强调，KDSS与脓毒症休克的鉴别至关重要。两者的重叠特征包括发热、低血压、炎症标志物升高和多器官受累。但KDSS的核心区别在于：（1）抗生素治疗无效；（2）血培养持续阴性；（3）进行性出现黏膜皮肤特征；（4）对IVIG和皮质类固醇快速反应——本例在启动第二剂IVIG+甲泼尼龙后24小时内热退，"marked clinical improvement was noted 24 hours after starting the steroids"。这种治疗反应本身也是免疫介导（而非感染性）机制的有力证据。</p>
+<p><b>IVIG抵抗的免疫学基础：</b>原文指出，KDSS患者初始IVIG抵抗率高于典型KD（引用Chen PS等，<i>J Microbiol Immunol Infect</i> 2015）。本例即表现为IVIG抵抗——第一剂IVIG后反而恶化出现休克，需第二剂IVIG联合系统性皮质类固醇。原文还提到，对于难治性KD，TNF-α抑制剂和IL-1阻断（如阿那白滞素）可能有益（引用Shafferman A等，<i>Pediatr Rheumatol Online J</i> 2014）。</p>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+<div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
+<div class="sc-title" style="color:var(--green)">标准一：2017 AHA 川崎病诊断指南（McCrindle BW et al. Circulation 2017;135:e927-e999）【补充知识】</div>
+<b>适用范围：</b>经典型和不完全KD的诊断与评估<br>
+<b>经典KD诊断标准（≥5项中满足5项，或4项+冠脉异常）：</b>
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>① 发热≥5天</td><td>持续高热，第5天仍在发热</td><td class="c-g">✅</td></tr>
+<tr><td>② 双侧非脓性结膜炎</td><td>第4天出现</td><td class="c-g">✅</td></tr>
+<tr><td>③ 口腔黏膜改变（草莓舌/唇红皲裂）</td><td>第4天出现草莓舌</td><td class="c-g">✅</td></tr>
+<tr><td>④ 四肢末端改变（水肿/脱皮）</td><td>原文未记录</td><td class="c-r">❌</td></tr>
+<tr><td>⑤ 多形性皮疹</td><td>第4天弥漫性斑丘疹</td><td class="c-g">✅</td></tr>
+<tr><td>⑥ 颈部淋巴结肿大（≥1.5cm）</td><td>入院时即有，双侧</td><td class="c-g">✅</td></tr>
+</table>
+<b>经典KD：</b>满足5/6项 → <span class="c-g">✅ 符合经典KD</span>（6项中5项，第4天回顾性满足）<br>
+<b>不完全KD评估：</b>入院初仅发热+淋巴结肿大，未满足经典标准。按AHA不完全KD流程评估：发热≥5天+2项临床特征+炎症标志物显著升高+白蛋白降低+冠脉扩张 → 支持不完全KD诊断。
+</div>
+
+<div class="source-card" style="background:#fce5e1;border-left-color:var(--red);">
+<div class="sc-title" style="color:var(--red)">标准二：KDSS临床定义（Kanegaye JT et al. Pediatrics 2009;124(1):95-100）【补充知识】</div>
+<b>定义：</b>KD基础上出现血流动力学不稳定<br>
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>① 确诊或高度疑似KD</td><td>不完全KD（已满足诊断标准）</td><td class="c-g">✅</td></tr>
+<tr><td>② 收缩压低于同年龄正常值第5百分位</td><td>BP 75/53 mmHg（8岁正常SBP约90-110）</td><td class="c-g">✅</td></tr>
+<tr><td>③ 或需血管活性药物维持</td><td>去甲肾上腺素维持</td><td class="c-g">✅</td></tr>
+<tr><td>④ 低灌注表现（毛细血管再充盈延长等）</td><td>原文描述需ICU+液体复苏</td><td class="c-g">✅</td></tr>
+</table>
+<b>KDSS判定：</b>4/4项均符合 → <span class="c-r">✅ 确诊KDSS</span>。KDSS发生率约2%-7%（Gamez-Gonzalez LB et al. Pediatr Int 2018;60:781-790）。
+</div>
+
+<div class="source-card" style="background:#d4f0ed;">
+<div class="sc-title">合并诊断</div>
+<b>冠状动脉扩张：</b>左主干3.6mm（Z+2.9），LAD 2.75mm（Z+2.4）——按AHA标准Z≥2.5为扩张<br>
+<b>肠道病毒/鼻病毒合并感染：</b>呼吸道病毒Panel阳性，可能为KD的感染触发因素<br>
+<b>IVIG抵抗：</b>第一剂IVIG后恶化需第二剂+皮质类固醇
+</div>
+
+<div class="sh blue">🔍 鉴别诊断要点</div>
+<table><tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td><b>脓毒症休克</b></td><td>高热+低血压+炎症标志物升高</td><td>血培养阴性+抗生素无效+后续出现KD特征 → 不支持</td></tr>
+<tr><td><b>细菌性淋巴结炎</b></td><td>颈部淋巴结肿大+发热</td><td>抗生素无效+出现KD特征+CA扩张 → 不支持</td></tr>
+<tr><td><b>中毒性休克综合征</b></td><td>发热+皮疹+低血压</td><td>无剥脱性皮炎+血培养阴性 → 不支持</td></tr>
+<tr><td><b>MIS-C（儿童多系统炎症综合征）</b></td><td>发热+多器官受累+休克</td><td>无COVID-19暴露史+pro-BNP升高+CA扩张可见于MIS-C，但本例黏膜皮肤特征+无胃肠道症状更符合KDSS</td></tr>
+</table>
+<div class="diff-box"><div class="diff-title">⚠️ 易错点：KDSS模拟脓毒症休克</div>KDSS发生率约2%-7%，以低血压/灌注不良需血管活性药物为特征。常模拟脓毒症休克，导致诊断延迟。以颈部淋巴结炎为主的不完全KD是一种公认表型，常被误诊为细菌感染。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>阶段</th><th>药物</th><th>剂量/方案</th><th>给药途径</th><th>选择理由</th></tr>
+<tr><td class="b">误诊期</td><td>克林霉素</td><td>13.3 mg/kg tid</td><td>IV</td><td>误诊为颈部淋巴结炎</td></tr>
+<tr><td class="b">误诊期（加药）</td><td>头孢曲松</td><td>75 mg/kg qd</td><td>IV</td><td>广谱覆盖，第3天加用</td></tr>
+<tr><td class="b">KD疑似（第3天）</td><td>IVIG（第一剂）</td><td>2 g/kg</td><td>IV</td><td>不完全KD，高度怀疑即启动</td></tr>
+<tr><td class="b">KD疑似</td><td>阿司匹林（高剂量）</td><td>50 mg/kg/d 分4次【需要验证】</td><td>口服</td><td>抗炎+抗血小板</td></tr>
+<tr><td class="b">KDSS-广谱抗感染</td><td>万古霉素+美罗培南+多西环素</td><td>48小时</td><td>IV</td><td>排除出血热前经验性覆盖</td></tr>
+<tr><td class="b">KDSS-血管活性</td><td>去甲肾上腺素</td><td>ICU泵注</td><td>IV</td><td>维持血流动力学</td></tr>
+<tr><td class="b" style="color:var(--green)">KDSS二线</td><td>IVIG（第二剂）</td><td>2 g/kg</td><td>IV</td><td>IVIG抵抗后追加</td></tr>
+<tr><td class="b" style="color:var(--green)">KDSS二线</td><td>甲泼尼龙</td><td>1 mg/kg bid</td><td>IV</td><td>重症炎症控制，3天后转口服</td></tr>
+<tr><td class="b">恢复期</td><td>泼尼松龙</td><td>2 mg/kg qd</td><td>口服</td><td>IV激素→口服转换</td></tr>
+<tr><td class="b">出院维持</td><td>阿司匹林（低剂量）</td><td>5 mg/kg qd × 6周</td><td>口服</td><td>抗血小板</td></tr>
+<tr><td class="b">出院维持</td><td>泼尼松龙减量</td><td>逐渐减停</td><td>口服</td><td>避免反跳</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>不完全KD虽未完全满足诊断标准，一旦高度怀疑即应启动IVIG治疗。延迟IVIG与较差心脏结局相关。KDSS需ICU监护+第二剂IVIG+系统性皮质类固醇+血管活性药物。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item "><div class="t-date">入院第1-2天</div><div class="t-content">误诊为淋巴结炎，克林霉素治疗</div></div><div class="t-item "><div class="t-date">第3天</div><div class="t-content">出现皮疹+结膜炎+草莓舌，诊断不完全KD，予IVIG</div></div><div class="t-item red"><div class="t-date">IVIG后</div><div class="t-content"><span class="c-r">急性恶化：低血压+呼吸困难→ICU</span></div></div><div class="t-item red"><div class="t-date">KDSS确诊</div><div class="t-content">复查超声：CA扩张+LV功能↓ → 确诊KDSS</div></div><div class="t-item "><div class="t-date">二线治疗</div><div class="t-content">第二剂IVIG+激素+血管活性药物</div></div><div class="t-item green"><div class="t-date">治疗后</div><div class="t-content">临床和血流动力学恢复，甲泼尼龙3天后转口服泼尼松龙2 mg/kg qd</div></div>
+<div class="t-item green"><div class="t-date">第9天</div><div class="t-content"><span class="c-g">康复出院</span>，口服阿司匹林+泼尼松龙减量</div></div>
+<div class="t-item green"><div class="t-date">2周随访</div><div class="t-content">无发热，CRP&lt;0.6 mg/L正常化，心功能恢复。阿司匹林5 mg/kg qd × 6周+泼尼松龙渐减停</div></div></div>
+
+<div class="sh">💡 疑难剖析与临床启示</div>
+<div style="padding:6px 0;font-size:12px;line-height:1.7;">
+
+<div class="diff-box"><div class="diff-title">❓ 为什么难——从发热+淋巴结肿大到KDSS的完整推理链</div>
+<b>初诊陷阱：</b>8岁男孩（>5岁，非KD好发年龄）+发热+单侧颈淋巴结肿大+来自非洲（旅行相关感染风险）→自然指向细菌性淋巴结炎或热带感染。抗生素治疗3天无效是第一个转折点。<br>
+<b>线索累积：</b>第3-4天依次出现皮疹→结膜炎→草莓舌，炎症标志物进行性升高（CRP 107→333 mg/L），低白蛋白血症（4.1→2.3 g/dL）——这些并非典型细菌感染的表现。<br>
+<b>致命转折：</b>IVIG后反而恶化出现休克——容易误判为"IVIG相关不良反应"或"脓毒症加重"。但原文指出，此时超声心动图发现冠脉扩张+LV功能减低（EF 43%）+pro-BNP 9422——这才是KDSS的真面目。<br>
+<b>推理关键：</b>对抗生素无效+进行性黏膜皮肤特征+炎症标志物极端升高+pro-BNP显著升高 → 不应继续按感染处理，应立即考虑KD/KDSS。
+</div>
+
+<div class="diff-box"><div class="diff-title">⚠️ 最易误诊疾病及鉴别要点</div>
+<b>1. 细菌性淋巴结炎/深颈部感染：</b>本例被误诊3天。鉴别要点——影像学无脓肿形成+抗生素无效+进行性出现其他黏膜皮肤特征。<br>
+<b>2. 脓毒症休克：</b>KDSS最危险的身份伪装。原文强调两者临床特征高度重叠（发热+低血压+炎症标志物↑+多器官受累）。关键鉴别：血培养持续阴性+广谱抗生素无效+对IVIG/激素快速反应。<br>
+<b>3. 中毒性休克综合征：</b>发热+皮疹+低血压需考虑。但无剥脱性皮炎+无明确毒素来源+血培养阴性→不支持。
+</div>
+
+<div class="diff-box"><div class="diff-title">🔀 决策流程——再遇类似患者应如何排查</div>
+<b>Step 1：</b>持续发热>3天+抗生素无效的淋巴结炎 → 查炎症全套（CRP/PCT/ESR/铁蛋白/pro-BNP）+超声心动图（不要等到确诊KD才做）<br>
+<b>Step 2：</b>出现≥2项KD特征（皮疹/结膜炎/草莓舌/四肢改变）+炎症标志物显著升高 → 按2017 AHA不完全KD流程评估<br>
+<b>Step 3：</b>高度怀疑KD → 不必等满5天发热即可启动IVIG（延迟IVIG与冠脉损害相关）<br>
+<b>Step 4：</b>IVIG后出现低血压/灌注不良 → 立即查超声心动图（冠脉+LV功能）+pro-BNP → 考虑KDSS<br>
+<b>Step 5：</b>KDSS确诊 → ICU监护+第二剂IVIG+系统性皮质类固醇+血管活性药物
+</div>
+
+<div class="diff-box"><div class="diff-title">📖 教学价值</div>
+① 年龄>5岁并非KD的排除标准——不完全KD在年长儿不少见。<br>
+② 以颈部淋巴结炎为主要表现的不完全KD是一种公认表型（Kanegaye JT et al. <i>J Pediatr</i> 2013），临床医师应高度警惕。<br>
+③ IVIG后恶化≠IVIG副作用——可能是KDSS的表现，需立即心脏评估。<br>
+④ 本例的铁蛋白1283 ng/mL提示在KDSS患者中需警惕重叠MAS的可能。
+</div>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① 不完全KD可仅以淋巴结炎为首发表现<br>
+  ② KDSS模拟脓毒症，发生率2%-7%<br>
+  ③ 延迟IVIG与较差心脏结局相关<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ 高度怀疑不完全KD即应启动IVIG<br>
+  ⑤ KDSS需ICU监护+第二剂IVIG+激素<br>
+  ⑥ 血管活性药物支持是KDSS的关键措施<br><br>
+  <b>3. 监测要点</b><br>
+  ⑦ 超声心动图监测CA和LV功能<br>
+  ⑧ 关注IVIG后的急性恶化<br><br>
+  <b>4. 预后</b><br>
+  ⑨ KDSS心脏并发症风险高于典型KD<br>
+  ⑩ 早期识别和积极治疗可改善预后
+</div>
+
+<div class="sh ">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41909287/" target="_blank">PMID 41909287</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13032044/" target="_blank">PMC13032044</a>，以下为原文引用的参考文献。</div></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  1. Sabsabee M, et al. Incomplete Kawasaki Disease Complicated by Shock: A Diagnostic Challenge in a Child. <i>Cureus</i>. 2026;18(2):e104268. PMID: 41909287.<br>
+  2. McCrindle BW, Rowley AH, Newburger JW, et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease. <i>Circulation</i>. 2017;135(17):e927-e999. PMID: 28356445.<br>
+  3. Son MB, Newburger JW. Kawasaki disease. <i>Pediatr Rev</i>. 2018;39(2):78-90. PMID: 29437127.<br>
+  4. Gamez-Gonzalez LB, et al. Kawasaki disease shock syndrome: unique and severe subtype. <i>Pediatr Int</i>. 2018;60(9):781-790. PMID: 29888440.<br>
+  5. Chen PS, Chi H, Huang FY, et al. Clinical manifestations of Kawasaki disease shock syndrome: a case-control study. <i>J Microbiol Immunol Infect</i>. 2015;48(1):43-50. PMID: 23927822.<br>
+  6. Kanegaye JT, Van Cott E, Tremoulet AH, et al. Lymph-node-first presentation of Kawasaki disease. <i>J Pediatr</i>. 2013;162(3):1259-1263. PMID: 23305955.<br>
+  7. Dominguez SR, Friedman K, Seewald R, et al. Kawasaki disease in a pediatric intensive care unit: a case-control study. <i>Pediatrics</i>. 2008;122(4):e786-e790. PMID: 18809597.<br>
+  8. Kao HT, Huang YC, Lin TY. Kawasaki disease presenting as cervical lymphadenitis or deep neck infection. <i>Otolaryngol Head Neck Surg</i>. 2001;124(4):468-470. PMID: 11283510.
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

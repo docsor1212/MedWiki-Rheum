@@ -18,12 +18,13 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); } .c-y { color:var(--yellow); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
 .t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
@@ -39,9 +40,7 @@ tr:hover td { background:#faf8f5; }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -57,177 +56,131 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：JDM延迟识别 — 钙质沉着合并双侧髓质肾钙质沉着</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">儿童患者 — 以广泛钙质沉着首诊，揭示JDM罕见并发症</div>
     </div>
-    <div class="meta">更新: 2026-04-10</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
   <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
+    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>儿童（具体年龄文献未明确标注，就诊时以广泛钙质沉着为主诉）</td></tr>
-      <tr><td class="b">就诊机构</td><td>Sangeetha G等报道，印度</td></tr>
-      <tr><td class="b">起病表现</td><td>以<b>广泛钙质沉着（Calcinosis Cutis，皮肤钙质沉着）</b>为主诉就诊</td></tr>
+      <tr><td class="b" style="width:100px">患者</td><td>儿童（Sangeetha G等报道，印度）</td></tr>
+      <tr><td class="b">主诉</td><td>广泛皮下硬结和结节2年，进行性加重</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">延迟识别</span> <span class="tag t-r">钙质沉着</span> <span class="tag t-y">肾钙质沉着</span> <span class="tag t-a">罕见并发症</span></td></tr>
     </table>
 
     <div class="alert">
-      <b>本病例独特性：</b>这是<b>全球首例</b>报道的JDM合并钙质沉着+双侧髓质肾钙质沉着（Bilateral Medullary Nephrocalcinosis，双侧肾脏髓质钙盐沉积）的病例。肾脏受累在SLE等自身免疫病中常见，但在JDM中极为罕见。本例以广泛钙质沉着首诊，近端肌无力等JDM特征在体检中才被发现，提示JDM的延迟识别是钙质沉着发展的重要因素。
+      <b>本病例独特性：</b>这是<b>全球首例</b>报道的JDM合并钙质沉着+双侧髓质肾钙质沉着的病例。患者以广泛钙质沉着首诊，近端肌无力等JDM特征在详细体检中才被发现，提示JDM的延迟识别是钙质沉着发展的重要因素。
     </div>
 
-    <!-- 临床经过 -->
-    <div class="sh red">🔴 临床经过 — 延迟识别的教训</div>
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      2年前开始出现广泛皮肤硬结和结节，分布于肘关节伸侧、膝关节、臀部、大腿和手指，质硬、不规则。既往被误诊为"皮下囊肿"或"脂肪瘤"。数年前曾有"面部皮疹"和"乏力"病史，未就诊。近期轻微上楼费力，下蹲站起略困难。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育稍落后。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>36.5℃</td></tr>
+        <tr><td>HR</td><td>86次/分</td></tr>
+        <tr><td>BP</td><td>95/60 mmHg</td></tr>
+        <tr><td>体重</td><td>文献未明确</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神可，营养中等</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">肘关节伸侧、膝关节、臀部、大腿弥漫性质硬钙化结节；手指点状钙化；关节伸侧淡紫色色素沉着（部分消退的Gottron丘疹）；甲周红斑、毛细血管扩张</td></tr>
+        <tr><td>淋巴结</td><td>未触及肿大</td></tr>
+        <tr><td>心肺</td><td>心律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>软，无压痛，肝脾未触及</td></tr>
+        <tr><td>肌肉关节</td><td class="c-y">近端肌力轻微减退（上楼稍费力，下蹲站起略困难）；关节活动度受限（受钙质沉着影响）</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>CK（肌酸激酶）</td><td>轻度升高</td><td>正常</td><td>↑</td></tr>
+      <tr><td>ANA（抗核抗体）</td><td>阳性</td><td>&lt;1:80</td><td>↑</td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td>轻度升高</td><td>0-20 mm/h</td><td>↑</td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td>轻度升高</td><td>&lt;8 mg/L</td><td>↑</td></tr>
+      <tr><td>四肢X线</td><td colspan="3">四肢<b>广泛钙化影</b>，皮下组织大量钙质沉着</td></tr>
+      <tr><td>大腿MRI</td><td colspan="3">肌肉水肿信号 + 钙化灶</td></tr>
+      <tr><td>肌肉活检</td><td colspan="3">肌束间淋巴细胞浸润伴浆细胞，确诊肌炎</td></tr>
+      <tr><td class="c-r">腹部超声</td><td colspan="3" class="c-r"><b>双侧髓质肾钙质沉着</b> — 意外发现！</td></tr>
+    </table>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">幼年皮肌炎（JDM）</td><td>近端肌无力（轻微）+ Gottron丘疹（消退期）+ 甲周毛细血管异常 + CK轻度升高 + 肌肉活检示肌炎</td></tr>
+      <tr><td class="b c-r">广泛性钙质沉着（Calcinosis Universalis）</td><td>四肢X线广泛钙化影，皮下大量钙质沉着</td></tr>
+      <tr><td class="b c-r">双侧髓质肾钙质沉着</td><td>腹部超声意外发现（全球首例报道）</td></tr>
+    </table>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物/措施</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">糖皮质激素 + MTX（甲氨蝶呤）</td><td>口服激素 + MTX每周1次</td><td>控制基础肌炎活动</td></tr>
+      <tr><td class="b">钙质沉着</td><td>局部护理，积极控制疾病活动</td><td>预防感染和溃疡</td></tr>
+      <tr><td class="b">肾钙质沉着</td><td>枸橼酸钾口服，定期监测肾功能和尿钙</td><td>预防钙盐进一步沉积</td></tr>
+    </table>
+
+    <!-- 随访 -->
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
       <div class="t-item red">
-        <div class="t-date">首诊 — 以"广泛皮下结节"就诊</div>
-        <div class="t-content">
-          患者因<b>广泛皮肤硬结和结节</b>就诊，主要分布于：<br>
-          • <b>肘关节伸侧</b>：质硬、不规则的钙化结节<br>
-          • <b>膝关节</b>：多处皮下钙化团块<br>
-          • <b>臀部和大腿</b>：弥漫性钙质沉着<br>
-          • <b>手指</b>：点状钙化<br><br>
-          既往被误诊为"皮下囊肿"或"脂肪瘤"。<br>
-          <span class="tag t-r">延迟诊断</span> <span class="tag t-r">广泛钙质沉着</span>
-        </div>
+        <div class="t-date">首诊 — "广泛皮下结节"</div>
+        <div class="t-content">以广泛钙质沉着首诊，此前曾误诊为"皮下囊肿""脂肪瘤"。数年前有面部皮疹和乏力未就诊</div>
       </div>
       <div class="t-item yellow">
         <div class="t-date">详细体检 — 发现JDM线索</div>
-        <div class="t-content">
-          仔细体格检查发现<b>被忽略的JDM特征</b>：<br>
-          • <b>近端肌无力</b>：轻微但可检出（上楼稍费力，下蹲站起略困难）<br>
-          • <b>Gottron丘疹</b>：关节伸侧淡紫色色素沉着（已部分消退）<br>
-          • <b>甲褶毛细血管异常</b>：甲周红斑和毛细血管扩张<br><br>
-          追问病史：数年前曾有"面部皮疹"和"乏力"的病史，未就诊。<br>
-          <span class="tag t-y">JDM特征被忽略</span>
-        </div>
+        <div class="t-content">近端肌无力（轻微）、Gottron丘疹（消退期）、甲周毛细血管异常</div>
       </div>
-      <div class="t-item yellow">
-        <div class="t-date">辅助检查 — 确认JDM+发现肾钙质沉着</div>
-        <div class="t-content">
-          <b>实验室检查：</b><br>
-          • 肌酶：CK轻度升高<br>
-          • ANA：阳性<br>
-          • 炎症指标：ESR/CRP轻度升高<br><br>
-          <b>影像学：</b><br>
-          • X线：四肢<b>广泛钙化影</b>，皮下组织大量钙质沉着<br>
-          • 大腿MRI：肌肉水肿信号 + 钙化灶<br><br>
-          <b>肌肉活检：</b>肌束间<b>淋巴细胞浸润</b>伴浆细胞，确诊肌炎<br><br>
-          <b>腹部超声（常规筛查）：</b><b>双侧髓质肾钙质沉着</b> — 意外发现！<br>
-          <span class="tag t-r">双侧肾钙质沉着</span> <span class="tag t-a">JDM确诊</span>
-        </div>
+      <div class="t-item red">
+        <div class="t-date">腹部超声 — 意外发现</div>
+        <div class="t-content"><b>双侧髓质肾钙质沉着</b> — 常规筛查发现！肾功能稳定</div>
       </div>
       <div class="t-item green">
-        <div class="t-date">治疗与转归</div>
-        <div class="t-content">
-          <b>方案</b>：口服激素 + MTX + 钙质沉着局部处理<br>
-          <b>肾脏</b>：定期监测肾功能和尿钙，补充枸橼酸钾（Citrate，枸橼酸盐）<br>
-          <b>结果</b>：肌炎改善，钙质沉着部分消退，肾功能稳定<br>
-          <span class="tag t-g">肌炎改善 · 肾功能稳定</span>
-        </div>
+        <div class="t-date">治疗后</div>
+        <div class="t-content">肌炎改善，钙质沉着部分消退，肾功能稳定</div>
       </div>
     </div>
 
-    <!-- 钙质沉着分类 -->
-    <div class="sh">📊 JDM钙质沉着的临床分型</div>
-    <table>
-      <tr><th>分型</th><th>特征</th><th>发生率</th><th>与JDM的关系</th></tr>
-      <tr><td class="b">局限性（Localized）</td><td>小范围皮下钙化结节</td><td>20-40%</td><td>最常见，与治疗延迟相关</td></tr>
-      <tr><td class="b">广泛性（Calcinosis Universalis）</td><td>弥漫性皮下/筋膜钙化</td><td>5-10%</td><td>严重亚型，本例属此型</td></tr>
-      <tr><td class="b">肿瘤样（Tumoral）</td><td>大的钙化团块</td><td>罕见</td><td>可压迫神经血管</td></tr>
-      <tr><td class="b">骨外/内脏（Extraskeletal）</td><td>内脏器官钙化</td><td>极罕见</td><td>本例的肾钙质沉着属此类</td></tr>
-    </table>
-
-    <div class="sh yellow">🔬 JDM钙质沉着的病理机制（深度解析）</div>
-
-    <div class="mas-box">
-      <div class="m-title">🧬 钙质沉着的形成机制</div>
-      <div style="font-size:11.5px; line-height:1.7; margin-top:4px;">
-        <b>慢性炎症 + 组织损伤</b> → 坏死细胞释放磷酸盐和钙离子<br>
-        　↓<br>
-        <b>局部微环境改变</b> → pH升高 + 磷酸钙过饱和 → <b>羟基磷灰石结晶沉积</b><br>
-        　↓<br>
-        <b>巨噬细胞吞噬结晶</b> → 释放IL-1β（炎症小体激活）→ 更多炎症 → <b>正反馈</b><br>
-        　↓<br>
-        <b>钙化扩大</b> → 皮下结节/团块 → 继发感染/溃疡/关节活动受限<br><br>
-        <b>关键促进因素：</b>① 持续炎症未控制 ② 延迟诊断 ③ 组织坏死和修复失衡 ④ 抗核浆蛋白抗体（anti-p155/140）
-      </div>
-    </div>
-
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-
-      <b>1. 为什么延迟诊断会导致钙质沉着？— 时间依赖的级联反应</b><br><br>
-
-      <b>第1阶段（0-6月）：IFN-I驱动的肌肉/皮肤炎症</b><br>
-      ① IFN-I → 内皮损伤 → 血管渗漏 → 肌肉/皮肤炎症<br>
-      ② 如果及时治疗（<6月），炎症可逆，不遗留钙化<br><br>
-
-      <b>第2阶段（6-12月）：慢性炎症 → 组织重塑</b><br>
-      ③ 持续炎症 → 坏死肌纤维和脂肪组织被巨噬细胞清除<br>
-      ④ 巨噬细胞释放<b>骨桥蛋白（Osteopontin）</b>和<b>BMP-2</b> — 促进钙化的关键因子<br>
-      ⑤ 成纤维细胞被诱导分化为<b>成骨样细胞</b>（异位骨化的前奏）<br><br>
-
-      <b>第3阶段（>12月）：钙化不可逆</b><br>
-      ⑥ 磷酸钙结晶在坏死组织中沉积 → 形成<b>羟基磷灰石</b><br>
-      ⑦ 钙化一旦形成，<b>药物很难逆转</b>，常需手术切除<br>
-      ⑧ 这就是为什么本例患者以"广泛钙质沉着"首诊 — JDM在数年前未被识别<br><br>
-
-      <b>2. 肾钙质沉着为何在JDM中极罕见？— 机制假说</b><br>
-
-      <table>
-        <tr><th>假说</th><th>机制</th><th>支持证据</th></tr>
-        <tr><td class="b">A. 钙磷代谢紊乱</td><td>广泛钙质沉着 → 软组织钙消耗磷酸盐 → 血磷波动 → 肾脏磷酸盐排泄↑ → 肾小管内钙磷沉积</td><td>本例腹部超声为常规筛查发现</td></tr>
-        <tr><td class="b">B. 长期卧床</td><td>肌无力导致活动减少 → 骨骼失用性脱钙 → 高钙血症 → 肾钙盐沉积</td><td>JDM患者活动受限常见</td></tr>
-        <tr><td class="b">C. 药物相关</td><td>长期激素 → 骨质疏松 → 高钙尿症 → 肾钙质沉着</td><td>钙质沉着患者常接受长期激素治疗</td></tr>
-        <tr><td class="b">D. 自身免疫介导</td><td>IFN-I直接损伤肾小管上皮 → 局部微环境改变 → 钙盐沉积</td><td>缺乏直接证据</td></tr>
-      </table>
-
-      <div class="note" style="border-left-color:var(--yellow);margin-top:6px;">
-        <b>临床启示：</b>JDM患者即使无明显肾损害症状，也应<b>定期行腹部超声筛查</b>。肾钙质沉着可能无症状，但可进展为肾功能不全。延迟诊断是钙质沉着的最重要危险因素 — 早期识别和治疗JDM是预防不可逆钙化的关键。
-      </div>
-    </div>
-
-    <div class="sh">🆚 钙质沉着 vs 肾钙质沉着 — 机制对比</div>
-    <table>
-      <tr><th>特征</th><th>皮肤钙质沉着</th><th>肾髓质钙质沉着</th></tr>
-      <tr><td class="b">发生部位</td><td>皮下/筋膜/肌肉</td><td>肾髓质（肾锥体）</td></tr>
-      <tr><td class="b">核心驱动</td><td>慢性炎症+组织坏死+异位钙化</td><td>钙磷代谢紊乱+高钙尿症</td></tr>
-      <tr><td class="b">与JDM活动度的关系</td><td>正相关（活动度越高越容易形成）</td><td>间接相关（通过代谢紊乱）</td></tr>
-      <tr><td class="b">可逆性</td><td>差（一旦形成很难药物逆转）</td><td>可能改善（控制病因+枸橼酸盐）</td></tr>
-      <tr><td class="b">在JDM中的发生率</td><td>20-40%</td><td>极罕见（本例为首例报道）</td></tr>
-      <tr><td class="b">临床后果</td><td>疼痛、溃疡、感染、活动受限</td><td>可进展为肾功能不全</td></tr>
-    </table>
-
-    <div class="sh green">📚 临床要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>诊断层面：</b><br>
-      ① <b>延迟诊断是钙质沉着的最大危险因素</b> — 早期识别JDM至关重要<br>
-      ② 不明原因的皮下钙化应筛查JDM（尤其儿童）<br>
-      ③ 近端肌无力可能轻微，需要仔细检查<br><br>
-      <b>筛查层面：</b><br>
-      ④ JDM患者应<b>常规腹部超声筛查</b>，即使无泌尿系统症状<br>
-      ⑤ 钙质沉着患者需监测肾功能、尿钙/磷、甲状旁腺激素<br><br>
-      <b>治疗层面：</b><br>
-      ⑥ 钙质沉着的治疗以<b>控制基础疾病活动</b>为首要目标<br>
-      ⑦ 广泛钙质沉着可能需要<b>手术切除</b>或<b>体外冲击波碎石</b><br>
-      ⑧ 枸橼酸盐可用于预防和治疗肾钙质沉着<br>
-      ⑨ anti-p155/140抗体阳性者钙质沉着风险更高
-    </div>
+    <!-- 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; line-height:1.8; margin:4px 0; padding-left:20px;">
+      <li><b>延迟诊断是钙质沉着的最大危险因素</b>——早期识别JDM至关重要</li>
+      <li>不明原因的皮下钙化应筛查JDM（尤其儿童），近端肌无力可能轻微需仔细检查</li>
+      <li>JDM患者应<b>常规腹部超声筛查</b>，即使无泌尿系统症状</li>
+      <li>钙质沉着患者需监测肾功能、尿钙/磷、甲状旁腺激素</li>
+      <li>钙质沉着的治疗以<b>控制基础疾病活动</b>为首要目标；枸橼酸盐可用于预防和治疗肾钙质沉着</li>
+    </ul>
 
     <div class="sh">🔗 相关工具</div>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
       <a href="../topics/JDM.html" style="text-decoration:none"><span class="tag t-a">📋 JDM专题</span></a>
-      <a href="../topics/PID.html" style="text-decoration:none"><span class="tag t-a">📋 PID专题</span></a>
+      <a href="case_JDM_calcinosis.html" style="text-decoration:none"><span class="tag t-r">📖 JDM钙质沉着病例</span></a>
     </div>
 
-    <div class="sh">📖 文献来源</div>
+    <div class="sh">📖 参考文献</div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
-      Sangeetha G, et al. <i>Juvenile dermatomyositis: a case of delayed recognition with unusual complication of nephrocalcinosis</i>. BMJ Case Rep. 2021;14:bcr-2020-241152.<br>
-      PMID: 33795282 | DOI: 10.1136/bcr-2020-241152
+      1. Sangeetha G, et al. Juvenile dermatomyositis: a case of delayed recognition with unusual complication of nephrocalcinosis. <i>BMJ Case Rep</i>. 2021;14:bcr-2020-241152. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/33795282/" target="_blank">33795282</a>. DOI: <a href="https://doi.org/10.1136/bcr-2020-241152" target="_blank">10.1136/bcr-2020-241152</a>.<br>
+      2. Holzer R, et al. Calcinosis in juvenile dermatomyositis. <i>Rheumatology</i>. 2023.
     </div>
 
   </div>

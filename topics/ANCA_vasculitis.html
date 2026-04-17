@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANCA相关血管炎 — GPA/MPA/EGPA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#6b5b95; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.purple { background:#6b5b95; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+th.purple-hd { background:#e8e0f0; color:#6b5b95; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.c-p { color:#6b5b95; }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:#d4f0ed; border:1.5px solid #20a39e; }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp.s4 { background:#faf3dc; border:1.5px solid var(--yellow); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:#20a39e; }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.stp.s4 .stp-label { color:var(--yellow); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
+padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
+font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+
+</style>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">ANCA相关血管炎</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>ANCA相关血管炎 — GPA/MPA/EGPA</h1>
+    <div class="sub">小血管炎 · ANCA阳性 · 多脏器受累 · 免疫抑制治疗</div>
+  </div>
+  <div class="meta">
+    儿童发病率 1–3/百万/年<br>
+    GPA最常见<br>
+    男:女 ≈ 1:1（儿童）
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 分类与流行病学 -->
+<div class="sh purple">📊 分类与流行病学</div>
+<table>
+<tr><th class="purple-hd" style="width:12%">类型</th><th class="purple-hd">全称</th><th class="purple-hd">ANCA类型</th><th class="purple-hd">核心特征</th><th class="purple-hd" style="width:10%">儿童占比</th></tr>
+<tr class="hl-red"><td class="c-r b">GPA</td><td>肉芽肿伴多血管炎<br>(旧称Wegener)</td><td class="c-r b">c-ANCA / PR3(+)</td><td>上呼吸道+肺+肾<br>坏死性肉芽肿</td><td class="c-r b">~50%</td></tr>
+<tr><td class="c-a b">MPA</td><td>显微镜下多血管炎</td><td class="c-a b">p-ANCA / MPO(+)</td><td>肾+肺<br>无肉芽肿</td><td>~30%</td></tr>
+<tr class="hl-yellow"><td class="c-y b">EGPA</td><td>嗜酸性肉芽肿<br>伴多血管炎<br>(旧称Churg-Strauss)</td><td class="c-y b">p-ANCA / MPO(+)<br>仅~40%阳性</td><td>哮喘+嗜酸细胞↑<br>+血管炎三联征</td><td>~20%</td></tr>
+</table>
+<div class="note">儿童发病率约1–3/百万/年，GPA为儿童最常见类型。成人MPA更多见。ANCA阴性不能排除诊断。</div>
+
+<!-- 诊断标准 -->
+<div class="sh">🏷️ 诊断标准</div>
+<div class="g2">
+<div>
+<table>
+<tr><th>标准</th><th>适用</th></tr>
+<tr><td class="c-a b">EULAR/PRINTO/PRES 2008</td><td>儿童血管炎分类</td></tr>
+<tr><td>1990 ACR标准</td><td>GPA分类（成人为主）</td></tr>
+<tr><td class="c-g b">2022 ACR/EULAR</td><td>新版分类标准【需要验证】</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">GPA诊断要点</th></tr>
+<tr><td>上呼吸道受累 + <span class="c-r b">c-ANCA/PR3</span>阳性</td></tr>
+<tr><td>肺部结节/空洞/浸润</td></tr>
+<tr><td>坏死性肾小球肾炎</td></tr>
+<tr><td>病理：坏死性肉芽肿性炎</td></tr>
+</table>
+</div>
+</div>
+
+<!-- GPA要点 -->
+<div class="sh red">🏥 GPA要点</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd" style="width:25%">系统</th><th class="red-hd">临床表现</th></tr>
+<tr class="hl-red"><td class="c-r b">上呼吸道</td><td><span class="c-r b">鼻窦炎</span> · 鞍鼻畸形 · 声门下狭窄<br>中耳炎 · 口腔/鼻溃疡</td></tr>
+<tr class="hl-red"><td class="c-r b">肺</td><td>结节(可空洞) · <span class="c-r b">肺泡出血</span><br>浸润影 · 胸腔积液</td></tr>
+<tr class="hl-red"><td class="c-r b">肾</td><td><span class="c-r b">局灶坏死性</span>肾小球肾炎<br>急进性肾炎(RPGN)</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">特征</th><th class="red-hd">备注</th></tr>
+<tr><td>ANCA</td><td class="c-r b">c-ANCA + PR3-ANCA</td></tr>
+<tr><td>病理</td><td>坏死性肉芽肿 + 小血管炎</td></tr>
+<tr><td>眼</td><td>突眼(眼眶肉芽肿) · 巩膜炎</td></tr>
+<tr><td>神经</td><td>单神经炎 · 多神经炎</td></tr>
+<tr><td>皮肤</td><td>紫癜 · 溃疡 · 皮下结节</td></tr>
+</table>
+</div>
+</div>
+
+<!-- MPA要点 -->
+<div class="sh green">🏥 MPA要点</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd" style="width:25%">系统</th><th class="green-hd">临床表现</th></tr>
+<tr class="hl-green"><td class="c-g b">肾 ⭐</td><td><span class="c-g b">急进性肾小球肾炎</span>(RPGN)<br>坏死性新月体性肾炎</td></tr>
+<tr><td>肺</td><td><span class="c-r b">肺泡出血</span> · 间质病变<br>肺纤维化</td></tr>
+<tr><td>皮肤</td><td>可触及紫癜 · 网状青斑</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="green-hd">与GPA鉴别</th><th class="green-hd">MPA</th></tr>
+<tr><td>ANCA</td><td class="c-a b">p-ANCA + MPO-ANCA</td></tr>
+<tr><td>肉芽肿</td><td class="c-r b">无</td></tr>
+<tr><td>上呼吸道</td><td>较少受累</td></tr>
+<tr><td>肾受累</td><td>更突出，常为首发</td></tr>
+<tr><td>肺结节/空洞</td><td>罕见</td></tr>
+</table>
+</div>
+</div>
+
+<!-- EGPA要点 -->
+<div class="sh yellow">🏥 EGPA要点</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="yellow-hd" style="width:30%">三联征</th><th class="yellow-hd">特征</th></tr>
+<tr class="hl-yellow"><td class="c-y b">① 哮喘</td><td>通常先于血管炎数年出现</td></tr>
+<tr class="hl-yellow"><td class="c-y b">② 嗜酸细胞↑</td><td>外周血嗜酸细胞 <span class="c-y b">&gt;10%</span> 或 &gt;1.5×10⁹/L</td></tr>
+<tr class="hl-yellow"><td class="c-y b">③ 血管炎</td><td>坏死性血管炎(小-中等血管)</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">⚠️ 高危器官受累</th><th class="red-hd">预警信号</th></tr>
+<tr class="hl-red"><td class="c-r b">心脏</td><td>嗜酸心肌炎/心内膜炎 → <span class="c-r b">心衰/猝死</span></td></tr>
+<tr class="hl-red"><td class="c-r b">周围神经</td><td>单神经炎(腓总N最常见)</td></tr>
+<tr class="hl-red"><td class="c-r b">胃肠</td><td>嗜酸胃肠炎 · 缺血 → 穿孔</td></tr>
+</table>
+</div>
+</div>
+<div class="note"><b>ANCA阳性率仅~40%</b>（p-ANCA/MPO），ANCA阴性EGPA心脏/胃肠受累更多见。ANCA阳性EGPA肾/周围神经受累更多见。</div>
+
+<!-- 五因子评分 -->
+<div class="sh yellow">📈 五因子评分(FFS) — EGPA预后</div>
+<table>
+<tr><th class="yellow-hd">因子</th><th class="yellow-hd">定义</th><th class="yellow-hd">FFS(1996)</th><th class="yellow-hd">FFS(2011修订)</th></tr>
+<tr><td>肾功能不全</td><td>Cr &gt;1.58mg/dL (140μmol/L)</td><td>1分</td><td>1分</td></tr>
+<tr><td>蛋白尿</td><td>&gt;1g/24h</td><td>1分</td><td>1分</td></tr>
+<tr><td>心脏受累</td><td>心衰/心梗/心包积液</td><td>1分</td><td>1分</td></tr>
+<tr><td>中枢神经受累</td><td>中风/TIA/脑病</td><td>1分</td><td>1分</td></tr>
+<tr><td>消化道受累</td><td>缺血/穿孔/胰腺炎</td><td>—</td><td><span class="c-y b">1分(新增)</span></td></tr>
+<tr><td>耳鼻喉受累</td><td>鼻窦炎/声门下狭窄</td><td>—</td><td><span class="c-g b">-1分(保护性)</span></td></tr>
+</table>
+<div class="note">FFS≥2分 → 5年死亡率显著升高 → 需更积极免疫抑制治疗。</div>
+
+<!-- 治疗阶梯 -->
+<div class="sh">💊 治疗阶梯</div>
+<div class="steps">
+  <div class="stp s2">
+    <div class="stp-label">诱导缓解</div>
+    <span class="c-r b">环磷酰胺(CYC)</span> + GC<br>
+    或 <span class="c-r b">利妥昔单抗(RTX)</span> + GC<br>
+    <span class="tag t-r">甲强龙冲击→口服渐减</span><br>
+    诱导期 3–6个月
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">维持治疗</div>
+    <span class="c-g b">AZA</span> 1.5–2mg/kg/d<br>
+    或 <span class="c-g b">MMF</span><br>
+    或 <span class="c-g b">MTX</span>(轻症)<br>
+    或 <span class="c-g b">RTX</span>定期输注<br>
+    维持 ≥18–24个月
+  </div>
+  <div class="stp s4">
+    <div class="stp-label">复发处理</div>
+    轻度复发：增加GC剂量<br>
+    重度复发：重新诱导<br>
+    RTX维持可降低复发率<br>
+    <span class="tag t-y">PR3-ANCA(+)更易复发</span>
+  </div>
+</div>
+
+<div class="path" style="margin-top:6px;">
+  <b class="c-r">诱导方案选择：</b>
+  <span class="node">CYC脉冲：15mg/kg q2w×3 → q3w×3–6</span> 或
+  <span class="node" style="border-color:#20a39e;">RTX：375mg/m²/w×4</span>
+</div>
+<div class="path" style="margin-top:3px;">
+  <b class="c-g">特殊药物：</b>
+  <span class="node">美泊利珠单抗(mepolizumab) — EGPA嗜酸控制</span>
+  <span class="node">SMX-TMP预防卡氏肺孢子虫</span>
+</div>
+
+<!-- 儿科特殊 -->
+<div class="sh yellow">👶 儿科特殊注意</div>
+<table>
+<tr><th class="yellow-hd" style="width:30%">问题</th><th class="yellow-hd">处理要点</th></tr>
+<tr class="hl-red"><td class="c-r b">生长影响</td><td>长期GC → 身高/骨龄落后；积极减量+营养支持</td></tr>
+<tr class="hl-red"><td class="c-r b">性腺毒性</td><td>CYC累积量控制；<span class="c-r b">记录累积剂量</span>；考虑生殖保护</td></tr>
+<tr><td>PVAS评分</td><td>儿童血管炎活动评分(Pediatric Vasculitis Activity Score)；每诊评估</td></tr>
+<tr><td>长期随访</td><td>肾功+尿检+ANCA+影像学；过渡期管理</td></tr>
+<tr><td>感染预防</td><td>SMX-TMP + 免疫抑制期<span class="c-r b">禁活疫苗</span></td></tr>
+</table>
+
+<!-- 紧急警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>肺泡出血</b>：咯血 + <span class="c-r b">Hb骤降</span> + 胸CT弥漫渗出 → 紧急甲强龙冲击 + 呼吸支持</li>
+    <li><b>急进性肾炎</b>：Cr进行性↑ + 少尿 → 紧急肾活检 + 诱导治疗</li>
+    <li><b>声门下狭窄</b>：喘鸣/呼吸困难 → 耳鼻喉急会诊，可能需气管切开</li>
+    <li><b>EGPA心脏受累</b>：心衰/心律失常 → 心超+肌钙蛋白，ICU监护</li>
+    <li><b>EGPA肠穿孔</b>：腹痛+腹膜刺激征 → 急腹症会诊</li>
+  </ul>
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  EULAR/PRINTO/PRES 2008儿童血管炎分类(Ozen S, Ann Rheum Dis 2010) · 2022 ACR/EULAR分类标准【需要验证】 · FFS(Guillevin L, Medicine 1999; 2011修订) · RAVE RRT(RITUX) vs CYC(Jones RB, N Engl J Med 2010) · SHARE共识(Ozen S, Ann Rheum Dis 2019)
+</div>
+
+</div>
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

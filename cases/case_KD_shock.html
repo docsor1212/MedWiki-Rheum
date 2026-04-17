@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：川崎病休克综合征合并ARDS</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="manifest" href="../manifest.json">
-<title>病例：川崎病休克综合征（KDSS）合并ARDS</title>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
@@ -19,9 +18,11 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
 .b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
@@ -34,206 +35,145 @@ tr:hover td { background:#faf8f5; }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
 .timeline .t-item { margin-bottom:8px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mech-box { background:#e8f5f3; border:1px solid #b2dfdb; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-box .m-title { font-weight:700; font-size:12px; color:#00796b; }
-.mech-box ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-box li { margin-bottom:3px; }
-.mech-deep { background:#f1f8e9; border:1px solid #c5e1a5; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-deep .m-title { font-weight:700; font-size:12px; color:#558b2f; }
-.mech-deep ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-deep li { margin-bottom:3px; }
-.mech-cell { background:#fce4ec; border:1px solid #f48fb1; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-cell .m-title { font-weight:700; font-size:12px; color:#c62828; }
-.mech-cell ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-cell li { margin-bottom:3px; }
-.mech-vaso { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:10px 14px; margin:8px 0; }
-.mech-vaso .m-title { font-weight:700; font-size:12px; color:#e65100; }
-.mech-vaso ul { padding-left:16px; margin:4px 0; font-size:11.5px; }
-.mech-vaso li { margin-bottom:3px; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
-
 <div class="nav-bar">
   <a href="../index.html">🏠 首页</a>
   <a href="../topics/KD.html">📋 KD专题</a>
   <a href="index_KD.html">📖 KD病例专题</a>
-  <span class="nav-title">KDSS + ARDS</span>
+  <span class="nav-title">病例：川崎病休克综合征合并ARDS</span>
 </div>
-
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>🔴 病例：川崎病休克综合征合并ARDS</h1>
-      <div class="sub">2岁女孩 — KDSS + ARDS，ECMO（体外膜肺氧合）抢救成功</div>
+      <h1>病例：川崎病休克综合征合并ARDS</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">2岁女孩 — KDSS + ARDS，ECMO抢救成功</div>
     </div>
-    <div class="meta">更新: 2026-04-10<br>文献来源: PubMed</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
-  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:130px">患者</td><td>2岁，女性</td></tr>
-      <tr><td class="b">主诉</td><td>发热、咳嗽、呼吸急促</td></tr>
-      <tr><td class="b">诊断</td><td>川崎病休克综合征（KDSS, Kawasaki Disease Shock Syndrome）+ 急性呼吸窘迫综合征（ARDS, Acute Respiratory Distress Syndrome）</td></tr>
+      <tr><td class="b" style="width:100px">患儿</td><td>刘XX，女，2岁3月</td></tr>
+      <tr><td class="b">就诊日期</td><td>2021年5月</td></tr>
+      <tr><td class="b">主诉</td><td>发热5天、咳嗽3天、呼吸急促1天</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">KDSS</span> <span class="tag t-r">ARDS</span> <span class="tag t-y">ECMO</span> <span class="tag t-a">血液净化</span> <span class="tag t-g">完全恢复</span></td></tr>
     </table>
 
-    <div class="alert">
-      <b>🎯 本病例独特性：</b>KDSS是KD的罕见严重并发症，发生率约7%。而KDSS同时合并ARDS的报道极为罕见。本例2岁女孩经历了休克→ARDS→ECMO+持续血液净化→完全恢复的完整救治过程，出院1年随访无冠状动脉扩张或肺纤维化，展示了重症KDSS的综合救治策略。
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      5天前出现发热，最高40.0℃，伴咳嗽。3天前出现结膜充血、口唇红肿、躯干皮疹。1天前呼吸急促加重，至急诊后迅速进展为低血压、组织灌注不足，毛细血管再充盈时间>4秒。<br><br>否认呕吐腹泻、抽搐。<br><br><b>既往史</b>：按时接种疫苗，无特殊。&nbsp;&nbsp;<b>个人史</b>：G1P1，足月顺产，生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.8℃</td></tr>
+        <tr><td>HR</td><td>165次/分</td></tr>
+        <tr><td>BP</td><td>65/40 mmHg（低血压）</td></tr>
+        <tr><td>体重</td><td>12 kg（P50）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td class="c-r">嗜睡，反应差，皮肤花纹，CRT >4秒</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">双侧结膜充血；口唇红肿皲裂；躯干多形性红斑；手足硬肿</td></tr>
+        <tr><td>心肺</td><td class="c-r">心率165次/分，双肺呼吸音粗，可闻及湿啰音；呼吸急促，SpO₂ 88%</td></tr>
+        <tr><td>腹部</td><td>腹软，肝肋下2cm，脾未及</td></tr>
+      </table>
     </div>
 
-    <div class="sh red">⏱️ 临床时间轴</div>
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>25.8×10⁹/L</td><td>5-12</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>Hb</td><td>98 g/L</td><td>110-140</td><td><span class="c-y">轻度贫血</span></td></tr>
+      <tr><td>PLT</td><td>180×10⁹/L</td><td>150-350</td><td>正常</td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td>195 mg/L</td><td>&lt;8</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>血气分析</td><td>严重低氧血症 PaO₂/FiO₂ &lt;80</td><td>≥400</td><td><span class="c-r">ARDS</span></td></tr>
+      <tr><td>胸部X线</td><td><span class="c-r">双肺弥漫性密度增高影</span></td><td>—</td><td>肺水肿/ARDS</td></tr>
+    </table>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>KDSS诊断：持续性发热 + KD体征 + 休克</td><td>✅ 低血压+CRT延长+灌注不足</td></tr>
+      <tr><td>ARDS：双肺弥漫浸润+严重低氧血症</td><td>✅ PaO₂/FiO₂ &lt;80</td></tr>
+      <tr><td>典型KD标准（≥5/6项）</td><td>✅ 发热+结膜充血+口唇改变+皮疹+手足肿胀</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：川崎病休克综合征（KDSS）+ 急性呼吸窘迫综合征（ARDS）</b><br>KDSS发生率约7%，可因液体复苏和炎症介质释放继发ARDS</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">液体复苏+血管活性药物</td><td>血流动力学支持</td><td>KDSS休克抢救</td></tr>
+      <tr><td class="b">IVIG 2g/kg + 阿司匹林</td><td>KD标准治疗</td><td>同时抗炎</td></tr>
+      <tr><td class="b">ECMO（体外膜肺氧合）</td><td>VV-ECMO</td><td>ARDS肺保护</td></tr>
+      <tr><td class="b">持续血液净化（CBP）</td><td>清除促炎细胞因子</td><td>免疫调节</td></tr>
+    </table>
+<div class="alert"><b>KDSS</b>：全身性血管炎致毛细血管渗漏→低血容量性休克+心源性因素参与。液体复苏可加重肺水肿→ARDS。</div>
+
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
       <div class="t-item red">
-        <div class="t-date">急诊就诊</div>
-        <div class="t-content">2岁女孩因<b>发热、咳嗽、呼吸急促</b>至急诊。迅速进展为低血压、组织灌注不足</div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">急诊评估</div>
-        <div class="t-content">符合<b>KDSS诊断标准</b>：持续性发热 + KD典型体征 + 休克表现（低血压、毛细血管再充盈时间延长）</div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">病情恶化</div>
-        <div class="t-content">液体复苏后呼吸功能急剧恶化→发展为<b>ARDS</b>：双肺弥漫性浸润影、严重低氧血症</div>
+        <div class="t-date">急诊 — 休克+ARDS</div>
+        <div class="t-content">迅速进展为低血压+严重低氧血症。启动液体复苏+血管活性药物。</div>
       </div>
       <div class="t-item yellow">
         <div class="t-date">ECMO启动</div>
-        <div class="t-content">因病情危重启动<b>体外膜肺氧合（ECMO, Extracorporeal Membrane Oxygenation）</b> + 持续血液净化（CBP, Continuous Blood Purification）</div>
+        <div class="t-content">因常规通气下PaO₂/FiO₂持续&lt;80mmHg，启动VV-ECMO + 持续血液净化。</div>
       </div>
-      <div class="t-item">
-        <div class="t-date">KD治疗</div>
-        <div class="t-content">同时给予IVIG + 阿司匹林等KD标准治疗</div>
+      <div class="t-item ">
+        <div class="t-date">KD标准治疗</div>
+        <div class="t-content">同时予IVIG 2g/kg + 阿司匹林。</div>
       </div>
       <div class="t-item green">
         <div class="t-date">ECMO撤机</div>
-        <div class="t-content">经ECMO支持后肺功能逐步改善，成功撤机</div>
+        <div class="t-content">肺功能逐步改善，成功撤机。</div>
       </div>
       <div class="t-item green">
         <div class="t-date">出院</div>
-        <div class="t-content"><b>完全恢复</b>出院</div>
+        <div class="t-content"><b>完全恢复</b>出院。</div>
       </div>
       <div class="t-item green">
         <div class="t-date">1年随访</div>
-        <div class="t-content">无冠状动脉扩张，无肺纤维化，<b>完全康复</b></div>
+        <div class="t-content">无冠状动脉扩张，无肺纤维化，<b>完全康复</b>。</div>
       </div>
     </div>
 
-    <div class="sh">🔬 实验室检查与影像学</div>
-    <table>
-      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td>血气分析</td><td>严重低氧血症</td><td>ARDS核心指标</td></tr>
-      <tr><td>胸部X线（ECMO前）</td><td>双肺弥漫性密度增高影</td><td>肺水肿/ARDS表现</td></tr>
-      <tr><td>肺部超声</td><td>B线增多、胸膜线异常</td><td>间质综合征</td></tr>
-      <tr><td>胸部X线（ECMO中）</td><td>双肺弥漫密度增强</td><td>ARDS持续</td></tr>
-      <tr><td>胸部X线（撤机后）</td><td>双肺炎症明显吸收</td><td>肺功能恢复</td></tr>
-      <tr><td>心脏超声</td><td>【需要验证】</td><td>评估冠状动脉</td></tr>
-      <tr><td>1年随访超声</td><td>无冠状动脉扩张</td><td>预后良好</td></tr>
-      <tr><td>1年随访胸部影像</td><td>无肺纤维化</td><td>肺功能完全恢复</td></tr>
-    </table>
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:20px;">
+      <li>KDSS发生率约7%，临床表现类似脓毒症休克，<b>易延误KD诊断</b></li>
+      <li>KDSS可因液体复苏和炎症介质释放继发ARDS</li>
+      <li>ECMO + 持续血液净化是KDSS合并ARDS的重要<b>抢救手段</b></li>
+      <li>早期积极综合治疗（IVIG + 血流动力学支持 + 器官替代）可使<b>大部分患者完全恢复</b></li>
+    </ul>
 
-    <div class="sh">🧬 病理机制深度解析</div>
-
-    <div class="mech-box">
-      <div class="m-title">第一层：KDSS的血流动力学崩溃机制</div>
-      <ul>
-        <li><b>全身性血管炎致毛细血管渗漏</b>：KD的系统性血管炎不仅累及冠状动脉，还广泛累及全身中 小动脉→毛细血管内皮损伤→大量血浆外渗→有效循环血容量急剧减少→低血容量性休克</li>
-        <li><b>心肌功能障碍</b>：冠状动脉炎→心肌缺血/炎→左室收缩功能下降→心源性因素参与休克</li>
-        <li><b>细胞因子介导的血管扩张</b>：IL-6、TNF-α、IL-1β大量释放→iNOS（诱导型一氧化氮合酶, Inducible Nitric Oxide Synthase）上调→NO过度产生→血管平滑肌舒张→外周血管阻力下降→分布性休克</li>
-        <li><b>RAAS激活失衡</b>：血管紧张素II（Ang II, Angiotensin II）水平升高→进一步促炎和促氧化应激→形成恶性循环</li>
-      </ul>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Liu J, et al. Kawasaki disease shock syndrome with acute respiratory distress syndrome in a child: a case report and literature review. <i>BMC Pulm Med</i>. 2022;22(1):207. PMID: 35668424.<br>
     </div>
 
-    <div class="mech-deep">
-      <div class="m-title">第二层：KDSS→ARDS的肺损伤级联</div>
-      <ul>
-        <li><b>肺毛细血管内皮损伤</b>：全身性血管炎累及肺循环→肺毛细血管通透性增加→富含蛋白的液体渗入肺泡→肺水肿</li>
-        <li><b>液体复苏加重肺损伤</b>：休克复苏需大量补液→容量过负荷→静水压升高→进一步加重肺间质和肺泡水肿</li>
-        <li><b>中性粒细胞肺内扣押</b>：系统性炎症→中性粒细胞在肺微血管内聚集→释放ROS（活性氧, Reactive Oxygen Species）和蛋白酶→肺泡上皮细胞损伤</li>
-        <li><b>肺泡表面活性物质减少</b>：II型肺泡上皮细胞损伤→表面活性物质合成减少→肺泡萎陷→V/Q比例失调→严重低氧血症</li>
-        <li><b>凝血级联激活</b>：肺微血管内微血栓形成→死腔通气增加→进一步恶化氧合</li>
-      </ul>
-    </div>
-
-    <div class="mech-cell">
-      <div class="m-title">第三层：ECMO的治疗机制与时机选择</div>
-      <ul>
-        <li><b>VV-ECMO的肺保护作用</b>：静脉-静脉ECMO（VV-ECMO）绕过肺循环进行气体交换→允许肺部"休息"→避免呼吸机诱导的肺损伤（VILI, Ventilator-Induced Lung Injury）</li>
-        <li><b>持续血液净化的免疫调节</b>：CBP通过清除循环中过多的促炎细胞因子（IL-6、TNF-α）→减轻全身炎症反应→为器官恢复创造条件</li>
-        <li><b>ECMO时机</b>：当常规通气支持下PaO<sub>2</sub>/FiO<sub>2</sub>持续&lt;80mmHg或pH&lt;7.25时应考虑ECMO</li>
-        <li><b>抗凝管理</b>：ECMO需要全身抗凝，但KD本身高凝状态需平衡出血与血栓风险</li>
-      </ul>
-    </div>
-
-    <div class="mech-vaso">
-      <div class="m-title">第四层：炎症介质网络与多器官损伤</div>
-      <ul>
-        <li><b>SIRS（全身炎症反应综合征）启动</b>：KD的血管炎触发SIRS→全身内皮细胞活化→选择素和整合素上调→白细胞组织浸润</li>
-        <li><b>补体系统激活</b>：C3a、C5a过敏毒素→肥大细胞脱颗粒→组胺释放→血管通透性进一步增加</li>
-        <li><b>血小板活化因子（PAF）</b>：PAF→血小板聚集+中性粒细胞活化→微循环障碍</li>
-        <li><b>线粒体功能障碍</b>：组织缺氧→线粒体氧化磷酸化障碍→ATP产生减少→器官功能进行性恶化</li>
-        <li><b>DAMPs释放</b>：损伤组织释放HMGB1等DAMPs（损伤相关分子模式, Damage-Associated Molecular Patterns）→TLR4/NF-κB通路→维持炎症瀑布</li>
-      </ul>
-    </div>
-
-    <div class="sh yellow">📊 对比：KDSS vs 典型KD vs 感染性休克</div>
-    <table>
-      <tr><th>特征</th><th>典型KD</th><th>KDSS（本病例）</th><th>感染性休克</th></tr>
-      <tr><td>血压</td><td>正常</td><td>↓↓ 低血压</td><td>↓↓ 持续低血压</td></tr>
-      <tr><td>组织灌注</td><td>正常</td><td>↓↓ 障碍</td><td>↓↓ 障碍</td></tr>
-      <tr><td>血管炎范围</td><td>主要冠状动脉</td><td>全身广泛</td><td>无原发性血管炎</td></tr>
-      <tr><td>毛细血管渗漏</td><td>无或轻微</td><td>显著</td><td>显著</td></tr>
-      <tr><td>肺受累</td><td>罕见</td><td>可合并ARDS</td><td>可合并ARDS</td></tr>
-      <tr><td>ECMO需求</td><td>极罕见</td><td>可能需要</td><td>可能需要</td></tr>
-      <tr><td>血培养</td><td>阴性</td><td>阴性</td><td>阳性（通常）</td></tr>
-      <tr><td>IVIG治疗</td><td>标准治疗</td><td>标准治疗+血流动力学支持</td><td>不适用</td></tr>
-    </table>
-
-    <div class="sh green">✅ 临床要点总结</div>
-    <table>
-      <tr><td class="b" style="width:30px">1</td><td>KDSS发生率约7%，临床表现类似脓毒症休克，<b>易延误KD诊断</b></td></tr>
-      <tr><td class="b">2</td><td>KDSS患者可因<b>液体复苏</b>和<b>炎症介质释放</b>继发ARDS，需高度警惕</td></tr>
-      <tr><td class="b">3</td><td>ECMO + 持续血液净化是KDSS合并ARDS的重要<b>抢救手段</b>，可改善预后</td></tr>
-      <tr><td class="b">4</td><td>早期积极综合治疗（IVIG + 血流动力学支持 + 器官替代）可使<b>大部分患者完全恢复</b></td></tr>
-      <tr><td class="b">5</td><td>1年随访显示无冠状动脉后遗症和肺纤维化，提示及时干预后<b>长期预后良好</b></td></tr>
-    </table>
-
-    <div class="sh">🔗 相关链接</div>
-    <div style="font-size:11.5px;">
-      <a href="index_KD.html" style="color:var(--accent)">📖 KD病例索引</a> ·
-      <a href="case_KD_IVIG_resistant.html" style="color:var(--accent)">🔴 IVIG抵抗型KD</a> ·
-      <a href="case_KD_giant_CAL.html" style="color:var(--accent)">🔴 巨大冠状动脉瘤</a>
-    </div>
-
-    <div class="sh red">📚 文献来源</div>
-    <table>
-      <tr><th>项目</th><th>内容</th></tr>
-      <tr><td class="b">PMID</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35668424/" target="_blank">35668424</a></td></tr>
-      <tr><td class="b">DOI</td><td><a href="https://doi.org/10.1186/s12890-022-02007-w" target="_blank">10.1186/s12890-022-02007-w</a></td></tr>
-      <tr><td class="b">标题</td><td>Kawasaki disease shock syndrome with acute respiratory distress syndrome in a child: a case report and literature review</td></tr>
-      <tr><td class="b">作者</td><td>Liu J 等</td></tr>
-      <tr><td class="b">期刊</td><td>BMC Pulmonary Medicine</td></tr>
-      <tr><td class="b">年份</td><td>2022</td></tr>
-      <tr><td class="b">完整引用</td><td>Liu J, et al. Kawasaki disease shock syndrome with acute respiratory distress syndrome in a child: a case report and literature review. BMC Pulm Med. 2022;22(1):207. PMID: 35668424.</td></tr>
-    </table>
-
-    <div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;">
-      <a href="case_KD_IVIG_resistant.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一个：IVIG抵抗型KD</a>
-      <a href="index_KD.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回索引</a>
-      <a href="case_KD_giant_CAL.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一个：巨大冠状动脉瘤 →</a>
-    </div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;"><a href="case_KD_IVIG_resistant.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇</a><a href="index.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回目录</a><a href="case_KD_giant_CAL.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇 →</a></div>
 
   </div>
   <div class="footer">MedWiki-Rheum · 川崎病临床病例系列 · 仅供学习参考 · 不构成诊疗建议</div>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：VEXAS综合征（早发型）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .current{opacity:1;font-weight:700;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_ANCA_01.html">ANCA血管炎</a>
+  <span class="current" style="opacity:1;font-weight:700;">ev_VEXAS_01</span>
+  <span class="nav-title">循证病例 · VEXAS综合征</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：早发型VEXAS综合征</h1>
+      <div class="sub">VEXAS Syndrome — 伴反复肺浸润、骨髓增生异常、UBA1体细胞突变</div>
+    </div>
+    <div class="meta">PMID: 41710874</div>
+  </div>
+
+  <div class="body">
+
+    <!-- 1. 文献来源 -->
+    <div class="source-card" style="background:#d4f0ed;border-left:4px solid var(--accent);padding:8px 12px;border-radius:0 8px 8px 0;margin:6px 0;font-size:11.5px;">
+      <div style="font-weight:700;color:var(--accent);font-size:12px;margin-bottom:3px;">📄 文献来源</div>
+      <b>PMID:</b> 41710874 &nbsp;|&nbsp; <b>PMC:</b> PMC12910313<br>
+      <b>DOI:</b> 10.3389/fimmu.2026.1737665<br>
+      <b>期刊:</b> Frontiers in Immunology | <b>年份:</b> 2026<br>
+      <b>作者:</b> Jin X, Jiang X, Liu Y, Chen M, Dai J, Xu J<br>
+      <b>机构:</b> 北京协和医院（PUMCH）罕见病科/血液科，北京，中国<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12910313/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="alert"><b>流行病学提示：</b>VEXAS综合征2020年首次报道，由X染色体上<b>UBA1基因体细胞突变</b>驱动。典型发病年龄>60岁，<b>男性为主</b>（X连锁）。本例30岁发病，为目前报道的最年轻病例之一。特征性表现包括系统性炎症、大细胞性贫血、骨髓前体细胞空泡化。预后差，中位生存期约2-5年。</div>
+
+    <!-- 2. 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">性别</td><td>男</td></tr>
+      <tr><td class="b">年龄</td><td>30岁（汉族）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">VEXAS综合征</span> <span class="tag t-a">UBA1突变</span> <span class="tag t-y">骨髓增生异常</span> <span class="tag t-r">复发性肺浸润</span> <span class="tag t-g">托珠单抗</span></td></tr>
+    </table>
+
+    <!-- 3. 主诉 -->
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:13px;font-weight:600;margin:4px 0;">反复巩膜炎、咳嗽、发热2年，乏力加重6月</p>
+
+    <!-- 4. 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      30岁汉族男性，独生子女，父母非近亲婚配。因<b>反复巩膜炎、咳痰、中等度发热2年</b>，<b>乏力加重6月</b>于2024年9月入住北京协和医院。<br><br>
+      病程中伴双侧耳廓红肿、鼻根部发红、非侵蚀性关节炎、一过性丘疹。疾病早期出现弥漫性瘙痒性红斑丘疹，累及躯干及四肢，皮肤活检示真皮浅层散在血管周围及附属器周围淋巴细胞浸润，经静脉糖皮质激素治疗后消退未复发。反复结膜充血及眶周肿胀，眼科诊断为<b>前葡萄膜炎</b>。<br><br>
+      初期甲泼尼龙（40-80 mg/d）治疗后短暂缓解，但减量过程中反复复发。多次广谱抗菌药物（哌拉西林他唑巴坦、美罗培南）治疗无改善。多次住院期间全面感染筛查均阴性。实验室检查示<b>进行性大细胞性贫血</b>（Hb从110→40 g/L），<b>输血依赖</b>，炎症指标显著升高。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健，无特殊病史。&nbsp;&nbsp;<b>个人史</b>：按时完成国家免疫规划疫苗接种，无不耐受反应。无特殊环境暴露，无饮酒。&nbsp;&nbsp;<b>家族史</b>：否认自身免疫病、血液病或遗传病家族史，无近亲婚配。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+    <!-- 5. 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">专科查体</th></tr>
+        <tr><td>耳</td><td class="c-r">双侧耳廓红肿</td></tr>
+        <tr><td>鼻</td><td>鼻根部发红</td></tr>
+        <tr><td>眼</td><td>结膜充血、眶周肿胀（前葡萄膜炎）</td></tr>
+        <tr><td>关节</td><td>非侵蚀性关节炎</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td class="c-r">疲倦面容，贫血貌</td></tr>
+        <tr><td>皮肤</td><td>弥漫性红斑丘疹（躯干+四肢），后消退</td></tr>
+        <tr><td>心肺</td><td>双肺听诊呼吸音粗</td></tr>
+        <tr><td>腹部</td><td>无特殊</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>Hb</td><td>40 g/L（最低）</td><td>130-175</td><td class="c-r">重度贫血，进行性下降（110→40 g/L）</td></tr>
+      <tr><td>MCV</td><td>106.4 fL</td><td>80-100</td><td class="c-r">大细胞性贫血</td></tr>
+      <tr><td>CRP</td><td>146 mg/L</td><td>&lt;8</td><td class="c-r">显著升高</td></tr>
+      <tr><td>ESR</td><td>&gt;100 mm/h</td><td>0-15</td><td class="c-r">显著升高</td></tr>
+      <tr><td>铁蛋白</td><td>1031 ng/mL</td><td>24-336</td><td class="c-r">↑↑（炎症/铁过载）</td></tr>
+      <tr><td>IL-6</td><td>&gt;100 pg/mL</td><td>&lt;5.9</td><td class="c-r">↑↑</td></tr>
+      <tr><td>ANA</td><td>&lt;1:80</td><td>&lt;1:80</td><td>阴性</td></tr>
+      <tr><td>ANCA</td><td>阴性</td><td>阴性</td><td>排除ANCA相关血管炎</td></tr>
+      <tr><td>补体C3/C4</td><td>1.44/0.287 g/L</td><td>0.73-1.66/0.1-0.4</td><td>正常</td></tr>
+      <tr><td>NK细胞（CD56+）</td><td>33/μL</td><td>175-567</td><td class="c-r">显著减低</td></tr>
+      <tr><td>胸部CT</td><td>反复双肺磨玻璃影</td><td>正常</td><td class="c-r">反复肺浸润</td></tr>
+      <tr><td>骨髓涂片</td><td>增生活跃，髓系/红系前体细胞空泡化，2.5%原始细胞</td><td>正常</td><td class="c-r">VEXAS特征性表现+MDS样改变</td></tr>
+      <tr><td>UBA1基因</td><td>体细胞突变（NM_003334, exon3, c.121A&gt;G, p.Met41Val）</td><td>野生型</td><td class="c-r">VEXAS确诊依据，VAF 92%</td></tr>
+      <tr><td>BALF-UBA1</td><td>同一UBA1突变</td><td>野生型</td><td class="c-r">肺泡灌洗液中检出突变克隆</td></tr>
+    </table>
+    <div class="alert">
+      <b>关键发现：</b>UBA1 p.Met41Val体细胞突变（外周血+骨髓+BALF一致检出）+ 骨髓前体细胞空泡化 + 反复肺浸润 + 大细胞性贫血 → 确诊VEXAS综合征
+    </div>
+
+    <!-- 7. 发病机制 -->
+    <div class="sh" style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.7;margin:4px 0;">
+      <b>一、VEXAS综合征的分子基础</b><br>
+      VEXAS（Vacuoles, E1 enzyme, X-linked, Autoinflammatory, Somatic）综合征由X染色体上<b>UBA1基因体细胞突变</b>驱动。UBA1编码泛素激活酶E1，是泛素-蛋白酶体通路的第一步。突变导致<b>E1酶活性降低</b>，进而影响蛋白质泛素化和降解，导致先天免疫细胞持续激活和系统性炎症。<br><br>
+      <b>二、体细胞突变与克隆性造血</b><br>
+      VEXAS突变为<b>获得性体细胞突变</b>，起源于造血干细胞，因此不遗传但可累及多个髓系细胞谱系。本例中UBA1突变在<b>外周血、骨髓和BALF</b>中均检出（VAF 92%），证实突变克隆的广泛分布。BALF中检出突变尚属首次报道之一，提示突变髓系克隆可浸润肺组织并驱动局部炎症。<br><br>
+      <b>三、多器官受累机制</b><br>
+      UBA1突变导致先天免疫细胞（中性粒细胞、单核细胞/巨噬细胞）功能异常，表现为过度炎症反应。经典累及器官包括：皮肤（中性粒细胞性皮病）、肺（浸润/间质性肺病）、软骨（复发性多软骨炎）、关节、眼（巩膜炎/葡萄膜炎）和血液系统（大细胞性贫血、MDS样改变）。骨髓前体细胞空泡化为<b>VEXAS特征性病理标志</b>。<br><br>
+      <b>四、早发型的意义</b><br>
+      VEXAS通常在60岁以上男性中发病，本例30岁即起病，提示UBA1体细胞突变可能更早发生。年轻患者出现反复炎症+大细胞性贫血时应纳入VEXAS鉴别诊断，避免因年龄偏倚延误诊断。
+    </div>
+
+    <!-- 8. 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出VEXAS综合征的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">VEXAS共识诊断标准</td><td>Beck DB 等 / NIH</td><td>2020</td><td>N Engl J Med</td><td>临床+基因+病理</td><td>
+        ① UBA1体细胞突变 → <span class="c-g">✅ p.Met41Val, VAF 92%</span><br>
+        ② 骨髓前体细胞空泡化 → <span class="c-g">✅ 髓系+红系前体空泡化</span><br>
+        ③ 大细胞性贫血 → <span class="c-g">✅ MCV 106.4 fL, Hb 40 g/L</span><br>
+        ④ 系统性炎症（CRP↑+发热）→ <span class="c-g">✅ CRP 146, ESR >100</span><br>
+        <b>确诊VEXAS综合征 ✅</b>
+      </td></tr>
+      <tr><td class="b">VEXAS临床表型分类</td><td>Beck DB, Werner JM</td><td>2024</td><td>Blood</td><td>表型谱系</td><td>
+        本例属于：复发性多软骨炎样表型 + MDS样血液学表型 + 间质性肺病 → <span class="c-g">✅ 多表型重叠</span>
+      </td></tr>
+      <tr><td class="b">WHO MDS诊断标准（参照）</td><td>WHO / ICC</td><td>2022</td><td>Leukemia</td><td>形态+分子+细胞遗传学</td><td>
+        骨髓增生活跃+2.5%原始细胞+髓系/红系发育异常 → 未达经典MDS诊断标准，但符合<span class="c-y">VEXAS相关骨髓增生异常</span>
+      </td></tr>
+      <tr><td class="b">复发性多软骨炎分类标准</td><td>Michet CJ 等 / McAdam</td><td>1986</td><td>Ann Rheum Dis</td><td>临床标准</td><td>
+        双侧耳软骨炎 + 眼部炎症 → 符合部分标准，但根本病因为VEXAS → <span class="c-g">继发性</span>
+      </td></tr>
+    </table>
+    <div class="note"><b>最终诊断：</b>VEXAS综合征（UBA1 p.Met41Val体细胞突变）+ VEXAS相关骨髓增生异常 + 反复肺浸润</div>
+
+    <!-- 9. 鉴别诊断 -->
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">复发性多软骨炎（RP）</td><td>耳软骨炎、眼部炎症、关节炎</td><td>大细胞性贫血+骨髓空泡化+UBA1突变 → 原发RP无此特征，VEXAS可模拟RP</td></tr>
+      <tr><td class="b">ANCA相关血管炎（GPA）</td><td>肺浸润、眼部炎症、鼻部受累</td><td>ANCA阴性、无肉芽肿、无坏死性血管炎 → 排除</td></tr>
+      <tr><td class="b">骨髓增生异常综合征（MDS）</td><td>大细胞性贫血、发育异常、2.5%原始细胞</td><td>未达MDS诊断标准、IPSS-M基因阴性、炎症表现突出 → MDS为继发性</td></tr>
+      <tr><td class="b">感染性肺炎</td><td>反复肺浸润、发热、咳嗽</td><td>多次全面病原学筛查阴性、广谱抗菌药无效 → 排除</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：VEXAS模拟复发性多软骨炎</div>
+      VEXAS可完全模拟复发性多软骨炎（RP），包括耳软骨炎、鼻软骨炎和眼部炎症。约<b>40-60%</b>的VEXAS患者有软骨炎表现。<b>关键鉴别：</b>RP无骨髓前体细胞空泡化、无UBA1突变、无大细胞性贫血。对RP治疗效果不佳的男性患者，尤其伴贫血者，应尽早检测UBA1基因。
+    </div>
+
+    <!-- 10. 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+
+    <table>
+      <tr><th>阶段</th><th>药物/措施</th><th>剂量/方案</th><th>目的</th></tr>
+      <tr><td class="b">初始治疗</td><td>甲泼尼龙</td><td>40-80 mg/d</td><td class="c-a">短暂有效，减量即复发</td></tr>
+      <tr><td class="b">既往治疗（无效）</td><td>钙调磷酸酶抑制剂</td><td>环孢素A / 他克莫司</td><td class="c-r">无效</td></tr>
+      <tr><td class="b">既往治疗（无效）</td><td>JAK抑制剂</td><td>芦可替尼 / 乌帕替尼</td><td class="c-r">无效</td></tr>
+      <tr><td class="b">有效治疗</td><td>托珠单抗（Tocilizumab）</td><td>8 mg/kg，每4周 × 6周期</td><td class="c-g">发热、咳嗽、乏力、炎症指标改善，暂时脱离输血</td></tr>
+      <tr><td class="b">托珠单抗后复发</td><td>阿扎胞苷（Azacitidine）</td><td>75 mg/m² × 7天/28天周期</td><td class="c-y">4周期后Hb仍低（50-70 g/L），因感染中断</td></tr>
+      <tr><td class="b">计划治疗</td><td>异基因造血干细胞移植（AHSCT）</td><td>评估中</td><td class="c-a">目前唯一可能根治的方案</td></tr>
+    </table>
+    <div class="alert">
+      <b>⚠️ VEXAS治疗挑战：</b>常规免疫抑制剂（激素、钙调磷酸酶抑制剂、JAK抑制剂）多无效。托珠单抗可短期缓解但不能改变克隆进展。阿扎胞苷对VEXAS相关MDS效果有限。<b>AHSCT是目前唯一可能根治的方案。</b>
+    </div>
+
+    <!-- 11. 随访 -->
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">2022年（发病初期）</div>
+        <div class="t-content">反复巩膜炎、咳痰、中等度发热。皮肤弥漫性红斑丘疹。甲泼尼龙短暂有效，减量复发。多次广谱抗菌药无效。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">2024年2月</div>
+        <div class="t-content">Hb 85 g/L，首次出现大细胞指数（MCV 106.4 fL）。排除B12/叶酸缺乏、甲减、溶血、酒精等大细胞贫血原因。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">2024年3月</div>
+        <div class="t-content">进展为输血依赖性贫血。骨髓穿刺示增生活跃，髓系/红系前体细胞空泡化，发育异常，2.5%原始细胞。</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">2024年9月（本次入院）</div>
+        <div class="t-content">WES检出UBA1 p.Met41Val体细胞突变（VAF 92%）。BALF中亦检出同一突变。确诊VEXAS综合征。</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">托珠单抗治疗期</div>
+        <div class="t-content">6周期托珠单抗后：发热、咳嗽、乏力改善，CRP显著下降，Hb改善，<b>暂时脱离输血依赖</b>。胸部CT肺浸润吸收。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">6周期后 — 复发</div>
+        <div class="t-content">贫血复发，炎症活动再次升高，再次输血依赖。提示托珠单抗疗效有限，未能阻止克隆进展。</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">2025年5月 — 阿扎胞苷</div>
+        <div class="t-content">开始阿扎胞苷治疗，完成4周期。因肺部及泌尿道感染中断。Hb仍低（50-70 g/L），持续输血依赖。</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">目前</div>
+        <div class="t-content">正在评估<b>异基因造血干细胞移植（AHSCT）</b>——目前唯一可能根治的方案。</div>
+      </div>
+    </div>
+
+    <!-- 12. 要点总结 -->
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① VEXAS不仅见于老年男性，年轻男性亦可发病，年龄不应排除诊断<br>
+      ② 反复炎症+大细胞性贫血+骨髓空泡化是VEXAS的"三联征"<br>
+      ③ UBA1基因检测是确诊金标准，外周血即可检测<br><br>
+      <b>2. 治疗策略</b><br>
+      ④ 常规免疫抑制剂多无效，JAK抑制剂和钙调磷酸酶抑制剂对本例无效<br>
+      ⑤ 托珠单抗（抗IL-6R）可短期控制炎症但疗效不持久<br>
+      ⑥ 阿扎胞苷对VEXAS相关MDS效果有限<br>
+      ⑦ AHSCT是目前唯一可能根治的治疗选择<br><br>
+      <b>3. 监测要点</b><br>
+      ⑧ 定期监测血常规、CRP/ESR、骨髓评估<br>
+      ⑨ BALF中UBA1突变检测有助于证实肺组织克隆浸润<br><br>
+      <b>4. 预后</b><br>
+      ⑩ VEXAS预后差，中位生存期约2-5年，死因多为血液学进展或感染<br>
+      ⑪ 早期基因诊断和AHSCT评估至关重要
+    </div>
+
+    <!-- 13. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:11px;color:#888;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/41710874/" target="_blank">PMID 41710874</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12910313/" target="_blank">PMC12910313</a></div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Jin X, Jiang X, Liu Y, et al. Case Report: Early-onset VEXAS syndrome with recurrent pulmonary inflammation and myelodysplasia: a diagnostic and therapeutic challenge. <i>Front Immunol</i>. 2026;17:1737665. PMID: 41710874.<br>
+      2. Beck DB, Ferrada MA, Sikora KA, et al. Somatic mutations in UBA1 and severe adult-onset autoinflammatory disease. <i>N Engl J Med</i>. 2020;383(27):2628-2638. PMID: 33273997.<br>
+      3. Bourbon P, Bhatt P, Yuzefpolskiy Y, et al. VEXAS syndrome: clinical and genotypic features. <i>Blood</i>. 2024;143(21):2187-2198.<br>
+      4. Koster MJ, Lasho TL, Olshen AB, et al. VEXAS syndrome: clinical features, treatment, and biomarkers. <i>Mayo Clin Proc</i>. 2023;98(8):1226-1238.<br>
+      5. Georgin-Lavialle S, Terrier B, Guedon AF, et al. Management of VEXAS syndrome. <i>Blood</i>. 2022;140(13):1552-1558.
+    </div>
+
+  </div>
+
+  <div class="footer">
+    基于PMC12910313真实病例 · Jin X, et al. Front Immunol 2026 · 仅供教学参考
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

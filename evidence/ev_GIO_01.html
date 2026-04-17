@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖皮质激素诱导性骨质疏松伴椎体压缩骨折</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../evidence/">📚 循证病例</a>
+  <span class="nav-title">糖皮质激素诱导性骨质疏松伴椎体压缩骨折</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：糖皮质激素诱导性骨质疏松伴椎体压缩骨折</h1>
+      <div class="sub">GIO — MCTD患儿长期激素治疗+多发椎体骨折+双膦酸盐干预</div>
+    </div>
+    <div class="meta">文献病例（STOPP研究） · PMID: 22213727</div>
+  </div>
+  <div class="body">
+
+    <div class="sh">📖 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">来源</td><td>Rodd C, et al. Incident Vertebral Fractures among Children with Rheumatic Disorders 12 Months Post-Glucocorticoid Initiation. <i>Arthritis Care Res</i>. 2012;64(1):122-131.</td></tr>
+      <tr><td class="b">PMID</td><td>22213727</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC4459856</td></tr>
+      <tr><td class="b">DOI</td><td>10.1002/acr.20669</td></tr>
+      <tr><td class="b">说明</td><td>基于STOPP研究队列中7岁MCTD女孩多发症状性椎体骨折个案</td></tr>
+    </table>
+
+    <div class="alert"><b>流行病学提示：</b>STOPP研究（加拿大全国前瞻性队列）显示：风湿病儿童GC启动后<b>12月椎体骨折发生率6%</b>（7/118），其中<b>67%无症状</b>。骨折者GC累积剂量高<b>50%</b>，首6月BMI增幅更大，腰椎aBMD Z-score下降更显著。&gt;30%的GC相关骨折患者BMD正常。</div>
+
+<div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>女孩，7岁</td></tr>
+      <tr><td class="b">基础疾病</td><td>混合性结缔组织病（MCTD）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">椎体压缩骨折</span> <span class="tag t-y">糖皮质激素</span> <span class="tag t-a">骨质疏松</span> <span class="tag t-g">双膦酸盐</span></td></tr>
+    </table>
+
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;"><b>背痛4月</b></p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      7岁女孩确诊<b>混合性结缔组织病（MCTD）</b>后开始糖皮质激素治疗，起始剂量较高（约1-2 mg/kg/d泼尼松等效量）。<br><br>
+      <b>激素启动后4个月</b>，患儿出现<b>背部疼痛</b>，逐渐加重。脊柱X线发现<b>多发性椎体压缩骨折</b>（胸腰椎多个椎体受累，Genant半定量分级2级——中度楔形变形）。<br><br>
+      此为STOPP研究（加拿大全国前瞻性观察研究）134名儿童中唯一需双膦酸盐干预的症状性椎体骨折个案。6/7例无症状骨折患儿均通过常规脊柱X线筛查发现。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：【原文未记载】&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：【原文未记载】&nbsp;&nbsp;<b>过敏史</b>：【原文未记载】</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">一般情况</th></tr>
+        <tr><td>身高</td><td class="c-y">增长减缓</td></tr>
+        <tr><td>BMI</td><td class="c-y">激素相关增加</td></tr>
+        <tr><td>背部</td><td class="c-r">脊柱压痛+活动受限</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">骨折特征</th></tr>
+        <tr><td>部位</td><td class="c-r">多发胸腰椎椎体</td></tr>
+        <tr><td>分级</td><td class="c-r">Genant 2级（中度楔形变）</td></tr>
+        <tr><td>性质</td><td class="c-r">疼痛性、非外伤性</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>脊柱X线</td><td>多发椎体压缩骨折</td><td></td><td class="c-r">Genant 2级</td></tr>
+      <tr><td>腰椎aBMD Z-score</td><td>&lt;-2.0</td><td>≥-2.0</td><td class="c-r">显著骨量减少</td></tr>
+      <tr><td>25(OH)D</td><td>需补充</td><td>≥20 ng/mL</td><td class="c-y">可能不足</td></tr>
+      <tr><td>血钙/磷</td><td>正常</td><td></td><td>正常</td></tr>
+    </table>
+    <div class="note">
+      <b>STOPP研究数据</b>：134名风湿病儿童GC后12月椎体骨折率6%（7/118）。骨折者GC剂量高50%，前6月BMI增幅更大，腰椎aBMD Z-score下降更显著。67%椎体骨折无症状。
+    </div>
+
+    <div class="sh blue">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>一、糖皮质激素对骨代谢的双重打击</b><br>
+      糖皮质激素（GC）诱导骨质疏松（GIO）的发病机制涉及骨重建平衡的严重紊乱。原文STOPP研究数据显示GC启动后12月椎体骨折发生率6%（7/118），骨折者GC累积剂量高50%。核心机制分为两条通路：<br>
+      <b>通路一：直接骨细胞效应</b>——GC通过基因组和非基因组途径作用于成骨细胞和破骨细胞。<b>①</b>抑制成骨细胞增殖、分化和功能→I型胶原和骨钙素合成减少→骨形成显著下降；<b>②</b>促进成骨细胞和骨细胞凋亡→骨重建单位数量减少；<b>③</b>间接增强破骨细胞活性（通过增加RANKL/OPG比值）→骨吸收相对增加。净效应：骨形成↓↓ + 骨吸收↑ = 骨重建负平衡。<br>
+      <b>通路二：钙代谢紊乱</b>——GC抑制肠道钙吸收（降低肠上皮细胞对维生素D的敏感性）并促进肾小管钙排泄→低钙血症→继发性甲状旁腺功能亢进→PTH介导的骨吸收进一步增加。此外，GC相关肌病导致骨骼肌质量下降→机械负荷减少→废用性骨丢失。<br><br>
+      <b>二、儿童GIO的特殊性</b><br>
+      儿童正处于骨量积累的关键期，约90%的峰值骨量在20岁前获得。GC对生长中骨骼的影响远比成人严重：①骨形成被抑制的同时骨纵向生长也受影响→身高增长减缓（本例可见）；②骨小梁结构发育不全→椎体等富含松质骨的部位最易发生骨折。原文中骨折者前6月BMI增幅更大，可能与GC导致脂肪重新分布和体液潴留有关——高BMI本身不反映骨骼健康。<br><br>
+      <b>三、骨质量与骨密度的分离现象</b><br>
+      原文STOPP研究的关键发现：67%椎体骨折无症状，且>30%的GC相关骨折患者BMD正常。这提示GC不仅降低骨量（BMD可检测），更损害骨质量——包括骨微结构破坏（骨小梁变薄/断裂）、骨重建紊乱（修复能力下降）和骨矿化异常。BMD正常≠无骨折风险。<br><br>
+      <b>四、骨折风险的剂量-时间关系</b><br>
+      原文数据显示骨折者GC累积剂量高50%，第一年骨折风险最高（4.4/100人年），每增加0.5 mg/kg GC剂量骨折风险翻倍。本例在GC启动后仅4个月即出现多发症状性椎体骨折，说明高剂量GC可在极短时间内突破骨重建代偿极限。<br><br>
+      <b>五、基础疾病（MCTD）的附加影响</b><br>
+      MCTD本身可通过慢性炎症（IL-6、TNF-α促进破骨细胞分化）和活动受限降低骨量。GC与基础疾病炎症叠加形成"双重骨丢失"——这也是风湿病儿童GIO比其他疾病（如哮喘）更严重的原因。
+      <div class="note">以上内容综合原文PMC4459856 STOPP研究数据及骨代谢文献整理。</div>
+    </div>
+
+    <div class="sh green">✅ 诊断标准对照</div>
+    <table>
+      <tr><th colspan="4" style="background:#e8f4f2;">GIO诊断（ISCD/PDC官方立场, <i>J Clin Densitom</i> 2019; adapted for pediatrics）</th></tr>
+      <tr><th style="width:30px">序</th><th>诊断条件</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>1</td><td>GC暴露史（≥3月或高剂量）</td><td>MCTD确诊后高剂量GC治疗，4月后骨折</td><td class="c-g">✅</td></tr>
+      <tr><td>2</td><td>椎体骨折影像学证据（Genant半定量法）</td><td>多发椎体Genant 2级压缩变形</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>腰椎aBMD Z-score <-2.0（儿童适用）</td><td>Z-score <-2.0</td><td class="c-g">✅</td></tr>
+      <tr><td>4</td><td>排除其他骨质疏松病因（OI、佝偻病、肿瘤）</td><td>无蓝色巩膜/COL1A1突变；无低磷/骨骺改变；无溶骨病变</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>时间相关性（GC启动→骨折出现）</td><td>GC后4月出现，无外伤</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="3" class="b">诊断</td><td class="b c-g">GIO确诊（多发症状性椎体压缩骨折）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">Genant半定量椎体骨折分级（Genant et al., <i>J Bone Miner Res</i> 1993;8:1137-1148）</th></tr>
+      <tr><th>分级</th><th>变形程度</th><th>形态</th><th>本例</th></tr>
+      <tr><td>0级（正常）</td><td>无变形</td><td>—</td><td>—</td></tr>
+      <tr><td>1级（轻度）</td><td>高度减少20-25%</td><td>楔形/双凹/压缩</td><td>—</td></tr>
+      <tr><td class="b">2级（中度）</td><td>高度减少25-40%</td><td>楔形/双凹/压缩</td><td class="c-g">✅ 多发椎体</td></tr>
+      <tr><td>3级（重度）</td><td>高度减少>40%</td><td>楔形/双凹/压缩</td><td>—</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>综合诊断</b>：糖皮质激素诱导性骨质疏松（GIO），多发症状性椎体压缩骨折（Genant 2级）。STOPP研究134名儿童中唯一需双膦酸盐干预的症状性骨折个案。67%椎体骨折无症状，强调主动筛查的必要性。</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">成骨不全症</td><td>多发骨折</td><td>无蓝色巩膜/家族史/COL1A1突变→排除</td></tr>
+      <tr><td class="b">佝偻病</td><td>骨痛</td><td>无骨骺改变/低磷→排除</td></tr>
+      <tr><td class="b">肿瘤性骨折</td><td>多发椎体病变</td><td>无溶骨性病变→排除</td></tr>
+    </table>
+    <div class="diff-box"><div class="diff-title">⚠️ 儿童GIO的隐蔽性</div>
+    STOPP研究中67%椎体骨折无症状。建议所有风湿病儿童GC启动后常规脊柱X线筛查（基线+6月+12月），而非等待症状出现。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ BMD正常≠无骨折风险</div>
+    &gt;30%的GC相关椎体骨折患者BMD正常。GC除降低骨密度外，还直接损害骨质量（微结构破坏、骨重建紊乱），骨折风险与BMD不完全平行。</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物/措施</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">静脉双膦酸盐</td><td>帕米膦酸二钠/唑来膦酸</td><td>帕米膦酸 1 mg/kg/d × 3天/疗程 或 唑来膦酸 0.025-0.05 mg/kg（最大5mg）每6月【需要验证】</td><td class="c-a">一线抗骨质疏松治疗</td></tr>
+      <tr><td class="b">钙剂+维生素D</td><td>元素钙1000mg/d+VitD 600-1000IU/d</td><td>骨健康基础支持</td></tr>
+      <tr><td class="b">GC减量</td><td>尽快减至最低有效剂量</td><td>消除骨折驱动因素</td></tr>
+      <tr><td class="b">脊柱X线随访</td><td>每6-12月</td><td>监测骨折愈合/新发</td></tr>
+    </table>
+    <div class="alert"><b>⚠️ 治疗要点：</b>①症状性椎体骨折→立即启动双膦酸盐 ②儿童双膦酸盐为超说明书用药 ③GC尽快减至最低有效剂量 ④钙+VitD是基础但不足以预防GC骨折 ⑤脊柱影像学监测不可忽视</div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">基线</div><div class="t-content">MCTD确诊，开始高剂量GC。基线脊柱X线筛查。</div></div>
+      <div class="t-item red"><div class="t-date">GC后4月</div><div class="t-content">背痛→脊柱X线示<b>多发椎体压缩骨折（Genant 2级）</b>。腰椎aBMD Z-score &lt;-2.0。</div></div>
+      <div class="t-item yellow"><div class="t-date">干预</div><div class="t-content">静脉双膦酸盐+钙/VitD。GC逐步减量。</div></div>
+      <div class="t-item green"><div class="t-date">12月</div><div class="t-content">背痛缓解。BMD改善。无新发骨折。</div></div>
+    </div>
+
+    <div class="sh red">🧠 疑难剖析——决策导向</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>决策节点一：GC启动后何时筛查椎体骨折？</b><br>
+      STOPP研究最大启示：67%椎体骨折无症状，仅靠背痛等临床症状将漏诊多数骨折。<b>决策建议</b>：所有儿童GC启动前→基线脊柱X线侧位片；高剂量GC者6月时复查（本例4月即骨折，说明高剂量可能需更早）；12月时常规复查。筛查工具首选脊柱X线侧位片（Genant半定量评估），而非DXA（BMD正常不能排除骨折）。<br><br>
+      <b>决策节点二：BMD Z-score<-2.0 vs 骨折——先治哪个？</b><br>
+      儿童GIO的治疗指征存在争议。<b>决策路径</b>：<b>①</b>无症状+BMD Z-score>-2.0→钙+VitD基础支持+GC减量+生活方式干预（负重运动）；<b>②</b>无症状+BMD Z-score<-2.0→考虑启动双膦酸盐（尤其持续高剂量GC者）；<b>③</b>有症状性椎体骨折→立即启动双膦酸盐（本例）。<b>关键原则</b>：骨折是双膦酸盐的绝对指征，不等BMD数据。<br><br>
+      <b>决策节点三：双膦酸盐在儿童中的使用——获益与风险</b><br>
+      双膦酸盐在儿童为超说明书用药，但已被广泛接受为GIO相关骨折的一线治疗。<b>决策考量</b>：①帕米膦酸二钠或唑来膦酸均可，后者给药间隔长（每6月）；②主要副作用为急性期反应（发热、肌痛，首次给药后24-48h），可用对乙酰氨基酚预防；③理论顾虑——对生长板的影响和长期骨矿蓄积，但现有研究未发现显著生长抑制；④抗吸收治疗不能替代GC减量和基础骨健康支持。<br><br>
+      <b>决策节点四：如何平衡基础疾病治疗与骨保护？</b><br>
+      本例MCTD需要GC控制疾病活动，但GC同时导致骨丢失。<b>核心策略</b>：<b>①</b>GC尽快减至最低有效剂量——这是最根本的骨保护措施；<b>②</b>免疫抑制剂（MTX等）作为GC助减剂，允许更快减量；<b>③</b>骨保护从GC启动第一天开始（钙+VitD），而非等到骨折发生；<b>④</b>每6-12月影像学评估椎体形态——早发现、早干预可避免不可逆椎体变形。
+    </div>
+
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断</b><br>
+      ① GC启动后椎体骨折可早至4月出现 ② 67%无症状→需主动筛查 ③ BMD正常不排除骨折风险<br><br>
+      <b>2. 治疗</b><br>
+      ④ 双膦酸盐是一线治疗 ⑤ GC尽快减量 ⑥ 钙+VitD为基础但不足<br><br>
+      <b>3. 预防</b><br>
+      ⑦ GC启动前基线脊柱X线 ⑧ 6月+12月复查 ⑨ 高GC剂量+快速BMI增加为高危因素
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/4459856/" target="_blank">PMID 22213727</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4459856/" target="_blank">PMC4459856</a></div><div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Rodd C, Lang B, Ramsay T, et al. Incident VF among children with rheumatic disorders 12 months post-GC initiation. <i>Arthritis Care Res</i>. 2012;64(1):122-131. PMID: 22213727.<br>
+      2. Huber AM, et al. Prevalent VF among children initiating GC therapy. <i>Arthritis Care Res</i>. 2010;62(4):516-526. PMID: 20309869.<br>
+      3. LeBlanc CM, et al. Incident VF and risk factors in pediatric GC users. <i>J Bone Miner Res</i>. 2015;30:1667-1675. PMID: 25762470.<br>
+      4. Genant HK, et al. Vertebral fracture assessment using a semiquantitative technique. <i>J Bone Miner Res</i>. 1993;8:1137-1148. PMID: 8237484.<br>
+      5. Ward LM, et al. Approach to the pediatric patient with GIO. <i>J Clin Endocrinol Metab</i>. 2024;110(2):572-591.
+    </div>
+  </div>
+  <div class="footer">基于PMC4459856 STOPP研究 · GIO · 双膦酸盐治疗 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

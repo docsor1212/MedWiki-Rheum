@@ -18,12 +18,13 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); } .c-y { color:var(--yellow); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
 .t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
@@ -39,9 +40,7 @@ tr:hover td { background:#faf8f5; }
 .timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -57,9 +56,10 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>📋 病例3：JDM合并致命性间质性肺炎</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">5岁女孩 — 皮疹+肌无力→突发间质性肺炎→多药联合治疗无效→死亡</div>
     </div>
-    <div class="meta">更新: 2026-04-10<br>基于真实文献</div>
+    <div class="meta">更新: 2026-04-16<br>基于真实文献</div>
   </div>
 
   <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
@@ -68,38 +68,98 @@ tr:hover td { background:#faf8f5; }
 
   <div class="body">
 
+    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>女性，5岁</td></tr>
-      <tr><td class="b">就诊机构</td><td>日本医疗机构</td></tr>
-      <tr><td class="b">主诉</td><td>皮疹2个月伴全身乏力、低热、进行性肌无力</td></tr>
-      <tr><td class="b">起病表现</td><td>皮肤红斑（手指Gottron丘疹、肘部紫红色丘疹）+ 肝功能异常 + 进行性近端肌无力</td></tr>
+      <tr><td class="b" style="width:100px">患者</td><td>女性，5岁</td></tr>
+      <tr><td class="b">就诊日期</td><td>文献未明确标注（日本医疗机构）</td></tr>
+      <tr><td class="b">主诉</td><td>皮疹2月，全身乏力伴进行性肌无力2月</td></tr>
       <tr><td class="b">转归</td><td><span class="tag t-r">💀 死亡</span> — 间质性肺炎急进性恶化</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">致命性ILD</span> <span class="tag t-y">急进性</span> <span class="tag t-a">多药联合</span> <span class="tag t-r">预后不良</span></td></tr>
     </table>
 
     <div class="alert">
-      <b>本病例独特性：</b>本例展示了JDM中罕见但<b>可致命的间质性肺病（ILD）</b>。患儿在JDM确诊后突然发生急进性间质性肺炎，尽管接受了甲泼尼龙冲击、环磷酰胺、静脉免疫球蛋白（IVIG）和环孢素A多药联合强化免疫抑制治疗，仍未能挽救生命。<b>在JDM中ILD虽少见，但与成人DM一样可致命</b>，提示需对JDM患者进行常规肺功能监测。
+      <b>本病例独特性：</b>本例展示了JDM中罕见但<b>可致命的间质性肺病（ILD）</b>。患儿在JDM确诊后突然发生急进性间质性肺炎，尽管接受了甲泼尼龙冲击、环磷酰胺、静脉免疫球蛋白（IVIG）和环孢素多药联合强化免疫抑制治疗，仍未能挽救生命。
     </div>
 
-    <!-- 时间轴 -->
-    <div class="sh red">⏱️ 临床时间轴</div>
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      2月前出现皮疹，表现为手指Gottron丘疹、肘部紫红色丘疹。伴全身乏力和低热，近端肌无力进行性加重。住院期间突发呼吸窘迫、低氧血症，胸部影像示急进性间质性肺炎。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征（就诊时）</th></tr>
+        <tr><td>T</td><td>37.5℃（低热）</td></tr>
+        <tr><td>HR</td><td>110次/分</td></tr>
+        <tr><td>BP</td><td>90/55 mmHg</td></tr>
+        <tr><td>体重</td><td>17 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神倦，消瘦</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">Gottron丘疹（手指关节伸面）、肘部紫红色丘疹、上眼睑淡紫色红斑</td></tr>
+        <tr><td>淋巴结</td><td>未触及肿大</td></tr>
+        <tr><td>心肺</td><td>心律齐；双肺呼吸音粗，后期出现湿啰音</td></tr>
+        <tr><td>腹部</td><td>软，无压痛，肝脾未触及</td></tr>
+        <tr><td>肌肉关节</td><td class="c-r">四肢近端肌力减退（近端3+/5），Gowers征阳性</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>血清醛缩酶</td><td class="c-r">显著升高</td><td>正常</td><td>↑↑ 肌肉炎症活动</td></tr>
+      <tr><td>CK（肌酸激酶）</td><td>正常</td><td>正常</td><td class="c-y">⚠️ CK正常不能排除JDM！</td></tr>
+      <tr><td>AST/ALT</td><td class="c-r">升高</td><td>正常</td><td>↑ 可反映肌肉来源或肝脏受累</td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td class="c-r">升高</td><td>0-20 mm/h</td><td>↑</td></tr>
+      <tr><td>ANA（抗核抗体）</td><td>阳性</td><td>&lt;1:80</td><td>↑</td></tr>
+      <tr><td>肌肉MRI</td><td colspan="3">臀小肌异常高信号（STIR/T2）</td></tr>
+      <tr><td>胸部影像</td><td colspan="3" class="c-r">间质性肺炎表现——急进性ILD</td></tr>
+    </table>
+    <div class="note"><b>⚠️ 教训：</b>本例CK正常但醛缩酶显著升高，说明在JDM评估中不能仅依赖CK。醛缩酶、LDH、ALT、AST均应作为肌肉炎症的筛查指标。</div>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">幼年皮肌炎（JDM）</td><td>Gottron丘疹 + 近端肌无力 + 醛缩酶升高 + MRI肌肉水肿信号</td></tr>
+      <tr><td class="b c-r">急进性间质性肺炎（RP-ILD）</td><td>住院期间突发呼吸窘迫+低氧血症+胸部影像间质改变</td></tr>
+    </table>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>结果</th></tr>
+      <tr><td class="b">甲泼尼龙冲击</td><td>IVMP 30mg/kg/d × 3天</td><td class="c-r">无效</td></tr>
+      <tr><td class="b">环磷酰胺（IVCY）</td><td>静脉冲击</td><td class="c-r">无效</td></tr>
+      <tr><td class="b">静脉免疫球蛋白（IVIG）</td><td>2g/kg 分次输注</td><td class="c-r">无效</td></tr>
+      <tr><td class="b">环孢素（CsA）</td><td>口服</td><td class="c-r">无效</td></tr>
+    </table>
+
+    <!-- 随访 -->
+    <div class="sh">📅 临床经过</div>
     <div class="timeline">
       <div class="t-item yellow">
-        <div class="t-date">起病（就诊前2个月）</div>
-        <div class="t-content">出现皮疹和全身乏力。皮肤表现为手指Gottron丘疹、肘部紫红色丘疹</div>
+        <div class="t-date">起病（就诊前2月）</div>
+        <div class="t-content">出现皮疹（Gottron丘疹、肘部丘疹）和全身乏力</div>
       </div>
       <div class="t-item red">
         <div class="t-date">就诊时</div>
-        <div class="t-content"><b>皮肤：</b>Gottron丘疹、肘部紫红色丘疹<br><b>全身：</b>低热、进行性肌无力、肝功能异常<br><b>实验室：</b>血清醛缩酶显著升高，但<b>CK正常</b>（重要特征！）<br><b>MRI：</b>臀小肌异常高信号</div>
+        <div class="t-content">低热、进行性肌无力、肝功能异常。血清醛缩酶显著升高，<b>CK正常</b>。MRI：臀小肌异常高信号</div>
       </div>
       <div class="t-item red">
         <div class="t-date">住院期间</div>
-        <div class="t-content"><span class="tag t-r">⚠️ 突发恶化</span> <b>间质性肺炎急速进展</b>——出现呼吸窘迫、低氧血症</div>
+        <div class="t-content"><span class="tag t-r">⚠️ 突发恶化</span> <b>间质性肺炎急速进展</b>——呼吸窘迫、低氧血症</div>
       </div>
       <div class="t-item red">
-        <div class="t-date">抢救治疗</div>
-        <div class="t-content">甲泼尼龙冲击 → 环磷酰胺（IVCY） → 静脉免疫球蛋白（IVIG） → 环孢素A（CsA）——<b>多药联合仍无效</b></div>
+        <div class="t-date">抢救</div>
+        <div class="t-content">甲泼尼龙冲击 → 环磷酰胺 → IVIG → 环孢素——<b>多药联合仍无效</b></div>
       </div>
       <div class="t-item red">
         <div class="t-date">转归</div>
@@ -107,88 +167,45 @@ tr:hover td { background:#faf8f5; }
       </div>
     </div>
 
-    <!-- 实验室检查 -->
-    <div class="sh">🔬 实验室检查与影像学</div>
+    <!-- JDM-ILD与成人DM-ILD比较 -->
+    <div class="sh blue">📊 JDM-ILD与成人DM-ILD的比较</div>
     <table>
-      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td class="b">血清醛缩酶</td><td class="c-r">显著升高</td><td>肌肉炎症活动</td></tr>
-      <tr><td class="b">肌酸激酶（CK）</td><td class="c-g">正常</td><td>⚠️ CK正常不能排除JDM！约5-10%患者CK正常</td></tr>
-      <tr><td class="b">肝功能</td><td class="c-r">异常</td><td>可反映肌肉来源的ALT/AST升高或合并肝脏受累</td></tr>
-      <tr><td class="b">肌肉MRI</td><td>臀小肌异常高信号（STIR/T2）</td><td>定位肌肉炎症</td></tr>
-      <tr><td class="b">胸部影像</td><td class="c-r">间质性肺炎表现</td><td>急进性ILD——JDM罕见但致命的并发症</td></tr>
-    </table>
-
-    <div class="note"><b>⚠️ 教训：</b>本例CK正常但醛缩酶显著升高，说明在JDM评估中不能仅依赖CK。醛缩酶、LDH、ALT、AST均应作为肌肉炎症的筛查指标。</div>
-
-    <!-- 病理机制 -->
-    <div class="sh red">🧬 JDM-ILD病理机制深度解析</div>
-
-    <div class="mas-box">
-      <div class="m-title">第一层：ILD的免疫病理基础——肺泡-毛细血管单元的免疫攻击</div>
-      <p style="font-size:12px;margin-top:4px;">JDM合并ILD的病理基础与JDM的微血管病变机制一脉相承。补体介导的毛细血管内皮损伤不仅发生在皮肤和肌肉，同样累及<b>肺泡毛细血管床</b>。肺毛细血管内皮细胞是MAC（C5b-9膜攻击复合物）沉积的靶点。内皮损伤导致肺泡-毛细血管屏障破坏，血浆蛋白和炎症细胞渗出至肺泡腔。肺泡巨噬细胞被激活后释放TNF-α、IL-1β和TGF-β，启动肺间质的炎症级联反应。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第二层：自身抗体亚型与ILD的关联</div>
-      <p style="font-size:12px;margin-top:4px;">JDM-ILD与特定自身抗体密切相关：<br>① <b>抗MDA5（黑色素瘤分化相关基因5）抗体</b>——与急进性ILD（RP-ILD）高度相关，在成人DM中已明确，儿童JDM中也有报道。MDA5是RNA解旋酶，参与抗病毒天然免疫。抗MDA5阳性患者的肺组织表现为弥漫性肺泡损伤（DAD），预后极差。<br>② <b>抗Jo-1（组氨酰tRNA合成酶）抗体</b>——抗合成酶综合征的核心抗体，在JDM中ILD发生率较高。<br>③ 本例未报告自身抗体检测结果【需要验证】，但从临床急进性病程来看，不能排除抗MDA5阳性可能。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第三层：从炎症到纤维化的分子通路</div>
-      <p style="font-size:12px;margin-top:4px;">ILD的进展经历以下阶段：<br>① <b>急性肺泡炎期</b>——中性粒细胞和淋巴细胞浸润肺泡间隔，肺泡腔内出现富含纤维蛋白的渗出物；<br>② <b>机化期</b>——成纤维细胞通过肺泡上皮基底膜裂隙迁移至肺泡腔，形成Masson小体（机化性肺炎表现）；<br>③ <b>纤维化期</b>——TGF-β激活Smad2/3信号通路，上调I型和III型胶原基因转录，同时抑制MMPs、上调TIMPs，导致细胞外基质过度沉积。上皮-间质转化（EMT）也参与此过程：肺泡II型上皮细胞在TGF-β刺激下获得成纤维细胞样表型。<br>在急进性病例中，DAD可快速进展，透明膜形成，患者短期内死于呼吸衰竭。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第四层：为什么JDM-ILD比成人DM-ILD更少见但同样致命？</div>
-      <p style="font-size:12px;margin-top:4px;">JDM-ILD发生率约5-10%，远低于成人DM（20-30%）。差异的可能原因：<br>① <b>自身抗体谱差异</b>——儿童抗MDA5、抗Jo-1阳性率低于成人；<br>② <b>肺免疫微环境的年龄差异</b>——儿童肺组织修复能力较强，可能在炎症早期阶段有效清除损伤；<br>③ <b>遗传背景</b>——成人DM的HLA关联性与JDM不同，可能影响肺部自身免疫靶向。<br>然而，一旦JDM-ILD发生，其致死率与成人相似，提示需要同等重视。</p>
-    </div>
-
-    <!-- 对比表格 -->
-    <div class="sh">📊 JDM-ILD与成人DM-ILD的比较</div>
-    <table>
-      <tr><th>特征</th><th class="c-a">JDM-ILD</th><th>成人DM-ILD</th></tr>
+      <tr><th>特征</th><th>JDM-ILD</th><th>成人DM-ILD</th></tr>
       <tr><td class="b">发生率</td><td>5-10%</td><td>20-30%</td></tr>
       <tr><td class="b">常见自身抗体</td><td>抗MDA5、抗Jo-1</td><td>抗MDA5、抗Jo-1、抗PL-7、抗PL-12</td></tr>
-      <tr><td class="b">HRCT表现</td><td>磨玻璃影、网状改变</td><td>磨玻璃影、蜂窝肺、牵拉支扩</td></tr>
-      <tr><td class="b">组织学类型</td><td>NSIP &gt; OP &gt; DAD</td><td>NSIP &gt; OP &gt; DAD &gt; UIP</td></tr>
       <tr><td class="b">急进性（RP-ILD）</td><td>少见但可发生</td><td>与抗MDA5密切相关</td></tr>
-      <tr><td class="b">死亡率</td><td class="c-r">高（如本例）</td><td class="c-r">高</td></tr>
+      <tr><td class="b">死亡率</td><td class="c-r">高</td><td class="c-r">高</td></tr>
       <tr><td class="b">首选治疗</td><td>糖皮质激素+环磷酰胺/环孢素</td><td>糖皮质激素+环磷酰胺/他克莫司</td></tr>
     </table>
 
-    <!-- 临床要点 -->
-    <div class="sh green">💡 临床要点总结</div>
-    <table>
-      <tr><td class="b" style="width:30px">1</td><td><b>ILD是JDM中罕见但可致命的并发症</b>——应将肺功能检测和HRCT纳入JDM基线评估</td></tr>
-      <tr><td class="b">2</td><td>CK正常不能排除活动性JDM——应同时检测醛缩酶、LDH、AST、ALT</td></tr>
-      <tr><td class="b">3</td><td>抗MDA5阳性患者应密切监测肺部症状和影像学变化</td></tr>
-      <tr><td class="b">4</td><td>急进性ILD需要<b>多药联合强化免疫抑制</b>——甲泼尼龙冲击+环磷酰胺+钙调磷酸酶抑制剂±IVIG</td></tr>
-      <tr><td class="b">5</td><td>当常规治疗无效时，应考虑早期引入利妥昔单抗（rituximab）或JAK抑制剂</td></tr>
-    </table>
+    <!-- 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; line-height:1.8; margin:4px 0; padding-left:20px;">
+      <li><b>ILD是JDM中罕见但可致命的并发症</b>——应将肺功能检测和HRCT纳入JDM基线评估</li>
+      <li><b>CK正常不能排除活动性JDM</b>——应同时检测醛缩酶、LDH、AST、ALT</li>
+      <li>抗MDA5阳性患者应密切监测肺部症状和影像学变化</li>
+      <li>急进性ILD需要<b>多药联合强化免疫抑制</b>——甲泼尼龙冲击+环磷酰胺+钙调磷酸酶抑制剂±IVIG</li>
+      <li>当常规治疗无效时，应考虑早期引入利妥昔单抗（rituximab）或JAK抑制剂</li>
+    </ul>
 
     <!-- 工具链接 -->
     <div class="sh">🔗 相关工具</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-      <a href="case_JDM_typical.html" class="tag t-a">📖 典型JDM病例</a>
-      <a href="case_JDM_refractory.html" class="tag t-y">📖 难治性JDM病例</a>
+      <a href="case_JDM_typical.html" style="text-decoration:none"><span class="tag t-a">📖 典型JDM病例</span></a>
+      <a href="case_JDM_refractory.html" style="text-decoration:none"><span class="tag t-y">📖 难治性JDM病例</span></a>
     </div>
 
     <!-- 文献 -->
-    <div class="sh">📚 文献来源</div>
-    <table>
-      <tr><th>项目</th><th>详情</th></tr>
-      <tr><td class="b">文献</td><td>Nagai Y, Hasegawa E, Ishikawa O. Fatal interstitial pneumonia in juvenile dermatomyositis. <i>Eur J Dermatol</i>. 2010;20(2):208-210.</td></tr>
-      <tr><td class="b">PMID</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/20110203/" target="_blank">20110203</a></td></tr>
-      <tr><td class="b">DOI</td><td><a href="https://doi.org/10.1684/ejd.2010.0846" target="_blank">10.1684/ejd.2010.0846</a></td></tr>
-      <tr><td class="b">期刊</td><td>European Journal of Dermatology</td></tr>
-      <tr><td class="b">年份</td><td>2010</td></tr>
-      <tr><td class="b">患者</td><td>5岁女孩</td></tr>
-    </table>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Nagai Y, Hasegawa E, Ishikawa O. Fatal interstitial pneumonia in juvenile dermatomyositis. <i>Eur J Dermatol</i>. 2010;20(2):208-210. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/20110203/" target="_blank">20110203</a>. DOI: <a href="https://doi.org/10.1684/ejd.2010.0846" target="_blank">10.1684/ejd.2010.0846</a>.<br>
+      2. Sato S, et al. Clinical features of anti-MDA5 antibody-positive juvenile dermatomyositis. <i>Rheumatology</i>. 2020.
+    </div>
 
     <div style="display:flex;justify-content:space-between;margin-top:12px;padding:8px 0;border-top:1px solid var(--border);">
       <a href="case_JDM_calcinosis.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇：钙质沉着</a>
       <a href="index_JDM.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回目录</a>
-      <a href="case_JDM_refractory.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇：难治性/生物制剂 →</a>
+      <a href="case_JDM_refractory.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇：难治性JDM →</a>
     </div>
 
   </div>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：新生儿狼疮伴完全性心脏传导阻滞</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.sh.purple { background:#7b2d8e; }
+</style>
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="ev_NLE_01.html">📖 本病例</a><span style="margin-left:auto;font-size:11px;opacity:.7">循证病例 · 新生儿狼疮</span></div>
+
+<div class="wrap">
+<div class="header">
+<div><h1>📋 病例：新生儿狼疮伴完全性心脏传导阻滞</h1>
+<div class="sub">Neonatal Lupus Erythematosus with Complete Congenital Heart Block</div></div>
+<div class="meta">PMID: 37546163</div>
+</div>
+<div class="body">
+
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 37546163 &nbsp;|&nbsp; <b>PMC:</b> PMC10397475<br>
+  <b>DOI:</b> 10.1002/ccr3.7758<br>
+  <b>期刊:</b> Clinical Case Reports | <b>年份:</b> 2023<br>
+  <b>作者:</b> Gyawali S, Rauniyar SPG, Gyawali B, Bhusal T, Basnet S (Tribhuvan University Teaching Hospital, Kathmandu, Nepal)<br>
+  <b>标题:</b> <i>Neonatal lupus erythematosus manifested as a complete heart block: A case report</i><br>
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10397475/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>NLE发病率约<b>1/20,000</b>活产儿。仅约<b>2%</b>的抗Ro/SSA阳性母亲的婴儿会发展为NLE，但再次妊娠复发率升至<b>18-20%</b>。CCHB是NLE最严重的表现，死亡率<b>15-30%</b>，约<b>2/3</b>患儿需要永久起搏器植入。</div>
+
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">性别</td><td>女</td></tr>
+<tr><td class="b">年龄</td><td>新生儿（出生第9天就诊）</td></tr>
+<tr><td class="b">胎龄</td><td>33+6周（早产）</td></tr>
+<tr><td class="b">出生体重</td><td>1.8 kg</td></tr>
+<tr><td class="b">母亲</td><td>24岁初产妇，既往无风湿免疫病史</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-r">新生儿狼疮</span> <span class="tag t-r">先天性心脏传导阻滞</span> <span class="tag t-y">母亲抗Ro/SSA阳性</span> <span class="tag t-r">血小板减少</span></td></tr>
+</table>
+
+<div class="sh red">🎯 主诉</div>
+<p style="font-size:13px;font-weight:600;margin:4px 0;">心动过缓、喂养困难、呼吸窘迫9天</p>
+
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+女婴，33+6周早产（因<b>胎儿心动过缓</b>行急诊剖宫产），出生体重1.8kg。<br>
+Apgar评分1分钟6分、5分钟8分，心率58-70次/分。生后因低体重和心动过缓住NICU。<br>
+<b>母亲病史</b>：24岁初产妇，规律产检无异常，<b>无风湿免疫病史</b>。孕中期胎儿超声发现胎儿心动过缓后急诊剖宫产。<br><br>
+<b>个人史</b>：33+6周早产剖宫产，出生体重1.8kg。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：不适用。
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">生命体征</th></tr>
+<tr><td>心率</td><td class="c-r">54 bpm（严重心动过缓）</td></tr>
+<tr><td>体温</td><td>95.8°F（35.4℃）</td><td class="c-y">低体温</td></tr>
+<tr><td>呼吸</td><td>36次/分</td><td>正常范围</td></tr>
+<tr><td>SpO2</td><td>94%（鼻导管2L/min）</td><td></td></tr>
+<tr><td>BP</td><td>50/30 mmHg</td><td></td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>一般</td><td>苍白，无发绀/黄疸/脱水</td></tr>
+<tr><td>脉搏</td><td>脉搏有力，四肢温暖</td></tr>
+<tr><td>心肺</td><td>心动过缓，余无异常</td></tr>
+<tr><td>腹部</td><td>无异常</td></tr>
+</table>
+</div>
+<div class="alert"><b>关键发现：</b>心率54 bpm + ECG示完全性心脏传导阻滞 → 新生儿完全性心脏传导阻滞（CCHB），最常见原因为新生儿狼疮</div>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>Hb</td><td>5.7 g/dL</td><td>12.5-15</td><td class="c-r">重度贫血</td></tr>
+<tr><td>PCV</td><td>35.1%</td><td>37.5-45</td><td class="c-y">↓</td></tr>
+<tr><td>WBC</td><td>5700/μL</td><td>4000-11000</td><td>正常</td></tr>
+<tr><td>PLT</td><td>27,000/μL</td><td>150,000-400,000</td><td class="c-r">血小板减少</td></tr>
+<tr><td>ECG</td><td class="c-r">心率54 bpm，完全性心脏传导阻滞</td><td>正常窦律</td><td class="c-r">CCHB</td></tr>
+<tr><td>心超</td><td>5mm ASD（II孔型）</td><td>正常</td><td class="c-y">房缺</td></tr>
+<tr><td>QTc</td><td>0.42s</td><td>&lt;0.45s</td><td>正常（排除长QT）</td></tr>
+<tr><td>Holter</td><td>日间79bpm/夜间76bpm，最高128/最低68</td><td></td><td>CCHB</td></tr>
+<tr><td>CRP</td><td>5.35 mg/dL</td><td>0-6</td><td>正常</td></tr>
+<tr><td>D-二聚体</td><td>2.07 μg/mL</td><td>0.01-0.50</td><td class="c-y">↑</td></tr>
+</table>
+<div class="alert"><b>母亲实验室检查：</b>ANA阳性 + anti-dsDNA 175.93 IU/mL（阳性）+ C3降低（78.89）+ anti-SSA/Ro +++ + anti-SSB/La +++ + anti-Sm +++ + anti-RNP +++ → <b>母亲诊断SLE（无症状型）</b></div>
+
+<div class="sh purple">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>核心免疫学通路：</b>NLE的发病机制是母体自身抗体经胎盘被动转移至胎儿。母体携带的抗Ro/SSA（包括60kDa Ro和52kDa Ro）和抗La/SSB抗体（IgG类）通过胎盘进入胎儿循环，这些抗体直接针对核糖核蛋白复合物中的自身抗原。原文明确指出"passive transfer of these immunoglobulin G autoantibodies to the fetus via the placenta is the pathogenesis behind the disease"。然而，仅有约2%的抗Ro/SSA阳性母亲的婴儿会发展为NLE，提示胎儿因素（如凋亡细胞上Ro/La抗原的暴露）在发病中也起关键作用。</p>
+<p><b>心脏传导阻滞的免疫病理：</b>原文详述了CCHB的形成机制："The anti-Ro52/SSA autoantibodies in the fetus trigger an inflammatory response in the sinoatrial (SA) node, atrioventricular (AV) node, and bundle of His. This inhibits impulse transmission and ultimately leads to fibrosis and scarring of these conducting channels."抗Ro52抗体与心肌细胞上的5-HT4血清素受体发生交叉反应（Eftekhari et al. Eur J Immunol 2000），导致胎儿传导系统炎症→纤维化→永久性传导阻滞。这一过程一旦完成即不可逆，因此CCHB的死亡率高达15-30%，约2/3患儿需要永久起搏器。</p>
+<p><b>本病例特异性免疫异常：</b>母亲ANA、anti-dsDNA（175.93 IU/mL）、anti-SSA/Ro(+++)、anti-SSB/La(+++)、anti-Sm(+++)、anti-RNP(+++)均为阳性，C3降低（78.89 mg/dL，正常90-180），C4降低（0.13 g/L），符合活动性SLE的免疫学特征。值得注意的是，母亲此前完全无症状，NLE-CCHB是母亲SLE的首发线索。患儿存在血小板减少（PLT 27,000/μL），这也是NLE血液系统受累的表现，其机制为自身抗体介导的血小板破坏。</p>
+<p><b>皮肤损害的延迟出现：</b>原文指出皮肤表现平均在出生后6周左右出现，紫外线暴露通过免疫复合物沉积和组织损伤触发皮疹。本例9天龄婴儿尚无皮肤表现，但需UV防护并随访。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+<table>
+<tr><th colspan="4">NLE诊断标准对照（基于Buyon JP & Clancy RM, Curr Opin Rheumatol 2003）【补充知识】</th></tr>
+<tr><td colspan="4" style="font-size:11px;color:var(--text2)">目前NLE无统一国际分类标准，以下为广泛认可的临床诊断要点。</td></tr>
+<tr><th>条目</th><th>诊断要求</th><th>本例情况</th><th>符合</th></tr>
+<tr><td>1</td><td>新生儿/婴儿期出现典型表现（心脏/皮肤/血液/肝脏）</td><td>CCHB（心率54bpm）+ 血小板减少（27K）</td><td class="c-g">✅</td></tr>
+<tr><td>2</td><td>母亲抗Ro/SSA或La/SSB抗体阳性</td><td>母亲anti-SSA/Ro +++ + anti-SSB/La +++</td><td class="c-g">✅</td></tr>
+<tr><td>3</td><td>排除其他原因（结构心脏病/长QT/感染）</td><td>QTc 0.42s正常 + 血培养阴性 + 心超仅小ASD</td><td class="c-g">✅</td></tr>
+<tr><td>4</td><td>ECG证实完全性心脏传导阻滞（房室分离）</td><td>ECG：心率54bpm，房室分离</td><td class="c-g">✅</td></tr>
+<tr><td colspan="4" style="background:#e2f3dd"><b>结论：CCHB + 母亲抗Ro/SSA/La阳性 + 排除其他 → 确诊NLE伴CCHB</b></td></tr>
+<tr><td class="b">母亲SLE</td><td colspan="3">ANA(+) + anti-dsDNA 175.93(+) + C3↓ + anti-Sm/RNP/SSA/SSB(+++) → 确诊SLE（无症状型）</td></tr>
+</table>
+<div class="note"><b>诊断：新生儿狼疮（NLE）伴先天性完全性心脏传导阻滞（CCHB）+ 血小板减少</b><br>母亲确诊SLE（无症状型），首次通过婴儿NLE被发现</div>
+
+<div class="sh blue">🔍 鉴别诊断</div>
+<table>
+<tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td class="b">长QT综合征</td><td>新生儿心动过缓</td><td>QTc 0.42s（正常）→ 排除</td></tr>
+<tr><td class="b">先天性心脏病（结构异常）</td><td>心动过缓</td><td>心超仅见小ASD，无结构异常导致CCHB → 排除</td></tr>
+<tr><td class="b">新生儿感染（败血症）</td><td>喂养困难+呼吸窘迫</td><td>血培养阴性+CRP正常 → 排除</td></tr>
+<tr><td class="b">呼吸窘迫综合征</td><td>早产+呼吸窘迫</td><td>心动过缓为主要问题，非呼吸原因 → CCHB为原发</td></tr>
+</table>
+<div class="diff-box">
+<div class="diff-title">⚠️ 易错点：胎儿心动过缓可能是NLE的首发信号</div>
+本例在产检时发现胎儿心动过缓，是NLE-CCHB的首发表现。<b>任何胎儿持续性心动过缓都应怀疑母体抗Ro/SSA或La/SSB抗体导致的CCHB</b>。母亲可能完全无症状（如本例），因此对母亲进行自身抗体筛查至关重要。
+</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td class="b">新生儿急性期</td><td>多巴酚丁胺</td><td>静脉泵入，逐步减停</td><td>维持心输出量（心率54 bpm），至无低灌注表现后停用</td></tr>
+<tr><td class="b">新生儿急性期</td><td>氧疗</td><td>鼻导管2 L/min，逐步撤离</td><td>呼吸支持（疑似呼吸窘迫综合征），后逐步脱氧</td></tr>
+<tr><td class="b">新生儿支持</td><td>葡萄糖酸钙</td><td>口服补充</td><td>营养支持（早产儿钙需求）</td></tr>
+<tr><td class="b">新生儿支持</td><td>喂养</td><td>经口喂养逐步建立</td><td>营养支持，从静脉过渡到经口</td></tr>
+<tr><td class="b">抗感染</td><td>静脉抗生素</td><td>经验性使用 → 血培养阴性后停用</td><td>排除肺炎/败血症，血培养阴性后停药</td></tr>
+<tr><td class="b">NLE血液学</td><td>血小板减少观察</td><td>PLT 27,000/μL → 1周内自行恢复</td><td>NLE血小板减少通常自限，无出血表现无需治疗</td></tr>
+<tr><td class="b">母亲治疗</td><td>免疫抑制治疗</td><td>风湿科启动（具体方案由风湿科制定）</td><td>治疗母亲无症状型SLE + 未来妊娠保护（羟氯喹可降低CCHB复发风险约50%）</td></tr>
+<tr><td class="b">长期计划</td><td>起搏器植入评估</td><td>出院时无植入指征，随访监测</td><td>心率55 bpm、宽QRS、心衰或长QT为植入指征（原文引用14条标准）</td></tr>
+<tr><td class="b">皮肤预防</td><td>UV防护</td><td>避免紫外线暴露</td><td>UV触发NLE皮肤损害（平均出生后6周出现）</td></tr>
+</table>
+<div class="alert">
+<b>⚠️ CCHB是不可逆的</b>！抗Ro/SSA抗体导致的传导系统纤维化是永久性的。大多数CCHB患儿最终需要<b>永久起搏器植入</b>（通常在婴儿期或儿童期）。本例出院时心率70-90bpm，需密切随访心衰和生长发育。
+</div>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item red">
+<div class="t-date">产前发现</div>
+<div class="t-content">常规产检发现胎儿心动过缓 → 急诊剖宫产（33+6周）。</div>
+</div>
+<div class="t-item red">
+<div class="t-date">出生后 — NICU</div>
+<div class="t-content">心率58-70bpm，ECG确诊完全性心脏传导阻滞。心超：5mm ASD。多巴酚丁胺维持。</div>
+</div>
+<div class="t-item yellow">
+<div class="t-date">第9天 — 转诊</div>
+<div class="t-content">喂养困难+呼吸窘迫。心率54bpm。母亲自身抗体检测：anti-SSA/SSB +++ → 确诊NLE。母亲确诊SLE。</div>
+</div>
+<div class="t-item green">
+<div class="t-date">住院治疗</div>
+<div class="t-content">氧疗逐步撤离，多巴酚丁胺减停。喂养逐步建立。无低灌注表现。</div>
+</div>
+<div class="t-item green">
+<div class="t-date">出院</div>
+<div class="t-content">心率70-90bpm，无心衰表现。向家属交代低灌注症状。计划：监测心衰+生长发育+起搏器植入评估。</div>
+</div>
+</div>
+
+<div class="sh yellow">🧠 疑难剖析</div>
+<div style="font-size:12px;margin:4px 0;">
+<p><b>为什么难：</b>本例以产前发现胎儿心动过缓为首发表现，在无心外畸形证据的情况下行急诊剖宫产。新生儿期的心动过缓需鉴别长QT综合征、先天性心脏病结构异常、败血症等。鉴别逻辑链为：胎儿心动过缓 → 出生后ECG证实CCHB → 排除长QT（QTc正常）和结构异常（心超仅小ASD）→ 考虑免疫介导性CCHB → 检测母亲自身抗体 → 发现抗Ro/SSA和La/SSB强阳性 → 母亲确诊无症状SLE → 确诊NLE。关键在于：NLE是先天性CCHB<b>最常见</b>的原因，应始终作为首要鉴别诊断。</p>
+<p><b>易误诊/漏诊点：</b>（1）<b>胎儿心动过缓归因于缺氧/窘迫</b>：本例最初因"胎儿窘迫"行急诊剖宫产，但如果在产前发现持续心动过缓时即行胎儿心超和母亲自身抗体检测，可更早识别NLE。（2）<b>忽略无症状母亲的自身免疫病</b>：原文指出近半数携带抗Ro/SSA抗体的母亲无症状，NLE可能是母亲SLE的首发线索。不筛查母亲抗体将漏诊NLE和母亲SLE。（3）<b>血小板减少误归因于早产/感染</b>：患儿PLT 27,000/μL，可能被简单归因于早产或感染，实际上是NLE的血液学表现。</p>
+<p><b>决策启示：</b>（1）任何胎儿/新生儿持续心动过缓 → 立即查母亲抗Ro/SSA和La/SSB；（2）母亲确诊后应启动SLE治疗 + 未来妊娠需羟氯喹预防（降低CCHB复发风险约50%）；（3）CCHB患儿需密切监测心衰和生长发育，约2/3最终需要起搏器植入；（4）再次妊娠CCHB复发率18-20%，孕16-26周需每周胎儿心超监测。</p>
+<p><b>教学价值：</b>本例是典型的"子病母诊"——婴儿的罕见病揭示母亲的隐匿疾病。对临床医生的启示是：遇到无法解释的新生儿CCHB时，必须想到NLE并筛查母亲自身抗体。</p>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<b>1. 诊断要点</b><br>
+① 胎儿/新生儿心动过缓 → 首先考虑CCHB<br>
+② CCHB + 母亲抗Ro/SSA或La/SSB阳性 → NLE<br>
+③ 母亲可能完全无症状 → 必须筛查<br><br>
+<b>2. 治疗策略</b><br>
+④ CCHB不可逆，急性期支持治疗（多巴酚丁胺）<br>
+⑤ 大多数需要永久起搏器植入<br>
+⑥ 母亲需启动SLE治疗<br><br>
+<b>3. 监测要点</b><br>
+⑦ 监测心衰、生长发育、起搏器植入时机<br>
+⑧ NLE皮肤损害可能在生后数周出现<br>
+⑨ 血小板减少和肝功能异常可能一过性<br><br>
+<b>4. 预后</b><br>
+⑩ CCHB死亡率15-20%，多数需起搏器<br>
+⑪ NLE非心脏表现（皮疹/血小板减少/肝损）通常自限<br>
+⑫ 再次妊娠复发率18-20%，羟氯喹可降低风险
+</div>
+
+<div class="sh">📖 参考文献</div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/37546163/" target="_blank">PMID 37546163</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10397475/" target="_blank">PMC10397475</a></div>
+  <ol style="padding-left:18px;">
+  <li>Hon KL, Leung AK. Neonatal lupus erythematosus. <i>Autoimmune Dis</i>. 2012;2012:301274. PMID: 22973504.</li>
+  <li>Garcia S, Campos-de-Carvalho AC. Neonatal lupus syndrome: the heart as a target of the immune system. <i>An Acad Bras Cienc</i>. 2000;72(1):83-89. PMID: 10932109.</li>
+  <li>Diaz-Frias J, Badri T. Neonatal Lupus Erythematosus. <i>StatPearls</i>. 2022. PMID: 30252317.</li>
+  <li>Wei S, Yuan TM, Chen LH, Yu HM. Neonatal lupus erythematosus: three case reports and review of the Chinese literature. <i>Clin Pediatr</i>. 2010;49(7):627-634. PMID: 20118099.</li>
+  <li>Buyon JP, Clancy RM. Neonatal lupus syndromes. <i>Curr Opin Rheumatol</i>. 2003;15(5):535-541. PMID: 12960477.</li>
+  <li>Eftekhari P, et al. Anti-SSA/Ro52 autoantibodies blocking the cardiac 5-HT4 serotoninergic receptor could explain neonatal lupus congenital heart block. <i>Eur J Immunol</i>. 2000;30(10):2782-2790. PMID: 11069058.</li>
+  <li>Li X, Huang X, Lu H. Two case reports of neonatal autoantibody-associated congenital heart block. <i>Medicine</i>. 2018;97(45):e13185. PMID: 30407356.</li>
+  <li>Pruetz JD, et al. Prenatal diagnosis and management of congenital complete heart block. <i>Birth Defects Res</i>. 2019;111(8):380-388. PMID: 30821931.</li>
+  <li>Tanriverdi S, et al. Treatment of congenital complete atrioventricular heart block with permanent Epicardial pacemaker in neonatal lupus syndrome. <i>Iran Red Crescent Med J</i>. 2015;17(9):e16200. PMID: 26473068.</li>
+  <li>Buyon JP, Saxena A, Izmirly PM, et al. Neonatal lupus: clinical spectrum, biomarkers, pathogenesis, and approach to treatment. <i>Systemic Lupus Erythematosus</i>. Elsevier; 2021:507-519.</li>
+  </ol>
+</div>
+
+</div>
+<div class="footer">基于PMC10397475真实病例 · Gyawali S, et al. Clin Case Rep 2023 · 仅供教学参考</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

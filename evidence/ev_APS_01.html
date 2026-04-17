@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 儿童原发性灾难性抗磷脂综合征</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">儿童APS · APS-01</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>儿童原发性灾难性抗磷脂综合征伴脑静脉窦血栓</h1>
+      <div class="sub">Primary CAPS with CVST — 7岁女童（死亡转归）</div>
+    </div>
+    <div class="meta">循证病例 · PMID 39722765</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 39722765 &nbsp;|&nbsp; <b>PMC:</b> PMC11668558<br>
+  <b>DOI:</b> 10.3389/fped.2024.1491095<br>
+  <b>期刊:</b> Frontiers in Pediatrics | <b>年份:</b> 2024<br>
+  <b>作者:</b> Xu L, Wu J, Wang H, Yang B<br>
+  <b>标题:</b> <i>Primary Catastrophic Antiphospholipid Syndrome in a Pediatric Patient with Cerebral Venous Sinus Thrombosis</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/39722765/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>7岁，女</td></tr>
+  <tr><td class="b">就诊时间</td><td>2024年6月</td></tr>
+  <tr><td class="b">主诉</td><td>头痛、呕吐4天</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-r">灾难性APS</span> <span class="tag t-r">CVST</span> <span class="tag t-r">多部位血栓</span> <span class="tag t-r">死亡</span></td></tr>
+</table>
+    <div class="alert"><b>流行病学提示：</b>APS发病率约<b>5/10万/年</b>，患病率<b>40-50/10万</b>。CVST在儿童中发生率约<b>7/100万</b>，在APS患者中CVST患病率仅<b>0.7%</b>。儿童CAPS极为罕见，死亡率高达<b>33%-50%</b>。文献报告45例儿童CAPS中，ACs+CS+PE/IVIG组合治疗者全部存活。</div>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">头痛、呕吐4天</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  无明显诱因出现头痛伴恶心、呕吐（喷射性3-4次/天），无发热、抽搐或意识障碍。当地CT发现右侧横窦和乙状窦高密度影，转上级医院。<br><br>
+  实验室检查：LA阳性（dRVVT 1.44）、抗磷脂酰乙醇胺IgM阳性、D-二聚体7.47 μg/ml、凝血酶-抗凝血酶复合物43.8 ng/ml。确诊原发性CAPS。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：生长发育正常。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">生命体征</th></tr>
+    <tr><td>T</td><td>正常</td></tr>
+    <tr><td>HR/BP</td><td>平稳</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">神经系统</th></tr>
+    <tr><td>意识</td><td>清楚，精神差</td></tr>
+    <tr><td>颈部</td><td class="c-r">僵硬疼痛</td></tr>
+    <tr><td>巴氏征</td><td class="c-r">双侧阳性</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div>
+<table><tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>PT</td><td>12.9 s</td><td>9.4-12.5</td><td><span class="c-r">↑</span></td></tr>
+<tr><td>INR</td><td><span class="c-r">1.20</span></td><td>0.85-1.14</td><td>升高</td></tr>
+<tr><td>D-二聚体</td><td><span class="c-r" style="font-size:14px">7.47 μg/ml ↑↑</span></td><td>&lt;0.50</td><td>显著升高</td></tr>
+<tr><td>FDP</td><td><span class="c-r">22.48 μg/ml ↑↑</span></td><td>&lt;5.00</td><td>显著升高</td></tr>
+<tr><td>LA dRVVT</td><td><span class="c-r">1.44</span></td><td>&lt;1.2</td><td>阳性</td></tr>
+<tr><td>抗磷脂酰乙醇胺IgM</td><td><span class="c-r">阳性</span></td><td>—</td><td>阳性</td></tr>
+<tr><td>ACA-IgG/IgA</td><td>正常</td><td>—</td><td>阴性</td></tr>
+<tr><td>Anti-β2GPI</td><td>正常</td><td>—</td><td>阴性</td></tr>
+<tr><td>ANA</td><td>阳性（胞浆型1:80）</td><td>—</td><td>弱阳性</td></tr>
+<tr><td>TAT复合物</td><td><span class="c-r">43.8 ng/ml ↑↑</span></td><td>&lt;4</td><td>极高</td></tr>
+<tr><td>纤溶抑制物复合物</td><td><span class="c-r">10.5 μg/ml ↑↑</span></td><td>&lt;0.8</td><td>极高</td></tr>
+<tr><td>蛋白C/S</td><td>正常</td><td>—</td><td></td></tr>
+
+<div class="note" style="margin-top:6px;"><b>实验室指标动态变化（再入院期间）：</b></div>
+<table style="margin-top:4px;">
+<tr><th>指标</th><th>入院时</th><th>5天后</th><th>出院时</th><th>趋势</th></tr>
+<tr><td class="b">D-二聚体 (μg/ml)</td><td>7.97</td><td class="c-r" style="font-size:13px">129.07 ↑↑↑</td><td>3.69</td><td class="c-r">急剧升高后回落</td></tr>
+<tr><td class="b">FDP (μg/ml)</td><td>21.72</td><td class="c-r">269.63</td><td>5.67</td><td class="c-r">急剧升高后回落</td></tr>
+<tr><td class="b">INR</td><td>1.17</td><td>1.44</td><td>1.06</td><td class="c-y">先升后降</td></tr>
+</table>
+<div class="alert" style="margin-top:4px;"><b>关键发现：</b>D-二聚体5天内从7.97飙升至129.07 μg/ml（升高16倍），反映"血栓风暴"的极端凝血活性。即使治疗后回落至3.69，血栓已不可逆进展。</div>
+</table>
+
+<div class="sh " style="background:#6b5ce7;">🧬 发病机制与免疫病理</div>
+<div style="font-size:12px;line-height:1.7;margin:4px 0;">
+  <b>一、抗磷脂抗体的致血栓机制</b><br>
+  抗磷脂综合征（APS）是一种非炎症性自身免疫病，以反复血管血栓事件和病理妊娠为核心特征。原文指出，其核心致病因子为<b>抗磷脂抗体（aPL）</b>，包括狼疮抗凝物（LA）、抗心磷脂抗体（aCL）和抗β2糖蛋白I抗体（anti-β2GPI）。这些抗体通过多种机制促进血栓形成：①与血管内皮细胞表面的β2GPI结合，诱导内皮细胞活化和组织因子表达 ②激活血小板，促进聚集 ③干扰天然抗凝系统（蛋白C途径、annexin A5屏障）④激活补体级联反应，产生C3a、C5a等促炎介质。<br><br>
+  <b>二、CAPS的"血栓风暴"机制</b><br>
+  灾难性APS（CAPS）是APS最严重的表现形式，以<b>短期内广泛多部位血栓形成</b>和多器官衰竭为特征。原文强调CAPS死亡率高达33%-50%。其病理机制为"血栓风暴"——aPL介导的广泛内皮损伤触发全身性凝血级联激活，形成<b>微血管和大血管血栓并存</b>的恶性循环。本例中D-二聚体从7.97骤升至129.07 μg/ml、凝血酶-抗凝血酶复合物（TAT）高达43.8 ng/ml，均反映了极度亢进的凝血活性。<br><br>
+  <b>三、脑静脉窦血栓的解剖与病理生理</b><br>
+  原文指出，CVST在APS患者中的患病率仅约0.7%，但却是APS的重要神经系统表现。CVST的发病机制为颅内静脉回流受阻导致颅内高压，常伴脑脊液吸收障碍。儿童CVST发生率约7/100万，感染是最常见病因，但APS是不可忽视的非感染性病因。本例中血栓迅速从横窦/乙状窦扩展至上矢状窦/直窦/颈内静脉，反映了CAPS的快速进展性。<br><br>
+  <b>四、本例的特殊免疫学特征</b><br>
+  本例LA阳性（dRVVT比值1.44）但aCL和anti-β2GPI均在正常范围，而<b>抗磷脂酰乙醇胺IgM阳性</b>。这种"血清学阴性"的aPL模式（仅LA阳性）是APS诊断的难点之一。原文引用的2023 ACR/EULAR新分类标准引入了加权评分系统，LA阳性的权重最高，强调了LA在APS诊断中的核心地位。
+</div>
+
+<div class="sh green">✅ 诊断</div>
+<div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出APS/CAPS相关诊断与分类标准，逐条对照本例。</div>
+<table><tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+<tr><td class="b">2006悉尼APS分类标准</td><td>Miyakis S 等 / 国际共识</td><td>2006</td><td>J Thromb Haemost</td><td>临床+实验室各满足1项</td><td>
+  <b>临床标准：</b>①血管血栓 — <span class="c-g">✅ 颅内CVST+下肢DVT+颈内静脉</span><br>
+  <b>实验室标准：</b>①LA阳性（dRVVT 1.44）→ <span class="c-g">✅</span>；②ACA-IgG/IgA/IgM正常 → <span class="c-r">❌</span>；③anti-β2GPI正常 → <span class="c-r">❌</span><br>
+  <b>注：</b>需12周后复查确认aPL持续阳性。本例仅LA一项实验室标准阳性，但抗磷脂酰乙醇胺IgM阳性可能为额外支持。<br>
+  <b>结论：满足APS分类（LA阳性+血管血栓）✅</b>
+</td></tr>
+<tr><td class="b">2023 ACR/EULAR APS分类标准</td><td>Barbhaiya M 等 / ACR+EULAR</td><td>2023</td><td>Ann Rheum Dis</td><td>纳入标准+加权评分</td><td>
+  ①纳入标准：aPL阳性（LA阳性）→ <span class="c-g">✅</span><br>
+  ②加权项：静脉血栓+脑血管事件+多部位血栓<br>
+  <b>结论：分类为APS ✅</b>
+</td></tr>
+<tr><td class="b">CAPS分类标准（Asherson标准）</td><td>Asherson RA 等 / 国际共识</td><td>2003</td><td>Lupus</td><td>≥3个器官+短期内+确诊APS</td><td>
+  ① ≥3个器官/系统同时或短期内受累 → <span class="c-g">✅（颅内+下肢DVT+肺栓塞→多器官）</span><br>
+  ② 确诊APS（血管血栓+aPL阳性）→ <span class="c-g">✅</span><br>
+  ③ 短期内快速进展 → <span class="c-g">✅（出院3天即复发+血栓迅速扩大）</span><br>
+  <b>结论：确诊CAPS ✅</b>
+</td></tr>
+</table>
+<div class="note">
+  <b>合并诊断：</b><br>
+  ① 颅内静脉窦血栓（窦汇+横窦+乙状窦+上矢状窦+直窦）— MRI/MRV证实<br>
+  ② 下肢深静脉血栓（双侧股静脉+髂外静脉）— 超声证实<br>
+  ③ 右颈内静脉血栓 — 超声证实<br>
+  ④ 肺栓塞（致死原因）— 转院后第4天死亡
+</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>阶段</th><th>药物/措施</th><th>分析依据</th></tr>
+<tr><td><b>第一次住院</b></td><td>甘露醇100ml q8h×13d</td><td>降颅压</td></tr>
+<tr><td><b>第一次住院</b></td><td>依诺肝素2500AxaIU q12h×13d</td><td>抗凝</td></tr>
+<tr><td><b>第一次住院</b></td><td>利伐沙班10mg qd×3d→出院口服</td><td>序贯抗凝</td></tr>
+<tr><td><b>再入院</b></td><td>脑血管造影+导管取栓+尿激酶溶栓</td><td>血栓进展→介入</td></tr>
+<tr><td><b>再入院</b></td><td>激素+低分子肝素钙+阿司匹林</td><td>联合抗凝</td></tr>
+<tr><td><b>再入院</b></td><td>血浆输注</td><td>支持治疗</td></tr>
+</table>
+<div class="alert"><b>治疗策略：</b>本例经历了<b>单纯抗凝→联合治疗</b>的升级过程。CAPS标准治疗策略为"三联治疗"（抗凝+糖皮质激素+血浆置换/IVIG），应在确诊后立即启动。本例首次住院仅用抗凝，未联合免疫抑制，导致血栓进展。文献显示ACs+CS+PE/IVIG组合治疗的45例儿童CAPS全部存活。<br><b>关键决策：</b>抗凝治疗（依诺肝素+利伐沙班）未能阻止血栓进展。CAPS需要更积极的联合治疗（抗凝+激素+血浆置换/IVIG），单纯抗凝不足。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item green"><div class="t-date">第1次住院（14天）</div><div class="t-content">神经系统症状缓解，出院口服利伐沙班</div></div><div class="t-item red"><div class="t-date">出院3天</div><div class="t-content"><span class="c-r">头痛呕吐复发→再入院</span></div></div><div class="t-item red"><div class="t-date">MRV</div><div class="t-content"><span class="c-r">血栓范围扩大：上矢状窦+直窦新发</span></div></div><div class="t-item yellow"><div class="t-date">取栓术</div><div class="t-content">术后瞳孔不等大→降颅压后恢复</div></div><div class="t-item "><div class="t-date">家属要求转院</div><div class="t-content">转至北京进一步治疗</div></div><div class="t-item red"><div class="t-date">转院后第4天</div><div class="t-content"><span class="c-r" style="font-size:14px">肺栓塞死亡</span></div></div></div>
+
+<div class="sh ">💡 疑难剖析（决策导向）</div>
+<div class="diff-box"><div class="diff-title">🔴 决策点一：儿童CVST病因不明→何时筛查抗磷脂抗体？</div>
+<b>临床情境：</b>7岁女童无诱因头痛呕吐，CT/MRV证实CVST，无感染、外伤等明确病因。<br>
+<b>决策路径：</b>①儿童CVST→首先排除感染（鼻窦炎、中耳炎、脑膜炎）→本例无感染证据 ②<b>无明确诱因的CVST→应常规筛查抗磷脂抗体谱</b>（LA+aCL+anti-β2GPI+抗磷脂酰乙醇胺）③本例首次住院未行aPL筛查→出院仅口服抗凝→3天复发<br>
+<b>关键决策：对无明确诱因的儿童CVST，应在首次住院期间即完成aPL全套筛查。延迟筛查导致诊断延迟和预后恶化。</b>
+</div>
+<div class="diff-box"><div class="diff-title">🟡 决策点二：CVST抗凝治疗后快速复发→单纯抗凝还是联合免疫治疗？</div>
+<b>临床情境：</b>首次住院予依诺肝素+利伐沙班抗凝，神经系统症状缓解出院。3天后CVST复发且范围扩大。<br>
+<b>决策路径：</b>①APS/CAPS的血栓形成机制不仅是凝血异常→还有免疫介导的血管内皮损伤 ②<b>单纯抗凝不足以控制CAPS</b>→需联合激素+血浆置换/IVIG（"三联治疗"）③文献显示ACs+CS+PE/IVIG组合的患者全部存活<br>
+<b>关键决策：CAPS确诊后应立即启动"三联治疗"（抗凝+激素+血浆置换/IVIG）。单纯抗凝或手术取栓不能控制疾病进展。</b>
+</div>
+<div class="diff-box"><div class="diff-title">🟢 决策点三：手术取栓在CAPS中的角色</div>
+<b>临床情境：</b>再入院后行脑血管造影+导管取栓+尿激酶溶栓，术后瞳孔不等大→颅高压。<br>
+<b>决策路径：</b>①文献回顾显示<b>手术取栓可能加重CAPS病情</b>（外源性刺激→进一步促栓）②本例术后血栓范围继续扩大 → 支持这一观点 ③CAPS的治疗核心是免疫抑制+抗凝，而非手术<br>
+<b>关键决策：CAPS患者应避免手术取栓作为首选。优先采用内科"三联治疗"。手术仅在药物治疗后仍危及生命时作为最后手段。</b>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① 儿童CVST需全面筛查抗磷脂抗体谱<br>
+  ② CAPS以短期内多部位血栓为特征<br>
+  ③ LA阳性但ACA/anti-β2GPI阴性不能排除APS<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ 单纯抗凝不足，需联合激素+血浆置换/IVIG<br>
+  ⑤ 取栓术可作为紧急辅助措施<br><br>
+  <b>3. 监测要点</b><br>
+  ⑥ D-二聚体动态监测血栓活动<br>
+  ⑦ 全身血管超声筛查隐匿血栓<br><br>
+  <b>4. 预后</b><br>
+  ⑧ 儿童CAPS死亡率33%-50%
+</div>
+
+<div class="sh ">📖 参考文献</div>
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/39722765/" target="_blank">PMID 39722765</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11668558/" target="_blank">PMC11668558</a>，以下为原文引用的参考文献。</div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  1. Xu L, Wu J, Wang H, Yang B. Primary CAPS in a pediatric patient with CVST. <i>Front Pediatr</i>. 2024;12:1491095. PMID: 39722765.<br>
+  2. Miyakis S, Lockshin MD, Atsumi T, et al. International consensus statement on APS classification criteria. <i>J Thromb Haemost</i>. 2006;4:295-306. PMID: 16420554.<br>
+  3. Barbhaiya M, Zuily S, Naden R, et al. 2023 ACR/EULAR APS classification criteria. <i>Ann Rheum Dis</i>. 2023;82:1258-1270. PMID: 37640450.<br>
+  4. Go EJL, O'Neil KM. The catastrophic antiphospholipid syndrome in children. <i>Curr Opin Rheumatol</i>. 2017;29:516-522. PMID: 28632503.<br>
+  5. Berman H, Rodríguez-Pintó I, Cervera R, et al. Pediatric CAPS: descriptive analysis of 45 patients. <i>Autoimmun Rev</i>. 2014;13:157-162. PMID: 24145009.<br>
+  6. Asherson RA, Cervera R, de Groot PG, et al. CAPS: international consensus on classification and treatment. <i>Lupus</i>. 2003;12:530-534. PMID: 12892393.<br>
+  7. Cervera R, Piette JC, Font J, et al. APS: clinical and immunologic manifestations in 1,000 patients. <i>Arthritis Rheum</i>. 2002;46:1019-1027. PMID: 11953980.<br>
+  8. Gómez-Puerta JA, Cervera R. Diagnosis and classification of APS. <i>J Autoimmun</i>. 2014;48-49:20-25. PMID: 24461539.
+</div>
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

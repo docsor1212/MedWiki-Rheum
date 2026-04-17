@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAS/HLH 快速筛查 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--orange:#e67e22;--orange-bg:#fef0e0;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.05em;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+.section-title.purple{background:#7c3aed;}
+.section-title.orange{background:var(--orange);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+th.yellow-hd{background:var(--yellow-bg);color:var(--yellow);}
+th.green-hd{background:var(--green-bg);color:var(--green);}
+th.purple-hd{background:#ede5fc;color:#7c3aed;}
+th.red-hd{background:var(--red-bg);color:var(--red);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.alert-box{border-radius:10px;padding:12px 14px;margin-top:10px;font-size:0.75rem;line-height:1.6;}
+.gauge{width:100%;height:28px;border-radius:14px;background:#f0f0f0;position:relative;overflow:hidden;margin:8px 0;}
+.gauge-fill{height:100%;border-radius:14px;transition:width 0.5s,background 0.5s;}
+.gauge-marks{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:0 4px;}
+.gauge-mark{font-size:0.55rem;color:#fff;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,0.3);}
+.criteria-row{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;margin-bottom:4px;font-size:0.78rem;transition:all 0.2s;}
+.criteria-row.met{background:var(--red-bg);}
+.criteria-row.not-met{background:#f8fafa;opacity:0.6;}
+.criteria-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.check-group{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
+.check-group input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);}
+.check-group label{margin:0;font-size:0.78rem;font-weight:600;color:var(--text);}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">MAS/HLH 筛查</span></div>
+<div class="wrap">
+
+<!-- 卡片1：临床判断 -->
+<div class="card" style="border-color:var(--accent);box-shadow:0 4px 16px rgba(32,163,158,0.12);">
+<h1>MAS/HLH <span>快速筛查</span></h1>
+<div class="sub">噬血细胞性淋巴组织细胞增多症 · 巨噬细胞活化综合征<br>HLH-2004 诊断标准 + 2016 MAS 分类标准 (sJIA)</div>
+
+<div id="ferritin_alert"></div>
+</div>
+
+<!-- 卡片2：实验室输入 -->
+<div class="card">
+<div class="section-title yellow">🧪 实验室检查</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<div class="input-group">
+<label>铁蛋白 Ferritin (μg/L)</label>
+<input type="number" id="ferritin" min="1" max="100000" step="1" value="" placeholder="μg/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>血小板 PLT (×10⁹/L)</label>
+<input type="number" id="plt" min="0" max="999" step="1" value="" placeholder="×10⁹/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>纤维蛋白原 (g/L)</label>
+<input type="number" id="fibrinogen" min="0" max="20" step="0.1" value="" placeholder="g/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>甘油三酯 TG (mmol/L)</label>
+<input type="number" id="tg" min="0" max="50" step="0.1" value="" placeholder="mmol/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>sCD25 / sIL-2R (U/mL)</label>
+<input type="number" id="scd25" min="0" max="99999" step="1" value="" placeholder="U/mL" oninput="calc()">
+</div>
+<div class="input-group">
+<label>NK细胞活性 (%)</label>
+<input type="number" id="nk" min="0" max="100" step="0.1" value="" placeholder="%" oninput="calc()">
+</div>
+<div class="input-group">
+<label>血红蛋白 Hb (g/dL)</label>
+<input type="number" id="hb" min="0" max="25" step="0.1" value="" placeholder="g/dL" oninput="calc()">
+</div>
+<div class="input-group">
+<label>白细胞 WBC (×10⁹/L)</label>
+<input type="number" id="wbc" min="0" max="200" step="0.1" value="" placeholder="×10⁹/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>AST (U/L)</label>
+<input type="number" id="ast" min="0" max="9999" step="1" value="" placeholder="U/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>ALT (U/L)</label>
+<input type="number" id="alt" min="0" max="9999" step="1" value="" placeholder="U/L" oninput="calc()">
+</div>
+</div>
+</div>
+
+<!-- 卡片3：临床体征 -->
+<div class="card">
+<div class="section-title orange">🏥 临床体征</div>
+<div style="font-size:0.68rem;color:var(--text2);margin-bottom:8px;">请根据临床判断勾选</div>
+<div class="check-group"><input type="checkbox" id="fever" onchange="calc()"><label for="fever">持续发热 ≥ 38.5°C</label></div>
+<div class="check-group"><input type="checkbox" id="splenomegaly" onchange="calc()"><label for="splenomegaly">脾肿大</label></div>
+<div class="check-group"><input type="checkbox" id="hemophag" onchange="calc()"><label for="hemophag">骨髓/脾/淋巴结噬血现象</label></div>
+<div class="check-group"><input type="checkbox" id="sjia_active" onchange="calc()"><label for="sjia_active">当前为sJIA活动期（启用2016 MAS标准）</label></div>
+</div>
+
+<!-- 卡片4：HLH-2004结果 -->
+<div class="card" id="hlh_result_card">
+<div class="section-title red">🔬 HLH-2004 诊断标准（≥5/8项）</div>
+
+<!-- Gauge -->
+<div style="text-align:center;margin:8px 0;">
+<div style="font-size:0.68rem;color:var(--text2);margin-bottom:2px;">符合标准项数</div>
+<div class="gauge">
+<div class="gauge-fill" id="gauge_fill" style="width:0%;background:#cbd5e1;"></div>
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;">
+<span style="font-size:0.85rem;font-weight:900;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.3);" id="gauge_text">0 / 8</span>
+</div>
+</div>
+</div>
+
+<div id="criteria_list"></div>
+
+<div id="hlh_verdict" style="margin-top:12px;"></div>
+</div>
+
+<!-- 卡片5：2016 MAS标准 -->
+<div class="card" id="mas_card" style="display:none;">
+<div class="section-title purple">📋 2016 MAS 分类标准 (sJIA合并MAS)</div>
+<div style="font-size:0.68rem;color:var(--text2);margin-bottom:8px;">Ravelli A et al. Ann Rheum Dis 2016 — 适用于sJIA活动期患者</div>
+<div id="mas_criteria"></div>
+<div id="mas_verdict" style="margin-top:12px;"></div>
+</div>
+
+<!-- 卡片6：鉴别要点 -->
+<div class="card">
+<div class="section-title yellow">⚡ sJIA合并MAS vs 疾病活动期 鉴别要点</div>
+<table>
+<tr><th class="yellow-hd">指标</th><th class="yellow-hd">sJIA活动期</th><th class="yellow-hd">合并MAS</th></tr>
+<tr><td style="font-weight:700;">铁蛋白</td><td>正常或轻度升高</td><td style="color:var(--red);font-weight:700;">显著升高（常>3000）</td></tr>
+<tr><td style="font-weight:700;">ESR/CRP</td><td>升高</td><td>ESR下降，CRP仍高</td></tr>
+<tr><td style="font-weight:700;">纤维蛋白原</td><td>正常或升高（急性相）</td><td style="color:var(--red);font-weight:700;">↓ 降低</td></tr>
+<tr><td style="font-weight:700;">血小板</td><td>正常或轻度降低</td><td style="color:var(--red);font-weight:700;">↓↓ 进行性下降</td></tr>
+<tr><td style="font-weight:700;">WBC</td><td>升高</td><td>↓↓ 进行性下降</td></tr>
+<tr><td style="font-weight:700;">甘油三酯</td><td>正常</td><td>升高</td></tr>
+<tr><td style="font-weight:700;">sCD25</td><td>正常或轻度升高</td><td style="color:var(--red);font-weight:700;">显著升高</td></tr>
+<tr><td style="font-weight:700;">NK细胞活性</td><td>正常</td><td style="color:var(--red);font-weight:700;">降低或缺失</td></tr>
+<tr><td style="font-weight:700;">骨髓穿刺</td><td>—</td><td>噬血现象（巨噬细胞）</td></tr>
+<tr><td style="font-weight:700;">凝血功能</td><td>正常</td><td>DIC表现（PT延长、FDP↑）</td></tr>
+</table>
+<div class="alert-box" style="background:var(--red-bg);border:1px solid #f5a0a0;">
+<div style="font-weight:700;color:var(--red);margin-bottom:4px;">🚨 高危警示</div>
+<div><b>铁蛋白 > 10,000 μg/L</b>：强烈提示MAS/HLH，需紧急处理！<br>
+<b>铁蛋白 > 3,000 μg/L</b>：高度可疑，需密切监测并完善检查。<br>
+sJIA患者出现<b>无法解释的出血倾向、中枢神经系统症状、肝功能急剧恶化</b>时，即使未完全满足标准，也应高度警惕MAS。</div>
+</div>
+</div>
+
+<!-- 参考文献 -->
+<div class="card">
+<div class="section-title green">📚 参考文献</div>
+<table>
+<tr><th class="green-hd">标准</th><th class="green-hd">来源</th></tr>
+<tr><td>HLH-2004</td><td>Henter JI et al. <i>Pediatr Blood Cancer</i> 2007;48:124-31</td></tr>
+<tr><td>2016 MAS</td><td>Ravelli A et al. <i>Ann Rheum Dis</i> 2016;75:481-9</td></tr>
+<tr><td>MAS诊治进展</td><td>Crayne CB et al. <i>Nat Rev Rheumatol</i> 2019;15:213-27</td></tr>
+<tr><td>sJIA-MAS鉴别</td><td>Minoia F et al. <i>Ann Rheum Dis</i> 2018;77:178-84</td></tr>
+</table>
+</div>
+
+<div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="BSA.html" style="color:#20a39e;font-weight:600">BSA计算器</a> · <a href="KD_CA_Zscore.html" style="color:#20a39e;font-weight:600">冠脉Z值</a> · <a href="JADAS27.html" style="color:#20a39e;font-weight:600">JADAS-27</a></div>
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。HLH/MAS为急重症，请结合临床实际并遵循相关指南及时处理。</div>
+</div>
+
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-path" id="pathLine">输入实验室指标后自动评估...</div>
+<div class="footer-score"><div class="lbl">符合项</div><div class="num" id="footerScore">0/8</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+
+<script>
+function val(id) { const v = +document.getElementById(id).value; return isNaN(v) ? null : v; }
+function checked(id) { return document.getElementById(id).checked; }
+
+function calc() {
+  const ferritin = val('ferritin');
+  const plt = val('plt');
+  const fib = val('fibrinogen');
+  const tg = val('tg');
+  const scd25 = val('scd25');
+  const nk = val('nk');
+  const hb = val('hb');
+  const wbc = val('wbc');
+  const ast = val('ast');
+  const alt = val('alt');
+  const fever = checked('fever');
+  const spleen = checked('splenomegaly');
+  const hemophag = checked('hemophag');
+  const sjia = checked('sjia_active');
+
+  // Ferritin alert
+  let alertHtml = '';
+  if (ferritin !== null && ferritin > 0) {
+    if (ferritin >= 10000) {
+      alertHtml = `<div class="alert-box" style="background:var(--red-bg);border:2px solid var(--red);animation:pulse 1s infinite;"><div style="font-weight:700;color:var(--red);font-size:0.9rem;">🚨 铁蛋白 ${ferritin.toLocaleString()} μg/L — 极度升高！强烈提示MAS/HLH</div><div>需紧急完善HLH相关检查并考虑早期干预</div></div>`;
+    } else if (ferritin >= 3000) {
+      alertHtml = `<div class="alert-box" style="background:var(--yellow-bg);border:1.5px solid var(--yellow);"><div style="font-weight:700;color:var(--yellow);">⚠️ 铁蛋白 ${ferritin.toLocaleString()} μg/L — 显著升高，高度可疑MAS/HLH</div><div>建议密切监测并完善相关检查</div></div>`;
+    }
+  }
+  document.getElementById('ferritin_alert').innerHTML = alertHtml;
+
+  // HLH-2004 criteria
+  // 1. Fever
+  const c1 = fever;
+  // 2. Splenomegaly
+  const c2 = spleen;
+  // 3. Cytopenias >=2 lineages
+  let cytoCount = 0;
+  if (hb !== null && hb < 9) cytoCount++;
+  if (plt !== null && plt < 100) cytoCount++;
+  // ANC approximation from WBC (simplified: ANC ~ 50-60% of WBC in children)
+  const anc = wbc !== null ? wbc * 0.55 : null;
+  if (anc !== null && anc < 1.0) cytoCount++;
+  const c3 = cytoCount >= 2;
+  // 4. HyperTG AND/OR hypoFib
+  const c4 = (tg !== null && tg >= 3.0) || (fib !== null && fib <= 1.5);
+  // 5. Hemophagocytosis
+  const c5 = hemophag;
+  // 6. Low/absent NK
+  const c6 = nk !== null && nk < 10;
+  // 7. Ferritin >= 500
+  const c7 = ferritin !== null && ferritin >= 500;
+  // 8. Elevated sCD25
+  // Normal sCD25 varies by age/lab; commonly >2400 U/mL for adults, >3000 for children
+  const c8 = scd25 !== null && scd25 >= 2400;
+
+  const criteria = [
+    { id: 1, name: '发热 ≥38.5°C', met: c1, val: fever ? '是' : '否' },
+    { id: 2, name: '脾肿大', met: c2, val: spleen ? '是' : '否' },
+    { id: 3, name: `血细胞减少 ≥2系 (满足${cytoCount}/2)`, met: c3, val: (hb !== null ? `Hb=${hb}` : '') + (plt !== null ? ` PLT=${plt}` : '') + (anc !== null ? ` ANC≈${anc.toFixed(1)}` : '') },
+    { id: 4, name: '高甘油三酯血症(≥3mmol/L)和/或低纤维蛋白原血症(≤1.5g/L)', met: c4, val: (tg !== null ? `TG=${tg}` : '') + (fib !== null ? ` Fib=${fib}` : '') },
+    { id: 5, name: '骨髓/脾/淋巴结噬血现象', met: c5, val: hemophag ? '阳性' : '未检出/未查' },
+    { id: 6, name: 'NK细胞活性降低或缺失 (<10%)', met: c6, val: nk !== null ? `${nk}%` : '未查' },
+    { id: 7, name: `铁蛋白 ≥500 μg/L`, met: c7, val: ferritin !== null ? `${ferritin} μg/L` : '未查' },
+    { id: 8, name: 'sCD25 (sIL-2R) 升高 (≥2400 U/mL)', met: c8, val: scd25 !== null ? `${scd25} U/mL` : '未查' }
+  ];
+
+  const metCount = criteria.filter(c => c.met).length;
+  const anyInput = [ferritin, plt, fib, tg, scd25, nk, hb, wbc, ast, alt].some(v => v !== null && v > 0) || fever || spleen || hemophag;
+
+  // Render criteria
+  let cHtml = '';
+  criteria.forEach(c => {
+    cHtml += `<div class="criteria-row ${c.met ? 'met' : 'not-met'}">
+      <div class="criteria-dot" style="background:${c.met ? 'var(--red)' : '#d1d5db'};"></div>
+      <div style="flex:1;"><span style="font-weight:700;color:${c.met ? 'var(--red)' : 'var(--text2)'};">${c.id}. ${c.name}</span><br><span style="font-size:0.65rem;color:var(--text2);">${c.val}</span></div>
+      <div style="font-size:0.75rem;font-weight:800;color:${c.met ? 'var(--red)' : '#aaa'};">${c.met ? '✓ 符合' : '✗'}</div>
+    </div>`;
+  });
+  document.getElementById('criteria_list').innerHTML = cHtml;
+
+  // Gauge
+  const pct = Math.min(100, (metCount / 8) * 100);
+  const gaugeColor = metCount >= 5 ? '#d45050' : (metCount >= 3 ? '#e67e22' : (metCount >= 1 ? '#d4892a' : '#cbd5e1'));
+  document.getElementById('gauge_fill').style.width = pct + '%';
+  document.getElementById('gauge_fill').style.background = gaugeColor;
+  document.getElementById('gauge_text').textContent = `${metCount} / 8`;
+
+  // Verdict
+  let verdict = '';
+  if (metCount >= 5) {
+    verdict = `<div class="alert-box" style="background:var(--red-bg);border:2px solid var(--red);"><div style="font-weight:800;color:var(--red);font-size:0.95rem;">🔴 符合HLH-2004诊断标准 (${metCount}/8项)</div><div>需立即启动HLH治疗方案（地塞米松+VP-16+环孢素等），并完善病因评估。</div></div>`;
+  } else if (metCount >= 3) {
+    verdict = `<div class="alert-box" style="background:var(--orange-bg);border:1.5px solid var(--orange);"><div style="font-weight:700;color:var(--orange);">🟠 部分符合HLH标准 (${metCount}/8项)</div><div>高度疑似，建议完善检查（骨髓穿刺、sCD25、NK活性），密切监测。</div></div>`;
+  } else if (metCount >= 1) {
+    verdict = `<div class="alert-box" style="background:var(--yellow-bg);border:1px solid #f5dfa0;"><div style="font-weight:700;color:var(--yellow);">🟡 少量指标异常 (${metCount}/8项)</div><div>继续监测，关注临床变化。</div></div>`;
+  } else if (anyInput) {
+    verdict = `<div class="alert-box" style="background:var(--green-bg);border:1px solid #b8e6d0;"><div style="font-weight:700;color:var(--green);">🟢 目前未达到HLH标准</div></div>`;
+  }
+  document.getElementById('hlh_verdict').innerHTML = verdict;
+
+  // Footer
+  document.getElementById('footerScore').textContent = `${metCount}/8`;
+  document.getElementById('footerScore').style.color = gaugeColor;
+  document.getElementById('footerStatus').textContent = metCount >= 5 ? '符合HLH' : (metCount >= 3 ? '疑似' : '待评估');
+  document.getElementById('footerStatus').style.background = gaugeColor;
+  document.getElementById('pathLine').textContent = `HLH-2004: ${metCount}/8项${ferritin !== null ? ' | Ferritin ' + ferritin.toLocaleString() : ''}`;
+
+  // 2016 MAS criteria (only show if sJIA checked)
+  const masCard = document.getElementById('mas_card');
+  if (sjia) {
+    masCard.style.display = 'block';
+    // 2016 MAS criteria for sJIA (simplified)
+    // Clinical: fever, splenomegaly/hepatomegaly, CNS dysfunction, hemorrhagic manifestations
+    // Lab: PLT≤181, AST>48, triglycerides>156mg/dL(1.76mmol/L), fibrinogen≤2.5g/L, ferritin>684μg/L
+    // Need: ferritin threshold lowered for sJIA context
+    let masMet = 0;
+    let masTotal = 0;
+    const masItems = [
+      { name: '铁蛋白 > 684 μg/L (sJIA阈值)', met: ferritin !== null && ferritin > 684 },
+      { name: '血小板 ≤ 181 ×10⁹/L', met: plt !== null && plt <= 181 },
+      { name: 'AST > 48 U/L', met: ast !== null && ast > 48 },
+      { name: '甘油三酯 > 1.76 mmol/L (156 mg/dL)', met: tg !== null && tg > 1.76 },
+      { name: '纤维蛋白原 ≤ 2.5 g/L', met: fib !== null && fib <= 2.5 }
+    ];
+    masItems.forEach(m => { if (m.met) masMet++; });
+    const masInputCount = masItems.filter(m => {
+      const v = m.name.includes('铁蛋白') ? ferritin : (m.name.includes('血小板') ? plt : (m.name.includes('AST') ? ast : (m.name.includes('甘油') ? tg : fib)));
+      return v !== null && v > 0;
+    }).length;
+    masTotal = masItems.length;
+
+    let masHtml = '';
+    masItems.forEach(m => {
+      masHtml += `<div class="criteria-row ${m.met ? 'met' : 'not-met'}">
+        <div class="criteria-dot" style="background:${m.met ? '#7c3aed' : '#d1d5db'};"></div>
+        <div style="flex:1;font-weight:${m.met ? '700' : '500'};color:${m.met ? '#7c3aed' : 'var(--text2)'};">${m.name}</div>
+        <div style="font-size:0.75rem;font-weight:800;color:${m.met ? '#7c3aed' : '#aaa'};">${m.met ? '✓' : '✗'}</div>
+      </div>`;
+    });
+    document.getElementById('mas_criteria').innerHTML = masHtml;
+
+    // MAS verdict: need ≥2 lab criteria (simplified from full classification)
+    let masVerdict = '';
+    if (masMet >= 2) {
+      masVerdict = `<div class="alert-box" style="background:#ede5fc;border:2px solid #7c3aed;"><div style="font-weight:800;color:#7c3aed;">🟣 符合2016 MAS分类标准 (${masMet}/${masTotal}项实验室指标)</div><div>sJIA活动期患者，需考虑MAS可能并启动治疗。</div></div>`;
+    } else {
+      masVerdict = `<div class="alert-box" style="background:#f3f4f6;border:1px solid #e0e0e0;"><div style="font-weight:600;color:var(--text2);">目前符合 ${masMet}/${masTotal} 项MAS实验室标准（需≥2项）</div></div>`;
+    }
+    document.getElementById('mas_verdict').innerHTML = masVerdict;
+  } else {
+    masCard.style.display = 'none';
+  }
+}
+</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body></html>

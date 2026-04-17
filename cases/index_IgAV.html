@@ -17,9 +17,11 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .sub { font-size:0.85rem; opacity:0.85; margin-top:2px; }
 .body { padding:12px 20px 16px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:10px 0 6px; }
+.sh.red { background:var(--red); }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:4px 8px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:4px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
 .b { font-weight:700; }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
 .t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
@@ -35,28 +37,137 @@ a { text-decoration:none; color:inherit; }
 .stats { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
 .stat { background:#d4f0ed; color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; }
 .stat b { font-size:14px; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+@media(max-width:768px){ .card{padding:8px 10px;} }
 </style>
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../topics/IgAV.html">📋 IgAV专题</a><a href="index.html">📖 全部病例</a><span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">IgAV专题</span></div>
-<div class="wrap">
-  <div class="header"><h1>🔬 IgAV临床病例专题</h1><div class="sub">IgA血管炎（过敏性紫癜）— 5个真实世界病例</div></div>
-  <div class="body">
-    <div class="stats"><div class="stat">病例 <b>5</b></div><div class="stat">文献 <b>5</b> 篇</div></div>
-    <div class="sh">📋 病例列表</div>
-    <a href="case_IgAV_nephritis.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">① IgAV肾炎 — 肾脏受累</div><div class="c-sub">PMID 36942172 · Cureus 2023</div><div class="c-tags"><span class="tag t-r">肾炎</span><span class="tag t-a">IgA沉积</span></div></div></a>
-    <a href="case_IgAV_GI.html"><div class="card" style="border-left:4px solid var(--yellow);"><div class="c-title">② IgAV消化道并发症</div><div class="c-sub">PMID 40184107 · Medicine 2025</div><div class="c-tags"><span class="tag t-y">消化道出血</span><span class="tag t-y">肠套叠风险</span></div></div></a>
-    <a href="case_IgAV_CNS.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">③ IgAV神经系统受累</div><div class="c-sub">PMID 34867743 · Front Neurol 2021</div><div class="c-tags"><span class="tag t-r">CNS受累</span><span class="tag t-y">癫痫</span></div></div></a>
-    <a href="case_IgAV_pulmonary.html"><div class="card" style="border-left:4px solid var(--red);"><div class="c-title">④ IgAV合并肺出血</div><div class="c-sub">PMID 10452284 · Pediatr Nephrol 1999</div><div class="c-tags"><span class="tag t-r">肺出血</span><span class="tag t-r">致死性</span></div></div></a>
-    <a href="case_IgAV_special.html"><div class="card" style="border-left:4px solid var(--yellow);"><div class="c-title">⑤ 非典型IgAV — 皮疹+肾功能异常</div><div class="c-sub">PMID 38984230 · HCA Healthc J Med 2024</div><div class="c-tags"><span class="tag t-y">非典型</span><span class="tag t-y">成人IgAV</span></div></div></a>
-    <div class="sh">📖 参考文献</div>
-    <div style="font-size:10.5px;color:var(--text2);line-height:1.6;">
-      ① PMID: 36942172 ② PMID: 40184107 ③ PMID: 34867743 ④ PMID: 10452284 ⑤ PMID: 38984230
-    </div>
-  </div>
-  <div class="footer">MedWiki-Rheum · IgAV临床病例专题 · 不构成诊疗建议</div>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 全部病例</a>
+  <span style="margin-left:auto;font-weight:600;opacity:.7;font-size:12px;">IgAV专题</span>
 </div>
+
+<div class="wrap">
+  <div class="header">
+    <h1>🔬 IgAV临床病例专题</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为<strong>教学模拟病例，非真实临床数据</strong>。仅供学习参考，不可作为临床决策依据。</div>
+    <div class="sub">IgA血管炎（过敏性紫癜）— 5个真实世界病例，覆盖肾炎 / 消化道 / 神经系统 / 肺出血 / 非典型表现</div>
+  </div>
+
+  <div class="body">
+
+    <div class="stats">
+      <div class="stat">病例 <b>5</b></div>
+      <div class="stat">文献来源 <b>5</b> 篇</div>
+      <div class="stat">覆盖主题 <b>5</b> 个</div>
+      <div class="stat">时间跨度 <b>1999-2025</b></div>
+    </div>
+
+    <div class="sh">📖 推荐阅读顺序</div>
+    <div style="font-size:12px; line-height:1.7; margin:4px 0; padding:6px 10px; background:#d4f0ed; border-radius:6px;">
+      <b>常见 → 罕见 → 致命</b><br>
+      ① IgAV肾炎（最常见并发症）→ ② 消化道并发症（急腹症识别）→ ③ 神经系统受累（少见但重要）→ ④ 肺出血（致命性并发症）→ ⑤ 非典型IgAV（诊断陷阱）
+    </div>
+
+    <div class="sh red">📋 病例列表</div>
+
+    <a href="case_IgAV_nephritis.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">① IgAV肾炎 — 肾脏受累</div>
+        <div class="c-sub">
+          IgAV最常见的严重并发症。IgA沉积为主的肾小球肾炎，决定长期预后。<br>
+          <b>来源：</b>PMID 36942172 · Cureus 2023
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">肾炎</span>
+          <span class="tag t-a">IgA沉积</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_IgAV_GI.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">② IgAV消化道并发症</div>
+        <div class="c-sub">
+          消化道出血、肠套叠风险。腹痛先于皮疹时易误诊为外科急腹症。<br>
+          <b>来源：</b>PMID 40184107 · Medicine 2025
+        </div>
+        <div class="c-tags">
+          <span class="tag t-y">消化道出血</span>
+          <span class="tag t-y">肠套叠风险</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_IgAV_CNS.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">③ IgAV神经系统受累</div>
+        <div class="c-sub">
+          少见但重要的并发症。癫痫、头痛、意识障碍等表现。<br>
+          <b>来源：</b>PMID 34867743 · Front Neurol 2021
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">CNS受累</span>
+          <span class="tag t-y">癫痫</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_IgAV_pulmonary.html">
+      <div class="card" style="border-left:4px solid var(--red);">
+        <div class="c-title">④ IgAV合并肺出血</div>
+        <div class="c-sub">
+          罕见但可致死的并发症。弥漫性肺泡出血需紧急免疫抑制治疗。<br>
+          <b>来源：</b>PMID 10452284 · Pediatr Nephrol 1999
+        </div>
+        <div class="c-tags">
+          <span class="tag t-r">肺出血</span>
+          <span class="tag t-r">致死性</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="case_IgAV_special.html">
+      <div class="card" style="border-left:4px solid var(--yellow);">
+        <div class="c-title">⑤ 非典型IgAV — 皮疹+肾功能异常</div>
+        <div class="c-sub">
+          非典型皮疹表现，成人IgAV的诊断挑战。<br>
+          <b>来源：</b>PMID 38984230 · HCA Healthc J Med 2024
+        </div>
+        <div class="c-tags">
+          <span class="tag t-y">非典型</span>
+          <span class="tag t-y">成人IgAV</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="sh">🎯 专题核心主题</div>
+    <table>
+      <tr><th>主题</th><th>覆盖病例</th><th>核心问题</th></tr>
+      <tr><td class="b" style="color:var(--red)">IgAV肾炎</td><td>①</td><td>最常见严重并发症，决定长期预后</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">消化道并发症</td><td>②</td><td>肠套叠与消化道出血的识别</td></tr>
+      <tr><td class="b" style="color:var(--red)">神经系统受累</td><td>③</td><td>少见但重要的CNS表现</td></tr>
+      <tr><td class="b" style="color:var(--red)">肺出血</td><td>④</td><td>致命性弥漫性肺泡出血</td></tr>
+      <tr><td class="b" style="color:var(--yellow)">非典型表现</td><td>⑤</td><td>成人IgAV的诊断陷阱</td></tr>
+    </table>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:10.5px; color:var(--text2); line-height:1.6; margin:4px 0;">
+      ① PMID: 36942172<br>
+      ② PMID: 40184107<br>
+      ③ PMID: 34867743<br>
+      ④ PMID: 10452284<br>
+      ⑤ PMID: 38984230
+    </div>
+
+  </div>
+
+  <div class="footer">
+    MedWiki-Rheum · IgAV临床病例专题 · 全部基于真实文献 · 不构成诊疗建议
+  </div>
+</div>
+
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 </body>
 </html>

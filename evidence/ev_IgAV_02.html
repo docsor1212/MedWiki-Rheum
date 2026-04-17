@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 低补体性非典型IgAV — PMID 35757129</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#e0f5f4; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:8px 12px; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); font-size:12px; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_JIA_01.html">📖 循证病例</a>
+  <span class="nav-title">MedWiki-Rheum 循证病例库</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 低补体性非典型IgA血管炎——膜增生性GN</h1>
+      <div class="sub">循证病例 · PMID 35757129</div>
+    </div>
+    <div class="meta">循证病例</div>
+  </div>
+  <div class="body">
+    <div class="alert"><b>流行病学提示：</b>IgAV肾受累（IgAVN）发生率为<b>20-55%</b>，通常在紫癜出现后3个月内，85%在首月内出现。低补体血症（C3/C4降低）仅约<b>15%</b>IgAV患者出现，伴MPGN模式者更为罕见。膜增生性肾小球肾炎模式的IgAVN仅有个案报告。</div>
+
+    <div class="source-card">
+      <div class="sc-title">📄 文献来源</div>
+      <span class="b">PMID:</span> 35757129 &nbsp; <span class="b">PMCID:</span> PMC9218267<br>
+      <span class="b">DOI:</span> 10.3389/fped.2022.902025<br>
+      <span class="b">期刊:</span> Frontiers in Pediatrics | <span class="b">年份:</span> 2022<br>
+      <span class="b">作者:</span> 【原文未明确列出全部作者】<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9218267/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>5岁，男，美洲原住民</td></tr>
+      <tr><td class="b">就诊日期</td><td>【原文未明确】</td></tr>
+      <tr><td class="b">主诉</td><td><span class="c-r">双下肢紫癜、腹痛</span></td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">低补体血症</span> <span class="tag t-y">膜增生性GN</span> <span class="tag t-a">非典型IgAV</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">双下肢紫癜、腹痛</p>
+
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      因下肢和上肢瘙痒性可触及紫癜性皮疹，伴腹痛和手部肿胀至当地急诊就诊。初诊血压90/60mmHg（正常范围），下肢为主的紫癜性皮疹，腹部轻压痛，初步诊断IgAV出院随访。<br><br>
+      <b>2周后</b>儿科随访：症状除腹痛外均已消退。此时血压升高至<b>130/80mmHg</b>，伴轻度肢体水肿。第18天实验室检查示BUN 62 mg/dL，肌酐0.57 mg/dL，白蛋白1.8 g/dL，UPC&gt;19.8 mg/mg，尿镜检50-100 RBC/HPF。C3轻度降低（66 mg/dL），C4正常。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无自身免疫/肾病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <table>
+      <tr><th>检查</th><th>结果</th></tr>
+      <tr><td class="b">血压</td><td class="c-r">130/80 mmHg（升高）</td></tr>
+      <tr><td class="b">水肿</td><td class="c-y">轻度肢体水肿</td></tr>
+      <tr><td class="b">皮疹</td><td>已消退</td></tr>
+    </table>
+
+    <div class="sh">🔬 辅助检查（多时间点对比）</div>
+    <table>
+      <tr><th>项目</th><th>Day 1（初诊）</th><th>Day 18</th><th>Day 42</th><th>Day 70</th><th>Day 180</th><th>参考值</th></tr>
+      <tr><td>BUN (mg/dL)</td><td>10</td><td class="c-r">62</td><td class="c-r">62</td><td>—</td><td>—</td><td>7-20</td></tr>
+      <tr><td>Cr (mg/dL)</td><td>0.29</td><td class="c-r">0.57</td><td>0.54</td><td>0.21</td><td>0.24</td><td>0.2-0.8</td></tr>
+      <tr><td>白蛋白 (g/dL)</td><td>—</td><td class="c-r">1.8</td><td class="c-r">1.9</td><td>—</td><td class="c-y">3.4</td><td>3.5-5.2</td></tr>
+      <tr><td>UPC (mg/mg)</td><td>—</td><td class="c-r">&gt;19.8</td><td class="c-r">&gt;19.8</td><td class="c-y">8.1</td><td class="c-y">1.3</td><td>&lt;0.2</td></tr>
+      <tr><td>C3 (mg/dL)</td><td>—</td><td class="c-y">66</td><td>84</td><td>117</td><td>—</td><td>82-167</td></tr>
+      <tr><td>C4 (mg/dL)</td><td>—</td><td>19</td><td>29.5</td><td>20</td><td>—</td><td>10-34</td></tr>
+    </table>
+    <div class="note"><b>肾活检（Day 22）：</b>光镜示膜增生性损伤（60个肾小球中3个新月体）；电镜见GBM双轨征+电子致密物沉积；免疫荧光C3(2+)和IgA(2+)共沉积 → <b>膜增生性GN伴补体异常</b>。<b>补体详细检测：</b>Factor B/H/I均降低（替代途径激活），C3NeF阴性，sC5b-9正常（终端途径静止）。<br><b>趋势解读：</b>C3从66→84→117恢复正常；UPC从>19.8→8.1→1.3持续下降；白蛋白从1.8→3.4回升——GC+MMF+ACEI方案3个月显著有效。</div>
+
+    <div class="sh" style="background:#7b5ea7">🧬 发病机制与免疫病理</div>
+<div style="padding:8px 12px;margin:4px 0;font-size:12px;line-height:1.7;">
+<p><b>IgA血管炎（IgAV）的免疫病理基础：</b>IgAV（又称Henoch-Schönlein紫癜/HSP）是一种以IgA免疫复合物沉积于小血管壁为特征的系统性小血管炎。原文详细阐述了IgA免疫复合物的核心作用：抗原暴露后形成含IgA的免疫复合物，沉积于皮肤、关节、胃肠道和肾脏等器官的小血管（包括肾小球毛细血管和系膜），引发炎症细胞浸润。原文明确指出"IgA immune complexes are hypothesized to play a central role in the pathophysiology of IgAV"。</p>
+<p><b>IgA异常糖基化与补体激活：</b>原文提供了一个关键的发病机制——IgA铰链区异常糖基化（galactose-deficient IgA1, Gd-IgA1）。这种异常糖基化的IgA在IgAVN和IgA肾病中均有报道（引用Allen AC et al. <i>Nephrol Dial Transplant</i> 1998; Suzuki H et al. <i>Kidney Int</i> 2018）。含Gd-IgA1的免疫复合物通过<b>凝集素途径</b>激活补体系统——肾小球内C4d、甘露糖结合凝集素（MBL）、L-纤维胶凝蛋白和MBL相关丝氨酸蛋白酶的沉积与更重的蛋白尿和病理损害相关。更新的研究发现Collectin-11可结合IgA-抗体复合物并激活补体凝集素途径（引用Wei M et al. <i>Clin J Am Soc Nephrol</i> 2021）。</p>
+<p><b>本病例的非典型免疫学特征：</b></p>
+<ul style="margin:2px 0 2px 16px;">
+<li><b>血清C3降低（66 mg/dL），C4正常：</b>原文指出，尽管补体在IgAV发病的组织水平发挥明确作用，血清补体水平通常正常。Lin Q等（<i>Pediatr Nephrol</i> 2012）报告低补体血症仅见于约15%的IgAV患者。本例C3降低+C4正常提示补体替代途径激活（而非经典途径，后者C4也会降低）。</li>
+<li><b>补体详细检测：</b>Factor B、Factor H、Factor I均降低——支持替代途径激活。但Bb、Ba和Properdin正常——与替代途径激活不完全一致。C5轻度降低但sC5b-9正常——终端途径未激活（quiescence）。C3NeF阴性——排除获得性C3肾炎因子。原文指出"No acquired factors of complement dysregulation were noted"。</li>
+<li><b>肾活检膜增生性模式：</b>不同于典型IgAVN的系膜增生模式，本例表现为MPGN样损伤（系膜+内皮增生+GBM双轨征）。免疫荧光示C3(2+)和IgA(2+)共沉积于系膜区和毛细血管袢——IgG/IgM/C1q均阴性→C1q阴性排除经典途径激活。</li>
+<li><b>肾病范围蛋白尿：</b>UPC>19.8 mg/mg+白蛋白1.8 g/dL→肾病综合征——在IgAVN中属重度肾受累。</li>
+</ul>
+<p><b>补体作为疾病修饰因子：</b>原文结论指出"complement modifies the pathogenesis of IgAV"——补体不仅是旁观者，而是疾病修饰因子。本例中补体替代途径的激活可能导致比典型IgAVN更严重的肾损伤模式（MPGN vs 系膜增生），并可能成为治疗靶点——原文提出"complement-targeted therapy"可能是难治性IgAV的治疗选择。</p>
+</div>
+
+<div class="sh green">✅ 诊断标准对照</div>
+    <div class="source-card" style="background:#e2f3dd;border-left-color:var(--green);">
+<div class="sc-title" style="color:var(--green)">标准一：2006 EULAR/PRES/PRINTO IgAV分类标准（Ozen S et al. Ann Rheum Dis 2006;65:874-875）【补充知识】</div>
+<b>必要条件：</b>可触及紫癜 + 至少1项以下：
+<table style="margin-top:4px;">
+<tr><th>标准条目</th><th>本例</th><th>符合</th></tr>
+<tr><td>必要条件：可触及紫癜</td><td>四肢瘙痒性可触及紫癜性皮疹</td><td class="c-g">✅</td></tr>
+<tr><td>① 弥漫性腹痛</td><td>腹痛+手部肿胀</td><td class="c-g">✅</td></tr>
+<tr><td>② 组织学证实IgA沉积</td><td>肾活检免疫荧光IgA(2+)沉积</td><td class="c-g">✅</td></tr>
+<tr><td>③ 关节炎/关节痛</td><td>手部肿胀（原文描述hand swelling）</td><td class="c-g">✅</td></tr>
+<tr><td>④ 肾受累（蛋白尿/血尿）</td><td>UPC>19.8+尿RBC 50-100/HPF</td><td class="c-g">✅</td></tr>
+</table>
+<b>判定：</b>必要条件 + 4/4项附加标准 → <span class="c-g">✅ 完全符合IgAV分类标准</span>
+</div>
+
+<div class="source-card" style="background:#fce5e1;border-left-color:var(--red);">
+<div class="sc-title" style="color:var(--red)">非典型特征——低补体与MPGN模式</div>
+<b>低补体血症（仅~15% IgAV患者出现）：</b>
+<table style="margin-top:4px;">
+<tr><th>补体指标</th><th>结果</th><th>正常值</th><th>解读</th></tr>
+<tr><td>C3</td><td class="c-y">66 mg/dL</td><td>82-167</td><td class="c-y">↓ 替代途径激活</td></tr>
+<tr><td>C4</td><td>19 mg/dL</td><td>10-34</td><td>正常（排除经典途径）</td></tr>
+<tr><td>Factor B</td><td>降低</td><td>—</td><td>替代途径消耗</td></tr>
+<tr><td>Factor H/I</td><td>降低</td><td>—</td><td>替代途径调节因子消耗</td></tr>
+<tr><td>C3NeF</td><td>阴性</td><td>—</td><td>排除获得性C3肾炎因子</td></tr>
+<tr><td>sC5b-9</td><td>正常</td><td>—</td><td>终端途径静止</td></tr>
+</table>
+<b>肾活检（膜增生性GN模式）：</b>系膜+内皮增生+GBM双轨征+系膜区和毛细血管袢C3/IgA共沉积→不同于典型IgAVN的系膜增生模式
+</div>
+
+<div class="source-card" style="background:#d4f0ed;">
+<div class="sc-title">合并诊断</div>
+<b>肾病综合征：</b>白蛋白1.8 g/dL + UPC>19.8 mg/mg<br>
+<b>急性肾损伤+高血压：</b>BUN 62 + Cr 0.57 + BP 130/80<br>
+<b>鉴别排除：</b>C3G（非纯C3G，因同时有IgA沉积）+ SLE（无ANA阳性报告+SLE特征）+ HUVS（C4正常不支持）
+</div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">C3肾小球病</td><td>C3降低+MPGN样病变</td><td>同时有IgA沉积+典型IgAV皮疹 → 非纯C3G</td></tr>
+      <tr><td class="b">典型IgAVN</td><td>皮疹+IgA沉积+关节症状</td><td>C3降低+MPGN模式+补体途径异常 → 非典型表现</td></tr>
+      <tr><td class="b">SLE肾炎</td><td>低补体+肾受累</td><td>ANA未报告阳性+无SLE其他特征 → 不支持</td></tr>
+    </table>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 易错点：低补体性IgAV与C3肾小球病的鉴别</div>
+      IgAV中低补体血症仅约15%患者出现。本例C3降低+C4正常提示替代途径激活。免疫荧光同时有C3和IgA沉积是关键鉴别点：纯C3G仅有C3沉积无IgA。本例属IgAV+C3共沉积的非典型表现。
+    </div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>分析依据</th></tr>
+      <tr><td class="b">甲泼尼龙冲击</td><td>IV脉冲（按30 mg/kg/d）</td><td>× 3天（Day 22-24）</td><td class="c-a">快速控制肾小球炎症+新月体</td></tr>
+      <tr><td class="b">泼尼松龙</td><td>2 mg/kg/d</td><td>口服（第28天起，缓慢减量）</td><td class="c-a">序贯口服维持</td></tr>
+      <tr><td class="b">吗替麦考酚酯</td><td>450 mg/m²/次 bid</td><td>口服</td><td class="c-a">按IC-MPGN/C3G方案，抑制免疫复合物介导损伤</td></tr>
+      <tr><td class="b">赖诺普利</td><td>起始量+按需调整</td><td>口服</td><td class="c-a">ACEI降压+降蛋白尿</td></tr>
+      <tr><td>氨氯地平</td><td>起始量+按需调整</td><td>口服</td><td class="c-a">降压辅助</td></tr>
+    </table>
+    <div class="alert"><b>治疗策略：</b>参照IC-MPGN/C3G方案（激素+MMF+ACEI）而非标准IgAVN方案，因为本例表现为膜增生性模式伴补体异常，不同于典型IgAVN的系膜增生模式。</div>
+
+    <div class="sh">📈 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">初诊</div><div class="t-content">四肢紫癜+腹痛+手肿胀，诊断IgAV</div></div>
+      <div class="t-item red"><div class="t-date">第18天</div><div class="t-content">血压升高+肾病综合征+C3降低，转上级中心</div></div>
+      <div class="t-item yellow"><div class="t-date">第28天起</div><div class="t-content">甲泼尼龙冲击×3天 → 泼尼松龙2mg/kg/d + MMF + 赖诺普利</div></div>
+      <div class="t-item green"><div class="t-date">3个月后</div><div class="t-content">蛋白尿、低白蛋白和肾功能均有改善；低补体血症改善；水肿消退</div></div>
+    </div>
+
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+<div style="padding:6px 0;font-size:12px;line-height:1.7;">
+
+<div class="diff-box"><div class="diff-title">❓ 为什么难——皮疹消退后肾病恶化+低补体的推理链</div>
+<b>初诊简单：</b>5岁男孩+四肢紫癜+腹痛+手肿胀=典型IgAV→出院随访。<br>
+<b>2周后意外：</b>皮疹已消退，但血压升至130/80+肢体水肿。这违反了临床直觉——"皮疹好了，病应该好了"——但IgAV皮疹与肾受累不完全同步，肾损伤可在皮疹消退后出现或加重。<br>
+<b>实验室异常：</b>BUN/Cr升高+白蛋白1.8+UPC>19.8+C3降低——肾病综合征+急性肾损伤+低补体血症，这不是典型IgAVN的表现。<br>
+<b>肾活检关键信息：</b>MPGN模式（非典型）+C3/IgA共沉积（非典型）+补体替代途径激活→诊断从"典型IgAVN"转向"非典型IgAV伴补体介导的肾损伤"。</b>
+</div>
+
+<div class="diff-box"><div class="diff-title">⚠️ 最易误诊疾病及鉴别要点</div>
+<b>1. C3肾小球病（C3G）：</b>C3降低+MPGN样病变→高度疑似C3G。但免疫荧光同时有C3和IgA沉积（纯C3G仅有C3沉积无IgA）→非纯C3G→IgAV+C3共沉积的非典型表现。<br>
+<b>2. 免疫复合物介导的MPGN（IC-MPGN）：</b>光镜MPGN模式+C3/IgA沉积→符合。原文最终判定"most consistent with IC-MPGN"——但临床时间线（紫癜后2周肾受累）更符合IgAVN。<br>
+<b>3. SLE肾炎：</b>低补体+肾受累→需排除。但原文未报告ANA阳性+SLE特征缺失+C4正常→排除。<br>
+<b>4. 低补体血症性荨麻疹性血管炎综合征（HUVS）：</b>C3降低→考虑。但HUVS的C4通常也降低+皮疹以上半身为主→本例C4正常+下肢皮疹→排除。
+</div>
+
+<div class="diff-box"><div class="diff-title">🔀 决策流程——非典型IgAV伴补体异常的处理</div>
+<b>Step 1：</b>IgAV确诊后2周内出现高血压+蛋白尿+肾功能恶化 → 肾活检（明确病理模式）<br>
+<b>Step 2：</b>活检示MPGN模式+C3/IgA共沉积 → 补体全套检测（C3/C4/Factor B/H/I/C3NeF/sC5b-9）<br>
+<b>Step 3：</b>确认替代途径激活+C3NeF阴性 → 按IC-MPGN/C3G方案治疗（GC冲击+MMF+ACEI），而非标准IgAVN方案<br>
+<b>Step 4：</b>3个月后评估 → 蛋白尿/白蛋白/肾功能/补体均改善 → 继续方案并缓慢减量GC<br>
+<b>Step 5：</b>若为难治性 → 考虑补体靶向治疗（如依库珠单抗/Eculizumab）——原文明确指出这一方向
+</div>
+
+<div class="diff-box"><div class="diff-title">📖 教学价值</div>
+① IgAV皮疹消退≠疾病缓解——起病后至少6个月内必须定期监测尿检和血压。<br>
+② 低补体血症（C3降低）在IgAV中仅15%，但提示补体介导的更严重肾损伤模式。<br>
+③ MPGN模式的IgAVN需要比典型系膜增生模式更积极的免疫抑制（GC冲击+MMF vs 单纯GC）。<br>
+④ 本例对补体系统的全面检测（而非仅C3/C4）为理解发病机制提供了重要线索——Factor B/H/I降低确认了替代途径激活。
+</div>
+</div>
+
+    <div class="sh green">📋 病例要点总结</div>
+    <div class="g2">
+      <div>
+        <p class="b" style="color:var(--accent)">诊断要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>低补体血症IgAV仅约15%，属非典型</li>
+          <li>肾活检区分MPGN模式与典型系膜增生</li>
+          <li>皮疹消退≠疾病缓解</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--green)">治疗策略</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>MPGN模式按IC-MPGN方案（GC+MMF+ACEI）</li>
+          <li>激素冲击控制新月体</li>
+          <li>补体靶向治疗为难治性备选</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--red)">监测要点</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>起病后6个月内每周尿检</li>
+          <li>监测血压和肾功能</li>
+          <li>定期补体水平检测</li>
+        </ol>
+      </div>
+      <div>
+        <p class="b" style="color:var(--yellow)">预后</p>
+        <ol style="font-size:11.5px;padding-left:16px">
+          <li>GC+MMF方案3个月改善</li>
+          <li>低补体血症的预后意义尚不明确</li>
+          <li>长期随访肾功能和补体</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sh">📚 参考文献
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/35757129/" target="_blank">PMID 35757129</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9218267/" target="_blank">PMC9218267</a>，以下为相关参考文献。</div></div>
+    <p style="font-size:11px;color:var(--text2)">
+      1. Chan M, Hanna MG, Willard N, Treece A, Dixon BP. <i>Hypocomplementemic atypical IgA vasculitis: a case report</i>. Front Pediatr. 2022;10:886371. PMID: 35757129.<br>
+      2. Roache-Robinson P, Hotwagner DT. <i>Henoch Schonlein Purpura</i>. StatPearls, 2022. PMID: 30725937.<br>
+      3. Davin JC. <i>Henoch-Schönlein purpura nephritis: pathophysiology, treatment, and future strategy</i>. Clin J Am Soc Nephrol. 2011;6(3):679-689. PMID: 21393485.<br>
+      4. Lin Q, Min Y, Li Y, et al. <i>Henoch-Schonlein purpura with hypocomplementemia</i>. Pediatr Nephrol. 2012;27(5):801-806. PMID: 22271365.<br>
+      5. Garcia-Fuentes M, Martin A, Chantler C, Williams DG. <i>Serum complement components in Henoch-Schonlein purpura</i>. Arch Dis Child. 1978;53(5):417-419. PMID: 666358.<br>
+      6. Pickering MC, D'Agati VD, Nester CM, et al. <i>C3 glomerulopathy: consensus report</i>. Kidney Int. 2013;84(6):1079-1089. PMID: 24172683.<br>
+      7. Rosenblad T, Rebetz J, Johansson M, et al. <i>Eculizumab treatment for rescue of renal function in IgA nephropathy</i>. Pediatr Nephrol. 2014;29(11):2225-2228. PMID: 24924752.<br>
+      8. Avasare RS, Canetta PA, Bomback AS, et al. <i>Mycophenolate mofetil in combination with steroids for treatment of C3 glomerulopathy: a case series</i>. Clin J Am Soc Nephrol. 2018;13(3):406-413. PMID: 29326307.
+    </p>
+  </div>
+  <div class="footer">数据来源：PubMed/PMC收录的同行评审病例报告 | 仅供医学专业人员学习参考 | 不构成诊疗建议</div>
+</div>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js');</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

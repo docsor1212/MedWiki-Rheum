@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：CANDLE综合征</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+
+</head>
+<body>
+<div class="nav-bar">
+<a href="/">🏠 首页</a>
+<a href="/cases/">📋 病例集</a>
+<a href="/evidence/">📚 循证病例</a>
+<a href="/drugs/">💊 药物手册</a>
+<a href="/tools/">🔧 临床工具</a>
+</div>
+ style="position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);"><a href="../index.html" style="color:#fff;text-decoration:none;opacity:.85">🏠 首页</a><span style="margin-left:auto;font-size:11px;opacity:.7">循证病例</span></div>
+<div class="wrap"><div class="header"><div><h1>📋 病例：CANDLE综合征（PSMB8突变）</h1><div class="sub">Chronic Atypical Neutrophilic Dermatosis with Lipodystrophy and Elevated Temperature</div></div><div class="meta">Insalaco A et al. 2013 · PMC4044283</div></div>
+<div class="body">
+
+    <div class="sh">📄 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">文献</td><td>Insalaco A, et al. <i>A novel PSMB8 mutation associated with CANDLE syndrome.</i> Pediatr Rheumatol Online J. 2013;11(Suppl 2):P192.</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC4044283</td></tr>
+      <tr><td class="b">DOI</td><td>10.1186/1546-0096-11-S2-P192</td></tr>
+      <tr><td class="b">类型</td><td>会议病例报告（PReS 2013）</td></tr>
+    </table>
+    <div class="alert"><b>流行病学提示：</b>CANDLE综合征为极罕见病，全球报告<b>不足50例</b>。由PSMB8（或PSMB4/PSMA3/PSMB9/PSMB10）基因突变引起，归类为<b>I型干扰素病</b>。发病年龄多在<b>1岁以内</b>，男女比例相近。死亡率为<b>10-15%</b>，主要死因为严重感染和淀粉样变。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>女，10岁（10月龄起病）</td></tr>
+      <tr><td class="b">主诉</td><td>反复发热、皮疹9年</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">CANDLE综合征</span> <span class="tag t-y">PSMB8突变</span> <span class="tag t-a">脂膜炎</span> <span class="tag t-r">脂肪萎缩</span></td></tr>
+    </table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">反复发热、皮疹9年</p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿<b>10月龄</b>起病，表现为<b>反复发热、肝脾肿大</b>及躯干四肢<b>结节性红斑皮疹</b>。<br><br>
+      随后逐渐出现<b>进行性脂肪萎缩</b>（lipodystrophy）、关节痛、关节炎及眼睑水肿。体重身高均低于第5百分位，伴部分生长激素缺乏。<br><br>
+      曾用糖皮质激素、环孢素部分有效，但减量/停药即复发。<b>皮肤活检</b>示典型小叶性脂膜炎。实验室示急性期反应物持续升高、慢性贫血、白细胞/血小板减少、IgA/IgG/IgM降低。<br><br>
+      后出现蛋白尿，肾活检示<b>微小病变肾病</b>，经足量激素治疗后缓解。<br><br>
+      <b>既往治疗</b>：羟氯喹、秋水仙碱疗效不佳。Anakinra（IL-1受体拮抗剂）2mg/kg/d ×10天无效停用。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：原文未提供。&nbsp;&nbsp;<b>个人史</b>：原文未提供。&nbsp;&nbsp;<b>家族史</b>：原文未提供。&nbsp;&nbsp;<b>过敏史</b>：原文未提供。</p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <table>
+      <tr><th>系统</th><th>表现</th></tr>
+      <tr><td class="b">皮肤</td><td class="c-r">结节性红斑皮疹（躯干四肢）、进行性脂肪萎缩</td></tr>
+      <tr><td class="b">眼</td><td>眼睑水肿</td></tr>
+      <tr><td class="b">关节</td><td>关节痛+关节炎</td></tr>
+      <tr><td class="b">腹部</td><td>肝脾肿大</td></tr>
+      <tr><td class="b">生长</td><td class="c-r">体重/身高 &lt;P5，部分GH缺乏</td></tr>
+    </table>
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>急性期反应物</td><td>持续升高</td><td></td><td class="c-r">CRP/ESR↑↑</td></tr>
+      <tr><td>SAA</td><td>持续升高</td><td></td><td class="c-r">淀粉样变风险</td></tr>
+      <tr><td>Hb</td><td>慢性贫血</td><td></td><td class="c-y">炎症性贫血</td></tr>
+      <tr><td>中性粒细胞</td><td>最低1040/μL</td><td></td><td class="c-y">反复白细胞减少</td></tr>
+      <tr><td>PLT</td><td>最低94K/μL</td><td></td><td class="c-y">血小板减少</td></tr>
+      <tr><td>IgA/IgG/IgM</td><td>↓</td><td></td><td class="c-y">低丙种球蛋白血症</td></tr>
+      <tr><td>骨髓</td><td>正常</td><td></td><td>排除恶性</td></tr>
+      <tr><td>皮肤活检</td><td colspan="3" class="c-r">典型小叶性脂膜炎</td></tr>
+      <tr><td>肾活检</td><td colspan="3">微小病变肾病</td></tr>
+      <tr><td>TNFRSF1A/MVK</td><td>无突变</td><td></td><td>排除TRAPS/HIDS</td></tr>
+      <tr><td class="b">PSMB8</td><td class="c-r">c.208A>T p.Thr70Ser（杂合）</td><td></td><td class="c-r">新发突变！</td></tr>
+    </table>
+    <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>一、核心免疫学通路：免疫蛋白酶体功能障碍与I型干扰素过度激活</b></p>
+      <p>CANDLE综合征由<b>PSMB8基因</b>（编码免疫蛋白酶体β8亚基，proteasome subunit β type 8）突变引起。免疫蛋白酶体是在抗原提呈细胞中高表达的特殊蛋白酶体形式，负责降解胞内蛋白为短肽供MHC I类分子提呈。原文指出，PSMB8功能缺陷导致<b>免疫蛋白酶体组装障碍</b>→未降解蛋白（尤其是氧化/泛素化蛋白）在细胞内蓄积→激活内质网应激→<b>I型干扰素通路（IFN-α/β）过度激活</b>。因此CANDLE被归类为<b>I型干扰素病（Type I Interferonopathy）</b>。</p>
+      <p><b>二、本病例特异性免疫异常</b></p>
+      <p>本例携带<b>PSMB8 c.208A>T p.Thr70Ser杂合新发突变</b>，位于β8亚基功能域。临床表现为：①急性期反应物（CRP/ESR/SAA）持续升高，反映系统性IFN驱动的炎症状态；②<b>小叶性脂膜炎</b>（皮肤活检证实）是CANDLE的标志性病理改变；③低丙种球蛋白血症（IgA/IgG/IgM均降低）和反复白细胞/血小板减少提示免疫蛋白酶体缺陷对<b>造血系统</b>的广泛影响；④进行性脂肪萎缩可能是脂膜炎的远期后果。原文特别指出，Anakinra（IL-1受体拮抗剂）治疗10天无效——这与CANDLE的IFN驱动机制一致，而非IL-1驱动。</p>
+      <p><b>三、病理生理学解释</b></p>
+      <p>从分子层面看：免疫蛋白酶体缺陷→蛋白降解障碍→泛素化蛋白蓄积→NF-κB通路激活+STING通路异常活化→<b>IFN-α/β大量产生</b>→IFN刺激基因（ISG）上调→系统性炎症（发热、皮疹、关节痛）+组织损伤（脂膜炎→脂肪萎缩、肾小球损伤→蛋白尿）。这一机制解释了为何IL-1靶向治疗无效而<b>JAK抑制剂</b>（阻断IFN信号传导）在理论上有依据。</p>
+      <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC4044283原文 + Liu Y等（J Allergy Clin Immunol 2012）CANDLE最初描述</p>
+    </div>
+
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出CANDLE（慢性非典型中性粒细胞皮肤病伴脂肪代谢障碍）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">CANDLE临床诊断标准</td><td>Liu Y 等</td><td>2012</td><td>J Allergy Clin Immunol</td><td>必须+支持标准综合判定</td><td>① 婴儿期起病反复发热 → <span class='c-g'>✅ 10月龄起病</span><br>② 特征性紫癜样/结节性皮损 → <span class='c-g'>✅ 结节性红斑+小叶性脂膜炎</span><br>③ 进行性脂肪萎缩 → <span class='c-g'>✅</span><br>④ PSMB8致病性突变 → <span class='c-g'>✅ Thr70Ser</span><br><b>临床+基因+病理三重确诊 ✅</b></td></tr>
+      <tr><td class="b">2022 IUIS分类</td><td>Tangye SG 等 / IUIS</td><td>2022</td><td>J Clin Immunol</td><td>基因+免疫学分类</td><td>CANDLE属于IUIS第VII类·I型干扰素病 → <span class='c-g'>✅ 符合</span></td></tr>
+    </table>
+    <table>
+      <tr><th>诊断标准</th><th>详情与对照</th></tr>
+      <tr><td class="b" rowspan="5">CANDLE临床诊断标准<br>（Liu Y等，<i>J Allergy Clin Immunol</i> 2012;130:345-356）<br>【补充知识】</td>
+        <td><b>必须标准+支持标准综合判定</b></td></tr>
+      <tr><td>① 婴儿期起病（&lt;1岁）的反复发热 — <span class="c-g">✅ 10月龄起病</span></td></tr>
+      <tr><td>② 特征性紫癜样/结节性皮肤损害 — <span class="c-g">✅ 结节性红斑+小叶性脂膜炎</span></td></tr>
+      <tr><td>③ 进行性脂肪萎缩 — <span class="c-g">✅</span></td></tr>
+      <tr><td>④ PSMB8基因致病性突变 — <span class="c-g">✅ Thr70Ser新发突变</span></td></tr>
+      <tr><td class="b" rowspan="3">2022 IUIS自身炎症性疾病分类<br>（Tangye SG等，<i>J Clin Immunol</i> 2022）<br>【补充知识】</td>
+        <td><b>CANDLE属于IUIS第VII类·I型干扰素病</b></td></tr>
+      <tr><td>① 免疫蛋白酶体相关基因突变 — <span class="c-g">✅ PSMB8</span></td></tr>
+      <tr><td>② I型IFN签名升高 — 【原文未检测，但临床高度一致】</td></tr>
+      <tr><td class="b">确诊依据</td><td>① 临床三联征 + ② PSMB8 Thr70Ser新发突变 + ③ 小叶性脂膜炎病理 → <b>临床-基因-病理三重确诊</b></td></tr>
+    </table>
+    <table style="margin-top:6px;">
+      <tr><th>合并诊断</th><th>依据</th></tr>
+      <tr><td>微小病变肾病</td><td>蛋白尿+肾活检证实（CANDLE罕见合并症，原文仅1/9例报告）</td></tr>
+      <tr><td>部分生长激素缺乏</td><td>体重/身高 &lt;P5</td></tr>
+    </table>
+    <div class="alert"><b>CANDLE核心</b>：早发（&lt;1岁）+反复发热+特征性皮疹+进行性脂肪萎缩+<b>PSMB8基因突变</b>（免疫蛋白酶体β8亚基）。IL-1拮抗剂通常无效。</div>
+    <div class="sh yellow">🔍 鉴别诊断</div>
+    <div class="diff-box"><div class="diff-title">1. TRAPS（TNF受体相关周期热综合征）</div><b>相似点：</b>反复发热。<b>排除依据：</b>TNFRSF1A基因检测阴性，无浆膜炎表现→排除。</div>
+    <div class="diff-box"><div class="diff-title">2. HIDS（高IgD综合征）</div><b>相似点：</b>反复发热。<b>排除依据：</b>MVK基因检测阴性→排除。</div>
+    <div class="diff-box"><div class="diff-title">3. sJIA（全身型幼年特发性关节炎）</div><b>相似点：</b>发热+关节炎+皮疹。<b>排除依据：</b>无典型弛张热型，无间歇期完全正常的特点，伴脂膜炎和脂肪萎缩（sJIA不出现），PSMB8致病突变确诊→排除。</div>
+    <div class="diff-box"><div class="diff-title">4. SLE（系统性红斑狼疮）</div><b>相似点：</b>多系统受累+低丙种球蛋白血症。<b>排除依据：</b>ANA阴性，无补体消耗，无狼疮型肾炎（微小病变≠狼疮肾炎），PSMB8致病突变→排除。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ CANDLE的临床识别要点</div>
+    <b>三大特征</b>：①婴儿期起病的反复发热+皮疹；②进行性脂肪萎缩；③小叶性脂膜炎。一旦出现脂肪萎缩，应高度怀疑CANDLE并检测PSMB8。</div>
+    <div class="sh green">💊 治疗方案</div>
+    <table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>效果</th><th>选择理由</th></tr>
+      <tr><td class="b">初始诱导</td><td>糖皮质激素（口服/冲击）</td><td>原文未提供精确剂量</td><td>部分有效，依赖</td><td>控制急性炎症</td></tr>
+      <tr><td class="b">初始诱导</td><td>环孢素A</td><td>原文未提供精确剂量</td><td>部分有效，停药复发</td><td>钙调磷酸酶抑制剂</td></tr>
+      <tr><td class="b">无效药物</td><td>羟氯喹</td><td>原文未提供精确剂量</td><td>❌ 无效</td><td>—</td></tr>
+      <tr><td class="b">无效药物</td><td>秋水仙碱</td><td>原文未提供精确剂量</td><td>❌ 无效</td><td>—</td></tr>
+      <tr><td class="b">无效药物</td><td>Anakinra（IL-1受体拮抗剂）</td><td><b>2 mg/kg/d × 10天</b></td><td>❌ 无效停用</td><td>IL-1通路非CANDLE主要驱动</td></tr>
+      <tr><td class="b">目前维持</td><td>低剂量糖皮质激素</td><td>长期口服维持</td><td>部分控制</td><td>唯一部分有效方案</td></tr>
+    </table>
+    <div class="alert"><b>治疗困境：</b>CANDLE为IFN通路驱动疾病，IL-1拮抗剂（Anakinra）通常无效。文献报告<b>JAK抑制剂</b>（巴瑞替尼/托法替布）靶向IFN信号传导可能有效【补充知识，非原文数据】。本例确诊后尚未启动JAK抑制剂治疗。</div>
+    <div class="sh">📅 随访时间线</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">10月龄</div><div class="t-content">反复发热+肝脾肿大+结节性红斑皮疹</div></div>
+      <div class="t-item yellow"><div class="t-date">婴幼儿期</div><div class="t-content">逐渐出现脂肪萎缩+关节痛+眼睑水肿</div></div>
+      <div class="t-item"><div class="t-date">儿童期</div><div class="t-content">激素+环孢素部分有效，但减量复发</div></div>
+      <div class="t-item yellow"><div class="t-date">后出现</div><div class="t-content">蛋白尿→肾活检：微小病变→激素治疗缓解</div></div>
+      <div class="t-item"><div class="t-date">基因检测</div><div class="t-content">PSMB8 Thr70Ser新发突变确诊CANDLE</div></div>
+      <div class="t-item"><div class="t-date">目前</div><div class="t-content">低剂量激素维持，Anakinra无效已停用。尚未启动JAK抑制剂。</div></div>
+      <div class="t-item yellow"><div class="t-date">预后</div><div class="t-content">进行性脂肪萎缩不可逆；生长迟缓需GH替代评估；长期低丙种球蛋白血症需监测感染风险和IVIG需求；SAA持续升高提示淀粉样变风险</div></div>
+    </div>
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>❶ 为什么难——从主诉到诊断的完整推理链</b></p>
+      <p>本例以"婴儿反复发热+皮疹"起病，这一表现与多种常见自身炎症性疾病（TRAPS、HIDS、sJIA）高度重叠。<b>关键线索</b>在于：①进行性脂肪萎缩——这一体征在绝大多数其他自身炎症性疾病中不出现，几乎是CANDLE的"签名"表现；②TNFRSF1A和MVK基因检测阴性——排除了最常见两种遗传性周期热；③多种抗炎药物（羟氯喹、秋水仙碱、Anakinra）均无效——提示发病机制并非IL-1/TNF驱动。</p>
+
+      <p><b>❷ 易误诊/漏诊点</b></p>
+      <p>最易误诊的疾病：①<b>sJIA（全身型幼年特发性关节炎）</b>——发热+关节炎+皮疹高度相似，但sJIA无脂肪萎缩、Anakinra通常有效；②<b>TRAPS/HIDS</b>——反复发热+腹痛，但基因检测阴性可排除；③<b>SLE</b>——多系统受累+低丙种球蛋白可模拟，但ANA阴性+无补体消耗+无肾炎（微小病变≠狼疮肾炎）。<b>脂肪萎缩是CANDLE的标志性线索</b>——一旦出现应立即检测PSMB8。</p>
+
+      <p><b>❸ 决策启示——遇到类似患者的排查顺序</b></p>
+      <p>Step 1：婴儿反复发热+皮疹 → 完善急性期指标+自身抗体+免疫球蛋白；Step 2：查常见周期热基因（TNFRSF1A、MVK）→ 若阴性扩大面板；Step 3：出现脂肪萎缩 ± 脂膜炎 → 高度怀疑CANDLE/蛋白酶体相关疾病 → 查PSMB8；Step 4：PSMB8阳性 → 评估I型IFN签名（如条件允许）+ 考虑JAK抑制剂；Step 5：注意筛查肾脏受累（本例微小病变为首次报告的CANDLE合并症）。</p>
+
+      <p><b>❹ 教学价值</b></p>
+      <p>本例对年轻医生的核心教学点：①"治疗反应"本身是诊断线索——IL-1拮抗剂无效应促使重新审视发病机制假说；②脂肪萎缩虽不常见，但一旦出现具有极高的疾病特异性；③I型干扰素病的概念正在扩展，CANDLE、SAVI、AGS等共享IFN通路过度激活这一核心机制，<b>JAK抑制剂可能是跨病种的共同治疗策略</b>；④新发突变（如本例Thr70Ser）需要功能验证，但临床表型一致性可作为诊断支持。</p>
+    </div>
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>1. 诊断</b>：早发（&lt;1岁）发热+皮疹+脂肪萎缩 → 查PSMB8<br>
+      <b>2. 发病机制</b>：免疫蛋白酶体障碍→IFN通路过度激活<br>
+      <b>3. 治疗</b>：IL-1拮抗剂通常无效，JAK抑制剂有前景<br>
+      <b>4. 并发症</b>：生长迟缓、肾病（新发现）、淀粉样变风险
+    </div>
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4044283/" target="_blank">PMC4044283</a></div>
+  <div class="note" style="margin-bottom:4px;">⚠️ 本文为PReS 2013会议摘要（Poster P192），原文无正式参考文献列表。以下仅列出原文来源。</div>
+  <div style="font-size:11px;color:var(--text2);line-height:1.7;">
+    <ol style="padding-left:18px;">
+    <li>Insalaco A, et al. A novel PSMB8 mutation associated with CANDLE syndrome. <i>Pediatr Rheumatol Online J</i>. 2013;11(Suppl 2):P192. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4044283/" target="_blank">PMC4044283</a></li>
+    </ol>
+    <div style="margin-top:4px;font-size:10.5px;color:var(--text3);">注：CANDLE最初描述及JAK抑制剂治疗数据来自Liu Y等(J Allergy Clin Immunol 2012)和Sanchez GAM等(Arthritis Rheumatol 2018)，这些为补充知识而非本会议摘要引用。</div>
+  </div>
+    
+</div>
+<div class="footer">真实文献病例 · Insalaco et al. 2013 · PMC4044283 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body></html>

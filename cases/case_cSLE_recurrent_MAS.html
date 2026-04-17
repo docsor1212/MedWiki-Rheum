@@ -29,6 +29,7 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
@@ -57,6 +58,7 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：cSLE以反复MAS为首发表现</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">14岁女孩 — 3次MAS发作，揭示cSLE与MAS的深层关联</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
@@ -72,8 +74,55 @@ tr:hover td { background:#faf8f5; }
     <table>
       <tr><td class="b" style="width:120px">患者</td><td>14岁，女性</td></tr>
       <tr><td class="b">就诊机构</td><td>印度加尔各答，Postgraduate Medical Education and Research研究所，临床免疫与风湿科</td></tr>
-      <tr><td class="b">起病表现</td><td>以<b>MAS</b>（巨噬细胞活化综合征）为首发表现，随后确诊SLE</td></tr>
+      <tr><td class="b">主诉</td><td>持续高热伴全血细胞减少2周</td></tr>
+      <tr><td class="b">起病表现</td><td>以<b>MAS</b>为首发表现，随后确诊cSLE</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">反复MAS ×3</span> <span class="tag t-r">以MAS起病</span> <span class="tag t-a">cSLE</span> <span class="tag t-g">最终缓解</span></td></tr>
+    </table>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      14岁女孩，因持续高热、全血细胞减少、肝脾肿大就诊。骨髓穿刺示噬血现象阳性，铁蛋白显著升高，确诊MAS（符合HLH-2004标准）。进一步检查发现ANA阳性、抗dsDNA阳性、补体C3/C4降低、蛋白尿阳性，确诊cSLE。此后在维持治疗期间又经历2次MAS发作，共3次MAS。<br><br>
+      <b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：生长发育正常，月经初潮12岁。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查（首次入院时）</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.5℃</td></tr>
+        <tr><td>HR</td><td>125次/分</td></tr>
+        <tr><td>BP</td><td>100/65 mmHg</td></tr>
+        <tr><td>体重</td><td>42 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神萎靡，高热貌</td></tr>
+        <tr><td>皮肤黏膜</td><td>苍白（贫血貌），无皮疹</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率125次/分，律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td><b>肝脾肿大</b></td></tr>
+        <tr><td>关节</td><td>无肿痛</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查（首次发作）</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>Hb</td><td>↓ 降低</td><td>115-150 g/L</td><td>贫血</td></tr>
+      <tr><td>WBC</td><td>↓ 降低</td><td>4.5-13.5 ×10⁹/L</td><td>白细胞减少</td></tr>
+      <tr><td>PLT</td><td>↓ 降低</td><td>150-400 ×10⁹/L</td><td>血小板减少</td></tr>
+      <tr><td>铁蛋白</td><td class="c-r">显著升高</td><td>7-140 ng/mL</td><td class="c-r">MAS核心标志</td></tr>
+      <tr><td>甘油三酯</td><td>↑ 升高</td><td>&lt;1.7 mmol/L</td><td>↑</td></tr>
+      <tr><td>纤维蛋白原</td><td>↓ 降低</td><td>2-4 g/L</td><td>↓ 消耗</td></tr>
+      <tr><td>AST/ALT</td><td>↑ 升高</td><td>&lt;40 U/L</td><td>肝损</td></tr>
+      <tr><td>ANA</td><td class="c-r">阳性</td><td>阴性</td><td>SLE标志</td></tr>
+      <tr><td>抗dsDNA</td><td class="c-r">阳性</td><td>阴性</td><td>SLE特异性</td></tr>
+      <tr><td>补体C3</td><td>↓ 降低</td><td>0.9-1.8 g/L</td><td>补体消耗</td></tr>
+      <tr><td>补体C4</td><td>↓ 降低</td><td>0.1-0.4 g/L</td><td>补体消耗</td></tr>
+      <tr><td>骨髓穿刺</td><td class="c-r">噬血现象阳性</td><td>—</td><td>MAS确诊依据</td></tr>
     </table>
 
     <div class="alert">
@@ -254,6 +303,36 @@ tr:hover td { background:#faf8f5; }
 
       <div class="note" style="border-left-color:var(--yellow);margin-top:6px;">
         <b>临床启示：</b>当遇到不明原因的HLH/MAS，尤其是青春期女性，务必筛查ANA、抗dsDNA、补体C3/C4、尿常规。MAS可能是cSLE的首发表现，延迟诊断SLE会影响长期预后。
+      </div>
+    </div>
+
+    <div class="sh green">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item green">
+        <div class="t-date">第1次MAS — 治疗与缓解</div>
+        <div class="t-content">
+          <b>方案</b>：静脉甲泼尼龙冲击 + 环孢素A<br>
+          <b>结果</b>：MAS缓解。开始羟氯喹+小剂量泼尼松维持治疗。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">维持治疗数月后 — 第2次MAS</div>
+        <div class="t-content">
+          再次高热+三系减少+铁蛋白升高+噬血现象阳性。加用MMF，再次缓解。
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">第2次缓解后 — 第3次MAS</div>
+        <div class="t-content">
+          第3次出现MAS典型表现。甲泼尼龙+环孢素A强化方案，第3次缓解。
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第3次缓解后 — 强化维持</div>
+        <div class="t-content">
+          调整为更积极的免疫抑制维持方案，加强疾病活动度控制。<br>
+          <span class="tag t-g">3次MAS均经积极治疗后缓解</span>
+        </div>
       </div>
     </div>
 

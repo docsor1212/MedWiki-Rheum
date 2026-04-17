@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>给家长的信 — JIA诊断</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; font-size:14px; }
+.wrap { max-width:800px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:16px 24px; }
+.header h1 { font-size:1.4rem; font-weight:700; }
+.header .sub { font-size:0.9rem; opacity:0.85; margin-top:4px; }
+.body { padding:16px 24px 20px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#20a39e; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.orange { background:#e8833a; }
+p { margin:6px 0; }
+ul { margin:6px 0 6px 20px; }
+li { margin:4px 0; }
+.step-box { background:var(--accent-bg); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; }
+.step-box .step-label { font-weight:700; color:var(--accent); }
+.red-flag { background:var(--red-bg); border-left:3px solid var(--red); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:4px 0; }
+.red-flag li { color:var(--text); }
+.checklist { list-style:none; margin-left:0; padding-left:0; }
+.checklist li { padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.checklist li::before { content:"☐"; font-size:1.1rem; color:var(--accent); flex-shrink:0; }
+.qa-item { margin:8px 0; }
+.qa-q { font-weight:700; color:var(--accent); }
+.qa-a { color:var(--text); margin-left:8px; }
+.not-item { padding:6px 10px; margin:3px 0; background:var(--yellow-bg); border-radius:5px; }
+.footer { text-align:center; font-size:11px; color:var(--text3); padding:10px 24px 14px; border-top:1px solid var(--border); }
+.letter-salutation { font-size:1rem; color:var(--text2); margin:12px 0; font-style:italic; }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+@media(max-width:768px){ .wrap{margin:4px;} .body{padding:12px 14px;} .header{padding:12px 14px;} }
+@media print {
+  .nav-bar{display:none !important;}
+  body{padding-top:0 !important;background:#fff !important;}
+  .wrap{box-shadow:none !important;margin:0 !important;max-width:100% !important;}
+  .step-box,.red-flag,.not-item{break-inside:avoid;}
+  .sh{break-after:avoid;}
+  @page{margin:1.5cm;}
+}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">💌 给家长的信 · JIA</span></div>
+<div class="wrap">
+<div class="header">
+  <h1>💌 给家长的信</h1>
+  <div class="sub">孩子被诊断为幼年特发性关节炎（JIA）——写给每一位关心孩子的爸爸妈妈</div>
+</div>
+<div class="body">
+
+<p class="letter-salutation">亲爱的家长：</p>
+<p>我们理解，听到"关节炎"这个词时，您可能会有很多担忧和疑问。这封信的目的是帮助您了解这个疾病，以及我们将如何一起帮助孩子好起来。</p>
+
+<div class="sh">📖 什么是JIA？</div>
+<p>正常情况下，我们的免疫系统像一支<strong>"护卫队"</strong>，负责保护身体不受细菌病毒的侵害。</p>
+<p>但在JIA中，这支"护卫队"出现了<strong>"误伤"——把关节当成了敌人来攻击</strong>，导致关节发炎、肿胀、疼痛。</p>
+<p>简单来说：<strong>不是关节坏了，而是免疫系统"太积极"了</strong>。我们只需要帮它重新"校准"，就能让孩子恢复健康。</p>
+
+<div class="sh red">❌ JIA不是这些</div>
+<div class="not-item"><strong>❌ 不是"风湿"</strong>——很多人以为"风湿"是老年人的病。JIA是儿童特有的疾病，和老人"风湿"完全不同。</div>
+<div class="not-item"><strong>❌ 不是遗传病</strong>——JIA不是从爸爸妈妈那里遗传来的。确切原因还不完全清楚，但不是您的"错"。</div>
+<div class="not-item"><strong>❌ 不是感染</strong>——JIA不会传染给其他小朋友，也不是因为"着凉"或"受了潮"。</div>
+<div class="not-item"><strong>❌ 不是绝症</strong>——经过规范治疗，大多数JIA患儿可以像正常孩子一样上学、运动、成长。</div>
+
+<div class="sh green">🗺️ 治疗路线图</div>
+<div class="step-box"><span class="step-label">➡️ 第一步：基础药物（甲氨蝶呤）</span><br>每周打一针（或吃药），帮助免疫系统"冷静下来"。通常需要2-3个月才能看到明显效果。</div>
+<div class="step-box"><span class="step-label">➡️ 第二步：如果效果不够（加用生物制剂）</span><br>像"精准制导"一样，更精准地调节免疫系统。大多数孩子在使用后会有明显改善。</div>
+<div class="step-box"><span class="step-label">➡️ 第三步：疾病缓解</span><br>关节不再肿痛，血液检查恢复正常。很多孩子最终可以逐步减药甚至停药。</div>
+
+<div class="sh">💭 家长常见担忧</div>
+<div class="qa-item"><div class="qa-q">"会影响孩子长高吗？"</div><div class="qa-a">如果疾病控制得好，一般不会。但如果长期不治疗，慢性炎症本身会影响生长。所以<strong>早治疗反而是保护生长的最好办法</strong>。</div></div>
+<div class="qa-item"><div class="qa-q">"还能上体育课吗？"</div><div class="qa-a">疾病活动期需要适当休息，但<strong>不意味着完全不能运动</strong>。游泳、骑车等低冲击运动反而有益。病情缓解后，可以正常参加体育活动。</div></div>
+<div class="qa-item"><div class="qa-q">"会传染给其他小朋友吗？"</div><div class="qa-a"><strong>绝对不会</strong>。JIA不是传染病，孩子可以正常上学、交友。</div></div>
+<div class="qa-item"><div class="qa-q">"以后我的其他孩子也会得吗？"</div><div class="qa-a">JIA的遗传风险很低。兄弟姐妹患JIA的概率大约1-2%，和普通人群差别不大。</div></div>
+
+<div class="sh red">🚨 何时需要立即就医（红旗征象）</div>
+<p><strong>如果出现以下情况，请立即联系我们或去急诊：</strong></p>
+<div class="red-flag">
+<ul>
+<li>🔴 <strong>持续高热超过3天</strong>（尤其退烧药效果不好时）</li>
+<li>🔴 <strong>关节突然明显加重</strong>（原来控制好的关节又肿起来了）</li>
+<li>🔴 <strong>皮肤出现不明瘀斑或出血点</strong></li>
+<li>🔴 <strong>眼睛红、痛、怕光</strong>（可能是葡萄膜炎——JIA的常见并发症）</li>
+<li>🔴 <strong>严重腹痛或呕吐</strong></li>
+<li>🔴 <strong>精神差、嗜睡、不愿活动</strong></li>
+</ul>
+</div>
+
+<div class="sh">📅 随访提醒</div>
+<ul class="checklist">
+<li>每1-3个月风湿科门诊复查（根据病情）</li>
+<li>每3-6个月验血（血常规+肝肾功能+炎症指标）</li>
+<li>每3-6个月眼科检查（排查无症状葡萄膜炎）</li>
+<li>记录关节症状日记（哪些关节肿/痛、晨僵时间）</li>
+</ul>
+
+</div>
+<div class="footer">
+  <p><strong>您不是一个人在战斗</strong> 💪 我们风湿科团队会一直陪伴您和孩子。有任何问题，随时联系我们。让我们一起帮助孩子重拾健康、快乐的童年！</p>
+  <p style="margin-top:8px;">MedWiki-Rheum · 儿童风湿免疫科普平台 · 不构成诊疗建议 · 请遵医嘱</p>
+</div>
+</div>
+</body>
+</html>

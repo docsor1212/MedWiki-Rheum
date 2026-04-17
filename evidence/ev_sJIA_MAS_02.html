@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：早发型sJIA合并难治性MAS（腺病毒血症诱发）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.nav-bar .active{opacity:1;font-weight:700;pointer-events:none;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_sJIA_MAS_01.html">sJIA+MAS · 01</a>
+  <span class="active">sJIA+MAS · 02</span>
+  <span class="nav-title">循证病例 · sJIA合并难治性MAS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：早发型sJIA合并难治性MAS（腺病毒血症诱发）</h1>
+      <div class="sub">Refractory MAS in Early-Onset sJIA Triggered by Adenoviremia — Emapalumab+Anakinra+Etoposide联合治疗</div>
+    </div>
+    <div class="meta">
+      <div class="meta">循证病例 · PMID 38322244</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 文献来源 -->
+    <div style="background:#d4f0ed;border-left:4px solid var(--accent);padding:8px 12px;border-radius:0 8px 8px 0;margin:6px 0;font-size:11.5px;">
+      <div style="font-weight:700;color:var(--accent);font-size:12px;margin-bottom:3px;">📄 文献来源</div>
+      <b>PMID:</b> 38322244 &nbsp;|&nbsp; <b>PMC:</b> PMC10845352<br>
+      <b>DOI:</b> 10.3389/fped.2023.1336554<br>
+      <b>期刊:</b> Frontiers in Pediatrics | <b>年份:</b> 2023<br>
+      <b>作者:</b> Slaney ED, Modica R, Woolnough L, Kafisheh D, Bell-Brunson DH, Elder M<br>
+      <b>机构:</b> pediatric rheumatology, USA<br>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10845352/" target="_blank" style="color:var(--accent)">查看原文 →</a>
+    </div>
+
+    <div class="alert"><b>流行病学提示：</b>MAS是sJIA最严重的并发症，约10%–13%的sJIA患儿发生临床MAS，亚临床MAS发生率可高达30%。感染是MAS最常见的触发因素。本例为<b>首个报道</b>使用emapalumab+etoposide+anakinra+tacrolimus+糖皮质激素五联方案成功治疗感染诱发的难治性MAS的病例。</div>
+
+    <!-- 1. 基本信息 -->
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">性别</td><td>男</td></tr>
+      <tr><td class="b">年龄</td><td>2岁</td></tr>
+      <tr><td class="b">主诉</td><td>持续发热伴皮疹3天</td></tr>
+      <tr><td class="b">标签</td><td>
+        <span class="tag t-r">sJIA</span>
+        <span class="tag t-r">MAS</span>
+        <span class="tag t-y">难治性</span>
+        <span class="tag t-a">腺病毒血症</span>
+        <span class="tag t-g">Emapalumab</span>
+      </td></tr>
+    </table>
+
+    <!-- 2. 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿为2岁白人男童，胎龄33周早产儿，有胎儿酒精综合征病史。13月龄时因<b>持续性弛张热、一过性皮疹、淋巴结肿大及关节炎</b>确诊为<b>早发型系统性幼年特发性关节炎（sJIA）</b>，初始治疗为anakinra 100 mg 皮下注射 每日一次。此后先后发生<b>5次MAS发作</b>，均需大剂量静脉糖皮质激素和静脉anakinra治疗。
+      <br><br>
+      本次入院前3天出现<b>持续发热、皮疹</b>，实验室指标提示MAS复发，胸片示多灶性肺炎。入院前家庭用药方案为：anakinra 8 mg/kg/d 皮下注射 + tacrolimus 0.17 mg/kg/d（谷浓度7–9 ng/mL）。入院后感染评估发现<b>腺病毒血症（>10,000,000 copies/mL）</b>，确认本次MAS为腺病毒感染所诱发。本次住院共<b>105天</b>，期间MAS对糖皮质激素和anakinra均耐药，需逐步升级至五联免疫抑制方案。
+      <br><br>
+      <b>既往史</b>：胎龄33周早产，胎儿酒精综合征；13月龄确诊sJIA，先后5次MAS发作。<b>个人史</b>：早产儿，生长发育史不详。<b>家族史</b>：原文未详述。<b>过敏史</b>：原文未提及。
+    </p>
+
+    <!-- 3. 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征（入院时）</th></tr>
+        <tr><td class="b">体温</td><td>发热（具体数值原文未报）</td></tr>
+        <tr><td class="b">心率</td><td>增快</td></tr>
+        <tr><td class="b">呼吸</td><td>增快，需氧疗支持</td></tr>
+        <tr><td class="b">体重</td><td>原文未报</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td class="b">一般情况</td><td>急性病容，精神萎靡</td></tr>
+        <tr><td class="b">皮肤</td><td>弥漫性固定性斑丘疹（MAS特征，区别于sJIA的一过性皮疹）</td></tr>
+        <tr><td class="b">淋巴结</td><td>淋巴结肿大</td></tr>
+        <tr><td class="b">心肺</td><td>呼吸费力，间质性肺水肿（利尿后改善）</td></tr>
+        <tr><td class="b">腹部</td><td>肝脾肿大</td></tr>
+        <tr><td class="b">关节</td><td>关节炎（sJIA基础表现）</td></tr>
+      </table>
+    </div>
+
+    <!-- 4. 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>铁蛋白（峰值）</td><td><b>67,000 ng/mL</b></td><td>7–140 ng/mL</td><td><span class="c-r">↑↑↑ 极度升高（MAS标志）</span></td></tr>
+      <tr><td>AST</td><td>>1,000 IU/L</td><td>10–40 IU/L</td><td><span class="c-r">↑↑</span></td></tr>
+      <tr><td>ALT</td><td>>1,000 IU/L</td><td>10–40 IU/L</td><td><span class="c-r">↑↑</span></td></tr>
+      <tr><td>LDH</td><td>>10,000 IU/L</td><td>140–280 IU/L</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>血小板</td><td>持续下降趋势</td><td>150–400×10⁹/L</td><td><span class="c-r">↓（消耗性减少）</span></td></tr>
+      <tr><td>血红蛋白</td><td>持续下降趋势</td><td>11–14 g/dL</td><td><span class="c-r">↓</span></td></tr>
+      <tr><td>白细胞</td><td>持续下降趋势</td><td>6–17×10⁹/L</td><td><span class="c-r">↓</span></td></tr>
+      <tr><td>腺病毒PCR</td><td>>10,000,000 copies/mL</td><td>阴性</td><td><span class="c-r">↑↑↑（MAS触发因素）</span></td></tr>
+      <tr><td>(1,3)-β-D-葡聚糖</td><td>阳性</td><td>阴性</td><td>提示真菌感染可能</td></tr>
+      <tr><td>BAL半乳甘露聚糖</td><td>异常（1次），重复阴性</td><td>阴性</td><td>疑似曲霉菌感染</td></tr>
+      <tr><td>BAL通用PCR</td><td>耶氏肺孢子虫阳性</td><td>阴性</td><td>PCP肺炎</td></tr>
+      <tr><td>HLH基因突变</td><td>阴性</td><td>—</td><td>排除原发性HLH</td></tr>
+      <tr><td>免疫缺陷基因Panel</td><td>阴性（Invitae®）</td><td>—</td><td>排除原发性免疫缺陷</td></tr>
+      <tr><td>骨髓活检×2</td><td>阴性（无恶性、可见吞噬现象）</td><td>—</td><td>排除白血病/淋巴瘤</td></tr>
+    </table>
+    <div class="note"><b>影像学</b>：胸片示多灶性肺炎；胸部CT确认多灶性肺炎伴磨玻璃影、反应性纵隔淋巴结肿大，排除间质性肺病。</div>
+
+    <!-- 5. 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <div style="margin:4px 0;padding:6px 10px;background:var(--green-bg);border-radius:6px;font-size:12px;">
+      <b>诊断：</b>① 早发型系统性幼年特发性关节炎（sJIA）活动期；② 巨噬细胞活化综合征（MAS）— 难治性，腺病毒血症诱发；③ 多灶性肺炎（腺病毒+疑似曲霉菌+耶氏肺孢子虫混合感染）
+    </div>
+
+    <table>
+      <tr><th>分类标准</th><th>来源</th><th>诊断策略</th><th>条目</th><th>本例</th></tr>
+      <tr><td class="b" rowspan="8">2016 EULAR/ACR/PRINTO MAS分类标准</td><td rowspan="8">Ravelli A et al., 2016, <i>Ann Rheum Dis</i><br>DOI: 10.1136/annrheumdis-2015-208982<br>PMID: 26865703</td><td rowspan="8">仅适用于sJIA背景。满足特定阈值组合即可分类。</td><td>① 铁蛋白 >684 ng/mL</td><td><span class="c-g">✅ 符合</span>（峰值67,000，远超阈值）</td></tr>
+      <tr><td>② 血小板 ≤181×10⁹/L</td><td><span class="c-g">✅ 符合</span>（持续下降趋势）</td></tr>
+      <tr><td>③ AST >48 U/L</td><td><span class="c-g">✅ 符合</span>（>1,000 IU/L）</td></tr>
+      <tr><td>④ 甘油三酯 >156 mg/dL</td><td>【原文未报具体值】（MAS典型表现）</td></tr>
+      <tr><td>⑤ 纤维蛋白原 ≤360 mg/dL</td><td>【原文未报具体值】</td></tr>
+      <tr><td>⑥ 骨髓吞噬现象</td><td><span class="c-g">✅ 符合</span>（骨髓活检可见）</td></tr>
+      <tr><td>⑦ CD107a表达降低</td><td>【原文未报】</td></tr>
+      <tr><td>⑧ NK细胞活性降低</td><td>【原文未报】</td></tr>
+    </table>
+    <div class="note">注：本例符合2016 MAS分类标准中铁蛋白极度升高、血小板下降、AST升高、骨髓吞噬现象等多项关键指标，且临床表现为典型的持续发热+固定性皮疹+肝脾肿大，sJIA背景下MAS诊断明确。</div>
+
+    <!-- 6. 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>剂量</th><th>用法</th><th>时间</th></tr>
+      <tr><td class="b">甲泼尼龙（脉冲）</td><td>10 mg/kg/d</td><td>IV</td><td>HD 1起</td></tr>
+      <tr><td class="b">地塞米松</td><td>1.5 mg/kg/d</td><td>IV</td><td>HD 15起（替代甲泼尼龙）</td></tr>
+      <tr><td class="b">Anakinra（大剂量）</td><td>逐步加量至 <b>46 mg/kg/d</b></td><td>IV 分次给药</td><td>HD 2–101（文献报告最高非连续静脉剂量）</td></tr>
+      <tr><td class="b">Emapalumab</td><td>1→3→6→10 mg/kg</td><td>IV 每周2次递增</td><td>HD 12起（抗IFNγ单抗）</td></tr>
+      <tr><td class="b">Etoposide</td><td>150 mg/m²/周</td><td>IV × 8次</td><td>HD 26起（按pHLH方案）</td></tr>
+      <tr><td class="b">Tacrolimus</td><td>0.17–0.2 mg/kg/d</td><td>口服</td><td>全程（中间曾换IV环孢素）</td></tr>
+      <tr><td class="b">Cidofovir</td><td>每周IV</td><td>IV</td><td>抗腺病毒</td></tr>
+      <tr><td class="b">IVIG</td><td>5剂</td><td>IV</td><td>被动免疫支持</td></tr>
+      <tr><td class="b">Voriconazole→Posaconazole</td><td>标准剂量</td><td>IV/口服</td><td>疑似曲霉菌感染</td></tr>
+      <tr><td class="b">Atovaquone</td><td>标准剂量</td><td>口服</td><td>耶氏肺孢子虫肺炎</td></tr>
+    </table>
+    <div class="alert"><b>治疗要点：</b>本例为文献首次报告的五联免疫抑制方案（emapalumab + etoposide + anakinra + tacrolimus + 糖皮质激素）成功治疗sJIA相关难治性MAS。Anakinra剂量高达46 mg/kg/d为文献报告最高非连续静脉给药剂量。</div>
+
+    <!-- 7. 随访 -->
+    <div class="sh">📅 随访经过（住院105天）</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">入院日（HD 0）</div>
+        <div class="t-content">持续发热、皮疹、MAS实验室指标恶化、胸片示多灶性肺炎</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">HD 1–2</div>
+        <div class="t-content">启动甲泼尼龙脉冲（10 mg/kg/d IV）+ anakinra加量至25 mg/kg/d IV</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">HD 10–38</div>
+        <div class="t-content">tacrolimus换为IV环孢素（因谷浓度不达标），后因高血压换回tacrolimus</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">HD 12</div>
+        <div class="t-content">启动emapalumab 1 mg/kg，逐步递增至10 mg/kg（每周2次）</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">HD 13（病情最重）</div>
+        <div class="t-content">铁蛋白峰值67,000 ng/mL，AST/ALT >1,000，LDH >10,000；转入PICU；anakinra加至37.5→46 mg/kg/d</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">HD 15</div>
+        <div class="t-content">换用地塞米松1.5 mg/kg/d IV；利尿后呼吸功能改善，转出PICU</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">HD 26</div>
+        <div class="t-content">加用etoposide 150 mg/m²/周 × 8次（pHLH方案）</div>
+      </div>
+      <div class="t-item yellow">
+        <div class="t-date">HD 59–96</div>
+        <div class="t-content">病情趋于稳定，anakinra从46 mg/kg/d缓慢减量至2 mg/kg/d（37天减量过程）</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">HD 101</div>
+        <div class="t-content">停用anakinra</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">HD 105（出院）</div>
+        <div class="t-content">出院方案：泼尼松龙 2 mg/kg/d + 氢化可的松 5 mg bid + emapalumab 10 mg/kg biw + tacrolimus 0.03 mg/kg/d + cidofovir维持</div>
+      </div>
+    </div>
+
+    <!-- 8. 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; padding-left:18px; margin:4px 0;">
+      <li><b>感染是MAS最重要的触发因素</b>：本例腺病毒血症（>10,000,000 copies/mL）直接诱发MAS，强调sJIA患儿发热时需积极排查感染。</li>
+      <li><b>难治性MAS需多药联合</b>：常规大剂量激素+anakinra无效时，需考虑加用emapalumab（抗IFNγ单抗）、etoposide等二线/三线药物。</li>
+      <li><b>Anakinra可超大剂量使用</b>：本例anakinra高达46 mg/kg/d（常规剂量1–2 mg/kg/d），为文献报告最高非连续静脉剂量，提示难治性MAS可能需要突破常规剂量。</li>
+      <li><b>排除原发性HLH至关重要</b>：难治性/复发型MAS应行HLH相关基因检测和免疫缺陷Panel，排除原发性HLH。</li>
+      <li><b>MAS治疗缺乏标准化方案</b>：目前无FDA获批的MAS特异性治疗，需根据病情严重程度和耐药情况个体化制定方案。</li>
+    </ul>
+
+    <!-- 9. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38322244/" target="_blank">PMID 38322244</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10845352/" target="_blank">PMC10845352</a></div>
+      <ol style="padding-left:18px;">
+      <li>Slaney ED, Modica R, Woolnough L, et al. Refractory MAS Requiring High-Dose Anakinra, Emapalumab, and Etoposide in Early-Onset sJIA Associated with Adenoviremia. <i>Front Pediatr</i>. 2023;11:1336554. PMID: 38322244.</li>
+      <li>Ravelli A, et al. 2016 Classification Criteria for MAS in sJIA. <i>Ann Rheum Dis</i>. 2016;75(3):481-489. PMID: 26865703.</li>
+      <li>Grom AA, Horne A, De Benedetti F. Macrophage Activation Syndrome in the Era of Biologic Therapy. <i>Nat Rev Rheumatol</i>. 2016;12(5):259-268. PMID: 27009539.</li>
+      <li>Minoia F, et al. Clinical Features, Treatment, and Outcome of MAS Complicating sJIA. <i>Arthritis Rheumatol</i>. 2014;66(11):3160-3169. PMID: 25077692.</li>
+      <li>Mehta P, Cron RQ, et al. Silencing the Cytokine Storm: IV Anakinra in HLH/MAS. <i>Lancet Rheumatol</i>. 2020;2(6):e358-e367. PMID: 32373790.</li>
+      <li>Ravelli A, Grom AA, Behrens EM, et al. MAS as Part of sJIA: Diagnosis, Genetics, Pathophysiology and Treatment. <i>Genes Immun</i>. 2012;13(4):289-298. PMID: 22418018.</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

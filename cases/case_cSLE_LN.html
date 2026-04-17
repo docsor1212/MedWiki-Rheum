@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：12岁女孩 cSLE→LN IV型</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--accent); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">cSLE→LN IV型</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🟢 病例：儿童SLE → 狼疮性肾炎IV型</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">12岁女孩 — 蝶形红斑+水肿+高血压→肾活检指导精准治疗</div>
+    </div>
+    <div class="meta">更新: 2026-04-16</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>12岁女孩</td></tr>
+      <tr><td class="b">就诊日期</td><td>2026-03（参考）</td></tr>
+      <tr><td class="b">主诉</td><td>面部红斑3周，双下肢水肿1周，头痛2天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">cSLE</span> <span class="tag t-r">狼疮性肾炎IV型</span> <span class="tag t-y">高血压</span></td></tr>
+    </table>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      3周前面部出现蝶形红斑，日晒后加重。1周前出现双下肢可凹性水肿，晨起眼睑浮肿。2天前头痛，测血压148/95 mmHg。否认发热、关节痛、光过敏、口腔溃疡。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：生长发育正常，月经初潮未至。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>36.8℃</td></tr>
+        <tr><td>HR</td><td>88次/分</td></tr>
+        <tr><td>BP</td><td class="c-r">148/95 mmHg</td></tr>
+        <tr><td>体重</td><td>40 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神可</td></tr>
+        <tr><td>皮肤黏膜</td><td>面部<b>蝶形红斑</b>，双下肢凹陷性水肿（+++）</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率88次/分，律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>腹软，无压痛，肝脾未触及肿大</td></tr>
+        <tr><td>关节</td><td>无肿痛</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <div class="g2">
+      <div>
+        <table>
+          <tr><th colspan="3">免疫学指标</th></tr>
+          <tr><th>指标</th><th>结果</th><th>参考值</th></tr>
+          <tr><td>ANA</td><td class="c-r">1:1280</td><td>&lt;1:80</td></tr>
+          <tr><td>Anti-dsDNA</td><td class="c-r">强阳性</td><td>阴性</td></tr>
+          <tr><td>C3</td><td class="c-r">32 mg/dL</td><td>90-180 mg/dL</td></tr>
+          <tr><td>C4</td><td class="c-r">5 mg/dL</td><td>10-40 mg/dL</td></tr>
+          <tr><td>Anti-Sm</td><td>阳性</td><td>阴性</td></tr>
+        </table>
+      </div>
+      <div>
+        <table>
+          <tr><th colspan="3">肾脏指标动态</th></tr>
+          <tr><th>指标</th><th>基线</th><th>6月</th></tr>
+          <tr><td>24h尿蛋白</td><td class="c-r">3.5 g/d</td><td class="c-g">0.4 g/d</td></tr>
+          <tr><td>血白蛋白</td><td class="c-r">2.5 g/dL</td><td class="c-g">3.8 g/dL</td></tr>
+          <tr><td>血肌酐</td><td>0.9 mg/dL</td><td>0.7 mg/dL</td></tr>
+          <tr><td>血压</td><td class="c-r">148/95</td><td class="c-g">120/75</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="note">肾活检（第5天）：ISN/RPS IV-G(A)——弥漫性球性增殖性LN，光镜>50%肾小球受累，可见wire-loop病变；免疫荧光"满堂亮"（IgG+++、IgA+、IgM+、C3+++、C1q++）</div>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>ANA 1:1280阳性</td><td>✅</td></tr>
+      <tr><td>抗dsDNA强阳性</td><td>✅</td></tr>
+      <tr><td>补体C3/C4显著降低</td><td>✅</td></tr>
+      <tr><td>蝶形红斑</td><td>✅</td></tr>
+      <tr><td>狼疮肾炎IV型（肾活检确诊）</td><td>✅</td></tr>
+      <tr><td>高血压（肾性）</td><td>✅</td></tr>
+    </table>
+    <div class="note"><b>诊断：cSLE 合并IV型狼疮肾炎（IV-G(A)）</b></div>
+
+    <div class="sh blue">🧠 诊断推理</div>
+    <div class="reasoning">
+      <div class="q">❓ 为什么必须做肾活检？</div>
+      儿童SLE肾受累率高达50-80%，且临床表现（蛋白尿程度）不能准确预测病理类型。<b>I/II型（轻微/系膜）vs III/IV型（增殖性）</b>治疗方案截然不同：增殖性LN需要积极免疫抑制，而轻微病变不需要。→ <b>肾活检是指导治疗决策的金标准</b>
+    </div>
+    <div class="reasoning">
+      <div class="q">❓ 为什么选择MMF而非环磷酰胺？</div>
+      诱导期MMF vs IV-CY的头对头研究（如ALMS试验）显示疗效相当，但MMF副作用更少（无出血性膀胱炎、性腺毒性更低）。<b>对于青春期女孩，保护生育功能尤为重要</b>。因此儿童增殖性LN首选MMF诱导已成为多数中心的标准方案。
+    </div>
+
+    <div class="sh green">💊 治疗决策</div>
+    <table>
+      <tr><th>阶段</th><th>方案</th><th>理由</th></tr>
+      <tr><td class="b">诱导期(0-6月)</td><td>MMF+GC冲击→口服减量+HCQ</td><td>IV-G(A)需积极免疫抑制；MMF兼顾疗效与安全性</td></tr>
+      <tr><td class="b">维持期(6月+)</td><td>MMF维持+低剂量GC+HCQ</td><td>长期维持防复发，GC减至最低有效剂量</td></tr>
+      <tr><td class="b">辅助治疗</td><td>补钙+VitD+降压</td><td>GC相关骨质疏松预防；肾性高血压控制</td></tr>
+    </table>
+
+    <div class="note" style="margin-top:6px;"><b>长期计划：</b>MMF维持至少3-5年；HCQ长期服用（降低复发率）；每3月监测尿蛋白+补体；保护肾功能、关注生长和青春期发育。</div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">第1天 — 初诊</div>
+        <div class="t-content">
+          面部蝶形红斑，双下肢水肿（+++），BP 148/95 mmHg。<br>
+          尿检：蛋白（+++），RBC 15-20/HP，可见<b>RBC管型</b>。<br>
+          24h尿蛋白：<span class="c-r">3.5 g/d</span>（正常<0.15）
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">第5天 — 肾活检</div>
+        <div class="t-content">
+          ISN/RPS分类：<b>IV-G（A）</b>——弥漫性球性增殖性狼疮性肾炎，活动性病变<br>
+          免疫荧光："满堂亮"<span class="tag t-r">IV型LN——需要积极免疫抑制治疗</span>
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">4周 — 诱导缓解评估</div>
+        <div class="t-content">尿蛋白从3.5→1.8 g/d，C3从32→58 mg/dL，水肿明显消退</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">3月 — 进一步改善</div>
+        <div class="t-content">尿蛋白0.9 g/d，C3 82 mg/dL，anti-dsDNA滴度下降</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">6月 — 接近完全缓解</div>
+        <div class="t-content">尿蛋白<span class="c-g">0.4 g/d</span>，C3 <span class="c-g">105 mg/dL</span>（补体恢复正常），血压稳定120/75 mmHg</div>
+      </div>
+    </div>
+
+    <div class="sh yellow">📝 临床教训</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 儿童SLE肾受累率高且隐匿</b><br>
+      50-80%的cSLE有肾受累，部分患者以肾脏表现为首发症状。<b>所有cSLE患者初诊及随访中必须规律监测尿检和肾功能</b>。<br><br>
+      <b>2. 尽早肾活检指导精准治疗</b><br>
+      不能凭经验"试试看"。IV型LN如果不积极治疗，5年肾存活率显著降低。<b>增殖性LN的早期诊断和积极干预是保肾的关键</b>。<br><br>
+      <b>3. HCQ是cSLE的基石药物</b><br>
+      羟氯喹降低复发率、减少血栓事件、改善长期预后。除非有禁忌，<b>所有cSLE患者都应长期服用HCQ</b>。
+    </div>
+
+    <div class="sh">🔗 相关工具</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
+      <a href="../topics/SLE.html" style="text-decoration:none"><span class="tag t-a">📋 SLE专题</span></a>
+      <a href="../drugs/mycophenolate.html" style="text-decoration:none"><span class="tag t-a">📋 吗替麦考酚酯</span></a>
+      <a href="../drugs/hydroxychloroquine.html" style="text-decoration:none"><span class="tag t-a">📋 羟氯喹</span></a>
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      ISN/RPS 2003狼疮性肾炎分类标准。教学病例，综合文献整理。
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_sJIA_MAS_new.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ sJIA→MAS</a>
+    <a href="case_KD_IVIG_resistant.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">KD→IVIG无反应 ➡</a>
+  </div>
+
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

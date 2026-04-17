@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🔬 循证病例库 — MedWiki-Rheum</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="../manifest.json">
+  <style>
+    :root{--accent:#20a39e;--accent-light:#e0f5f4;}
+    body{font-family:'Noto Sans SC',sans-serif;background:#f8fafc;margin:0;padding-top:48px;}
+    .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+    .nav-bar a{color:#fff;text-decoration:none;opacity:.85;}.nav-bar a:hover{opacity:1;}
+    .hero{background:var(--accent);color:#fff;padding:30px 20px 20px;text-align:center;}
+    .ev-card{background:#fff;border-radius:10px;padding:16px;margin:10px 0;box-shadow:0 1px 4px rgba(0,0,0,.08);transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block;}
+    .ev-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12);}
+    .pmid-tag{display:inline-block;background:var(--accent-light);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;}
+    .disease-tag{display:inline-block;background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500;margin-left:6px;}
+    .category-label{font-size:15px;font-weight:600;color:var(--accent);margin:20px 0 8px;padding-left:4px;border-left:3px solid var(--accent);padding-left:8px;}
+    .disclaimer{background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:13px;color:#856404;}
+  </style>
+</head>
+<body>
+<nav class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">🔬 循证病例库</a>
+  <span style="margin-left:auto;opacity:.6;font-size:11px;">MedWiki-Rheum</span>
+</nav>
+
+<div class="hero">
+  <h1 style="font-size:1.5rem;margin:0;">🔬 循证病例库</h1>
+  <p style="font-size:14px;opacity:.9;margin:6px 0 0;">Evidence-Based Cases — 数据来源：PubMed/PMC真实病例报告</p>
+  <p style="font-size:12px;opacity:.7;margin:4px 0 0;">共 20 个病例 · 每个病例可追溯至原始文献</p>
+</div>
+
+<main class="max-w-4xl mx-auto p-4">
+
+  <div class="disclaimer">
+    ℹ️ <strong>关于本库</strong>：所有病例数据均来自PubMed/PMC公开发表的病例报告（Case Report），数据真实可溯源。每个病例顶部标注PMID，可点击查看原文。仅供医学教育参考。
+  </div>
+
+  <!-- 川崎病 -->
+  <div class="category-label">🫀 川崎病（KD）</div>
+
+  <a class="ev-card" href="ev_KD_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">IVIG抵抗型川崎病 — 巨大冠脉瘤+血栓</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">8月龄男婴 · LMCA 12.5mm · THBD基因突变 · 多发冠脉血栓</div>
+    <span class="pmid-tag">PMID 38146411</span>
+    <span class="disease-tag">KD</span>
+  </a>
+
+  <a class="ev-card" href="ev_KD_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">IVIG抵抗型不完全KD — 前囟膨隆</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">4月龄女婴 · 非典型表现为前囟膨隆 · LMCA Z-score 2.9→3.2→1.2</div>
+    <span class="pmid-tag">PMID 41804474</span>
+    <span class="disease-tag">KD</span>
+  </a>
+
+  <a class="ev-card" href="ev_KD_03.html">
+    <div style="font-weight:600;margin-bottom:4px;">不完全KD并发川崎病休克综合征</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">8岁男孩 · 误诊细菌感染 · IVIG后恶化休克 · 二线治疗成功</div>
+    <span class="pmid-tag">PMID 41909287</span>
+    <span class="disease-tag">KD</span>
+  </a>
+
+  <!-- sJIA/MAS -->
+  <div class="category-label">🔥 全身型JIA / MAS</div>
+
+  <a class="ev-card" href="ev_sJIA_MAS_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">sJIA并发难治性MAS — 多器官衰竭</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">6岁男孩 · 铁蛋白峰值26,000 · 癫痫持续状态 · IV阿那白滞素+血浆置换</div>
+    <span class="pmid-tag">PMID 41477438</span>
+    <span class="disease-tag">sJIA/MAS</span>
+  </a>
+
+
+  <a class="ev-card" href="ev_sJIA_MAS_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">sJIA并发难治性MAS — 五联免疫抑制方案</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">早发型sJIA · 腺病毒诱发MAS · emapalumab+etoposide+anakinra+tacrolimus+GC</div>
+    <span class="pmid-tag">PMID 38322244</span>
+    <span class="disease-tag">sJIA/MAS</span>
+  </a>
+
+  <a class="ev-card" href="ev_pSS_MAS_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">儿童干燥病并发MAS（首例报告）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">8岁女孩 · 首例以MAS为首发表现的儿童原发性干燥病 · 无sicca症状</div>
+    <span class="pmid-tag">PMID 41439070</span>
+    <span class="disease-tag">MAS</span>
+  </a>
+
+  <!-- cSLE -->
+  <div class="category-label">🦋 儿童SLE</div>
+
+  <a class="ev-card" href="ev_cSLE_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">cSLE+Fanconi综合征 — V型狼疮肾炎</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">4岁男孩 · 肾小管酸中毒首发 · SLEDAI 14→4 · 贝利尤单抗有效</div>
+    <span class="pmid-tag">PMID 38250590</span>
+    <span class="disease-tag">cSLE</span>
+  </a>
+
+  <a class="ev-card" href="ev_cSLE_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">cSLE+IV型狼疮肾炎 — 诊断延迟1年</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">11岁女孩 · 弥漫膜增生性 · 满堂亮免疫荧光 · 高IgE · 最终依赖透析</div>
+    <span class="pmid-tag">PMID 36865980</span>
+    <span class="disease-tag">cSLE</span>
+  </a>
+
+  <!-- APS -->
+  <div class="category-label">🩸 抗磷脂综合征（APS）</div>
+
+  <a class="ev-card" href="ev_APS_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">灾难性APS — 颅内血栓→肺栓塞</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">7岁女孩 · 颅内静脉窦血栓→下肢DVT→肺栓塞 · LA阳性</div>
+    <span class="pmid-tag">PMID 39722765</span>
+    <span class="disease-tag">APS</span>
+  </a>
+
+  <!-- JDM -->
+  <div class="category-label">💪 幼年皮肌炎（JDM）</div>
+
+  <a class="ev-card" href="ev_JDM_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">JDM+肾病综合征（anti-NXP2）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">8岁女孩 · 大量蛋白尿9,448mg/d · 阿达木单抗治疗复发有效</div>
+    <span class="pmid-tag">PMID 37205220</span>
+    <span class="disease-tag">JDM</span>
+  </a>
+
+  <a class="ev-card" href="ev_JDM_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">JDM(anti-MDA5)+NMOSD（首例青少年报告）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">17岁男孩 · 首例青少年JDM+NMOSD同时发生 · CK正常但aldolase↑</div>
+    <span class="pmid-tag">PMID 38948240</span>
+    <span class="disease-tag">JDM</span>
+  </a>
+
+  <!-- JIA -->
+  <div class="category-label">🦴 幼年特发性关节炎（JIA）</div>
+
+  <a class="ev-card" href="ev_JIA_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">少关节型JIA</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">2岁女孩 · 典型少关节型起病 · 治疗+随访</div>
+    <span class="pmid-tag">PMID 40964590</span>
+    <span class="disease-tag">JIA</span>
+  </a>
+
+  <a class="ev-card" href="ev_JIA_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">多关节型JIA+Leri-Weill综合征</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">16岁女孩 · 难治性多关节型 · 合并骨骼发育异常</div>
+    <span class="pmid-tag">PMID 33451288</span>
+    <span class="disease-tag">JIA</span>
+  </a>
+
+  <!-- Uveitis -->
+  <div class="category-label">👁️ 葡萄膜炎</div>
+
+  <a class="ev-card" href="ev_uveitis_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">JIA相关葡萄膜炎 — 阿达木单抗治疗</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">9岁男孩 · 少关节扩展型 · 生物制剂治疗反应</div>
+    <span class="pmid-tag">PMID 24886032</span>
+    <span class="disease-tag">Uveitis</span>
+  </a>
+
+  <!-- ITP -->
+  <div class="category-label">🩸 免疫性血小板减少症（ITP）</div>
+
+  <a class="ev-card" href="ev_ITP_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">COVID-19后重症ITP</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">6岁女孩 · 急性重症 · COVID-19相关</div>
+    <span class="pmid-tag">PMID 37033169</span>
+    <span class="disease-tag">ITP</span>
+  </a>
+
+  <a class="ev-card" href="ev_ITP_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">COVID-19后持续性难治性ITP</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">14岁男孩 · 慢性难治性 · 多线治疗</div>
+    <span class="pmid-tag">PMID 38145004</span>
+    <span class="disease-tag">ITP</span>
+  </a>
+
+  <!-- IgAV -->
+  <div class="category-label">🟣 IgA血管炎</div>
+
+  <a class="ev-card" href="ev_IgAV_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">IgAV合并冠状动脉瘤+紫癜性肾炎IIIa</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">罕见冠脉并发症 · 肾炎ISRD分级IIIa</div>
+    <span class="pmid-tag">PMID 35186817</span>
+    <span class="disease-tag">IgAV</span>
+  </a>
+
+  <a class="ev-card" href="ev_IgAV_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">低补体性IgAV — 膜增生性肾炎</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">补体替代途径激活 · 低C3/C4 · 膜增生性肾小球肾炎</div>
+    <span class="pmid-tag">PMID 35757129</span>
+    <span class="disease-tag">IgAV</span>
+  </a>
+
+  <!-- PID -->
+  <div class="category-label">🛡️ 原发性免疫缺陷病（PID）</div>
+
+  <a class="ev-card" href="ev_PID_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">X连锁慢性肉芽肿病（X-CGD）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">诺卡菌+曲霉菌重叠感染 · CYBB基因突变</div>
+    <span class="pmid-tag">PMID 35057749</span>
+    <span class="disease-tag">PID</span>
+  </a>
+
+  <a class="ev-card" href="ev_PID_02.html">
+    <div style="font-weight:600;margin-bottom:4px;">XLA双胞胎 — 合并MPGN</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">双胞胎兄弟同患 · BTK缺失 · 肾小管间质病变/膜增生性肾炎</div>
+    <span class="pmid-tag">PMID 39119334</span>
+    <span class="disease-tag">PID</span>
+  </a>
+
+  <!-- AID -->
+  <div class="category-label">🌀 自身炎症性疾病（AID）</div>
+
+  <a class="ev-card" href="ev_AID_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">新生儿甲羟戊酸尿症（MVK新变异）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">新生儿早发型 · MVK基因新变异 · 3月龄死亡</div>
+    <span class="pmid-tag">PMID 41869348</span>
+    <span class="disease-tag">AID</span>
+  </a>
+
+  <!-- ANCA血管炎 -->
+  <div class="category-label">🔴 ANCA相关血管炎</div>
+
+  <a class="ev-card" href="ev_ANCA_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">肉芽肿性多血管炎（GPA）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">体重下降+腹痛+鼻衄咳嗽 · c-ANCA阳性 · 肺肾受累</div>
+    <span class="pmid-tag">PMID 39149179</span>
+    <span class="disease-tag">ANCA</span>
+  </a>
+
+  <!-- 白塞病 -->
+  <div class="category-label">🟣 白塞病（Behçet）</div>
+
+  <a class="ev-card" href="ev_Behcet_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">儿童白塞病并发MAS</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">口腔/生殖器溃疡+结节性红斑 · 并发巨噬细胞活化综合征</div>
+    <span class="pmid-tag">PMID 29507666</span>
+    <span class="disease-tag">Behçet</span>
+  </a>
+
+  <!-- 幼年系统性硬化症 -->
+  <div class="category-label">🟤 幼年系统性硬化症（jSSc）</div>
+
+  <a class="ev-card" href="ev_jSSc_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">jSSc伴ILD+钙质沉着</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">呼吸困难+骶尾部病灶 · 间质性肺病+皮肤硬化+钙质沉着</div>
+    <span class="pmid-tag">PMID 38841009</span>
+    <span class="disease-tag">jSSc</span>
+  </a>
+
+  <!-- Evans综合征 -->
+  <div class="category-label">🩸 Evans综合征</div>
+
+  <a class="ev-card" href="ev_Evans_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">婴儿Evans综合征（4月龄）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">面色苍白+黄疸 · AIHA+ITP同时存在 · 婴儿期罕见</div>
+    <span class="pmid-tag">PMID 30787781</span>
+    <span class="disease-tag">Evans</span>
+  </a>
+
+  <!-- 新生儿狼疮 -->
+  <div class="category-label">👶 新生儿狼疮（NLE）</div>
+
+  <a class="ev-card" href="ev_NLE_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">新生儿狼疮+先天性心脏传导阻滞</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">喂养困难+心动过缓 · CCHB · 母亲抗Ro/La抗体</div>
+    <span class="pmid-tag">PMID 37546163</span>
+    <span class="disease-tag">NLE</span>
+  </a>
+
+  <!-- DADA2 -->
+  <div class="category-label">🧬 DADA2（腺苷脱氨酶2缺乏症）</div>
+
+  <a class="ev-card" href="ev_DADA2_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">DADA2伴反复卒中+网状青斑</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">5月龄首发卒中 · CECR1复合杂合 · ADA2酶活性极低 · TNF抑制剂</div>
+    <span class="pmid-tag">PMID 27444081</span>
+    <span class="disease-tag">DADA2</span>
+  </a>
+
+  <!-- FMF -->
+  <div class="category-label">🔥 家族性地中海热（FMF）</div>
+
+  <a class="ev-card" href="ev_FMF_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">FMF（MEFV M694V纯合）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">1岁起病 · 反复发热+腹痛+皮疹9年 · 秋水仙碱增量控制</div>
+    <span class="pmid-tag">PMID 31530787</span>
+    <span class="disease-tag">FMF</span>
+  </a>
+
+  <!-- SAVI -->
+  <div class="category-label">🫁 SAVI（STING相关血管病）</div>
+
+  <a class="ev-card" href="ev_SAVI_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">SAVI伴早发间质性肺病</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">5周龄起呼吸急促+皮疹 · TMEM173 V155M体细胞嵌合</div>
+    <span class="pmid-tag">PMID 27552632</span>
+    <span class="disease-tag">SAVI</span>
+  </a>
+
+  <!-- GIO -->
+  <div class="category-label">🦴 糖皮质激素性骨质疏松</div>
+
+  <a class="ev-card" href="ev_GIO_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">GC治疗后多发椎体压缩骨折</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">7岁MCTD女孩 · 激素4月后背痛 · 双膦酸盐干预</div>
+    <span class="pmid-tag">PMID 21954079</span>
+    <span class="disease-tag">GIO</span>
+  </a>
+
+  <!-- 大动脉炎 -->
+  <div class="category-label">🫀 大动脉炎（Takayasu）</div>
+
+  <a class="ev-card" href="ev_Takayasu_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">儿童大动脉炎（腹主动脉+肾动脉）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">12岁女孩 · 腹痛+高血压 · 上下肢血压差 · 5年持续缓解</div>
+    <span class="pmid-tag">PMID 34136299</span>
+    <span class="disease-tag">Takayasu</span>
+  </a>
+
+  <!-- PAN -->
+  <div class="category-label">🔴 结节性多动脉炎（PAN）</div>
+
+  <a class="ev-card" href="ev_PAN_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">皮肤型结节性多动脉炎（cPAN）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">颈部肿痛+发热 · 皮肤结节+网状青斑 · 鉴别系统性PAN</div>
+    <span class="pmid-tag">PMID 22046510</span>
+    <span class="disease-tag">PAN</span>
+  </a>
+
+  <!-- MCTD -->
+  <div class="category-label">🔗 混合性结缔组织病（MCTD）</div>
+
+  <a class="ev-card" href="ev_MCTD_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">MCTD合并肺动脉高压</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">11岁 · 进行性气短+雷诺现象 · SLE+SSc+PM重叠 · 抗U1-RNP</div>
+    <span class="pmid-tag">PMC1004814</span>
+    <span class="disease-tag">MCTD</span>
+  </a>
+
+  <!-- 干燥综合征 -->
+  <div class="category-label">💧 儿童干燥综合征（pSS）</div>
+
+  <a class="ev-card" href="ev_pSS_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">儿童原发干燥综合征</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">9岁男孩 · 反复腮腺肿大1年 · 口眼干 · ANA/抗SSA+</div>
+    <span class="pmid-tag">PMID 26195996</span>
+    <span class="disease-tag">pSS</span>
+  </a>
+
+  <!-- CANDLE -->
+  <div class="category-label">🕯️ CANDLE综合征</div>
+
+  <a class="ev-card" href="ev_CANDLE_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">CANDLE综合征（PSMB8新发突变）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">10岁 · 反复发热皮疹+生长迟缓 · PSMB8 Thr70Ser</div>
+    <span class="pmid-tag">PMC4044283</span>
+    <span class="disease-tag">CANDLE</span>
+  </a>
+
+  <!-- NLRC4 -->
+  <div class="category-label">🧬 NLRC4-AIFEC</div>
+
+
+  <a class="ev-card" href="ev_VEXAS_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">VEXAS综合征 — 早发型伴肺浸润</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">30岁男性 · UBA1 p.Met41Val · 反复巩膜炎+咳嗽+发热 · BALF检出突变克隆（首例）</div>
+    <span class="pmid-tag">PMID 41710874</span>
+    <span class="disease-tag">VEXAS</span>
+  </a>
+
+  <a class="ev-card" href="ev_NLRC4_01.html">
+    <div style="font-weight:600;margin-bottom:4px;">NLRC4-AIFEC（CARD域突变）</div>
+    <div style="font-size:13px;color:#666;margin-bottom:6px;">早产女婴 · 胎儿水肿+周期性发热+惊厥 · NLRC4功能增益</div>
+    <span class="pmid-tag">PMID 39425177</span>
+    <span class="disease-tag">NLRC4</span>
+  </a>
+
+  <div style="text-align:center;padding:30px 0;color:#999;font-size:12px;">
+    <p>📚 所有数据来源：PubMed/PMC公开发表文献 · 仅供医学教育参考</p>
+    <p>MedWiki-Rheum 循证病例库 · 35例 · 2026</p>
+  </div>
+
+</main>
+</body>
+</html>

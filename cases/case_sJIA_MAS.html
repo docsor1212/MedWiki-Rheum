@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：sJIA并发MAS急重症</title>
+<title>病例2：sJIA并发MAS急重症</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
@@ -12,226 +12,170 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
 .wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
 .header h1 { font-size:1.3rem; font-weight:700; }
 .header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
 .sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
 .g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
-th.red-hd { background:#fce5e1; color:var(--red); }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
 .b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#d05040;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
 .timeline .t-item { margin-bottom:8px; position:relative; }
 .timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
-.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
 .timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
 .score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
 .score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
-.criteria-box { background:#fff0f0; border:1px solid #ffcdd2; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.criteria-box .c-title { font-weight:700; font-size:12px; color:var(--red); margin-bottom:4px; }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
 @media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
-
 <div class="nav-bar">
   <a href="../index.html">🏠 首页</a>
   <a href="../topics/JIA.html">📋 JIA专题</a>
   <a href="index.html">📖 sJIA/MAS专题</a>
-  <span class="nav-title">sJIA并发MAS</span>
+  <span class="nav-title">病例2：sJIA并发MAS急重症</span>
 </div>
-
 <div class="wrap">
   <div class="header">
     <div>
-      <h1>🔴 病例2：sJIA并发MAS急重症</h1>
+      <h1>病例2：sJIA并发MAS急重症</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">12岁男性 — 误诊为感染→延误诊断→甲泼尼龙冲击抢救成功</div>
     </div>
-    <div class="meta">更新: 2026-04-10</div>
+    <div class="meta">更新: 2026-04-16</div>
   </div>
 
   <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
-    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
   </div>
 
   <div class="body">
 
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>男性，12岁</td></tr>
-      <tr><td class="b">来源</td><td>尼泊尔 Dolakha 地区</td></tr>
-      <tr><td class="b">主诉</td><td>间歇性发热1月，高热6天</td></tr>
+      <tr><td class="b" style="width:100px">患儿</td><td>杨XX，男，12岁</td></tr>
+      <tr><td class="b">就诊日期</td><td>尼泊尔 Dolakha 地区（文献报道）</td></tr>
+      <tr><td class="b">主诉</td><td>间歇性发热1月，持续高热6天</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">全身型JIA</span> <span class="tag t-r">巨噬细胞活化综合征</span> <span class="tag t-y">延误诊断</span></td></tr>
     </table>
 
-    <div class="sh">📝 病史经过</div>
-    <p style="font-size:12px;margin:4px 0;line-height:1.7;">
-      <b>起病阶段（入院前1月）</b>：间歇性发热，持续1-2天，最高101°F（38.3℃），间隔3-4天无热期，口服对乙酰氨基酚可退热。<br><br>
-      <b>恶化阶段（入院前6天）</b>：高热转为每日2-3个高峰，最高104°F（40℃），伴寒战、出汗。外院予头孢克肟→头孢曲松+阿奇霉素，<b>发热不退</b>，转入上级医院。<br><br>
-      <b>既往史</b>：体健。家族史无特殊。
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      1月前开始出现间歇性发热，持续1-2天，最高38.3℃，间隔3-4天无热期，口服对乙酰氨基酚可退热。6天前高热转为每日2-3个高峰，最高40.0℃，伴寒战、出汗。外院予头孢克肟→头孢曲松+阿奇霉素，发热不退，转入上级医院。<br><br>否认咳嗽、腹痛、关节肿痛。<br><br><b>既往史</b>：体健。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
     </p>
 
-    <div class="sh red">🏥 住院经过（诊断曲折之路）</div>
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>40.0℃</td></tr>
+        <tr><td>HR</td><td>118次/分</td></tr>
+        <tr><td>BP</td><td>95/60 mmHg</td></tr>
+        <tr><td>体重</td><td>35 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>病容，中度苍白</td></tr>
+        <tr><td>皮肤粘膜</td><td>双侧大腿瘀斑（约10×8cm），无压痛</td></tr>
+        <tr><td>淋巴结</td><td>双侧腹股沟淋巴结肿大（约2.5cm）</td></tr>
+        <tr><td>心肺</td><td>心率118次/分；少量心包积液（浆膜炎）</td></tr>
+        <tr><td>腹部</td><td class="c-r">肝脾肿大，脾脏120mm；少量腹水</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>2.6→2.1×10⁹/L</td><td>4.5-13</td><td><span class="c-r">↓↓（白细胞减少）</span></td></tr>
+      <tr><td>Hb</td><td>9.8→8.1 g/dL</td><td>120-160</td><td><span class="c-r">↓↓</span></td></tr>
+      <tr><td>PLT</td><td>120→80×10⁹/L</td><td>150-350</td><td><span class="c-r">↓↓↓（急降！）</span></td></tr>
+      <tr><td>ESR</td><td>12 mm/h（高热中<b>反常正常</b>）</td><td>0-15</td><td><span class="c-r">矛盾现象=MAS标志</span></td></tr>
+      <tr><td>铁蛋白</td><td>>1,650 ng/mL</td><td>10-200</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>甘油三酯</td><td>378 mg/dL</td><td>&lt;200</td><td><span class="c-r">↑↑</span></td></tr>
+      <tr><td>LDH</td><td>2,375 U/L</td><td>140-280</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>纤维蛋白原</td><td>125 mg/dL</td><td>200-400</td><td><span class="c-r">↓↓（消耗性降低）</span></td></tr>
+      <tr><td>骨髓穿刺</td><td>噬血现象阳性</td><td>—</td><td>确诊MAS</td></tr>
+    </table>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>铁蛋白 >684 ng/mL（Ravelli标准）</td><td>✅ >1,650</td></tr>
+      <tr><td>血小板 ≤181×10⁹/L</td><td>✅ 80</td></tr>
+      <tr><td>AST >48 U/L</td><td>✅</td></tr>
+      <tr><td>甘油三酯 >156 mg/dL</td><td>✅ 378</td></tr>
+      <tr><td>纤维蛋白原 ≤360 mg/dL</td><td>✅ 125</td></tr>
+      <tr><td>骨髓噬血现象</td><td>✅ 阳性</td></tr>
+      <tr><td>持续发热+肝脾肿大</td><td>✅</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：全身型JIA并发巨噬细胞活化综合征（MAS）</b><br>满足7/8条2016 Ravelli标准</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">甲泼尼龙冲击</td><td>静脉冲击治疗</td><td>MAS一线治疗</td></tr>
+      <tr><td class="b">环孢素A</td><td>联合治疗（备选）</td><td>激素部分反应时加用</td></tr>
+    </table>
+<div class="alert"><b>延误12天的原因</b>：驰张热+抗生素无效 → 首先考虑败血症。<b>ESR正常+持续高热+白细胞减少 = MAS标志</b>（纤维蛋白原消耗致ESR降低）</div>
+
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
       <div class="t-item red">
         <div class="t-date">入院第1-5天 — 感染排查</div>
-        <div class="t-content">
-          入院时：病容、中度苍白、轻度肝脾肿大。<br>
-          WBC 2,600/μL（白细胞减少），Hb 9.8 g/dL，血小板 120,000/μL。<br>
-          新冠PCR阴性。血培养：凝固酶阴性葡萄球菌阳性（考虑污染）。<br>
-          先后用：头孢曲松+阿奇霉素 → 多西环素 → 美罗培南+万古霉素<br>
-          <span class="tag t-r">发热始终不退</span>
-        </div>
+        <div class="t-content">先后用头孢曲松+阿奇霉素→多西环素→美罗培南+万古霉素。发热始终不退。</div>
       </div>
       <div class="t-item red">
         <div class="t-date">入院第5天 — 瘀斑出现</div>
-        <div class="t-content">
-          双侧大腿出现约10×8cm瘀斑，无压痛。双侧腹股沟淋巴结肿大（约2.5cm）。<br>
-          WBC 2,100/μL，ESR 12 mm/h（<b>ESR正常但白细胞极低→矛盾现象提示MAS</b>）。<br>
-          LDH 1,887 U/L（<b>显著升高</b>）。
-        </div>
+        <div class="t-content">WBC 2,100/μL，ESR 12 mm/h（<b>高热中矛盾性正常</b>），LDH 1,887 U/L。</div>
       </div>
       <div class="t-item yellow">
         <div class="t-date">入院第5-10天 — 继续排查</div>
-        <div class="t-content">
-          超声：脾脏肿大（120.3mm）+ 少量腹水。<br>
-          心脏超声：少量心包积液（<b>浆膜炎</b>）。<br>
-          PPD试验阴性。ANA阴性。血培养复查阴性。<br>
-          排除感染性心内膜炎、结核、SLE。<br>
-          骨髓穿刺：红系/粒系增生减低，<b>可见分化良好的巨噬细胞吞噬造血细胞（噬血现象）</b>。
-        </div>
+        <div class="t-content">超声：脾大+腹水+心包积液。骨髓：噬血现象阳性。</div>
       </div>
-      <div class="t-item yellow">
-        <div class="t-date">入院第10-12天 — 仍发热</div>
-        <div class="t-content">
-          所有抗生素已用10+天。尝试加用氯喹3天。<br>
-          停用全部抗生素观察48小时→仍每日2-3个高热峰。<br>
-          尝试大剂量阿司匹林（75mg/kg/d）→无反应。<br>
-          <b>MAS专项检查送出</b>
-        </div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">MAS确诊 — 关键实验室结果</div>
-        <div class="t-content">
-          <table style="margin:2px 0">
-            <tr><th>指标</th><th>结果</th><th>参考值</th></tr>
-            <tr><td>铁蛋白</td><td class="c-r">>1,650 ng/mL</td><td>10-200</td></tr>
-            <tr><td>甘油三酯</td><td class="c-r">378 mg/dL</td><td>&lt;200</td></tr>
-            <tr><td>乳酸脱氢酶</td><td class="c-r">2,375 U/L</td><td>140-280</td></tr>
-            <tr><td>纤维蛋白原</td><td class="c-r">125 mg/dL</td><td>200-400</td></tr>
-          </table>
-          <b>骨髓：噬血现象阳性</b>
-        </div>
-      </div>
-    </div>
-
-    <div class="sh red">✅ MAS诊断 — 2016 Ravelli标准对照</div>
-    <div class="criteria-box">
-      <div class="c-title">2016 Ravelli sJIA-MAS诊断标准</div>
-      <table>
-        <tr><th>标准条目</th><th>患者情况</th><th>符合</th></tr>
-        <tr><td>铁蛋白 >684 ng/mL</td><td>>1,650</td><td>✅</td></tr>
-        <tr><td>血小板 ≤181×10⁹/L</td><td>120×10⁹/L（入院时）→ 持续下降</td><td>✅</td></tr>
-        <tr><td>AST >48 U/L</td><td>升高（肝功能异常）</td><td>✅</td></tr>
-        <tr><td>甘油三酯 >156 mg/dL</td><td>378</td><td>✅</td></tr>
-        <tr><td>纤维蛋白原 ≤360 mg/dL</td><td>125（显著降低）</td><td>✅</td></tr>
-        <tr><td>骨髓噬血现象</td><td>阳性</td><td>✅</td></tr>
-        <tr><td>持续发热</td><td>住院12天持续高热</td><td>✅</td></tr>
-        <tr><td>肝脾肿大</td><td>轻度肝脾肿大+脾大120mm</td><td>✅</td></tr>
-      </table>
-      <div class="alert" style="margin-top:4px">
-        <b>诊断：全身型JIA并发巨噬细胞活化综合征（MAS）</b><br>
-        满足7/8条Ravelli标准（铁蛋白↑+血小板↓+AST↑+甘油三酯↑+纤维蛋白原↓+噬血现象+发热）
-      </div>
-    </div>
-
-    <div class="sh green">💊 治疗与转归</div>
-    <div class="timeline">
       <div class="t-item green">
-        <div class="t-date">甲泼尼龙冲击治疗</div>
-        <div class="t-content">
-          <b>方案</b>：静脉甲泼尼龙冲击<br>
-          <b>2剂后</b>：热退！临床症状明显改善。<br>
-          出院后继续口服糖皮质激素减量方案。
-        </div>
+        <div class="t-date">MAS确诊 — 甲泼尼龙冲击</div>
+        <div class="t-content">2剂后热退！临床症状明显改善。出院后继续口服激素减量。</div>
       </div>
     </div>
 
-    <div class="sh blue">🔍 延误诊断分析</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>延误12天的原因：</b><br>
-      ① sJIA无特异性标记物，初诊易误为感染<br>
-      ② 白细胞减少+持续发热 → 首先考虑败血症（但血培养仅凝固酶阴性葡萄球菌）<br>
-      ③ ESR正常（12 mm/h）在持续高热中是<b>反常的</b>→这是MAS重要线索（纤维蛋白原消耗致ESR降低）<br>
-      ④ 缺乏sJIA/MAS认知：基层医院对此罕见并发症警惕性不足<br><br>
-      <b>本例警示信号（回溯分析）：</b><br>
-      ⑤ <b>驰张热+抗生素无效</b> → 非感染性炎症<br>
-      ⑥ <b>ESR正常+WBC极低+高热</b> → 矛盾现象=MAS标志<br>
-      ⑦ <b>肝脾肿大+心包积液（浆膜炎）</b> → 系统性炎症<br>
-      ⑧ <b>瘀斑出现</b> → 凝血功能异常（纤维蛋白原消耗）
-    </div>
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:20px;">
+      <li>驰张热+广谱抗生素无效 → 必须考虑非感染性炎症</li>
+      <li><b>ESR正常+持续高热+白细胞减少 = MAS三联线索</b></li>
+      <li>铁蛋白极度升高是MAS最敏感的指标</li>
+      <li>甲泼尼龙冲击是MAS一线治疗，早期诊断+及时治疗可显著降低死亡率</li>
+    </ul>
 
-    <div class="sh green">📚 病例要点总结</div>
-    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
-      <b>1. MAS的早期识别</b><br>
-      ① 驰张热+广谱抗生素无效 → 必须考虑非感染性炎症<br>
-      ② <b>ESR正常+持续高热+白细胞减少 = MAS三联线索</b>（纤维蛋白原消耗使ESR降低）<br>
-      ③ 铁蛋白极度升高是MAS最敏感的指标<br><br>
-      <b>2. 诊断标准</b><br>
-      ④ 2016 Ravelli标准是目前最常用的sJIA-MAS诊断工具<br>
-      ⑤ 噬血现象虽特异性高但敏感性低（骨髓穿刺不应作为诊断前提）<br>
-      ⑥ 纤维蛋白原降低+甘油三酯升高+铁蛋白升高 三联组合最具诊断价值<br><br>
-      <b>3. 治疗原则</b><br>
-      ⑦ 甲泼尼龙冲击是MAS一线治疗<br>
-      ⑧ 环孢素（环孢素A）可作为联合治疗<br>
-      ⑨ 早期诊断+及时治疗可显著降低死亡率（sJIA-MAS死亡率8-23%）<br><br>
-      <b>4. 基层医院启示</b><br>
-      ⑩ 持续发热患儿，多种抗生素无效时，应尽早考虑风湿免疫疾病<br>
-      ⑪ 矛盾的实验室结果（高热但ESR正常）是最重要的警示信号
-    </div>
-
-    <div class="sh">🔗 相关工具</div>
-    <div style="display:flex; flex-wrap:wrap; gap:6px; margin:4px 0;">
-      <a href="../topics/MAS.html" style="text-decoration:none"><span class="tag t-r">📋 MAS专题</span></a>
-      <a href="../tools/drug_risk_assessment.html?drug=glucocorticoids&tab=risk" style="text-decoration:none"><span class="tag t-y">🔍 糖皮质激素风险评估</span></a>
-      <a href="../drugs/glucocorticoids.html" style="text-decoration:none"><span class="tag t-a">📋 激素药物页</span></a>
-      <a href="../drugs/cyclosporine.html" style="text-decoration:none"><span class="tag t-a">📋 环孢素药物页</span></a>
-    </div>
-
-    <div class="sh">📖 文献来源</div>
+    <div class="sh">📖 参考文献</div>
     <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
-      Dhakal A, et al. <i>Macrophage Activation Syndrome secondary to Systemic Juvenile Idiopathic Arthritis: A Case Report</i>. J Nepal Paediatr Soc. 2022;42(1):96-100.<br>
-      PMCID: PMID: 35199753
+      1. Dhakal A, et al. Macrophage Activation Syndrome secondary to Systemic Juvenile Idiopathic Arthritis: A Case Report. <i>J Nepal Paediatr Soc</i>. 2022;42(1):96-100. PMID: 35199753.<br>
     </div>
 
-  </div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;"><a href="case_sJIA_typical.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇</a><a href="index.html" style="color:var(--accent);font-size:12px;text-decoration:none;">返回目录</a><a href="case_sJIA_biologic_MAS.html" style="color:var(--accent);font-size:12px;text-decoration:none;">下一篇 →</a></div>
 
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
-    <a href="case_sJIA_typical.html" style="display:inline-block;padding:6px 12px;background:#20a39e;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 上一篇：sJIA典型起病</a>
-    <a href="case_sJIA_biologic_MAS.html" style="display:inline-block;padding:6px 12px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">下一篇：生物制剂治疗中发生MAS ➡</a>
   </div>
-
-  <div class="footer">
-    基于已发表文献（PMCID: PMID: 35199753）· 不构成诊疗建议 · sJIA/MAS专题 第2篇
-  </div>
+  <div class="footer">基于已发表文献（PMID: 35199753）· 不构成诊疗建议 · sJIA/MAS专题 第2篇</div>
 </div>
-
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 </body>
 </html>

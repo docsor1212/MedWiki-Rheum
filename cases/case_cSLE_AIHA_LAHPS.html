@@ -29,6 +29,7 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
@@ -57,6 +58,7 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：4岁女童以AIHA起病的cSLE合并LAHPS</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">发热+溶血性贫血+出血+面瘫 — 一个"意料之外"的诊断历程</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
@@ -72,12 +74,43 @@ tr:hover td { background:#faf8f5; }
     <table>
       <tr><td class="b" style="width:130px">患者</td><td>4岁，女性</td></tr>
       <tr><td class="b">就诊机构</td><td>浙江大学医学院附属杭州市第一人民医院，儿科</td></tr>
-      <tr><td class="b">主诉</td><td>进行性面色苍白+间歇性高热1个月，鼻衄、黑便2天</td></tr>
+      <tr><td class="b">主诉</td><td>进行性面色苍白伴间歇性高热1个月，鼻衄、黑便2天</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">AIHA</span> <span class="tag t-r">LAHPS</span> <span class="tag t-r">面瘫</span> <span class="tag t-r">4岁起病</span> <span class="tag t-g">治愈</span></td></tr>
     </table>
 
     <div class="alert">
       <b>本病例独特性：</b>① <b>4岁</b>起病（cSLE极少在此年龄发病）② 以<b>AIHA</b>（自身免疫性溶血性贫血）为SLE首发表现③ 合并<b>LAHPS</b>（狼疮抗凝物-低凝血酶原血症综合征）— 导致凝血异常+出血④ 出现<b>左侧面神经麻痹</b>（NP-SLE表现）⑤ 最初被误诊为"缺铁性贫血"治疗4周无效。
+    </div>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      1个月前无明显诱因出现<b>进行性面色苍白</b>，伴<b>间歇性高热</b>（体温最高39.8℃）。就诊于当地医院，查Hb 64 g/L，诊断"缺铁性贫血"，予铁蛋白琥珀酰口服液治疗4周，贫血无改善。<br><br>
+      入院前2天出现<b>鼻衄</b>和<b>黑便</b>，复查Hb降至39 g/L（极重度贫血），凝血异常（PT、aPTT均延长），粪便隐血弱阳性，遂转至我院。<br><br>
+      病程中伴面部荨麻疹样红斑、四肢多处瘀斑、左侧面神经麻痹、左足关节肿胀。否认光过敏、口腔溃疡、脱发。<br><br>
+      <b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：G1P1，足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>39.8℃</td></tr>
+        <tr><td>HR</td><td>130次/分</td></tr>
+        <tr><td>BP</td><td>95/60 mmHg</td></tr>
+        <tr><td>体重</td><td>16 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神萎靡，重度贫血貌</td></tr>
+        <tr><td>皮肤黏膜</td><td>面部<b>荨麻疹样红斑</b>，四肢、背部、腹部<b>多处瘀斑</b>；腮腺导管黏膜肿胀+红斑</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心率130次/分，律齐，未闻及杂音；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>肝脾肿大，腹软，无压痛</td></tr>
+        <tr><td>神经系统</td><td class="c-r"><b>左侧面神经麻痹</b>— 哭泣时左侧面肌无力，左眼闭合不全</td></tr>
+        <tr><td>关节</td><td>左足关节肿胀</td></tr>
+      </table>
     </div>
 
     <!-- 误诊阶段 -->
@@ -129,22 +162,22 @@ tr:hover td { background:#faf8f5; }
     <!-- 实验室 -->
     <div class="sh">🔬 关键实验室检查</div>
     <table>
-      <tr><th>指标</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td class="b">血红蛋白（Hb）</td><td><b>39 g/L</b> ↓↓↓</td><td>极重度贫血</td></tr>
-      <tr><td class="b">白细胞（WBC）</td><td>↓ 降低</td><td>白细胞减少</td></tr>
-      <tr><td class="b">网织红细胞（Ret，Reticulocyte）</td><td>↑ 增高</td><td>骨髓代偿性增生 → 提示溶血</td></tr>
-      <tr><td class="b">直接/间接Coombs试验</td><td><b>均阳性</b></td><td>确诊AIHA（免疫介导溶血）</td></tr>
-      <tr><td class="b">外周血涂片</td><td>球形红细胞↑</td><td>AIHA特征性表现</td></tr>
-      <tr><td class="b">PT（凝血酶原时间）</td><td>↑ 延长</td><td>凝血异常</td></tr>
-      <tr><td class="b">aPTT</td><td>↑ 延长</td><td>凝血异常</td></tr>
-      <tr><td class="b">凝血因子II（Factor II）</td><td><b>↓ 降低</b></td><td>LAHPS特征！</td></tr>
-      <tr><td class="b">钙离子</td><td>1.68 mmol/L ↓</td><td>低钙血症</td></tr>
-      <tr><td class="b">ANA（抗核抗体）</td><td><b>阳性</b></td><td>SLE标志</td></tr>
-      <tr><td class="b">抗dsDNA抗体</td><td><b>阳性</b></td><td>SLE特异性</td></tr>
-      <tr><td class="b">抗磷脂抗体（aPL）</td><td><b>阳性</b></td><td>APS/LAHPS基础</td></tr>
-      <tr><td class="b">狼疮抗凝物（LA）</td><td><b>阳性</b></td><td>LAHPS关键指标</td></tr>
-      <tr><td class="b">补体C3/C4</td><td>↓ 降低</td><td>SLE活动</td></tr>
-      <tr><td class="b">尿检/肾功能</td><td>正常</td><td>无肾脏受累</td></tr>
+      <tr><th>指标</th><th>结果</th><th>参考值</th><th>临床意义</th></tr>
+      <tr><td class="b">血红蛋白（Hb）</td><td><b>39 g/L</b></td><td>110-140 g/L</td><td>↓↓↓ 极重度贫血</td></tr>
+      <tr><td class="b">白细胞（WBC）</td><td>↓ 降低</td><td>5-12 ×10⁹/L</td><td>白细胞减少</td></tr>
+      <tr><td class="b">网织红细胞（Ret）</td><td>↑ 增高</td><td>0.5-1.5%</td><td>骨髓代偿→提示溶血</td></tr>
+      <tr><td class="b">直接/间接Coombs</td><td><b>均阳性</b></td><td>阴性</td><td>确诊AIHA</td></tr>
+      <tr><td class="b">外周血涂片</td><td>球形红细胞↑</td><td>—</td><td>AIHA特征</td></tr>
+      <tr><td class="b">PT</td><td>↑ 延长</td><td>11-14 s</td><td>凝血异常</td></tr>
+      <tr><td class="b">aPTT</td><td>↑ 延长</td><td>25-37 s</td><td>凝血异常</td></tr>
+      <tr><td class="b">凝血因子II</td><td><b>↓ 降低</b></td><td>70-120%</td><td class="c-r">LAHPS特征！</td></tr>
+      <tr><td class="b">钙离子</td><td>1.68 mmol/L</td><td>1.15-1.35 mmol/L</td><td>低钙血症</td></tr>
+      <tr><td class="b">ANA</td><td><b>阳性</b></td><td>&lt;1:80</td><td>SLE标志</td></tr>
+      <tr><td class="b">抗dsDNA抗体</td><td><b>阳性</b></td><td>阴性</td><td>SLE特异性</td></tr>
+      <tr><td class="b">抗磷脂抗体（aPL）</td><td><b>阳性</b></td><td>阴性</td><td>APS/LAHPS基础</td></tr>
+      <tr><td class="b">狼疮抗凝物（LA）</td><td><b>阳性</b></td><td>阴性</td><td class="c-r">LAHPS关键</td></tr>
+      <tr><td class="b">补体C3/C4</td><td>↓ 降低</td><td>C3 0.9-1.8 / C4 0.1-0.4 g/L</td><td>SLE活动</td></tr>
+      <tr><td class="b">尿检/肾功能</td><td>正常</td><td>—</td><td>无肾脏受累</td></tr>
     </table>
 
     <div class="lahps-box">
@@ -187,27 +220,27 @@ tr:hover td { background:#faf8f5; }
 
     <!-- 治疗 -->
     <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">糖皮质激素</td><td>甲泼尼龙冲击后口服序贯</td><td class="c-a">控制全身免疫炎症+AIHA，抑制自身抗体产生</td></tr>
+      <tr><td class="b">免疫抑制剂</td><td>控制SLE基础病</td><td class="c-a">减少ANA、抗dsDNA、aPL等自身抗体</td></tr>
+      <tr><td class="b">对症支持</td><td>输血纠正贫血、补钙、监测凝血</td><td>纠正贫血、维持电解质平衡</td></tr>
+    </table>
+    <div class="note">注意：LAHPS的出血不可简单补充凝血因子 — 需要免疫抑制从根本上减少LA和抗凝血酶原抗体。</div>
+
+    <!-- 随访经过 -->
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
-      <div class="t-item">
-        <div class="t-date">联合免疫抑制治疗</div>
-        <div class="t-content">
-          <b>糖皮质激素</b>（控制全身免疫炎症+AIHA）<br>
-          → 抑制自身抗体产生，减少红细胞破坏<br><br>
-          <b>免疫抑制剂</b>（控制SLE基础病）<br>
-          → 减少ANA、抗dsDNA、aPL等自身抗体<br><br>
-          <b>对症支持</b>：输血纠正贫血、补钙、监测凝血<br><br>
-          <span class="tag t-y">注意：LAHPS的出血不可简单补充凝血因子</span> — 需要免疫抑制从根本上减少LA和抗凝血酶原抗体
-        </div>
-      </div>
       <div class="t-item green">
-        <div class="t-date">转归 — 治愈</div>
+        <div class="t-date">治疗后</div>
         <div class="t-content">
+          联合免疫抑制治疗后：<br>
           • <b>发热消退</b><br>
           • <b>贫血纠正</b>（Hb恢复正常）<br>
           • <b>出血停止</b>（凝血功能恢复）<br>
           • <b>面瘫恢复</b><br>
           • <b>皮疹消退</b><br>
-          <span class="tag t-g">联合免疫抑制治疗后所有症状完全缓解</span>
+          <span class="tag t-g">所有症状完全缓解</span>
         </div>
       </div>
     </div>

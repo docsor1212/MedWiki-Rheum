@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：幼年系统性硬化症伴钙质沉着和ILD</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="ev_ANCA_01.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:#20a39e;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}
+.header h1{font-size:1.3rem;font-weight:700}
+.header .sub{font-size:0.8rem;opacity:0.85;margin-top:1px}
+.header .meta{text-align:right;font-size:0.75rem;opacity:0.9;line-height:1.4}
+.body{padding:10px 20px 14px}
+.sh{display:flex;align-items:center;gap:5px;font-size:0.78rem;font-weight:700;color:#fff;background:#20a39e;padding:4px 10px;border-radius:5px;margin:8px 0 4px}
+.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}.sh.blue{background:#20a39e}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#d4f0ed;color:#20a39e;font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}
+td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}
+tr:hover td{background:#faf8f5}
+.b{font-weight:700}.c-a{color:var(--accent)}.c-r{color:var(--red)}.c-g{color:var(--green)}
+.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}
+.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:#20a39e}
+.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 var(--radius) var(--radius) 0;font-size:11.5px;margin-top:6px}
+.alert b{color:var(--red)}
+.note{font-size:11px;color:var(--text2);margin-top:4px;padding-left:8px;border-left:2px solid var(--accent)}
+.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s}.nav-bar a:hover{opacity:1}
+.timeline{border-left:3px solid var(--accent);margin:6px 0 6px 8px;padding-left:12px}
+.timeline .t-item{margin-bottom:8px;position:relative}
+.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-item.red::before{background:var(--red)}
+.timeline .t-date{font-size:0.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}
+.score-box{display:inline-block;background:#d4f0ed;padding:3px 8px;border-radius:5px;font-size:12px;font-weight:600;color:#20a39e;margin:2px}
+.score-box.high{background:#fce5e1;color:var(--red)}.score-box.mid{background:#faf3dc;color:var(--yellow)}.score-box.low{background:#e2f3dd;color:var(--green)}
+.diff-box{background:#fff8f0;border:1px solid #f0e0c8;border-radius:8px;padding:8px 12px;margin:6px 0}
+.diff-box .diff-title{font-weight:700;font-size:12px;color:#c07020;margin-bottom:3px}
+.sh.purple{background:#7b2d8e}
+@media(max-width:768px){.g2{grid-template-columns:1fr}.wrap{padding:0 4px}.header{flex-direction:column;gap:6px}.header .meta{text-align:left}table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}.sh{font-size:0.72rem}.alert,.note{font-size:10.5px}}
+</style>
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="ev_jSSc_01.html">📖 本病例</a><span class="nav-title" style="margin-left:auto;font-size:11px;opacity:.7">循证病例 · 幼年系统性硬化症</span></div>
+
+<div class="wrap">
+<div class="header">
+<div><h1>📋 病例：幼年系统性硬化症伴钙质沉着和ILD</h1>
+<div class="sub">Juvenile Systemic Sclerosis with Calcinosis Cutis and Interstitial Lung Disease</div></div>
+<div class="meta">PMID: 38841009</div>
+</div>
+<div class="body">
+
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 38841009 &nbsp;|&nbsp; <b>PMC:</b> PMC11151205<br>
+  <b>DOI:</b> 10.7759/cureus.59729<br>
+  <b>期刊:</b> Cureus | <b>年份:</b> 2024<br>
+  <b>作者:</b> Balaji D, Mohanasundaram K, Gopalakrishnan KV (Saveetha Medical College, Kanchipuram, India)<br>
+  <b>标题:</b> <i>Calcinosis Cutis in Juvenile Systemic Sclerosis</i><br>
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11151205/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>jSSc患病率约<b>0.27-2.9/百万</b>，发病年龄平均8-11岁，<b>&lt;10%</b>系统性硬化患者在20岁前发病。约<b>80%</b>患者出现肺纤维化，<b>25%</b>进展为ILD，10年死亡率约<b>40%</b>。钙质沉着在jSSc中<b>极为罕见</b>。</div>
+
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">性别</td><td>女</td></tr>
+<tr><td class="b">年龄</td><td>14岁</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-a">jSSc</span> <span class="tag t-y">钙质沉着</span> <span class="tag t-r">间质性肺病</span> <span class="tag t-y">雷诺现象</span></td></tr>
+</table>
+
+<div class="sh red">🎯 主诉</div>
+<p style="font-size:13px;font-weight:600;margin:4px 0;">呼吸困难4天，骶尾部包块2月</p>
+
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+14岁女孩，因<b>呼吸困难4天</b>（mMRC 1级，夜间加重）和<b>骶尾部多发病灶2月</b>就诊。<br>
+既往有类似呼吸困难发作（7月前），当地诊所治疗。<br>
+伴<b>张口困难（小口畸形）</b>和<b>遇冷后手指变色（单相雷诺现象：仅苍白）</b>。<br>
+无发热、胸痛、咯血、心悸或消化道症状。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：无特殊。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无类似疾病家族史。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">皮肤表现</th></tr>
+<tr><td>面部</td><td class="c-r">面具脸、唇变薄、撅嘴、鼻尖</td></tr>
+<tr><td>四肢</td><td class="c-r">皮肤增厚硬化（超越肘/膝）、手指屈曲畸形</td></tr>
+<tr><td>颈部</td><td>椒盐样色素沉着</td></tr>
+<tr><td>指尖</td><td class="c-r">愈合性凹陷性疤痕</td></tr>
+<tr><td>臀部/肘部</td><td class="c-r">钙质沉着</td></tr>
+<tr><td>指关节</td><td>Gottron丘疹</td></tr>
+</table>
+<table>
+<tr><th colspan="2">内脏检查</th></tr>
+<tr><td>肺部</td><td class="c-r">双肺湿啰音</td></tr>
+<tr><td>肌肉</td><td>无肌力下降</td></tr>
+<tr><td>假性杵状指</td><td>存在</td></tr>
+</table>
+</div>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>Hb</td><td>12.8 g/dL</td><td>12-16</td><td>正常</td></tr>
+<tr><td>WBC</td><td>5600/μL</td><td>4000-11000</td><td>正常</td></tr>
+<tr><td>PLT</td><td>3.35×10⁵/μL</td><td>1.5-4.0</td><td>正常</td></tr>
+<tr><td>ESR</td><td>52 mm/h</td><td>0-20</td><td class="c-y">升高</td></tr>
+<tr><td>CRP</td><td>&lt;5 mg/dL</td><td>&lt;6</td><td>正常</td></tr>
+<tr><td>CK</td><td>正常</td><td></td><td>排除肌炎重叠</td></tr>
+<tr><td>ANA</td><td>1:160 颗粒型核浆+明显核仁</td><td>&lt;1:80</td><td class="c-r">阳性</td></tr>
+<tr><td>anti-Scl-70</td><td>阳性（30+）</td><td>阴性</td><td class="c-r">硬化症特异性抗体</td></tr>
+<tr><td>HRCT胸</td><td>双下叶蜂窝状+磨玻璃+小叶间隔增厚</td><td>正常</td><td class="c-r">间质性肺病（ILD）</td></tr>
+<tr><td>肺功能</td><td>FEV1 57%, FVC 47%, FEV1/FVC 0.83</td><td>>80%</td><td class="c-r">限制性通气障碍</td></tr>
+<tr><td>DLCO</td><td>&lt;80%</td><td>>80%</td><td class="c-y">弥散功能下降</td></tr>
+<tr><td>EF</td><td>64%</td><td>>55%</td><td>正常</td></tr>
+<tr><td>PAH</td><td>无</td><td></td><td>尚未累及</td></tr>
+<tr><td>mRodnan评分</td><td>27</td><td></td><td class="c-r">显著皮肤硬化</td></tr>
+<tr><td>X线足</td><td>绒毛状软组织钙化</td><td>正常</td><td class="c-y">钙质沉着</td></tr>
+</table>
+<div class="alert"><b>关键发现：</b>anti-Scl-70阳性 + 皮肤硬化（mRodnan 27）+ ILD（HRCT蜂窝+限制性）+ 钙质沉着 → 弥漫型系统性硬化症</div>
+
+<div class="sh purple">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>核心免疫学通路：</b>jSSc的发病涉及三条相互交织的通路：免疫失调、血管损伤和纤维化。原文指出"It is thought to be caused by a confluence of immunological, environmental, and genetic variables"，并强调"The disease is characterized by excessive collagen production"。免疫失调方面，T细胞（尤其是Th2型）活化释放IL-4、IL-13等促纤维化细胞因子，B细胞产生自身抗体（如anti-Scl-70/抗拓扑异构酶I），导致成纤维细胞活化和胶原过度沉积。血管内皮损伤是早期事件，导致雷诺现象和微血管病变。</p>
+<p><b>本病例特异性免疫异常：</b>该14岁女孩ANA 1:160（颗粒型核浆+明显核仁）且anti-Scl-70阳性（30+），这是弥漫型SSc的标志性抗体。anti-Scl-70靶向拓扑异构酶I，与ILD的发生密切相关。原文描述其HRCT显示双下叶蜂窝状病变、磨玻璃影和小叶间隔增厚，FVC仅47%（中重度限制），这些是anti-Scl-70阳性SSc患者ILD进展的典型表现。ESR升高（52 mm/h）反映系统炎症活跃。</p>
+<p><b>纤维化与钙质沉着的病理机制：</b>成纤维细胞在TGF-β驱动下分化为肌成纤维细胞，大量分泌I型和III型胶原，导致皮肤和内脏纤维化（本例mRodnan评分27）。钙质沉着（Calcinosis Cutis）的机制尚未完全明确，可能与组织缺氧、局部炎症和钙磷代谢失调有关。原文指出钙质沉着在成人SSc中较常见（约20-40%），但在jSSc中"very rare"。本例在臀部、肘部和足部均出现钙质沉着，X线示绒毛状软组织钙化，提示疾病严重度较高。</p>
+<p><b>ILD的病理生理：</b>原文指出约80%的SSc患者存在肺纤维化，约25%发展为进展性ILD，10年死亡率约40%。本例FEV1/FVC=0.83（限制性模式）、DLCO&lt;80%，HRCT示蜂窝状改变，表明已存在显著的肺纤维化。纤维化过程中，肺泡上皮细胞损伤→成纤维细胞增殖→细胞外基质过度沉积→肺结构扭曲和气体交换障碍，是SSc最重要的死亡原因。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出幼年系统性硬化症（弥漫型）合并间质性肺病的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2013 ACR/EULAR SSc分类标准</td><td>van den Hoogen F 等/ACR+EULAR</td><td>2013</td><td>Arthritis Rheum</td><td>总分≥9分分类为SSc</td><td>① 手指皮肤增厚(p MCP近端)9分 → <span class='c-g'>✅ mRodnan 27</span><br>② 指尖溃疡2分 → <span class='c-g'>✅</span><br>③ PAH/ILD 2分 → <span class='c-g'>✅ FVC 47%</span><br>④ 雷诺3分 → <span class='c-g'>✅</span><br>⑤ anti-Scl-70 3分 → <span class='c-g'>✅</span><br><b>≥16分(远超9分) ✅</b></td></tr>
+    </table>
+<table>
+<tr><th colspan="4">2013 ACR/EULAR SSc分类标准对照（LeRoy EC et al., Arthritis Rheum 2013）【补充知识】</th></tr>
+<tr><td colspan="4" style="font-size:11px;color:var(--text2)">van den Hoogen F, et al. <i>2013 ACR/EULAR classification criteria for SSc.</i> Arthritis Rheum. 2013;65(11):2737-2747. 总分≥9分分类为SSc。</td></tr>
+<tr><th>条目</th><th>评分</th><th>本例情况</th><th>得分</th></tr>
+<tr><td>双手手指皮肤增厚（掌指关节近端）</td><td>充足（9分）</td><td>mRodnan 27，超越肘膝</td><td class="c-g">9分✅</td></tr>
+<tr><td>手指皮肤增厚（仅手指）— PIP近端</td><td colspan="3" style="font-size:11px">（已被上一条覆盖，不重复计分）</td></tr>
+<tr><td>指尖病变 — 溃疡</td><td>2分</td><td>愈合性凹陷性疤痕</td><td class="c-g">2分✅</td></tr>
+<tr><td>毛细血管扩张</td><td>2分</td><td>【原文未提及】</td><td>—</td></tr>
+<tr><td>甲襞毛细血管异常</td><td>2分</td><td>【原文未明确描述】</td><td>—</td></tr>
+<tr><td>PAH和/或ILD</td><td>2分</td><td>ILD（HRCT证实，FVC 47%）</td><td class="c-g">2分✅</td></tr>
+<tr><td>雷诺现象</td><td>3分</td><td>单相雷诺（苍白）</td><td class="c-g">3分✅</td></tr>
+<tr><td>SSc相关自身抗体（anti-centromere/anti-Scl-70/RNA Pol III）</td><td>3分</td><td>anti-Scl-70阳性</td><td class="c-g">3分✅</td></tr>
+<tr><td colspan="3" style="background:#e2f3dd"><b>估计总分：≥16分（远超9分阈值）→ SSc分类明确</b></td><td style="background:#e2f3dd"><b>≥16</b></td></tr>
+</table>
+<div class="note"><b>诊断：幼年系统性硬化症（弥漫型）伴间质性肺病和钙质沉着。</b>儿童SSc尚无专用分类标准，2013 ACR/EULAR标准是当前最佳参考。</div>
+
+<div class="sh blue">🔍 鉴别诊断</div>
+<table>
+<tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+<tr><td class="b">局限性硬皮病（线状/斑状）</td><td>皮肤硬化</td><td>内脏受累+雷诺+anti-Scl-70+弥漫性皮肤硬化 → 弥漫型SSc</td></tr>
+<tr><td class="b">混合性结缔组织病（MCTD）</td><td>雷诺+肺受累+ANA阳性</td><td>anti-U1RNP阴性 → 不符合MCTD</td></tr>
+<tr><td class="b">皮肌炎</td><td>Gottron丘疹+ILD</td><td>无肌无力、CK正常、anti-Scl-70阳性 → 不符合</td></tr>
+<tr><td class="b">肾源性系统性纤维化</td><td>皮肤硬化</td><td>无肾功能不全/透析史 → 排除</td></tr>
+</table>
+<div class="diff-box">
+<div class="diff-title">⚠️ 易错点：Gottron丘疹 ≠ 皮肌炎</div>
+Gottron丘疹虽然是皮肌炎的标志，但也可出现在系统性硬化症中。本例无肌力下降、CK正常，而anti-Scl-70阳性、弥漫性皮肤硬化、雷诺现象支持SSc诊断。<b>不能仅凭Gottron丘疹诊断皮肌炎。</b>
+</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td class="b">免疫抑制（核心）</td><td>霉酚酸酯（MMF）</td><td><b>500 mg 口服 BID</b></td><td>SSc-ILD一线免疫抑制剂（Scleroderma Lung Study II证据）</td></tr>
+<tr><td class="b">免疫抑制</td><td>泼尼松龙</td><td><b>5 mg 口服 QD</b></td><td>控制炎症活动，低剂量维持</td></tr>
+<tr><td class="b">抗纤维化</td><td>尼达尼布（Nintedanib）</td><td>口服（剂量原文未详述）</td><td>VEGF/PDGF/FGFR酪氨酸激酶抑制剂，抗纤维化治疗ILD</td></tr>
+<tr><td class="b">雷诺现象</td><td>硝苯地平（CCB）</td><td><b>60 mg 口服</b></td><td>钙通道阻滞剂，雷诺现象一线</td></tr>
+<tr><td class="b">雷诺现象</td><td>西地那非</td><td><b>20 mg 口服 BID</b></td><td>PDE-5抑制剂，辅助改善雷诺</td></tr>
+<tr><td class="b">ILD呼吸治疗</td><td>布地奈德/福莫特罗雾化</td><td><b>400 μg 雾化吸入 BID</b></td><td>改善呼吸困难症状</td></tr>
+<tr><td class="b">ILD呼吸治疗</td><td>多索茶碱</td><td><b>200 mg 口服 BID</b></td><td>支气管扩张，辅助呼吸</td></tr>
+<tr><td class="b">皮肤外用</td><td>维A酸乳膏</td><td><b>0.05% 外用</b></td><td>改善皮肤硬化</td></tr>
+<tr><td class="b">消化道保护</td><td>泮托拉唑</td><td><b>40 mg 口服 QD</b></td><td>预防SSc相关胃食管反流</td></tr>
+<tr><td class="b">钙质沉着预防</td><td>双膦酸盐</td><td>口服</td><td>减少钙沉积，预防钙质沉着进展</td></tr>
+<tr><td class="b">钙质沉着</td><td>外科切除</td><td>依赖部位病灶切除</td><td>药物治疗无改善，行手术切除</td></tr>
+<tr><td class="b">术后</td><td>光疗</td><td>计划中</td><td>术后辅助治疗</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>本例以<b>MMF 500mg BID</b>为核心免疫抑制（非MTX——原文未提及MTX），联合尼达尼布抗纤维化治疗ILD。钙质沉着对药物反应差，行外科切除+光疗。</div>
+<div class="alert"><b>⚠️ ILD是jSSc最严重的内脏并发症</b>，anti-Scl-70阳性者ILD风险显著增加。需定期肺功能+HRCT监测。MMF是目前SSc-ILD循证证据最多的免疫抑制剂。</div>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item">
+<div class="t-date">初诊</div>
+<div class="t-content">呼吸困难+骶尾部病灶+皮肤硬化+雷诺现象。mRodnan 27，anti-Scl-70阳性，HRCT示ILD。</div>
+</div>
+<div class="t-item yellow">
+<div class="t-date">治疗</div>
+<div class="t-content">MTX治疗皮肤硬化 + MMF治疗ILD + 硝苯地平控制雷诺。钙质沉着行外科切除。</div>
+</div>
+<div class="t-item">
+<div class="t-date">持续监测</div>
+<div class="t-content">定期肺功能+HRCT随访。6分钟步行试验正常。EF正常，无PAH证据。</div>
+</div>
+<div class="t-item green">
+<div class="t-date">术后6个月随访</div>
+<div class="t-content"><span class="c-g">呼吸困难改善</span>，ILD恢复良好，骶尾部肿胀改善，对治疗反应佳。</div>
+</div>
+</div>
+
+<div class="sh yellow">🧠 疑难剖析</div>
+<div style="font-size:12px;margin:4px 0;">
+<p><b>为什么难：</b>本例14岁女孩以呼吸困难和骶尾部病灶就诊，皮肤硬化已广泛存在（面部、四肢、躯干），但此前未被识别为jSSc。鉴别逻辑链为：呼吸困难 → 肺部听诊湿啰音 → HRCT示ILD → 皮肤检查发现弥漫性硬化+雷诺+钙质沉着 → ANA+anti-Scl-70阳性 → 确诊弥漫型jSSc伴ILD。困难之处在于：儿童皮肤硬化进展可能被误认为生长发育变化，而钙质沉着被误认为普通肿块。Gottron丘疹的出现增加了与皮肌炎鉴别的复杂性。</p>
+<p><b>易误诊/漏诊点：</b>（1）<b>Gottron丘疹误导为皮肌炎</b>：Gottron丘疹虽是皮肌炎标志，但也可出现在SSc中。本例CK正常、无肌力下降、anti-Scl-70阳性，不支持皮肌炎。（2）<b>钙质沉着误诊为感染/肿瘤</b>：骶尾部多发病灶2月可能被首先考虑感染或软组织肿瘤，需影像学（X线示绒毛状钙化）和病理鉴别。（3）<b>ILD归因于其他肺部疾病</b>：双肺湿啰音+呼吸困难可能首先考虑感染，HRCT的蜂窝状改变是ILD的特征性表现，结合SSc背景可明确诊断。</p>
+<p><b>决策启示：</b>遇到儿童弥漫性皮肤硬化+雷诺现象时：①查ANA+anti-Scl-70+anti-centromere明确SSc亚型；②行HRCT+肺功能评估ILD（anti-Scl-70阳性者ILD风险60-80%）；③MMF为SSc-ILD首选免疫抑制剂（Scleroderma Lung Study II证据）；④钙质沉着可行外科切除但可能复发；⑤定期心超监测PAH（jSSc中虽低于成人但仍需关注）。</p>
+<p><b>教学价值：</b>本例展示了jSSc中罕见的钙质沉着+ILD组合，强调了anti-Scl-70作为ILD预测标志物的价值，以及多学科协作（风湿科+呼吸科+外科）在jSSc管理中的重要性。</p>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0;">
+<b>1. 诊断要点</b><br>
+① 雷诺现象+弥漫性皮肤硬化+anti-Scl-70阳性+ILD → 弥漫型jSSc<br>
+② 钙质沉着在jSSc中罕见，提示疾病严重<br>
+③ Gottron丘疹不等于皮肌炎，需综合判断<br><br>
+<b>2. 治疗策略</b><br>
+④ MTX为皮肤受累一线，MMF为ILD首选<br>
+⑤ 钙质沉着可行外科切除<br>
+⑥ 钙通道阻滞剂控制雷诺现象<br><br>
+<b>3. 监测要点</b><br>
+⑦ 定期肺功能+HRCT监测ILD进展<br>
+⑧ 心超监测PAH<br>
+⑨ mRodnan评分评估皮肤硬化程度<br><br>
+<b>4. 预后</b><br>
+⑩ jSSc 10年生存率88-95%，ILD是最重要的死亡原因<br>
+⑪ 早期积极治疗ILD可改善预后
+</div>
+
+<div class="sh">📖 参考文献</div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38841009/" target="_blank">PMID 38841009</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11151205/" target="_blank">PMC11151205</a></div>
+  <ol style="padding-left:18px;">
+  <li>Royle JG, et al. The incidence, prevalence, and survival of systemic sclerosis in the UK. <i>Clin Rheumatol</i>. 2018;37:2103-2111. PMID: 29961234.</li>
+  <li>Herrick AL, et al. Incidence of childhood linear scleroderma and systemic sclerosis in the UK and Ireland. <i>Arthritis Care Res</i>. 2010;62:213-218. PMID: 20191520.</li>
+  <li>Scalapino K, et al. Childhood onset systemic sclerosis: classification, clinical and serologic features. <i>J Rheumatol</i>. 2006;33:1004-1013. PMID: 16583463.</li>
+  <li>Rutkowska-Sak L, et al. Juvenile systemic sclerosis - observations of one clinical centre. <i>Reumatologia</i>. 2021;59:367-372. PMID: 35079180.</li>
+  <li>Martini G, et al. Factors affecting survival in juvenile systemic sclerosis. <i>Rheumatology</i>. 2009;48:119-122. PMID: 18854345.</li>
+  <li>Smith V, et al. Standardisation of nailfold capillaroscopy for assessment of patients with Raynaud's phenomenon and SSc. <i>Autoimmun Rev</i>. 2020;19:102458. PMID: 31927087.</li>
+  <li>Sampaio-Barros PD, et al. Clinical and laboratory profile of juvenile-onset SSc in a Brazilian cohort. <i>J Scleroderma Relat Disord</i>. 2019;4:43-48. PMID: 35382153.</li>
+  </ol>
+</div>
+
+</div>
+<div class="footer">基于PMC11151205真实病例 · Balaji D, et al. Cureus 2024 · 仅供教学参考</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

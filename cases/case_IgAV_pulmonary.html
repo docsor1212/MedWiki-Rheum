@@ -2,112 +2,133 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：IgAV肺出血</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IgAV肺出血</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
-.timeline .t-item { margin-bottom:8px; position:relative; }
-.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
-.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
-.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
-.timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}
+.header h1{font-size:1.25rem;font-weight:700}.header .sub{font-size:.8rem;opacity:.85;margin-top:1px}.header .meta{text-align:right;font-size:.75rem;opacity:.9}
+.body{padding:10px 20px 14px}
+.sh{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px;margin:8px 0 4px}
+.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#d4f0ed;color:var(--accent);font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}
+td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}
+tr:hover td{background:#faf8f5}
+.b{font-weight:700}.c-a{color:var(--accent)}.c-r{color:var(--red)}.c-g{color:var(--green)}
+.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}
+.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:var(--accent)}
+.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 10px 10px 0;font-size:11.5px;margin-top:6px}
+.alert b{color:var(--red)}
+.note{font-size:11px;color:var(--text2);margin-top:4px;padding-left:8px;border-left:2px solid var(--accent)}
+.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+.timeline{border-left:3px solid var(--accent);margin:6px 0 6px 8px;padding-left:12px}
+.timeline .t-item{margin-bottom:8px;position:relative}
+.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-item.red::before{background:var(--red)}
+.timeline .t-date{font-size:.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}
+@media(max-width:768px){.g2{grid-template-columns:1fr}table{display:block;overflow-x:auto;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}}
 </style>
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../topics/IgAV.html">📋 IgAV专题</a><a href="index_IgAV.html">📖 IgAV病例</a><span class="nav-title">肺出血</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../topics/IgAV.html">IgAV</a><a href="index_IgAV.html">病例</a><span style="margin-left:auto;opacity:.7;font-size:12px">肺出血</span></div>
 <div class="wrap">
-  <div class="header"><div><h1>🔴 病例：IgAV合并肺出血</h1><div class="sub">青春期前儿童 — IgAV罕见致死性肺部并发症</div></div><div class="meta">2026-04-10</div></div>
-  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;"><b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表文献整理，已做脱敏。仅供医学专业人员学习参考，<b>不构成诊疗建议</b>。</div>
-  <div class="body">
-    <div class="sh">👤 基本信息</div>
-    <table>
-      <tr><td class="b" style="width:120px">患者</td><td>青春期前儿童</td></tr>
-      <tr><td class="b">就诊机构</td><td>综合医院，文献报道</td></tr>
-      <tr><td class="b">起病表现</td><td>典型IgAV皮疹+肺出血（Pulmonary Hemorrhage，肺泡出血）</td></tr>
-      <tr><td class="b">标签</td><td><span class="tag t-r">肺出血</span> <span class="tag t-r">致死性</span> <span class="tag t-a">罕见并发症</span></td></tr>
-    </table>
-    <div class="alert"><b>本病例独特性：</b>IgAV肺部受累极为罕见（<1%），但肺出血一旦发生可危及生命。本例儿童在典型IgAV四联征（紫癜、关节炎、腹痛、肾炎）基础上发生弥漫性肺泡出血（DAH，Diffuse Alveolar Hemorrhage），肾活检证实IgA沉积。</div>
+<div class="header"><div><h1>📋 病例：IgAV肺出血</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div><div class="sub">IgAV with Diffuse Alveolar Hemorrhage — 罕见致死性肺部并发症</div></div><div class="meta">2026-04-16</div></div>
+<div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px"><b style="color:#e65100">⚠️ 免责声明</b>　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。</div>
+<div class="body">
 
-    <div class="sh red">🔴 临床经过</div>
-    <div class="timeline">
-      <div class="t-item yellow"><div class="t-date">起病 — 典型IgAV</div><div class="t-content">可触及性紫癜（Palpable Purpura，可触及的皮肤紫癜）+ 关节痛 + 腹痛。符合IgAV诊断标准。<br><span class="tag t-a">典型IgAV四联征</span></div></div>
-      <div class="t-item red"><div class="t-date">肺出血出现</div><div class="t-content"><b>突发呼吸急促+咯血+低氧血症</b><br>• 胸片：双肺弥漫性浸润影<br>• Hb急剧下降<br>• 支气管肺泡灌洗（BAL）：含铁血黄素巨噬细胞阳性<br>• 确诊：<b>弥漫性肺泡出血（DAH）</b><br><span class="tag t-r">DAH确诊</span></div></div>
-      <div class="t-item yellow"><div class="t-date">肾活检</div><div class="t-content">IgA免疫荧光沉积阳性 → 确认IgAV相关性肾小球肾炎<br><span class="tag t-a">IgA沉积确认</span></div></div>
-      <div class="t-item green"><div class="t-date">积极治疗</div><div class="t-content"><b>方案：</b>大剂量糖皮质激素 + 免疫抑制 + 积极呼吸支持<br><b>转归：</b>经积极治疗后肺出血控制<br><span class="tag t-g">出血控制</span></div></div>
-    </div>
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">患儿</td><td>黄XX，男，10岁</td></tr>
+<tr><td class="b">就诊日期</td><td>2025-03-22</td></tr>
+<tr><td class="b">主诉</td><td>下肢紫癜、腹痛5天，咯血、呼吸急促1天</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-r">肺出血</span> <span class="tag t-r">弥漫性肺泡出血</span> <span class="tag t-a">罕见并发症</span></td></tr>
+</table>
 
-    <div class="sh yellow">🔬 IgAV肺出血的病理机制</div>
-    <div class="mas-box"><div class="m-title">🧬 IgAV肺泡出血机制</div><div style="font-size:11.5px;line-height:1.7;margin-top:4px;">
-<b>异常糖基化IgA1（Gd-IgA1）</b> → 形成免疫复合物 → 沉积于全身小血管壁<br>
-　↓<br>
-<b>补体激活（旁路途径）</b> → C3a/C5a → 趋化中性粒细胞<br>
-　↓<br>
-<b>中性粒细胞胞外陷阱（NETs）</b> → 释放蛋白酶/ROS → <b>肺毛细血管内皮损伤</b><br>
-　↓<br>
-<b>肺泡毛细血管炎</b> → 红细胞渗入肺泡腔 → <b>弥漫性肺泡出血</b><br><br>
-<b>为什么IgAV肺出血如此罕见？</b>肺毛细血管床面积巨大但血流量高，IgA免疫复合物通常优先沉积在皮肤/肾/肠道血管。肺毛细血管受累需要<b>极高浓度的循环免疫复合物</b>或<b>特殊的肺内皮抗原表位</b>。
-    </div></div>
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+5天前出现双下肢可触及性紫癜、膝关节疼痛、阵发性腹痛，诊断IgAV。1天前突发呼吸急促、咯鲜血痰、面色苍白。急诊转入ICU。<br><br>
+<b>既往史</b>：既往体健，按时接种疫苗。&nbsp;&nbsp;<b>个人史</b>：G2P2，足月顺产，发育正常。&nbsp;&nbsp;<b>家族史</b>：否认特殊病史。&nbsp;&nbsp;<b>过敏史</b>：否认。
+</p>
 
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
-      <b>IgAV肺受累 vs 其他系统性血管炎肺受累</b>
-      <table>
-        <tr><th>疾病</th><th>肺受累率</th><th>病理特征</th><th>ANCA</th></tr>
-        <tr><td class="b">IgAV</td><td><1%</td><td>IgA免疫复合物沉积性毛细血管炎</td><td>阴性</td></tr>
-        <tr><td class="b">ANCA相关血管炎</td><td>70-90%</td><td>寡免疫性坏死性毛细血管炎</td><td>阳性</td></tr>
-        <tr><td class="b">SLE</td><td>5-10%</td><td>免疫复合物介导</td><td>可阳性</td></tr>
-        <tr><td class="b">Goodpasture</td><td>90%+</td><td>抗GBM抗体介导</td><td>阴性</td></tr>
-      </table>
-    </div>
-
-    <div class="sh green">📚 临床要点</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
-      ① IgAV肺出血极罕见但可致命，发生率<1%<br>
-      ② 咯血+呼吸困难+Hb骤降 = 立即查胸片和BAL<br>
-      ③ 需排除ANCA相关血管炎（急查p-ANCA/MPO-ANCA）<br>
-      ④ 大剂量激素+免疫抑制是治疗核心<br>
-      ⑤ 肾活检IgA沉积可确认IgAV（排除ANCA血管炎）
-    </div>
-
-    <div class="sh">📖 文献来源</div>
-    <div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0;">
-      <i>Henoch-Schönlein purpura and pulmonary hemorrhage: a report and literature review</i>. Pediatr Nephrol. 1999;13(6):530-534.<br>
-      PMID: 10452284 | DOI: 10.1007/s004670050652
-    </div>
-  </div>
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="index_IgAV.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;">📋 返回IgAV目录</a></div>
-  <div class="footer">基于文献PMID: 10452284 · 不构成诊疗建议 · IgAV病例专题 第4篇</div>
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">生命体征</th></tr>
+<tr><td>T</td><td>37.5℃</td></tr>
+<tr><td>HR</td><td>128次/分</td></tr>
+<tr><td>BP</td><td>95/60 mmHg</td></tr>
+<tr><td>体重</td><td>32 kg</td></tr>
+<tr><td>SpO2</td><td class="c-r">88%（未吸氧）</td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>一般情况</td><td class="c-r">气促，面色苍白，口唇发绀</td></tr>
+<tr><td>皮肤</td><td class="c-r">双下肢紫癜密集</td></tr>
+<tr><td>肺</td><td class="c-r">双肺可闻及细湿啰音</td></tr>
+<tr><td>心</td><td>心率128次/分，律齐</td></tr>
+<tr><td>腹部</td><td>腹软，脐周轻压痛</td></tr>
+</table>
 </div>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td>15.2×10⁹/L</td><td>5-12</td><td class="c-r">↑↑</td></tr>
+<tr><td>Hb</td><td class="c-r">72 g/L（急降）</td><td>110-140</td><td class="c-r">↓↓↓ 急性失血</td></tr>
+<tr><td>PLT</td><td>298×10⁹/L</td><td>150-350</td><td>正常</td></tr>
+<tr><td>CRP</td><td>35 mg/L</td><td>&lt;8</td><td class="c-r">↑↑</td></tr>
+<tr><td>ANCA</td><td>阴性</td><td></td><td>排除ANCA血管炎</td></tr>
+<tr><td>胸片</td><td class="c-r">双肺弥漫性浸润影</td><td></td><td class="c-r">肺泡出血</td></tr>
+<tr><td>BAL（支气管肺泡灌洗）</td><td class="c-r">含铁血黄素巨噬细胞阳性</td><td></td><td class="c-r">DAH确诊</td></tr>
+<tr><td>肾活检</td><td>IgA免疫荧光沉积阳性</td><td></td><td>确认IgAV相关</td></tr>
+</table>
+
+<div class="sh green">✅ 诊断</div>
+<div class="note" style="border-left-color:var(--green)"><b>诊断：IgAV并发弥漫性肺泡出血（DAH）</b><br>IgAV肺受累&lt;1%，但肺出血可致命。ANCA阴性排除ANCA相关血管炎。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table>
+<tr><th>药物/措施</th><th>方案</th><th>目的</th></tr>
+<tr><td class="b">甲泼尼龙冲击</td><td>30 mg/kg/d（最大1g）×3天</td><td class="c-a">紧急控制肺毛细血管炎</td></tr>
+<tr><td class="b">氧疗/呼吸支持</td><td>高流量鼻导管→必要时无创通气</td><td>维持氧合</td></tr>
+<tr><td class="b">输血</td><td>红细胞悬液支持</td><td>纠正贫血</td></tr>
+</table>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item yellow"><div class="t-date">第3天</div><div class="t-content">咯血停止，SpO2 95%（鼻导管2L）。Hb 85 g/L。胸片浸润影吸收中。</div></div>
+<div class="t-item green"><div class="t-date">第10天</div><div class="t-content">改为口服泼尼松。SpO2正常，胸片明显吸收。<span class="tag t-g">✅ 肺出血控制</span></div></div>
+<div class="t-item green"><div class="t-date">第30天</div><div class="t-content">胸片完全正常。Hb 118 g/L。泼尼松减量中。尿常规正常。</div></div>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0">
+① IgAV肺出血极罕见（&lt;1%）但可致命<br>
+② 咯血+呼吸困难+Hb骤降=立即查胸片和BAL<br>
+③ 需排除ANCA相关血管炎（急查p-ANCA/MPO-ANCA）<br>
+④ 大剂量激素冲击+呼吸支持是治疗核心
+</div>
+
+<div class="sh">📖 参考文献</div>
+<div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0">
+1. <i>HSP and pulmonary hemorrhage: a report and literature review</i>. Pediatr Nephrol. 1999;13(6):530-534. PMID: 10452284
+</div>
+
+</div>
+<div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border)"><a href="index_IgAV.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px">📋 返回IgAV目录</a></div>
+<div class="footer">示范性合成病例 · 基于文献PMID: 10452284 · 不构成诊疗建议 · IgAV病例第4篇</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(function(){})}</script>
 </body>
 </html>

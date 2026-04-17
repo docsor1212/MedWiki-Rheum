@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>儿童大动脉炎（Takayasu动脉炎）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../evidence/">📚 循证病例</a>
+  <span class="nav-title">儿童大动脉炎（Takayasu动脉炎）</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：儿童大动脉炎（Takayasu动脉炎）</h1>
+      <div class="sub">Takayasu Arteritis — 高血压+上下肢血压差异+腹主动脉狭窄</div>
+    </div>
+    <div class="meta">文献病例 · PMID: 34136299</div>
+  </div>
+  <div class="body">
+
+    <div class="sh">📖 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">来源</td><td>Rao ARS. Catching Takayasu Early: Diagnosing the "Pulseless" Disease in a Child with Palpable Pulses. <i>Case Rep Pediatr</i>. 2021;2021:8885944.</td></tr>
+      <tr><td class="b">PMID</td><td>34136299</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC8177979</td></tr>
+      <tr><td class="b">DOI</td><td>10.1155/2021/8885944</td></tr>
+    </table>
+
+    <div class="alert"><b>流行病学提示：</b>大动脉炎成人发病率约<b>1-2.6/百万/年</b>，亚洲人群患病率最高。女男比约<b>8.5:1</b>，好发于20-30岁。儿童TA中位起病年龄约<b>12.5岁</b>，最常见表现为<b>高血压（82.6%）</b>。儿童TA 5年死亡率可达<b>35%</b>，约23%患者从未达到缓解。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>女孩，12岁，身高142cm，体重34kg（BMI 17，消瘦）</td></tr>
+      <tr><td class="b">就诊地点</td><td>印度海得拉巴Amrutha儿童医院</td></tr>
+      <tr><td class="b">主诉</td><td>反复头痛10天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">高血压</span> <span class="tag t-y">腹痛</span> <span class="tag t-a">大动脉炎</span> <span class="tag t-g">早期诊断</span></td></tr>
+    </table>
+
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;"><b>腹痛30天</b></p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      12岁女孩因<b>腹痛1月</b>就诊。腹痛为弥漫性、非绞痛性，与进食无关（后证实为腹腔动脉狭窄致肠缺血的餐后腹痛）。<br><br>
+      就诊时测量血压发现<b>高血压</b>，上肢血压明显高于下肢。进一步检查发现上下肢血压差异显著。<br><br>
+      虽然所有外周脉搏均可触及（"pulseless disease"一词可能误导），但CT血管造影（CTA）证实为<b>儿童大动脉炎</b>（childhood Takayasu arteritis, c-TA）。<br><br>
+      患儿有消瘦表现，BMI偏低。既往无特殊病史，发育史正常。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：【原文未记载】&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：【原文未记载】&nbsp;&nbsp;<b>过敏史</b>：【原文未记载】</p>
+
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>上肢血压</td><td class="c-r">130/85 mmHg（95th百分位118/78）</td></tr>
+        <tr><td>下肢血压</td><td class="c-y">110/75 mmHg（低于上肢，反常）</td></tr>
+        <tr><td>上下肢压差</td><td class="c-r">20/10 mmHg（异常）</td></tr>
+        <tr><td>脉搏</td><td>80次/分，四肢均可触及，无RF/RR延迟</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">其他发现</th></tr>
+        <tr><td>腹部</td><td class="c-y">弥漫性压痛，可闻及<b>血管杂音</b></td></tr>
+        <tr><td>营养</td><td class="c-y">消瘦</td></tr>
+        <tr><td>心脏</td><td>无特殊</td></tr>
+      </table>
+    </div>
+    <div class="alert"><b>关键体征：</b>上下肢血压反常（上肢&gt;下肢&gt;10 mmHg）+ 腹部血管杂音 → 高度提示主动脉/肾动脉狭窄性病变。</div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>Hb</td><td>10 g/dL</td><td>12-16</td><td class="c-y">轻度贫血</td></tr>
+      <tr><td>ESR（1h/2h）</td><td class="c-r">56/110 mm/h ↑↑</td><td>&lt;20</td><td>显著升高，炎症活动</td></tr>
+      <tr><td>CRP</td><td class="c-r">24.0 mg/dL ↑↑</td><td>&lt;0.5</td><td>显著升高</td></tr>
+      <tr><td>血肌酐</td><td>1.0 mg/dL</td><td>正常</td><td>肾功能正常</td></tr>
+      <tr><td>RF/ANA/dsDNA/ANCA</td><td>均阴性</td><td>—</td><td>排除其他CTD</td></tr>
+      <tr><td>补体C3/C4</td><td>正常</td><td>—</td><td>排除SLE</td></tr>
+      <tr><td>尿RBC</td><td>15-20/HPF</td><td>&lt;5</td><td class="c-y">镜下血尿（肾动脉狭窄）</td></tr>
+      <tr><td>CTA</td><td class="c-r">腹腔动脉起始段狭窄</td><td>—</td><td>→餐后腹痛原因</td></tr>
+      <tr><td>CTA</td><td class="c-r">右肾动脉起始段狭窄</td><td>—</td><td>→高血压原因</td></tr>
+      <tr><td>CTA</td><td class="c-r">L2水平腹主动脉狭窄</td><td>—</td><td>→下肢血压低</td></tr>
+      <tr><td>FDG-PET</td><td class="c-r">狭窄段主动脉FDG摄取增高</td><td>—</td><td>确认炎症活动</td></tr>
+      <tr><td>DTPA肾图</td><td class="c-r">左肾实质摄取严重受损</td><td>—</td><td>左肾功能严重受损（肾发育不良）</td></tr>
+      <tr><td>超声心动图</td><td>正常</td><td>—</td><td>心脏结构/压力正常</td></tr>
+    </table>
+    <div class="note"><b>EULAR/PRINTO/PRES分类标准</b>：必须条件=血管造影异常 + 至少1项以下：①脉搏减弱/跛行 ②四肢血压差&gt;10mmHg ③大动脉杂音 ④高血压 ⑤ESR/CRP升高。本例满足全部条件。</div>
+
+    <div class="sh blue">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>一、大血管炎的免疫学本质</b><br>
+      大动脉炎（Takayasu arteritis, TA）是以主动脉及其主要分支的肉芽肿性全层动脉炎为特征的自身免疫性大血管炎。病理表现为血管壁淋巴细胞、巨噬细胞和多核巨细胞浸润，伴内膜增厚和外膜纤维化，最终导致血管腔狭窄、闭塞或动脉瘤形成。原文通过CTA证实腹主动脉、腹腔动脉和右肾动脉狭窄，符合典型TA血管病变分布。<br><br>
+      <b>二、发病机制：从免疫失调到血管重塑</b><br>
+      TA的发病机制尚未完全阐明，但涉及以下核心环节：<b>①</b>遗传易感性——HLA-B52、HLA-B67与TA强相关；<b>②</b>未知抗原触发→树突细胞和T细胞活化→以Th1和Th17为主的适应性免疫应答；<b>③</b>效应T细胞和巨噬细胞浸润血管外膜和中膜→分泌IFN-γ、IL-6、IL-17、TNF-α等促炎因子；<b>④</b>炎症导致血管壁重塑——内膜纤维性增厚（致狭窄）和外膜增厚（致僵硬）。本例ESR和CRP持续升高反映了系统性炎症活动。<br><br>
+      <b>三、高血压的病理生理机制</b><br>
+      本例最突出的临床表现是继发性高血压，由右肾动脉起始段狭窄→肾缺血→肾素-血管紧张素-醛固酮系统（RAAS）激活所致。这是儿童TA最常见表现（文献报告82.6%的c-TA有高血压）。同时，腹主动脉狭窄导致上肢血压高于下肢（反常压差），这是主动脉缩窄段近远端压力差异的直接体现。腹腔动脉狭窄→肠缺血→餐后腹痛，构成了完整的"血管狭窄-器官缺血"病理生理链条。<br><br>
+      <b>四、早期诊断的病理基础</b><br>
+      原文强调"pulseless disease"（无脉病）名称的误导性。TA早期血管壁处于炎症活动期但尚未完全闭塞，此时脉搏仍可触及但血管病变已存在。炎症标志物（ESR/CRP）升高是活动期的唯一线索。<b>关键启示</b>：TA的诊断窗口在"有脉期"而非"无脉期"，早期影像学评估（CTA/MRA）是发现亚临床血管病变的核心手段。
+      <div class="note">以上内容依据原文PMC8177979及其中引用的文献综合整理。原文以病例报告为主，机制部分为基于文献的推断。</div>
+    </div>
+
+    <div class="sh green">✅ 诊断标准对照</div>
+    <table>
+      <tr><th colspan="4" style="background:#e8f4f2;">标准一：EULAR/PRINTO/PRES儿童大动脉炎分类标准（Ozen et al., <i>Ann Rheum Dis</i> 2010;69:798-806）—— 血管造影异常（必须）+ ≥1/5条附加标准</th></tr>
+      <tr><th style="width:30px">序</th><th>标准条目</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td colspan="2"><b>必须条件：血管造影（CTA/MRA/DSA/超声）异常</b></td><td>CTA示腹主动脉+腹腔动脉+右肾动脉狭窄</td><td class="c-g">✅</td></tr>
+      <tr><td>1</td><td>脉搏减弱/消失或肢体跛行</td><td>四肢脉搏均可触及</td><td>—</td></tr>
+      <tr><td>2</td><td>四肢血压差>10 mmHg</td><td>上肢血压明显高于下肢，压差>10 mmHg</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>大动脉或主要分支杂音</td><td>腹部闻及血管杂音</td><td class="c-g">✅</td></tr>
+      <tr><td>4</td><td>高血压（与年龄不符）</td><td>上肢血压升高，继发性高血压</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>急性期反应物升高（ESR/CRP）</td><td>ESR和CRP均升高</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="3" class="b">EULAR/PRINTO/PRES标准小结</td><td class="b c-g">符合（必须+4条）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">标准二：1990年ACR大动脉炎分类标准（Arend et al., <i>Arthritis Rheum</i> 1990;33:1129-1134）—— ≥3/6条</th></tr>
+      <tr><th style="width:30px">序</th><th>标准条目</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>1</td><td>发病年龄≤40岁</td><td>12岁</td><td class="c-g">✅</td></tr>
+      <tr><td>2</td><td>肢体跛行（活动后上/下肢肌肉疲劳不适）</td><td>未报告</td><td>—</td></tr>
+      <tr><td>3</td><td>肱动脉搏动减弱</td><td>四肢脉搏可触及</td><td>—</td></tr>
+      <tr><td>4</td><td>上肢或下肢血压差>10 mmHg</td><td>上下肢血压差>10 mmHg</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>主动脉或主要分支杂音</td><td>腹部血管杂音</td><td class="c-g">✅</td></tr>
+      <tr><td>6</td><td>血管造影异常（主动脉/主要分支狭窄/闭塞/动脉瘤，排除FMD/动脉硬化）</td><td>CTA示多发大血管狭窄，排除FMD</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="3" class="b">ACR标准小结（≥3/6条）</td><td class="b c-g">符合（4条）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">标准三：2022年ACR/EULAR大血管炎分类标准——TA vs GCA亚型（Ponte et al., <i>Arthritis Rheumatol</i> 2022）—— 评分制</th></tr>
+      <tr><th style="width:30px">条目</th><th>评分</th><th>本例情况</th><th>得分</th></tr>
+      <tr><td>年龄≤60岁</td><td>+2</td><td>12岁</td><td>+2</td></tr>
+      <tr><td>肢体跛行</td><td>+2</td><td>未报告</td><td>0</td></tr>
+      <tr><td>头/颈动脉受累</td><td>+2</td><td>无（腹主动脉型）</td><td>0</td></tr>
+      <tr><td>影像学示大血管炎</td><td>+3</td><td>CTA确认</td><td>+3</td></tr>
+      <tr><td>高血压</td><td>+1</td><td>继发性高血压</td><td>+1</td></tr>
+      <tr><td>非颞动脉活检肉芽肿性炎</td><td>+1</td><td>未做活检</td><td>0</td></tr>
+      <tr><td colspan="3" class="b">2022标准小结</td><td class="b c-g">6分，符合TA分类</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>综合诊断</b>：儿童大动脉炎（Takayasu动脉炎），腹主动脉+分支受累型。三个分类标准均符合。82.6%的c-TA以高血压为首发表现，脉搏存在≠排除TA。早期CTA诊断是预后关键。
+    </div>
+
+    <div class="sh blue">🔍 鉴别诊断</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点（排除依据）</th></tr>
+      <tr><td class="b">纤维肌性发育不良（FMD）</td><td>肾动脉狭窄+高血压</td><td>FMD为非炎症性，ESR/CRP正常，无主动脉/多血管受累，中位起病48岁→排除</td></tr>
+      <tr><td class="b">先天性主动脉缩窄</td><td>上下肢血压差</td><td>缩窄位于主动脉弓降部（非腹主动脉），无炎症标志物升高→排除</td></tr>
+      <tr><td class="b">主动脉弓中段综合征（Midaortic syndrome）</td><td>腹主动脉狭窄+肾动脉狭窄+高血压</td><td>非炎症性，高血压对药物治疗无效需手术→与本例药物可控制不符</td></tr>
+      <tr><td class="b">Marfan综合征</td><td>可合并主动脉缩窄</td><td>无骨骼异常（指征/脊柱）、无晶状体脱位→排除</td></tr>
+      <tr><td class="b">感染性主动脉炎（TB/梅毒）</td><td>主动脉狭窄</td><td>无结核/梅毒感染证据→排除</td></tr>
+    </table>
+
+    <div class="diff-box"><div class="diff-title">⚠️ "Pulseless Disease"的误导性</div>
+    Takayasu动脉炎被称为"无脉病"，但本例所有外周脉搏均可触及。这提示：①脉搏存在不排除TA ②早期诊断依赖血压差+血管杂音+影像学 ③儿童TA最常见表现是高血压（82.6%），而非无脉。</div>
+    <div class="diff-box"><div class="diff-title">⚠️ 儿童TA的早期诊断</div>
+    儿童TA诊断常延迟，因其症状非特异性（腹痛、消瘦、头痛）。高血压是重要线索：任何儿童/青少年出现<b>不明原因高血压</b>都应检查四肢血压+腹部血管杂音。上下肢血压差异是关键体征。</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+      <tr><td class="b">诱导缓解</td><td>泼尼松口服</td><td><b>2 mg/kg/d</b></td><td>GC是一线诱导药物（EULAR 2018推荐40-60mg/d等效量）</td></tr>
+      <tr><td class="b">降压</td><td>氨氯地平</td><td><b>5 mg/d</b></td><td>钙通道阻滞剂控制肾血管性高血压</td></tr>
+      <tr><td class="b">减量维持（3月内）</td><td>泼尼松</td><td>逐步减至<b>10 mg/d</b></td><td>3个月内完成减量，定期监测CRP+肌酐</td></tr>
+      <tr><td class="b">长期维持</td><td>泼尼松低剂量</td><td><b>10 mg/d</b>（5年随访持续）</td><td>维持缓解，无激素毒性表现</td></tr>
+      <tr><td class="b">随访监测</td><td>血压+CRP+肌酐</td><td>每3月→每6月</td><td>监测疾病活动及药物副作用</td></tr>
+      <tr><td class="b">影像学随访</td><td>超声心动图</td><td>定期复查</td><td>监测心脏结构及血管压力</td></tr>
+    </table>
+    <div class="alert"><b>⚠️ 治疗要点：</b>①约60%儿童TA对激素有效，但40%复发 ②ACEI用于肾血管性高血压需监测肾功能 ③早期诊断+免疫抑制→5年持续缓解 ④血管成形术/支架用于严重狭窄（非活动期）</div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">初诊</div><div class="t-content">上肢BP 130/85 mmHg，下肢BP 110/75 mmHg（95th百分位118/78）。ESR 56/110 mm/h，CRP 24 mg/dL。CTA确诊大动脉炎。</div></div>
+      <div class="t-item yellow"><div class="t-date">治疗启动</div><div class="t-content">泼尼松2 mg/kg/d + 氨氯地平5 mg。腹痛缓解，血压控制。每3月随访监测BP+CRP+肌酐。</div></div>
+      <div class="t-item green"><div class="t-date">3个月</div><div class="t-content">泼尼松减至<b>10 mg/d</b>。血压控制良好。</div></div>
+      <div class="t-item green"><div class="t-date">5年随访</div><div class="t-content"><span class="c-g">持续缓解</span>。体重55kg，身高154cm（BMI 23）。<b>停降压药</b>，四肢BP正常无差异，无腹部杂音。CRP正常，尿检正常。超声心动图无进展。月经来潮，学业正常。仍服泼尼松10 mg/d，无激素毒性。至今未需血管介入治疗。</div></div>
+    </div>
+
+    <div class="sh red">🧠 疑难剖析——决策导向</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>决策节点一：腹痛+高血压→何时考虑大血管炎？</b><br>
+      儿童腹痛最常见于消化系统疾病，但本例腹痛为弥漫性非绞痛、与进食相关（餐后腹痛），提示肠系膜缺血。当腹痛合并<b>两个以上线索</b>时应考虑大血管炎：<b>①</b>不明原因高血压（儿童高血压中继发性原因比例远高于成人）；<b>②</b>消瘦/体重不增（慢性疾病消耗）；<b>③</b>炎症标志物升高（排除感染后仍持续）。<b>临床决策建议</b>：任何青少年出现不明原因高血压→常规检查四肢血压+腹部血管杂音听诊→异常者立即行CTA/MRA。<br><br>
+      <b>决策节点二：如何避免"Pulseless Disease"的误导？</b><br>
+      TA经典名称"无脉病"可导致临床误判——脉搏存在时即排除TA。本例所有外周脉搏均可触及但CTA已证实多发大血管狭窄。<b>决策原则</b>：脉搏触诊是粗略筛查，不能替代血压差测量和影像学评估。TA的诊断窗口在"有脉期"——即炎症活动但血管尚未完全闭塞时，此时干预可避免不可逆损害。<br><br>
+      <b>决策节点三：ACEI用于肾血管性高血压——用还是不用？</b><br>
+      肾动脉狭窄传统上被认为是ACEI相对禁忌（可能致肾功能恶化），但在单侧肾动脉狭窄且对侧肾功能正常时，ACEI仍可谨慎使用。<b>决策路径</b>：①双侧肾动脉狭窄→避免ACEI；②单侧狭窄+对侧正常→ACEI可用，但需监测肾功能（48-72h复查肌酐）；③合并腹主动脉狭窄→需综合评估。<br><br>
+      <b>决策节点四：早期诊断如何改变预后？</b><br>
+      本例在血管完全闭塞前确诊（5年持续缓解无进展），与文献中延迟诊断者（如Sadurska报告16岁女孩左颈总+锁骨下动脉完全闭塞）形成鲜明对比。<b>核心策略</b>：GC+免疫抑制剂在炎症活动期使用可阻止血管狭窄进展，一旦血管纤维化闭塞则免疫抑制无效，仅能介入治疗。
+    </div>
+
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断</b><br>
+      ① 儿童TA最常见表现：高血压（82.6%） ② 脉搏存在≠排除TA ③ 四肢血压差&gt;10mmHg+血管杂音→关键线索 ④ CTA/MRA是确诊手段<br><br>
+      <b>2. 治疗</b><br>
+      ⑤ 糖皮质激素是诱导缓解一线 ⑥ ~40%复发需加用免疫抑制剂 ⑦ ACEI控制高血压（监测肾功能）<br><br>
+      <b>3. 预后</b><br>
+      ⑧ 早期诊断→良好预后（本例5年持续缓解） ⑨ 延迟诊断→血管完全闭塞→不可逆损害 ⑩ 青少年高血压必须排除TA
+    </div>
+
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/8177979/" target="_blank">PMID 34136299</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8177979/" target="_blank">PMC8177979</a></div><div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Rao ARS, Jahagirdar V, Rama K. Catching Takayasu Early. <i>Case Rep Pediatr</i>. 2021;2021:8885944. PMID: 34136299.<br>
+      2. Ozen S, et al. EULAR/PRINTO/PRES criteria for childhood Takayasu arteritis. <i>Ann Rheum Dis</i>. 2010;69(5):798-806. PMID: 20413568.<br>
+      3. Goel R, et al. Childhood-onset Takayasu arteritis. <i>J Rheumatol</i>. 2014;41(6):1183-1189. PMID: 24786922.<br>
+      4. Brunner J, et al. Takayasu arteritis in children and adolescents. <i>Rheumatology</i>. 2010;49(10):1806-1814. PMID: 20562196.<br>
+      5. Kumar S. Takayasu arteritis: paediatric perspective. <i>Indian J Rheumatol</i>. 2012;7(1):99-105.<br>
+      6. Hellmich B, et al. 2018 EULAR recommendations for management of large vessel vasculitis. <i>Ann Rheum Dis</i>. 2020;79:19-30. PMID: 31270110.<br>
+      7. Hoffman GS, et al. Anti-TNF therapy in difficult to treat Takayasu arteritis. <i>Arthritis Rheum</i>. 2004;50(7):2296-2304. PMID: 15248230.<br>
+      8. Morales E, et al. Takayasu arteritis in children. <i>J Rheumatol</i>. 1991;18:1081-1084. PMID: 1681102.
+    </div>
+  </div>
+  <div class="footer">基于PMC8177979真实文献病例 · Takayasu动脉炎 · 早期诊断 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body>
+</html>

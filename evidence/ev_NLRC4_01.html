@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：NLRC4相关自身炎症性疾病（AIFEC）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+
+</head>
+<body>
+<div class="nav-bar">
+<a href="/">🏠 首页</a>
+<a href="/cases/">📋 病例集</a>
+<a href="/evidence/">📚 循证病例</a>
+<a href="/drugs/">💊 药物手册</a>
+<a href="/tools/">🔧 临床工具</a>
+</div>
+ style="position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);"><a href="../index.html" style="color:#fff;text-decoration:none;opacity:.85">🏠 首页</a><span style="margin-left:auto;font-size:11px;opacity:.7">循证病例</span></div>
+<div class="wrap"><div class="header"><div><h1>📋 病例：NLRC4-AIFEC（婴儿期自身炎症性肠炎）</h1><div class="sub">NLRC4-Associated Autoinflammation with Infantile Enterocolitis</div></div><div class="meta">Ashari Kosar A et al. 2024 · PMID:39425177 · PMC11487858</div></div>
+<div class="body">
+
+    <div class="alert" style="background:#faf3dc;border-left-color:#b8891a;margin:0;border-radius:0;padding:6px 12px;font-size:11.5px;">
+      <b style="color:#b8891a">⚠️ 说明</b>　VEXAS综合征目前报告均为成人（体细胞突变），尚无确切儿童病例。本病例改为<b>NLRC4-AIFEC</b>——一种可于婴儿期发病的自身炎症性疾病，由NLRC4功能增益突变引起。
+    </div>
+    <div class="alert" style="background:#d4f0ed;border-left-color:var(--accent);"><b style="color:var(--accent)">流行病学：</b>NLRC4-GOF突变导致的自身炎症性疾病极罕见，全球报告病例数&lt;100例。分为4型：FCAS4（轻型）、<b>AIFEC（重型，婴儿肠炎+周期性发热）</b>、NLRC4-MAS（最重，反复MAS高死亡率）、NOMID（极罕见）。CARD域突变此前<b>从未报告</b>与AIFEC相关。</div>
+
+<div class="sh">📄 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">文献</td><td>Ashari Kosar A, et al. <i>Three cases of autoinflammatory disease with novel NLRC4 mutations, and the first mutation reported in the CARD domain.</i> Pediatr Rheumatol Online J. 2024;22:90.</td></tr>
+      <tr><td class="b">PMID</td><td>39425177</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC11487858</td></tr>
+      <tr><td class="b">DOI</td><td>10.1186/s12969-024-01020-z</td></tr>
+    </table>
+    <div class="sh">👤 基本信息（病例1）</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>女，早产儿（母亲孕期COVID-19+）</td></tr>
+      <tr><td class="b">主诉</td><td>肝脾肿大60天，发热60天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">NLRC4-AIFEC</span> <span class="tag t-y">CARD域突变</span> <span class="tag t-r">MAS</span> <span class="tag t-a">Adalimumab有效</span></td></tr>
+    </table>
+    <div class="alert" style="background:#d4f0ed;border-left-color:var(--accent);"><b style="color:var(--accent)">主诉</b>　早产女婴胎儿水肿+周期性发热+惊厥</div>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">肝脾肿大60天，发热60天</p>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      患儿为早产女婴，出生时即有<b>胎儿水肿、肝脾肿大、胆汁淤积</b>，按败血症治疗。<br><br>
+      此后出现<b>周期性发热、惊厥发作</b>，炎症标志物持续升高。一度发生<b>巨噬细胞活化综合征（MAS）</b>。<br><br>
+      <b>过敏史</b>：否认药物及食物过敏史。<br>
+      <b>个人史</b>：早产儿（母亲孕期COVID-19阳性）。<b>家族史</b>：父母近亲婚配。母亲和外祖母均有自幼反复发热史（提示常染色体显性遗传可能）。同胞哥哥健康。<br><br>
+      WES基因检测发现NLRC4基因<b>CARD域杂合突变：c.A91C p.Asn31His</b>（VUS）——首个报告与AIFEC相关的CARD域突变。Sanger验证母亲携带同一突变。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：新生儿期胎儿水肿+肝脾肿大+胆汁淤积，按败血症治疗1月。<b>个人史</b>：早产儿。&nbsp;&nbsp;<b>家族史</b>：父母近亲婚配，母亲和外祖母均有儿童期反复发热史。同胞哥哥健康。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+    <div class="sh red">🩺 临床表现</div>
+    <table>
+      <tr><th>系统</th><th>表现</th></tr>
+      <tr><td class="b">全身</td><td class="c-r">周期性发热、胎儿水肿</td></tr>
+      <tr><td class="b">消化</td><td>胆汁淤积、肝脾肿大</td></tr>
+      <tr><td class="b">神经</td><td class="c-r">惊厥发作、MAS</td></tr>
+      <tr><td class="b">血液</td><td class="c-r">MAS（铁蛋白↑↑、纤维蛋白原↓、三系减少）</td></tr>
+      <tr><td class="b">家族</td><td>母亲+外祖母反复发热史</td></tr>
+    </table>
+    <div class="sh red">🩺 体格检查</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p>详见原文。</p>
+</div>
+<div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>解读</th></tr>
+      <tr><td>炎症标志物</td><td class="c-r">CRP/ESR持续↑</td><td>慢性炎症</td></tr>
+      <tr><td>MAS相关</td><td class="c-r">铁蛋白↑↑/纤维蛋白原↓/三系↓</td><td>MAS发作</td></tr>
+      <tr><td>骨髓</td><td>可见噬血细胞</td><td>MAS</td></tr>
+      <tr><td class="b">NLRC4基因</td><td class="c-r">c.A91C p.Asn31His（CARD域，杂合）</td><td><b>新发突变！首个CARD域AIFEC突变</b></td></tr>
+    </table>
+    <div class="sh blue">🧬 发病机制与免疫病理</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>一、NLRC4炎性小体的结构与功能</b><br>
+      NLRC4（NOD-like receptor family CARD-containing 4）是先天免疫系统中重要的胞质模式识别受体。原文指出NLRC4蛋白由<b>三个功能域</b>组成：<b>①</b>N端CARD域（caspase activating and recruitment domain）——与下游效应蛋白（如caspase-1）相互作用，启动信号转导；<b>②</b>中央NBD域（nucleotide-binding domain，又称NACHT域）——介导自身寡聚化，是激活的分子开关；<b>③</b>C端LRR域（leucine-rich repeat）——感受上游信号并维持自身抑制状态（LRR去除导致NLRC4持续活化）。正常状态下，LRR域通过自身折叠保持NLRC4处于自身抑制构象。<br><br>
+      <b>二、功能增益（GOF）突变→炎性小体过度激活</b><br>
+      NLRC4 GOF突变破坏自身抑制机制→炎性小体自发组装→caspase-1持续活化→<b>IL-1β和IL-18的切割与释放</b>→下游炎症级联反应。原文描述的分子机制为："This leads to cleavage and secretion of proinflammatory cytokines interleukin (IL)-1β and IL-18, initiation of inflammatory cascades, and a form of cell death referred to as pyroptosis"。<br><br>
+      <b>三、IL-18的核心致病角色</b><br>
+      NLRC4突变患者血清IL-18极度升高（可达>500,000 pg/ml，正常<500 pg/ml）。IL-18是巨噬细胞活化的关键共刺激信号——IL-18与IL-12/IL-15协同→驱动NK细胞和T细胞产生大量IFN-γ→巨噬细胞过度活化→<b>MAS/HLH</b>（本例即有MAS发作）。原文强调"The importance of IL-18 in the diagnosis of the disease has been well elucidated"。同时，IL-18直接损伤肠上皮→慢性肠炎/小肠结肠炎（AIFEC的特征性表现）。<br><br>
+      <b>四、基因型-表型关系</b><br>
+      原文总结了突变位置与表型的对应关系：WHD域突变→FCAS4（冷诱导性轻型：荨麻疹、关节炎）；NBD/HD1域突变→AIFEC/MAS（重型：肠炎、MAS发作、高死亡率）；LRR域突变→中间表型。<b>本例为首个CARD域致病突变</b>（c.A91C p.Asn31His），CARD域直接参与caspase-1招募，该突变可能增强NLRC4-caspase-1信号传递效率，导致AIFEC+MAS表型。这一发现拓宽了NLRC4结构-功能关系的认知边界。<br><br>
+      <b>五、体细胞嵌合与迟发起病</b><br>
+      原文还描述了NLRC4体细胞嵌合（somatic mosaicism）导致的迟发起病——成年后才出现反复发热、肌痛、皮疹。这与种系突变（本例母系遗传）的婴儿期起病形成对比，说明突变水平和嵌合比例直接影响发病年龄和严重程度。
+      <div class="note">以上内容依据原文PMC11487858 Background和Discussion部分整理，所有机制描述均有原文依据。</div>
+    </div>
+
+    <div class="sh green">✅ 诊断标准对照</div>
+    <table>
+      <tr><th colspan="4" style="background:#e8f4f2;">NLRC4-AIFEC诊断（基于2022 IUIS IEI分类: Picard et al., <i>J Clin Immunol</i> 2023;43:1271）</th></tr>
+      <tr><th style="width:30px">序</th><th>诊断条件</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>1</td><td>临床表型：婴儿期起病周期性发热+慢性腹泻/肠炎</td><td>早产女婴，周期性发热+腹泻（calprotectin>2000 μg/g）</td><td class="c-g">✅</td></tr>
+      <tr><td>2</td><td>炎症标志物持续升高（CRP/ESR/粪钙卫蛋白）</td><td>CRP/ESR持续↑，粪钙卫蛋白>2000 μg/g</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>MAS/HLH发作（铁蛋白↑↑+纤维蛋白原↓+噬血现象）</td><td>铁蛋白↑↑+纤维蛋白原↓+骨髓噬血细胞</td><td class="c-g">✅</td></tr>
+      <tr><td>4</td><td>NLRC4基因GOF突变（WES/Sanger确认）</td><td>NLRC4 c.A91C p.Asn31His（CARD域，杂合）——<b>首个CARD域AIFEC突变</b></td><td class="c-g">✅ 确诊</td></tr>
+      <tr><td>5</td><td>排除其他自身炎症性疾病（NLRP3、MEFV等）</td><td>WES确认仅NLRC4突变</td><td class="c-g">✅</td></tr>
+      <tr><td colspan="3" class="b">诊断</td><td class="b c-g">NLRC4-AIFEC确诊（伴MAS）</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">NLRC4疾病谱系分类（Romberg et al., <i>Curr Opin Allergy Clin Immunol</i> 2017;17:398-404）</th></tr>
+      <tr><th>亚型</th><th>突变域</th><th>严重度</th><th>本例</th></tr>
+      <tr><td>FCAS4</td><td>WHD域</td><td>轻（冷诱导荨麻疹+关节炎）</td><td>—</td></tr>
+      <tr><td class="b">AIFEC</td><td>NBD/HD1/CARD域</td><td class="c-r">重（婴儿肠炎+周期性发热）</td><td class="c-g">✅ CARD域突变</td></tr>
+      <tr><td>NLRC4-MAS</td><td>NBD域为主</td><td class="c-r">最重（反复MAS，高死亡率）</td><td class="c-y">合并表现</td></tr>
+      <tr><td>NOMID</td><td>罕见</td><td>重（皮疹+感音聋+脑萎缩）</td><td>—</td></tr>
+    </table>
+    <table style="margin-top:4px;">
+      <tr><th colspan="4" style="background:#e8f4f2;">MAS/HLH诊断参照（HLH-2004标准, Henter et al., <i>Pediatr Blood Cancer</i> 2007;48:124-131）—— ≥5/8条</th></tr>
+      <tr><th style="width:30px">序</th><th>标准条目</th><th>本例情况</th><th>符合</th></tr>
+      <tr><td>1</td><td>发热</td><td>周期性发热</td><td class="c-g">✅</td></tr>
+      <tr><td>2</td><td>脾大</td><td>肝脾肿大</td><td class="c-g">✅</td></tr>
+      <tr><td>3</td><td>血细胞减少（≥2系）</td><td>血小板减少等</td><td class="c-g">✅</td></tr>
+      <tr><td>4</td><td>高三酰甘油/低纤维蛋白原</td><td>纤维蛋白原↓</td><td class="c-g">✅</td></tr>
+      <tr><td>5</td><td>骨髓/脾/淋巴结噬血现象</td><td>骨髓噬血细胞</td><td class="c-g">✅</td></tr>
+      <tr><td>6</td><td>低/缺NK细胞活性</td><td>【原文未报告】</td><td>—</td></tr>
+      <tr><td>7</td><td>铁蛋白↑↑（≥500 μg/L）</td><td>铁蛋白显著升高</td><td class="c-g">✅</td></tr>
+      <tr><td>8</td><td>sCD25↑</td><td>【原文未报告】</td><td>—</td></tr>
+      <tr><td colspan="3" class="b">MAS诊断（≥5/8条，本例继发于NLRC4）</td><td class="b c-g">符合（6条）</td></tr>
+    </table>
+    <div class="alert"><b>⚠️ 说明</b>：本文件原计划为VEXAS综合征（UBA1体细胞突变，仅见于成年男性），因儿童不适用，改为NLRC4-AIFEC——儿童更具代表性的炎性小体病。NLRC4-AIFEC是2022 IUIS IEI分类中正式收录的单基因自身炎症性疾病。</div>
+    <table>
+      <tr><th>疾病</th><th>支持点</th><th>不支持点</th></tr>
+      <tr><td class="b">新生儿败血症</td><td>发热+肝脾肿+水肿</td><td>抗生素无效+周期性+家族史→不支持</td></tr>
+      <tr><td class="b">HLH（原发性）</td><td>MAS/HLH表现</td><td>PRF1/UNC13D等(-)/NLRC4(+)→继发于NLRC4</td></tr>
+      <tr><td class="b">NLRP3-FCAS</td><td>周期性发热</td><td>无冷诱发+NLRP3(-)/NLRC4(+)→排除</td></tr>
+    </table>
+    <div class="diff-box"><div class="diff-title">⚠️ NLRC4-AIFEC的基因型-表型关系</div>
+    突变部位与表型相关：<b>LRR域</b>→FCAS4（轻）；<b>NBD域</b>→AIFEC（重）；<b>CARD域</b>突变此前未报告。本例CARD域突变表现为AIFEC+MAS，拓宽了基因型-表型认知。</div>
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>治疗阶段</th><th>药物</th><th>剂量/方案</th><th>效果</th></tr>
+      <tr><td class="b">MAS发作期</td><td>甲泼尼龙 IV</td><td>冲击剂量</td><td>控制MAS发作</td></tr>
+      <tr><td class="b">维持治疗（确诊后）</td><td>Adalimumab（生物类似药CinnoRA）</td><td><b>1/3支40 mg → 约13 mg，q2w SC</b></td><td class="c-g">✅ 症状消失，持续缓解</td></tr>
+      <tr><td class="b">维持联合</td><td>泼尼松口服</td><td><b>0.5 mg/kg/d</b></td><td>联合控制炎症</td></tr>
+      <tr><td class="b">惊厥期（15月龄）</td><td>苯巴比妥</td><td>常规抗癫痫剂量</td><td>控制癫痫发作（EEG无痫样放电）</td></tr>
+    </table>
+    <div class="alert"><b>治疗要点</b>：NLRC4突变→IL-1β和IL-18过度释放。但IL-1拮抗剂对部分AIFEC无效。本例<b>Adalimumab（抗TNF-α）</b>取得成功，提示TNF-α在NLRC4发病中的重要作用。</div>
+    <div class="sh">📅 随访时间线</div>
+    <div class="timeline">
+      <div class="t-item red"><div class="t-date">新生儿期</div><div class="t-content">胎儿水肿+肝脾肿大+胆汁淤积→按败血症治疗1月</div></div>
+      <div class="t-item red"><div class="t-date">2月龄</div><div class="t-content">再次入院：持续发热+腹泻（粪钙卫蛋白<b>&gt;2000 μg/g</b>）。AST/ALT轻度升高，CRP/ESR/D-Dimer/铁蛋白升高。按MIS-N治疗→好转出院</div></div>
+      <div class="t-item yellow"><div class="t-date">2月-12月龄</div><div class="t-content">间歇发热发作，ESR/CRP/粪钙卫蛋白持续升高</div></div>
+      <div class="t-item"><div class="t-date">12月龄</div><div class="t-content">WES确诊NLRC4 CARD域 c.A91C p.Asn31His。Sanger验证母亲携带同一突变。启动<b>Adalimumab + 泼尼松0.5 mg/kg/d</b></div></div>
+      <div class="t-item yellow"><div class="t-date">15月龄</div><div class="t-content">惊厥发作（右手抽动+凝视），发热+腹泻后发生。EEG无痫样放电。脑超声示脑室扩大。加用苯巴比妥</div></div>
+      <div class="t-item green"><div class="t-date">21月龄（末次随访）</div><div class="t-content"><span class="c-g">Adalimumab维持缓解11个月，无症状发作</span></div></div>
+    </div>
+    <div class="sh red">🧠 疑难剖析——决策导向</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>决策节点一：新生儿期发热+肝脾肿大→何时考虑自身炎症性疾病？</b><br>
+      新生儿期发热、肝脾肿大、胎儿水肿首先考虑败血症是合理的（本例初期即按败血症治疗）。<b>转向自身炎症的线索</b>：<b>①</b>抗生素完全无效，血培养持续阴性；<b>②</b>周期性/反复性发作（缓解-复发模式）而非持续进展；<b>③</b>家族中相似病史（母亲+外祖母反复发热）；<b>④</b>炎症标志物在"无症状期"仍持续升高。<b>临床决策建议</b>：抗生素治疗无效+周期性发作+家族史→尽早启动自身炎症性疾病基因检测（WES/炎性小体病Panel），而非继续经验性试用更多抗生素。<br><br>
+      <b>决策节点二：MAS发作期的紧急处理策略</b><br>
+      MAS是NLRC4-AIFEC最危及生命的并发症。<b>决策路径</b>：<b>①</b>识别MAS——铁蛋白突然飙升+纤维蛋白原下降+血细胞减少三联征→立即启动MAS治疗；<b>②</b>一线方案——甲泼尼龙冲击（30 mg/kg/d ×3-5天）+环孢素（靶向T细胞活化）；<b>③</b>难治性MAS——考虑IL-1拮抗剂（Anakinra）或IL-18结合蛋白（Tadehiglata）。原文报告IL-18BP在一例危重AIFEC中取得戏剧性疗效（Canna et al., <i>JACI</i> 2017）。<b>关键原则</b>：MAS治疗不等待基因确诊，临床诊断即应启动。<br><br>
+      <b>决策节点三：维持期治疗——IL-1拮抗剂 vs TNF-α拮抗剂 vs IL-18靶向？</b><br>
+      NLRC4突变同时过度产生IL-1β和IL-18，但并非所有患者对IL-1拮抗剂有效。<b>决策框架</b>：<b>①</b>轻-中度（FCAS4型）→NSAIDs或Anakinra可能足够；<b>②</b>中-重度（AIFEC型）→首选Anakinra试用，无效则切换TNF-α拮抗剂（本例Adalimumab有效）或IL-18BP；<b>③</b>危重/难治性→IL-18BP（Tadehiglata）或双特异性IL-1β/IL-18单抗（MAS825，临床试验中）；<b>④</b>粪菌移植（FMT）——原文报告一例NLRC4-AIFEC伴反复MAS，常规免疫抑制无效后FMT成功控制症状。<b>决策建议</b>：无统一指南，需根据血清IL-18水平（如有条件检测）和个体治疗反应阶梯式调整。<br><br>
+      <b>决策节点四：遗传咨询——家族成员携带者该如何管理？</b><br>
+      本例母亲和外祖母携带同一NLRC4突变但表型较轻（仅儿童期反复发热，已自限）。<b>决策建议</b>：<b>①</b>确诊先证者后→建议父母及一级亲属行Sanger验证；<b>②</b>无症状携带者——目前无需预防性治疗，但应告知发热发作时需就医评估；<b>③</b>计划生育——50%遗传概率，但外显率不完全（修饰基因/环境因素影响），产前诊断可行但需结合遗传咨询；<b>④</b>未来可能——NLRC4新突变（如本例CARD域）的临床意义判定需功能验证（VUS→likely pathogenic的升级证据）。
+    </div>
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
+      <b>1. 诊断</b>：婴儿期周期性发热+肠炎+MAS → 查NLRC4<br>
+      <b>2. 基因</b>：首个CARD域致病突变，拓宽基因型-表型关系<br>
+      <b>3. 治疗</b>：Adalimumab有效；IL-1拮抗剂可能不足<br>
+      <b>4. 遗传</b>：常染色体显性，不完全外显，需遗传咨询
+    </div>
+    <div class="sh">📖 参考文献<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/11487858/" target="_blank">PMID 39425177</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11487858/" target="_blank">PMC11487858</a></div>
+
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/11487858/" target="_blank">PMID 39425177</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11487858/" target="_blank">PMC11487858</a>，以下为相关参考文献。</div></div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7;">
+      1. Asna Ashari K, et al. Three cases of autoinflammatory disease with novel NLRC4 mutations, and the first mutation in the CARD domain. <i>Pediatr Rheumatol Online J</i>. 2024;22:90. PMID: 39425177.<br>
+      2. Wang L, et al. A novel mutation in the NBD domain of NLRC4 causes mild autoinflammation. <i>Front Immunol</i>. 2021;12:674808. PMID: 34248956.<br>
+      3. Canna SW, et al. An activating NLRC4 inflammasome mutation causes autoinflammation with recurrent MAS. <i>Nat Genet</i>. 2014;46(10):1140-1146.<br>
+      4. Romberg N, et al. Mutation of NLRC4 causes autoinflammatory disease. <i>Nat Genet</i>. 2014;46(8):870-874.<br>
+      5. Bardet M, et al. NLRC4 GOF shows poor phenotype/genotype correlation. (cited in original Discussion)<br>
+      6. Bracaglia C, et al. FMT in NLRC4 mutation with recurrent MAS. (cited in original as ref 20)<br>
+      7. Kawasaki Y, et al. First case of NLRC4 NOMID phenotype. (cited in original as ref 10)
+    </div>
+    
+</div>
+<div class="footer">真实文献病例 · Ashari Kosar et al. 2024 · PMID:39425177 · 不构成诊疗建议</div>
+</div>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+</script>
+</body></html>

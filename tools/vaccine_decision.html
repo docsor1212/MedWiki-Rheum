@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>疫苗决策树 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 30px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:4px;cursor:pointer;padding:4px 0;}
+label input[type=checkbox]{accent-color:var(--accent);width:18px;height:18px;}
+.input-group{margin-bottom:10px;}
+select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+select:focus{border-color:var(--accent);}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+table{width:100%;border-collapse:collapse;font-size:0.78rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:6px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:5px 8px;border-bottom:1px solid #f0f5f4;vertical-align:top;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.72rem;font-weight:800;color:#fff;}
+.badge-green{background:var(--green);}
+.badge-yellow{background:var(--yellow);}
+.badge-red{background:var(--red);}
+.drug-check{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;}
+@media(max-width:640px){.drug-check{grid-template-columns:1fr;}}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">疫苗决策树</span></div>
+
+<div class="wrap">
+
+<div class="card">
+<h1>免疫抑制患儿 <span>疫苗决策</span></h1>
+<div class="sub">儿童风湿病用药期间的疫苗接种评估 · 交互式决策工具</div>
+
+<div class="section-title">💊 当前用药方案（多选）</div>
+<div class="drug-check">
+<label><input type="checkbox" id="d_mtx" value="mtx"> MTX (甲氨蝶呤)</label>
+<label><input type="checkbox" id="d_hcq" value="hcq"> HCQ (羟氯喹)</label>
+<label><input type="checkbox" id="d_gc_low" value="gc_low"> GC 低剂量 (≤2mg/kg或≤20mg/d)</label>
+<label><input type="checkbox" id="d_gc_high" value="gc_high"> GC 中高剂量 (>2mg/kg或>20mg/d)</label>
+<label><input type="checkbox" id="d_bio" value="bio"> 生物制剂 (TNFi/IL等)</label>
+<label><input type="checkbox" id="d_jaki" value="jaki"> JAK抑制剂</label>
+<label><input type="checkbox" id="d_cyc" value="cyc"> 环磷酰胺 (CYC)</label>
+<label><input type="checkbox" id="d_mmf" value="mmf"> 吗替麦考酚酯 (MMF)</label>
+<label><input type="checkbox" id="d_aza" value="aza"> 硫唑嘌呤 (AZA)</label>
+<label><input type="checkbox" id="d_csa" value="csa"> 环孢素 (CsA)</label>
+</div>
+
+<div class="section-title yellow">🏥 疾病状态</div>
+<select id="disease_status">
+<option value="stable">稳定期（低活动度/不活动）</option>
+<option value="active">活动期（中高活动度）</option>
+</select>
+
+<div style="display:flex;gap:8px;margin-top:14px;">
+<button class="btn btn-primary" onclick="evaluate()">📋 生成接种建议</button>
+<button class="btn btn-reset" onclick="resetForm()">🔄 重置</button>
+</div>
+</div>
+
+<div class="card" id="resultCard" style="display:none;">
+<div class="section-title green">📊 接种建议结果</div>
+<div id="resultContent"></div>
+</div>
+
+<div class="card">
+<div class="section-title">📖 疫苗分类与原则</div>
+<table>
+<tr><th>类型</th><th>代表疫苗</th><th>一般原则</th></tr>
+<tr><td><b>灭活疫苗</b></td><td>流感、肺炎、乙肝、HPV、狂犬病</td><td>多数情况可接种，免疫抑制时可能需额外剂量</td></tr>
+<tr><td><b>重组蛋白</b></td><td>乙肝(重组)、带状疱疹(Shingrix)</td><td>安全性好，推荐接种</td></tr>
+<tr><td><b>mRNA疫苗</b></td><td>新冠mRNA疫苗</td><td>✅ 推荐接种</td></tr>
+<tr><td style="color:var(--red);font-weight:700;">减毒活疫苗</td><td>MMR、水痘、轮状、OPV、BCG</td><td>⚠️ 免疫抑制者多禁用，需个体化评估</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div class="section-title yellow">🔄 补种时间表参考</div>
+<table>
+<tr><th>药物停用后</th><th>可补种疫苗</th></tr>
+<tr><td>GC停用 ≥1月</td><td>可接种活疫苗</td></tr>
+<tr><td>生物制剂停用 ≥3月</td><td>可考虑活疫苗（具体视药物半衰期）</td></tr>
+<tr><td>CYC停用 ≥3月</td><td>可考虑活疫苗</td></tr>
+<tr><td>MMF停用 ≥1月</td><td>可考虑活疫苗</td></tr>
+<tr><td>JAKi停用 ≥1月</td><td>可考虑活疫苗</td></tr>
+</table>
+<div style="font-size:0.72rem;color:var(--text2);margin-top:6px;">⚠️ 补种时间仅为参考，具体需结合疾病状态、用药时长、免疫功能综合评估</div>
+</div>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。疫苗决策需结合患儿免疫功能、疾病活动度、用药方案个体化制定。请遵循相关指南并咨询专科医师。</div>
+</div>
+
+<script>
+const vaccines=[
+{name:'流感疫苗(灭活)',type:'inactivated',defaultStatus:'ok'},
+{name:'肺炎球菌疫苗(PCV13/PPSV23)',type:'inactivated',defaultStatus:'ok'},
+{name:'乙肝疫苗(重组)',type:'recombinant',defaultStatus:'ok'},
+{name:'HPV疫苗(重组)',type:'recombinant',defaultStatus:'ok'},
+{name:'新冠灭活疫苗',type:'inactivated',defaultStatus:'ok'},
+{name:'新冠mRNA疫苗',type:'mrna',defaultStatus:'ok'},
+{name:'狂犬病疫苗(灭活)',type:'inactivated',defaultStatus:'ok'},
+{name:'破伤风/白喉/百日咳(DTaP/Tdap)',type:'inactivated',defaultStatus:'ok'},
+{name:'流脑疫苗(多糖/结合)',type:'inactivated',defaultStatus:'ok'},
+{name:'带状疱疹重组疫苗(Shingrix)',type:'recombinant',defaultStatus:'ok'},
+{name:'MMR(麻疹-腮腺炎-风疹)',type:'live',defaultStatus:'caution'},
+{name:'水痘疫苗',type:'live',defaultStatus:'caution'},
+{name:'轮状病毒疫苗',type:'live',defaultStatus:'caution'},
+{name:'BCG(卡介苗)',type:'live',defaultStatus:'caution'},
+{name:'OPV(口服脊灰)',type:'live',defaultStatus:'caution'},
+{name:'带状疱疹减毒活疫苗',type:'live',defaultStatus:'caution'},
+{name:'乙脑减毒活疫苗',type:'live',defaultStatus:'caution'},
+];
+
+function getChecked(){
+const ids=['d_mtx','d_hcq','d_gc_low','d_gc_high','d_bio','d_jaki','d_cyc','d_mmf','d_aza','d_csa'];
+return ids.filter(id=>document.getElementById(id).checked).map(id=>document.getElementById(id).value);
+}
+
+function evaluate(){
+const drugs=getChecked();
+const status=document.getElementById('disease_status').value;
+const isOnBio=drugs.includes('bio');
+const isOnJaki=drugs.includes('jaki');
+const isOnCyc=drugs.includes('cyc');
+const isOnMMF=drugs.includes('mmf');
+const isOnAZA=drugs.includes('aza');
+const isOnGCHigh=drugs.includes('gc_high');
+const isOnGCLow=drugs.includes('gc_low');
+const isOnMTX=drugs.includes('mtx');
+const isOnCsA=drugs.includes('csa');
+const isActive=status==='active';
+
+let html='<table><tr><th>疫苗</th><th>类型</th><th>建议</th><th>备注</th></tr>';
+
+vaccines.forEach(v=>{
+let rec='',note='',badgeClass='badge-green';
+if(v.type==='inactivated'||v.type==='recombinant'||v.type==='mrna'){
+if(isActive&&isOnGCHigh){
+rec='⚠️ 延迟至稳定期';badgeClass='badge-yellow';note='大剂量GC下免疫应答可能减弱';
+}else if(isActive){
+rec='⚠️ 延迟至稳定期更佳';badgeClass='badge-yellow';note='活动期免疫应答可能减弱';
+}else{
+rec='✅ 可接种';badgeClass='badge-green';note='';
+}
+}else if(v.type==='live'){
+const severeImmunosuppression=isOnBio||isOnJaki||isOnCyc||(isOnGCHigh)||isOnMMF;
+const moderateImmunosuppression=isOnMTX||isOnAZA||isOnGCLow||isOnCsA;
+if(severeImmunosuppression){
+rec='❌ 禁忌';badgeClass='badge-red';note='严重免疫抑制下活疫苗禁用';
+}else if(isActive){
+rec='❌ 禁忌';badgeClass='badge-red';note='活动期不可接种活疫苗';
+}else if(moderateImmunosuppression){
+if(isOnMTX&&!isOnBio&&!isOnJaki&&!isOnCyc&&!isOnGCHigh&&!isOnMMF){
+rec='⚠️ 需个体化评估';badgeClass='badge-yellow';note='MTX单药低剂量时，部分指南允许接种，需评估免疫状态';
+}else{
+rec='⚠️ 需个体化评估';badgeClass='badge-yellow';note='需评估免疫功能后决定';
+}
+}else{
+rec='✅ 可接种';badgeClass='badge-green';note='无免疫抑制，可正常接种';
+}
+}
+html+=`<tr><td style="font-weight:600;">${v.name}</td><td style="font-size:0.7rem;">${v.type==='live'?'减毒活':'灭活/重组'}</td><td><span class="badge ${badgeClass}">${rec}</span></td><td style="font-size:0.72rem;color:var(--text2);">${note}</td></tr>`;
+});
+
+html+='</table>';
+document.getElementById('resultContent').innerHTML=html;
+document.getElementById('resultCard').style.display='block';
+document.getElementById('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetForm(){
+document.querySelectorAll('input[type=checkbox]').forEach(cb=>cb.checked=false);
+document.getElementById('disease_status').value='stable';
+document.getElementById('resultCard').style.display='none';
+}
+</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

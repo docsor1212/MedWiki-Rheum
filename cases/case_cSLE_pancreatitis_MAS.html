@@ -29,6 +29,7 @@ tr:hover td { background:#faf8f5; }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
 .alert b { color:var(--red); }
 .note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }; padding-left:8px; border-left:2px solid var(--accent); }
 .footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
@@ -57,6 +58,7 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>🔴 病例：cSLE急性胰腺炎并发MAS</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
       <div class="sub">11岁女孩 — 胰腺炎在MAS中出现，多学科抢救成功（附87例文献回顾）</div>
     </div>
     <div class="meta">更新: 2026-04-10</div>
@@ -73,8 +75,36 @@ tr:hover td { background:#faf8f5; }
       <tr><td class="b" style="width:130px">患者</td><td>11岁，女性</td></tr>
       <tr><td class="b">就诊机构</td><td>苏州大学附属儿童医院，肾脏免疫科（中国江苏）</td></tr>
       <tr><td class="b">基础疾病</td><td>已确诊cSLE</td></tr>
+      <tr><td class="b">主诉</td><td>确诊cSLE后疾病活动，甲泼尼龙冲击第2天突发剧烈腹痛1天</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">急性胰腺炎</span> <span class="tag t-r">MAS</span> <span class="tag t-y">甲泼尼龙冲击第2天发病</span> <span class="tag t-g">13个月随访稳定</span></td></tr>
     </table>
+
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      11岁女孩，已确诊cSLE。因疾病活动入院接受甲泼尼龙冲击治疗。冲击第2天突发剧烈腹痛，伴恶心、呕吐。查血淀粉酶、脂肪酶显著升高，腹部影像学示胰腺肿大、渗出，确诊急性胰腺炎。随后出现持续高热、全血细胞减少、铁蛋白显著升高，确诊合并MAS。<br><br>
+      <b>既往史</b>：cSLE确诊后规律随访。&nbsp;&nbsp;<b>个人史</b>：生长发育正常。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查（腹痛发作时）</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>38.5℃</td></tr>
+        <tr><td>HR</td><td>115次/分</td></tr>
+        <tr><td>BP</td><td>100/65 mmHg</td></tr>
+        <tr><td>体重</td><td>33 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>急性病容，痛苦表情</td></tr>
+        <tr><td>皮肤黏膜</td><td>无特殊</td></tr>
+        <tr><td>心肺</td><td>心率115次/分，律齐；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td class="c-r"><b>上腹部压痛、反跳痛</b>，腹肌紧张</td></tr>
+        <tr><td>肝脾</td><td>后续出现肝脾肿大（MAS相关）</td></tr>
+      </table>
+    </div>
 
     <div class="alert">
       <b>本病例独特性：</b>① 胰腺炎在<b>甲泼尼龙冲击治疗第2天</b>出现（与治疗相关？）；② 合并文献回顾87例儿童SLE胰腺炎 — 死亡率33.3%，52.9%合并MAS；③ 提出SLE胰腺炎的<b>MAS高关联性</b>概念。
@@ -216,6 +246,25 @@ tr:hover td { background:#faf8f5; }
       ⑮ 适用于高滴度抗dsDNA、免疫复合物介导的重症SLE<br>
       ⑯ <b>血液灌流</b>（Hemoperfusion）则通过活性炭/树脂吸附清除炎性细胞因子<br>
       ⑰ 两者联合：DNA免疫吸附清除抗体 + 血液灌流清除细胞因子 = 双通道清除策略
+    </div>
+
+    <div class="sh green">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item green">
+        <div class="t-date">治疗后 — 逐步改善</div>
+        <div class="t-content">
+          • 血淀粉酶、脂肪酶<b>逐步下降</b>至正常<br>
+          • MAS症状缓解（体温正常、血细胞恢复、铁蛋白下降）<br>
+          • CTX冲击6个月后转换为MMF维持
+        </div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">13个月随访</div>
+        <div class="t-content">
+          • 病情保持稳定，无胰腺炎或MAS复发<br>
+          <span class="tag t-g">13个月随访期保持稳定</span>
+        </div>
+      </div>
     </div>
 
     <div class="sh green">📚 临床要点总结</div>

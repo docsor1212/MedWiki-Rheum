@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCQ — 羟氯喹</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:var(--accent-bg); color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;
+padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;
+font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+</style>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#20a39e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MedWiki">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">HCQ · 羟氯喹</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>HCQ — 羟氯喹</h1>
+    <div class="sub">SLE基础用药 · 慢效(8–12周) · <span style="color:#ffe0d0;font-weight:700;">定期眼科检查</span> · 妊娠安全</div>
+  </div>
+  <div class="meta">
+    起效 8–12周<br>
+    SLE几乎所有患者适用<br>
+    减少复发~50%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 适应证 -->
+<div class="sh">🎯 适应证</div>
+<table>
+<tr><th>疾病</th><th>地位</th><th>证据</th></tr>
+<tr class="hl-green"><td class="c-g b">SLE（儿童/成人）</td><td class="c-g b">一线基础用药，几乎所有cSLE患者</td><td><span class="tag t-g">A级</span></td></tr>
+<tr><td>JIA（皮肤表现）</td><td>辅助用药</td><td><span class="tag t-a">B级</span></td></tr>
+<tr><td>新生儿狼疮预防</td><td>抗SSA/Ro(+)孕妇用药</td><td><span class="tag t-a">B级</span></td></tr>
+<tr><td>CAPS/抗磷脂综合征</td><td>辅助抗栓</td><td><span class="tag t-y">C级</span></td></tr>
+</table>
+
+<!-- 剂量 -->
+<div class="sh">💊 剂量速查</div>
+<table>
+<tr><th>项目</th><th>详情</th></tr>
+<tr class="hl-green"><td class="c-g b">儿童剂量</td><td class="c-g b">5 mg/kg/d，单次或分两次口服</td></tr>
+<tr><td>最大剂量</td><td><span class="c-r b">400 mg/d</span></td></tr>
+<tr><td>成人常用</td><td>200–400 mg/d</td></tr>
+<tr><td>起效时间</td><td><span class="c-y b">8–12周</span>（慢效，需向家长说明）</td></tr>
+<tr><td>服用建议</td><td>随餐服用，减少胃肠道不适</td></tr>
+</table>
+<div class="note">剂量≤5mg/kg/d可将视网膜毒性风险降至最低。实际体重而非理想体重计算剂量。</div>
+
+<!-- 眼科监测 -->
+<div class="sh red">👁️ 眼科监测（视网膜毒性）</div>
+<div class="alert">
+  <b>视网膜毒性不可逆！</b>早期发现唯一手段是定期筛查。用药前必须告知家长眼科随访的重要性。
+</div>
+<table>
+<tr><th class="red-hd">时间点</th><th class="red-hd">检查项目</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线（用药前）</td><td>视力 + 色觉 + <span class="c-r b">OCT</span> + 视野（10-2）+ 眼底照相</td></tr>
+<tr><td>用药第1年内</td><td>无需重复（基线正常时）</td></tr>
+<tr class="hl-red"><td class="c-r b">第2年起，每6–12月</td><td><span class="c-r b">OCT</span> + 视野检查</td></tr>
+<tr><td>高危患者</td><td>每6月（剂量&gt;5mg/kg/d、肝肾功能不全、合并他莫昔芬）</td></tr>
+</table>
+<div class="note">AAO 2016建议：用药&gt;5年者加强监测。儿童cSLE预计用药时间长，务必从基线建立完整记录。</div>
+
+<!-- 不良反应 -->
+<div class="sh red">⚠️ 不良反应</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="red-hd">常见</th><th class="red-hd">处理</th></tr>
+<tr><td>胃肠道不适</td><td>随餐服用，分两次</td></tr>
+<tr><td>皮疹/瘙痒</td><td>对症处理</td></tr>
+<tr><td>色素沉着</td><td> cosmetic，停药可逆</td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th class="red-hd">严重（需停药）</th><th class="red-hd">说明</th></tr>
+<tr class="hl-red"><td class="c-r b">视网膜毒性</td><td>罕见但不可逆，发生率&lt;1%（&lt;5mg/kg/d）</td></tr>
+<tr class="hl-red"><td class="c-r b">心肌毒性</td><td>极罕见，长期用药注意</td></tr>
+<tr class="hl-yellow"><td class="c-y b">G6PD缺乏</td><td class="c-y">溶血风险，用药前筛查</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 监测 -->
+<div class="sh">🔬 综合监测</div>
+<table>
+<tr><th>时间</th><th>检查</th></tr>
+<tr class="hl-yellow"><td class="c-y b">基线</td><td>CBC + 肝肾功 + <span class="c-r b">眼科检查</span> + G6PD</td></tr>
+<tr><td>每3–6月</td><td>CBC + 肝肾功</td></tr>
+<tr><td>每6–12月</td><td><span class="c-r b">眼科：OCT + 视野</span></td></tr>
+</table>
+
+<!-- 药物相互作用 -->
+<div class="sh yellow">⚡ 药物相互作用</div>
+<table>
+<tr><th class="yellow-hd">药物</th><th class="yellow-hd">影响</th><th class="yellow-hd">建议</th></tr>
+<tr class="hl-green"><td class="c-g b">MTX ⭐</td><td class="c-g">协同增效，降低SLE活动度</td><td class="c-g b">推荐联用</td></tr>
+<tr class="hl-red"><td class="c-r b">胺碘酮 ⚠️</td><td class="c-r">叠加视网膜毒性风险</td><td class="c-r b">避免联用</td></tr>
+<tr><td>地高辛</td><td>↑地高辛血药浓度</td><td>监测地高辛水平</td></tr>
+<tr><td>抗酸药</td><td>↓HCQ吸收</td><td>间隔4h服用</td></tr>
+</table>
+
+<!-- 妊娠/哺乳 -->
+<div class="sh green">🤰 妊娠与哺乳</div>
+<div class="g2">
+<div>
+<table>
+<tr><th class="green-hd">状态</th><th class="green-hd">安全性</th></tr>
+<tr class="hl-green"><td class="c-g b">妊娠期</td><td class="c-g b">相对安全，推荐继续使用</td></tr>
+<tr class="hl-green"><td class="c-g b">哺乳期</td><td class="c-g b">安全，乳汁中浓度极低</td></tr>
+<tr><td>备孕（男女）</td><td>无需停药</td></tr>
+</table>
+</div>
+<div>
+<div class="note" style="margin-top:4px;">
+  FDA原归类C类，近年多项研究证实安全性后重新评估为<b class="c-g">相对安全</b>。<br>
+  <span class="c-a b">SLE患者妊娠期停用HCQ会增加复发风险</span>，不建议停药。<br>
+  新生儿狼疮预防：抗SSA/Ro(+)孕妇使用HCQ可降低胎儿心脏传导阻滞发生率。
+</div>
+</div>
+</div>
+
+<!-- 特殊注意 -->
+<div class="sh yellow">⭐ 特殊注意</div>
+<div class="alert" style="background:var(--accent-bg);border-left-color:var(--accent);">
+  <b class="c-a">Canadian Hydroxychloroquine Study</b>：cSLE长期使用HCQ可使复发率降低约50%，是SLE最重要的基础用药之一。<br>
+  <b class="c-a">停药需谨慎</b>：即使临床缓解，多数专家建议cSLE持续用药。
+</div>
+
+</div><!-- body -->
+
+<div class="footer">
+  Canadian HCQ Study Group, Arthritis Rheum 1991 · Marmor MF et al. Ophthalmology 2016 (AAO视网膜筛查指南) · ACR 2020 SLE管理指南
+</div>
+
+</div>
+
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

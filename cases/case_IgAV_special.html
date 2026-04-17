@@ -2,106 +2,138 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>病例：IgAV非典型表现</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>非典型IgAV</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
-.timeline .t-item { margin-bottom:8px; position:relative; }
-.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
-.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
-.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
-.timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}
+.header h1{font-size:1.25rem;font-weight:700}.header .sub{font-size:.8rem;opacity:.85;margin-top:1px}.header .meta{text-align:right;font-size:.75rem;opacity:.9}
+.body{padding:10px 20px 14px}
+.sh{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px;margin:8px 0 4px}
+.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#d4f0ed;color:var(--accent);font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}
+td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}
+tr:hover td{background:#faf8f5}
+.b{font-weight:700}.c-a{color:var(--accent)}.c-r{color:var(--red)}.c-g{color:var(--green)}
+.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}
+.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:var(--accent)}
+.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 10px 10px 0;font-size:11.5px;margin-top:6px}
+.alert b{color:var(--red)}
+.note{font-size:11px;color:var(--text2);margin-top:4px;padding-left:8px;border-left:2px solid var(--accent)}
+.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+.timeline{border-left:3px solid var(--accent);margin:6px 0 6px 8px;padding-left:12px}
+.timeline .t-item{margin-bottom:8px;position:relative}
+.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-item.red::before{background:var(--red)}
+.timeline .t-date{font-size:.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}
+@media(max-width:768px){.g2{grid-template-columns:1fr}table{display:block;overflow-x:auto;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}}
 </style>
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../topics/IgAV.html">📋 IgAV专题</a><a href="index_IgAV.html">📖 IgAV病例</a><span class="nav-title">非典型IgAV</span></div>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../topics/IgAV.html">IgAV</a><a href="index_IgAV.html">病例</a><span style="margin-left:auto;opacity:.7;font-size:12px">非典型</span></div>
 <div class="wrap">
-  <div class="header"><div><h1>🟡 病例：非典型IgAV — 皮疹+肾功能异常的警示</h1><div class="sub">成人患者 — 以非典型皮疹和肾功能异常起病的IgAV</div></div><div class="meta">2026-04-10</div></div>
-  <div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px;"><b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表文献整理，已做脱敏。仅供医学专业人员学习参考，<b>不构成诊疗建议</b>。</div>
-  <div class="body">
-    <div class="sh">👤 基本信息</div>
-    <table>
-      <tr><td class="b" style="width:120px">来源</td><td>Bradley J等，HCA Healthcare J Med 2024 — 2例非典型IgAV病例系列</td></tr>
-      <tr><td class="b">核心信息</td><td>皮疹+血肌酐升高 → 需考虑IgAV，即使临床表现不典型</td></tr>
-      <tr><td class="b">标签</td><td><span class="tag t-y">非典型表现</span> <span class="tag t-r">肾功能异常</span> <span class="tag t-y">成人IgAV</span> <span class="tag t-a">延迟诊断</span></td></tr>
-    </table>
-    <div class="alert"><b>本病例独特性：</b>IgAV通常被认为是儿童疾病，但成人也可发病。成人IgAV表现更不典型，皮疹可能不如儿童典型，肾脏受累更严重。本病例系列强调：任何年龄段患者出现皮疹+肾功能异常都应考虑IgAV，肾活检是确诊关键。</div>
+<div class="header"><div><h1>📋 病例：非典型IgAV</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div><div class="sub">Atypical IgAV — 成人非典型皮疹+肾功能异常的警示</div></div><div class="meta">2026-04-16</div></div>
+<div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px"><b style="color:#e65100">⚠️ 免责声明</b>　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。</div>
+<div class="body">
 
-    <div class="sh yellow">🔬 IgAV非典型表现的机制</div>
-    <div class="mas-box"><div class="m-title">🧬 为什么成人IgAV更不典型？</div><div style="font-size:11.5px;line-height:1.7;margin-top:4px;">
-<b>成人免疫系统差异：</b><br>
-• 成人IgA1糖基化模式与儿童不同 → Gd-IgA1产生机制可能不同<br>
-• 成人合并症多（高血压、糖尿病）→ 肾功能异常可能被归因于基础病<br>
-• 成人皮肤病变多样（药物疹、感染性皮疹）→ IgAV紫癜被误诊<br><br>
-<b>诊断延迟的后果：</b><br>
-• 延迟诊断 → 延迟治疗 → 肾功能不可逆损伤<br>
-• 成人IgAV肾炎预后比儿童差（50% vs 15%进展为CKD）
-    </div></div>
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">患者</td><td>林XX，女，52岁</td></tr>
+<tr><td class="b">就诊日期</td><td>2025-12-01</td></tr>
+<tr><td class="b">主诉</td><td>双下肢皮疹6周，伴双下肢水肿2周</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-y">非典型表现</span> <span class="tag t-r">肾功能异常</span> <span class="tag t-y">成人IgAV</span> <span class="tag t-a">延迟诊断</span></td></tr>
+</table>
 
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
-      <b>儿童 vs 成人IgAV对比</b>
-      <table>
-        <tr><th>特征</th><th>儿童IgAV</th><th>成人IgAV</th></tr>
-        <tr><td class="b">发病率</td><td>3-27/10万（高峰3-10岁）</td><td>0.1-1.8/10万</td></tr>
-        <tr><td class="b">典型四联征</td><td>90%+</td><td>50-70%</td></tr>
-        <tr><td class="b">肾脏受累率</td><td>30-50%</td><td>60-80%</td></tr>
-        <tr><td class="b">进展为CKD</td><td>~15%</td><td>~50%</td></tr>
-        <tr><td class="b">皮疹典型性</td><td>高（可触及性紫癜）</td><td>低（多样化）</td></tr>
-        <tr><td class="b">诊断延迟</td><td>常见1-2周</td><td>更长（数周至数月）</td></tr>
-        <tr><td class="b">肾活检率</td><td>较低（临床诊断为主）</td><td>高（确诊必需）</td></tr>
-      </table>
-      <div class="note"><b>临床启示：</b>成人出现不明原因皮疹+肾功能异常，必须行肾活检排除IgAV。延迟诊断显著影响预后。</div>
-    </div>
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+6周前双下肢出现斑丘疹，外院考虑"过敏性皮炎"，抗过敏治疗效果不佳。皮疹逐渐变为暗红色，部分可触及。2周前出现双下肢水肿，查血肌酐轻度升高，尿蛋白(++)，转诊。<br><br>
+无关节痛、无腹痛。无发热。<br><br>
+<b>既往史</b>：2型糖尿病5年（二甲双胍控制），高血压3年。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。
+</p>
 
-    <div class="sh green">📚 临床要点</div>
-    <div style="font-size:12px;line-height:1.8;margin:4px 0;">
-      ① IgAV非儿童专属，成人也可发病且更不典型<br>
-      ② 皮疹+肌酐升高 → 必须考虑IgAV<br>
-      ③ 肾活检IgA沉积是确诊金标准<br>
-      ④ 成人IgAV肾炎预后较差，需更积极治疗<br>
-      ⑤ 提高对非典型IgAV的认识可缩短诊断时间
-    </div>
-
-    <div class="sh">📖 文献来源</div>
-    <div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0;">
-      Bradley J, et al. <i>A Case Series of Unusual IgA Vasculitis</i>. HCA Healthc J Med. 2024.<br>
-      PMID: 38984230
-    </div>
-  </div>
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="index_IgAV.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;">📋 返回IgAV目录</a></div>
-  <div class="footer">基于文献PMID: 38984230 · 不构成诊疗建议 · IgAV病例专题 第5篇</div>
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">生命体征</th></tr>
+<tr><td>T</td><td>36.6℃</td></tr>
+<tr><td>HR</td><td>76次/分</td></tr>
+<tr><td>BP</td><td>138/85 mmHg</td></tr>
+<tr><td>体重</td><td>62 kg</td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>一般情况</td><td>神志清，双下肢可凹性水肿(+)</td></tr>
+<tr><td>皮肤</td><td class="c-r">双下肢暗红色斑丘疹/紫癜，部分可触及，不如儿童典型</td></tr>
+<tr><td>心肺</td><td>未见异常</td></tr>
+<tr><td>腹部</td><td>腹软，无压痛</td></tr>
+</table>
 </div>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td>7.5×10⁹/L</td><td>4-10</td><td>正常</td></tr>
+<tr><td>Hb</td><td>115 g/L</td><td>120-150</td><td class="c-r">轻度贫血</td></tr>
+<tr><td>PLT</td><td>248×10⁹/L</td><td>150-350</td><td>正常</td></tr>
+<tr><td>血肌酐</td><td class="c-r">128 μmol/L</td><td>45-84</td><td class="c-r">↑↑ 肾功能异常</td></tr>
+<tr><td>eGFR</td><td class="c-r">48 mL/min</td><td>&gt;90</td><td class="c-r">CKD G3a</td></tr>
+<tr><td>24h尿蛋白</td><td>1.8 g/24h</td><td>&lt;0.15</td><td class="c-r">↑↑</td></tr>
+<tr><td>血清IgA</td><td class="c-r">4.8 g/L</td><td>0.7-3.5</td><td class="c-r">↑↑</td></tr>
+<tr><td>补体C3/C4</td><td>正常</td><td></td><td>与SLE鉴别</td></tr>
+<tr><td>ANCA</td><td>阴性</td><td></td><td></td></tr>
+<tr><td>ANA</td><td>1:80</td><td>&lt;1:80</td><td>临界</td></tr>
+<tr><td>皮肤活检</td><td>白细胞碎裂性血管炎+IgA沉积</td><td></td><td class="c-r">确诊IgAV</td></tr>
+<tr><td>肾活检</td><td>系膜增生+IgA沉积，ISKDC II-III级</td><td></td><td>IgAV-N</td></tr>
+</table>
+
+<div class="sh green">✅ 诊断</div>
+<div class="note" style="border-left-color:var(--green)"><b>诊断：成人IgAV伴肾炎（IgAV-N），ISKDC II-III级</b><br>成人IgAV皮疹不典型，肾脏受累更严重（60-80%）。肌酐升高曾被归因于高血压/糖尿病，实际为IgAV肾炎。延迟诊断约6周。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table>
+<tr><th>药物</th><th>方案</th><th>目的</th></tr>
+<tr><td class="b">泼尼松</td><td>0.8 mg/kg/d ×4周→缓慢减量</td><td class="c-a">控制血管炎</td></tr>
+<tr><td class="b">ACEI（福辛普利）</td><td>10 mg/d</td><td>减少蛋白尿+保护肾功能</td></tr>
+<tr><td class="b">继续降压降糖</td><td>氨氯地平+二甲双胍</td><td>基础病管理</td></tr>
+</table>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item yellow"><div class="t-date">第4周</div><div class="t-content">皮疹消退。24h尿蛋白1.2 g。肌酐112 μmol/L。</div></div>
+<div class="t-item green"><div class="t-date">第12周</div><div class="t-content">24h尿蛋白0.5 g。肌酐95 μmol/L。泼尼松减至15mg/d。<span class="tag t-g">✅ 好转</span></div></div>
+<div class="t-item green"><div class="t-date">第24周</div><div class="t-content">24h尿蛋白0.2 g。肌酐88 μmol/L。泼尼松5mg/d维持。</div></div>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0">
+① IgAV非儿童专属，成人也可发病且更不典型<br>
+② 皮疹+肌酐升高→必须考虑IgAV，肾活检是确诊金标准<br>
+③ 成人IgAV肾炎预后较儿童差（CKD风险~50% vs ~15%）<br>
+④ 提高对非典型IgAV认识可缩短诊断时间<br>
+⑤ 成人IgAV肾活检率应高于儿童
+</div>
+
+<div class="sh">📖 参考文献</div>
+<div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0">
+1. Bradley J, et al. <i>A Case Series of Unusual IgA Vasculitis</i>. HCA Healthc J Med. 2024. PMID: 38984230<br>
+2. Audemard-Verger A, et al. <i>IgA vasculitis in adults</i>. Autoimmun Rev. 2023;22(4):103282.
+</div>
+
+</div>
+<div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border)"><a href="index_IgAV.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px">📋 返回IgAV目录</a></div>
+<div class="footer">示范性合成病例 · 基于文献PMID: 38984230 · 不构成诊疗建议 · IgAV病例第5篇</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(function(){})}</script>
 </body>
 </html>

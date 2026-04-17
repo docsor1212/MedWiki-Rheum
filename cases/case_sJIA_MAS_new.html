@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：sJIA → MAS 急速演变</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); } .score-box.low { background:#e2f3dd; color:var(--green); } .score-box.mid { background:#faf3dc; color:var(--yellow); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">病例：sJIA → MAS 急速演变</span>
+</div>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>病例：sJIA → MAS 急速演变</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">4岁男孩 — 高热2周→关节肿痛→MAS抢救</div>
+    </div>
+    <div class="meta">更新: 2026-04-16</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>，不可替代临床医师的专业判断。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患儿</td><td>周XX，男，4岁</td></tr>
+      <tr><td class="b">就诊日期</td><td>2025-11-20</td></tr>
+      <tr><td class="b">主诉</td><td>高热2周，伴一过性皮疹2周、关节肿痛3天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">全身型JIA</span> <span class="tag t-r">巨噬细胞活化综合征</span> <span class="tag t-y">不完全川崎鉴别</span></td></tr>
+    </table>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      2周前起发热，每日2个高峰（最高40.2℃），发热时出现躯干淡红色斑丘疹，热退疹消。近3天出现双膝、双踝、右腕关节肿胀疼痛，活动受限。外院予头孢克洛口服无效。<br><br>否认咳嗽、腹痛、口腔溃疡。<br><br><b>既往史</b>：体健。&nbsp;&nbsp;<b>个人史</b>：G1P1，足月顺产，生长发育正常。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>40.2℃</td></tr>
+        <tr><td>HR</td><td>120次/分</td></tr>
+        <tr><td>BP</td><td>90/55 mmHg</td></tr>
+        <tr><td>体重</td><td>16 kg（P50）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>急性热病容，热退后精神可</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">发热时躯干淡红色斑丘疹（一过性）；无口腔溃疡</td></tr>
+        <tr><td>淋巴结</td><td>全身浅表淋巴结肿大</td></tr>
+        <tr><td>心肺</td><td>心率120次/分，律齐；双肺清</td></tr>
+        <tr><td>腹部</td><td>腹软，肝脾轻度肿大</td></tr>
+        <tr><td>关节</td><td class="c-r">双膝、双踝、右腕肿胀压痛，活动受限</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>15,200→3,800/μL</td><td>5-12</td><td><span class="c-r">↓↓↓（骤降！）</span></td></tr>
+      <tr><td>Hb</td><td>11.2→8.1 g/dL</td><td>110-140</td><td><span class="c-r">↓↓</span></td></tr>
+      <tr><td>PLT</td><td>280→80×10⁹/L</td><td>150-350</td><td><span class="c-r">↓↓↓（急降！）</span></td></tr>
+      <tr><td>ESR</td><td>68→12 mm/h</td><td>0-15</td><td><span class="c-r">矛盾性下降！</span></td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td>86 mg/L</td><td>&lt;8</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>铁蛋白</td><td>45,000 ng/mL</td><td>10-200</td><td><span class="c-r">↑↑↑↑（极度升高）</span></td></tr>
+      <tr><td>纤维蛋白原</td><td>1.2 g/L</td><td>2.0-4.0</td><td><span class="c-r">↓↓</span></td></tr>
+      <tr><td>甘油三酯</td><td>320 mg/dL</td><td>&lt;150</td><td><span class="c-r">↑↑</span></td></tr>
+      <tr><td>LDH</td><td>3,800 U/L</td><td>140-280</td><td><span class="c-r">↑↑↑</span></td></tr>
+      <tr><td>骨髓穿刺</td><td>噬血现象阳性</td><td>—</td><td>确诊MAS</td></tr>
+    </table>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断依据</th><th>符合情况</th></tr>
+      <tr><td>sJIA：驰张热>2周+一过性皮疹+多关节炎+淋巴结肿大</td><td>✅</td></tr>
+      <tr><td>MAS（2016 Ravelli标准）：铁蛋白↑+PLT↓+AST↑+TG↑+纤维蛋白原↓+噬血现象</td><td>✅ 7/8条</td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);"><b>诊断：全身型JIA并发MAS</b><br>核心教训：sJIA患者任何突然的CBC/凝血异常 → 立即查Ferritin + Fibrinogen</div>
+
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">口服泼尼松+NSAIDs</td><td>sJIA初始治疗（第8-10天）</td><td>一线</td></tr>
+      <tr><td class="b">甲泼尼龙冲击</td><td>30mg/kg/d × 3天</td><td>MAS一线</td></tr>
+      <tr><td class="b">环孢素A</td><td>3mg/kg/d（目标谷浓度100-150）</td><td>激素部分反应时加用</td></tr>
+      <tr><td class="b">Anakinra（备选）</td><td>IL-1受体拮抗剂</td><td>如CsA无效</td></tr>
+    </table>
+
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item yellow">
+        <div class="t-date">第1-3天 — 外院就诊</div>
+        <div class="t-content">考虑上呼吸道感染，头孢克洛口服。发热持续。</div>
+      </div>
+      <div class="t-item ">
+        <div class="t-date">第8-10天 — sJIA诊断</div>
+        <div class="t-content">驰张热>2周 + 一过性皮疹 + 多关节炎 + 淋巴结肿大 → 诊断sJIA。口服泼尼松+NSAIDs。</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">第12天 — MAS转折点</div>
+        <div class="t-content">发热模式改变：驰张热→<b>持续高热不退</b>。嗜睡。<br>PLT从280→<span class="c-r">80×10⁹/L</span>（急降！）；ESR从68→<span class="c-r">12mm/h</span>（矛盾性下降！）；Ferritin <span class="c-r">45,000</span></div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第13天 — MAS确诊+抢救</div>
+        <div class="t-content">甲泼尼龙冲击 × 3天 → 热峰下降但未完全退热。加用环孢素A → 48h后热退。Ferritin逐步下降，PLT回升。</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">第25天 — 康复出院</div>
+        <div class="t-content">Ferritin降至1,200，PLT 250,000。出院方案：泼尼松减量+环孢素口服。</div>
+      </div>
+    </div>
+
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px;line-height:1.8;margin:4px 0;padding-left:20px;">
+      <li>MAS是sJIA最凶险的并发症。<b>ESR矛盾性下降 + PLT急降 + Ferritin暴升</b>是三大预警信号</li>
+      <li>每个sJIA患者的CBC骤降都要想到MAS——<b>不要等到噬血现象才诊断</b></li>
+      <li>ESR'正常'可能是最危险的信号——持续高热患儿ESR突然正常化→考虑纤维蛋白原消耗</li>
+      <li>甲泼尼龙冲击+环孢素A是标准方案，近年Anakinra因起效快越来越多作为一线联合</li>
+    </ul>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Ravelli A, et al. 2016 Classification Criteria for Macrophage Activation Syndrome Complicating Systemic Juvenile Idiopathic Arthritis. <i>Ann Rheum Dis</i>. 2016;75(3):481-489.<br>
+    </div>
+
+
+
+  </div>
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

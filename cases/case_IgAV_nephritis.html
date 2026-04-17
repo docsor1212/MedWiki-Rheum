@@ -2,230 +2,137 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IgAV肾炎 — 大疱性HSP伴肾炎</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IgAV肾炎</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
-td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-.timeline { border-left:3px solid var(--red); margin:6px 0 6px 8px; padding-left:12px; }
-.timeline .t-item { margin-bottom:8px; position:relative; }
-.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
-.timeline .t-item.red::before { background:var(--red); } .timeline .t-item.green::before { background:var(--green); } .timeline .t-item.yellow::before { background:var(--yellow); }
-.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
-.timeline .t-content { font-size:12px; margin-top:1px; }
-.mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
-.mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.4;font-size:12.5px;padding-top:42px!important}
+.wrap{max-width:980px;margin:10px auto;background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+.header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start}
+.header h1{font-size:1.25rem;font-weight:700}.header .sub{font-size:.8rem;opacity:.85;margin-top:1px}.header .meta{text-align:right;font-size:.75rem;opacity:.9}
+.body{padding:10px 20px 14px}
+.sh{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px;margin:8px 0 4px}
+.sh.red{background:var(--red)}.sh.green{background:var(--green)}.sh.yellow{background:var(--yellow)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#d4f0ed;color:var(--accent);font-weight:600;text-align:left;padding:3.5px 7px;border-bottom:1.5px solid var(--border);font-size:11.5px}
+td{padding:2.5px 7px;border-bottom:1px solid #f0ede8;vertical-align:top}
+tr:hover td{background:#faf8f5}
+.b{font-weight:700}.c-a{color:var(--accent)}.c-r{color:var(--red)}.c-g{color:var(--green)}
+.tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:10.5px;font-weight:600;line-height:1.65}
+.t-g{background:var(--green-bg);color:var(--green)}.t-r{background:var(--red-bg);color:var(--red)}.t-y{background:var(--yellow-bg);color:var(--yellow)}.t-a{background:#d4f0ed;color:var(--accent)}
+.alert{background:var(--red-bg);border-left:3px solid var(--red);padding:5px 10px;border-radius:0 10px 10px 0;font-size:11.5px;margin-top:6px}
+.alert b{color:var(--red)}
+.note{font-size:11px;color:var(--text2);margin-top:4px;padding-left:8px;border-left:2px solid var(--accent)}
+.footer{text-align:center;font-size:9.5px;color:var(--text3);padding:6px 20px 10px;border-top:1px solid var(--border)}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--red);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+.timeline{border-left:3px solid var(--accent);margin:6px 0 6px 8px;padding-left:12px}
+.timeline .t-item{margin-bottom:8px;position:relative}
+.timeline .t-item::before{content:'';position:absolute;left:-17px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .t-item.green::before{background:var(--green)}.timeline .t-item.yellow::before{background:var(--yellow)}.timeline .t-item.red::before{background:var(--red)}
+.timeline .t-date{font-size:.72rem;color:var(--text3);font-weight:600}.timeline .t-content{font-size:12px;margin-top:1px}
+@media(max-width:768px){.g2{grid-template-columns:1fr}table{display:block;overflow-x:auto;font-size:11px}th,td{white-space:nowrap;padding:2px 5px}}
 </style>
-<link rel="manifest" href="../manifest.json">
 </head>
 <body>
-
-<div class="nav-bar">
-  <a href="../index.html">🏠 首页</a>
-  <a href="../topics/IgAV.html">📋 IgAV专题</a>
-  <a href="index_IgAV.html">📖 IgAV病例专题</a>
-  <span class="nav-title">IgAV肾炎</span>
-</div>
-
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../topics/IgAV.html">IgAV</a><a href="index_IgAV.html">病例</a><span style="margin-left:auto;opacity:.7;font-size:12px">肾炎</span></div>
 <div class="wrap">
-  <div class="header">
-    <div>
-      <h1>🔬 大疱性IgAV伴肾病综合征级肾炎</h1>
-      <div class="sub">Bullous Henoch-Schönlein Purpura and Associated Nephritis — 成人不典型皮肤表现+肾脏受累</div>
-    </div>
-    <div class="meta">
-      更新：2026-04-10<br>
-      来源：Cureus 2023
-    </div>
-  </div>
+<div class="header"><div><h1>📋 病例：IgAV肾炎</h1>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div><div class="sub">IgAV-N with Nephrotic-Range Proteinuria — 成人IgAV伴肾病综合征</div></div><div class="meta">2026-04-16</div></div>
+<div style="background:#fff3e0;border-left:4px solid #e65100;padding:8px 14px;font-size:11.5px"><b style="color:#e65100">⚠️ 免责声明</b>　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。</div>
+<div class="body">
 
-  <div class="body">
+<div class="sh">👤 基本信息</div>
+<table>
+<tr><td class="b" style="width:100px">患者</td><td>周XX，男，35岁</td></tr>
+<tr><td class="b">就诊日期</td><td>2025-07-18</td></tr>
+<tr><td class="b">主诉</td><td>下肢紫癜20天，双下肢水肿10天</td></tr>
+<tr><td class="b">标签</td><td><span class="tag t-r">IgAV-N</span> <span class="tag t-y">肾病综合征</span> <span class="tag t-a">成人发病</span></td></tr>
+</table>
 
-    <!-- 免责声明 -->
-    <div class="mas-box" style="margin-top:8px;">
-      <div class="m-title">⚠️ 免责声明</div>
-      <div style="font-size:11px; color:#e65100; line-height:1.5; margin-top:2px;">
-        本病例仅供医学教育与学术参考，不构成任何诊疗建议。具体临床决策请结合患者实际情况并遵循相关指南。病例数据来源于已发表文献，已尽可能核实准确性。
-      </div>
-    </div>
+<div class="sh">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+20天前双下肢出现可触及性紫癜，伴膝关节疼痛。10天前出现双下肢可凹性水肿，尿中泡沫增多。外院查尿蛋白(+++)，转诊入院。此前1月有上呼吸道感染史。<br><br>
+<b>既往史</b>：既往体健。&nbsp;&nbsp;<b>家族史</b>：否认肾病及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认。
+</p>
 
-    <!-- 基本信息 -->
-    <div class="sh">📋 基本信息</div>
-    <table>
-      <tr><td class="b" style="width:90px;">患者</td><td>成人（具体年龄/性别见原文）</td><td class="b" style="width:90px;">机构</td><td>保加利亚</td></tr>
-      <tr><td class="b">起病</td><td>皮肤大疱性病变 → 紫癜 → 肾病综合征</td><td class="b">诊断</td><td>IgAV伴肾炎（IgAV-N）</td></tr>
-      <tr><td class="b">标签</td><td colspan="3">
-        <span class="tag t-r">大疱性HSP</span>
-        <span class="tag t-r">IgAV-N</span>
-        <span class="tag t-y">成人发病</span>
-        <span class="tag t-a">肾病综合征</span>
-      </td></tr>
-    </table>
-
-    <!-- 独特性 -->
-    <div class="alert">
-      <b>🔍 本病例独特性：</b>HSP（Henoch-Schönlein Purpura，过敏性紫癜）典型皮肤表现为可触及性紫癜，但本例以<span class="c-r">大疱性皮肤病变</span>为突出表现，且伴发肾病综合征级肾炎（Nephrotic-range Nephritis），属于成人IgAV中少见的皮肤-肾脏组合表现。大疱性皮损在儿童HSP中亦仅占约2%。
-    </div>
-
-    <!-- 临床时间轴 -->
-    <div class="sh red">⏱️ 临床时间轴</div>
-    <div class="timeline">
-      <div class="t-item red">
-        <div class="t-date">第1阶段 — 皮肤起病</div>
-        <div class="t-content">下肢出现大疱性皮损（bullous lesions），伴可触及性紫癜，最初被考虑为药物反应或自身免疫性大疱病</div>
-      </div>
-      <div class="t-item red">
-        <div class="t-date">第2阶段 — 多系统受累</div>
-        <div class="t-content">出现关节痛（arthralgia）、腹痛等经典HSP三联征表现，皮肤活检示<span class="c-r">白细胞碎裂性血管炎（leukocytoclastic vasculitis）</span>伴IgA沉积</div>
-      </div>
-      <div class="t-item yellow">
-        <div class="t-date">第3阶段 — 肾脏受累</div>
-        <div class="t-content">出现水肿、蛋白尿（达肾病综合征范围）、血尿，肾活检示IgA肾病（IgAN）样改变，系膜区IgA沉积</div>
-      </div>
-      <div class="t-item green">
-        <div class="t-date">第4阶段 — 治疗与随访</div>
-        <div class="t-content">糖皮质激素+免疫抑制剂治疗，肾功能逐步改善，蛋白尿减少</div>
-      </div>
-    </div>
-
-    <!-- 实验室检查 -->
-    <div class="sh">🧪 实验室检查 / 影像学</div>
-    <table>
-      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td>尿蛋白</td><td class="c-r">+++（达肾病综合征范围）</td><td>提示严重肾小球损伤</td></tr>
-      <tr><td>血尿</td><td>镜下血尿</td><td>肾小球源性出血</td></tr>
-      <tr><td>血清白蛋白</td><td>↓ 降低</td><td>蛋白丢失导致低白蛋白血症</td></tr>
-      <tr><td>血肌酐</td><td>正常或轻度升高</td><td>评估肾功能基线</td></tr>
-      <tr><td>血清IgA</td><td>↑ 可升高</td><td>IgAV辅助诊断指标</td></tr>
-      <tr><td>补体C3/C4</td><td>通常正常</td><td>与SLE鉴别（SLE常低补体）</td></tr>
-      <tr><td>ANCA</td><td>阴性</td><td>排除ANCA相关性血管炎</td></tr>
-      <tr><td>皮肤活检</td><td>白细胞碎裂性血管炎 + IgA沉积</td><td>IgAV确诊依据</td></tr>
-      <tr><td>肾活检</td><td>系膜增生性IgAN样改变</td><td>明确肾炎病理分级</td></tr>
-    </table>
-
-    <!-- 病理机制深度解析 -->
-    <div class="sh red">🔬 病理机制深度解析</div>
-
-    <div style="font-size:12px; line-height:1.6; margin-top:4px;">
-      <p><b>第一层：IgA1分子异常糖基化 — 发病的分子基础</b></p>
-      <p style="margin-left:10px;">
-        IgAV的发病核心在于<span class="c-a">IgA1（免疫球蛋白A1）分子的铰链区O-糖基化异常</span>。正常情况下，IgA1铰链区的丝氨酸/苏氨酸残基连接有半乳糖（Gal）修饰的O-聚糖。在IgAV患者中，由于β1,3-半乳糖基转移酶（C1GALT1）活性异常，导致IgA1铰链区<span class="c-r">半乳糖缺陷（Galactose-Deficient IgA1, Gd-IgA1）</span>。这种Gd-IgA1暴露了通常被糖链遮蔽的抗原表位，使其具有免疫原性。</p>
-
-      <p style="margin-top:6px;"><b>第二层：自身抗体产生与免疫复合物形成</b></p>
-      <p style="margin-left:10px;">
-        Gd-IgA1被机体免疫系统识别为"非己"抗原，产生<span class="c-a">抗Gd-IgA1的自身抗体（主要为IgG和IgA型）</span>。这些自身抗体与Gd-IgA1结合形成大分子免疫复合物（immune complexes, IC）。在HSP患者中，此过程不仅涉及循环免疫复合物，还包括<em>原位</em>免疫复合物的沉积。与原发性IgA肾病（IgAN）不同，IgAV中的免疫复合物更倾向于沉积在<em>皮肤、关节、胃肠道和肾脏</em>等多个器官的小血管壁。</p>
-
-      <p style="margin-top:6px;"><b>第三层：补体激活与炎症级联反应</b></p>
-      <p style="margin-left:10px;">
-        沉积在血管壁的免疫复合物通过两条途径激活补体系统：<br>
-        ① <span class="c-a">替代途径（Alternative Pathway）</span>：IgA免疫复合物直接激活C3转化酶，产生C3a、C3b、C5a等过敏毒素和趋化因子。<br>
-        ② <span class="c-a">凝集素途径（Lectin Pathway）</span>：甘露糖结合凝集素（MBL，Mannose-Binding Lectin）可识别Gd-IgA1上的异常糖基，启动MASP-1/MASP-2介导的补体级联。<br>
-        补体激活产物（尤其是C5a）强力招募中性粒细胞和单核细胞，释放<span class="c-r">蛋白酶、活性氧（ROS）和髓过氧化物酶（MPO）</span>，导致血管内皮损伤——即白细胞碎裂性血管炎的病理基础。</p>
-
-      <p style="margin-top:6px;"><b>第四层：器官特异性损伤机制 — 皮肤大疱与肾脏受累</b></p>
-      <p style="margin-left:10px;">
-        <b>大疱性皮损机制：</b>在皮肤真皮层小血管，免疫复合物沉积+补体激活导致血管通透性急剧增加，大量液体渗出至表皮下间隙，形成张力性大疱。真皮乳头层水肿+表皮基底膜带损伤共同促成大疱形成。中性粒细胞浸润释放的弹性蛋白酶（elastase）可进一步降解基底膜成分。<br><br>
-        <b>肾脏受累机制：</b>免疫复合物通过系膜区IgA受体（如转铁蛋白受体TfR1/CD71）被系膜细胞摄取，触发系膜细胞增殖和基质扩张。系膜细胞活化后分泌<span class="c-a">转化生长因子-β（TGF-β）、血小板源性生长因子（PDGF）</span>等促纤维化因子，导致肾小球硬化和间质纤维化。足细胞（podocyte）的继发性损伤导致足突融合和蛋白尿。</p>
-
-      <div class="note" style="margin-top:6px;">
-        <b>关键分子机制总结：</b>Gd-IgA1 → 抗Gd-IgA1自身抗体 → 免疫复合物 → 补体激活（替代+凝集素途径）→ 中性粒细胞浸润 → 白细胞碎裂性血管炎 → 多器官损伤（皮肤大疱 / 肾小球肾炎 / 关节炎 / 胃肠血管炎）
-      </div>
-    </div>
-
-    <!-- 对比表格 -->
-    <div class="sh">📊 IgAV-N肾脏病理分级 vs 临床表现（ISKDC分类）</div>
-    <table>
-      <tr><th>ISKDC分级</th><th>病理表现</th><th>临床表现</th><th>预后</th></tr>
-      <tr><td class="b">I级</td><td>轻微肾小球异常</td><td>镜下血尿，无蛋白尿</td><td><span class="tag t-g">良好</span></td></tr>
-      <tr><td class="b">II级</td><td>单纯系膜增生</td><td>轻度血尿±蛋白尿</td><td><span class="tag t-g">良好</span></td></tr>
-      <tr><td class="b">III级</td><td>局灶/节段增生&larr;50%</td><td>血尿+蛋白尿，偶有肾炎综合征</td><td><span class="tag t-y">中等</span></td></tr>
-      <tr><td class="b">IV级</td><td>弥漫系膜增生&ge;50%</td><td>急性肾炎综合征/肾病综合征</td><td><span class="tag t-r">较差</span></td></tr>
-      <tr><td class="b">V级</td><td>新月体&ge;50%</td><td>急进性肾炎，肾功能快速恶化</td><td><span class="tag t-r">差</span></td></tr>
-      <tr><td class="b">VI级</td><td>膜增生性肾炎</td><td>肾病综合征+肾功能不全</td><td><span class="tag t-r">差</span></td></tr>
-    </table>
-
-    <div class="note">注：ISKDC = International Study of Kidney Disease in Children（国际儿童肾脏疾病研究组）。本例肾病综合征级蛋白尿提示至少III-IV级。</div>
-
-    <!-- 对比表格2 -->
-    <div class="sh">📊 大疱性HSP vs 典型HSP皮肤表现</div>
-    <table>
-      <tr><th>特征</th><th>典型HSP紫癜</th><th>大疱性HSP</th></tr>
-      <tr><td>皮损形态</td><td>可触及性紫癜</td><td>紫癜基础上出现紧张性大疱</td></tr>
-      <tr><td>分布</td><td>下肢/臀部为主</td><td>下肢为主，可泛发</td></tr>
-      <tr><td>发生率</td><td>&gt;95%</td><td>约2%（儿童），成人罕见</td></tr>
-      <tr><td>鉴别诊断</td><td>ITP、Meningococcemia</td><td>大疱性类天疱疮、药疹、Sweet综合征</td></tr>
-      <tr><td>肾脏受累风险</td><td>30-50%</td><td>可能更高（文献有限）</td></tr>
-      <tr><td>治疗</td><td>支持治疗为主</td><td>常需糖皮质激素</td></tr>
-    </table>
-
-    <!-- 临床要点 -->
-    <div class="sh green">✅ 临床要点总结</div>
-    <div style="font-size:12px; line-height:1.6; padding:4px 8px;">
-      <p>1️⃣ <b>大疱性皮损是HSP的罕见但重要变异型</b>，成人尤为罕见，易被误诊为自身免疫性大疱病</p>
-      <p>2️⃣ <b>皮肤活检（直接免疫荧光）是确诊关键</b>：显示血管壁IgA（主要为IgA1）沉积+白细胞碎裂性血管炎</p>
-      <p>3️⃣ <b>肾病综合征级蛋白尿提示严重肾小球受累</b>，需及时行肾活检明确ISKDC分级</p>
-      <p>4️⃣ <b>成人IgAV肾炎预后差于儿童</b>：成人进展为终末期肾病（ESRD）的风险约15-30%</p>
-      <p>5️⃣ <b>治疗策略</b>：糖皮质激素为一线，严重者联合环磷酰胺（CYC，Cyclophosphamide）、吗替麦考酚酯（MMF，Mycophenolate Mofetil）或钙调磷酸酶抑制剂（CNI，Calcineurin Inhibitor）</p>
-    </div>
-
-    <!-- 工具链接 -->
-    <div class="sh">🔗 相关工具链接</div>
-    <div style="font-size:11.5px; line-height:1.8; padding:4px 8px;">
-      <a href="https://pubmed.ncbi.nlm.nih.gov/36942172/" style="color:var(--accent);">📄 PubMed原文</a> · 
-      <a href="https://doi.org/10.7759/cureus.35051" style="color:var(--accent);">🔗 DOI链接</a> · 
-      <a href="index_IgAV.html" style="color:var(--accent);">📖 IgAV病例专题</a>
-    </div>
-
-    <!-- 文献来源 -->
-    <div class="sh yellow">📚 文献来源</div>
-    <div style="font-size:11px; line-height:1.6; padding:4px 8px; color:var(--text2);">
-      <p><b>主要文献：</b></p>
-      <p>Popov K, Koleva Z, Stoyanov G. Bullous Henoch-Schönlein Purpura and Associated Nephritis: A Pathological Case Report. <em>Cureus</em>. 2023 Mar;15(3):e35051.</p>
-      <p>PMID: <b>36942172</b> | DOI: <b>10.7759/cureus.35051</b></p>
-      <p style="margin-top:4px;"><b>机制参考：</b></p>
-      <p>Suzuki H, et al. The pathophysiology of IgA nephropathy. <em>J Am Soc Nephrol</em>. 2011;22(10):1795-1803. PMID: 21949093</p>
-      <p>Knüttel-Fick S, et al. Bullous Henoch-Schönlein purpura: a systematic review. <em>Pediatr Dermatol</em>. 2020;37(5):862-869.</p>
-    </div>
-
-    <!-- 导航 -->
-    <div style="display:flex; justify-content:space-between; margin-top:10px; padding:6px 0;">
-      <a href="index_IgAV.html" style="color:var(--accent); font-weight:600; font-size:12px;">⬅️ 返回IgAV病例目录</a>
-      <a href="case_IgAV_GI.html" style="color:var(--accent); font-weight:600; font-size:12px;">下一篇：IgAV消化道并发症 ➡️</a>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    MedWiki-Rheum · IgAV临床病例系列 · 仅供医学教育参考 · 2026
-  </div>
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+<table>
+<tr><th colspan="2">生命体征</th></tr>
+<tr><td>T</td><td>36.7℃</td></tr>
+<tr><td>HR</td><td>78次/分</td></tr>
+<tr><td>BP</td><td>130/82 mmHg</td></tr>
+<tr><td>体重</td><td>72 kg</td></tr>
+</table>
+<table>
+<tr><th colspan="2">系统查体</th></tr>
+<tr><td>一般情况</td><td>颜面稍浮肿</td></tr>
+<tr><td>皮肤粘膜</td><td class="c-r">双下肢可触及性紫癜+可凹性水肿(+++)</td></tr>
+<tr><td>心肺</td><td>未见异常</td></tr>
+<tr><td>腹部</td><td>腹软，移动性浊音(+-)</td></tr>
+<tr><td>关节</td><td>双膝关节轻压痛</td></tr>
+</table>
 </div>
 
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div class="sh">🔬 辅助检查</div>
+<table>
+<tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td>8.2×10⁹/L</td><td>4-10</td><td>正常</td></tr>
+<tr><td>Hb</td><td>132 g/L</td><td>130-170</td><td>正常</td></tr>
+<tr><td>PLT</td><td>285×10⁹/L</td><td>150-350</td><td>正常</td></tr>
+<tr><td>血清白蛋白</td><td class="c-r">22 g/L</td><td>35-50</td><td class="c-r">↓↓ 低白蛋白血症</td></tr>
+<tr><td>24h尿蛋白</td><td class="c-r">4.8 g/24h</td><td>&lt;0.15</td><td class="c-r">↓↓↓ 肾病级</td></tr>
+<tr><td>血肌酐</td><td>98 μmol/L</td><td>59-104</td><td>正常高限</td></tr>
+<tr><td>血清IgA</td><td class="c-r">5.2 g/L</td><td>0.7-3.5</td><td class="c-r">↑↑</td></tr>
+<tr><td>补体C3/C4</td><td>正常</td><td></td><td>与SLE鉴别</td></tr>
+<tr><td>ANCA</td><td>阴性</td><td></td><td>排除ANCA血管炎</td></tr>
+<tr><td>尿常规</td><td>蛋白(+++)，红细胞15-20/HP</td><td></td><td>肾小球源性</td></tr>
+<tr><td>肾活检</td><td>系膜增生+IgA沉积(++)，ISKDC III级</td><td></td><td class="c-r">IgAV-N确诊</td></tr>
+<tr><td>皮肤活检</td><td>白细胞碎裂性血管炎+IgA沉积</td><td></td><td>IgAV确诊</td></tr>
+</table>
+
+<div class="sh green">✅ 诊断</div>
+<div class="note" style="border-left-color:var(--green)"><b>诊断：IgAV伴肾炎（IgAV-N），ISKDC III级</b><br>成人IgAV肾炎预后较儿童差，进展ESRD风险15-30%。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table>
+<tr><th>药物</th><th>方案</th><th>目的</th></tr>
+<tr><td class="b">甲泼尼龙</td><td>0.5g/d ×3天→泼尼松0.8mg/kg/d减量</td><td class="c-a">诱导缓解</td></tr>
+<tr><td class="b">吗替麦考酚酯（MMF）</td><td>750 mg 口服 每日2次</td><td>联合免疫抑制</td></tr>
+<tr><td class="b">ACEI（福辛普利）</td><td>10 mg/d</td><td>减少蛋白尿，保护肾功能</td></tr>
+</table>
+
+<div class="sh">📅 随访经过</div>
+<div class="timeline">
+<div class="t-item yellow"><div class="t-date">第4周</div><div class="t-content">24h尿蛋白降至2.1 g。水肿明显消退。白蛋白28 g/L。</div></div>
+<div class="t-item green"><div class="t-date">第12周</div><div class="t-content">24h尿蛋白0.8 g。白蛋白35 g/L。<span class="tag t-g">✅ 部分缓解</span></div></div>
+<div class="t-item green"><div class="t-date">第24周</div><div class="t-content">24h尿蛋白0.3 g。血肌酐88 μmol/L。泼尼松减至10mg/d。</div></div>
+</div>
+
+<div class="sh green">📚 要点总结</div>
+<div style="font-size:12px;line-height:1.8;margin:4px 0">
+① 肾病级蛋白尿提示严重肾小球受累，需及时肾活检明确ISKDC分级<br>
+② 皮肤活检IgA沉积+白细胞碎裂性血管炎是确诊关键<br>
+③ 成人IgAV肾炎预后差于儿童，需更积极免疫抑制治疗<br>
+④ 糖皮质激素+MMF是一线方案，严重者可考虑环磷酰胺
+</div>
+
+<div class="sh">📖 参考文献</div>
+<div style="font-size:11px;color:var(--text2);line-height:1.7;margin:4px 0">
+1. Popov K, et al. <i>Bullous HSP and Associated Nephritis</i>. Cureus. 2023;15(3):e35051. PMID: 36942172<br>
+2. Suzuki H, et al. <i>The pathophysiology of IgA nephropathy</i>. JASN. 2011;22(10):1795-1803. PMID: 21949093
+</div>
+
+</div>
+<div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border)"><a href="index_IgAV.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px">📋 返回IgAV目录</a></div>
+<div class="footer">示范性合成病例 · 基于文献PMID: 36942172 · 不构成诊疗建议 · IgAV病例第3篇</div>
+</div>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(function(){})}</script>
 </body>
 </html>

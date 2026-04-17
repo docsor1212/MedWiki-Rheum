@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：DADA2（腺苷脱氨酶2缺乏症）</title>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="../evidence/">📚 循证病例</a>
+  <span class="nav-title">DADA2病例</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>📋 病例：DADA2（腺苷脱氨酶2缺乏症）</h1>
+      <div class="sub">Deficiency of Adenosine Deaminase 2 — 反复卒中+网状青斑+皮肤结节性多动脉炎</div>
+    </div>
+    <div class="meta">
+      文献病例 · PMID: 27444081
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 1. 文献来源卡片 -->
+    <div class="sh">📖 文献来源</div>
+    <table>
+      <tr><td class="b" style="width:100px">来源</td><td>Pichard DC, Ombrello AK, Hoffmann P, et al. <i>Early Onset Stroke, Polyarteritis Nodosa, and Livedo Racemosa</i>. J Am Acad Dermatol. 2016;75(2):449-453.</td></tr>
+      <tr><td class="b">PMID</td><td>27444081</td></tr>
+      <tr><td class="b">PMCID</td><td>PMC4959806</td></tr>
+      <tr><td class="b">DOI</td><td>10.1016/j.jaad.2016.01.057</td></tr>
+      <tr><td class="b">机构</td><td>NIH（美国国立卫生研究院）</td></tr>
+    </table>
+
+    <!-- 2. 基本信息 -->
+    <div class="alert"><b>流行病学提示：</b>DADA2为极罕见的常染色体隐性遗传病，全球报告<b>约200例</b>。由CECR1基因双等位基因突变引起。临床表型高度异质：<b>血管炎/卒中</b>（最常见）、<b>造血衰竭</b>、<b>免疫缺陷</b>。早期卒中可始于<b>婴儿期</b>，抗TNF-α治疗可显著降低卒中复发率。</div>
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:100px">患者</td><td>女性，25岁（就诊时），白种人</td></tr>
+      <tr><td class="b">起病年龄</td><td>5月龄（首次卒中）</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-r">反复卒中</span> <span class="tag t-y">网状青斑</span> <span class="tag t-a">皮肤PAN</span> <span class="tag t-r">低丙种球蛋白</span></td></tr>
+    </table>
+
+    <!-- 3. 主诉 -->
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;"><b>反复卒中20年</b></p>
+
+    <!-- 4. 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      <b>5月龄</b>：发生右侧腔隙性丘脑及顶叶脑梗死，当时ESR及CRP升高，四肢可见网状红斑，血小板高达900×10⁹/L，ANA及抗心磷脂抗体阴性。<br><br>
+      <b>1岁内</b>：出现间歇性红色非触痛性丘疹（四肢→面部→躯干），临床诊断为皮肤结节性多动脉炎（PAN）。<br><br>
+      <b>儿童期</b>：反复发热（每周3-4次）、口腔溃疡、慢性网状青斑。反复细菌性中耳炎及鼻窦炎。诊断为IgG亚类缺陷，接受IVIG治疗。<br><br>
+      <b>13岁</b>：出现晕厥，诊断心肌病及长QT综合征。<br><br>
+      <b>16岁</b>：左侧视网膜中央动脉闭塞，开始泼尼松治疗。<br><br>
+      <b>22岁</b>：因持续白细胞减少行骨髓穿刺（轻度增生低下）。1周后突发言语障碍、无法行走，影像示左半球大面积出血性梗死，遗留右侧偏瘫、右侧视野缺损及表达性失语。<br><br>
+      进行性肝脾肿大。遗传检测确认为<b>DADA2</b>。
+    </p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：原文未提供。&nbsp;&nbsp;<b>个人史</b>：原文未提供。&nbsp;&nbsp;<b>家族史</b>：父母分别为杂合携带者（CECR1 H112Q/G47A）。&nbsp;&nbsp;<b>过敏史</b>：原文未提供。</p>
+
+
+    <!-- 5. 体检 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">一般情况</th></tr>
+        <tr><td>神志</td><td>清醒，非言语（表达性失语）</td></tr>
+        <tr><td>活动</td><td>轮椅依赖</td></tr>
+        <tr><td>神经系统</td><td class="c-r">右侧偏瘫、右侧视野缺损</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">皮肤</th></tr>
+        <tr><td>网状青斑</td><td class="c-r">四肢弥漫性粗大分支型红斑</td></tr>
+        <tr><td>皮下结节</td><td class="c-r">约20个红色小结节（四肢），符合皮肤PAN</td></tr>
+        <tr><td>甲</td><td>正常</td></tr>
+        <tr><td>腹部</td><td class="c-y">肝脾肿大</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. 辅检 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC</td><td>2.76×10⁹/L</td><td>3.98-10.04</td><td class="c-r">↓↓ 白细胞减少</td></tr>
+      <tr><td>Hb</td><td>10.7 g/dL</td><td>11.2-15.7</td><td class="c-y">轻度贫血</td></tr>
+      <tr><td>PLT</td><td>900×10⁹/L（婴儿期）</td><td>162-380</td><td class="c-r">↑↑↑</td></tr>
+      <tr><td>CRP</td><td>升高</td><td>&lt;0.5</td><td class="c-r">↑（慢性炎症）</td></tr>
+      <tr><td>ESR</td><td>升高</td><td>0-20</td><td class="c-r">↑</td></tr>
+      <tr><td>IgG</td><td>降低</td><td></td><td class="c-r">IgG亚类缺陷</td></tr>
+      <tr><td>ANA</td><td>阴性</td><td></td><td>正常</td></tr>
+      <tr><td>抗心磷脂抗体</td><td>阴性</td><td></td><td>正常</td></tr>
+      <tr><td>肝功能</td><td>AST/ALT升高</td><td></td><td class="c-y">肝受累</td></tr>
+      <tr><td>ADA2酶活性</td><td>10.9 ng/mL</td><td>116.3（对照）</td><td class="c-r">↓↓↓ 严重降低</td></tr>
+    </table>
+    <div class="note">
+      <b>遗传检测</b>：CECR1基因复合杂合突变（H112Q/G47A）。父母分别为杂合携带者（酶活性：91.1及55.6 ng/mL）。<br>
+      <b>皮肤活检</b>：真皮中动脉血管壁破坏，纤维素样坏死，中性粒细胞及淋巴组织细胞浸润——符合血管炎。<br>
+      <b>腹部超声</b>：脾大、胆结石。<br>
+      <b>头颅MRI</b>：左半球大面积出血性梗死（22岁）。
+    </div>
+
+    <div class="sh purple" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>一、核心免疫学通路：ADA2缺乏与血管内皮损伤</b></p>
+      <p>DADA2由<b>CECR1基因</b>（位于22q11，编码腺苷脱氨酶2，ADA2）<b>双等位基因突变</b>引起，呈常染色体隐性遗传。ADA2是一种分泌型胞外酶，主要来源于单核细胞和巨噬细胞，负责降解腺苷和2'-脱氧腺苷。原文明确指出，ADA2参与<b>内皮细胞发育和分化</b>以及<b>单核细胞向巨噬细胞分化</b>。ADA2缺乏导致：①内皮细胞发育异常→血管壁结构脆弱→缺血性和出血性卒中；②M1型促炎巨噬细胞过度活化（因分化异常）→系统性炎症和血管炎。</p>
+      <p><b>二、本病例特异性免疫异常</b></p>
+      <p>本例携带<b>CECR1复合杂合突变（H112Q/G47A）</b>，血浆ADA2酶活性严重降低至10.9 ng/mL（对照116.3 ng/mL，仅为正常的9.4%）。父母分别为杂合携带者（酶活性91.1及55.6 ng/mL）。全血基因表达分析（原文引用Belot等2014年研究）显示<b>中性粒细胞表达基因过度表达</b>——中性粒细胞表达腺苷受体，慢性腺苷代谢异常可能导致中性粒细胞持续活化，驱动血管壁炎症和损伤。本例的血小板在婴儿期高达900×10⁹/L（反应性血小板增多），白细胞减少和低丙种球蛋白血症反映了ADA2缺乏对造血系统的广泛影响。</p>
+      <p><b>三、病理生理学解释</b></p>
+      <p>从分子层面看本例的完整临床谱：ADA2活性↓（10.9 vs 116.3）→ ①腺苷蓄积→中性粒细胞持续活化→中动脉血管壁纤维素样坏死→<b>皮肤PAN+网状青斑</b>；②内皮细胞发育障碍→脑血管壁脆弱→反复缺血性卒中（5月龄起）→最终大面积出血性梗死（22岁）；③巨噬细胞极化异常→肝脾肿大+门脉高压→食管静脉曲张；④B细胞功能受损→低丙种球蛋白→反复感染。抗TNF-α治疗（依那西普）在NIH队列中使17例患者无一再发卒中，提示TNF-α是DADA2血管炎症的关键效应因子。</p>
+      <p style="font-size:10.5px;color:var(--text2);margin-top:4px;">来源：PMC4959806原文 + Zhou Q等（N Engl J Med 2014;370:911-920）DADA2最初描述</p>
+    </div>
+
+    <!-- 7. 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出DADA2（腺苷脱氨酶2缺乏症）的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">DADA2临床诊断框架</td><td>Zhou Q 等/Navon Elkan P 等</td><td>2014</td><td>N Engl J Med</td><td>临床拟诊+基因/酶学确诊</td><td>① 早发反复卒中 → <span class='c-g'>✅ 5月龄首发卒中</span><br>② 网状青斑 → <span class='c-g'>✅</span><br>③ 皮肤PAN → <span class='c-g'>✅ 病理证实</span><br>④ 低丙种球蛋白血症 → <span class='c-g'>✅ IgG亚类缺陷</span><br><b>临床-基因-酶学三重确诊 ✅</b></td></tr>
+      <tr><td class="b">基因与酶学确诊</td><td>Zhou Q 等</td><td>2014</td><td>N Engl J Med</td><td>CECR1+ADA2酶活性</td><td>① CECR1复合杂合(H112Q/G47A) → <span class='c-g'>✅</span><br>② ADA2酶活性10.9(正常116.3) → <span class='c-g'>✅</span><br>③ 父母杂合携带者 → <span class='c-g'>✅</span></td></tr>
+    </table>
+    <table>
+      <tr><th>诊断标准</th><th>详情与对照</th></tr>
+      <tr><td class="b" rowspan="5">DADA2临床诊断框架<br>（Zhou Q等，<i>N Engl J Med</i> 2014;370:911-920；<br>Navon Elkan P等，<i>N Engl J Med</i> 2014;370:921-931）<br>【补充知识】</td>
+        <td><b>临床拟诊+基因/酶学确诊</b></td></tr>
+      <tr><td>① 早发（常为婴儿/儿童期）反复缺血性或出血性卒中 — <span class="c-g">✅ 5月龄首发卒中</span></td></tr>
+      <tr><td>② 网状青斑（livedo racemosa）— <span class="c-g">✅ 四肢弥漫性粗大分支型</span></td></tr>
+      <tr><td>③ 皮肤或系统性结节性多动脉炎 — <span class="c-g">✅ 皮肤PAN（病理证实）</span></td></tr>
+      <tr><td>④ 低丙种球蛋白血症/免疫缺陷 — <span class="c-g">✅ IgG亚类缺陷</span></td></tr>
+      <tr><td class="b" rowspan="3">基因与酶学确诊<br>（Zhou Q等 2014）</td>
+        <td>① CECR1双等位基因致病突变 — <span class="c-g">✅ H112Q/G47A复合杂合</span></td></tr>
+      <tr><td>② 血浆ADA2酶活性显著降低 — <span class="c-g">✅ 10.9 ng/mL（正常116.3）</span></td></tr>
+      <tr><td>③ 父母分别为杂合携带者 — <span class="c-g">✅ 酶活性91.1/55.6 ng/mL</span></td></tr>
+      <tr><td class="b">确诊依据</td><td>① 临床三联征（早发卒中+网状青斑+PAN）+ ② CECR1复合杂合突变 + ③ ADA2酶活性严重降低 → <b>临床-基因-酶学三重确诊</b></td></tr>
+    </table>
+    <div class="note" style="border-left-color:var(--green);">
+      <b>诊断：DADA2（腺苷脱氨酶2缺乏症）</b><br>
+      DADA2为常染色体隐性遗传先天免疫缺陷，以早发卒中、血管炎、自身炎症及免疫缺陷为特征。
+    </div>
+
+    <!-- 8. 鉴别诊断 -->
+    <div class="sh yellow">🔍 鉴别诊断</div>
+    <div class="diff-box"><div class="diff-title">1. 原发性结节性多动脉炎（PAN）</div><b>相似点：</b>皮肤结节、中动脉血管炎。<b>排除依据：</b>婴儿期起病（5月龄首发卒中）、反复缺血性+出血性卒中、低丙种球蛋白血症、无HBV感染→考虑继发于DADA2而非原发性PAN。</div>
+    <div class="diff-box"><div class="diff-title">2. 抗磷脂综合征</div><b>相似点：</b>反复卒中（缺血性+出血性）。<b>排除依据：</b>抗心磷脂抗体阴性→排除。</div>
+    <div class="diff-box"><div class="diff-title">3. 系统性红斑狼疮（SLE）</div><b>相似点：</b>网状青斑、低丙种球蛋白血症、肝脾肿大。<b>排除依据：</b>ANA阴性、无补体消耗、无狼疮型肾炎→排除。</div>
+    <div class="diff-box"><div class="diff-title">4. Moyamoya病</div><b>相似点：</b>反复卒中。<b>排除依据：</b>血管造影无烟雾状侧支循环→排除。</div>
+
+    <div class="diff-box">
+      <div class="diff-title">⚠️ 关键鉴别：婴儿卒中必须排除DADA2</div>
+      婴幼儿反复缺血性卒中，尤其伴网状青斑/皮肤血管炎时，应高度警惕DADA2。常规卒中病因筛查（心源性、凝血异常）阴性时，需检测ADA2酶活性及CECR1基因。
+    </div>
+    <div class="diff-box">
+      <div class="diff-title">⚠️ DADA2 vs 原发性PAN</div>
+      DADA2可模拟PAN临床表现。但DADA2为先天免疫缺陷（常隐遗传），发病更早，伴免疫缺陷表现（低丙种球蛋白、反复感染）。皮肤PAN是DADA2的最常见皮肤表现。
+    </div>
+
+    <!-- 9. 治疗 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由/效果</th></tr>
+      <tr><td class="b">一线（血管炎表型）</td><td>依那西普（Etanercept，抗TNF-α）</td><td>原文未提供精确剂量</td><td class="c-a">预防卒中复发+改善皮肤PAN。NIH队列17例用药后<b>无一再发卒中</b></td></tr>
+      <tr><td class="b">长期抗炎</td><td>泼尼松</td><td>16岁起长期口服（原文未提供精确剂量）</td><td>控制炎症/视网膜动脉闭塞，但激素依赖</td></tr>
+      <tr><td class="b">免疫替代</td><td>IVIG</td><td>定期输注（原文未提供频率/剂量）</td><td>低丙种球蛋白（IgG亚类缺陷）替代治疗</td></tr>
+      <tr><td class="b">抗凝（已失败）</td><td>华法林</td><td>口服抗凝</td><td class="c-r">⚠️ <b>22岁时在华法林治疗期间发生致命性出血性梗死</b>→抗凝需极度谨慎</td></tr>
+      <tr><td class="b">根治（骨髓衰竭者）</td><td>造血干细胞移植</td><td>重症/纯红再障患者</td><td>根治性治疗（本例未行移植）</td></tr>
+    </table>
+    <div class="alert">
+      <b>⚠️ 治疗要点：</b>①TNF-α抑制剂是DADA2血管炎表型的一线治疗，可显著降低卒中复发率 ②抗凝治疗需谨慎（出血性卒中风险）③骨髓衰竭/纯红再障患者需造血干细胞移植 ④定期监测血常规、免疫球蛋白及肝功能
+    </div>
+
+    <!-- 10. 随访timeline -->
+    <div class="sh">📅 疾病时间线</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">5月龄</div>
+        <div class="t-content">右侧丘脑+顶叶腔隙性脑梗死（首次CVA），ESR/CRP↑，PLT 900K，网状红斑</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">1岁内</div>
+        <div class="t-content">皮肤PAN样结节出现（四肢→面部→躯干），反复发热3-4次/周，口腔溃疡</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">儿童期</div>
+        <div class="t-content">反复耳/鼻窦感染，IgG亚类缺陷诊断，开始IVIG。多次TIA发作。</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">13岁</div>
+        <div class="t-content">晕厥发作，诊断心肌病+长QT综合征</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">16岁</div>
+        <div class="t-content">左视网膜中央动脉闭塞 → 开始泼尼松治疗</div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">22岁</div>
+        <div class="t-content"><b>左半球大面积出血性梗死</b>：突发言语障碍、意识障碍 → 右侧偏瘫、表达性失语、视野缺损（永久后遗症）</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">25岁（NIH就诊）</div>
+        <div class="t-content">遗传确诊DADA2（CECR1 H112Q/G47A），ADA2酶活性10.9 ng/mL。开始抗TNF-α治疗，皮肤PAN改善。</div>
+      </div>
+    </div>
+
+    <!-- 11. 疑难剖析 -->
+    <div class="sh yellow">🧠 疑难剖析与临床启示</div>
+    <div style="padding:8px;margin:4px 0;font-size:12px;line-height:1.7;">
+      <p><b>❶ 为什么难——诊断延误25年的完整推理链</b></p>
+      <p>本例5月龄即出现典型三联征（卒中+网状青斑+皮肤PAN），但直至25岁才确诊。<b>延误原因</b>：①DADA2在2014年才首次被描述，此前无此诊断概念；②婴儿卒中常归因于围产期因素、凝血异常或心源性栓塞，极少考虑遗传性血管病；③皮肤PAN被当作独立疾病处理，未与卒中联系起来；④反复感染+低丙种球蛋白被当作原发性免疫缺陷。本例凸显了<b>多学科整合</b>的重要性——皮肤科（PAN）、神经科（卒中）、免疫科（低丙种球蛋白）各自独立诊治，无人将所有表现串联。</p>
+
+      <p><b>❷ 易误诊/漏诊点</b></p>
+      <p>最易误诊的疾病：①<b>原发性结节性多动脉炎</b>——皮肤PAN在组织学上与DADA2血管炎无法区分，但DADA2发病更早、伴免疫缺陷和卒中；②<b>抗磷脂综合征</b>——反复卒中是核心鉴别点，但本例抗心磷脂抗体阴性可排除；③<b>Moyamoya病</b>——儿童反复卒中需考虑，但血管造影无烟雾状侧支循环可排除；④<b>Sneddon综合征</b>——网状青斑+卒中的组合与DADA2极度相似，原文推测部分Sneddon综合征患者可能实际为CECR1突变。<b>关键筛查</b>：任何早发卒中+网状青斑 → 查ADA2酶活性+CECR1基因。</p>
+
+      <p><b>❸ 决策启示——遇到类似患者的排查顺序</b></p>
+      <p>Step 1：婴儿/儿童反复卒中 → 完善心源性+凝血+血管影像学筛查；Step 2：常规筛查阴性 + 伴网状青斑/皮肤PAN → 高度怀疑DADA2 → 查ADA2酶活性；Step 3：ADA2活性降低 → CECR1基因测序确认；Step 4：确诊后立即评估抗TNF-α治疗指征（预防卒中复发）+ 抗凝需极度谨慎（出血性卒中风险）；Step 5：筛查肝脾肿大+门脉高压+骨髓衰竭。</p>
+
+      <p><b>❹ 教学价值</b></p>
+      <p>本例的核心教学点：①"网状青斑+早发卒中"是DADA2的红旗征；②DADA2是自身炎症+血管炎+免疫缺陷三者共存的独特疾病；③抗TNF-α治疗（依那西普）是血管炎表型的一线治疗，NIH队列17例用药后无一再发卒中；④<b>抗凝/抗血小板需极度谨慎</b>——本例22岁时在华法林治疗期间发生致命性出血性梗死，凸显DADA2患者血管壁的脆弱性。</p>
+    </div>
+
+    <!-- 12. 要点总结 -->
+    <div class="sh green">📚 要点总结</div>
+    <div style="font-size:12px; line-height:1.8; margin:4px 0;">
+      <b>1. 诊断要点</b><br>
+      ① DADA2三联征：早发卒中 + 网状青斑 + 皮肤PAN<br>
+      ② 确诊依赖CECR1基因检测 + ADA2酶活性测定<br>
+      ③ 可伴低丙种球蛋白、肝脾肿大、骨髓衰竭<br><br>
+      <b>2. 治疗策略</b><br>
+      ④ 抗TNF-α是一线治疗（血管炎表型）<br>
+      ⑤ 抗凝需谨慎，权衡缺血与出血风险<br>
+      ⑥ 骨髓衰竭 → 造血干细胞移植<br><br>
+      <b>3. 预后与监测</b><br>
+      ⑦ 早期启动TNF-α抑制剂可显著改善预后<br>
+      ⑧ 定期监测血常规、免疫球蛋白、影像学<br>
+      ⑨ 遗传咨询：常染色体隐性遗传，同胞筛查必要
+    </div>
+
+    <!-- 13. 参考文献 -->
+    <div class="sh">📖 参考文献</div>
+  <div style="font-size:12px;margin:4px 0;">来源: <a href="https://pubmed.ncbi.nlm.nih.gov/27444081/" target="_blank">PMID 27444081</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4959806/" target="_blank">PMC4959806</a></div>
+  <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+    <ol style="padding-left:18px;">
+    <li>Pichard DC, Ombrello AK, Hoffmann P, et al. Early Onset Stroke, Polyarteritis Nodosa, and Livedo Racemosa. <i>J Am Acad Dermatol</i>. 2016;75(2):449-453. doi:10.1016/j.jaad.2016.01.057. PMID: 27444081.</li>
+    <li>Zhou Q, Yang D, Ombrello AK, et al. Early-onset stroke and vasculopathy associated with mutations in ADA2. <i>N Engl J Med</i>. 2014;370(10):911-920. doi:10.1056/NEJMoa1307361. PMID: 24597878. <span style="color:var(--text3)">【原文引用】</span></li>
+    <li>Navon Elkan P, Pierce SB, Segel R, et al. Mutant adenosine deaminase 2 in a polyarteritis nodosa vasculopathy. <i>N Engl J Med</i>. 2014;370(10):921-931. doi:10.1056/NEJMoa1307362. PMID: 24597879. <span style="color:var(--text3)">【原文引用】</span></li>
+    <li>Belot A, et al. Mutations in CECR1 associated with a neutrophil signature. <i>Blood</i>. 2014;124(23). <span style="color:var(--text3)">【原文引用中性粒细胞基因表达数据】</span></li>
+    </ol>
+    <div style="margin-top:4px;font-size:10.5px;color:var(--text3);">注：Lee 2020及Ehlers 2025为后续研究，非原文引用，已删除。</div>
+  </div>
+
+  </div>
+
+  <div class="footer">
+    基于PMC4959806真实文献病例 · DADA2 · CECR1基因 · 抗TNF-α治疗 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

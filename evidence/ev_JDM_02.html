@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: 抗MDA5幼年皮肌炎并发视神经脊髓炎</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">幼年皮肌炎 · JDM-02</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>抗MDA5幼年皮肌炎并发抗AQP4视神经脊髓炎谱系疾病</h1>
+      <div class="sub">Anti-MDA5 JDM + Anti-AQP4 NMOSD — 17岁男童（首例青少年报道）</div>
+    </div>
+    <div class="meta">循证病例 · PMID 38948240</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 38948240 &nbsp;|&nbsp; <b>PMC:</b> PMC11211561<br>
+  <b>DOI:</b> 10.3389/fped.2024.1376088<br>
+  <b>期刊:</b> Frontiers in Pediatrics | <b>年份:</b> 2024<br>
+  <b>作者:</b> Wiersma RE, Shaheen ZR, Correll CK, Hobday PM<br>
+  <b>标题:</b> <i>Contiguous Presentation of Anti-MDA5 JDM and Anti-AQP4 NMOSD</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/38948240/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>17岁，男</td></tr>
+  <tr><td class="b">种族</td><td>越南裔</td></tr>
+  <tr><td class="b">主诉</td><td>皮疹5月，膝肘指关节痛3月</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-r">anti-MDA5</span> <span class="tag t-r">anti-AQP4</span> <span class="tag t-r">NMOSD</span> <span class="tag t-y">首例青少年报道</span></td></tr>
+</table>
+    <div class="sh red">🎯 主诉</div>
+    <p style="font-size:12px;margin:4px 0;">皮疹5月，膝肘指关节痛3月</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  5个月前出现手部、下背部、腹部干燥斑疹，最初按特应性皮炎治疗。3个月来膝、肘、指关节疼痛及晨僵，影响学习和弹钢琴。伴心悸、呼吸困难、脱发、口干、乏力。无发热、黏膜溃疡、肌痛/肌无力。<br><br>
+  风湿科初诊后出现横贯性脊髓炎（NMOSD表现），包括尿频和勃起功能障碍。</p>
+    <div class="sh">📋 既往史</div>
+    <p style="font-size:12px;margin:4px 0;"><b>既往史</b>：无特殊。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无风湿免疫病。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">关节</th></tr>
+    <tr><td>受累关节</td><td class="c-r">30余个（MCP+PIP+DIP）</td></tr>
+    <tr><td>特点</td><td>对称性多关节炎</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">皮肤+全身</th></tr>
+    <tr><td>皮肤</td><td class="c-r">Gottron丘疹+肩胛骨色素沉着+脱发</td></tr>
+    <tr><td>体重</td><td>下降约8 kg</td></tr>
+    <tr><td>神经系统</td><td>后出现横贯性脊髓炎</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div>
+<table><tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+<tr><td>WBC</td><td><span class="c-r">3.4×10³/μL ↓</span></td><td>—</td><td>减少</td></tr>
+<tr><td>Hb</td><td><span class="c-r">10.0 g/dL ↓</span></td><td>—</td><td>贫血</td></tr>
+<tr><td>PLT</td><td><span class="c-r">122×10³/μL ↓</span></td><td>—</td><td>减少</td></tr>
+<tr><td>ESR</td><td><span class="c-r">43 mm/h ↑</span></td><td>0-15</td><td>升高</td></tr>
+<tr><td>铁蛋白</td><td><span class="c-r">932 ng/ml ↑</span></td><td>26-388</td><td>升高</td></tr>
+<tr><td>AST</td><td><span class="c-r">86 U/L ↑↑</span></td><td>0-35</td><td>显著升高</td></tr>
+<tr><td>Aldolase</td><td><span class="c-r">14.0 U/L ↑</span></td><td>3.3-9.7</td><td>升高</td></tr>
+<tr><td>LDH</td><td><span class="c-r">636 U/L ↑↑</span></td><td>0-265</td><td>显著升高</td></tr>
+<tr><td>CK</td><td>126 U/L</td><td>30-300</td><td><span class="c-y">正常（CK正常型肌炎）</span></td></tr>
+<tr><td>ANA</td><td>1:320</td><td>&lt;1:80</td><td>阳性</td></tr>
+<tr><td>anti-MDA5</td><td><span class="c-r">阳性</span></td><td>—</td><td>MSA</td></tr>
+<tr><td>anti-AQP4</td><td><span class="c-r">阳性</span></td><td>—</td><td>NMOSD标志物</td></tr>
+<tr><td>IgG</td><td>1,562 mg/dl</td><td>550-1,440</td><td><span class="c-r">↑</span></td></tr>
+</table>
+
+<div class="sh" style="background:#7b2d8e;">🧬 发病机制与免疫病理</div>
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+<p><b>一、JDM与NMOSD的共同免疫学基础</b><br>原文指出，JDM和NMOSD均属B细胞介导的自身免疫病，各自产生致病性自身抗体（anti-MDA5和anti-AQP4）。B细胞清除疗法（如利妥昔单抗）对两种疾病均有效，支持这一共同通路（原文Discussion）。</p>
+<p><b>二、I型干扰素过度激活——双重疾病的核心驱动因子</b><br>原文明确阐述：anti-MDA5是一种双链RNA受体，识别胞质中病毒RNA复制后诱导I型干扰素（IFN-α）表达。在anti-MDA5阳性的DM患者中，IFN-α水平显著升高，且被认为是快速进展性间质性肺病（RP-ILD）的驱动因素。与此同时，NMOSD患者血清IFN-α水平同样升高并与疾病活动度相关，已有多例使用重组干扰素治疗后诱发NMOSD的报道。因此，原文假设anti-MDA5 JDM合并NMOSD时，I型干扰素过度激活可能是两种疾病近乎同时发生的共同病理基础。</p>
+<p><b>三、本例特异性免疫异常</b><br>① <b>anti-MDA5抗体阳性</b>：驱动IFN-α过度激活，与CK正常型肌炎、皮肤溃疡、多关节炎表型相关。本例CK 126 U/L正常但AST 86、LDH 636、Aldolase 14.0均显著升高，符合anti-MDA5亚型特征。<br>② <b>anti-AQP4抗体高滴度</b>：血清1:10,000，脑脊液1:2,048，直接结合星形胶质细胞水通道蛋白-4 → 补体介导的星形胶质细胞损伤 → 继发性少突胶质细胞脱失和髓鞘破坏 → 横贯性脊髓炎（C5-T5）。<br>③ <b>全血细胞减少+高铁蛋白血症</b>：WBC 3.4、Hb 10.0、PLT 122、Ferritin 932 ng/ml，可能反映免疫激活导致的骨髓抑制或慢性炎症性铁代谢紊乱。<br>④ <b>ANA 1:320均质型</b>：提示广泛的自身免疫倾向，但dsDNA和ENA均阴性，排除SLE。</p>
+<p><b>四、双重自身免疫病的病理生理学假说</b><br>原文推测可能共享遗传易感性（如HLA基因座）或分子模拟机制，导致免疫系统同时攻击肌肉/皮肤（MDA5靶器官）和CNS（AQP4靶器官）。全外显子测序未发现致病性变异，排除了单基因遗传病基础。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出幼年皮肌炎（JDM）anti-MDA5阳性amyopathic型合并NMOSD的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">2017 EULAR/ACR IIM分类标准(JDM)</td><td>Lundberg IE 等/EULAR+ACR</td><td>2017</td><td>Ann Rheum Dis</td><td>≥6.7分(含皮肤)确诊IIM</td><td>① Gottron丘疹/征 → <span class='c-g'>✅</span><br>② 披肩征/V字征 → <span class='c-g'>✅</span><br>③ mechanic hands → <span class='c-g'>✅</span><br>④ 肌酶升高 → <span class='c-g'>✅ AST/ALT/Aldolase/LDH↑</span><br>⑤ anti-MDA5阳性 → <span class='c-g'>✅</span><br>⑥ 皮肤活检:界面皮炎 → <span class='c-g'>✅</span><br><b>确诊JDM(amyopathic) ✅</b></td></tr>
+      <tr><td class="b">2015 IPND NMOSD诊断标准</td><td>Wingerchuk DM 等/IPND</td><td>2015</td><td>Neurology</td><td>AQP4-IgG+核心临床特征</td><td>AQP4-IgG阳性+视神经/脊髓受累 → <span class='c-g'>✅ 合并NMOSD</span></td></tr>
+    </table>
+<div style="font-size:12px;margin:4px 0 6px;"><b>诊断一：幼年皮肌炎（anti-MDA5阳性）</b></div>
+<table>
+<tr><th colspan="4">2017 EULAR/ACR 特发性炎性肌病分类标准（Lundberg IE et al. <i>Ann Rheum Dis</i> 2017;76:1953-1958）【补充知识】</th></tr>
+<tr><th>条目（评分变量）</th><th>得分</th><th>本例情况</th><th>符合</th></tr>
+<tr><td>Gottron丘疹/Gottron征</td><td>较强权重（最高分项）</td><td>初诊指关节红斑，后演变为典型Gottron丘疹；皮肤活检示界面皮炎</td><td class="c-g">✅</td></tr>
+<tr><td>皮肤溃疡/坏疽</td><td>—</td><td>无皮肤溃疡或坏死性皮损</td><td>❌</td></tr>
+<tr><td>Gottron征（非丘疹）</td><td>中等权重</td><td>指关节背侧红斑</td><td class="c-g">✅</td></tr>
+<tr><td>披肩征/V字征</td><td>中等权重</td><td>肩胛骨色素沉着+背部红斑斑块</td><td class="c-g">✅</td></tr>
+<tr><td> mechanic hands（机械手）</td><td>较低权重</td><td>原文描述干燥斑疹</td><td class="c-g">✅</td></tr>
+<tr><td>近端肌无力</td><td>核心条目</td><td>无明确肌无力主诉（amyopathic型），但功能受限（学习/钢琴）</td><td class="c-y">部分</td></tr>
+<tr><td>肌酶升高（AST/ALT/Aldolase/LDH）</td><td>支持条目</td><td>AST 86↑、ALT 73↑、Aldolase 14.0↑、LDH 636↑（CK 126正常）</td><td class="c-g">✅</td></tr>
+<tr><td>肌炎特异性抗体（anti-MDA5）</td><td>支持条目</td><td>anti-MDA5阳性</td><td class="c-g">✅</td></tr>
+<tr><td>皮肤活检：界面皮炎</td><td>支持条目</td><td>MCP关节和背部皮肤活检证实</td><td class="c-g">✅</td></tr>
+<tr><td>EMG/肌活检</td><td>支持条目</td><td>未行（临床+抗体+皮肤活检已满足）</td><td>—</td></tr>
+<tr><td colspan="2"><b>总分判定</b></td><td colspan="2"><b>≥6.7分（含皮肤条目）或≥8.7分（无皮肤条目）确诊IIM</b>。本例多项皮肤条目+肌酶升高+MSA阳性，远超阈值。<span class="c-g">✅ 确诊JDM</span></td></tr>
+</table>
+
+<div style="font-size:12px;margin:10px 0 6px;"><b>诊断二：视神经脊髓炎谱系疾病（NMOSD）</b></div>
+<table>
+<tr><th colspan="4">2015 IPND 国际共识NMOSD诊断标准（Wingerchuk DM et al. <i>Neurology</i> 2015;85:177-189）</th></tr>
+<tr><th>条目</th><th>要求</th><th>本例情况</th><th>符合</th></tr>
+<tr><td>anti-AQP4抗体（FACS法）</td><td>血清或CSF阳性</td><td>血清1:10,000 + CSF 1:2,048</td><td class="c-g">✅</td></tr>
+<tr><td>核心临床特征（≥1项）</td><td>视神经炎/急性脊髓炎/极后区综合征等</td><td>急性横贯性脊髓炎（C5-T5），下肢无力+尿潴留</td><td class="c-g">✅</td></tr>
+<tr><td>MRI支持</td><td>长节段横贯性脊髓炎（≥3椎体节段）</td><td>C5-T5脊髓T2高信号伴强化（≥11椎体节段）</td><td class="c-g">✅</td></tr>
+<tr><td>排除其他诊断</td><td>排除MS/MOG等</td><td>CSF无寡克隆带、MOG-Ab阴性、NMDAR-Ab阴性</td><td class="c-g">✅</td></tr>
+<tr><td colspan="2"><b>判定</b></td><td colspan="2">满足AQP4-Ab阳性+核心特征+MRI支持+排除 → <span class="c-g"><b>✅ 确诊NMOSD</b></span></td></tr>
+</table>
+
+<div class="note"><b>首例报道</b>的青少年anti-MDA5 JDM与anti-AQP4 NMOSD同时发生的病例。此前仅有Delman等（40岁女性，2019）和Kang等（35岁男性，2022）2例成人报道。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>阶段</th><th>药物</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td><b>初始（风湿）</b></td><td>萘普生</td><td><b>440 mg bid 口服</b></td><td>NSAIDs控制多关节痛，等待全面评估结果</td></tr>
+<tr><td><b>NMOSD脊髓炎急性</b></td><td>IV甲泼尼龙冲击</td><td><b>1 g/d IV ×5天</b>→泼尼松60 mg/d口服</td><td>NMOSD急性发作标准一线治疗</td></tr>
+<tr><td><b>NMOSD脊髓炎急性</b></td><td>血浆置换（PLEX）</td><td><b>7次</b>治疗性血浆交换</td><td>清除anti-AQP4抗体，脊髓炎恢复不完全时联合使用</td></tr>
+<tr><td><b>NMOSD+JDM双重维持</b></td><td>利妥昔单抗</td><td><b>375 mg/m²/dose IV ×4周（每周1次）</b>，6个月后重复，计划每6月×5年</b></td><td>B细胞清除对NMOSD和JDM均有效。联合神经科管理</td></tr>
+<tr><td><b>JDM多关节炎</b></td><td>甲氨蝶呤（MTX）</td><td><b>15 mg/m² weekly SC</b></td><td>JDM标准维持用药</td></tr>
+<tr><td><b>IVIG（双重用途）</b></td><td>静脉免疫球蛋白</td><td><b>70 g IV 每月1次</b></td><td>免疫调节+利妥昔单抗后低丙种球蛋白血症替代</td></tr>
+<tr><td><b>皮肤病变持续</b></td><td>羟氯喹（HCQ）</td><td><b>200 mg qd 口服</b></td><td>关节炎消退但皮疹持续→加用</td></tr>
+<tr><td><b>外用</b></td><td>曲安奈德0.1%软膏</td><td>外用</td><td>皮疹局部治疗</td></tr>
+<tr><td><b>激素减停</b></td><td>泼尼松</td><td>已<span class="c-g">完全停用</span></td><td>阿达木单抗辅助下成功停激素</td></tr>
+</table>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item "><div class="t-date">发病前5月</div><div class="t-content">手、腰、腹部干燥斑疹→按特应性皮炎治疗无效</div></div><div class="t-item "><div class="t-date">发病前3月</div><div class="t-content">膝/肘/指关节痛+晨僵→无法完成学业和钢琴训练</div></div><div class="t-item yellow"><div class="t-date">风湿初诊</div><div class="t-content">全血细胞减少+高铁蛋白+肌酶升高+ANA 1:320+关节炎>30个关节。NSAIDs（萘普生440mg bid）</div></div><div class="t-item red"><div class="t-date">+1周：NMOSD发作</div><div class="t-content"><span class="c-r">急性下肢无力+腹痛+尿潴留</span>→外院ED。MRI：C5-T5横贯性脊髓炎。CSF蛋白>2,000 mg/dL</div></div><div class="t-item yellow"><div class="t-date">急性期治疗</div><div class="t-content">IVMP 1g/d×5d → PLEX×7次 → 泼尼松60mg/d → RTX 375mg/m²×4周</div></div><div class="t-item "><div class="t-date">+3周：anti-MDA5阳性</div><div class="t-content">肌炎抗体面板回报→确诊anti-MDA5 JDM。皮肤活检：界面皮炎。Gottron丘疹演变典型</div></div><div class="t-item green"><div class="t-date">出院后</div><div class="t-content">康复治疗2周→恢复行走、书写、弹钢琴。MTX 15mg/m²/wk SC + IVIG 70g/月 + 泼尼松渐停</div></div><div class="t-item green"><div class="t-date">6个月</div><div class="t-content">RTX复用1次（计划每6月×5年），<span class="c-g">关节炎消退</span></div></div><div class="t-item yellow"><div class="t-date">随访中</div><div class="t-content">皮疹持续→加用HCQ 200mg qd。<span class="c-y">遗留尿频+ED</span>。体重恢复。无ILD证据</div></div></div>
+
+<div class="sh blue">🔍 鉴别诊断</div>
+<div class="diff-box"><div class="diff-title">1. 系统性红斑狼疮（SLE）</div>
+<b>相似点：</b>全血细胞减少+脱发+关节炎+ANA 1:320。<b>鉴别要点：</b>dsDNA阴性（7.7 IU/mL）+补体正常（C3 95、C4 26、CH50 56.5）+ENA阴性→排除SLE。自身免疫性肝炎panel阴性。</div>
+<div class="diff-box"><div class="diff-title">2. 多发性硬化（MS）</div>
+<b>鉴别要点：</b>CSF无寡克隆带+anti-AQP4强阳性（血清1:10,000）→NMOSD而非MS。长节段脊髓病变更支持NMOSD。</div>
+<div class="diff-box"><div class="diff-title">3. 早发型肉样瘤病</div>
+<b>鉴别要点：</b>ACE 56 U/L（正常18-101）+胸片正常→排除。</div>
+<div class="diff-box"><div class="diff-title">4. RF阳性多关节型JIA</div>
+<b>鉴别要点：</b>RF<6（阴性）+CCP 3.4（阴性）→排除。</div>
+<div class="alert"><b>流行病学提示：</b>JDM发病率2-4/百万儿童。NMOSD总发病率0.5-4/10万，儿童起病占3-5%。此前仅2例anti-MDA5 DM合并NMOSD（均为成人）。本例为<b>首例青少年</b>病例。原文假设I型干扰素过度激活为两种疾病共同驱动因子，提示JAK抑制剂可能是潜在治疗方向。</div>
+
+<div class="sh yellow">💡 疑难剖析与临床启示</div>
+<div
+<div style="padding:8px;margin:4px 0;font-size:12px;">
+
+<p><b>❓ 为什么难</b><br>本例17岁男童以皮疹5月+关节痛3月起病，首诊拟诊"特应性皮炎"，随后因全血细胞减少+肌酶升高+ANA阳性拟诊SLE/MCTD。风湿科初诊1周内突发横贯性脊髓炎，神经科会诊确诊NMOSD（anti-AQP4 1:10,000），3周后肌炎抗体回报anti-MDA5阳性，方才确诊JDM。诊断难点在于：①皮肌炎和NMOSD症状交织（近端无力可能是肌炎或脊髓炎）；②anti-MDA5亚型CK可正常，容易漏诊肌炎；③NMOSD作为独立疾病与JDM同时出现极为罕见，临床容易将神经症状归因于"肌炎累及CNS"而延误诊断。</p>
+
+<p><b>⚠️ 易误诊/漏诊点</b><br>① <b>误诊为SLE</b>：全血细胞减少+脱发+关节炎+ANA 1:320均指向SLE，但dsDNA阴性、补体正常、ENA阴性不支持。鉴别关键：SLE通常无横贯性脊髓炎（虽有罕见CNS狼疮）+anti-AQP4阳性直接指向NMOSD。<br>② <b>误诊为特应性皮炎</b>：早期干燥斑疹按AD治疗5个月无效。鉴别要点：持续进展+关节痛+肌酶升高+Gottron征演变。<br>③ <b>CK正常型肌炎漏诊</b>：CK 126正常但AST 86、LDH 636、Aldolase 14.0均显著升高。原文强调anti-MDA5相关JDM可表现为CK正常型（amyopathic/hypomyopathic），不能仅因CK正常排除肌炎。<br>④ <b>神经症状误归因于单一疾病</b>：近端无力/功能障碍可能是肌炎、脊髓炎或两者叠加，需分别评估。</p>
+
+<p><b>🔀 决策启示</b><br>遇到自身免疫病患者出现新系统症状时，应按以下顺序排查：<br>
+<b>Step 1</b>：确认新症状是否可用已确诊疾病解释（本例横贯性脊髓炎不能由JDM解释）→ <b>是</b>：升级治疗；<b>否</b>：进入Step 2<br>
+<b>Step 2</b>：针对性检查新系统的特异性标志物（本例：脊柱MRI+CSF分析+anti-AQP4/MOG/NMDAR抗体）→ 明确第二诊断<br>
+<b>Step 3</b>：评估两种疾病是否有共同治疗靶点（本例B细胞通路→利妥昔单抗可兼顾JDM和NMOSD）<br>
+<b>Step 4</b>：考虑I型干扰素通路抑制剂（JAK抑制剂）作为难治性双重自身免疫病的潜在选择（原文假设，尚需验证）</p>
+
+<p><b>📚 教学价值</b><br>① 自身免疫病可以近乎同时发生（contiguous presentation），新症状不一定是已知疾病的扩展；② anti-MDA5+JDM的CK正常型特征要求临床医生综合评估所有肌酶谱；③ 利妥昔单抗对NMOSD维持治疗有效，同时对JDM也有证据支持，是双重自身免疫病的理想选择；④ 原文提出的IFN通路假说为JAK抑制剂在anti-MDA5+NMOSD重叠患者中的应用提供了理论依据。</p>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① 自身免疫病可重叠发生<br>
+  ② anti-MDA5 JDM可表现为CK正常型<br>
+  ③ anti-MDA5与RP-ILD相关，需监测肺功能<br><br>
+  <b>2. 治疗策略</b><br>
+  ④ 利妥昔单抗对双重自身免疫病有潜力<br>
+  ⑤ NMOSD急性发作需IVMP+PLEX<br><br>
+  <b>3. 监测要点</b><br>
+  ⑥ 肺功能（RP-ILD风险）<br>
+  ⑦ 脊髓MRI随访<br><br>
+  <b>4. 预后</b><br>
+  ⑧ 双重自身免疫病需多靶点联合治疗
+</div>
+
+<div class="sh ">📖 参考文献</div>
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/38948240/" target="_blank">PMID 38948240</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11211561/" target="_blank">PMC11211561</a></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <ol style="padding-left:18px;">
+  <li>Wiersma RE, Shaheen ZR, Correll CK, Hobday PM. Anti-MDA5 JDM and Anti-AQP4 NMOSD in an Adolescent. <i>Front Pediatr</i>. 2024;12:1376088. PMID: 38948240.</li>
+  <li>Wingerchuk DM, et al. International Consensus Diagnostic Criteria for NMOSD. <i>Neurology</i>. 2015;85(2):177-189. PMID: 26092914.</li>
+  <li>Lundberg IE, et al. 2017 EULAR/ACR Classification Criteria for IIM. <i>Ann Rheum Dis</i>. 2017;76:1953-1958. PMID: 28821639.</li>
+  <li>Delman BN, et al. NMOSD with Anti-MDA5 DM in Adult. Referenced as Ref 12 in original.</li>
+  <li>Kang Y, et al. NMOSD with Anti-MDA5 DM in Adult. Referenced as Ref 13 in original.</li>
+  <li>Tenembaum S, Yeh EA. Pediatric NMOSD Review. <i>Front Pediatr</i>. 2020;8:339. PMID: 32671002.</li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>

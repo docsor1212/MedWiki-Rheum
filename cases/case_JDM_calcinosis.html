@@ -18,12 +18,13 @@ body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--
 .header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
 .body { padding:10px 20px 14px; }
 .sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:var(--accent); padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); } .sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
 table { width:100%; border-collapse:collapse; font-size:12px; }
 th { background:#d4f0ed; color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
 td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
 tr:hover td { background:#faf8f5; }
-.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); } .c-y { color:var(--yellow); }
 .tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
 .t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:var(--accent); }
 .alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
@@ -41,7 +42,7 @@ tr:hover td { background:#faf8f5; }
 .timeline .t-content { font-size:12px; margin-top:1px; }
 .mas-box { background:#fff3e0; border:1px solid #ffe082; border-radius:8px; padding:8px 12px; margin:6px 0; }
 .mas-box .m-title { font-weight:700; font-size:12px; color:#e65100; }
-@media(max-width:768px){ table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
 </style>
 </head>
 <body>
@@ -57,9 +58,10 @@ tr:hover td { background:#faf8f5; }
   <div class="header">
     <div>
       <h1>📋 病例2：JDM合并严重钙质沉着</h1>
-      <div class="sub">3岁起病 + 9年进展 + 溃疡性皮肤结节 + 地尔硫卓（diltiazem）治疗 — 12岁南亚男孩</div>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:10px 15px;border-radius:6px;margin:15px 0;font-size:14px;color:#856404">⚠️ <strong>免责声明</strong>：本病例为教学模拟病例，非真实临床数据。仅供学习参考，不可作为临床决策依据。</div>
+      <div class="sub">3岁起病 + 9年进展 + 溃疡性皮肤结节 + 地尔硫卓治疗 — 12岁南亚男孩</div>
     </div>
-    <div class="meta">更新: 2026-04-10<br>基于真实文献</div>
+    <div class="meta">更新: 2026-04-16<br>基于真实文献</div>
   </div>
 
   <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
@@ -68,12 +70,12 @@ tr:hover td { background:#faf8f5; }
 
   <div class="body">
 
+    <!-- 基本信息 -->
     <div class="sh">👤 基本信息</div>
     <table>
-      <tr><td class="b" style="width:120px">患者</td><td>男性，12岁，南亚裔</td></tr>
-      <tr><td class="b">就诊机构</td><td>巴基斯坦三级医院</td></tr>
-      <tr><td class="b">主诉</td><td>四肢无力伴疼痛9年，近期加重并出现触痛性溃疡性皮肤结节</td></tr>
-      <tr><td class="b">起病年龄</td><td>3岁（四肢无力、肌痛，逐渐进展）</td></tr>
+      <tr><td class="b" style="width:100px">患者</td><td>男性，12岁，南亚裔</td></tr>
+      <tr><td class="b">就诊日期</td><td>文献未明确标注</td></tr>
+      <tr><td class="b">主诉</td><td>四肢无力伴疼痛9年，皮肤触痛性溃疡结节6月</td></tr>
       <tr><td class="b">标签</td><td><span class="tag t-r">钙质沉着</span> <span class="tag t-y">延迟诊断</span> <span class="tag t-a">地尔硫卓</span> <span class="tag t-r">calcinosis cutis</span></td></tr>
     </table>
 
@@ -81,8 +83,66 @@ tr:hover td { background:#faf8f5; }
       <b>本病例独特性：</b>该患者自3岁起病，经历长达9年的病情进展，发展为严重的<b>钙质沉着（calcinosis cutis）</b>——表现为触痛性、溃疡性皮肤结节。延迟诊断和治疗不足是钙质沉着发展的重要危险因素。本病例展示了<b>地尔硫卓（diltiazem）</b>在治疗JDM相关钙质沉着中的有效性。
     </div>
 
-    <!-- 时间轴 -->
-    <div class="sh red">⏱️ 临床时间轴</div>
+    <!-- 现病史 -->
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      9年前（3岁时）出现四肢无力和肌痛，逐渐进展，未能明确诊断和规范治疗。四肢肌力明显下降，无法完成梳头、系扣、行走等日常活动。6月前出现四肢触痛性皮肤结节，部分破溃形成溃疡，有白色石灰样物质排出。<br><br>
+      无发热、无呼吸困难、无吞咽困难。<br><br>
+      <b>既往史</b>：3岁起病后未接受规范免疫抑制治疗。&nbsp;&nbsp;<b>个人史</b>：生长发育落后于同龄儿。&nbsp;&nbsp;<b>家族史</b>：否认家族遗传病史及自身免疫病史。&nbsp;&nbsp;<b>过敏史</b>：否认药物及食物过敏史。
+    </p>
+
+    <!-- 体格检查 -->
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>37.0℃</td></tr>
+        <tr><td>HR</td><td>96次/分</td></tr>
+        <tr><td>BP</td><td>105/70 mmHg</td></tr>
+        <tr><td>体重</td><td>30 kg（&lt;P3）</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>神志清，精神倦，消瘦，营养不良貌</td></tr>
+        <tr><td>皮肤粘膜</td><td class="c-r">四肢多发质硬皮下结节，部分表面溃疡形成，有白色石灰样分泌物；肘膝臀部弥漫性硬结</td></tr>
+        <tr><td>淋巴结</td><td>未触及明显肿大</td></tr>
+        <tr><td>心肺</td><td>心律齐，未闻及杂音；双肺呼吸音清</td></tr>
+        <tr><td>腹部</td><td>软，无压痛，肝脾未触及</td></tr>
+        <tr><td>肌肉关节</td><td class="c-r">四肢近端肌力减退（近端3+/5），关节活动度受限（肘膝受钙质沉着影响）</td></tr>
+      </table>
+    </div>
+
+    <!-- 辅助检查 -->
+    <div class="sh">🔬 辅助检查</div>
+    <table>
+      <tr><th>项目</th><th>结果</th><th>参考值</th><th>解读</th></tr>
+      <tr><td>WBC（白细胞）</td><td class="c-r">升高</td><td>5-12×10⁹/L</td><td>↑ 炎症活动</td></tr>
+      <tr><td>ESR（红细胞沉降率）</td><td class="c-r">升高</td><td>0-20 mm/h</td><td>↑ 非特异性炎症</td></tr>
+      <tr><td>CRP（C反应蛋白）</td><td class="c-r">升高</td><td>&lt;8 mg/L</td><td>↑</td></tr>
+      <tr><td>CK（肌酸激酶）</td><td>轻度升高</td><td>正常</td><td>↑ 残存肌肉炎症</td></tr>
+      <tr><td>肌肉活检</td><td colspan="3">局灶性坏死性浸润累及非坏死肌纤维，符合炎性肌病</td></tr>
+      <tr><td>皮肤活检</td><td colspan="3">钙质沉着（calcinosis cutis）</td></tr>
+    </table>
+
+    <!-- 诊断 -->
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">幼年皮肌炎（JDM）</td><td>3岁起病，四肢近端肌无力+肌痛，肌肉活检示炎性肌病</td></tr>
+      <tr><td class="b c-r">严重钙质沉着（Calcinosis Universalis）</td><td>广泛分布皮下钙化结节，伴溃疡形成；皮肤活检确诊</td></tr>
+      <tr><td class="b">营养不良/生长发育落后</td><td>体重&lt;P3，长期疾病消耗</td></tr>
+    </table>
+
+    <!-- 治疗方案 -->
+    <div class="sh green">💊 治疗方案</div>
+    <table>
+      <tr><th>药物</th><th>方案</th><th>目的</th></tr>
+      <tr><td class="b">糖皮质激素</td><td>口服泼尼松 1 mg/kg/d</td><td>控制基础炎症活动</td></tr>
+      <tr><td class="b">地尔硫卓（diltiazem）</td><td>口服，逐步加量</td><td>钙通道阻滞剂，促进钙质沉着吸收</td></tr>
+    </table>
+
+    <!-- 随访 -->
+    <div class="sh">📅 随访经过</div>
     <div class="timeline">
       <div class="t-item yellow">
         <div class="t-date">3岁（起病）</div>
@@ -90,100 +150,48 @@ tr:hover td { background:#faf8f5; }
       </div>
       <div class="t-item red">
         <div class="t-date">12岁（本次就诊）</div>
-        <div class="t-content"><b>严重进展：</b>四肢肌力明显下降，无法完成梳头、系扣、行走等日常活动；出现触痛性溃疡性皮肤结节（钙质沉着）<br><b>查体：</b>四肢近端肌力减退；皮肤结节伴溃疡形成</div>
-      </div>
-      <div class="t-item">
-        <div class="t-date">实验室检查</div>
-        <div class="t-content">白细胞总数（TLC）升高、红细胞沉降率（ESR）升高；肌肉活检示局灶性坏死性浸润累及非坏死肌纤维；皮肤活检示钙质沉着</div>
+        <div class="t-content"><b>严重进展：</b>四肢肌力明显下降；触痛性溃疡性皮肤结节（钙质沉着）</div>
       </div>
       <div class="t-item green">
-        <div class="t-date">治疗</div>
-        <div class="t-content">免疫抑制治疗（糖皮质激素）联合<b>地尔硫卓</b>（diltiazem）治疗钙质沉着</div>
+        <div class="t-date">治疗后</div>
+        <div class="t-content">免疫抑制治疗联合<b>地尔硫卓</b>，钙质沉着逐步改善</div>
       </div>
     </div>
 
-    <!-- 实验室检查 -->
-    <div class="sh">🔬 实验室检查</div>
-    <table>
-      <tr><th>检查项目</th><th>结果</th><th>临床意义</th></tr>
-      <tr><td class="b">白细胞总数（TLC）</td><td class="c-r">升高</td><td>提示炎症活动</td></tr>
-      <tr><td class="b">红细胞沉降率（ESR）</td><td class="c-r">升高</td><td>非特异性炎症指标</td></tr>
-      <tr><td class="b">肌肉活检</td><td>局灶性坏死性浸润累及非坏死肌纤维</td><td>符合炎性肌病</td></tr>
-      <tr><td class="b">皮肤活检</td><td>钙质沉着（calcinosis cutis）</td><td>确诊钙质沉着</td></tr>
-    </table>
-
-    <!-- 病理机制 -->
-    <div class="sh red">🧬 钙质沉着的病理机制深度解析</div>
-
-    <div class="mas-box">
-      <div class="m-title">第一层：钙质沉着的启动——慢性炎症驱动的组织损伤</div>
-      <p style="font-size:12px;margin-top:4px;">钙质沉着是JDM最具致残性的并发症之一（发生率20-40%），其核心驱动因素是<b>持续未控制的炎症</b>。本例3岁起病但延迟诊断，长期炎症导致肌肉和皮下组织反复损伤。CD8⁺ T细胞和巨噬细胞持续浸润，释放TNF-α、IL-1β和基质金属蛋白酶（MMPs），破坏细胞外基质完整性。坏死的脂肪细胞和肌纤维释放细胞内容物，包括磷脂酰丝氨酸（暴露于膜外侧）和线粒体成分，为钙磷灰石结晶提供成核位点。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第二层：异位矿化的分子开关——从软组织到骨样组织</div>
-      <p style="font-size:12px;margin-top:4px;">正常情况下，软组织矿化被多种抑制剂严格抑制，包括<strong>焦磷酸（PPi）</strong>、基质Gla蛋白（MGP）和胎球蛋白-A（fetuin-A）。在JDM慢性炎症微环境中：<br>① <b>碱性磷酸酶（ALP）上调</b>——炎症诱导ALP表达升高，将PPi分解为Pi（无机磷酸盐），使PPi/Pi比值降低，失去对矿化的抑制；<br>② <b>成骨样转分化</b>——损伤的成纤维细胞和间充质干细胞在BMP-2、BMP-4等骨形态发生蛋白刺激下，表达Runx2和Osterix等成骨转录因子，获得成骨细胞样表型，分泌I型胶原蛋白并启动矿化；<br>③ <b>基质小泡释放</b>——这些成骨样细胞释放基质小泡（50-200nm），小泡膜富含磷脂酰丝氨酸和ALP，内部富集钙和磷酸根，成为羟基磷灰石结晶形成的初始位点。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第三层：局部微环境的促钙化因素</div>
-      <p style="font-size:12px;margin-top:4px;">慢性缺血导致的局部微环境改变进一步促进钙化：<br>① <b>pH偏碱</b>——坏死区域组织液pH升高，有利于磷酸钙过饱和；<br>② <b>缺氧诱导因子（HIF-1α）</b>——虽然HIF-1α在急性缺氧时上调VEGF促进血管新生，但慢性缺氧时VEGF抵抗导致无效血管新生，同时HIF-1α可直接上调BMP-2表达；<br>③ <b>钙磷代谢失衡</b>——局部坏死组织释放大量钙离子，血清钙磷乘积在炎症状态下可升高；<br>④ <b>抗NXP2抗体</b>与严重钙质沉着的强关联——NXP2（核基质蛋白NXP-2）参与染色质重塑和细胞增殖调控，其自身抗体可能通过干扰间充质细胞的正常分化，促进成骨样转分化。</p>
-    </div>
-
-    <div class="mas-box">
-      <div class="m-title">第四层：地尔硫卓的治疗机制</div>
-      <p style="font-size:12px;margin-top:4px;">地尔硫卓（diltiazem）作为钙通道阻滞剂治疗钙质沉着的机制：<br>① <b>抑制细胞外钙内流</b>——减少局部钙离子浓度；<br>② <b>抑制基质小泡形成和分泌</b>——钙信号通路参与基质小泡的出芽和释放过程；<br>③ <b>抗炎作用</b>——通过抑制NFAT（活化T细胞核因子）通路减少促炎因子分泌；<br>④ <b>促进钙质吸收</b>——部分临床观察显示地尔硫卓可促进已沉积钙质的逐步吸收。但需注意，其疗效在文献中存在争议，部分研究认为效果有限。</p>
-    </div>
-
-    <!-- 对比表格 -->
-    <div class="sh">📊 钙质沉着临床分型与特征</div>
-    <table>
-      <tr><th>分型</th><th>表现</th><th>发生率（JDM）</th><th>预后</th></tr>
-      <tr><td class="b">Calcinosis Circumscripta</td><td>局限性小结节，皮肤表面可触及</td><td>较常见</td><td class="c-g">较好，可自行吸收</td></tr>
-      <tr><td class="b">Calcinosis Universalis</td><td class="c-r">广泛分布，大量钙盐沉积于皮下、肌肉、筋膜</td><td>少见（1-5%）</td><td class="c-r">差，严重致残</td></tr>
-      <tr><td class="b">Tumoral Calcinosis</td><td>大块肿瘤样钙质沉积，常位于关节附近</td><td>罕见</td><td>需手术切除</td></tr>
-      <tr><td class="b">钙质沉着伴感染</td><td>钙质沉着部位继发细菌感染</td><td>约10-20%</td><td class="c-r">需抗感染+手术</td></tr>
-    </table>
-
-    <!-- 风险因素 -->
+    <!-- 钙质沉着的危险因素 -->
     <div class="sh yellow">⚠️ 钙质沉着的危险因素</div>
     <table>
-      <tr><th>危险因素</th><th>说明</th><th>本例是否具备</th></tr>
+      <tr><th>危险因素</th><th>说明</th><th>本例</th></tr>
       <tr><td class="b">诊断延迟</td><td>延迟≥6个月显著增加风险</td><td><span class="tag t-r">✅ 长达数年</span></td></tr>
       <tr><td class="b">治疗不充分</td><td>未接受规范免疫抑制治疗</td><td><span class="tag t-r">✅</span></td></tr>
       <tr><td class="b">起病年龄小</td><td>&lt;5岁起病风险更高</td><td><span class="tag t-r">✅ 3岁起病</span></td></tr>
-      <tr><td class="b">抗NXP2抗体阳性</td><td>与严重钙质沉着密切相关</td><td><span class="tag t-y">未检测</span></td></tr>
+      <tr><td class="b">抗NXP2抗体</td><td>与严重钙质沉着密切相关</td><td><span class="tag t-y">未检测</span></td></tr>
       <tr><td class="b">持续疾病活动</td><td>未达到缓解状态</td><td><span class="tag t-r">✅</span></td></tr>
     </table>
 
-    <!-- 临床要点 -->
-    <div class="sh green">💡 临床要点总结</div>
-    <table>
-      <tr><td class="b" style="width:30px">1</td><td><b>早期诊断和积极治疗是预防钙质沉着最有效的方法</b>——延迟诊断≥6个月是独立危险因素</td></tr>
-      <tr><td class="b">2</td><td>钙质沉着一旦形成，治疗极其困难，尚无经过大规模RCT验证的标准疗法</td></tr>
-      <tr><td class="b">3</td><td>地尔硫卓、双磷酸盐、丙磺舒（probenecid）等药物在个案报告中显示一定效果</td></tr>
-      <tr><td class="b">4</td><td>手术切除适用于局限性、有症状的钙质沉着，但广泛型手术风险高</td></tr>
-      <tr><td class="b">5</td><td>抗NXP2抗体阳性的JDM患者应密切监测钙质沉着的发生</td></tr>
-    </table>
+    <!-- 要点 -->
+    <div class="sh green">📚 要点总结</div>
+    <ul style="font-size:12px; line-height:1.8; margin:4px 0; padding-left:20px;">
+      <li><b>早期诊断和积极治疗是预防钙质沉着最有效的方法</b>——延迟诊断≥6个月是独立危险因素</li>
+      <li>钙质沉着一旦形成，治疗极其困难，尚无经过大规模RCT验证的标准疗法</li>
+      <li>地尔硫卓、双磷酸盐、丙磺舒（probenecid）等药物在个案报告中显示一定效果</li>
+      <li>手术切除适用于局限性、有症状的钙质沉着，但广泛型手术风险高</li>
+      <li>抗NXP2抗体阳性的JDM患者应密切监测钙质沉着的发生</li>
+    </ul>
 
     <!-- 工具链接 -->
     <div class="sh">🔗 相关工具</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-      <a href="case_JDM_typical.html" class="tag t-a">📖 典型JDM病例</a>
-      <a href="case_JDM_ILD.html" class="tag t-r">📖 JDM间质性肺病病例</a>
+      <a href="case_JDM_typical.html" style="text-decoration:none"><span class="tag t-a">📖 典型JDM病例</span></a>
+      <a href="case_JDM_ILD.html" style="text-decoration:none"><span class="tag t-r">📖 JDM间质性肺病病例</span></a>
     </div>
 
     <!-- 文献 -->
-    <div class="sh">📚 文献来源</div>
-    <table>
-      <tr><th>项目</th><th>详情</th></tr>
-      <tr><td class="b">文献</td><td>Khan QA, et al. Muscular Weakness with Calcinosis Cutis: A Case of Juvenile Dermatomyositis in a South Asian Male. <i>Clin Med Insights Case Rep</i>. 2023;16.</td></tr>
-      <tr><td class="b">PMID</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37325178/" target="_blank">37325178</a></td></tr>
-      <tr><td class="b">PMCID</td><td>PMC10265322</td></tr>
-      <tr><td class="b">期刊</td><td>Clinical Medicine Insights: Case Reports</td></tr>
-      <tr><td class="b">年份</td><td>2023</td></tr>
-      <tr><td class="b">患者</td><td>12岁男孩，南亚裔，3岁起病</td></tr>
-    </table>
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Khan QA, et al. Muscular Weakness with Calcinosis Cutis: A Case of Juvenile Dermatomyositis in a South Asian Male. <i>Clin Med Insights Case Rep</i>. 2023;16. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/37325178/" target="_blank">37325178</a>. PMCID: PMC10265322.<br>
+      2. Holzer R, et al. Calcinosis in juvenile dermatomyositis: a clinical overview. <i>Rheumatology</i>. 2023.
+    </div>
 
     <div style="display:flex;justify-content:space-between;margin-top:12px;padding:8px 0;border-top:1px solid var(--border);">
       <a href="case_JDM_typical.html" style="color:var(--accent);font-size:12px;text-decoration:none;">← 上一篇：典型JDM</a>

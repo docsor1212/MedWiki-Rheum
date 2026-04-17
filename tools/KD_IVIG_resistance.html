@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVIG无反应预测 — MedWiki-Rheum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
+.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
+h1 span{color:var(--accent);}
+.sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
+.section-title{font-size:0.7rem;font-weight:800;color:#fff;background:var(--accent);padding:4px 12px;border-radius:6px;display:inline-block;margin:12px 0 8px;}
+.section-title.red{background:var(--red);}
+.section-title.green{background:var(--green);}
+.section-title.yellow{background:var(--yellow);}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.input-group{margin-bottom:10px;}
+input[type=number],select{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;font-weight:600;background:#f4fafa;color:var(--text);outline:none;transition:border 0.2s;}
+input[type=number]:focus,select:focus{border-color:var(--accent);}
+.btn{padding:8px 20px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);}
+.btn-reset{background:var(--red-bg);color:var(--red);}
+.btn-reset:hover{background:var(--red);color:#fff;}
+.result-box{background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);border-radius:var(--radius);padding:16px;text-align:center;margin-top:12px;}
+.result-num{font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1;}
+.result-label{font-size:0.75rem;color:var(--text2);margin-top:2px;font-weight:600;}
+.result-status{display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:800;margin-top:8px;color:#fff;}
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:6px 0;}
+th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:left;padding:5px 8px;border-bottom:1.5px solid var(--border);}
+td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
+tr:hover td{background:#f8fafa;}
+.disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:50;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+.sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.footer-score{text-align:center;}
+.footer-score .num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;}
+.footer-score .lbl{font-size:0.6rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
+.warning-box{background:var(--yellow-bg);border:1.5px solid var(--yellow);border-radius:var(--radius);padding:12px;margin-top:12px;font-size:0.78rem;}
+.warning-box b{color:var(--yellow);}
+.treatment-box{background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:var(--radius);padding:12px;margin-top:8px;font-size:0.78rem;}
+@media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.sticky-footer{padding:8px 12px;}}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#20a39e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">IVIG无反应预测</span></div>
+
+<div class="wrap">
+
+<div class="card">
+<h1>川崎病 <span>IVIG无反应预测</span></h1>
+<div class="sub">Kobayashi / Egami / Sano 三种评分模型 · 日本儿童队列开发</div>
+
+<div class="warning-box" style="margin-top:8px;">
+<b>⚠️ 重要提示</b> 本评分基于日本儿童队列开发，在其他人群（尤其是非东亚人群）中的预测效能可能不同。敏感性和特异性存在种族差异。请结合临床判断，不可仅凭评分决策。
+</div>
+
+<div class="section-title">📐 选择评估模型</div>
+<select id="model" onchange="switchModel()">
+<option value="kobayashi">Kobayashi评分 (2006) — 7项，最常用</option>
+<option value="egami">Egami评分 (2006) — 5项简表</option>
+<option value="sano">Sano评分 (2007) — 3项简表</option>
+</select>
+
+<div id="inputs-area"></div>
+
+<div style="display:flex;gap:8px;margin-top:12px;">
+<button class="btn btn-primary" onclick="calc()">📊 计算评分</button>
+<button class="btn btn-reset" onclick="reset()">🔄 重置</button>
+</div>
+
+<div class="result-box" id="resultBox" style="display:none;">
+<div class="result-label">总分</div>
+<div class="result-num" id="totalScore">0</div>
+<div class="result-status" id="riskLevel" style="background:#cbd5e1;">待评估</div>
+<div id="treatmentAdvice" style="margin-top:10px;"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="section-title yellow">📝 三种模型对比</div>
+<table>
+<tr><th>模型</th><th>项目数</th><th>高危阈值</th><th>敏感性</th><th>特异性</th></tr>
+<tr><td><b>Kobayashi</b></td><td>7项</td><td>≥5分</td><td>~86%</td><td>~68%</td></tr>
+<tr><td><b>Egami</b></td><td>5项</td><td>≥3分</td><td>~78%</td><td>~76%</td></tr>
+<tr><td><b>Sano</b></td><td>3项</td><td>≥2分</td><td>~77%</td><td>~86%</td></tr>
+</table>
+<div style="font-size:0.68rem;color:var(--text2);margin-top:6px;">敏感性/特异性数据来自日本原始队列，其他人群可能不同</div>
+
+<div class="section-title green">💊 高危患者处理建议</div>
+<div class="treatment-box">
+<b>方案A：IVIG + 激素联合</b><br>
+IVMP 2 mg/kg/d × 5天（或泼尼松龙等效）+ 标准IVIG 2g/kg<br><br>
+<b>方案B：IVIG + 英夫利西单抗</b><br>
+IFX 5 mg/kg 单次 + 标准IVIG 2g/kg<br><br>
+⚠️ 具体方案需结合患儿情况、中心经验及家属意愿综合决策
+</div>
+</div>
+
+<div class="card">
+<div class="section-title red">🎯 各模型评分细则</div>
+<div id="modelDetails"></div>
+</div>
+
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。评分基于日本队列开发，预测效能因人群而异。最终决策请结合临床实际并遵循相关指南。</div>
+</div>
+
+<div class="sticky-footer"><div class="sticky-inner">
+<div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
+<div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
+</div></div>
+
+<script>
+const models={
+kobayashi:{
+name:'Kobayashi评分 (2006)',
+items:[
+{id:'na',label:'Na (钠)',unit:'mmol/L',type:'number',threshold:'≤133',check:v=>v<=133?2:0},
+{id:'ast',label:'AST',unit:'IU/L',type:'number',threshold:'≥100',check:v=>v>=100?2:0},
+{id:'ivig_day',label:'发病至IVIG天数',unit:'天',type:'number',threshold:'≤4天',check:v=>v<=4?2:0},
+{id:'crp',label:'CRP',unit:'mg/dL',type:'number',threshold:'≥10',check:v=>v>=10?1:0},
+{id:'plt',label:'PLT (血小板)',unit:'×10⁴/μL',type:'number',threshold:'≤30',check:v=>v<=30?1:0},
+{id:'age',label:'年龄',unit:'月',type:'number',threshold:'≤12月',check:v=>v<=12?1:0},
+{id:'wbc',label:'WBC',unit:'/μL',type:'number',threshold:'≥12000',check:v=>v>=12000?1:0}
+],
+cutoff:5
+},
+egami:{
+name:'Egami评分 (2006)',
+items:[
+{id:'age_e',label:'年龄',unit:'月',type:'number',threshold:'≤6月',check:v=>v<=6?3:0},
+{id:'crp_e',label:'CRP',unit:'mg/dL',type:'number',threshold:'≥8',check:v=>v>=8?1:0},
+{id:'plt_e',label:'PLT (血小板)',unit:'×10⁴/μL',type:'number',threshold:'≤30',check:v=>v<=30?1:0},
+{id:'alt_e',label:'ALT',unit:'IU/L',type:'number',threshold:'≥80',check:v=>v>=80?2:0},
+{id:'na_e',label:'Na (钠)',unit:'mmol/L',type:'number',threshold:'≤133',check:v=>v<=133?2:0}
+],
+cutoff:3
+},
+sano:{
+name:'Sano评分 (2007)',
+items:[
+{id:'na_s',label:'Na (钠)',unit:'mmol/L',type:'number',threshold:'≤133',check:v=>v<=133?1:0},
+{id:'ast_s',label:'AST',unit:'IU/L',type:'number',threshold:'≥70',check:v=>v>=70?1:0},
+{id:'ivig_day_s',label:'发病至IVIG天数',unit:'天',type:'number',threshold:'≤4天',check:v=>v<=4?1:0}
+],
+cutoff:2
+}
+};
+
+function switchModel(){
+const m=document.getElementById('model').value;
+const model=models[m];
+let html='<div class="section-title" style="margin-top:12px;">📋 '+model.name+' 输入参数</div>';
+model.items.forEach(item=>{
+html+=`<div class="input-group"><label>${item.label} (${item.unit}) — 阳性阈值: ${item.threshold}</label><input type="number" id="${item.id}" oninput="liveCalc()" placeholder="输入${item.label}值"></div>`;
+});
+document.getElementById('inputs-area').innerHTML=html;
+document.getElementById('resultBox').style.display='none';
+document.getElementById('footerScore').textContent='—';
+document.getElementById('footerStatus').style.background='#cbd5e1';
+document.getElementById('footerStatus').textContent='待评估';
+buildModelDetails();
+}
+
+function buildModelDetails(){
+let html='';
+Object.keys(models).forEach(k=>{
+const m=models[k];
+html+=`<div style="margin-bottom:12px;"><b style="color:var(--accent);">${m.name}</b>（高危: ≥${m.cutoff}分）`;
+html+='<table><tr><th>指标</th><th>阳性阈值</th><th>分值</th></tr>';
+m.items.forEach(item=>{
+html+=`<tr><td>${item.label}</td><td>${item.threshold}</td><td style="font-weight:700;color:var(--accent);">${item.check(Infinity)}分</td></tr>`;
+});
+html+='</table></div>';
+});
+document.getElementById('modelDetails').innerHTML=html;
+}
+
+function liveCalc(){
+const m=document.getElementById('model').value;
+const model=models[m];
+let total=0;
+model.items.forEach(item=>{
+const el=document.getElementById(item.id);
+if(el&&el.value!==''){
+total+=item.check(parseFloat(el.value));
+}
+});
+const isHigh=total>=model.cutoff;
+document.getElementById('footerScore').textContent=total;
+const fs=document.getElementById('footerStatus');
+if(isHigh){fs.textContent='⚠️ 高危';fs.style.background='#d45050';}
+else{fs.textContent='✅ 低危';fs.style.background='#22a87e';}
+}
+
+function calc(){
+const m=document.getElementById('model').value;
+const model=models[m];
+let total=0;
+let allFilled=true;
+model.items.forEach(item=>{
+const el=document.getElementById(item.id);
+if(!el||el.value===''){allFilled=false;return;}
+total+=item.check(parseFloat(el.value));
+});
+const isHigh=total>=model.cutoff;
+document.getElementById('resultBox').style.display='block';
+document.getElementById('totalScore').textContent=total+'分';
+const rl=document.getElementById('riskLevel');
+const fs=document.getElementById('footerStatus');
+const fsc=document.getElementById('footerScore');
+fsc.textContent=total;
+let advice='';
+if(isHigh){
+rl.textContent='⚠️ IVIG无反应高危';rl.style.background='#d45050';
+fs.textContent='⚠️ 高危';fs.style.background='#d45050';
+advice='<div class="treatment-box"><b>建议强化初始治疗：</b><br>• 方案A: IVIG 2g/kg + IVMP 2mg/kg/d × 5天<br>• 方案B: IVIG 2g/kg + 英夫利西单抗 5mg/kg<br>• 具体方案需结合临床综合决策</div>';
+}else{
+rl.textContent='✅ IVIG无反应低危';rl.style.background='#22a87e';
+fs.textContent='✅ 低危';fs.style.background='#22a87e';
+advice='<div style="color:var(--green);font-weight:600;">标准IVIG治疗（2g/kg × 1次）</div>';
+}
+document.getElementById('treatmentAdvice').innerHTML=advice;
+}
+
+function reset(){
+switchModel();
+}
+
+switchModel();
+</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>循证病例: pSS+MAS — PMID 41439070</title>
+<link rel="manifest" href="../manifest.json">
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#20a39e; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.sh.blue { background:#20a39e; }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); }
+.timeline .t-item.yellow::before { background:var(--yellow); }
+.timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.score-box { display:inline-block; background:#d4f0ed; padding:3px 8px; border-radius:5px; font-size:12px; font-weight:600; color:#20a39e; margin:2px; }
+.score-box.high { background:#fce5e1; color:var(--red); }
+.score-box.mid { background:#faf3dc; color:var(--yellow); }
+.score-box.low { background:#e2f3dd; color:var(--green); }
+.diff-box { background:#fff8f0; border:1px solid #f0e0c8; border-radius:8px; padding:8px 12px; margin:6px 0; }
+.diff-box .diff-title { font-weight:700; font-size:12px; color:#c07020; margin-bottom:3px; }
+.source-card { background:#d4f0ed; border-left:4px solid var(--accent); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:11.5px; }
+.source-card .sc-title { font-weight:700; color:var(--accent); margin-bottom:3px; font-size:12px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="ev_KD_01.html">📚 循证病例</a>
+  <span class="nav-title">干燥病+MAS · MAS-02</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>儿童原发性干燥病以MAS为首发表现</h1>
+      <div class="sub">Primary Sjögren's Disease Presenting with MAS — 8岁女童（首例报道）</div>
+    </div>
+    <div class="meta">循证病例 · PMID 41439070</div>
+  </div>
+
+  <div class="body">
+<div class="source-card">
+  <div class="sc-title">📄 文献来源</div>
+  <b>PMID:</b> 41439070 &nbsp;|&nbsp; <b>PMC:</b> PMC12719546<br>
+  <b>DOI:</b> 10.7759/cureus.97434<br>
+  <b>期刊:</b> Cureus | <b>年份:</b> 2025<br>
+  <b>作者:</b> Dahan E, Cooley A, Ridgeway K, Fathalla B, Husien T (DMC Children's Hospital of Michigan, Detroit, USA)<br>
+  <b>标题:</b> <i>Not Just Sjögren's: A Rare Life-Threatening Manifestation in a Pediatric Patient</i><br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/41439070/" target="_blank" style="color:var(--accent);">查看原文 →</a>
+</div>
+
+<div class="alert"><b>流行病学提示：</b>儿童干燥病确切发病率和患病率不明（Randell RL, 2021）。成人干燥病中MAS极罕见——系统综述421例风湿病相关MAS中仅3例与干燥病相关（Atteritano M, 2012）。本例为<b>文献中首例</b>儿童干燥病以MAS为首发表现的病例。MAS死亡风险高，延迟治疗可迅速致死。</div>
+
+<div class="sh ">👤 基本信息</div>
+<table>
+  <tr><td class="b" style="width:100px">年龄/性别</td><td>8岁，女</td></tr>
+  <tr><td class="b">标签</td><td><span class="tag t-a">原发性干燥病</span> <span class="tag t-r">MAS</span> <span class="tag t-y">首例报道</span> <span class="tag t-y">无口干眼干</span></td></tr>
+</table>
+        <div class="sh red">🎯 主诉</div>
+    <p style="font-size:13px;font-weight:600;margin:4px 0;">发热、咽痛、全身肌痛、关节痛7天</p>
+
+
+<div class="sh ">📝 现病史</div>
+<p style="font-size:12px;margin:4px 0;">
+  8岁女童，入院前2周因咳嗽就诊于外院，诊断为上呼吸道感染，口服药物（具体不详）后好转。入院前1天因持续发热、咽痛再次就诊，查体发现扁桃体红肿，诊断为链球菌性咽炎，处方阿莫西林口服。<br><br>
+  入院后持续高热（T-max 40.0°C），伴心动过速、呼吸急促、全身肌肉疼痛及拒绝行走。查体见唇皲裂、结膜充血，无颈部淋巴结肿大、皮疹或关节积液。予收治入院。患儿<span class="c-r">无口干、眼干、腮腺肿大等干燥症状</span>。</p>
+
+<div class="sh">📋 既往史</div>
+<p style="font-size:12px;margin:4px 0;"><b>既往史</b>：既往体健。&nbsp;&nbsp;<b>个人史</b>：足月顺产，生长发育同同龄儿。&nbsp;&nbsp;<b>家族史</b>：无特殊。&nbsp;&nbsp;<b>过敏史</b>：否认。</p>
+
+<div class="sh red">🩺 体格检查</div>
+<div class="g2">
+  <table>
+    <tr><th colspan="2">生命体征</th></tr>
+    <tr><td>T</td><td class="c-r">持续发热</td></tr>
+    <tr><td>HR</td><td>心动过速</td></tr>
+    <tr><td>BP</td><td>【原文未详述】</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2">系统查体</th></tr>
+    <tr><td>口腔</td><td>无口干体征</td></tr>
+    <tr><td>眼部</td><td>无眼干体征</td></tr>
+    <tr><td>关节</td><td class="c-r">关节痛</td></tr>
+    <tr><td>全身</td><td class="c-r">进行性多器官受累</td></tr>
+  </table>
+</div>
+
+<div class="sh ">🔬 辅助检查</div>
+<table><tr><th>项目</th><th>入院时</th><th>MAS恶化期</th><th>解读</th></tr>
+<tr><td>WBC</td><td><span class="c-r">42.9 K/μL ↑↑</span></td><td>—</td><td>显著白细胞增多</td></tr>
+<tr><td>Hb</td><td>10.3 g/dL</td><td><span class="c-r">6.7 g/dL ↓↓</span></td><td>进行性贫血（10.3→8.1→6.7）</td></tr>
+<tr><td>PLT</td><td>—</td><td><span class="c-r" style="font-size:14px">42 K/μL ↓↓↓</span></td><td>极重度血小板减少</td></tr>
+<tr><td>CRP</td><td><span class="c-r">20.1 mg/L ↑</span></td><td>—</td><td>炎症标志物升高</td></tr>
+<tr><td>ALT</td><td>141→264 U/L ↑</td><td>—</td><td>转氨酶升高并恶化</td></tr>
+<tr><td>AST</td><td>637→<span class="c-r">1,363 U/L ↑↑</span></td><td>—</td><td>极显著升高</td></tr>
+<tr><td>CPK</td><td><span class="c-r">11,799 U/L ↑↑↑</span></td><td>—</td><td>肌酶极显著升高</td></tr>
+<tr><td>LDH</td><td><span class="c-r">&gt;6,000 U/L ↑↑↑</span></td><td>—</td><td>极显著升高</td></tr>
+<tr><td>铁蛋白</td><td>17,400 ng/mL ↑↑</td><td><span class="c-r" style="font-size:14px">28,650 ng/mL ↑↑↑</span></td><td>峰值极度升高（MAS标志）</td></tr>
+<tr><td>甘油三酯</td><td><span class="c-r">245 mg/dL ↑</span></td><td>—</td><td>升高</td></tr>
+<tr><td>纤维蛋白原</td><td>—</td><td><span class="c-r">64 mg/dL ↓↓</span></td><td>消耗性下降（参考&gt;150）</td></tr>
+<tr><td>白蛋白</td><td><span class="c-r">2.3 g/dL ↓</span></td><td>—</td><td>低白蛋白血症</td></tr>
+<tr><td>肌钙蛋白</td><td>—</td><td><span class="c-r">151 ng/L ↑↑</span></td><td>心肌受累</td></tr>
+<tr><td>PT</td><td><span class="c-r">18.4 s ↑</span></td><td>—</td><td>凝血异常</td></tr>
+<tr><td>PTT</td><td><span class="c-r">56.9 s ↑↑</span></td><td>—</td><td>凝血异常</td></tr>
+<tr><td>INR</td><td><span class="c-r">1.79 ↑</span></td><td>—</td><td>凝血障碍</td></tr>
+<tr><td>COVID PCR</td><td>阴性</td><td>—</td><td>排除COVID</td></tr>
+<tr><td>COVID IgG</td><td>4.26（既往感染）</td><td>—</td><td>过去感染证据</td></tr>
+<tr><td>呼吸道病原体</td><td>阴性</td><td>—</td><td>排除常见呼吸道感染</td></tr>
+<tr><td>EBV/CMV</td><td>阴性</td><td>—</td><td>排除EBV/CMV感染</td></tr>
+<tr><td>血培养</td><td>阴性</td><td>—</td><td>排除败血症</td></tr>
+<tr><td>骨髓活检</td><td>—</td><td><span class="c-r">噬血细胞现象</span></td><td>确诊MAS关键证据</td></tr>
+<tr><td>ANA</td><td>1:160</td><td>—</td><td>阳性</td></tr>
+<tr><td>anti-SSA</td><td><span class="c-r">55.8 AAU/mL ↑</span></td><td>—</td><td>干燥病标志（参考0-24.9）</td></tr>
+<tr><td>腮腺MRI</td><td>双侧腮腺多发囊性病变</td><td>—</td><td>干燥病影像学证据</td></tr>
+<tr><td>先天性HLH基因panel</td><td>阴性</td><td>—</td><td>排除原发性HLH</td></tr>
+<tr><td>唇腺活检（出院后）</td><td>淋巴细胞结节性聚集+导管上皮局灶浸润</td><td>—</td><td>确诊干燥病</td></tr>
+</table>
+<div class="note"><b>影像学：</b>胸部X线示双侧胸腔积液。脑部MRI示幕上/幕下脑萎缩+脑桥点状微出血（继发于凝血病）。腮腺MRI示双侧腮腺多发囊性病变→提示干燥病（偶然发现）。</div>
+
+<div class="sh ">🧬 发病机制与免疫病理</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<p><b>MAS的病理生理机制</b></p>
+<p>MAS是一种严重的超炎症状态，属于噬血细胞性淋巴组织细胞增多症（HLH）谱系。其本质是免疫系统的过度激活导致的细胞因子风暴，可进展为多器官功能障碍综合征（MODS）。原文指出："MAS is a subset of secondary HLH triggered by autoimmune conditions that manifests as a severe inflammatory response known as a cytokine storm, often progressing to multisystem organ failure." 诊断依据包括持续发热、高铁蛋白血症、转氨酶升高、血细胞减少、类似DIC的凝血病和神经系统后遗症。</p>
+<p><b>MAS最常并发于sJIA，但也可继发于其他风湿免疫病</b></p>
+<p>约10%的sJIA患者发生暴发性MAS，亚临床MAS可见于30-40%的sJIA儿童（原文引用）。2016 MAS诊断标准仅适用于sJIA背景，在其他风湿免疫病中缺乏验证的诊断标准。本例为文献中<b>首例</b>儿童干燥病以MAS为首发表现的病例。</p>
+<p><b>儿童干燥病的特殊性</b></p>
+<p>成人干燥病以口干（xerostomia）和眼干（xerophthalmia）为典型表现，但这些症状在儿童中很少见，常导致诊断延迟（原文: "Sjogren's disease characteristically presents in adults with sicca manifestations; however, these symptoms are scarce in the pediatric population, often leading to delayed diagnosis"）。儿童干燥病常以反复腮腺炎、发热、淋巴结肿大和关节炎等非特异性表现为首发。目前尚无经儿科人群验证的分类标准。</p>
+<p><b>本例机制：干燥病炎症→巨噬细胞活化→细胞因子风暴</b></p>
+<p>本例8岁女童以高热、关节痛、肌痛起病，无口干眼干。铁蛋白峰值达28,650 ng/mL，骨髓活检证实噬血细胞现象。干燥病的自身免疫性炎症（自身抗体产生、淋巴细胞浸润）可能通过持续抗原刺激触发巨噬细胞异常活化，最终导致细胞因子风暴和多器官受累。</p>
+</div>
+
+<div class="sh green">✅ 诊断</div>
+<table><tr><th>标准名称</th><th>作者/年份/期刊</th><th>评分体系</th><th>逐条对照</th><th>本例符合情况</th></tr>
+<tr><td class="b" rowspan="10">    <div class="note" style="margin-bottom:6px;"><b>诊断标准对照</b>：以下列出pSS相关及HLH/MAS的诊断与分类标准，逐条对照本例。</div>
+    <table>
+      <tr><th>标准名称</th><th>作者/机构</th><th>年份</th><th>期刊</th><th>评分体系</th><th>逐条对照</th></tr>
+      <tr><td class="b">AECG pSS分类标准（2002）</td><td>Vitali C 等 / AECG</td><td>2002</td><td>Ann Rheum Dis</td><td>客观指标≥4条（不含口眼干主观症状）</td><td>
+        ① 唇腺活检ChisholmⅢ级 → <span class="c-g">✅ 淋巴细胞结节性聚集+导管上皮浸润</span><br>
+        ② 抗SSA/SSB阳性 → <span class="c-g">✅ anti-SSA 55.8 AAU/mL</span><br>
+        ③ 腮腺影像异常 → <span class="c-g">✅ MRI示双侧腮腺多发囊性病变</span><br>
+        ④ 唾液流率↓ → 未检测（-）<br>
+        ⑤ 泪腺受累 → 未检测（-）<br>
+        <b>满足3/6客观指标 → 分类为pSS ✅</b>
+      </td></tr>
+      <tr><td class="b">ACR/EULAR 2016 pSS分类标准</td><td>Shiboski CH 等 / ACR+EULAR</td><td>2017</td><td>Arthritis Rheumatol</td><td>加权评分≥4分（不含SSA/SSB项）</td><td>
+        ① 唇腺灶性指数≥1 → <span class="c-g">✅</span><br>
+        ② 抗SSA阳性 → <span class="c-g">✅</span><br>
+        ③ 角膜染色/泪液 ↓ → 未检测<br>
+        ④ 唾液流率/腮腺造影 → 未检测<br>
+        <b>满足2项核心标准 → 分类为pSS ✅</b>
+      </td></tr>
+      <tr><td class="b">HLH-2004诊断标准</td><td>Henter JI et al.</td><td>2007</td><td>Pediatr Blood Cancer</td><td>≥5/8条</td><td>
+        ① 发热 → <span class="c-g">✅</span> ② 脾大 → 未记录 ③ ≥2系血细胞减少 → <span class="c-g">✅</span><br>
+        ④ 骨髓噬血 → <span class="c-g">✅</span> ⑤ 铁蛋白≥500 → <span class="c-g">✅ 28,650</span><br>
+        ⑥ sCD25≥2400 → 未检测 ⑦ NK活性↓ → 未检测 ⑧ 纤维蛋白原↓ → <span class="c-g">✅ 64 mg/dL</span><br>
+        <b>满足5/8条 → 诊断HLH ✅</b>
+      </td></tr>
+      <tr><td class="b">2016 MAS分类标准（sJIA背景，参考）</td><td>Ravelli A 等</td><td>2016</td><td>Arthritis Rheumatol</td><td>铁蛋白>684 + ≥2项其他</td><td>
+        本例非sJIA背景，该标准不直接适用。<br>
+        但铁蛋白28,650远超阈值，结合血小板下降、纤维蛋白原↓、AST/ALT↑、骨髓噬血 → 临床符合MAS表现
+      </td></tr>
+    </table>
+HLH-2004诊断标准</td><td rowspan="10">Henter JI et al., 2007, <i>Pediatr Blood Cancer</i><br>DOI: 10.1002/pbc.21039<br>PMID: 16937360</td><td rowspan="10">满足≥5/8条即可诊断（分子诊断或临床标准A+B）</td><td>① 分子诊断（PRF1等基因突变）</td><td>— 未检测/阴性</td></tr>
+<tr><td>② 持续发热（≥7天，峰值≥38.5°C）</td><td><span class="c-g">✅ 符合</span>（T-max 40.0°C，HR 124-166 bpm）</td></tr>
+<tr><td>③ 脾脏肿大</td><td>【原文未明确提及】</td></tr>
+<tr><td>④ 血细胞减少≥2系（Hb&lt;90g/L，PLT&lt;100×10⁹/L，ANC&lt;1.0×10⁹/L）</td><td><span class="c-g">✅ 符合</span>（Hb最低6.7↓，PLT最低42↓）</td></tr>
+<tr><td>⑤ 铁蛋白≥500 ng/mL</td><td><span class="c-g">✅ 符合</span>（峰值28,650 ng/mL）</td></tr>
+<tr><td>⑥ sCD25（sIL-2R）≥2400 U/mL</td><td>【原文未提供】</td></tr>
+<tr><td>⑦ NK细胞活性降低或缺失</td><td>【原文未提供】</td></tr>
+<tr><td>⑧ 骨髓噬血细胞现象</td><td><span class="c-g">✅ 骨穿确认</span>（Day 7活检）</td></tr>
+<tr><td>⑨ 纤维蛋白原≤1.5 g/L（或TG≥265 mg/dL）</td><td><span class="c-g">✅ 符合</span>（纤维蛋白原64 mg/dL↓，TG 245 mg/dL↑，PT 18.4↑，PTT 56.9↑）</td></tr>
+<tr><td colspan="2" style="background:#e2f3dd"><b>结论：满足≥5/8条（发热+血细胞减少+铁蛋白+噬血+凝血病），符合HLH-2004。Day 6满足3条→Day 10满足5条（PLT降至88+噬血确认）。</b></td></tr>
+
+<tr><td class="b">2016 EULAR/ACR MAS分类标准</td><td>Ravelli A et al., 2016, <i>Ann Rheum Dis</i><br>DOI: 10.1136/annrheumdis-2015-208982</td><td>仅适用于sJIA背景</td><td colspan="2"><span class="c-r">⚠️ 不适用</span> — 基础病为干燥病，非sJIA</td></tr>
+<tr><td class="b">2016 ACR/EULAR pSS分类标准</td><td>Shiboski CH et al., 2017, <i>Arthritis Rheumatol</i><br>DOI: 10.1002/art.39859</td><td>权重评分≥4分。含：唇腺FS≥1、抗SSA/SSB、ANA、Schirmer等</td><td colspan="2"><span class="c-y">⚠️ 未经儿童验证</span> — 本例通过综合风湿免疫评估确诊</td></tr>
+</table>
+
+<div class="sh yellow">🔍 鉴别诊断</div>
+<div class="diff-box"><div class="diff-title">1. 多系统炎症综合征（MIS-C）/不完全川崎病</div>
+<b>相似点：</b>持续高热、CRP升高、多器官受累、唇皲裂、结膜充血。<b>鉴别要点：</b>①川崎病：超出好发年龄范围+仅满足2项体检标准+血小板下降趋势（川崎通常上升）+心脏超声正常→排除；②MIS-C：IVIG 80g无效+COVID PCR阴性+疾病进展不符合MIS-C自然病程→排除。原文明确指出此为最初误诊方向。</div>
+<div class="diff-box"><div class="diff-title">2. 感染相关HLH（败血症/DIC）</div>
+<b>相似点：</b>高热+凝血病+多器官衰竭+血细胞减少。<b>鉴别要点：</b>血培养持续阴性+呼吸道病原体/EBV/CMV均阴性+广谱抗生素无效+骨髓无感染证据+噬血细胞现象→排除感染为原发病因。</div>
+<div class="diff-box"><div class="diff-title">3. 原发性/家族性HLH</div>
+<b>相似点：</b>临床表现几乎完全重叠（噬血+铁蛋白极度升高）。<b>鉴别要点：</b>先天性HLH基因panel阴性→排除原发性HLH。但原文指出杂合突变在MAS中检出率高达40%。</div>
+<div class="diff-box"><div class="diff-title">4. 恶性肿瘤（白血病/淋巴瘤）</div>
+<b>相似点：</b>血细胞减少+肝脾受累+铁蛋白升高。<b>鉴别要点：</b>骨髓活检无肿瘤细胞+外周血涂片排除→排除恶性病因。</div>
+<div class="diff-box"><div class="diff-title">5. sJIA相关MAS vs 干燥病相关MAS</div>
+<b>关键鉴别：</b>关节炎/关节痛可出现在两者。本例anti-SSA 55.8 AAU/mL阳性+腮腺MRI多发囊性病变+唇腺活检证实干燥病→确诊为干燥病继发MAS，非sJIA。2016 MAS标准不适用（仅限sJIA背景）。</div>
+<div class="diff-box"><div class="diff-title">⚠️ 易错点：MAS不限于sJIA</div>MAS最常并发于sJIA（约10%暴发性，30-40%亚临床），但也可继发于其他风湿免疫病（SLE、干燥病等）。2016 MAS诊断标准仅适用于sJIA背景，在非sJIA背景下需使用HLH-2004标准。原文强调鉴别MODS、败血症休克、DIC和基础风湿病活动 flare（Lerkvaleekul B, 2018）。</div>
+
+<div class="sh green">💊 治疗方案</div>
+<table><tr><th>治疗阶段</th><th>药物/措施</th><th>剂量/方案</th><th>选择理由</th></tr>
+<tr><td class="b">入院初期（Day 1-2）</td><td>IV氨苄西林-舒巴坦</td><td>经验性抗感染</td><td>败血症排查中，重症感染不能排除</td></tr>
+<tr><td class="b">Day 3（疑MIS-C）</td><td>IVIG</td><td>80 g IV</td><td>初步疑诊MIS-C→IVIG治疗，但无效</td></tr>
+<tr><td class="b">Day 7后（确诊MAS）</td><td>阿那白滞素（Anakinra）</td><td><b>100 mg q6h IV/SC</b>（每日总量400 mg）</td><td>IL-1受体拮抗剂，MAS/HLH一线靶向治疗。5天内启动显著降低死亡率（Eloseily EM, 2020）</td></tr>
+<tr><td class="b">MAS抢救</td><td>IV甲泼尼龙冲击</td><td><b>1,000 mg/d IV ×3天</b>→维持60 mg/d口服至出院</td><td>MAS标准大剂量激素冲击，广谱抗炎</td></tr>
+<tr><td class="b">抗感染（Day 8）</td><td>IV头孢吡肟+万古霉素</td><td>×7天</td><td>氨苄西林-舒巴坦升级，感染尚未排除，培养持续阴性</td></tr>
+<tr><td class="b">支持治疗</td><td>输血+FFP</td><td>PRBC 1U + FFP 1U + 呋塞米20mg</td><td>Hb 8.1→6.7，PLT 114→42，凝血病需纠正</td></tr>
+<tr><td class="b">支持治疗</td><td>氧疗→高流量鼻导管</td><td>20L 100% FiO₂</td><td>呼吸恶化，双胸腔积液</td></tr>
+<tr><td class="b">出院维持</td><td>阿那白滞素（SC）</td><td>100 mg qd SC</td><td>MAS缓解后持续IL-1阻断</td></tr>
+<tr><td class="b">出院维持</td><td>口服泼尼松</td><td>60 mg qd</td><td>出院后缓慢减量</td></tr>
+<tr><td class="b">基础病治疗（3月后）</td><td>吗替麦考酚酯（MMF）</td><td>口服</td><td>干燥病维持治疗，预防MAS复发</td></tr>
+<tr><td class="b">基础病治疗（3月后）</td><td>羟氯喹（HCQ）</td><td>口服</td><td>干燥病基础用药</td></tr>
+</table>
+<div class="alert"><b>关键决策：</b>①入院初期疑MIS-C/不完全川崎→IVIG 80g无效→重新评估→铁蛋白峰值28,650→考虑MAS；②阿那白滞素100 mg q6h+甲泼尼龙1g/d×3天→显著改善；③腮腺MRI偶然发现腮腺炎→查anti-SSA→55.8 AAU/mL→确诊干燥病。MAS救治不依赖基础病诊断——先控制细胞因子风暴，再寻找病因。</div>
+
+<div class="sh ">📅 随访经过</div>
+<div class="timeline"><div class="t-item "><div class="t-date">入院前2周</div><div class="t-content">上呼吸道感染（咳嗽）→口服药物好转</div></div><div class="t-item "><div class="t-date">入院前1天</div><div class="t-content">诊断链球菌性咽炎→阿莫西林-克拉维酸</div></div><div class="t-item red"><div class="t-date">Day 1 入院</div><div class="t-content">发热7天+关节痛+肌痛→拒绝行走。T-max 40.0°C，HR 124-166 bpm。唇皲裂+结膜充血。疑MIS-C/川崎</div></div><div class="t-item yellow"><div class="t-date">Day 3</div><div class="t-content">IVIG 80g（疑MIS-C）→<span class="c-r">无效</span>，炎症指标持续上升</div></div><div class="t-item red"><div class="t-date">Day 4-6</div><div class="t-content">铁蛋白升至<span class="score-box high">28,650 ng/mL</span>，ALT 264，AST 1,363，CPK 11,799。出现鼻出血、牙龈出血、咯血（疑肺出血）。Hb 10.3→6.7，PLT 114→<span class="c-r">42</span>。输PRBC+FFP。肌钙蛋白151→心肌受累</div></div><div class="t-item red"><div class="t-date">Day 6-7</div><div class="t-content">凝血病确认（PT 18.4，PTT 56.9，INR 1.79）。Day 6满足HLH 3/8条（发热+低纤维蛋白原64 mg/dL+铁蛋白17,400）→<span class="c-r">PICU</span>。高流量鼻导管20L 100% FiO₂</div></div><div class="t-item "><div class="t-date">Day 7 骨穿</div><div class="t-content">骨髓噬血细胞现象→确诊MAS/HLH</div></div><div class="t-item green"><div class="t-date">Day 7后 MAS治疗启动</div><div class="t-content">阿那白滞素100 mg q6h + 甲泼尼龙1,000 mg/d IV ×3天→60 mg/d维持</div></div><div class="t-item yellow"><div class="t-date">Day 8</div><div class="t-content">抗生素升级：头孢吡肟+万古霉素×7天（培养持续阴性）</div></div><div class="t-item "><div class="t-date">Day 10</div><div class="t-content">PLT降至88→满足HLH 5/8条，正式诊断HLH</div></div><div class="t-item "><div class="t-date">Day 17</div><div class="t-content">脑MRI（新发头痛）：幕上/幕下脑萎缩+脑桥微出血。腮腺MRI→<span class="c-a">偶然发现双侧腮腺多发囊性病变</span></div></div><div class="t-item green"><div class="t-date">Day 23 出院</div><div class="t-content"><span class="c-g">临床显著改善</span>：发热消退+脱离氧疗+可下床活动。出院带药：阿那白滞素100 mg/d SC + 泼尼松60 mg/d口服（门诊缓慢减量）</div></div><div class="t-item green"><div class="t-date">出院后</div><div class="t-content">唇腺活检→确诊干燥病（淋巴细胞结节性聚集+导管上皮局灶浸润）</div></div><div class="t-item green"><div class="t-date">出院后3个月</div><div class="t-content">转换为干燥病维持治疗：<span class="c-g">吗替麦考酚酯+羟氯喹</span>。激素相关高血压→停激素后缓解</div></div><div class="t-item green"><div class="t-date">随访18个月</div><div class="t-content"><span class="c-g">MAS无复发，干燥病持续治疗中</span></div></div></div>
+
+<div class="sh ">💡 疑难剖析</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+<div class="diff-box"><div class="diff-title">决策一：不明原因发热+多器官受累——如何快速锁定MAS？</div>
+<b>临床情境：</b>8岁女童，高热7天+关节痛+肌痛，IVIG无效，铁蛋白飙升至28,650 ng/mL，出现凝血病和呼吸衰竭。<br><b>决策路径：</b>持续发热+IVIG无效→查铁蛋白→28,650 ng/mL（极度升高）→立即评估HLH/MAS→骨髓活检证实噬血细胞现象→确诊MAS。同时进行风湿免疫评估→确诊原发性干燥病。<br><b>关键决策点：</b>对IVIG无效的高热儿童应高度怀疑MAS/HLH，铁蛋白极度升高是重要线索。早期识别至关重要，延迟治疗死亡率高达8-23%。</div>
+
+<div class="diff-box"><div class="diff-title">决策二：非sJIA背景下——使用哪种MAS诊断标准？</div>
+<b>临床情境：</b>本例MAS继发于干燥病，而非最常见的sJIA。<br><b>决策路径：</b>2016 MAS标准仅适用于sJIA背景→本例不适用→采用HLH-2004标准（8条中满足≥5条即可）。本例满足：发热+血细胞减少+铁蛋白≥500+噬血细胞现象+凝血病。MAS本质为继发性HLH，不同基础病共享相同的细胞因子风暴机制，治疗原则一致。<br><b>关键决策点：</b>不要因非sJIA背景而延迟MAS诊断和治疗。HLH-2004标准适用于所有继发性HLH。</div>
+
+<div class="diff-box"><div class="diff-title">决策三：MAS背后——如何发现隐藏的基础病？</div>
+<b>临床情境：</b>患儿无口干、眼干、腮腺肿大等干燥病典型症状，MAS为干燥病的首发表现。<br><b>决策路径：</b>确诊MAS后→积极寻找触发因素→风湿免疫血清学评估→确诊原发性干燥病。儿童干燥病常缺乏sicca症状（原文: "these symptoms are scarce in the pediatric population"），以腺体外表现为首发。本例为文献中首例儿童干燥病以MAS首发的病例。<br><b>关键决策点：</b>MAS救治的同时必须寻找基础病，自身免疫病是继发性HLH的重要病因。</div>
+
+<div class="diff-box"><div class="diff-title">决策四：MAS的治疗策略选择</div>
+<b>临床情境：</b>确诊MAS后需快速启动免疫抑制治疗。<br><b>决策路径：</b>阿那白滞素（IL-1受体拮抗剂）+皮质类固醇作为初始治疗→反应良好。阿那白滞素在sJIA-MAS和继发性MAS中均有成功报道。必要时可加用环孢素A（HLH-2004方案）。同时需启动针对基础病（干燥病）的治疗以预防MAS复发。<br><b>关键决策点：</b>MAS治疗不依赖基础病类型——细胞因子风暴的阻断策略是通用的。</div>
+</div>
+
+<div class="sh green">📚 病例要点总结</div>
+<div style="font-size:12px; line-height:1.8; margin:4px 0;">
+  <b>1. 诊断要点</b><br>
+  ① 儿童干燥病常缺乏口干/眼干症状，以非特异性表现（发热、关节痛、反复腮腺炎）首发<br>
+  ② MAS可继发于多种风湿免疫病，非限于sJIA；儿童干燥病并发MAS为本例首例报道<br>
+  ③ 不明原因高热+IVIG无效→立即查铁蛋白→极度升高→考虑MAS/HLH<br>
+  ④ 腮腺影像学可为干燥病提供意外诊断线索（本例MRI偶然发现）<br><br>
+  <b>2. 治疗策略</b><br>
+  ⑤ 阿那白滞素100 mg q6h + 甲泼尼龙1 g/d×3天为MAS抢救方案<br>
+  ⑥ IVIG对MAS无效（本例IVIG 80g后持续恶化）<br>
+  ⑦ MAS救治不依赖基础病诊断——先控制细胞因子风暴，再寻找病因<br>
+  ⑧ 出院后3个月转为干燥病维持治疗（MMF+HCQ），预防MAS复发<br><br>
+  <b>3. 监测要点</b><br>
+  ⑨ 铁蛋白动态监测（本例峰值28,650）<br>
+  ⑩ 多器官功能评估（心肌肌钙蛋白、凝血、呼吸、CNS）<br><br>
+  <b>4. 预后</b><br>
+  ⑪ 本例随访18个月MAS无复发<br>
+  ⑫ 长期未治疗的干燥病可增加淋巴瘤和甲状腺癌风险
+</div>
+
+<div class="sh ">📖 参考文献</div>
+<div style="font-size:11px;color:#888;margin:4px 0;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41439070/" target="_blank">PMID 41439070</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12719546/" target="_blank">PMC12719546</a></div>
+<div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+  <div style="margin-bottom:3px;">本文数据来源于 <a href="https://pubmed.ncbi.nlm.nih.gov/41439070/" target="_blank">PMID 41439070</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12719546/" target="_blank">PMC12719546</a></div>
+  <ol style="padding-left:18px;">
+  <li>Dahan E, Cooley A, Ridgeway K, Fathalla B, Husien T. Not Just Sjögren's: A Rare Life-Threatening Manifestation in a Pediatric Patient. <i>Cureus</i>. 2025;17(11):e97434. PMID: 41439070.</li>
+  <li>Randell RL, Lieberman SM. Unique Aspects of Pediatric Sjögren Disease. <i>Rheum Dis Clin North Am</i>. 2021;47(4):707-723. PMID: 34635300.</li>
+  <li>Shiboski CH, et al. 2016 ACR/EULAR Classification Criteria for Primary Sjögren's Syndrome. <i>Arthritis Rheumatol</i>. 2017;69(1):35-45. PMID: 27785888.</li>
+  <li>Lerkvaleekul B, Vilaiyuk S. Macrophage Activation Syndrome: Early Diagnosis Is Key. <i>Open Access Rheumatol</i>. 2018;10:117-128. PMID: 30214327.</li>
+  <li>Crayne C, Cron RQ. Pediatric Macrophage Activation Syndrome, Recognizing the Tip of the Iceberg. <i>Eur J Rheumatol</i>. 2020;7(1):0-20. PMID: 31804174.</li>
+  <li>Ravelli A, et al. 2016 Classification Criteria for MAS Complicating sJIA. <i>Ann Rheum Dis</i>. 2016;75(3):481-489. PMID: 26865703.</li>
+  <li>Henter JI, et al. HLH-2004: Diagnostic and Therapeutic Guidelines for HLH. <i>Pediatr Blood Cancer</i>. 2007;48(2):124-131. PMID: 16937360.</li>
+  <li>Eloseily EM, et al. Benefit of Anakinra in Treating Pediatric Secondary HLH. <i>Arthritis Rheumatol</i>. 2020;72(2):326-334. PMID: 31513353.</li>
+  <li>Batu ED, et al. Macrophage Activation Syndrome in Pediatric Sjögren's Syndrome. <i>Semin Arthritis Rheum</i>. 2022;53:151977. PMID: 35182962.</li>
+  <li>Atteritano M, et al. Haemophagocytic Syndrome in Rheumatic Patients: A Systematic Review. <i>Eur Rev Med Pharmacol Sci</i>. 2012;16(10):1414-1424. PMID: 23104659.</li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="footer">
+    循证病例库 · 数据来源于PubMed/PMC公开文献 · 仅供学术参考 · 不构成诊疗建议
+  </div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+<div style="margin-top:20px;padding:10px 15px;background:rgba(255,107,107,0.08);border-left:3px solid #ff6b6b;border-radius:4px;font-size:11px;color:#888;">
+<b>⚠️ 免责声明</b>：本病例仅供医学教学与学习交流使用，不构成任何诊疗建议。实际临床决策请遵循最新指南并结合患者具体情况。病例中数据来源于已发表文献，已尽可能还原原文信息。
+</div>
+</body>
+</html>
