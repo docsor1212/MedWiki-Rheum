@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jSSc — 幼年系统性硬化症</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#7c3aed; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#ede5fc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#7c3aed; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#7c3aed; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--accent-bg); color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.red-hd { background:#fce5e1; color:var(--red); }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:var(--accent-bg); border:1.5px solid var(--accent); }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:var(--accent); }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#7c3aed;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#7c3aed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">jSSc · 幼年系统性硬化症</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>jSSc — 幼年系统性硬化症</h1>
+    <div class="sub">皮肤纤维化+内脏受累 · 雷诺现象 · 抗Scl-70/着丝点抗体</div>
+  </div>
+  <div class="meta">
+    患病率 3–5/百万儿童<br>
+    女 > 男<br>
+    局限型为主
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 分类标准 -->
+<div class="sh">🏷️ 分类标准 — 2013 ACR/EULAR</div>
+<table>
+<tr><th>项目</th><th>标准</th><th>说明</th></tr>
+<tr><td class="b c-a">皮肤增厚</td><td>掌指关节近端皮肤增厚</td><td><span class="tag t-r">充分标准，即确诊</span></td></tr>
+<tr><td class="b">指尖病变</td><td>指尖溃疡 / 指尖凹陷性瘢痕</td><td>2分 / 3分</td></tr>
+<tr><td class="b">毛细血管扩张</td><td>计数≥1处</td><td>2分</td></tr>
+<tr><td class="b">甲襞微血管异常</td><td>巨大毛细血管 / 无血管区</td><td>2分</td></tr>
+<tr><td class="b">肺动脉高压</td><td>超声 + 右心导管</td><td>2分</td></tr>
+<tr><td class="b">间质性肺病</td><td>HRCT / 肺功能</td><td>2分</td></tr>
+<tr><td class="b">雷诺现象</td><td>发作性指端苍白-发绀-潮红</td><td>3分</td></tr>
+<tr><td class="b c-y">自身抗体</td><td>抗Scl-70(拓扑异构酶I) / 抗着丝点</td><td>3分</td></tr>
+</table>
+<div class="note"><b>总分≥9分可确诊SSc</b>（PMID: 24092682）。<span class="c-y b">儿童特异性：</span>jSSc以局限型为主，内脏受累少于成人，但肺间质病变仍需定期筛查。mRSS（改良Rodnan皮肤评分）用于评估皮肤受累程度。</div>
+
+<!-- 鉴别诊断 -->
+<div class="sh yellow">⚖️ 鉴别诊断</div>
+<table>
+<tr><th class="yellow-hd">疾病</th><th class="yellow-hd">鉴别要点</th></tr>
+<tr><td class="c-y b">硬肿病</td><td>无雷诺现象、无指端溃疡、无内脏纤维化、无特异性自身抗体</td></tr>
+<tr><td class="c-y b">嗜酸性筋膜炎</td><td>四肢对称性肿胀硬化、外周血嗜酸细胞↑、无雷诺现象、无内脏受累</td></tr>
+<tr><td class="c-y b">移植物抗宿主病</td><td>移植史、皮肤活检鉴别</td></tr>
+<tr><td class="c-y b">线状硬皮病（局限性）</td><td>线状分布、PARRY-ROMBERG综合征、不累及内脏</td></tr>
+<tr><td class="c-y b">MCTD</td><td>高滴度抗U1-RNP、SLE/SSc/PM重叠特征</td></tr>
+</table>
+
+<div class="g2">
+
+<!-- 检查 -->
+<div>
+<div class="sh yellow">🔍 推荐检查</div>
+<table>
+<tr><th style="background:var(--accent-bg);">项目</th><th style="background:var(--accent-bg);">内容</th></tr>
+<tr><td class="c-a b">必做</td><td>ANA + <span class="c-a b">抗Scl-70</span> + <span class="c-a b">抗着丝点抗体</span><br>CBC + CRP + ESR + 肝肾功 + 尿常规<br><span class="c-a b">甲襞毛细血管镜</span><br>mRSS皮肤评分</td></tr>
+<tr class="hl-red"><td class="c-r b">肺评估</td><td><span class="c-r b">HRCT</span> + 肺功能(DLCO) + 6分钟步行<br>→ 基线 + 每6-12m复查</td></tr>
+<tr class="hl-yellow"><td class="c-y b">心脏评估</td><td>心脏超声（肺动脉压）+ ECG + BNP<br>→ 筛查<span class="c-r b">肺动脉高压</span></td></tr>
+<tr><td class="c-a b">消化道</td><td>食管钡餐/测压（动力障碍）</td></tr>
+</table>
+</div>
+
+<!-- 随访+预后 -->
+<div>
+<div class="sh green">📅 随访 & 预后</div>
+<table>
+<tr><th class="green-hd">项目</th><th class="green-hd">频率</th><th class="green-hd">核心</th></tr>
+<tr><td>活动期</td><td>q1-3m</td><td>mRSS + <span class="c-r b">肺功能</span> + 心超</td></tr>
+<tr><td>稳定期</td><td>q3-6m</td><td>同上</td></tr>
+<tr class="hl-red"><td class="c-r b">肺动脉高压筛查</td><td class="c-r b">每年</td><td class="c-r b">心超 + BNP + DLCO</td></tr>
+<tr><td>肾功能</td><td>q3-6m</td><td>血压 + 尿常规 + 肌酐</td></tr>
+</table>
+<table style="margin-top:5px;">
+<tr><th class="yellow-hd">预后</th><th class="yellow-hd">要点</th></tr>
+<tr class="hl-green"><td class="c-g b">儿童预后</td><td>10年生存率 <span class="c-g b">>90%</span>，优于成人</td></tr>
+<tr><td>局限型</td><td>预后较好，内脏受累少</td></tr>
+<tr class="hl-yellow"><td class="c-y b">弥漫型</td><td>肺纤维化 + 肾危象风险需密切监测</td></tr>
+<tr class="hl-red"><td class="c-r b">预后不良因素</td><td>抗Scl-70阳性、弥漫型、肺间质病变进展</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 分层治疗</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">一线 · MTX</div>
+    <span class="c-a b">甲氨蝶呤</span> 10-15mg/m² qw SC<br>
+    + 叶酸 5mg/周<br>
+    <span class="tag t-a">皮肤受累首选</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">二线 · MMF/RTX</div>
+    <span class="c-r b">吗替麦考酚酯</span> 600mg/m² bid<br>
+    <span class="c-r b">利妥昔单抗</span> 375mg/m² qw×4 或 1g d1,d15<br>
+    <span class="tag t-r">MTX无效时</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">靶向 · 肺纤维化/PAH</div>
+    <span class="c-g b">托珠单抗</span> 8-12mg/kg q4w<br>
+    <span class="c-g b">尼达尼布</span> 150mg bid（成人剂量参考）<br>
+    <span class="c-g b">波生坦</span> 62.5mg bid（PAH）
+  </div>
+</div>
+
+<div class="path">
+  <b class="c-y">⚡ 雷诺现象 / 血管治疗：</b>
+  <span class="node">保暖 + 避免寒冷刺激</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--accent);font-weight:700;color:var(--accent);">硝苯地平 0.5-1mg/kg/d（CCB首选）</span><span class="arr">→</span>
+  <span class="node">波生坦（指端溃疡+PAH）</span><span class="arr">→</span>
+  <span class="node">PGE₁ / 伊洛前列素（重症）</span>
+</div>
+
+<div class="note"><b>糖皮质激素：</b>甲泼尼龙 1-2mg/kg/d（活动期/内脏受累时），快速减量。⚠️ 硬皮病肾危象可能与激素相关，需密切监测血压和肾功能。</div>
+
+<!-- 发病机制 -->
+<div class="sh yellow">🧬 发病机制</div>
+<div class="path">
+  <span class="c-y b">三联机制：</span>
+  <span class="node">血管内皮损伤</span><span class="arr">→</span>
+  <span class="node">免疫激活（T细胞/Th2/B细胞）</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">成纤维细胞活化 → 胶原过度沉积（纤维化）</span><br>
+  <b class="c-y">关键通路：</b>TGF-β / IL-6 / IL-13 / PDGF → 胶原合成↑、基质金属蛋白酶↓ → 皮肤和内脏进行性纤维化
+</div>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>突发高血压 + 急性肾损伤</b> → <span class="c-r b">硬皮病肾危象</span>（ACEI紧急降压）</li>
+    <li><b>进行性呼吸困难 + DLCO↓</b> → 肺间质病变快速进展，HRCT评估</li>
+    <li><b>指端坏疽/严重溃疡</b> → 血管扩张剂静脉输注</li>
+    <li><b>右心衰竭征象</b> → 肺动脉高压危象，紧急心超</li>
+  </ul>
+</div>
+
+<!-- 参考文献 -->
+<div class="sh">📚 参考文献</div>
+<table>
+<tr><th>PMID</th><th>内容</th></tr>
+<tr><td class="c-a b">24092682</td><td>van den Hoogen F, et al. 2013 ACR/EULAR classification criteria for SSc. <i>Arthritis Rheum</i> 2013</td></tr>
+<tr><td class="c-a b">28613409</td><td>Zulian F, et al. Juvenile systemic sclerosis: state of the art. <i>Pediatr Rheumatol Online J</i> 2017</td></tr>
+<tr><td class="c-a b">30257865</td><td>Romano E, et al. Clinical features and prognosis of juvenile systemic sclerosis. <i>Rheumatology</i> 2018</td></tr>
+<tr><td class="c-a b">33264351</td><td>Foeldvari I, et al. Updated treatment recommendations for juvenile SSc. <i>Pediatr Drugs</i> 2020</td></tr>
+</table>
+
+</div><!-- body -->
+
+<div class="footer">
+  jSSc — 幼年系统性硬化症 · 2013 ACR/EULAR分类标准 · 内容仅供学术参考，不构成临床诊疗建议
+</div>
+
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

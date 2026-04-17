@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Behcet — 白塞病</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#d05040; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#fce5e1; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:#d05040; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#d05040; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.green { background:var(--green); }
+.sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.f { grid-column:1/-1; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:var(--accent-bg); color:var(--accent); font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
+th.green-hd { background:#e2f3dd; color:var(--green); }
+th.yellow-hd { background:#faf3dc; color:var(--yellow); }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+tr.hl-green td { background:#e2f3dd; }
+tr.hl-red td { background:#fce5e1; }
+tr.hl-yellow td { background:#faf3dc; }
+.b { font-weight:700; }
+.c-a { color:var(--accent); }
+.c-r { color:var(--red); }
+.c-g { color:var(--green); }
+.c-y { color:var(--yellow); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); }
+.t-r { background:var(--red-bg); color:var(--red); }
+.t-y { background:var(--yellow-bg); color:var(--yellow); }
+.t-o { background:var(--orange-bg); color:#b45309; }
+.t-a { background:var(--accent-bg); color:var(--accent); }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.alert ul { margin-left:14px; }
+.alert li { margin:1px 0; }
+.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
+.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
+.path .arr { color:var(--yellow); font-weight:700; }
+.steps { display:flex; gap:6px; margin:4px 0; }
+.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
+.stp.s1 { background:var(--accent-bg); border:1.5px solid var(--accent); }
+.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
+.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
+.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
+.stp.s1 .stp-label { color:var(--accent); }
+.stp.s2 .stp-label { color:var(--red); }
+.stp.s3 .stp-label { color:var(--green); }
+.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} .sh{font-size:0.72rem;} .alert,.note{font-size:10.5px;} }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#d05040;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:'Noto Sans SC',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+body{padding-top:42px !important;}
+</style>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#d05040">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MedWiki">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">Behcet · 白塞病</span></div>
+<div class="wrap">
+
+<div class="header">
+  <div>
+    <h1>Behcet — 白塞病</h1>
+    <div class="sub">复发性口腔溃疡+生殖器溃疡+眼炎 · HLA-B51相关</div>
+  </div>
+  <div class="meta">
+    丝绸之路沿线高发<br>
+    土耳其/日本/地中海<br>
+    儿童占3-5%
+  </div>
+</div>
+
+<div class="body">
+
+<!-- 分类标准 -->
+<div class="sh">🏷️ 分类标准 — ICBD 2014</div>
+<table>
+<tr><th>项目</th><th>标准</th><th>分值</th></tr>
+<tr class="hl-red"><td class="c-r b">口腔溃疡</td><td>复发性阿弗他溃疡（≥3次/年）</td><td>2分</td></tr>
+<tr class="hl-red"><td class="c-r b">生殖器溃疡</td><td>复发性生殖器溃疡/瘢痕</td><td>2分</td></tr>
+<tr class="hl-red"><td class="c-r b">眼损害</td><td>前/后葡萄膜炎、视网膜血管炎</td><td>2分</td></tr>
+<tr><td>皮肤损害</td><td>结节性红斑、毛囊炎、针刺反应</td><td>1分（每项）</td></tr>
+<tr><td>血管表现</td><td>静脉血栓、动脉瘤、动脉血栓</td><td>1分</td></tr>
+<tr><td>神经表现</td><td>脑实质受累/非实质性（静脉窦血栓）</td><td>1分</td></tr>
+</table>
+<div class="note"><b>ICBD 2014：≥4分确诊</b>（PMID: 24412196）。针刺反应为可选项。<span class="c-r b">儿童特点：</span>以口腔/生殖器溃疡为主，眼炎比例低于成人但后果更严重，需定期眼科筛查。</div>
+
+<!-- 鉴别诊断 -->
+<div class="sh yellow">⚖️ 鉴别诊断</div>
+<table>
+<tr><th class="yellow-hd">疾病</th><th class="yellow-hd">鉴别要点</th></tr>
+<tr><td class="c-y b">炎症性肠病</td><td>口腔溃疡+肠道症状，结肠镜+病理鉴别，BD无纵向溃疡</td></tr>
+<tr><td class="c-y b">SLE</td><td>口腔溃疡+ANA/抗dsDNA阳性，补体↓，BD无自身抗体</td></tr>
+<tr><td class="c-y b">疱疹性口炎</td><td>病毒检测阳性，不伴生殖器溃疡+眼炎</td></tr>
+<tr><td class="c-y b">Reiter综合征</td><td>关节炎+尿道炎+结膜炎，HLA-B27相关</td></tr>
+<tr><td class="c-y b">PFAPA综合征</td><td>儿童周期性发热+阿弗他溃疡+淋巴结炎，无生殖器溃疡/眼炎</td></tr>
+</table>
+
+<div class="g2">
+
+<!-- 检查 -->
+<div>
+<div class="sh yellow">🔍 推荐检查</div>
+<table>
+<tr><th style="background:var(--accent-bg);">项目</th><th style="background:var(--accent-bg);">内容</th></tr>
+<tr><td class="c-a b">必做</td><td>CBC + CRP + ESR + 肝肾功<br><span class="c-a b">HLA-B51</span><br>针刺反应试验<br>眼底检查 + 荧光造影</td></tr>
+<tr class="hl-red"><td class="c-r b">眼科</td><td><span class="c-r b">裂隙灯</span> + 眼底荧光造影<br>→ 每3-6m复查</td></tr>
+<tr class="hl-yellow"><td class="c-y b">血管评估</td><td>血管超声/MRA/CTA<br>→ 筛查静脉血栓及动脉瘤</td></tr>
+<tr><td class="c-a b">神经</td><td>头颅MRI + MRV（有神经症状时）</td></tr>
+</table>
+</div>
+
+<!-- 随访+预后 -->
+<div>
+<div class="sh green">📅 随访 & 预后</div>
+<table>
+<tr><th class="green-hd">项目</th><th class="green-hd">频率</th><th class="green-hd">核心</th></tr>
+<tr><td>活动期</td><td>q2-4w</td><td>溃疡评估 + <span class="c-r b">眼科</span> + CRP</td></tr>
+<tr><td>稳定期</td><td>q3-6m</td><td>同上</td></tr>
+<tr class="hl-red"><td class="c-r b">眼炎患者</td><td class="c-r b">每1-3m</td><td class="c-r b">裂隙灯+视力+眼底</td></tr>
+<tr><td>血管受累</td><td>q3-6m</td><td>血管影像学复查</td></tr>
+</table>
+<table style="margin-top:5px;">
+<tr><th class="yellow-hd">预后</th><th class="yellow-hd">要点</th></tr>
+<tr class="hl-green"><td class="c-g b">总体</td><td>多数预后良好，病死率低</td></tr>
+<tr class="hl-red"><td class="c-r b">眼炎</td><td><span class="c-r b">反复发作可致盲</span>，需积极控制</td></tr>
+<tr class="hl-red"><td class="c-r b">大血管</td><td>肺动脉瘤破裂<span class="c-r b">可致死</span></td></tr>
+<tr><td>神经系统</td><td>脑实质受累预后较差</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- 治疗 -->
+<div class="sh">💊 分层治疗</div>
+<div class="steps">
+  <div class="stp s1">
+    <div class="stp-label">口腔/生殖器溃疡</div>
+    <span class="c-a b">秋水仙碱</span> 0.5-1mg/d（儿童0.5mg）<br>
+    局部激素漱口/外用<br>
+    <span class="tag t-a">一线首选</span>
+  </div>
+  <div class="stp s2">
+    <div class="stp-label">脏器受累</div>
+    <span class="c-r b">泼尼松</span> 1mg/kg/d +<br>
+    <span class="c-r b">AZA</span> 2-2.5mg/kg/d 或<br>
+    <span class="c-r b">环磷酰胺</span>（重症）<br>
+    <span class="tag t-r">激素+免疫抑制</span>
+  </div>
+  <div class="stp s3">
+    <div class="stp-label">眼炎/难治性</div>
+    <span class="c-g b">阿达木单抗</span> 20-40mg q2w<br>
+    <span class="c-g b">IFN-α</span> 3-6百万IU tiw<br>
+    <span class="tag t-g">生物制剂</span>
+  </div>
+</div>
+
+<div class="path">
+  <b class="c-r">⚡ 血管受累（静脉血栓/动脉瘤）：</b>
+  <span class="node">激素 + 免疫抑制剂（CYC/AZA）</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">抗凝治疗（排除肺动脉瘤后）</span><span class="arr">→</span>
+  <span class="node">难治性：TNF-α抑制剂</span><br>
+  <span class="c-r b">⚠️ 肺动脉瘤为抗凝禁忌</span>（出血风险），以免疫抑制为主
+</div>
+
+<div class="note"><b>肠道白塞：</b>5-ASA + 激素 → AZA/MTX维持。手术仅限穿孔/大出血，术后复发率高。</div>
+
+<!-- 发病机制 -->
+<div class="sh yellow">🧬 发病机制</div>
+<div class="path">
+  <span class="c-y b">HLA-B51相关 + 中性粒细胞功能亢进：</span>
+  <span class="node">遗传易感（HLA-B51）</span><span class="arr">→</span>
+  <span class="node">中性粒细胞/Th17活化</span><span class="arr">→</span>
+  <span class="node" style="border-color:var(--red);font-weight:700;color:var(--red);">血管内皮损伤 + 血管炎</span><span class="arr">→</span>
+  <span class="node">高凝状态 → 血栓/动脉瘤</span><br>
+  <b class="c-y">关键通路：</b>IL-17 / IL-1β / TNF-α → 中性粒细胞趋化增强 → 针刺反应阳性
+</div>
+
+<!-- 警示 -->
+<div class="sh red">🔴 紧急警示</div>
+<div class="alert">
+  <ul>
+    <li><b>突发视力↓/眼红痛畏光</b> → <span class="c-r b">紧急眼科</span>（眼炎急性发作，可致盲）</li>
+    <li><b>咯血+胸痛</b> → <span class="c-r b">肺动脉瘤破裂可能</span>，CTA紧急评估</li>
+    <li><b>肢体肿胀+呼吸困难</b> → 大血管血栓/肺栓塞，血管超声+CTPA</li>
+    <li><b>头痛+意识障碍</b> → 神经白塞/静脉窦血栓，头颅MRI+MRV</li>
+  </ul>
+</div>
+
+<!-- 参考文献 -->
+<div class="sh">📚 参考文献</div>
+<table>
+<tr><th>PMID</th><th>内容</th></tr>
+<tr><td class="c-a b">24412196</td><td>International Team for the Revision of ISG. ICBD 2014 criteria. <i>Ann Rheum Dis</i> 2014</td></tr>
+<tr><td class="c-a b">29961529</td><td>Hatemi G, et al. EULAR recommendations for Behcet's syndrome. <i>Ann Rheum Dis</i> 2018</td></tr>
+<tr><td class="c-a b">28407176</td><td>Zeidan MJ, et al. Behcet's disease in children. <i>Rheumatol Int</i> 2017</td></tr>
+<tr><td class="c-a b">29279348</td><td>Conj N, et al. Paediatric Behcet's disease: clinical features and management. <i>Pediatr Drugs</i> 2017</td></tr>
+</table>
+
+</div><!-- body -->
+
+<div class="footer">
+  Behcet — 白塞病 · ICBD 2014分类标准 · 内容仅供学术参考，不构成临床诊疗建议
+</div>
+
+</div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+</script>
+</body>
+</html>
