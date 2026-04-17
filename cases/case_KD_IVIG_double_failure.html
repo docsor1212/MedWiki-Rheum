@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：IVIG双重无反应川崎病</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.note { font-size:11px; color:var(--text2); margin:4px 0; padding:6px 10px; background:#f8f6f2; border-radius:5px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.mech-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #f59e0b33; border-left: 4px solid #d97706; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.mech-box .mech-title { font-size: 12.5px; font-weight: 700; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.mech-box .mech-body { font-size: 12px; line-height: 1.85; color: #451a03; }
+.points-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #22c55e33; border-left: 4px solid #16a34a; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.points-box .pts-title { font-size: 12.5px; font-weight: 700; color: #14532d; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.points-box ul { font-size: 12px; line-height: 1.85; color: #052e16; margin: 4px 0; padding-left: 18px; }
+.points-box ul li { margin-bottom: 3px; }
+details { margin: 6px 0; }
+details summary { cursor: pointer; font-weight: 600; font-size: 12px; color: var(--accent); padding: 4px 0; }
+details summary:hover { color: var(--red); }
+details .ans { padding: 6px 10px; background: #f8f6f2; border-radius: 6px; font-size: 12px; line-height: 1.7; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">IVIG双重无反应KD</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：IVIG双重无反应川崎病</h1>
+      <div class="sub">3岁男孩 — 完全型KD，2剂IVIG无效→甲强龙冲击→英夫利昔单抗</div>
+    </div>
+    <div class="meta">更新: 2026-04-18</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>3岁男孩</td></tr>
+      <tr><td class="b">主诉</td><td>高热6天，皮疹4天，双眼充血3天</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">川崎病</span> <span class="tag t-r">IVIG无反应</span> <span class="tag t-r">冠脉病变</span> <span class="tag t-y">甲强龙冲击</span></td></tr>
+    </table>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      6天前无明显诱因出现高热（Tmax 40.0℃），伴口腔黏膜弥漫充血。4天前全身出现多形性皮疹。3天前双眼球结膜充血（无分泌物）。2天前手足硬性水肿。1天前肛周脱皮。<br><br>
+      院外已用抗生素3天无效。门诊以"完全型川崎病"收入院。<br><br>
+      <b>既往史</b>：足月顺产，生长发育正常。按时接种疫苗。<b>个人史/家族史</b>：无特殊。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td class="c-r">39.8℃</td></tr>
+        <tr><td>HR</td><td>158次/分</td></tr>
+        <tr><td>BP</td><td>88/55 mmHg</td></tr>
+        <tr><td>体重</td><td>14 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>口腔</td><td>草莓舌，唇红皲裂，口腔黏膜<b>弥漫充血</b></td></tr>
+        <tr><td>眼</td><td>双眼<b>球结膜充血</b>（无分泌物）</td></tr>
+        <tr><td>皮肤</td><td>躯干四肢<b>多形性皮疹</b>，BCG接种处红肿</td></tr>
+        <tr><td>四肢</td><td>手足<b>硬性水肿</b></td></tr>
+        <tr><td>颈部</td><td>左侧可触及1.5×1cm淋巴结</td></tr>
+        <tr><td>心肺腹</td><td>心率快，律齐；余未见异常</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（动态数据）</div>
+    <table>
+      <tr><th>指标</th><th>入院(D6)</th><th>IVIG#1后36h</th><th>IVIG#2后36h</th><th>激素后48h</th><th>2周</th><th>6月</th></tr>
+      <tr><td>CRP(mg/L)</td><td class="c-r">165</td><td class="c-r">142</td><td class="c-r">138</td><td class="c-g">28</td><td class="c-g">5</td><td>3</td></tr>
+      <tr><td>ESR(mm/h)</td><td class="c-r">95</td><td>88</td><td>82</td><td>45</td><td class="c-g">15</td><td>8</td></tr>
+      <tr><td>WBC(×10⁹/L)</td><td>18.5</td><td>16.2</td><td>15.8</td><td>12.5</td><td class="c-g">8.2</td><td>7.5</td></tr>
+      <tr><td>PLT(×10⁹/L)</td><td>380</td><td>420</td><td>580</td><td>520</td><td>350</td><td>295</td></tr>
+      <tr><td>Alb(g/dL)</td><td>2.8</td><td>2.7</td><td>2.6</td><td>2.9</td><td>3.8</td><td>4.2</td></tr>
+      <tr><td>ALT(U/L)</td><td>85</td><td>78</td><td>72</td><td>55</td><td class="c-g">30</td><td>25</td></tr>
+      <tr><td>NT-proBNP(pg/mL)</td><td class="c-r">1850</td><td>1620</td><td>1480</td><td>680</td><td class="c-g">120</td><td>—</td></tr>
+    </table>
+    <table>
+      <tr><th>冠脉Z值动态</th><th>D6(入院)</th><th>D8(IVIG#1后)</th><th>D12(IVIG#2后)</th><th>D20(激素后)</th><th>2月</th><th>6月</th></tr>
+      <tr><td>右冠Z值</td><td><span class="t-y tag">2.5</span></td><td><span class="t-y tag">3.2</span></td><td class="c-r">4.2</td><td><span class="t-y tag">3.5</span></td><td><span class="t-y tag">3.0</span></td><td class="c-g">2.0</td></tr>
+      <tr><td>左前降支Z值</td><td>1.8</td><td>2.5</td><td class="c-r">3.8</td><td><span class="t-y tag">3.2</span></td><td>2.5</td><td class="c-g">1.5</td></tr>
+    </table>
+    <div class="note"><b>冠脉Z值</b>：采用日本Kobayashi标准体表面积校正。Z值≥2.5为冠脉扩张，≥5.0为冠脉瘤。本例IVIG#2后右冠Z值达4.2（小冠脉瘤趋势），是升级治疗的关键依据。</div>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">完全型川崎病</td><td>发热≥5天 + 4项主要临床特征（球结膜充血、口腔黏膜改变、皮疹、四肢改变）+ 排除其他</td></tr>
+      <tr><td class="b">IVIG双重无反应</td><td>2剂IVIG后仍持续发热，CRP未下降</td></tr>
+      <tr><td class="b">冠脉扩张（Z值4.2）</td><td>右冠Z值>2.5，进行性扩大</td></tr>
+    </table>
+
+    <div class="sh">🧠 诊断推理</div>
+    <div class="reasoning">
+      <div class="q">❓ IVIG无反应的预判指标有哪些？</div>
+      <b>Kobayashi评分</b>（日本）和<b>RCAL评分</b>（北美）可预测IVIG无反应风险。主要指标包括：<br>
+      • CRP≥100 mg/L<br>
+      • 血小板<300×10⁹/L（急性期）<br>
+      • 年龄<1岁<br>
+      • NT-proBNP显著升高<br>
+      • 低白蛋白血症（<3.0 g/dL）<br>
+      本例CRP 165、白蛋白2.8、NT-proBNP 1850，<b>属于IVIG无反应高风险</b>。
+    </div>
+    <div class="reasoning">
+      <div class="q">❓ 冠脉Z值>2.5的意义？</div>
+      Z值是基于体表面积校正的冠脉内径标准差。<b>Z值2.0-2.5为临界，≥2.5为冠脉扩张，≥5.0为冠脉瘤，≥10.0为巨大冠脉瘤</b>。冠脉扩张/瘤形成是KD最严重的并发症，可导致血栓、心肌梗死甚至猝死。动态监测Z值变化是评估治疗效果和预后的核心。
+    </div>
+
+    <div class="sh red">💊 治疗决策</div>
+    <table>
+      <tr><th>阶段</th><th>方案</th><th>结果</th><th>决策理由</th></tr>
+      <tr><td class="b">Step 1</td><td>IVIG 2g/kg（单剂10h输注）+ ASA 30mg/kg/d</td><td><span class="t-r tag">36h后仍发热</span><br>CRP 142未降</td><td>标准一线方案（完全型KD）</td></tr>
+      <tr><td class="b">Step 2</td><td>第2剂IVIG 2g/kg</td><td><span class="t-r tag">仍发热</span><br>冠脉Z值升至4.2</td><td>IVIG无反应→再给1剂（约50%有效）</td></tr>
+      <tr><td class="b">Step 3<br>（转折）</td><td><b>甲强龙冲击 30mg/kg/d ×3天</b>→口服减量</td><td><span class="t-g tag">48h内热退</span><br>CRP降至28</td><td>双重IVIG无反应→激素冲击（强效抗炎）</td></tr>
+      <tr><td class="b">Step 4</td><td>加用<b>英夫利昔单抗</b>5mg/kg IV×1剂</td><td><span class="t-g tag">冠脉Z值稳定</span></td><td>冠脉进行性扩大→TNF-α阻断辅助抗炎</td></tr>
+    </table>
+
+    <div class="mech-box">
+      <div class="mech-title">🔬 IVIG双重无反应的处理阶梯</div>
+      <div class="mech-body">
+        <b>IVIG无反应率</b>：约10-20%（完全型KD）<br>
+        <b>双重无反应率</b>：约3-5%<br><br>
+        <b>推荐处理阶梯</b>：<br>
+        1️⃣ <b>第2剂IVIG</b>：约50%有效，首选<br>
+        2️⃣ <b>甲强龙冲击</b>（30mg/kg/d×1-3天）：快速抗炎，尤其适合冠脉扩大者<br>
+        3️⃣ <b>英夫利昔单抗</b>（抗TNF-α）：用于冠脉病变进展或激素无效者<br>
+        4️⃣ 其他选择：环孢素（calcineurin抑制剂）、阿那白滞素（IL-1阻断）<br>
+        <div class="note" style="margin-top:6px;">AHA 2017指南建议：IVIG双重无反应者首选激素冲击，可联合英夫利昔单抗。</div>
+      </div>
+    </div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">D6 — 入院确诊</div>
+        <div class="t-content">完全型KD，右冠Z值 2.5。<b>IVIG 2g/kg + ASA</b></div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">D8 — IVIG#1后36h</div>
+        <div class="t-content">仍发热39.2℃，CRP 142 mg/L未降。<b>判断IVIG无反应→第2剂IVIG</b></div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">D12 — IVIG#2后36h</div>
+        <div class="t-content">仍发热38.8℃，<span class="c-r">右冠Z值升至4.2</span>（冠脉扩大进展）<br><b>双重IVIG无反应→甲强龙冲击</b></div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">D13 — 激素冲击第1天</div>
+        <div class="t-content">甲强龙30mg/kg IV → 12h后体温开始下降</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">D15 — 激素冲击后48h</div>
+        <div class="t-content">体温正常，CRP <span class="c-g">28 mg/L</span>。<b>加用英夫利昔单抗5mg/kg</b></div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">D20 — 出院</div>
+        <div class="t-content">体温稳定正常，右冠Z值 3.5（开始回退），CRP 5 mg/L</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">2月 — 门诊随访</div>
+        <div class="t-content">右冠Z值 <span class="c-g">3.0</span>，左前降支 2.5。继续ASA 5mg/kg/d</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">6月 — 冠脉回退</div>
+        <div class="t-content">右冠Z值 <span class="c-g">2.0</span>（恢复正常），左前降支 <span class="c-g">1.5</span>。<b>冠脉病变完全回退</b></div>
+      </div>
+    </div>
+
+    <div class="sh yellow">📝 临床教训</div>
+    <div class="points-box">
+      <div class="pts-title">💡 要点总结</div>
+      <ul>
+        <li><b>IVIG无反应需早识别</b>：36h仍发热+CRP未降即可判断，不需等到7天</li>
+        <li><b>双重无反应→激素冲击</b>：甲强龙30mg/kg/d×3天是AHA推荐的首选方案</li>
+        <li><b>冠脉Z值是动态监测的核心</b>：基线、每次治疗后、定期随访，指导治疗升级</li>
+        <li><b>冠脉扩大可逆</b>：积极治疗后6月内Z值可回退至正常（本例4.2→2.0）</li>
+        <li><b>英夫利昔单抗的辅助价值</b>：冠脉病变进展时，TNF-α阻断有助于控制血管炎症</li>
+      </ul>
+    </div>
+
+    <div class="sh">❓ 自测题</div>
+    <details>
+      <summary>① IVIG无反应的预判指标有哪些？</summary>
+      <div class="ans"><b>Kobayashi评分</b>主要指标：<br>• 血钠≤133 mmol/L<br>• AST≥100 U/L<br>• 中性粒细胞≥80%<br>• CRP≥100 mg/L<br>• 血小板≤300×10⁹/L（急性期）<br>• 年龄≤12月<br>• IVIG治疗前Z值≥2.0<br>评分≥5分预测IVIG无反应的敏感度约76%。<b>北美患儿 Kobayashi评分预测价值有限</b>，建议结合临床综合判断。
+      </div>
+    </details>
+    <details>
+      <summary>② IVIG双重无反应的下一步治疗选择？</summary>
+      <div class="ans">AHA 2017指南推荐：<br>• <b>首选</b>：甲强龙冲击（30mg/kg/d×1-3天）→ 约80%有效<br>• <b>备选</b>：英夫利昔单抗（5mg/kg IV），尤其合并冠脉病变者<br>• <b>其他</b>：环孢素（3-5mg/kg/d）、阿那白滞素（IL-1阻断）<br>• <b>不推荐</b>：继续追加第3剂IVIG（获益有限）
+      </div>
+    </details>
+    <details>
+      <summary>③ 冠脉Z值>2.5的临床意义？</summary>
+      <div class="ans">冠脉Z值基于体表面积校正：<br>• <b>Z<2.0</b>：正常<br>• <b>Z 2.0-2.5</b>：临界（需密切随访）<br>• <b>Z 2.5-5.0</b>：冠脉扩张<br>• <b>Z 5.0-10.0</b>：中等冠脉瘤<br>• <b>Z≥10.0</b>：巨大冠脉瘤<br>Z值≥2.5需延长抗血小板治疗（ASA 3-5mg/kg/d至少6-12月），Z值≥5.0需加用抗凝治疗。
+      </div>
+    </details>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. McCrindle BW, et al. Diagnosis, treatment, and long-term management of Kawasaki disease (AHA scientific statement). <i>Circulation</i>. 2017;135(17):e927-e999. <b>PMID: 28356459</b><br>
+      2. Kobayashi T, et al. Efficacy of immunoglobulin plus prednisolone for prevention of coronary artery abnormalities in severe Kawasaki disease. <i>JAMA</i>. 2012;307(1):55-62. <b>PMID: 22215183</b><br>
+      3. Tremoulet AH, et al. Infliximab for intensification of primary therapy for Kawasaki disease. <i>J Pediatr</i>. 2014;164(4):835-839. <b>PMID: 24433831</b>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_sJIA_MAS_refractory.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ sJIA→反复MAS</a>
+    <a href="case_JIA_biologic_failure.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">JIA→生物制剂转换 ➡</a>
+  </div>
+
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>

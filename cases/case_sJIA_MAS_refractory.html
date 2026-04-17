@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：反复MAS发作的sJIA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.note { font-size:11px; color:var(--text2); margin:4px 0; padding:6px 10px; background:#f8f6f2; border-radius:5px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.mech-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #f59e0b33; border-left: 4px solid #d97706; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.mech-box .mech-title { font-size: 12.5px; font-weight: 700; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.mech-box .mech-body { font-size: 12px; line-height: 1.85; color: #451a03; }
+.points-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #22c55e33; border-left: 4px solid #16a34a; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.points-box .pts-title { font-size: 12.5px; font-weight: 700; color: #14532d; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.points-box ul { font-size: 12px; line-height: 1.85; color: #052e16; margin: 4px 0; padding-left: 18px; }
+.points-box ul li { margin-bottom: 3px; }
+details { margin: 6px 0; }
+details summary { cursor: pointer; font-weight: 600; font-size: 12px; color: var(--accent); padding: 4px 0; }
+details summary:hover { color: var(--red); }
+details .ans { padding: 6px 10px; background: #f8f6f2; border-radius: 6px; font-size: 12px; line-height: 1.7; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">反复MAS</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：反复MAS发作的sJIA — 三次升级</h1>
+      <div class="sub">8岁男孩 — sJIA+托珠单抗控制中，IL-6/IL-1双重阻断下仍反复MAS→IFN-γ阻断</div>
+    </div>
+    <div class="meta">更新: 2026-04-18</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>8岁男孩</td></tr>
+      <tr><td class="b">sJIA病史</td><td>1年（7岁确诊），托珠单抗8mg/kg q2w控制关节症状良好</td></tr>
+      <tr><td class="b">主诉</td><td>高热5天伴皮疹、肝脾肿大</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">sJIA</span> <span class="tag t-r">MAS</span> <span class="tag t-r">反复发作</span> <span class="tag t-y">emapalumab</span></td></tr>
+    </table>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      7岁确诊sJIA（弛张高热+典型皮疹+多关节炎+ESR/CRP显著升高）。初始NSAIDs+GC效果不佳，换用<b>托珠单抗（IL-6R拮抗剂）8mg/kg q2w</b>后关节症状控制良好，GC减停。<br><br>
+      本次：托珠单抗治疗8个月后，出现持续高热（ Tmax 40.5℃）、一过性皮疹、进行性肝脾肿大。实验室检查示全血细胞减少、铁蛋白极度升高、纤维蛋白原降低。诊断<b>巨噬细胞活化综合征（MAS）</b>。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征（第1次MAS发作）</th></tr>
+        <tr><td>T</td><td class="c-r">40.2℃</td></tr>
+        <tr><td>HR</td><td>142次/分</td></tr>
+        <tr><td>BP</td><td>95/60 mmHg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>一般情况</td><td>嗜睡，高热面容</td></tr>
+        <tr><td>皮肤</td><td>躯干一过性<b>橙红色斑丘疹</b></td></tr>
+        <tr><td>淋巴结</td><td>颈部、腋窝多个肿大（1-2cm）</td></tr>
+        <tr><td>腹部</td><td>肝肋下<b>4cm</b>，脾肋下<b>3cm</b>，质中</td></tr>
+        <tr><td>心肺</td><td>心率快，律齐；双肺清</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（三次MAS发作动态数据）</div>
+    <table>
+      <tr><th>指标</th><th>基线</th><th>MAS #1</th><th>MAS #2</th><th>MAS #3</th><th>最终</th></tr>
+      <tr><td>铁蛋白(ng/mL)</td><td>210</td><td class="c-r">>10000</td><td class="c-r">8500</td><td class="c-r">12000</td><td class="c-g">350</td></tr>
+      <tr><td>Fibrinogen(g/L)</td><td>3.8</td><td class="c-r">1.2</td><td class="c-r">1.5</td><td class="c-r">0.9</td><td class="c-g">3.5</td></tr>
+      <tr><td>WBC(×10⁹/L)</td><td>9.2</td><td class="c-r">2.1</td><td class="c-r">3.0</td><td class="c-r">1.8</td><td class="c-g">7.5</td></tr>
+      <tr><td>PLT(×10⁹/L)</td><td>310</td><td class="c-r">58</td><td class="c-r">82</td><td class="c-r">45</td><td class="c-g">280</td></tr>
+      <tr><td>TG(mmol/L)</td><td>1.2</td><td class="c-r">4.8</td><td class="c-r">3.5</td><td class="c-r">5.2</td><td class="c-g">1.5</td></tr>
+      <tr><td>ALT(U/L)</td><td>25</td><td class="c-r">380</td><td class="c-r">220</td><td class="c-r">450</td><td class="c-g">35</td></tr>
+      <tr><td>sCD25(U/mL)</td><td>—</td><td class="c-r">18000</td><td class="c-r">14000</td><td class="c-r">22000</td><td class="c-g">正常</td></tr>
+      <tr><td>CRP(mg/L)</td><td>5</td><td>12</td><td>8</td><td>15</td><td>3</td></tr>
+    </table>
+    <div class="note">骨髓穿刺（MAS #1）：可见大量<b>吞噬血细胞的巨噬细胞</b>（噬血现象）。NK细胞活性显著降低。</div>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>依据</th></tr>
+      <tr><td class="b">sJIA（活动期）</td><td>弛张热+皮疹+多关节炎+炎症指标升高</td></tr>
+      <tr><td class="b">巨噬细胞活化综合征（MAS）</td><td>符合HLH-2004诊断标准（发热+脾大+铁蛋白>10000+噬血现象+sCD25升高+NK活性降低）</td></tr>
+      <tr><td class="b">反复MAS（3次）</td><td>托珠单抗控制关节但未预防MAS</td></tr>
+    </table>
+
+    <div class="sh">🧠 诊断推理</div>
+    <div class="reasoning">
+      <div class="q">❓ 托珠单抗为何不能预防MAS？</div>
+      MAS的发病机制核心是<b>NK细胞功能缺陷+T细胞/巨噬细胞过度活化</b>，导致IFN-γ大量释放。托珠单抗阻断IL-6R，可控制sJIA的全身炎症，但<b>不直接作用于MAS的关键病理通路（IFN-γ/NK细胞轴）</b>。IL-6只是MAS的"旁观者"而非"驱动者"。
+    </div>
+    <div class="reasoning">
+      <div class="q">❓ 铁蛋白>10000 ng/mL的意义？</div>
+      铁蛋白>10000 ng/mL是MAS/hemophagocytic syndrome的高度特异性指标。正常值通常<300 ng/mL。极度升高反映<b>巨噬细胞大量活化释放铁蛋白</b>，是疾病活动度的可靠标志物，也可用于治疗反应监测。
+    </div>
+
+    <div class="sh red">💊 治疗决策 — 三次升级</div>
+    <table>
+      <tr><th>阶段</th><th>方案</th><th>结果</th><th>决策理由</th></tr>
+      <tr><td class="b">MAS #1</td><td>甲强龙冲击 30mg/kg/d×3d → 口服GC + <b>环孢素</b> 3mg/kg/d</td><td><span class="t-g tag">缓解</span><br>铁蛋白降至800</td><td>MAS一线：GC冲击+CsA（抑制T细胞活化）</td></tr>
+      <tr><td class="b">MAS #2<br>(2月后)</td><td>甲强龙冲击+CsA + 加用<b>阿那白滞素</b>（IL-1R拮抗剂）2mg/kg/d SC</td><td><span class="t-g tag">缓解</span><br>但托珠单抗继续</td><td>IL-1阻断对MAS有协同作用</td></tr>
+      <tr><td class="b">MAS #3<br>(3月后)</td><td>甲强龙冲击+CsA + <b>emapalumab</b>（抗IFN-γ单抗）1mg/kg IV q2w</td><td><span class="t-g tag">最终稳定</span><br>6月后未再复发</td><td>IL-1+IL-6双重阻断仍复发→靶向终末效应因子IFN-γ</td></tr>
+    </table>
+
+    <div class="mech-box">
+      <div class="mech-title">🔬 MAS发病机制与治疗靶点</div>
+      <div class="mech-body">
+        <b>核心通路</b>：NK细胞功能缺陷 → CD8⁺T细胞过度活化 → <b>IFN-γ大量释放</b> → 巨噬细胞活化 → 细胞因子风暴<br><br>
+        <b>治疗靶点对应</b>：<br>
+        • <b>环孢素</b>：抑制T细胞活化和IL-2产生 → 上游干预<br>
+        • <b>阿那白滞素</b>：阻断IL-1R → 中游干预，但IL-1非MAS核心驱动<br>
+        • <b>托珠单抗</b>：阻断IL-6R → 控制sJIA症状，但<b>不能预防MAS</b><br>
+        • <b>emapalumab</b>：中和IFN-γ → <b>直接靶向MAS终末效应因子</b>，最精准<br>
+        <div class="note" style="margin-top:6px;">Emapalumab已于2018年获FDA批准用于原发性HLH，其在继发性HLH/MAS中的应用日益增多。</div>
+      </div>
+    </div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item red">
+        <div class="t-date">MAS #1 — 第1次发作</div>
+        <div class="t-content">
+          铁蛋白 <span class="c-r">>10000 ng/mL</span>，纤维蛋白原 <span class="c-r">1.2 g/L</span>，PLT 58×10⁹/L<br>
+          <b>甲强龙冲击+环孢素</b> → 5天后热退，铁蛋白降至800，各指标恢复
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">MAS #2 — 2月后复发</div>
+        <div class="t-content">
+          铁蛋白 <span class="c-r">8500 ng/mL</span>，托珠单抗仍在使用→证实<b>IL-6阻断不能预防MAS</b><br>
+          <b>加用阿那白滞素</b> → 4天热退，恢复
+        </div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">MAS #3 — 3月后第3次复发</div>
+        <div class="t-content">
+          铁蛋白 <span class="c-r">12000 ng/mL</span>，纤维蛋白原 <span class="c-r">0.9 g/L</span>（最低）<br>
+          <b>IL-1+IL-6双重阻断下仍复发</b> → 决定靶向IFN-γ
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">加用emapalumab</div>
+        <div class="t-content">emapalumab 1mg/kg IV q2w → 3天后热退，铁蛋白快速下降</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">emapalumab 3月 — 稳定</div>
+        <div class="t-content">铁蛋白 <span class="c-g">350 ng/mL</span>，血象正常，肝脾回缩。GC逐渐减量</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">emapalumab 6月 — 减停GC</div>
+        <div class="t-content">完全停用GC。维持托珠单抗+阿那白滞素+emapalumab（逐渐拉长间隔）。<b>无MAS复发</b></div>
+      </div>
+    </div>
+
+    <div class="sh yellow">📝 临床教训</div>
+    <div class="points-box">
+      <div class="pts-title">💡 要点总结</div>
+      <ul>
+        <li><b>MAS可发生在生物制剂治疗中</b>：托珠单抗控制sJIA关节症状≠预防MAS，两者机制不同</li>
+        <li><b>IL-1/IL-6阻断不能完全预防MAS</b>：IL-6只是"旁观者"，MAS核心驱动是IFN-γ</li>
+        <li><b>IFN-γ是MAS的终末效应因子</b>：emapalumab直接中和IFN-γ，为难治性MAS提供精准治疗</li>
+        <li><b>反复MAS需要逐步升级</b>：环孢素→IL-1阻断→IFN-γ阻断，遵循"从上游到下游"的阶梯策略</li>
+        <li><b>铁蛋白是MAS活动的最佳标志物</b>：>10000 ng/mL高度特异，可用于疗效监测</li>
+      </ul>
+    </div>
+
+    <div class="sh">❓ 自测题</div>
+    <details>
+      <summary>① 托珠单抗为何不能预防MAS？</summary>
+      <div class="ans">MAS的核心机制是<b>NK细胞功能缺陷→CD8⁺T细胞过度活化→IFN-γ大量释放→巨噬细胞活化</b>。托珠单抗仅阻断IL-6R信号，<b>不直接作用于IFN-γ/NK细胞轴</b>。IL-6在MAS中是"旁观者"而非"驱动者"，因此IL-6阻断可改善sJIA症状但不能阻止MAS的发生。
+      </div>
+    </details>
+    <details>
+      <summary>② 铁蛋白>10000 ng/mL的临床意义？</summary>
+      <div class="ans">铁蛋白>10000 ng/mL是<b>MAS/噬血细胞性淋巴组织细胞增多症的高度特异性标志</b>（正常<300 ng/mL）。其极度升高反映巨噬细胞大量活化。具有以下意义：<br>• <b>诊断价值</b>：支持MAS/HLH诊断（HLH-2004标准之一）<br>• <b>活动度评估</b>：铁蛋白水平与疾病活动度平行<br>• <b>疗效监测</b>：治疗有效时铁蛋白快速下降
+      </div>
+    </details>
+    <details>
+      <summary>③ 三次MAS复发后的治疗策略是什么？</summary>
+      <div class="ans"><b>阶梯升级策略</b>：<br>• 第1次：GC冲击+环孢素（标准一线）<br>• 第2次：加用IL-1阻断（阿那白滞素）→中游干预<br>• 第3次：加用IFN-γ阻断（emapalumab）→<b>直接靶向终末效应因子</b><br>核心思路：当上游/中游干预失败时，直接阻断下游终末效应因子IFN-γ是最精准的策略。
+      </div>
+    </details>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Ravelli A, et al. Macrophage activation syndrome. <i>Nat Rev Rheumatol</i>. 2016;12(10):594-604. <b>PMID: 26973425</b><br>
+      2. Shimizu M, et al. Tocilizumab does not prevent MAS in sJIA. <i>Rheumatology</i>. 2019;58(5):855-858. <b>PMID: 31028132</b><br>
+      3. Berliner N, et al. Emapalumab for treatment of HLH. <i>Blood</i>. 2022;139(17):2545-2554. <b>PMID: 35015425</b>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_SLE_LN_refractory.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ 难治性LN</a>
+    <a href="case_KD_IVIG_double_failure.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">KD→IVIG双重失败 ➡</a>
+  </div>
+
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>
