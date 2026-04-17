@@ -2,33 +2,5324 @@
   "AID": {
     "cn": "AID自身炎症性疾病",
     "cases": [
-      {"f":"case_AID_CAPS.html","t":"CAPS — Muckle-Wells综合征NLRP3 T348M","sub":"冷吡啉相关周期性发热综合征（CAPS，Cryopyrin-Associated Periodic Syndrome）","nav":"CAPS","tags":[{"c":"t-r","l":"NLRP3"},{"c":"t-y","l":"CAPS"},{"c":"t-a","l":"IL-1抑制剂"}],"alert":"CAPS由NLRP3功能获得突变→Cryopyrin自激活→NLRP3炎症小体持续活化→IL-1β过度产生→荨麻疹+发热+关节痛。可进展为耳聋和淀粉样变。","tl":[{"d":"幼儿期","v":"反复荨麻疹+低热+关节痛，受凉诱发"},{"d":"进展","v":"感音神经性听力下降，ESR/CRP持续升高"},{"d":"基因","v":"NLRP3 T348M突变确诊CAPS-MWS","c":"yellow"},{"d":"治疗","v":"Canakinumab → 症状完全缓解","c":"green"}],"mech_t":"NLRP3炎症小体与CAPS谱系","mech":"NLRP3突变→Cryopyrin自激活→炎症小体持续组装→IL-1β大量释放→全身炎症。<br><b>CAPS谱系：</b>FCAS(寒冷诱发,最轻) → MWS(本例,中度) → NOMID/CINCA(最重)","th":["特征","FCAS","MWS(本例)","NOMID/CINCA"],"tr":[["发病","寒冷诱发","自发/诱发","出生"],["荨麻疹","有","有","有"],["发热","低热","中热","持续高热"],["关节","关节痛","关节炎","骨增生"],["听力","正常","感音神经性聋","感音神经性聋"]],"pts":["CAPS三型为NLRP3不同突变谱系","IL-1抑制剂(Canakinumab)靶向治疗显著","早期治疗预防不可逆损伤","NLRP3炎症小体是IL-1β核心平台"],"ref":"Muckle-Wells Syndrome: NLRP3 T348M Mutation. Pediatr Dermatol. 2016;33(5). PMID: 27435956","pmid":"27435956","n":2},
-      {"f":"case_AID_TRAPS.html","t":"TRAPS — TNFRSF1A R92P突变","sub":"TNF受体相关周期性发热综合征（TRAPS，TNF Receptor Associated Periodic Syndrome）","nav":"TRAPS","tags":[{"c":"t-r","l":"TNFRSF1A"},{"c":"t-y","l":"TRAPS"},{"c":"t-a","l":"低外显率"}],"alert":"TRAPS由TNFRSF1A突变，本例R92P低外显率。核心：突变TNFR1错误折叠→ER应激→NF-κB→促炎因子。","tl":[{"d":"家族","v":"两代六人反复发热+肌痛+浆膜炎"},{"d":"发作","v":"持续>1周，移行性肌痛，眶周水肿"},{"d":"基因","v":"TNFRSF1A R92P，sTNFR1降低","c":"yellow"},{"d":"治疗","v":"激素+Etanercept有效","c":"green"}],"mech_t":"TRAPS发病机制","mech":"突变TNFR1错误折叠→ER滞留→UPR→ROS→NF-κB+MAPK→促炎因子。R92P低外显率需第二信号。","th":["特征","FMF","TRAPS","CAPS"],"tr":[["遗传","AR(MEFV)","AD(TNFRSF1A)","AD(NLRP3)"],["发作","1-3天",">1周","持续"],["皮疹","丹毒样","移行性斑丘疹","荨麻疹"],["治疗","秋水仙碱","激素/Etanercept","IL-1抑制剂"]],"pts":["TRAPS发作>1周区别FMF","R92P低外显率需家族筛查","核心ER应激→NF-κB","Etanercept/Anakinra有效"],"ref":"TRAPS in Dutch family: TNFRSF1A mutation. Am J Med Genet. 2001;102(1):77-83. PMID: 11175303","pmid":"11175303","n":3},
-      {"f":"case_AID_NLRC4.html","t":"NLRC4炎症小体病 — 婴儿致死性MAS","sub":"NLRC4突变致巨噬细胞活化综合征（MAS，Macrophage Activation Syndrome）","nav":"NLRC4-MAS","tags":[{"c":"t-r","l":"NLRC4"},{"c":"t-r","l":"MAS"},{"c":"t-y","l":"IL-18极度升高"}],"alert":"NLRC4炎症小体病最严重。IL-18极度升高(>100,000 pg/mL)，反复MAS(铁蛋白>10,000)。IL-18抑制剂突破性疗效。","tl":[{"d":"新生儿","v":"反复高热+皮疹+肝脾肿大"},{"d":"MAS","v":"铁蛋白>10,000, 纤维蛋白原↓, 噬血","c":"red"},{"d":"IL-18","v":"IL-18 >100,000 pg/mL(正常<500)","c":"yellow"},{"d":"靶向","v":"IL-18抑制剂→持续缓解","c":"green"}],"mech_t":"NLRC4-MAS级联","mech":"NLRC4功能获得→炎症小体自激活→Caspase-1→IL-1β+IL-18大量→NK/T过度活化→巨噬细胞活化→细胞因子风暴→噬血。<br>关键：NLRC4-MAS IL-18远超其他MAS(>100,000 vs <5,000)。","th":["指标","正常","MAS","NLRC4-MAS"],"tr":[["铁蛋白","10-200",">500",">10,000"],["纤维蛋白原","200-400","<150","<100"],["IL-18","<500","升高",">100,000"]],"pts":["NLRC4→IL-18极度升高是核心","MAS需早期识别(铁蛋白暴升)","IL-18抑制剂突破性疗效","IL-18极度升高可鉴别其他MAS"],"ref":"Life-threatening NLRC4 Hyperinflammation. JACI Pract. 2017;5(3):840-842. PMID: 27876626","pmid":"27876626","n":4},
-      {"f":"case_AID_SAVI.html","t":"SAVI — STING相关血管病","sub":"STING相关血管病伴婴儿起病（SAVI，STING-Associated Vasculopathy with Onset in Infancy）","nav":"SAVI","tags":[{"c":"t-r","l":"STING"},{"c":"t-y","l":"血管病变"},{"c":"t-a","l":"肺纤维化"}],"alert":"SAVI由TMEM173(STING)功能获得→IFN-α/β持续→血管病变+肺纤维化+反复发热。JAK抑制剂有效。","tl":[{"d":"婴儿","v":"反复发热+皮肤血管病变(指尖/鼻尖溃疡)"},{"d":"进展","v":"肺间质纤维化"},{"d":"基因","v":"TMEM173/STING突变→SAVI","c":"yellow"},{"d":"JAKi","v":"Baricitinib→IFN抑制→改善","c":"green"}],"mech_t":"cGAS-STING与I型干扰素病","mech":"STING功能获得→自激活→TBK1→IRF3→IFN-α/β→内皮损伤+肺成纤维细胞活化→血管病变+肺纤维化。三大特征：①反复发热 ②血管病变 ③ILD。","th":["特征","SAVI","SLE","JDM"],"tr":[["核心","IFN-I","免疫复合物","自身抗体"],["皮肤","血管溃疡","蝶形红斑","Gottron疹"],["肺","纤维化(核心)","少见","ILD"],["治疗","JAK抑制剂","HCQ+免疫抑制","MTX+激素"]],"pts":["SAVI是新定义I型干扰素病","STING自激活→IFN-I→血管+肺","JAK抑制剂最有效","需与SLE/JDM鉴别"],"ref":"STING-Associated Vasculopathy with Onset in Infancy. Arthritis Rheumatol. 2014;66(11). PMID: 31705453","pmid":"31705453","n":5}
+      {
+        "f": "case_AID_CAPS.html",
+        "t": "病例：冷吡啉相关周期性发热综合征（CAPS）",
+        "sub": "病例：冷吡啉相关周期性发热综合征（CAPS）",
+        "nav": "CAPS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表文献改编的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第2周",
+            "v": "皮疹明显减轻，体温恢复正常。CRP降至12 mg/L。\n          注射部位轻微红肿，可耐受。"
+          },
+          {
+            "d": "第4周",
+            "v": "皮疹基本消退，无新发环状红斑。关节痛消失。\n          CRP 4 mg/L，ESR 15 mm/h，SAA 8 mg/L。\n          ✅ 炎症指标恢复正常",
+            "c": "green"
+          },
+          {
+            "d": "第12周",
+            "v": "持续缓解，无皮疹、无发热、无关节痛。\n          CRP <4 mg/L，SAA <3 mg/L。\n          银屑病样皮损明显改善。继续阿那白滞素维持治疗。",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "持续完全缓解。考虑转换为卡那单抗（长效，每月1次皮下注射）以提高依从性。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "佐藤XX，女，28岁，日本籍",
+            "就诊日期",
+            "2025-03-10",
+            "主诉"
+          ],
+          [
+            "反复寒冷诱发皮疹伴低热6年，银屑病样皮损3年",
+            "标签",
+            "CAPS 体细胞镶嵌 NLRP3 IL-1拮抗剂",
+            "T",
+            "37.8°C"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "118/72 mmHg",
+            "体重"
+          ],
+          [
+            "52 kg",
+            "一般情况",
+            "神志清，精神可，营养中等",
+            "皮肤粘膜",
+            "右侧躯干及右上肢见环状红斑，边缘隆起；左侧肘部银屑病样鳞屑性斑块。皮损呈偏侧性分布"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "无异常",
+            "腹部"
+          ],
+          [
+            "肝脾未触及，无压痛",
+            "关节",
+            "双膝关节轻度压痛，无肿胀",
+            "听力",
+            "粗测正常"
+          ]
+        ],
+        "pts": [
+          "寒冷诱发荨麻疹+发热+关节痛三联征提示CAPS",
+          "皮损呈偏侧性分布应警惕体细胞镶嵌突变",
+          "外周血基因检测阴性时不应排除CAPS，需行皮损组织深测序",
+          "CAPS与寒冷性荨麻疹鉴别：前者有全身炎症指标升高，抗组胺药无效",
+          "体细胞镶嵌解释了部分\"基因检测阴性\"的CAPS病例",
+          "IL-1拮抗剂是CAPS的一线靶向治疗（阿那白滞素/卡那单抗/利洛纳塞）"
+        ],
+        "ref": "1. Ando T, et al. A case of cryopyrin-associated periodic syndrome due to somatic mosaic mutation complicated with recurrent circinate erythematous psoriasis. Mod Rheumatol Case Rep. 2024;8(2):368-372. PMID: 38036300\n      2. Kuemmerle-Deschner JB, et al. Cryopyrin-associated periodic fever syndrome in children: A case-based review. Int J Rheum Dis. 2020;23(4):505-515. PMID: 31858722\n      3. Saito M, et al. Somatic mosaicism in NLRP3 in patients with CAPS. Blood. 2008;112(13):5033. PMID: 187966",
+        "pmid": "38036300",
+        "n": 1
+      },
+      {
+        "f": "case_AID_FMF.html",
+        "t": "病例：家族性地中海热（FMF）",
+        "sub": "病例：家族性地中海热（FMF）",
+        "nav": "FMF",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0周（2025-06-15）",
+            "v": "启动秋水仙碱 0.5 mg/d → 第3天加至 1.0 mg/d。"
+          },
+          {
+            "d": "第2周",
+            "v": "腹泻2–3次/天，可耐受。发作次数减少。"
+          },
+          {
+            "d": "第4周",
+            "v": "秋水仙碱加至1.5 mg/d。近2周无发作，CRP正常。\n          ✅ 发作控制",
+            "c": "green"
+          },
+          {
+            "d": "第3月",
+            "v": "持续无发作，SAA恢复正常（<3 mg/L）。体力活动恢复正常。\n          ✅ 完全缓解",
+            "c": "green"
+          },
+          {
+            "d": "长期随访",
+            "v": "持续秋水仙碱1.5 mg/d，每3月监测CRP/SAA/尿蛋白。关注AA淀粉样变性风险。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "艾XX，男，12岁，土耳其裔",
+            "就诊日期",
+            "2025-06-15",
+            "主诉"
+          ],
+          [
+            "反复发热伴腹痛、关节肿痛3年，加重2周",
+            "标签",
+            "FMF MEFV M694V纯合 秋水仙碱",
+            "T",
+            "39.2°C"
+          ],
+          [
+            "HR",
+            "112次/分",
+            "BP",
+            "105/65 mmHg",
+            "体重"
+          ],
+          [
+            "38 kg（P50）",
+            "一般情况",
+            "急性病容，神志清，精神差",
+            "皮肤粘膜",
+            "躯干散在红斑丘疹（丹毒样红斑）"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率112次/分，律齐；左下肺呼吸音减低（胸膜炎）",
+            "腹部"
+          ],
+          [
+            "弥漫性压痛，无反跳痛，肝脾未触及",
+            "关节",
+            "双膝关节肿胀、活动受限；左踝关节压痛阳性",
+            "WBC",
+            "15.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "反复发热（1–3天自限）+ 浆膜炎（腹膜/胸膜）+ 关节炎 + 丹毒样红斑 → FMF",
+          "发作间期完全正常是FMF特征",
+          "M694V纯合突变是FMF最常见且最严重的基因型",
+          "FMF发作持续1–3天，区别于TRAPS（>1周）和CAPS（持续）",
+          "秋水仙碱有效可反证诊断",
+          "秋水仙碱是FMF基石治疗，需终身服用"
+        ],
+        "ref": "1. Ozen S, et al. The Eurofever/PRINTO registry: FMF clinical features in children. Arthritis Rheumatol. 2022. PMID: 35127599\n      2. Demir S, et al. Familial Mediterranean fever in childhood. Pediatr Rheumatol. 2024. PMID: 39540697\n      3. Yalcinkaya F, Ozen S. A modified classification criteria for FMF in children. Rheumatology (Oxford). 2024. PMID: 35812376",
+        "pmid": "35127599",
+        "n": 2
+      },
+      {
+        "f": "case_AID_NLRC4.html",
+        "t": "病例：NLRC4炎症小体病合并MAS",
+        "sub": "病例：NLRC4炎症小体病合并MAS",
+        "nav": "NLRC4",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表文献改编的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0–3天（急性期）",
+            "v": "甲泼尼龙冲击+环孢素治疗。第3天体温开始下降，铁蛋白从>10,000降至6,500 ng/mL。",
+            "c": "red"
+          },
+          {
+            "d": "第7天",
+            "v": "启动IL-18抑制剂。WBC恢复至5.2×10⁹/L，PLT 98×10⁹/L。铁蛋白降至3,200 ng/mL。",
+            "c": "yellow"
+          },
+          {
+            "d": "第14天",
+            "v": "体温完全正常。血三系恢复：WBC 8.5、Hb 85、PLT 186。铁蛋白降至850 ng/mL。\n          ✅ MAS控制",
+            "c": "green"
+          },
+          {
+            "d": "第4周",
+            "v": "铁蛋白 120 ng/mL，IL-18降至2,500 pg/mL。皮疹消退。肝脾回缩。\n          ✅ 完全缓解。继续IL-18抑制剂+小剂量激素维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "王XX，女，2月龄",
+            "就诊日期",
+            "2025-08-20（急诊入院）",
+            "主诉"
+          ],
+          [
+            "反复高热伴皮疹2月，反应差、面色苍白3天",
+            "标签",
+            "NLRC4 MAS IL-18极度升高 IL-18抑制剂",
+            "T",
+            "39.8°C"
+          ],
+          [
+            "HR",
+            "168次/分",
+            "BP",
+            "68/42 mmHg",
+            "体重"
+          ],
+          [
+            "3.8 kg（<P3）",
+            "一般情况",
+            "反应差，嗜睡，面色苍白，皮肤弹性差",
+            "皮肤粘膜",
+            "躯干及四肢泛发性红斑丘疹，可见出血点"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率168次/分，律齐；双肺呼吸音粗",
+            "腹部"
+          ],
+          [
+            "肝肋下4 cm，脾肋下3 cm，质中",
+            "神经系统",
+            "前囟平软，肌张力偏低，原始反射减弱",
+            "WBC",
+            "2.1×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "新生儿/婴儿期反复高热+皮疹+肝脾肿大 → 警惕自身炎症性疾病",
+          "NLRC4-MAS的特征性标志：IL-18极度升高（>100,000 pg/mL）",
+          "铁蛋白暴升是MAS早期识别的关键线索",
+          "IL-18极度升高可鉴别NLRC4-MAS与其他原因所致MAS/HLH",
+          "需排除新生儿败血症（血培养阴性+抗生素无效应怀疑）",
+          "IL-18抑制剂对NLRC4-MAS有突破性疗效"
+        ],
+        "ref": "1. Canna SW, et al. An activating NLRC4 inflammasome mutation causes autoinflammation with recurrent macrophage activation syndrome. Nat Genet. 2014;46(10):1140-1146. PMID: 25217959\n      2. Raghavan S, et al. Life-threatening NLRC4 hyperinflammation successfully treated with IL-18 blockade. JACI Pract. 2017;5(3):840-842. PMID: 27876626",
+        "pmid": "25217959",
+        "n": 3
+      },
+      {
+        "f": "case_AID_SAVI.html",
+        "t": "病例：SAVI — STING相关血管病",
+        "sub": "病例：SAVI — STING相关血管病",
+        "nav": "SAVI",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第2周",
+            "v": "体温恢复正常，指尖溃疡开始愈合。CRP降至10 mg/L。"
+          },
+          {
+            "d": "第4周",
+            "v": "皮损明显改善。咳嗽气促减轻。IFN-α水平下降。✅ 临床改善",
+            "c": "green"
+          },
+          {
+            "d": "第12周",
+            "v": "指尖溃疡基本愈合。复查HRCT磨玻璃影有所吸收。激素逐步减量。",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "持续缓解，无新发皮损，呼吸稳定。继续巴瑞替尼维持治疗。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "李XX，女，8月龄",
+            "就诊日期",
+            "2025-09-12",
+            "主诉"
+          ],
+          [
+            "反复发热伴指尖溃疡4月，咳嗽、气促1月",
+            "标签",
+            "STING 血管病变 肺纤维化 JAK抑制剂",
+            "T",
+            "38.6°C"
+          ],
+          [
+            "HR",
+            "142次/分",
+            "BP",
+            "78/48 mmHg",
+            "体重"
+          ],
+          [
+            "6.5 kg（P10）",
+            "一般情况",
+            "神志清，精神欠佳，呼吸稍促",
+            "皮肤粘膜",
+            "双手指尖、鼻尖可见溃疡和紫癜样皮损"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "双肺可闻及细湿啰音；心率142次/分，律齐",
+            "腹部"
+          ],
+          [
+            "肝肋下2 cm，脾未触及，无压痛",
+            "关节",
+            "无肿胀压痛",
+            "WBC",
+            "8.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "JAK抑制剂阻断I型干扰素下游信号是SAVI核心治疗 ②需监测感染风险和血常规 ③肺纤维化需早期干预\n    📅 随访经过\n    \n      第2周体温恢复正常，指尖溃疡开始愈合。CRP降至10 mg/L。\n      第4周皮损明显改善。咳嗽气促减轻。IFN-α水平下降。",
+          "婴儿期反复发热+皮肤血管溃疡+间质性肺病三联征 → 警惕SAVI",
+          "SAVI属于I型干扰素病（IFN-α持续升高）",
+          "STING功能获得→TBK1→IRF3→IFN-α/β→内皮损伤+肺纤维化",
+          "需与SLE（有自身抗体）、JDM（有Gottron疹和肌无力）鉴别",
+          "SAVI的ANA/抗dsDNA阴性，但有特征性血管溃疡"
+        ],
+        "ref": "1. Liu Y, et al. Activated STING in a vascular and pulmonary syndrome. N Engl J Med. 2014;371(6):507-518. PMID: 25029335\n      2. Seo J, et al. Baricitinib as a treatment for SAVI. Arthritis Rheumatol. 2019;71(12):2076-2083. PMID: 31705453",
+        "pmid": "25029335",
+        "n": 4
+      },
+      {
+        "f": "case_AID_TRAPS.html",
+        "t": "病例：TRAPS — TNF受体相关周期性发热综合征",
+        "sub": "病例：TRAPS — TNF受体相关周期性发热综合征",
+        "nav": "TRAPS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0周",
+            "v": "启动甲泼尼龙 + 依那西普。"
+          },
+          {
+            "d": "第1周",
+            "v": "体温恢复正常，腹痛和肌痛缓解。眶周水肿减轻。"
+          },
+          {
+            "d": "第4周",
+            "v": "激素减量至0.5 mg/kg。CRP 15 mg/L。✅ 发作控制",
+            "c": "green"
+          },
+          {
+            "d": "第12周",
+            "v": "停用激素，仅依那西普维持。近8周无发作，CRP正常。✅ 持续缓解",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "持续缓解。建议家族成员基因筛查。继续依那西普维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "陈XX，男，15岁",
+            "就诊日期",
+            "2025-07-08",
+            "主诉"
+          ],
+          [
+            "反复发热伴肌痛、腹痛5年，眶周水肿2年",
+            "标签",
+            "TNFRSF1A TRAPS R92Q 依那西普",
+            "T",
+            "39.0°C"
+          ],
+          [
+            "HR",
+            "98次/分",
+            "BP",
+            "112/68 mmHg",
+            "体重"
+          ],
+          [
+            "52 kg（P50）",
+            "一般情况",
+            "急性病容，神志清，精神差",
+            "皮肤粘膜",
+            "右大腿内侧见移行性红斑，边缘隆起，压痛"
+          ],
+          [
+            "眼",
+            "双眼眶周水肿明显，结膜无充血",
+            "淋巴结",
+            "未触及肿大",
+            "心肺"
+          ],
+          [
+            "无异常",
+            "腹部",
+            "弥漫性压痛，无反跳痛",
+            "关节肌肉",
+            "四肢肌肉压痛，双膝关节轻度肿胀"
+          ]
+        ],
+        "pts": [
+          "发作持续>1周是TRAPS区别于FMF（1–3天）的关键",
+          "移行性肌痛和眶周水肿是TRAPS特征性表现",
+          "sTNFR1降低是TRAPS的实验室特征",
+          "TRAPS发作持续时间远超FMF和CAPS",
+          "R92Q低外显率变异——携带者不一定发病，需第二信号",
+          "秋水仙碱对TRAPS通常无效"
+        ],
+        "ref": "1. Lachmann HJ, et al. A patient with TRAPS misdiagnosed as Kawasaki disease. Heliyon. 2023;9(8):e19346. PMID: 37810071\n      2. Sonmez HE, et al. TRAPS: Case Report and Review. Cureus. 2019;11(7):e5199. PMID: 30931187",
+        "pmid": "37810071",
+        "n": 5
+      }
     ]
   },
   "ITP": {
     "cn": "ITP免疫性血小板减少症",
     "cases": [
-      {"f":"case_ITP_acute.html","t":"急性ITP — 病毒感染后突发瘀斑","sub":"急性免疫性血小板减少症（ITP，Immune Thrombocytopenia）","nav":"急性ITP","tags":[{"c":"t-r","l":"PLT<20K"},{"c":"t-y","l":"病毒感染后"},{"c":"t-a","l":"IVIG"}],"alert":"急性ITP是儿童最常见出血性疾病。病毒感染后1-4周突发瘀斑，PLT常<20×10⁹/L。80%儿童6月内自发缓解。","tl":[{"d":"前驱","v":"上呼吸道感染后2周"},{"d":"突发","v":"全身瘀点瘀斑，牙龈出血","c":"red"},{"d":"化验","v":"PLT 8×10⁹/L","c":"yellow"},{"d":"治疗","v":"IVIG 1g/kg×2天→PLT回升","c":"green"}],"mech_t":"ITP双重破坏机制","mech":"<b>外周破坏：</b>抗GPIIb/IIIa抗体→FcγR→脾脏巨噬细胞吞噬→PLT寿命缩短至数小时。<br><b>骨髓抑制：</b>自身抗体+CTL→巨核细胞损伤→产板减少。儿童80%自限。","th":["特征","急性(儿童)","慢性(成人)"],"tr":[["发病","2-5岁","20-40岁(女)"],["前驱","80%","20%"],["PLT","<20K","30-50K"],["缓解","~80%","~10%"],["一线","IVIG","激素"]],"pts":["儿童最常见出血疾病，80%自限","PLT<20K有颅内出血风险","IVIG一线3-5天PLT回升","抗血小板抗体→外周+骨髓双重"],"ref":"Immune Thrombocytopenia in Children. NEJM. 2022;386(16). PMID: 35443104","pmid":"35443104","n":1},
-      {"f":"case_ITP_chronic.html","t":"慢性ITP — TPO-RA改变范式","sub":"慢性ITP（持续>12个月）","nav":"慢性ITP","tags":[{"c":"t-r","l":"难治性"},{"c":"t-y","l":">12月"},{"c":"t-a","l":"TPO-RA"}],"alert":"慢性ITP=持续>12月。TPO-RA改变范式：增加生成vs减少破坏。","tl":[{"d":"初诊","v":"PLT 15K，激素有效减量复发"},{"d":"12月+","v":"诊断慢性ITP","c":"yellow"},{"d":"二线","v":"利妥昔单抗→短暂有效→复发"},{"d":"TPO-RA","v":"Romiplostin→PLT 50-100K","c":"green"}],"mech_t":"慢性ITP免疫演进","mech":"抗PLT抗体→CD8+T直接杀伤→Treg缺陷→持续破坏。TPO-RA：刺激巨核细胞增殖→增加PLT生成。Paradigm shift。","th":["治疗","机制","反应率","持久性"],"tr":[["激素","抑制吞噬","60-80%","减量复发"],["IVIG","封闭FcR","80%","2-4周"],["利妥昔","B细胞清除","40-60%","6-12月"],["TPO-RA","刺激产板","70-90%","需持续"]],"pts":["慢性=持续>12月，目标是安全PLT","TPO-RA范式转变","脾切率从>50%降至<10%","长期安全性良好"],"ref":"Immune Thrombocytopenia. Nat Rev Dis Primers. 2022;8(1):71. PMID: 36424557","pmid":"36424557","n":2},
-      {"f":"case_ITP_Evans.html","t":"Evans综合征 — ITP+AIHA","sub":"Evans综合征（ITP+AIHA，Autoimmune Hemolytic Anemia）","nav":"Evans","tags":[{"c":"t-r","l":"双重自身免疫"},{"c":"t-y","l":"溶血+血小板减少"},{"c":"t-a","l":"Coombs+"}],"alert":"Evans=ITP+AIHA(Coombs+)。继发SLE/ALPS/CVID比例高(30-50%)。","tl":[{"d":"起病","v":"苍白+乏力+瘀斑，Hb 65, PLT 12K"},{"d":"化验","v":"网织红↑, 间接胆红素↑, Coombs(+)","c":"yellow"},{"d":"排查","v":"排除SLE/ALPS/CVID"},{"d":"治疗","v":"甲强龙+IVIG→Hb/PLT回升","c":"green"}],"mech_t":"双重免疫攻击","mech":"AIHA：温抗体IgG→红细胞→脾巨噬细胞→溶血。ITP：抗PLT抗体→PLT破坏。共同抗原？继发率30-50%。","th":["特征","单纯ITP","Evans"],"tr":[["PLT","↓↓","↓↓"],["Hb","正常","↓↓"],["Coombs","阴性","阳性"],["胆红素","正常","↑↑"],["继发率","低","30-50%"]],"pts":["Evans=ITP+AIHA必须查Coombs","排查SLE/ALPS/CVID","治疗比单纯ITP复杂","复发率高需长期随访"],"ref":"Evans Syndrome. Front Immunol. 2023;14:1194049. PMID: 37251884","pmid":"37251884","n":3},
-      {"f":"case_ITP_TPO.html","t":"TPO-RA治疗儿童慢性ITP","sub":"TPO受体激动剂（TPO-RA，Thrombopoietin Receptor Agonist）","nav":"TPO-RA","tags":[{"c":"t-a","l":"Romiplostim"},{"c":"t-a","l":"Eltrombopag"},{"c":"t-y","l":"慢性ITP"}],"alert":"TPO-RA是近15年ITP最大突破。激活c-Mpl→巨核细胞增殖→增加产板。","tl":[{"d":"启用","v":"Eltrombopag 25mg/d"},{"d":"应答","v":"2周PLT>50,4周>100","c":"green"},{"d":"长期","v":"最低有效剂量维持","c":"green"}],"mech_t":"TPO-RA机制","mech":"Romiplostin：肽类皮下qw，非竞争结合c-Mpl。Eltrombopag：小分子口服qd，结合跨膜区需空腹。均→JAK2→STAT5→巨核细胞→PLT释放。","th":["特征","Romiplostin","Eltrombopag"],"tr":[["给药","皮下qw","口服qd"],["起效","1周","1-2周"],["儿童","✅","✅"],["肝损","低","需监测"]],"pts":["TPO-RA改变ITP范式","Romiplostin(皮下)vs Eltrombopag(口服)","起效1-2周需持续用药"],"ref":"TPO Receptor Agonists in ITP. Blood. 2023;141(10). PMID: 36520887","pmid":"36520887","n":4},
-      {"f":"case_ITP_secondary.html","t":"继发性ITP — SLE相关","sub":"继发性免疫性血小板减少症","nav":"继发ITP","tags":[{"c":"t-r","l":"SLE相关"},{"c":"t-y","l":"抗磷脂抗体"},{"c":"t-a","l":"治原发病"}],"alert":"~25%成人ITP为继发，SLE最常见。可能先于SLE数年。aPL+时出血+血栓风险并存。","tl":[{"d":"初诊","v":"PLT 35K，激素有效→原发性ITP"},{"d":"2年后","v":"关节痛+蝶形红斑+ANA 1:640+dsDNA+","c":"red"},{"d":"修正","v":"SLE相关继发性ITP","c":"yellow"},{"d":"治疗","v":"HCQ+MMF+小剂量激素→均控制","c":"green"}],"mech_t":"SLE相关ITP多重机制","mech":"四重打击：①抗PLT抗体→外周破坏 ②aPL→PLT活化→消耗+血栓 ③免疫复合物→补体→膜损伤 ④巨核细胞→产板减少。所有新ITP→查ANA+dsDNA+aPL。","th":["特征","原发ITP","SLE相关ITP"],"tr":[["ANA","阴性/低","阳性(1:160+)"],["dsDNA","阴性","阳性"],["aPL","通常阴","30-40%阳"],["补体","正常","降低"]],"pts":["所有新ITP查ANA+dsDNA+aPL","ITP可能是SLE首发","aPL+出血+血栓风险并存","治疗需兼顾SLE"],"ref":"ITP in SLE. Lupus. 2020;29(11). PMID: 32799842","pmid":"32799842","n":5}
+      {
+        "f": "case_ITP_Evans.html",
+        "t": "病例：Evans综合征（ITP+AIHA）",
+        "sub": "病例：Evans综合征（ITP+AIHA）",
+        "nav": "Evans",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "Evans综合征"
+          },
+          {
+            "c": "t-y",
+            "l": "Coombs阳性"
+          },
+          {
+            "c": "t-a",
+            "l": "双重自身免疫"
+          }
+        ],
+        "alert": "Evans综合征比单纯ITP复杂：需同时控制溶血和血小板减少，复发率高，需长期随访。",
+        "tl": [
+          {
+            "d": "第5天（2025-06-25）",
+            "v": "IVMP+IVIG治疗后。Hb 78 g/L，PLT 35×10⁹/L。黄疸减轻。",
+            "c": "yellow"
+          },
+          {
+            "d": "第14天（2025-07-04）",
+            "v": "Hb 95 g/L，PLT 88×10⁹/L。改为泼尼松口服减量。✅ 双系回升",
+            "c": "green"
+          },
+          {
+            "d": "第8周（2025-08-15）",
+            "v": "Hb 118 g/L，PLT 165×10⁹/L。泼尼松减至5mg/d。Coombs转阴。",
+            "c": "green"
+          },
+          {
+            "d": "第16周（2025-10-10）",
+            "v": "停用泼尼松。Hb 125 g/L，PLT 142×10⁹/L。需持续随访监测复发。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "陈XX，女，5岁2月",
+            "就诊日期",
+            "2025-06-20",
+            "主诉"
+          ],
+          [
+            "面色苍白、乏力2周，全身瘀斑5天",
+            "标签",
+            "Evans综合征 Coombs阳性 双重自身免疫",
+            "T",
+            "36.9℃"
+          ],
+          [
+            "HR",
+            "118次/分",
+            "BP",
+            "85/55 mmHg",
+            "体重"
+          ],
+          [
+            "18 kg（P40）",
+            "一般情况",
+            "神志清，精神萎靡，面色苍白",
+            "皮肤粘膜",
+            "皮肤苍白+散在瘀斑，巩膜黄染（+）"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心率118次/分，律齐，心前区SM II/6；双肺清",
+            "腹部"
+          ],
+          [
+            "腹软，肝肋下1cm可触及，脾肋下未及",
+            "神经系统",
+            "无异常",
+            "WBC",
+            "11.2×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "Evans综合征=ITP+AIHA（Coombs+），必须查直接Coombs试验",
+          "必须排查继发因素：SLE、ALPS、CVID（继发率30-50%）",
+          "治疗比单纯ITP复杂，糖皮质激素+IVIG联合为一线"
+        ],
+        "ref": "1. Gavriilaki E, et al. Evans syndrome in children below 13 years of age - A nationwide population-based cohort study. PLoS One. 2020;15(7):e0235636. PMID: 32271826\n2. Bussel JB, et al. Pediatric Immune Thrombocytopenia. Adv Pediatr. 2024;71(1):123-145. PMID: 38944486",
+        "pmid": "32271826",
+        "n": 1
+      },
+      {
+        "f": "case_ITP_TPO.html",
+        "t": "TPO-RA治疗儿童慢性ITP",
+        "sub": "TPO-RA治疗儿童慢性ITP",
+        "nav": "TPO",
+        "tags": [
+          {
+            "c": "t-a",
+            "l": "Romiplostim"
+          },
+          {
+            "c": "t-a",
+            "l": "Eltrombopag"
+          },
+          {
+            "c": "t-y",
+            "l": "TPO-RA"
+          }
+        ],
+        "alert": "TPO-RA机制：Romiplostim（肽类，皮下qw）vs Eltrombopag（小分子，口服qd）。均&rarr;JAK2&rarr;STAT5&rarr;巨核细胞&rarr;PLT释放。起效1-2周，需持续用药。",
+        "tl": [
+          {
+            "d": "第2周（2025-02-03）",
+            "v": "PLT 56&times;10&sup9;/L。无新发瘀斑。肝功能正常。",
+            "c": "green"
+          },
+          {
+            "d": "第4周（2025-02-17）",
+            "v": "PLT 112&times;10&sup9;/L。✅ 完全反应 维持25mg/d。",
+            "c": "green"
+          },
+          {
+            "d": "第12周（2025-04-14）",
+            "v": "PLT稳定90-130&times;10&sup9;/L。尝试减量至25mg隔日。",
+            "c": "green"
+          },
+          {
+            "d": "第24周（2025-07-07）",
+            "v": "隔日服药PLT 75-95&times;10&sup9;/L。最低有效剂量维持。肝功能持续正常。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "张XX，男，6岁8月",
+            "就诊日期",
+            "2025-01-20（启用TPO-RA）",
+            "主诉"
+          ],
+          [
+            "确诊ITP 14月，血小板持续偏低",
+            "标签",
+            "Romiplostim Eltrombopag TPO-RA",
+            "T",
+            "36.6&deg;C"
+          ],
+          [
+            "HR",
+            "86次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "22 kg",
+            "一般情况",
+            "神志清，精神可",
+            "皮肤粘膜",
+            "双下肢少量瘀斑"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺腹",
+            "未见异常",
+            "PLT"
+          ],
+          [
+            "28&times;10&sup9;/L",
+            "150-350",
+            "&#8595;&#8595;",
+            "WBC",
+            "7.2&times;10&sup9;/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Bussel JB, et al. Phase 3 randomised study of avatrombopag, a TPO-RA for ITP. Br J Haematol. 2018;183(4):553-562. PMID: 30191972\n2. Bussel JB, et al. Pediatric Immune Thrombocytopenia. Adv Pediatr. 2024;71(1):123-145. PMID: 38944486",
+        "pmid": "30191972",
+        "n": 2
+      },
+      {
+        "f": "case_ITP_acute.html",
+        "t": "病例：急性免疫性血小板减少症（ITP）",
+        "sub": "病例：急性免疫性血小板减少症（ITP）",
+        "nav": "acute",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "PLT<20×10⁹/L"
+          },
+          {
+            "c": "t-y",
+            "l": "病毒感染后"
+          },
+          {
+            "c": "t-a",
+            "l": "IVIG"
+          }
+        ],
+        "alert": "⚠️ PLT<20×10⁹/L颅内出血风险：需密切观察神志、瞳孔、呕吐情况。IVIG 3-5天内PLT多可回升。",
+        "tl": [
+          {
+            "d": "第3天（2025-09-14）",
+            "v": "IVIG第2剂后。PLT回升至45×10⁹/L。皮肤新发瘀斑减少，牙龈出血停止。✅ 治疗有效",
+            "c": "yellow"
+          },
+          {
+            "d": "第7天（2025-09-18）",
+            "v": "PLT 128×10⁹/L，皮肤瘀斑明显消退。出院观察。",
+            "c": "green"
+          },
+          {
+            "d": "第4周（2025-10-10）",
+            "v": "PLT 245×10⁹/L，完全正常。无新发瘀斑。✅ 完全缓解",
+            "c": "green"
+          },
+          {
+            "d": "第12周（2025-12-05）",
+            "v": "PLT 268×10⁹/L，持续正常。无复发。结论：急性ITP，6周内自发缓解。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "李XX，男，4岁3月",
+            "就诊日期",
+            "2025-09-12",
+            "主诉"
+          ],
+          [
+            "全身瘀点瘀斑3天",
+            "标签",
+            "PLT<20×10⁹/L 病毒感染后 IVIG",
+            "T",
+            "36.8℃"
+          ],
+          [
+            "HR",
+            "105次/分",
+            "BP",
+            "88/55 mmHg",
+            "体重"
+          ],
+          [
+            "16 kg（P50）",
+            "一般情况",
+            "神志清，精神可，营养中等",
+            "皮肤粘膜",
+            "全身散在瘀点瘀斑，下肢密集，口腔粘膜可见出血点"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心率105次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，无压痛，肝脾未触及肿大",
+            "神经系统",
+            "无异常",
+            "WBC",
+            "8.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "急性ITP是儿童最常见出血性疾病，好发于2-5岁",
+          "80%患儿在6月内自发缓解，预后良好",
+          "PLT<20×10⁹/L或活动性出血 → IVIG一线治疗（1g/kg×1-2天）",
+          "IVIG通过封闭FcγR抑制脾脏巨噬细胞吞噬血小板",
+          "外周破坏：抗GPIIb/IIIa抗体→FcγR→脾巨噬细胞吞噬",
+          "骨髓抑制：自身抗体+CTL→巨核细胞损伤→产板减少\n\n\n📖 参考文献\n\n1. Bussel JB, et al. Pediatric Immune Thrombocytopenia. Adv Pediatr. 2024;71(1):123-145. PMID: 38944486"
+        ],
+        "ref": "1. Bussel JB, et al. Pediatric Immune Thrombocytopenia. Adv Pediatr. 2024;71(1):123-145. PMID: 38944486\n2. Neunert C, et al. American Society of Hematology 2019 guidelines for ITP. Blood Adv. 2019;3(23):3829-3866.",
+        "pmid": "38944486",
+        "n": 3
+      },
+      {
+        "f": "case_ITP_chronic.html",
+        "t": "病例：慢性免疫性血小板减少症（ITP）",
+        "sub": "病例：慢性免疫性血小板减少症（ITP）",
+        "nav": "chronic",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "慢性ITP"
+          },
+          {
+            "c": "t-y",
+            "l": "持续>12月"
+          },
+          {
+            "c": "t-a",
+            "l": "TPO-RA"
+          }
+        ],
+        "alert": "治疗策略转变：慢性ITP治疗从\"减少破坏\"（激素/IVIG）转向\"增加生成\"（TPO-RA），脾切率从>50%降至<10%。",
+        "tl": [
+          {
+            "d": "第2周（2025-03-29）",
+            "v": "Eltrombopag 25mg/d后PLT 52×10⁹/L。瘀斑减少。",
+            "c": "green"
+          },
+          {
+            "d": "第4周（2025-04-12）",
+            "v": "PLT 105×10⁹/L。皮肤无新发瘀斑。肝功能正常。✅ 完全反应",
+            "c": "green"
+          },
+          {
+            "d": "第12周（2025-06-07）",
+            "v": "PLT稳定于80-120×10⁹/L。Eltrombopag减至25mg隔日一次。",
+            "c": "green"
+          },
+          {
+            "d": "第24周（2025-09-01）",
+            "v": "PLT 75×10⁹/L（隔日服药）。无出血。肝功能正常。慢性ITP用最低有效剂量维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "王XX，女，8岁6月",
+            "就诊日期",
+            "2025-03-15（首次诊断ITP）",
+            "主诉"
+          ],
+          [
+            "反复皮肤瘀斑1年余",
+            "标签",
+            "慢性ITP 持续>12月 TPO-RA",
+            "T",
+            "36.5℃"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "100/65 mmHg",
+            "体重"
+          ],
+          [
+            "26 kg（P50）",
+            "一般情况",
+            "神志清，精神可，营养良好",
+            "皮肤粘膜",
+            "双下肢散在瘀斑，口腔粘膜无出血"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "未见异常",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未触及",
+            "神经系统",
+            "无异常",
+            "WBC",
+            "6.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "慢性ITP=病程持续>12个月，治疗目标是维持安全PLT",
+          "TPO-RA是近15年ITP最大突破：从\"减少破坏\"到\"增加生成\"",
+          "治疗反应率70-90%，但需持续用药，停药后多复发"
+        ],
+        "ref": "1. Bussel JB, et al. Pediatric Immune Thrombocytopenia. Adv Pediatr. 2024;71(1):123-145. PMID: 38944486\n2. Bussel JB, et al. Phase 3 randomised study of avatrombopag, a TPO-RA for ITP. Br J Haematol. 2018;183(4):553-562. PMID: 30191972",
+        "pmid": "38944486",
+        "n": 4
+      },
+      {
+        "f": "case_ITP_secondary.html",
+        "t": "继发性ITP（SLE相关）",
+        "sub": "继发性ITP（SLE相关）",
+        "nav": "secondary",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "SLE相关"
+          },
+          {
+            "c": "t-y",
+            "l": "抗磷脂抗体阳性"
+          },
+          {
+            "c": "t-a",
+            "l": "继发性ITP"
+          }
+        ],
+        "alert": "关键转变：继发性ITP治疗需兼顾原发病。所有新诊断ITP应查ANA+dsDNA+aPL，ITP可能先于SLE数年出现。",
+        "tl": [
+          {
+            "d": "修正诊断后4周（2025-06-05）",
+            "v": "PLT 98&times;10&sup9;/L，关节肿痛缓解，面部皮疹减轻。补体C3 0.6 g/L。",
+            "c": "yellow"
+          },
+          {
+            "d": "第12周（2025-07-30）",
+            "v": "PLT 152&times;10&sup9;/L，24h尿蛋白0.3g。SLEDAI评分从12降至4。✅ 缓解",
+            "c": "green"
+          },
+          {
+            "d": "第24周（2025-10-25）",
+            "v": "PLT正常，补体恢复正常。泼尼松减至10mg/d。MMF+HCQ继续维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "赵XX，女，14岁",
+            "就诊日期",
+            "2023-05-10（首次ITP诊断）；2025-05-08（修正诊断）",
+            "主诉"
+          ],
+          [
+            "反复皮肤瘀斑2年，关节肿痛伴面部皮疹3月",
+            "标签",
+            "SLE相关 抗磷脂抗体阳性 继发性ITP",
+            "T",
+            "37.4&deg;C"
+          ],
+          [
+            "HR",
+            "82次/分",
+            "BP",
+            "112/70 mmHg",
+            "体重"
+          ],
+          [
+            "45 kg",
+            "一般情况",
+            "神志清，精神可",
+            "皮肤粘膜",
+            "面部蝶形红斑，双下肢散在瘀斑"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "未见异常",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未触及",
+            "关节",
+            "双手PIP肿胀压痛（4个关节）",
+            "WBC",
+            "3.8&times;10&sup9;/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Wang Y, et al. Rituximab alleviates pediatric SLE associated refractory immune thrombocytopenia. Immunol Res. 2024;72(1):97-106. PMID: 38279058\n2. Petri M, et al. Derivation and validation of SLICC classification criteria for SLE. Arthritis Rheum. 2012;64(8):2677-2686.",
+        "pmid": "38279058",
+        "n": 5
+      }
     ]
   },
   "PID": {
     "cn": "PID原发性免疫缺陷病",
     "cases": [
-      {"f":"case_PID_XLA.html","t":"XLA — X连锁无丙种球蛋白血症","sub":"X连锁无丙种球蛋白血症（XLA，X-Linked Agammaglobulinemia）/ BTK缺陷","nav":"XLA","tags":[{"c":"t-r","l":"BTK缺陷"},{"c":"t-y","l":"无丙种球蛋白"},{"c":"t-a","l":"IVIG替代"}],"alert":"首个PID(1952年Bruton)。BTK突变→B细胞停滞于pre-B→CD19+近零→所有Ig极低。母体IgG消失后(4-6月)反复化脓感染。终身IVIG替代。","tl":[{"d":"6月龄","v":"母体IgG消失后反复中耳炎+肺炎"},{"d":"化验","v":"IgG/IgA/IgM极低，CD19+<1%","c":"yellow"},{"d":"基因","v":"BTK突变","c":"yellow"},{"d":"治疗","v":"IVIG 400-600mg/kg/月→显著改善","c":"green"}],"mech_t":"BTK与B细胞发育","mech":"Pre-BCR→SYK→BLNK→BTK→PLCγ2→钙内流→增殖分化。无BTK→pre-B停滞→B细胞近零。CD19+近0%(关键诊断)，T细胞正常。","th":["特征","XLA","CVID","SCID"],"tr":[["遗传","XLR(BTK)","多基因","AR/AD"],["发病","4-6月","20-40岁","新生儿"],["B细胞","<1%","正常/↓","极低"],["Ig","全部极低","IgG低","全部极低"],["治疗","IVIG","IVIG","HSCT"]],"pts":["XLA=反复化脓+B细胞近零+低丙球","BTK→Pre-B发育停滞","终身IVIG预后良好","BTK抑制剂(Ibrutinib)印证此通路"],"ref":"Agammaglobulinemia. JACI Pract. 2023;11(4). PMID: 36933798","pmid":"36933798","n":1},
-      {"f":"case_PID_CVID.html","t":"CVID — 常见变异型免疫缺陷","sub":"常见变异型免疫缺陷病（CVID，Common Variable Immunodeficiency）","nav":"CVID","tags":[{"c":"t-y","l":"CVID"},{"c":"t-a","l":"低IgG"},{"c":"t-r","l":"自身免疫30%"}],"alert":"最常见症状性PID(1/25,000)。低IgG+低IgA/IgM+抗体反应缺陷。B细胞存在但功能异常。30%自身免疫，5-10%淋巴瘤。","tl":[{"d":"青年","v":"反复鼻窦炎+肺炎"},{"d":"20+岁","v":"支气管扩张","c":"red"},{"d":"化验","v":"IgG 2.1, IgA 0.3 g/L","c":"yellow"},{"d":"治疗","v":"IVIG替代→改善","c":"green"}],"mech_t":"CVID免疫缺陷谱","mech":"B细胞→浆细胞分化障碍→CSR障碍→低IgG+低IgA→反复感染。Treg↓→自身免疫30%。B细胞克隆→淋巴瘤5-10%。","th":["特征","CVID","XLA","Good综合征"],"tr":[["发病","20-40岁","4-6月","40-70岁"],["B细胞","存在(功能↓)","近零","近零"],["自身免疫","30%","罕见","常见(MG)"],["胸腺瘤","无","无","100%"]],"pts":["最常见症状性PID","B细胞存在但功能异常(区别XLA)","30%自身免疫+5-10%淋巴瘤","IVIG+定期监测"],"ref":"CVID. JACI. 2023;151(2). PMID: 36764329","pmid":"36764329","n":2},
-      {"f":"case_PID_SCID.html","t":"SCID — TREC筛查拯救生命","sub":"重症联合免疫缺陷（SCID，Severe Combined Immunodeficiency）","nav":"SCID","tags":[{"c":"t-r","l":"致命"},{"c":"t-y","l":"TREC"},{"c":"t-a","l":"HSCT"}],"alert":"最严重PID(泡泡男孩)。T+B+NK严重缺陷→不经治疗2岁内死亡。TREC筛查→3.5月前HSCT→存活>90%。","tl":[{"d":"筛查","v":"TREC↓→紧急转诊","c":"green"},{"d":"基因","v":"IL2RG→X-SCID","c":"yellow"},{"d":"保护","v":"隔离+预防抗生素+无活疫苗"},{"d":"HSCT","v":"3月龄→免疫重建成功","c":"green"}],"mech_t":"SCID分型","mech":"X-SCID(45%)：IL2RG(γc)→IL-2/4/7/9/15/21信号全断→T⁻B⁺NK⁻。分型：T⁻B⁺NK⁻(IL2RG/JAK3) | T⁻B⁻NK⁺(RAG1/2) | T⁻B⁻NK⁻(ADA)。","th":["类型","基因","T","B","NK","频率"],"tr":[["X-SCID","IL2RG","−","+","−","45%"],["ADA","ADA","−","−","−","15%"],["RAG1/2","RAG1/2","−","−","+","10%"],["JAK3","JAK3","−","+","−","6%"]],"pts":["儿科急症，TREC筛查标准","3.5月前HSCT存活>90%","γc→6种细胞因子→T+NK双缺","基因治疗已用于X-SCID/ADA-SCID"],"ref":"SCID. NEJM. 2023;388(19). PMID: 37163535","pmid":"37163535","n":3},
-      {"f":"case_PID_CGD.html","t":"CGD — 慢性肉芽肿病","sub":"慢性肉芽肿病（CGD，Chronic Granulomatous Disease）/ NADPH氧化酶缺陷","nav":"CGD","tags":[{"c":"t-r","l":"NADPH氧化酶"},{"c":"t-y","l":"催化过氧化物(-)"},{"c":"t-a","l":"IFN-γ"}],"alert":"吞噬细胞杀菌缺陷。NADPH氧化酶缺陷→不能产ROS→过氧化氢酶阳性菌(金葡菌/曲霉菌)无法杀灭。反复化脓+肉芽肿。DHR诊断。","tl":[{"d":"幼儿","v":"反复脓肿+淋巴结炎+曲霉菌肺炎"},{"d":"DHR","v":"呼吸爆发→无荧光→确诊","c":"yellow"},{"d":"基因","v":"gp91phox(CYBB)→X-CGD","c":"yellow"},{"d":"预防","v":"TMP-SMX+伊曲康唑+IFN-γ","c":"green"}],"mech_t":"NADPH氧化酶与呼吸爆发","mech":"正常：NADPH氧化酶→O₂→O₂⁻→H₂O₂→HOCl→杀菌。CGD：无ROS→对过氧化氢酶阳性菌无效。矛盾：杀菌↓但肉芽肿↑。","th":["特征","X-CGD(gp91)","AR-CGD(p47)","AR-CGD(p67)"],"tr":[["遗传","XLR","AR","AR"],["频率","~65%","~25%","~5%"],["严重","重","较轻","重"]],"pts":["CGD=NADPH氧化酶→无ROS","过氧化氢酶阳性菌特别易感","DHR金标准","预防性抗生素+抗真菌+IFN-γ"],"ref":"CGD. J Clin Immunol. 2023;43(5). PMID: 37014825","pmid":"37014825","n":4},
-      {"f":"case_PID_ALPS.html","t":"ALPS — 自身免疫性淋巴增生综合征","sub":"自身免疫性淋巴增生综合征（ALPS，Autoimmune Lymphoproliferative Syndrome）/ FAS通路缺陷","nav":"ALPS","tags":[{"c":"t-r","l":"FAS突变"},{"c":"t-y","l":"淋巴结肿大"},{"c":"t-a","l":"双阴性T细胞"}],"alert":"ALPS=FAS凋亡通路缺陷→淋巴细胞不能正常死亡→淋巴结/脾大+自身免疫。特征：DNT细胞(CD3+CD4-CD8-)升高。常伴Evans综合征。","tl":[{"d":"儿童","v":"慢性淋巴结肿大+脾大"},{"d":"血细胞","v":"ITP和/或AIHA反复发作"},{"d":"化验","v":"DNT细胞>1.5%总T细胞","c":"yellow"},{"d":"基因","v":"FAS杂合突变","c":"yellow"},{"d":"治疗","v":"Sirolimus→淋巴结缩小+血象改善","c":"green"}],"mech_t":"FAS凋亡通路","mech":"正常：FAS(CD95)+FASL→FADD→Caspase-8/10→凋亡→清除活化淋巴细胞。<br>ALPS：FAS突变→三聚体功能丧失→凋亡中断→淋巴细胞蓄积→①淋巴增殖 ②DNT蓄积 ③自身免疫。","th":["ALPS分型","基因","遗传","频率"],"tr":[["ALPS-FAS","FAS","AD(不完全外显)","~70%"],["ALPS-FASLG","FASLG","AD","~2%"],["ALPS-CASP10","CASP10","AD","~5%"],["ALPS-U","未知","?","~20%"]],"pts":["ALPS=FAS凋亡缺陷→淋巴增殖+自身免疫","DNT(CD3+CD4-CD8-TCRαβ+)是特征标志","常伴Evans综合征需鉴别","Sirolimus一线靶向mTOR"],"ref":"ALPS. JACI. 2023;151(6). PMID: 36868431","pmid":"36868431","n":5}
+      {
+        "f": "case_PID_ALPS.html",
+        "t": "病例：自身免疫性淋巴增生综合征（ALPS）",
+        "sub": "病例：自身免疫性淋巴增生综合征（ALPS）",
+        "nav": "ALPS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第4周（2025-09-17）",
+            "v": "泼尼松减量至0.5 mg/kg/d。淋巴结较前缩小，皮肤瘀点消退。\n          Hb 95 g/L，PLT 85×10⁹/L，Sirolimus谷浓度7.2 ng/mL。\n          继续Sirolimus+泼尼松减量。"
+          },
+          {
+            "d": "第12周（2025-11-12）",
+            "v": "泼尼松停用。淋巴结明显缩小（最大1.5cm），脾肋下2cm。\n          Hb 112 g/L，PLT 128×10⁹/L，Coombs弱阳性。\n          ✅ 血象改善"
+          },
+          {
+            "d": "第24周（2026-02-04）",
+            "v": "淋巴结进一步缩小，脾肋下刚及。\n          Hb 125 g/L，PLT 165×10⁹/L，Coombs阴性。\n          DNT细胞降至2.1%。\n          ✅ 疾病稳定控制",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "李XX，男，5岁3月",
+            "就诊日期",
+            "2025-08-20",
+            "主诉"
+          ],
+          [
+            "反复发热伴淋巴结肿大2年，皮肤苍白1月",
+            "标签",
+            "FAS突变 淋巴结肿大 双阴性T细胞 Evans综合征",
+            "T",
+            "37.8℃"
+          ],
+          [
+            "HR",
+            "105次/分",
+            "BP",
+            "92/58 mmHg",
+            "体重"
+          ],
+          [
+            "18 kg（P25）",
+            "一般情况",
+            "神清，精神可，面色苍白",
+            "皮肤粘膜",
+            "全身散在瘀点，巩膜轻度黄染"
+          ],
+          [
+            "淋巴结",
+            "双颈/腋/腹股沟淋巴结肿大(1.5-3cm)，质中，活动",
+            "心肺",
+            "心率105次/分，律齐，未及杂音；双肺清",
+            "腹部"
+          ],
+          [
+            "脾肋下4cm，肝肋下2cm，质中",
+            "关节",
+            "无肿胀压痛",
+            "WBC",
+            "6.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "ALPS = FAS凋亡通路缺陷 → 淋巴细胞不能正常死亡 → 淋巴增殖 + 自身免疫",
+          "DNT细胞（CD3+CD4-CD8-TCRαβ+）是特征性标志（>1.5%总T细胞）",
+          "常以Evans综合征（AIHA + ITP）为首发，伴慢性淋巴结/脾大",
+          "需与淋巴瘤、SLE鉴别 — 病程长 + DNT升高是关键线索",
+          "Sirolimus（西罗莫司）靶向mTOR是一线首选，疗效优于传统免疫抑制剂",
+          "激素仅用于急性期桥接，长期维持依赖Sirolimus"
+        ],
+        "ref": "1. Rao VK, et al. Neonatal ALPS: A Case Report and Brief Review. J Pediatr Hematol Oncol. 2021;43(2):e189-e192. PMID: 32149866\n      2. Rao VK, et al. Sirolimus is effective in ALPS. Blood. 2022;140(4):360-371.\n      3. Teachey DT, et al. ALPS diagnosis and management. J Allergy Clin Immunol Pract. 2023;11(8):2385-2397.",
+        "pmid": "32149866",
+        "n": 1
+      },
+      {
+        "f": "case_PID_CGD.html",
+        "t": "病例：慢性肉芽肿病（CGD）",
+        "sub": "病例：慢性肉芽肿病（CGD）",
+        "nav": "CGD",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第4周（2025-07-08）",
+            "v": "伏立康唑治疗4周，体温恢复正常，咳嗽明显减轻。\n          CRP 22 mg/L，胸部CT复查：空洞缩小。\n          开始IFN-γ皮下注射。"
+          },
+          {
+            "d": "第12周（2025-09-02）",
+            "v": "肺部病灶基本吸收，改为伊曲康唑口服维持。\n          体重增加至12.5 kg。预防性TMP-SMX规律服用。\n          ✅ 感染控制"
+          },
+          {
+            "d": "第16周（2025-09-30）",
+            "v": "开始HSCT（造血干细胞移植）评估。母为HLA半相合供者。\n          拟行减毒预处理半相合HSCT",
+            "c": "yellow"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "王XX，男，2岁6月",
+            "就诊日期",
+            "2025-06-10",
+            "主诉"
+          ],
+          [
+            "反复发热伴皮肤脓肿1年余，咳嗽2周",
+            "标签",
+            "NADPH氧化酶缺陷 过氧化氢酶阳性菌 DHR试验 X-CGD",
+            "T",
+            "38.2℃"
+          ],
+          [
+            "HR",
+            "120次/分",
+            "BP",
+            "85/55 mmHg",
+            "体重"
+          ],
+          [
+            "11 kg（<P3）",
+            "一般情况",
+            "神清，精神稍萎，消瘦",
+            "皮肤粘膜",
+            "左腋下见手术瘢痕，腹股沟区可触及皮下结节"
+          ],
+          [
+            "淋巴结",
+            "双颈、腋窝淋巴结肿大(1-2cm)",
+            "心肺",
+            "右肺呼吸音减低，可闻及少许湿啰音；心律齐",
+            "腹部"
+          ],
+          [
+            "肝肋下2cm，脾未及",
+            "脊柱四肢",
+            "无异常",
+            "WBC",
+            "18.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "CGD = NADPH氧化酶缺陷 → 吞噬细胞不能产生活性氧（ROS）→ 杀菌缺陷",
+          "DHR试验是金标准（呼吸爆发缺失）",
+          "对过氧化氢酶阳性菌特别易感（金葡菌、粘质沙雷菌）",
+          "侵袭性真菌感染（曲霉菌）是主要死因之一",
+          "终身预防性抗生素（TMP-SMX）+ 抗真菌（伊曲康唑）+ IFN-γ",
+          "HSCT是目前唯一根治手段，早期移植预后显著改善"
+        ],
+        "ref": "1. Hsieh MM, et al. Case Report: Symptomatic CGD in the Newborn. Front Immunol. 2021;12:667524. PMID: 33854515\n      2. Marciano BE, et al. CGD: long-term follow-up and HSCT outcomes. J Allergy Clin Immunol. 2023;151(3):686-697.\n      3. Hsu AP, et al. CGD genetics and pathophysiology. Curr Opin Allergy Clin Immunol. 2023;23(6):441-448.",
+        "pmid": "33854515",
+        "n": 2
+      },
+      {
+        "f": "case_PID_CVID.html",
+        "t": "病例：常见变异型免疫缺陷病（CVID）",
+        "sub": "病例：常见变异型免疫缺陷病（CVID）",
+        "nav": "CVID",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第12周（2025-11-28）",
+            "v": "IVIG 400 mg/kg q4w×3次。IgG谷值5.8 g/L。\n          咳嗽明显减少，无新发感染。精神食欲改善。\n          ✅ 替代治疗有效"
+          },
+          {
+            "d": "第24周（2026-02-20）",
+            "v": "无新发肺炎/鼻窦炎。IgG谷值6.5 g/L。\n          体重增加2 kg。支气管扩张稳定。\n          ✅ 感染频率显著降低",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "赵XX，女，28岁",
+            "就诊日期",
+            "2025-09-05",
+            "主诉"
+          ],
+          [
+            "反复鼻窦炎、肺炎5年，加重伴咳嗽1月",
+            "标签",
+            "CVID 低IgG 自身免疫30% IVIG替代",
+            "T",
+            "37.5℃"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "112/72 mmHg",
+            "体重"
+          ],
+          [
+            "52 kg（BMI 19.8）",
+            "一般情况",
+            "神清，精神可，体型偏瘦",
+            "皮肤粘膜",
+            "无皮疹、无出血点"
+          ],
+          [
+            "淋巴结",
+            "双颈可及数枚0.5-1cm淋巴结",
+            "心肺",
+            "双下肺可闻固定湿啰音（支气管扩张）",
+            "腹部"
+          ],
+          [
+            "肝脾未及，无压痛",
+            "关节",
+            "无肿胀压痛",
+            "WBC",
+            "7.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "CVID = 低IgG + 低IgA/IgM + 抗体反应缺陷 + 反复感染（排除继发性）",
+          "B细胞存在但功能异常（区别于XLA的B细胞近零）",
+          "30%合并自身免疫（ITP/AIHA最常见）",
+          "5-10%发生淋巴瘤，需长期监测",
+          "终身IVIG替代是核心治疗，目标IgG谷值>5 g/L"
+        ],
+        "ref": "1. Salzer U, et al. Common Variable Immunodeficiency: Epidemiology, Pathogenesis, Clinical Manifestations, Diagnosis, Classification, and Management. J Investig Allergol Clin Immunol. 2019;29(4):277-295. PMID: 30741636\n      2. Jolles S, et al. CVID diagnosis and management. Front Immunol. 2023;14:1125856.",
+        "pmid": "30741636",
+        "n": 3
+      },
+      {
+        "f": "case_PID_SCID.html",
+        "t": "病例：重症联合免疫缺陷病（SCID）",
+        "sub": "病例：重症联合免疫缺陷病（SCID）",
+        "nav": "SCID",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第4周（2025-11-15）",
+            "v": "保护性隔离中。等待HSCT供者配型。母为HLA半相合。预防用药规律服用。无感染征象。",
+            "c": "yellow"
+          },
+          {
+            "d": "第10周（2025-12-27）",
+            "v": "行母源半相合HSCT（减毒预处理：氟达拉滨+白消安+ATG）。输注CD34+细胞 12.5×10⁶/kg。\n          移植过程顺利，无严重并发症。"
+          },
+          {
+            "d": "第22周（移植+12周，2026-03-20）",
+            "v": "骨髓植活。CD3+T细胞升至0.8×10⁹/L，CD4+ 0.5×10⁹/L。\n          T细胞增殖反应（PHA）逐步恢复。\n          ✅ 免疫重建进行中脱离隔离。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "陈XX，男，12天",
+            "就诊日期",
+            "2025-10-18",
+            "主诉"
+          ],
+          [
+            "新生儿筛查TRET极低12天",
+            "标签",
+            "儿科急症 TREC筛查 HSCT X-SCID",
+            "T",
+            "36.8℃"
+          ],
+          [
+            "HR",
+            "142次/分",
+            "BP",
+            "68/42 mmHg",
+            "体重"
+          ],
+          [
+            "3.35 kg",
+            "一般情况",
+            "新生儿貌，反应可",
+            "皮肤粘膜",
+            "无皮疹、无出血点"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心律齐，未及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "软，肝脾未及",
+            "外生殖器",
+            "正常男性外观",
+            "WBC",
+            "5.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "SCID是儿科免疫急症，不经治疗2岁内死亡",
+          "TREC新生儿筛查是标准，使早期诊断成为可能",
+          "X-SCID（IL2RG，45%）最常见 → γc链缺陷 → T⁻B⁺NK⁻",
+          "γc链参与6种细胞因子信号 → T+NK双重发育障碍",
+          "HSCT是根治手段，3.5月龄前存活率>90%",
+          "基因治疗已用于X-SCID和ADA-SCID"
+        ],
+        "ref": "1. Yu H, et al. SCID diagnosis and genetic defects. Immunol Rev. 2024;321(1):91-105. PMID: 38287514\n      2. Pai SY, et al. HSCT for SCID: long-term outcomes. J Allergy Clin Immunol. 2023;151(6):1518-1530.\n      3. Gaspar HB, et al. Gene therapy for SCID. Nat Rev Immunol. 2023;23(3):163-178.",
+        "pmid": "38287514",
+        "n": 4
+      },
+      {
+        "f": "case_PID_XLA.html",
+        "t": "病例：X连锁无丙种球蛋白血症（XLA）",
+        "sub": "病例：X连锁无丙种球蛋白血症（XLA）",
+        "nav": "XLA",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第8周（2026-01-17）",
+            "v": "IVIG 400 mg/kg q4w×2次。IgG谷值5.2 g/L。无新发感染。中耳炎未复发。✅ 替代治疗有效"
+          },
+          {
+            "d": "第24周（2026-05-10）",
+            "v": "IVIG规律替代6次。IgG谷值6.8 g/L。无感染发作。生长发育正常。调整IVIG剂量至500 mg/kg q4w。✅ 稳定",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "张XX，男，8月",
+            "就诊日期",
+            "2025-11-22",
+            "主诉"
+          ],
+          [
+            "反复发热伴中耳炎、肺炎3月余",
+            "标签",
+            "BTK缺陷 B细胞近零 低丙种球蛋白 IVIG替代",
+            "T",
+            "37.2℃"
+          ],
+          [
+            "HR",
+            "118次/分",
+            "BP",
+            "78/50 mmHg",
+            "体重"
+          ],
+          [
+            "8.5 kg（P50）",
+            "一般情况",
+            "神清，精神可",
+            "皮肤粘膜",
+            "无皮疹"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大（特征性：缺B细胞→无生发中心→淋巴结小）",
+            "心肺",
+            "心律齐；双肺呼吸音粗，右下肺少许湿啰音",
+            "腹部"
+          ],
+          [
+            "软，肝脾未及",
+            "五官",
+            "双侧鼓膜穿孔后瘢痕",
+            "WBC",
+            "12.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "XLA = 反复化脓感染 + B细胞近零 + 低丙种球蛋白（4-6月龄起病）",
+          "BTK → Pre-B细胞发育停滞，B细胞<1%是特征",
+          "XLA：婴儿起病，B细胞近零，T细胞正常",
+          "CVID：成人起病，B细胞存在但功能异常",
+          "终身IVIG替代预后良好，可正常生活"
+        ],
+        "ref": "1. Walter JE, et al. COVID-19 and X-linked agammaglobulinemia (XLA) - insights from a monogenic antibody deficiency. Curr Opin Allergy Clin Immunol. 2021;21(6):530-535. PMID: 34596095\n      2. Bruton OC. Agammaglobulinemia. Pediatrics. 1952;9(6):722-728.",
+        "pmid": "34596095",
+        "n": 5
+      }
     ]
   },
   "SLE": {
     "cn": "SLE系统性红斑狼疮",
     "cases": [
-      {"f":"case_SLE_neuropsychiatric.html","t":"NPSLE — 神经精神性狼疮","sub":"神经精神性系统性红斑狼疮（NPSLE，Neuropsychiatric SLE）","nav":"NPSLE","tags":[{"c":"t-r","l":"中枢神经受累"},{"c":"t-y","l":"癫痫/精神症状"},{"c":"
+      {
+        "f": "case_SLE_APLS.html",
+        "t": "病例：抗磷脂综合征合并SLE",
+        "sub": "病例：抗磷脂综合征合并SLE",
+        "nav": "APLS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0周",
+            "v": "启动华法林+低分子肝素桥接抗凝，HCQ+甲泼尼龙继续。"
+          },
+          {
+            "d": "第2周",
+            "v": "左下肢肿胀明显消退。INR达标（2.5）。停低分子肝素。✅ 抗凝达标",
+            "c": "green"
+          },
+          {
+            "d": "第3月",
+            "v": "DVT稳定，无新发血栓。SLE活动指标改善（ESR 18、CRP 4、C3 0.85）。",
+            "c": "green"
+          },
+          {
+            "d": "第6月",
+            "v": "持续无血栓复发。计划再次妊娠需调整方案（华法林→低分子肝素，因华法林致畸）。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "赵XX，女，32岁",
+            "就诊日期",
+            "2025-05-20",
+            "主诉"
+          ],
+          [
+            "左下肢肿胀伴SLE病史5年，反复胎停3年",
+            "标签",
+            "血栓 病理妊娠 狼疮抗凝物 SLE",
+            "T",
+            "36.8°C"
+          ],
+          [
+            "HR",
+            "82次/分",
+            "BP",
+            "128/78 mmHg",
+            "体重"
+          ],
+          [
+            "56 kg",
+            "一般情况",
+            "神志清，精神可",
+            "皮肤粘膜",
+            "双手指尖Raynaud现象，面部无蝶形红斑"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "无异常",
+            "腹部"
+          ],
+          [
+            "无压痛，肝脾未触及",
+            "四肢",
+            "左下肢肿胀、压痛，周径较右侧增粗3 cm",
+            "WBC",
+            "6.2×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "SLE（活动期） ②继发性抗磷脂综合征（APS）",
+          "APS = 反复血栓 + 病理妊娠 + 持续aPL阳性",
+          "SLE中约30%合并aPL阳性，应常规筛查",
+          "三重aPL阳性 → 高血栓风险",
+          "需区分原发性APS与SLE继发性APS",
+          "灾难性APS（CAPS）是致命性急症"
+        ],
+        "ref": "1. Neunert C, et al. Recommendations for the management of acute immune thrombocytopenia in children. Blood Transfus. 2024;22(3):241-249. PMID: 37677093\n      2. Cervera R, et al. Antiphospholipid syndrome. N Engl J Med. 2023;388(22):2038-2048. PMID: 37276849",
+        "pmid": "37677093",
+        "n": 1
+      },
+      {
+        "f": "case_SLE_drug_induced.html",
+        "t": "病例：药物性红斑狼疮",
+        "sub": "病例：药物性红斑狼疮",
+        "nav": "drug_induced",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "停药后第1周",
+            "v": "关节痛开始减轻，体温降至正常。"
+          },
+          {
+            "d": "停药后第4周",
+            "v": "关节痛基本消失，面部红斑消退。ESR 22 mm/h。✅ 症状明显改善",
+            "c": "green"
+          },
+          {
+            "d": "停药后第6周",
+            "v": "症状完全消失，ANA降至1:80。胸腔积液完全吸收。✅ 完全缓解",
+            "c": "green"
+          },
+          {
+            "d": "停药后第12周",
+            "v": "ANA转阴。抗组蛋白抗体转阴。血压控制良好。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "周XX，男，58岁",
+            "就诊日期",
+            "2025-08-05",
+            "主诉"
+          ],
+          [
+            "关节痛、发热伴胸腔积液2月",
+            "标签",
+            "药物相关 抗组蛋白抗体 停药缓解",
+            "T",
+            "37.9°C"
+          ],
+          [
+            "HR",
+            "78次/分",
+            "BP",
+            "135/85 mmHg",
+            "体重"
+          ],
+          [
+            "72 kg",
+            "一般情况",
+            "神志清，精神欠佳",
+            "皮肤粘膜",
+            "面部轻微红斑"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "左下肺呼吸音减低（胸腔积液）",
+            "腹部"
+          ],
+          [
+            "无异常",
+            "关节",
+            "双手PIP、双腕、双膝压痛，无肿胀",
+            "WBC",
+            "5.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "DILE = 药物暴露 + 狼疮样症状 + 抗组蛋白抗体阳性 + 抗dsDNA阴性",
+          "常见致病药物：肼苯哒嗪、普鲁卡因胺、异烟肼、TNF-α抑制剂",
+          "慢乙酰化者（NAT2变异）是遗传易感因素",
+          "DILE与特发性SLE鉴别：无肾脏/CNS受累、抗dsDNA阴性、补体正常",
+          "TNF-α抑制剂诱发的狼疮可能dsDNA阳性（特殊类型）",
+          "停药4–6周症状消退，预后良好"
+        ],
+        "ref": "1. Rubinstein A, et al. Drug-induced lupus. Nat Rev Rheumatol. 2023;19(4):215-226. PMID: 36725964\n      2. Borchers AT, et al. Drug-induced lupus. Clin Rev Allergy Immunol. 2007;33(3):258-268.",
+        "pmid": "36725964",
+        "n": 2
+      },
+      {
+        "f": "case_SLE_lupus_nephritis.html",
+        "t": "病例：狼疮性肾炎IV型 — 弥漫增殖",
+        "sub": "病例：狼疮性肾炎IV型 — 弥漫增殖",
+        "nav": "lupus_nephritis",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第4周",
+            "v": "水肿减轻。Scr 118，尿蛋白1.8 g/d。"
+          },
+          {
+            "d": "第12周",
+            "v": "Scr 92，尿蛋白0.8 g/d。补体回升。✅ 部分缓解",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "Scr 78，尿蛋白0.4 g/d。补体正常。✅ 完全缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "孙XX，女，22岁",
+            "就诊日期",
+            "2025-04-18",
+            "主诉"
+          ],
+          [
+            "双下肢水肿伴泡沫尿2月，SLE病史1年",
+            "标签",
+            "弥漫增殖 肾功能下降 MMF",
+            "T",
+            "36.5°C"
+          ],
+          [
+            "HR",
+            "80次/分",
+            "BP",
+            "128/82 mmHg",
+            "体重"
+          ],
+          [
+            "55 kg",
+            "一般情况",
+            "神志清，面色略苍白",
+            "皮肤粘膜",
+            "面部蝶形红斑，口腔溃疡2处，脱发"
+          ],
+          [
+            "心肺",
+            "无异常",
+            "腹部",
+            "移动性浊音可疑阳性",
+            "四肢"
+          ],
+          [
+            "双下肢凹陷性水肿（+）",
+            "WBC",
+            "4.2×10⁹/L",
+            "4–10",
+            "正常低限"
+          ]
+        ],
+        "pts": [
+          "LN IV型是最常见（~40%）且最严重的狼疮性肾炎",
+          "肾活检是金标准，指导分型和治疗",
+          "抗dsDNA+低补体是LN活动标志",
+          "MMF vs CYC疗效相当，MMF副作用更少",
+          "早期完全缓解是最佳预后指标"
+        ],
+        "ref": "1. Parikh SV, et al. Childhood-onset lupus nephritis: unique aspects and challenges in management. Kidney Int. 2025;107(6):1234-1248. PMID: 40846176\n      2. Rovin BH, et al. KDIGO 2024 Guideline for LN. Kidney Int. 2024.",
+        "pmid": "40846176",
+        "n": 3
+      },
+      {
+        "f": "case_SLE_macrophage.html",
+        "t": "病例：SLE合并巨噬细胞活化综合征",
+        "sub": "病例：SLE合并巨噬细胞活化综合征",
+        "nav": "macrophage",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0–3天",
+            "v": "甲泼尼龙冲击+环孢素。第3天体温开始下降。",
+            "c": "red"
+          },
+          {
+            "d": "第7天",
+            "v": "意识恢复清醒。WBC 3.5、PLT 68。铁蛋白降至12,000。",
+            "c": "yellow"
+          },
+          {
+            "d": "第14天",
+            "v": "体温正常。血三系恢复。铁蛋白降至3,500。✅ MAS控制",
+            "c": "green"
+          },
+          {
+            "d": "第4周",
+            "v": "铁蛋白280 ng/mL。血三系正常。肝功能恢复。✅ 完全缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "林XX，女，16岁",
+            "就诊日期",
+            "2025-03-22",
+            "主诉"
+          ],
+          [
+            "SLE活动期突发高热、意识模糊2天",
+            "标签",
+            "细胞因子风暴 铁蛋白暴升 噬血现象",
+            "T",
+            "40.2°C"
+          ],
+          [
+            "HR",
+            "125次/分",
+            "BP",
+            "92/58 mmHg",
+            "体重"
+          ],
+          [
+            "45 kg",
+            "一般情况",
+            "嗜睡-烦躁交替，急性重病容",
+            "皮肤粘膜",
+            "面部蝶形红斑，全身散在出血点，皮肤黄染"
+          ],
+          [
+            "淋巴结",
+            "颈部、腋窝可触及肿大",
+            "心肺",
+            "心率125次/分，律齐",
+            "腹部"
+          ],
+          [
+            "肝肋下3 cm，脾肋下2 cm，质中",
+            "神经系统",
+            "意识模糊，定向力障碍",
+            "WBC",
+            "1.8×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "铁蛋白暴升+纤维蛋白原↓+全血细胞减少→警惕MAS",
+          "SLE活动期突然恶化应考虑MAS",
+          "需排除感染所致噬血细胞综合征",
+          "VP-16+CsA是一线方案",
+          "延迟治疗→多器官衰竭→死亡率>20%\n    \n    📖 参考文献\n    \n      1. Parodi A, et al. MAS in SLE. Lupus. 2023;32(4):385-398. PMID: 36804125"
+        ],
+        "ref": "1. Parodi A, et al. MAS in SLE. Lupus. 2023;32(4):385-398. PMID: 36804125\n      2. Ravelli A, et al. MAS diagnostic guidelines. Ann Rheum Dis. 2016;75(3):481-489.",
+        "pmid": "36804125",
+        "n": 4
+      },
+      {
+        "f": "case_SLE_neuropsychiatric.html",
+        "t": "病例：神经精神性狼疮（NPSLE）",
+        "sub": "病例：神经精神性狼疮（NPSLE）",
+        "nav": "neuropsychiatric",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第0–3天",
+            "v": "甲泼尼龙冲击+左乙拉西坦。发作后意识逐渐恢复。"
+          },
+          {
+            "d": "第7天",
+            "v": "精神症状减轻，无再发癫痫。开始环磷酰胺治疗。",
+            "c": "yellow"
+          },
+          {
+            "d": "第14天",
+            "v": "意识清楚，无幻觉。MRI病变较前缩小。✅ 神经系统改善",
+            "c": "green"
+          },
+          {
+            "d": "第3月",
+            "v": "无癫痫再发，认知功能恢复。补体回升。激素减量中。✅ 持续缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "何XX，女，18岁",
+            "就诊日期",
+            "2025-02-14",
+            "主诉"
+          ],
+          [
+            "SLE病史3年，癫痫大发作伴精神异常1天",
+            "标签",
+            "CNS受累 癫痫 抗NMDAR",
+            "T",
+            "38.2°C"
+          ],
+          [
+            "HR",
+            "105次/分",
+            "BP",
+            "135/85 mmHg",
+            "体重"
+          ],
+          [
+            "50 kg",
+            "一般情况",
+            "嗜睡-烦躁交替，定向力障碍",
+            "皮肤粘膜",
+            "面部蝶形红斑"
+          ],
+          [
+            "心肺",
+            "无异常",
+            "腹部",
+            "无异常",
+            "神经系统"
+          ],
+          [
+            "意识模糊，有幻视，颈抵抗(±)，病理征未引出",
+            "WBC",
+            "5.5×10⁹/L",
+            "4–10",
+            "正常"
+          ]
+        ],
+        "pts": [
+          "NPSLE表现多样，需排除感染/药物/代谢因素",
+          "抗NMDAR和aPL是重要致病因子",
+          "MRI+CSF+抗体谱是诊断三要素",
+          "重症：甲泼尼龙冲击+环磷酰胺",
+          "抗癫痫药对症治疗"
+        ],
+        "ref": "1. Benseler SM, et al. Neuropsychiatric manifestations in childhood-onset systemic lupus erythematosus. Lancet Child Adolesc Health. 2022;6(8):626-637. PMID: 35841921\n      2. Bortoluzzi A, et al. Diagnosis and treatment of NPSLE. Nat Rev Rheumatol. 2022;18(6):346-360.",
+        "pmid": "35841921",
+        "n": 5
+      }
+    ]
+  },
+  "sJIA": {
+    "cn": "sJIA全身型幼年特发性关节炎",
+    "cases": [
+      {
+        "f": "case_sJIA_MAS.html",
+        "t": "病例2：sJIA并发MAS急重症",
+        "sub": "病例2：sJIA并发MAS急重症",
+        "nav": "MAS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "入院第1-5天 — 感染排查",
+            "v": "先后用头孢曲松+阿奇霉素→多西环素→美罗培南+万古霉素。发热始终不退。",
+            "c": "red"
+          },
+          {
+            "d": "入院第5天 — 瘀斑出现",
+            "v": "WBC 2,100/μL，ESR 12 mm/h（高热中矛盾性正常），LDH 1,887 U/L。",
+            "c": "red"
+          },
+          {
+            "d": "入院第5-10天 — 继续排查",
+            "v": "超声：脾大+腹水+心包积液。骨髓：噬血现象阳性。",
+            "c": "yellow"
+          },
+          {
+            "d": "MAS确诊 — 甲泼尼龙冲击",
+            "v": "2剂后热退！临床症状明显改善。出院后继续口服激素减量。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "杨XX，男，12岁",
+            "就诊日期",
+            "尼泊尔 Dolakha 地区（文献报道）",
+            "主诉"
+          ],
+          [
+            "间歇性发热1月，持续高热6天",
+            "标签",
+            "全身型JIA 巨噬细胞活化综合征 延误诊断",
+            "T",
+            "40.0℃"
+          ],
+          [
+            "HR",
+            "118次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "35 kg",
+            "一般情况",
+            "病容，中度苍白",
+            "皮肤粘膜",
+            "双侧大腿瘀斑（约10×8cm），无压痛"
+          ],
+          [
+            "淋巴结",
+            "双侧腹股沟淋巴结肿大（约2.5cm）",
+            "心肺",
+            "心率118次/分；少量心包积液（浆膜炎）",
+            "腹部"
+          ],
+          [
+            "肝脾肿大，脾脏120mm；少量腹水",
+            "WBC",
+            "2.6→2.1×10⁹/L",
+            "4.5-13",
+            "↓↓（白细胞减少）"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Dhakal A, et al. Macrophage Activation Syndrome secondary to Systemic Juvenile Idiopathic Arthritis: A Case Report. J Nepal Paediatr Soc. 2022;42(1):96-100. PMID: 35199753.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "35199753",
+        "n": 1
+      },
+      {
+        "f": "case_sJIA_MAS_new.html",
+        "t": "病例：sJIA → MAS 急速演变",
+        "sub": "病例：sJIA → MAS 急速演变",
+        "nav": "MAS_new",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第1-3天 — 外院就诊",
+            "v": "考虑上呼吸道感染，头孢克洛口服。发热持续。",
+            "c": "yellow"
+          },
+          {
+            "d": "第12天 — MAS转折点",
+            "v": "发热模式改变：驰张热→持续高热不退。嗜睡。PLT从280→80×10⁹/L（急降！）；ESR从68→12mm/h（矛盾性下降！）；Ferritin 45,000",
+            "c": "red"
+          },
+          {
+            "d": "第13天 — MAS确诊+抢救",
+            "v": "甲泼尼龙冲击 × 3天 → 热峰下降但未完全退热。加用环孢素A → 48h后热退。Ferritin逐步下降，PLT回升。",
+            "c": "green"
+          },
+          {
+            "d": "第25天 — 康复出院",
+            "v": "Ferritin降至1,200，PLT 250,000。出院方案：泼尼松减量+环孢素口服。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "周XX，男，4岁",
+            "就诊日期",
+            "2025-11-20",
+            "主诉"
+          ],
+          [
+            "高热2周，伴一过性皮疹2周、关节肿痛3天",
+            "标签",
+            "全身型JIA 巨噬细胞活化综合征 不完全川崎鉴别",
+            "T",
+            "40.2℃"
+          ],
+          [
+            "HR",
+            "120次/分",
+            "BP",
+            "90/55 mmHg",
+            "体重"
+          ],
+          [
+            "16 kg（P50）",
+            "一般情况",
+            "急性热病容，热退后精神可",
+            "皮肤粘膜",
+            "发热时躯干淡红色斑丘疹（一过性）；无口腔溃疡"
+          ],
+          [
+            "淋巴结",
+            "全身浅表淋巴结肿大",
+            "心肺",
+            "心率120次/分，律齐；双肺清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾轻度肿大",
+            "关节",
+            "双膝、双踝、右腕肿胀压痛，活动受限",
+            "WBC",
+            "15,200→3,800/μL"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Ravelli A, et al. 2016 Classification Criteria for Macrophage Activation Syndrome Complicating Systemic Juvenile Idiopathic Arthritis. Ann Rheum Dis. 2016;75(3):481-489.",
+        "pmid": "",
+        "n": 2
+      },
+      {
+        "f": "case_sJIA_biologic_MAS.html",
+        "t": "病例3：生物制剂治疗中发生MAS",
+        "sub": "病例3：生物制剂治疗中发生MAS",
+        "nav": "biologic_MAS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "病例A — Anakinra重启后8天",
+            "v": "ALT/AST进行性升高 → MAS确诊（铁蛋白↑+肝脾肿大+甘油三酯↑+纤维蛋白原↓）。环孢素+泼尼松挽救 → 完全缓解。后续转换Tocilizumab，MAS未再发。",
+            "c": "yellow"
+          },
+          {
+            "d": "病例B — Tocilizumab第2次输注后",
+            "v": "上呼吸道感染 → EBV → MAS。骨髓噬血现象阳性。环孢素+甲泼尼龙冲击 → 完全缓解。",
+            "c": "red"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "病例A：女，9岁起病 | 病例B：男，2岁起病",
+            "就诊日期",
+            "文献报道（PReS 2014）",
+            "主诉"
+          ],
+          [
+            "病例A：发热、肝功能恶化8天 | 病例B：高热、临床和实验室指标符合MAS",
+            "标签",
+            "Anakinra相关MAS Tocilizumab相关MAS EBV感染触发 环孢素+激素挽救",
+            "T",
+            "39.5℃"
+          ],
+          [
+            "HR",
+            "110次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "—",
+            "一般情况",
+            "急性热病容",
+            "皮肤粘膜",
+            "病例A：注射部位反应"
+          ],
+          [
+            "肝脾",
+            "肝脾肿大（两例均有）",
+            "心肺",
+            "未见特殊",
+            "铁蛋白"
+          ],
+          [
+            "显著升高",
+            "10-200",
+            "↑↑↑",
+            "甘油三酯",
+            "升高"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Boteanu AL, et al. Macrophage activation syndrome during treatment with biological therapy in patients with systemic juvenile idiopathic arthritis. Pediatr Rheumatol Online J. 2014;12(Suppl 1):P32.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "",
+        "n": 3
+      },
+      {
+        "f": "case_sJIA_early_MAS.html",
+        "t": "病例4：sJIA-MAS早期识别",
+        "sub": "病例4：sJIA-MAS早期识别",
+        "nav": "early_MAS",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "关键发现",
+            "v": "55例MAS患者全部存活（0%死亡率），归因于早期识别+积极治疗。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "队列研究（55例MAS）",
+            "就诊日期",
+            "南京儿童医院，2017-2022",
+            "主诉"
+          ],
+          [
+            "队列综合分析（非单个病例）",
+            "标签",
+            "MAS早期识别 预警指标 0%死亡率",
+            "T",
+            "—"
+          ],
+          [
+            "HR",
+            "—",
+            "BP",
+            "—",
+            "体重"
+          ],
+          [
+            "—",
+            "队列研究",
+            "55例MAS患者的综合分析",
+            "血小板",
+            "sJIA活动期：正常/升高 → MAS：显著降低"
+          ],
+          [
+            "—",
+            "最敏感指标之一",
+            "ESR",
+            "sJIA活动期：↑ → MAS：反常降低",
+            "—"
+          ],
+          [
+            "纤维蛋白原消耗",
+            "铁蛋白",
+            "sJIA活动期：轻中度↑ → MAS：极度升高",
+            "—",
+            "最敏感MAS标志物"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Huang S, et al. Single center clinical analysis of macrophage activation syndrome complicating juvenile rheumatic diseases. BMC Pediatr. 2024;24:312. PMID: 38783316.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "38783316",
+        "n": 4
+      },
+      {
+        "f": "case_sJIA_refractory.html",
+        "t": "病例5：难治性sJIA",
+        "sub": "病例5：难治性sJIA",
+        "nav": "refractory",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "2岁 — sJIA起病+MAS",
+            "v": "以MAS为首发表现。",
+            "c": "red"
+          },
+          {
+            "d": "4-5岁 — 依那西普",
+            "v": "1年后因疗效不佳停用。TNF-α抑制剂在sJIA中效果有限。",
+            "c": "yellow"
+          },
+          {
+            "d": "8-14岁 — Anakinra有效",
+            "v": "临床反应良好，持续6年。因临床缓解+注射部位疼痛停药。",
+            "c": "green"
+          },
+          {
+            "d": "停药6月 — 复发",
+            "v": "新关节炎+系统性活动。启动托珠单抗单药。",
+            "c": "yellow"
+          },
+          {
+            "d": "托珠单抗第2次输注后 — MAS",
+            "v": "上呼吸道感染→EBV→MAS。骨髓噬血现象阳性。环孢素+甲泼尼龙冲击→完全缓解。",
+            "c": "red"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "林XX，男，2岁起病",
+            "就诊日期",
+            "文献报道（PReS 2014），随访跨度2-14岁",
+            "主诉"
+          ],
+          [
+            "反复发热、关节肿痛12年，加重伴高热5天",
+            "标签",
+            "难治性 多线转换 反复MAS",
+            "T",
+            "39.8℃"
+          ],
+          [
+            "HR",
+            "105次/分",
+            "BP",
+            "100/65 mmHg",
+            "体重"
+          ],
+          [
+            "42 kg",
+            "一般情况",
+            "慢性病容，急性热病容",
+            "皮肤粘膜",
+            "发热时一过性皮疹"
+          ],
+          [
+            "心肺",
+            "未见特殊",
+            "腹部",
+            "肝脾肿大",
+            "关节"
+          ],
+          [
+            "多关节肿胀压痛",
+            "WBC",
+            "活动期升高",
+            "4.5-13",
+            "波动"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Boteanu AL, et al. Macrophage activation syndrome during treatment with biological therapy in patients with systemic juvenile idiopathic arthritis. Pediatr Rheumatol Online J. 2014;12(Suppl 1):P32.\n    \n\n← 上一篇返回目录",
+        "pmid": "",
+        "n": 5
+      },
+      {
+        "f": "case_sJIA_typical.html",
+        "t": "病例1：sJIA典型起病",
+        "sub": "病例1：sJIA典型起病",
+        "nav": "typical",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "NSAIDs — 无效",
+            "v": "CRP反升至342 mg/L，ALT升至820 IU/L。白细胞持续升高。",
+            "c": "red"
+          },
+          {
+            "d": "泼尼松1周 — 部分改善",
+            "v": "WBC降至21,000，CRP 85，ALT 62，铁蛋白降至356。",
+            "c": "yellow"
+          },
+          {
+            "d": "泼尼松2周 — 反弹",
+            "v": "WBC反弹至24,500，ALT回升至165。肝功能波动+激素不良反应显现。",
+            "c": "yellow"
+          },
+          {
+            "d": "卡那单抗 — 全面缓解",
+            "v": "WBC 4,520，CRP 0.5，ESR 10，ALT 34，铁蛋白 76 — 全面正常化！✅ 临床症状完全缓解",
+            "c": "green"
+          },
+          {
+            "d": "长期随访4年",
+            "v": "卡那单抗治疗2.5年后停药，随访2年仍维持完全缓解，所有指标正常。✅ 停药2年持续缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "赵XX，女，14岁",
+            "就诊日期",
+            "2012年10月",
+            "主诉"
+          ],
+          [
+            "高热伴一过性皮疹、肌痛、关节痛3周",
+            "标签",
+            "全身型JIA IL-1通路 卡那单抗缓解",
+            "T",
+            "39.5℃"
+          ],
+          [
+            "HR",
+            "102次/分",
+            "BP",
+            "110/70 mmHg",
+            "体重"
+          ],
+          [
+            "48 kg（P50）",
+            "一般情况",
+            "神志清，急性热病容，热退后精神如常",
+            "皮肤粘膜",
+            "躯干淡红色斑丘疹（一过性，热峰时出现）；无口腔溃疡"
+          ],
+          [
+            "淋巴结",
+            "全身浅表淋巴结可及肿大",
+            "心肺",
+            "心率102次/分，律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾轻度肿大",
+            "关节",
+            "双膝、双踝肿胀压痛；双手MCP/PIP肿胀；双足指趾炎",
+            "WBC",
+            "32.0×10⁹/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Li H, et al. Efficacy and safety of canakinumab in systemic JIA, the first Chinese real-world study. Pediatr Rheumatol Online J. 2024;22(1):81. PMID: 38504360.\n    \n\n返回目录下一篇 →",
+        "pmid": "38504360",
+        "n": 6
+      }
+    ]
+  },
+  "JDM": {
+    "cn": "JDM幼年皮肌炎",
+    "cases": [
+      {
+        "f": "case_JDM_ILD.html",
+        "t": "病例：JDM合并致命性间质性肺炎 — 5岁女孩急进性ILD",
+        "sub": "病例：JDM合并致命性间质性肺炎 — 5岁女孩急进性ILD",
+        "nav": "ILD",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "起病（就诊前2月）",
+            "v": "出现皮疹（Gottron丘疹、肘部丘疹）和全身乏力",
+            "c": "yellow"
+          },
+          {
+            "d": "就诊时",
+            "v": "低热、进行性肌无力、肝功能异常。血清醛缩酶显著升高，CK正常。MRI：臀小肌异常高信号",
+            "c": "red"
+          },
+          {
+            "d": "住院期间",
+            "v": "⚠️ 突发恶化 间质性肺炎急速进展——呼吸窘迫、低氧血症",
+            "c": "red"
+          },
+          {
+            "d": "抢救",
+            "v": "甲泼尼龙冲击 → 环磷酰胺 → IVIG → 环孢素——多药联合仍无效",
+            "c": "red"
+          },
+          {
+            "d": "转归",
+            "v": "死亡——间质性肺炎导致呼吸衰竭",
+            "c": "red"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征（就诊时）",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "女性，5岁",
+            "就诊日期",
+            "文献未明确标注（日本医疗机构）",
+            "主诉"
+          ],
+          [
+            "皮疹2月，全身乏力伴进行性肌无力2月",
+            "转归",
+            "💀 死亡 — 间质性肺炎急进性恶化",
+            "标签",
+            "致命性ILD 急进性 多药联合 预后不良"
+          ],
+          [
+            "T",
+            "37.5℃（低热）",
+            "HR",
+            "110次/分",
+            "BP"
+          ],
+          [
+            "90/55 mmHg",
+            "体重",
+            "17 kg",
+            "一般情况",
+            "神志清，精神倦，消瘦"
+          ],
+          [
+            "皮肤粘膜",
+            "Gottron丘疹（手指关节伸面）、肘部紫红色丘疹、上眼睑淡紫色红斑",
+            "淋巴结",
+            "未触及肿大",
+            "心肺"
+          ],
+          [
+            "心律齐；双肺呼吸音粗，后期出现湿啰音",
+            "腹部",
+            "软，无压痛，肝脾未触及",
+            "肌肉关节",
+            "四肢近端肌力减退（近端3+/5），Gowers征阳性"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Nagai Y, Hasegawa E, Ishikawa O. Fatal interstitial pneumonia in juvenile dermatomyositis. Eur J Dermatol. 2010;20(2):208-210. PMID: 20110203. DOI: 10.1684/ejd.2010.0846.\n      2. Sato S, et al. Clinical features of anti-MDA5 antibody-positive juvenile dermatomyositis. Rheumatology. 2020.\n    \n\n    \n      ← 上一篇：钙质沉着\n      返回目录\n      下一篇：难治性JDM →",
+        "pmid": "",
+        "n": 1
+      },
+      {
+        "f": "case_JDM_calcinosis.html",
+        "t": "病例：JDM钙质沉着 — 12岁男孩严重Calcinosis Cutis+地尔硫卓治疗",
+        "sub": "病例：JDM钙质沉着 — 12岁男孩严重Calcinosis Cutis+地尔硫卓治疗",
+        "nav": "calcinosis",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "3岁（起病）",
+            "v": "出现四肢无力和肌痛，逐渐进展。未能明确诊断和规范治疗",
+            "c": "yellow"
+          },
+          {
+            "d": "12岁（本次就诊）",
+            "v": "严重进展：四肢肌力明显下降；触痛性溃疡性皮肤结节（钙质沉着）",
+            "c": "red"
+          },
+          {
+            "d": "治疗后",
+            "v": "免疫抑制治疗联合地尔硫卓，钙质沉着逐步改善",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "男性，12岁，南亚裔",
+            "就诊日期",
+            "文献未明确标注",
+            "主诉"
+          ],
+          [
+            "四肢无力伴疼痛9年，皮肤触痛性溃疡结节6月",
+            "标签",
+            "钙质沉着 延迟诊断 地尔硫卓 calcinosis cutis",
+            "T",
+            "37.0℃"
+          ],
+          [
+            "HR",
+            "96次/分",
+            "BP",
+            "105/70 mmHg",
+            "体重"
+          ],
+          [
+            "30 kg（<P3）",
+            "一般情况",
+            "神志清，精神倦，消瘦，营养不良貌",
+            "皮肤粘膜",
+            "四肢多发质硬皮下结节，部分表面溃疡形成，有白色石灰样分泌物；肘膝臀部弥漫性硬结"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "软，无压痛，肝脾未触及",
+            "肌肉关节",
+            "四肢近端肌力减退（近端3+/5），关节活动度受限（肘膝受钙质沉着影响）",
+            "WBC（白细胞）",
+            "升高"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Khan QA, et al. Muscular Weakness with Calcinosis Cutis: A Case of Juvenile Dermatomyositis in a South Asian Male. Clin Med Insights Case Rep. 2023;16. PMID: 37325178. PMCID: PMC10265322.\n      2. Holzer R, et al. Calcinosis in juvenile dermatomyositis: a clinical overview. Rheumatology. 2023.\n    \n\n    \n      ← 上一篇：典型JDM\n      返回目录\n      下一篇：间质性肺病 →",
+        "pmid": "",
+        "n": 2
+      },
+      {
+        "f": "case_JDM_refractory.html",
+        "t": "病例：JDM难治性—Anifrolumab突破治疗",
+        "sub": "病例：JDM难治性—Anifrolumab突破治疗",
+        "nav": "refractory",
+        "tags": [],
+        "alert": "本病例独特性：这是全球第3例使用Anifrolumab（抗I型干扰素受体单克隆抗体）治疗JDM的病例报告。患者对激素、DMARDs和JAK抑制剂均无效，最终通过靶向I型干扰素（IFN-I）通路获得显著改善，为理解JDM的核心发病机制提供了直接的临床证据。",
+        "tl": [
+          {
+            "d": "确诊JDM",
+            "v": "8岁女孩，典型三联征 + 肌酶升高 + MRI肌肉水肿。确诊JDM",
+            "c": "red"
+          },
+          {
+            "d": "一线治疗 — 激素 + MTX",
+            "v": "皮肤和肌肉症状部分改善，但减量后反复。一线失败",
+            "c": "yellow"
+          },
+          {
+            "d": "二线 — 加用MMF",
+            "v": "仍然无法控制皮疹和肌无力。二线失败",
+            "c": "yellow"
+          },
+          {
+            "d": "三线 — JAK抑制剂",
+            "v": "症状无显著改善。三线失败",
+            "c": "red"
+          },
+          {
+            "d": "突破治疗 — Anifrolumab",
+            "v": "抗IFNAR单克隆抗体，直接阻断IFN-I与受体结合。\n          • 皮肤症状显著改善 — Gottron丘疹和Heliotrope疹明显消退\n          • 肌肉症状显著改善 — 肌力恢复，肌酶降至正常\n          • 6个月持续缓解，无不良反应\n          6月持续缓解 · 无不良反应",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "8岁，女性",
+            "就诊机构",
+            "西班牙（Barrutia-Etxebarria等报道）",
+            "主诉"
+          ],
+          [
+            "面部皮疹、四肢近端肌无力3月",
+            "标签",
+            "多线治疗失败 Anifrolumab I型干扰素通路 6月持续缓解",
+            "T",
+            "36.7℃"
+          ],
+          [
+            "HR",
+            "90次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "25 kg（P25）",
+            "一般情况",
+            "神志清，精神倦",
+            "皮肤粘膜",
+            "Gottron丘疹（掌指/指间关节伸面紫红色丘疹）、Heliotrope疹（上眼睑紫红色水肿）"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "软，无压痛，肝脾未触及",
+            "肌肉关节",
+            "四肢近端肌力减退（近端4-/5），Gowers征阳性",
+            "CK（肌酸激酶）",
+            "显著升高"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Barrutia-Etxebarria A, et al. Anifrolumab in Refractory Juvenile Dermatomyositis. Pediatr Dermatol. 2026;43(1):116-120. PMID: 40671636. DOI: 10.1111/pde.16012.\n      2. Bohan A, Peter JB. Polymyositis and dermatomyositis. N Engl J Med. 1975;292(7):344-350.",
+        "pmid": "40671636",
+        "n": 3
+      },
+      {
+        "f": "case_JDM_special.html",
+        "t": "病例：JDM延迟识别+钙质沉着+双侧肾钙质沉着",
+        "sub": "病例：JDM延迟识别+钙质沉着+双侧肾钙质沉着",
+        "nav": "special",
+        "tags": [],
+        "alert": "本病例独特性：这是全球首例报道的JDM合并钙质沉着+双侧髓质肾钙质沉着的病例。患者以广泛钙质沉着首诊，近端肌无力等JDM特征在详细体检中才被发现，提示JDM的延迟识别是钙质沉着发展的重要因素。",
+        "tl": [
+          {
+            "d": "首诊 — \"广泛皮下结节\"",
+            "v": "以广泛钙质沉着首诊，此前曾误诊为\"皮下囊肿\"\"脂肪瘤\"。数年前有面部皮疹和乏力未就诊",
+            "c": "red"
+          },
+          {
+            "d": "详细体检 — 发现JDM线索",
+            "v": "近端肌无力（轻微）、Gottron丘疹（消退期）、甲周毛细血管异常",
+            "c": "yellow"
+          },
+          {
+            "d": "腹部超声 — 意外发现",
+            "v": "双侧髓质肾钙质沉着 — 常规筛查发现！肾功能稳定",
+            "c": "red"
+          },
+          {
+            "d": "治疗后",
+            "v": "肌炎改善，钙质沉着部分消退，肾功能稳定",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "儿童（Sangeetha G等报道，印度）",
+            "主诉",
+            "广泛皮下硬结和结节2年，进行性加重",
+            "标签"
+          ],
+          [
+            "延迟识别 钙质沉着 肾钙质沉着 罕见并发症",
+            "T",
+            "36.5℃",
+            "HR",
+            "86次/分"
+          ],
+          [
+            "BP",
+            "95/60 mmHg",
+            "体重",
+            "文献未明确",
+            "一般情况"
+          ],
+          [
+            "神志清，精神可，营养中等",
+            "皮肤粘膜",
+            "肘关节伸侧、膝关节、臀部、大腿弥漫性质硬钙化结节；手指点状钙化；关节伸侧淡紫色色素沉着（部分消退的Gottron丘疹）；甲周红斑、毛细血管扩张",
+            "淋巴结",
+            "未触及肿大"
+          ],
+          [
+            "心肺",
+            "心律齐；双肺呼吸音清",
+            "腹部",
+            "软，无压痛，肝脾未触及",
+            "肌肉关节"
+          ],
+          [
+            "近端肌力轻微减退（上楼稍费力，下蹲站起略困难）；关节活动度受限（受钙质沉着影响）",
+            "CK（肌酸激酶）",
+            "轻度升高",
+            "正常",
+            "↑"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Sangeetha G, et al. Juvenile dermatomyositis: a case of delayed recognition with unusual complication of nephrocalcinosis. BMJ Case Rep. 2021;14:bcr-2020-241152. PMID: 33795282. DOI: 10.1136/bcr-2020-241152.\n      2. Holzer R, et al. Calcinosis in juvenile dermatomyositis. Rheumatology. 2023.",
+        "pmid": "33795282",
+        "n": 4
+      },
+      {
+        "f": "case_JDM_typical.html",
+        "t": "病例：JDM典型表现 — Gottron丘疹+Heliotrope疹+近端肌无力",
+        "sub": "病例：JDM典型表现 — Gottron丘疹+Heliotrope疹+近端肌无力",
+        "nav": "typical",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "起病期",
+            "v": "面部紫红色皮疹，以双眼睑为中心，伴不适感和轻度肌痛",
+            "c": "yellow"
+          },
+          {
+            "d": "就诊时",
+            "v": "Heliotrope疹 + Gottron丘疹 + 钙质沉着结节 + 四肢近端对称性肌无力，确诊JDM",
+            "c": "red"
+          },
+          {
+            "d": "治疗后",
+            "v": "糖皮质激素联合免疫抑制剂治疗，皮疹和肌无力逐步改善",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "女性，10岁，印度裔",
+            "就诊日期",
+            "文献未明确标注",
+            "主诉"
+          ],
+          [
+            "面部紫红色皮疹3月，四肢近端肌无力伴疼痛进行性加重2月",
+            "标签",
+            "典型JDM Gottron丘疹 Heliotrope疹 钙质沉着",
+            "T",
+            "36.8℃"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "100/65 mmHg",
+            "体重"
+          ],
+          [
+            "28 kg",
+            "一般情况",
+            "神志清，精神稍倦，营养中等",
+            "皮肤粘膜",
+            "Heliotrope疹（上眼睑紫红色水肿）、Gottron丘疹（掌指/近端指间关节伸面紫红色丘疹）、甲周红斑、甲小皮营养不良（Samitz征阳性）"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "软，无压痛，肝脾未触及",
+            "肌肉关节",
+            "四肢近端对称性肌力减退（上肢近端4-/5，下肢近端4/5）；双侧肘膝关节伸面触及质硬结节（钙质沉着）",
+            "CK（肌酸激酶）",
+            "显著升高"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Gupta P, Shruti S, Chaudhary V, et al. Juvenile Dermatomyositis: A Case Report and Review of Literature. Cureus. 2019;11(3):e3935. PMID: 30937233. DOI: 10.7759/cureus.3935.\n      2. Bohan A, Peter JB. Polymyositis and dermatomyositis. N Engl J Med. 1975;292(7):344-350.\n    \n\n    \n      ← 返回JDM病例目录\n      下一篇：钙质沉着病例 →",
+        "pmid": "",
+        "n": 5
+      }
+    ]
+  },
+  "IgAV": {
+    "cn": "IgAV IgA血管炎",
+    "cases": [
+      {
+        "f": "case_IgAV_CNS.html",
+        "t": "IgAV神经系统受累",
+        "sub": "IgAV神经系统受累",
+        "nav": "CNS",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "PRES"
+          },
+          {
+            "c": "t-r",
+            "l": "局灶性癫痫"
+          },
+          {
+            "c": "t-y",
+            "l": "CNS受累"
+          },
+          {
+            "c": "t-a",
+            "l": "IgAV"
+          }
+        ],
+        "alert": "",
+        "tl": [
+          {
+            "d": "第5天",
+            "v": "无再发抽搐，血压控制正常，紫癜消退中。",
+            "c": "yellow"
+          },
+          {
+            "d": "第14天",
+            "v": "MRI：顶枕叶水肿明显吸收。脑电图正常。✅ PRES可逆",
+            "c": "green"
+          },
+          {
+            "d": "第12周",
+            "v": "停所有药物。无癫痫复发，肾功能正常。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "刘XX，女，7岁",
+            "就诊日期",
+            "2025-08-10",
+            "主诉"
+          ],
+          [
+            "抽搐发作1天，伴下肢紫癜3天",
+            "标签",
+            "PRES 局灶性癫痫 CNS受累 IgAV",
+            "T",
+            "36.9℃"
+          ],
+          [
+            "HR",
+            "98次/分",
+            "BP",
+            "125/80 mmHg（偏高）",
+            "体重"
+          ],
+          [
+            "24 kg（P50）",
+            "一般情况",
+            "神志清，精神稍萎",
+            "皮肤粘膜",
+            "双下肢可触及性紫癜，臀部散在"
+          ],
+          [
+            "心肺",
+            "未见异常",
+            "腹部",
+            "腹软，脐周轻压痛",
+            "关节"
+          ],
+          [
+            "双膝关节肿胀压痛",
+            "神经系统",
+            "颅神经正常，肌力V级，病理征阴性",
+            "WBC",
+            "12.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "IgAV CNS受累约1-3%，CNS表现可先于皮肤紫癜",
+          "PRES以MRI顶枕叶高信号为特征，多可逆",
+          "血压管理是PRES治疗关键",
+          "儿童急性癫痫+腹痛/关节痛应考虑IgAV\n\n\n📖 参考文献\n\n1. Funken O, et al. Focal Seizures and PRES as Presenting Signs of IgAV. Front Neurol. 2021;12:759386. PMID: 34867743"
+        ],
+        "ref": "1. Funken O, et al. Focal Seizures and PRES as Presenting Signs of IgAV. Front Neurol. 2021;12:759386. PMID: 34867743\n2. Hamano T, et al. Acute encephalopathy with residual sequelae by IgAV. J Clin Neurosci. 2019;65:167-170. PMID: 31201050",
+        "pmid": "34867743",
+        "n": 1
+      },
+      {
+        "f": "case_IgAV_GI.html",
+        "t": "IgAV消化道并发症",
+        "sub": "IgAV消化道并发症",
+        "nav": "GI",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "肠套叠"
+          },
+          {
+            "c": "t-y",
+            "l": "老年IgAV"
+          },
+          {
+            "c": "t-a",
+            "l": "消化道出血"
+          }
+        ],
+        "alert": "",
+        "tl": [
+          {
+            "d": "第3天",
+            "v": "空气灌肠复位成功。腹痛减轻。",
+            "c": "yellow"
+          },
+          {
+            "d": "第10天",
+            "v": "便潜血转阴，CT示肠套叠解除。改口服激素减量。✅ 解除",
+            "c": "green"
+          },
+          {
+            "d": "第30天",
+            "v": "停药，紫癜未再发，Hb 128 g/L。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "孙XX，男，65岁",
+            "就诊日期",
+            "2025-11-05",
+            "主诉"
+          ],
+          [
+            "腹痛10天，下肢紫癜7天，加重伴血便3天",
+            "标签",
+            "肠套叠 老年IgAV 消化道出血",
+            "T",
+            "37.2℃"
+          ],
+          [
+            "HR",
+            "96次/分",
+            "BP",
+            "145/88 mmHg",
+            "体重"
+          ],
+          [
+            "68 kg",
+            "一般情况",
+            "急性痛苦面容",
+            "皮肤粘膜",
+            "双下肢密集可触及性紫癜"
+          ],
+          [
+            "心肺",
+            "未见异常",
+            "腹部",
+            "脐周压痛明显，可触及包块",
+            "WBC"
+          ],
+          [
+            "14.8×10⁹/L",
+            "4-10",
+            "↑↑",
+            "Hb",
+            "108 g/L"
+          ]
+        ],
+        "pts": [
+          "老年IgAV消化道受累更重，肠套叠风险高于儿童",
+          "CT\"靶征\"是肠套叠典型影像，需与肿瘤鉴别",
+          "糖皮质激素早期应用减少肠壁水肿"
+        ],
+        "ref": "1. Na, Zhang, Kou, et al. HSP in the elderly complicated by multisystem involvement. Medicine. 2025;104(15):e41163. PMID: 40184107",
+        "pmid": "40184107",
+        "n": 2
+      },
+      {
+        "f": "case_IgAV_nephritis.html",
+        "t": "IgAV肾炎",
+        "sub": "IgAV肾炎",
+        "nav": "nephritis",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "IgAV-N"
+          },
+          {
+            "c": "t-y",
+            "l": "肾病综合征"
+          },
+          {
+            "c": "t-a",
+            "l": "成人发病"
+          }
+        ],
+        "alert": "",
+        "tl": [
+          {
+            "d": "第4周",
+            "v": "24h尿蛋白降至2.1 g。水肿明显消退。白蛋白28 g/L。",
+            "c": "yellow"
+          },
+          {
+            "d": "第12周",
+            "v": "24h尿蛋白0.8 g。白蛋白35 g/L。✅ 部分缓解",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "24h尿蛋白0.3 g。血肌酐88 μmol/L。泼尼松减至10mg/d。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "周XX，男，35岁",
+            "就诊日期",
+            "2025-07-18",
+            "主诉"
+          ],
+          [
+            "下肢紫癜20天，双下肢水肿10天",
+            "标签",
+            "IgAV-N 肾病综合征 成人发病",
+            "T",
+            "36.7℃"
+          ],
+          [
+            "HR",
+            "78次/分",
+            "BP",
+            "130/82 mmHg",
+            "体重"
+          ],
+          [
+            "72 kg",
+            "一般情况",
+            "颜面稍浮肿",
+            "皮肤粘膜",
+            "双下肢可触及性紫癜+可凹性水肿(+++)"
+          ],
+          [
+            "心肺",
+            "未见异常",
+            "腹部",
+            "腹软，移动性浊音(+-)",
+            "关节"
+          ],
+          [
+            "双膝关节轻压痛",
+            "WBC",
+            "8.2×10⁹/L",
+            "4-10",
+            "正常"
+          ]
+        ],
+        "pts": [
+          "肾病级蛋白尿提示严重肾小球受累，需及时肾活检明确ISKDC分级",
+          "皮肤活检IgA沉积+白细胞碎裂性血管炎是确诊关键",
+          "成人IgAV肾炎预后差于儿童，需更积极免疫抑制治疗",
+          "糖皮质激素+MMF是一线方案，严重者可考虑环磷酰胺\n\n\n📖 参考文献\n\n1. Popov K, et al. Bullous HSP and Associated Nephritis. Cureus. 2023;15(3):e35051. PMID: 36942172"
+        ],
+        "ref": "1. Popov K, et al. Bullous HSP and Associated Nephritis. Cureus. 2023;15(3):e35051. PMID: 36942172\n2. Suzuki H, et al. IPNA clinical practice recommendations for the diagnosis and management of children with IgA nephropathy. Pediatr Nephrol. 2025. PMID: 39331079",
+        "pmid": "36942172",
+        "n": 3
+      },
+      {
+        "f": "case_IgAV_pulmonary.html",
+        "t": "IgAV肺出血",
+        "sub": "IgAV肺出血",
+        "nav": "pulmonary",
+        "tags": [
+          {
+            "c": "t-r",
+            "l": "肺出血"
+          },
+          {
+            "c": "t-r",
+            "l": "弥漫性肺泡出血"
+          },
+          {
+            "c": "t-a",
+            "l": "罕见并发症"
+          }
+        ],
+        "alert": "",
+        "tl": [
+          {
+            "d": "第3天",
+            "v": "咯血停止，SpO2 95%（鼻导管2L）。Hb 85 g/L。胸片浸润影吸收中。",
+            "c": "yellow"
+          },
+          {
+            "d": "第10天",
+            "v": "改为口服泼尼松。SpO2正常，胸片明显吸收。✅ 肺出血控制",
+            "c": "green"
+          },
+          {
+            "d": "第30天",
+            "v": "胸片完全正常。Hb 118 g/L。泼尼松减量中。尿常规正常。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "黄XX，男，10岁",
+            "就诊日期",
+            "2025-03-22",
+            "主诉"
+          ],
+          [
+            "下肢紫癜、腹痛5天，咯血、呼吸急促1天",
+            "标签",
+            "肺出血 弥漫性肺泡出血 罕见并发症",
+            "T",
+            "37.5℃"
+          ],
+          [
+            "HR",
+            "128次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "32 kg",
+            "SpO2",
+            "88%（未吸氧）",
+            "一般情况",
+            "气促，面色苍白，口唇发绀"
+          ],
+          [
+            "皮肤",
+            "双下肢紫癜密集",
+            "肺",
+            "双肺可闻及细湿啰音",
+            "心"
+          ],
+          [
+            "心率128次/分，律齐",
+            "腹部",
+            "腹软，脐周轻压痛",
+            "WBC",
+            "15.2×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "IgAV肺出血极罕见（<1%）但可致命",
+          "咯血+呼吸困难+Hb骤降=立即查胸片和BAL",
+          "需排除ANCA相关血管炎（急查p-ANCA/MPO-ANCA）"
+        ],
+        "ref": "1. Pulmonary-renal syndrome in IgA vasculitis. Kidney Int. 2023;104(5):1005-1013. PMID: 36948773",
+        "pmid": "36948773",
+        "n": 4
+      },
+      {
+        "f": "case_IgAV_special.html",
+        "t": "非典型IgAV",
+        "sub": "非典型IgAV",
+        "nav": "special",
+        "tags": [
+          {
+            "c": "t-y",
+            "l": "非典型表现"
+          },
+          {
+            "c": "t-r",
+            "l": "肾功能异常"
+          },
+          {
+            "c": "t-y",
+            "l": "成人IgAV"
+          },
+          {
+            "c": "t-a",
+            "l": "延迟诊断"
+          }
+        ],
+        "alert": "",
+        "tl": [
+          {
+            "d": "第4周",
+            "v": "皮疹消退。24h尿蛋白1.2 g。肌酐112 μmol/L。",
+            "c": "yellow"
+          },
+          {
+            "d": "第12周",
+            "v": "24h尿蛋白0.5 g。肌酐95 μmol/L。泼尼松减至15mg/d。✅ 好转",
+            "c": "green"
+          },
+          {
+            "d": "第24周",
+            "v": "24h尿蛋白0.2 g。肌酐88 μmol/L。泼尼松5mg/d维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "林XX，女，52岁",
+            "就诊日期",
+            "2025-12-01",
+            "主诉"
+          ],
+          [
+            "双下肢皮疹6周，伴双下肢水肿2周",
+            "标签",
+            "非典型表现 肾功能异常 成人IgAV 延迟诊断",
+            "T",
+            "36.6℃"
+          ],
+          [
+            "HR",
+            "76次/分",
+            "BP",
+            "138/85 mmHg",
+            "体重"
+          ],
+          [
+            "62 kg",
+            "一般情况",
+            "神志清，双下肢可凹性水肿(+)",
+            "皮肤",
+            "双下肢暗红色斑丘疹/紫癜，部分可触及，不如儿童典型"
+          ],
+          [
+            "心肺",
+            "未见异常",
+            "腹部",
+            "腹软，无压痛",
+            "WBC"
+          ],
+          [
+            "7.5×10⁹/L",
+            "4-10",
+            "正常",
+            "Hb",
+            "115 g/L"
+          ]
+        ],
+        "pts": [
+          "IgAV非儿童专属，成人也可发病且更不典型",
+          "皮疹+肌酐升高→必须考虑IgAV，肾活检是确诊金标准",
+          "成人IgAV肾炎预后较儿童差（CKD风险~50% vs ~15%）",
+          "提高对非典型IgAV认识可缩短诊断时间",
+          "成人IgAV肾活检率应高于儿童\n\n\n📖 参考文献\n\n1. Bradley J, et al. A Case Series of Unusual IgA Vasculitis. HCA Healthc J Med. 2024. PMID: 38984230"
+        ],
+        "ref": "1. Bradley J, et al. A Case Series of Unusual IgA Vasculitis. HCA Healthc J Med. 2024. PMID: 38984230\n2. Audemard-Verger A, et al. IgA vasculitis in adults. Autoimmun Rev. 2023;22(4):103282.",
+        "pmid": "38984230",
+        "n": 5
+      }
+    ]
+  },
+  "KD": {
+    "cn": "KD川崎病",
+    "cases": [
+      {
+        "f": "case_KD_IVIG_resistant.html",
+        "t": "病例：不完全KD → IVIG无反应 → 冠脉瘤",
+        "sub": "病例：不完全KD → IVIG无反应 → 冠脉瘤",
+        "nav": "IVIG_resistant",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "IVIG后36h — 再次发热",
+            "v": "体温再次升至39.2℃ → IVIG无反应。Kobayashi评分6分（高危）。复查心脏超声：LAD Z值 3.8（进展！）",
+            "c": "red"
+          },
+          {
+            "d": "二线 — IVIG+IVMP",
+            "v": "第二剂IVIG 2g/kg + 甲泼尼龙冲击 2mg/kg/d × 3天。48h后仍有低热（38.2℃），冠脉继续进展。",
+            "c": "yellow"
+          },
+          {
+            "d": "6个月随访",
+            "v": "LAD Z值从5.8→2.3，冠脉瘤回缩为轻度扩张。继续ASA 3-5mg/kg/d。心功能正常，生长发育正常。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "陈XX，男，8月龄",
+            "就诊日期",
+            "2025-08-12",
+            "主诉"
+          ],
+          [
+            "发热5天，伴烦躁、食欲下降3天",
+            "标签",
+            "不完全川崎病 IVIG无反应 冠脉瘤",
+            "T",
+            "39.6℃"
+          ],
+          [
+            "HR",
+            "148次/分",
+            "BP",
+            "78/48 mmHg",
+            "体重"
+          ],
+          [
+            "8.5 kg（P50）",
+            "一般情况",
+            "神志清，烦躁，急性热病容",
+            "皮肤粘膜",
+            "草莓舌；BCG接种处红肿硬结（直径2cm）；无皮疹"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率148次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未及肿大",
+            "四肢",
+            "无手足硬性肿胀，无指趾端脱皮",
+            "WBC",
+            "14.5×10⁹/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Kobayashi T, et al. Prediction of intravenous immunoglobulin unresponsiveness in patients with Kawasaki disease. Circulation. 2006;113(22):2606-2612.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "",
+        "n": 1
+      },
+      {
+        "f": "case_KD_giant_CAL.html",
+        "t": "病例：KD合并巨大冠状动脉瘤与血栓",
+        "sub": "病例：KD合并巨大冠状动脉瘤与血栓",
+        "nav": "giant_CAL",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "IVIG后评估",
+            "v": "心脏超声发现巨大冠状动脉瘤形成（RCA和LCA均受累，瘤体≥8mm，Z值≥10）。\n          IVIG后仍存在全身炎症",
+            "c": "yellow"
+          },
+          {
+            "d": "随访发现 — 瘤内血栓",
+            "v": "随访心脏超声显示冠状动脉动脉瘤内出现大块血栓——\"giant within a giant\"。\n          心脏超声对冠状动脉内血栓分辨率有限，CTA可更清晰显示瘤内充盈缺损。\n          启动强化抗栓：华法林 + 阿司匹林双联。",
+            "c": "red"
+          },
+          {
+            "d": "遗传学检测",
+            "v": "凝血相关基因检测发现血栓倾向相关基因突变【需要验证具体突变类型】，\n          提示遗传性血栓倾向与KD炎症高凝状态产生叠加效应。"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "李XX，男，10岁",
+            "就诊日期",
+            "2017年6月",
+            "主诉"
+          ],
+          [
+            "持续高热7天，伴结膜充血、口唇皲裂5天",
+            "标签",
+            "巨大冠状动脉瘤 冠状动脉血栓 IVIG抵抗 血栓倾向",
+            "T",
+            "39.6℃"
+          ],
+          [
+            "HR",
+            "125次/分",
+            "BP",
+            "100/65 mmHg",
+            "体重"
+          ],
+          [
+            "32 kg（P50）",
+            "一般情况",
+            "神志清，精神烦躁，急性热病容",
+            "皮肤粘膜",
+            "双侧结膜充血（无渗出）；口唇红肿皲裂；草莓舌；躯干多形性红斑；手足硬性肿胀"
+          ],
+          [
+            "淋巴结",
+            "右颈部可及2×1.5cm肿大淋巴结，质中，轻压痛",
+            "心肺",
+            "心率125次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未及肿大，无压痛",
+            "WBC",
+            "18.5×10⁹/L",
+            "4.5-13",
+            "↑↑（白细胞增多）"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Rajasekharan S, et al. \"Giant within a giant\": a case of typical Kawasaki disease with a giant coronary aneurysm and a large coronary thrombus - a rare case report. Cardiol Young. 2018;28(1):147-149. PMID: 28835313.\n      2. 补充参考：PMC10748654 — Giant Coronary Aneurysms with Multiple Large Resistant Thromboses in an 8-Month-Old Boy with IVIg-Resistant Kawasaki Disease. Cureus. 2023.\n    \n\n    \n      ← 上一个：KDSS\n      返回索引\n      下一个：不完全型KD →",
+        "pmid": "28835313",
+        "n": 2
+      },
+      {
+        "f": "case_KD_incomplete.html",
+        "t": "病例：不完全型KD — 非典型表现的诊断挑战",
+        "sub": "病例：不完全型KD — 非典型表现的诊断挑战",
+        "nav": "incomplete",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "IVIG后48h",
+            "v": "热退，临床改善。结膜充血、口唇改变逐渐消退。\n          治疗成功 · 无冠状动脉病变",
+            "c": "green"
+          },
+          {
+            "d": "6周随访",
+            "v": "心脏超声：冠状动脉正常，无扩张。停阿司匹林。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "王XX，女，3岁2月",
+            "就诊日期",
+            "2018年3月",
+            "主诉"
+          ],
+          [
+            "发热6天，伴结膜充血、口唇改变4天",
+            "标签",
+            "不完全型KD 冠状动脉风险 AHA算法诊断",
+            "T",
+            "39.2℃"
+          ],
+          [
+            "HR",
+            "130次/分",
+            "BP",
+            "88/55 mmHg",
+            "体重"
+          ],
+          [
+            "14 kg（P50）",
+            "一般情况",
+            "神志清，精神烦躁，急性热病容",
+            "皮肤粘膜",
+            "双侧结膜充血（无渗出）；口唇红肿皲裂；草莓舌"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率130次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未及肿大",
+            "四肢",
+            "无手足硬肿，无指趾端脱皮",
+            "WBC",
+            "16.8×10⁹/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Toole KP, et al. Atypical or Incomplete Kawasaki Disease in a Young Child: A Case Report. J Pediatr Health Care. 2019;33(4):485-488. PMID: 30594442.\n      2. McCrindle BW, et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease: A Scientific Statement for Health Professionals From the AHA. Circulation. 2017;135(17):e927-e999.",
+        "pmid": "30594442",
+        "n": 3
+      },
+      {
+        "f": "case_KD_infant.html",
+        "t": "病例：2月龄婴儿不完全型KD+多发动脉瘤",
+        "sub": "病例：2月龄婴儿不完全型KD+多发动脉瘤",
+        "nav": "infant",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "第3天 — IVIG治疗",
+            "v": "IVIG 2g/kg + 阿司匹林。热退不明显，炎症标志物持续升高。IVIG抵抗",
+            "c": "yellow"
+          },
+          {
+            "d": "第5天 — 血浆置换",
+            "v": "启动血浆置换（PEX），清除循环中炎症因子、自身抗体和免疫复合物。热退，炎症标志物下降，动脉瘤未进一步扩大。PEX挽救成功",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "张XX，女，2月龄",
+            "就诊日期",
+            "日本某医院（文献报道）",
+            "主诉"
+          ],
+          [
+            "发热3天",
+            "标签",
+            "2月龄 多发动脉瘤 仅发热 血浆置换",
+            "T",
+            "39.0℃"
+          ],
+          [
+            "HR",
+            "155次/分",
+            "BP",
+            "68/40 mmHg",
+            "体重"
+          ],
+          [
+            "5.2 kg（P50）",
+            "一般情况",
+            "神志清，精神差，哭声弱",
+            "皮肤粘膜",
+            "无皮疹、无出血点；口唇无红肿皲裂；结膜无充血"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率155次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝肋下1.5cm，脾未及",
+            "四肢",
+            "无手足肿胀",
+            "WBC",
+            "22.5×10⁹/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Tsuda K, et al. A case of incomplete Kawasaki disease - A 2-month-old infant with 1 day of fever who developed multiple arterial aneurysms. Ann Pediatr Cardiol. 2022;15(5-6):536-538. PMID: 37152506.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "37152506",
+        "n": 4
+      },
+      {
+        "f": "case_KD_shock.html",
+        "t": "病例：川崎病休克综合征合并ARDS",
+        "sub": "病例：川崎病休克综合征合并ARDS",
+        "nav": "shock",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "急诊 — 休克+ARDS",
+            "v": "迅速进展为低血压+严重低氧血症。启动液体复苏+血管活性药物。",
+            "c": "red"
+          },
+          {
+            "d": "ECMO启动",
+            "v": "因常规通气下PaO₂/FiO₂持续<80mmHg，启动VV-ECMO + 持续血液净化。",
+            "c": "yellow"
+          },
+          {
+            "d": "ECMO撤机",
+            "v": "肺功能逐步改善，成功撤机。",
+            "c": "green"
+          },
+          {
+            "d": "出院",
+            "v": "完全恢复出院。",
+            "c": "green"
+          },
+          {
+            "d": "1年随访",
+            "v": "无冠状动脉扩张，无肺纤维化，完全康复。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "刘XX，女，2岁3月",
+            "就诊日期",
+            "2021年5月",
+            "主诉"
+          ],
+          [
+            "发热5天、咳嗽3天、呼吸急促1天",
+            "标签",
+            "KDSS ARDS ECMO 血液净化 完全恢复",
+            "T",
+            "39.8℃"
+          ],
+          [
+            "HR",
+            "165次/分",
+            "BP",
+            "65/40 mmHg（低血压）",
+            "体重"
+          ],
+          [
+            "12 kg（P50）",
+            "一般情况",
+            "嗜睡，反应差，皮肤花纹，CRT >4秒",
+            "皮肤粘膜",
+            "双侧结膜充血；口唇红肿皲裂；躯干多形性红斑；手足硬肿"
+          ],
+          [
+            "心肺",
+            "心率165次/分，双肺呼吸音粗，可闻及湿啰音；呼吸急促，SpO₂ 88%",
+            "腹部",
+            "腹软，肝肋下2cm，脾未及",
+            "WBC"
+          ],
+          [
+            "25.8×10⁹/L",
+            "5-12",
+            "↑↑↑",
+            "Hb",
+            "98 g/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Liu J, et al. Kawasaki disease shock syndrome with acute respiratory distress syndrome in a child: a case report and literature review. BMC Pulm Med. 2022;22(1):207. PMID: 35668424.\n    \n\n← 上一篇返回目录下一篇 →",
+        "pmid": "35668424",
+        "n": 5
+      }
+    ]
+  },
+  "Uveitis": {
+    "cn": "Uveitis葡萄膜炎",
+    "cases": [
+      {
+        "f": "case_Uveitis_Behcet.html",
+        "t": "病例：Behçet病葡萄膜炎",
+        "sub": "病例：Behçet病葡萄膜炎",
+        "nav": "Behcet",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第4周（2025-11-12）",
+            "v": "前房积脓消退。右眼视力恢复至0.5。激素减至0.5 mg/kg/d。FFA复查：视网膜渗漏减轻。"
+          },
+          {
+            "d": "第12周（2026-01-07）",
+            "v": "右眼视力0.8，前房安静。口服激素停用。FFA：视网膜血管渗漏基本消退。✅ 眼部炎症控制",
+            "c": "green"
+          },
+          {
+            "d": "第24周（2026-04-01）",
+            "v": "双眼视力0.8/1.0。无葡萄膜炎复发。口腔溃疡发作频率减少至每月<1次。Adalimumab + AZA维持。✅ 持续缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "眼科/皮肤检查",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "马XX，男，32岁",
+            "就诊日期",
+            "2025-10-15",
+            "主诉"
+          ],
+          [
+            "反复口腔、生殖器溃疡3年，右眼红痛伴视力下降2周",
+            "标签",
+            "致盲性 前房积脓 视网膜血管炎 Adalimumab",
+            "T",
+            "37.0℃"
+          ],
+          [
+            "HR",
+            "78次/分",
+            "BP",
+            "125/80 mmHg",
+            "体重"
+          ],
+          [
+            "68 kg",
+            "视力",
+            "右0.2 / 左0.8",
+            "眼压",
+            "右18 / 左15 mmHg"
+          ],
+          [
+            "右眼裂隙灯",
+            "前房积脓（1mm液平）、前房细胞3+、KP+",
+            "左眼",
+            "前房细胞1+（轻度受累）",
+            "右眼眼底"
+          ],
+          [
+            "视网膜静脉迂曲、弥漫渗漏、视盘水肿",
+            "口腔",
+            "舌缘、颊粘膜多个浅溃疡",
+            "皮肤",
+            "双下肢结节红斑、针刺试验阳性"
+          ]
+        ],
+        "pts": [
+          "结核筛查（T-SPOT）②乙肝/丙肝筛查 ③血常规+肝肾功能基线 ④AZA前查TPMT活性\n\n    📅 随访经过\n    \n      \n        第4周（2025-11-12）\n        前房积脓消退。右眼视力恢复至0.5。激素减至0.5 mg/kg/d。",
+          "Behçet葡萄膜炎 = 最致盲的非感染性葡萄膜炎",
+          "反复口/生殖器溃疡 + 前房积脓 + 视网膜血管炎 → 高度怀疑",
+          "前房积脓 + 视网膜血管炎（FFA弥漫渗漏）是特征",
+          "HLA-B51遗传易感（亚洲/地中海地区高发）",
+          "Adalimumab（阿达木单抗）是一线生物制剂"
+        ],
+        "ref": "1. Kılıç L, et al. Comparison of pediatric patients with idiopathic uveitis, and uveitis due to JIA and Behçet disease. Postgrad Med. 2023;135(1):78-87. PMID: 36210793\n      2. Hatemi G, et al. Behçet's syndrome: 2023 update. Nat Rev Rheumatol. 2023;19(2):95-108.\n      3. Davatchi F, et al. Behçet's disease: ISG criteria review. Int J Rheum Dis. 2023;26(4):555-562.",
+        "pmid": "36210793",
+        "n": 1
+      },
+      {
+        "f": "case_Uveitis_JIA.html",
+        "t": "病例：JIA相关葡萄膜炎",
+        "sub": "病例：JIA相关葡萄膜炎",
+        "nav": "JIA",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第4周（2026-01-02）",
+            "v": "局部激素减量至右眼qid/左眼bid。前房细胞右1+/左0.5+。MTX耐受良好。右膝肿胀减轻。"
+          },
+          {
+            "d": "第12周（2026-02-27）",
+            "v": "局部激素减至右眼bid/左眼停用。前房细胞右0.5+/左安静。MTX持续。右眼仍有活动"
+          },
+          {
+            "d": "第24周（2026-05-22）",
+            "v": "双眼前房安静（0级）。局部激素全部停用。右膝关节无肿胀。MTX继续维持。✅ 双眼葡萄膜炎缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "眼科/关节检查",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "刘XX，女，4岁2月",
+            "就诊日期",
+            "2025-12-05",
+            "主诉"
+          ],
+          [
+            "右膝关节肿痛6月，常规眼科筛查发现前房炎症3天",
+            "标签",
+            "无症状葡萄膜炎 前葡萄膜炎 ANA阳性 定期筛查",
+            "T",
+            "36.5℃"
+          ],
+          [
+            "HR",
+            "95次/分",
+            "BP",
+            "88/55 mmHg",
+            "体重"
+          ],
+          [
+            "16 kg（P50）",
+            "视力",
+            "右0.8 / 左0.8（正常）",
+            "眼压",
+            "右12 / 左14 mmHg（正常）"
+          ],
+          [
+            "裂隙灯",
+            "双前房细胞（右2+/左1+），右角膜中下方羊脂状KP",
+            "眼底",
+            "正常（无视网膜血管炎/黄斑水肿）",
+            "右膝"
+          ],
+          [
+            "肿胀+压痛+活动受限",
+            "其余关节",
+            "正常",
+            "WBC",
+            "8.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "JIA相关葡萄膜炎是最常见儿童葡萄膜炎",
+          "通常无症状（无痛、无红）→ 延迟就诊 → 不可逆视力损伤",
+          "少关节型 + ANA阳性 → 葡萄膜炎风险20-30%（最高）",
+          "推荐每3个月裂隙灯筛查",
+          "局部激素（滴眼液）+ MTX是系统性治疗首选",
+          "MTX疗效不足 → Adalimumab（阿达木单抗）是二线生物制剂"
+        ],
+        "ref": "1. Angeles-Han ST, et al. Screening, Monitoring, and Treating Children With JIA-associated Uveitis: Recent Updates. J Rheumatol. 2023;50(9):1039-1047. PMID: 36379581\n      2. Constantin T, et al. Adalimumab for JIA-uveitis. JACI. 2023;151(2):405-415.\n      3. Angeles-Han ST, et al. Screening guidelines for JIA-uveitis. Arthritis Rheumatol. 2023;75(3):432-441.",
+        "pmid": "36379581",
+        "n": 2
+      },
+      {
+        "f": "case_Uveitis_TINU.html",
+        "t": "病例：TINU综合征",
+        "sub": "病例：TINU综合征",
+        "nav": "TINU",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第2周（2025-10-02）",
+            "v": "Scr降至85 μmol/L。双眼红明显减轻，前房细胞1+。激素减至0.75 mg/kg/d。"
+          },
+          {
+            "d": "第6周（2025-10-30）",
+            "v": "Scr 68 μmol/L（正常）。双眼前房安静。激素减至0.5 mg/kg/d。✅ 肾功能和眼部均改善",
+            "c": "green"
+          },
+          {
+            "d": "第12周（2025-12-11）",
+            "v": "Scr 62 μmol/L，尿β2微球蛋白正常。双眼前房持续安静。激素减至10 mg/d。继续缓慢减量。✅ 稳定",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "周XX，女，15岁",
+            "就诊日期",
+            "2025-09-18",
+            "主诉"
+          ],
+          [
+            "发热、乏力2周，双眼发红、畏光3天",
+            "标签",
+            "TINU 间质性肾炎 双眼葡萄膜炎 激素敏感",
+            "T",
+            "37.6℃"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "115/72 mmHg",
+            "体重"
+          ],
+          [
+            "48 kg",
+            "一般情况",
+            "神清，精神稍萎",
+            "皮肤粘膜",
+            "无皮疹"
+          ],
+          [
+            "眼部",
+            "双眼结膜充血，睫状体压痛阳性",
+            "心肺",
+            "无异常",
+            "腹部"
+          ],
+          [
+            "双肾区轻叩痛",
+            "关节",
+            "无肿胀压痛",
+            "WBC",
+            "9.5×10⁹/L"
+          ]
+        ],
+        "pts": [
+          "TINU = 急性间质性肾炎 + 双侧前葡萄膜炎",
+          "肾和眼部表现可不同时出现 → 易漏诊误诊",
+          "需排除药物性间质性肾炎（无药物暴露+有葡萄膜炎 = TINU）",
+          "需排除SLE/结节病/结核等系统性病变",
+          "激素对肾和眼均有效，但减量宜慢（葡萄膜炎易复发）",
+          "肾功能通常完全恢复，预后良好"
+        ],
+        "ref": "1. Sawka A, et al. TINU syndrome: a systematic review. Nephrol Dial Transplant. 2022;37(9):1630-1640. PMID: 33561271\n      2. Mackensen F, et al. TINU syndrome: clinical features and outcomes. Ocul Immunol Inflamm. 2023;31(2):312-322.",
+        "pmid": "33561271",
+        "n": 3
+      },
+      {
+        "f": "case_Uveitis_Vogt.html",
+        "t": "病例：VKH综合征",
+        "sub": "病例：VKH综合征",
+        "nav": "Vogt",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第2周（2025-11-05）",
+            "v": "IVMP 3天后转口服。视力右0.3/左0.2。视网膜脱离明显减轻。头痛、耳鸣缓解。口服泼尼松85mg/d。"
+          },
+          {
+            "d": "第6周（2025-12-03）",
+            "v": "视力右0.6/左0.5。视网膜脱离完全复位。FFA：渗漏基本消退。泼尼松减至50mg/d。✅ 视网膜复位",
+            "c": "green"
+          },
+          {
+            "d": "第12周（2026-01-14）",
+            "v": "视力右0.8/左0.8。前房安静，眼底稳定。皮肤白斑无明显进展。泼尼松减至25mg/d。✅ 持续改善",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "眼科/神经检查",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "吴XX，女，35岁",
+            "就诊日期",
+            "2025-10-22",
+            "主诉"
+          ],
+          [
+            "头痛、耳鸣1周，双眼视力急剧下降3天",
+            "标签",
+            "双侧全葡萄膜炎 渗出性视网膜脱离 黑色素细胞自身免疫 早期激素",
+            "T",
+            "37.5℃"
+          ],
+          [
+            "HR",
+            "82次/分",
+            "BP",
+            "120/78 mmHg",
+            "体重"
+          ],
+          [
+            "58 kg",
+            "视力",
+            "右0.1 / 左0.05",
+            "眼压",
+            "右10 / 左8 mmHg（偏低）"
+          ],
+          [
+            "双眼裂隙灯",
+            "前房细胞1+，肉芽肿型KP（羊脂状）",
+            "双眼眼底",
+            "视盘充血水肿，后极部多发性浆液性视网膜脱离（隆起）",
+            "神经系统"
+          ],
+          [
+            "颈项强直(+)，Kernig征(±)",
+            "皮肤/毛发",
+            "头皮散在白癜风样脱色斑，睫毛部分变白",
+            "耳科",
+            "双侧感音神经性听力下降"
+          ]
+        ],
+        "pts": [
+          "VKH = 黑色素细胞自身免疫 → 眼+皮肤+耳+脑膜四器官受累",
+          "双侧肉芽肿性全葡萄膜炎+渗出性视网膜脱离是核心表现",
+          "前驱期（头痛/耳鸣）→ 葡萄膜炎期（视网膜脱离）→ 恢复期（晚霞样眼底）→ 复发期",
+          "前驱期易误诊为\"病毒性脑膜炎\"→ 延迟眼科会诊",
+          "早期大剂量IVMP冲击 + 口服激素缓慢减量（>6月）是关键",
+          "延迟治疗 → 晚霞样眼底+不可逆视力丧失"
+        ],
+        "ref": "1. Damico FM, et al. Vogt-Koyanagi-Harada disease. Curr Opin Ophthalmol. 2021;32(6):508-514. PMID: 34545845\n      2. Read RW, et al. VKH: revised diagnostic criteria. Am J Ophthalmol. 2023;247:145-155.\n      3. Fang W, et al. VKH in Chinese patients: clinical features. Ocul Immunol Inflamm. 2023;31(5):1085-1094.",
+        "pmid": "34545845",
+        "n": 4
+      },
+      {
+        "f": "case_Uveitis_infectious.html",
+        "t": "病例：感染性葡萄膜炎（眼弓形虫病）",
+        "sub": "病例：感染性葡萄膜炎（眼弓形虫病）",
+        "nav": "infectious",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第4周（2025-12-06）",
+            "v": "左眼视力恢复至0.6。视网膜病灶缩小，玻璃体炎减轻。激素减至0.25 mg/kg/d。乙胺嘧啶+克林霉素继续。"
+          },
+          {
+            "d": "第8周（2026-01-03）",
+            "v": "左眼视力0.8。视网膜病灶瘢痕化，炎症消退。停抗弓形虫药物和激素。✅ 感染控制",
+            "c": "green"
+          },
+          {
+            "d": "第16周（2026-02-28）",
+            "v": "左眼视力稳定0.8。OCT示黄斑结构恢复良好。建议避免生肉、注意猫粪接触。✅ 稳定",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "眼科检查",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "孙XX，女，26岁",
+            "就诊日期",
+            "2025-11-08",
+            "主诉"
+          ],
+          [
+            "左眼视力下降伴飞蚊症2周，眼红1周",
+            "标签",
+            "感染性 弓形虫 卫星灶 抗弓形虫治疗",
+            "T",
+            "36.6℃"
+          ],
+          [
+            "HR",
+            "72次/分",
+            "BP",
+            "118/75 mmHg",
+            "体重"
+          ],
+          [
+            "55 kg",
+            "视力",
+            "右1.0 / 左0.3",
+            "眼压",
+            "右14 / 左18 mmHg"
+          ],
+          [
+            "右眼",
+            "前节/眼底正常",
+            "左眼前节",
+            "前房细胞1+，玻璃体炎（尘状）",
+            "左眼眼底"
+          ],
+          [
+            "黄斑颞侧局灶白色视网膜坏死灶(2DD)，相邻陈旧色素瘢痕(卫星灶特征)",
+            "WBC",
+            "7.8×10⁹/L",
+            "4-10",
+            "正常"
+          ]
+        ],
+        "pts": [
+          "眼弓形虫病 = 全球最常见感染性后葡萄膜炎",
+          "卫星灶（新坏死灶+相邻陈旧瘢痕）是特征性眼底表现",
+          "IgG+/IgM- = 再活化（包囊破裂），IgM+ = 新发感染",
+          "再活化与免疫功能变化相关",
+          "乙胺嘧啶+磺胺嘧啶（或克林霉素）+ 叶酸 是经典方案",
+          "激素用于减轻免疫病理损伤，但必须在抗感染后48h启动"
+        ],
+        "ref": "1. Stanford MR, et al. Ocular toxoplasmosis: 2023 review. Prog Retin Eye Res. 2023;93:101120. PMID: 36521506\n      2. Holland GN. Ocular toxoplasmosis: clinical management. Am J Ophthalmol. 2023;248:135-148.",
+        "pmid": "36521506",
+        "n": 5
+      }
+    ]
+  },
+  "cSLE": {
+    "cn": "cSLE儿童SLE",
+    "cases": [
+      {
+        "f": "case_cSLE_AIHA_LAHPS.html",
+        "t": "病例：cSLE以AIHA起病合并LAHPS",
+        "sub": "病例：cSLE以AIHA起病合并LAHPS",
+        "nav": "AIHA_LAHPS",
+        "tags": [],
+        "alert": "本病例独特性：① 4岁起病（cSLE极少在此年龄发病）② 以AIHA（自身免疫性溶血性贫血）为SLE首发表现③ 合并LAHPS（狼疮抗凝物-低凝血酶原血症综合征）— 导致凝血异常+出血④ 出现左侧面神经麻痹（NP-SLE表现）⑤ 最初被误诊为\"缺铁性贫血\"治疗4周无效。",
+        "tl": [
+          {
+            "d": "1个月前 — 面色苍白就诊于当地医院",
+            "v": "发现贫血，Hb 64 g/L。\n          当地诊断：缺铁性贫血\n          治疗：铁蛋白琥珀酰口服液，服用4周\n          结果：贫血无改善\n          \n            误诊原因分析：4岁儿童贫血首先考虑营养性贫血（缺铁性贫血最常见），未进一步检查网织红细胞、Coombs试验、溶血指标。若初诊时行Coombs试验，可提前4周确诊AIHA → SLE。",
+            "c": "yellow"
+          },
+          {
+            "d": "入院前2天 — 出血征象",
+            "v": "出现鼻衄（Epistaxis）和黑便（Melena）。\n          当地复查：Hb 39 g/L（极重度贫血），凝血异常（PT、aPTT均延长）。\n          粪便隐血弱阳性。转上级医院。",
+            "c": "red"
+          },
+          {
+            "d": "入院查体 — 多系统受累",
+            "v": "生命体征：T 39.8°C（高热）\n          皮肤/黏膜：\n          • 面部荨麻疹样红斑（Urticarial Erythema）\n          • 四肢、背部、腹部多处瘀斑（Ecchymoses）\n          • 腮腺导管黏膜肿胀+红斑\n          神经系统：\n          • 左侧面神经麻痹（Left Facial Palsy）— 哭泣时左侧面",
+            "c": "red"
+          },
+          {
+            "d": "治疗后",
+            "v": "联合免疫抑制治疗后：\n          • 发热消退\n          • 贫血纠正（Hb恢复正常）\n          • 出血停止（凝血功能恢复）\n          • 面瘫恢复\n          • 皮疹消退\n          所有症状完全缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "指标",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "4岁，女性",
+            "就诊机构",
+            "浙江大学医学院附属杭州市第一人民医院，儿科",
+            "主诉"
+          ],
+          [
+            "进行性面色苍白伴间歇性高热1个月，鼻衄、黑便2天",
+            "标签",
+            "AIHA LAHPS 面瘫 4岁起病 治愈",
+            "T",
+            "39.8℃"
+          ],
+          [
+            "HR",
+            "130次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "16 kg",
+            "一般情况",
+            "神志清，精神萎靡，重度贫血貌",
+            "皮肤黏膜",
+            "面部荨麻疹样红斑，四肢、背部、腹部多处瘀斑；腮腺导管黏膜肿胀+红斑"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率130次/分，律齐，未闻及杂音；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "肝脾肿大，腹软，无压痛",
+            "神经系统",
+            "左侧面神经麻痹— 哭泣时左侧面肌无力，左眼闭合不全",
+            "关节",
+            "左足关节肿胀"
+          ]
+        ],
+        "pts": [
+          "自身抗体（多为IgG型）结合红细胞表面抗原",
+          "IgG包被的红细胞通过脾脏时被巨噬细胞Fc受体识别",
+          "巨噬细胞部分吞噬红细胞膜 → 球形红细胞（Spherocyte）形成",
+          "球形红细胞变形能力差 → 在脾脏中被完全吞噬破坏（血管外溶血）",
+          "Coombs试验（直接法）检测到红细胞表面的IgG → 确诊AIHA",
+          "SLE产生多种自身抗体，其中部分与红细胞膜抗原有交叉反应"
+        ],
+        "ref": "PMCID: PMC9386865 | PMID: 35971316 | DOI: 10.1177/03000605221115390",
+        "pmid": "35971316",
+        "n": 1
+      },
+      {
+        "f": "case_cSLE_CAPS.html",
+        "t": "病例：cSLE合并灾难性抗磷脂综合征",
+        "sub": "病例：cSLE合并灾难性抗磷脂综合征",
+        "nav": "CAPS",
+        "tags": [],
+        "alert": "本病例独特性：① 8岁男童以APS为SLE首发表现（极为少见，SLE多见于青春期女性）；② 同时出现出血（皮肤瘀斑、鼻衄、脑出血）和血栓（脑梗、指端坏疽），APS中罕见；③ 向CAPS（Catastrophic Antiphospholipid Syndrome，灾难性抗磷脂综合征）进展过程中成功抢救。",
+        "tl": [
+          {
+            "d": "就诊时",
+            "v": "8岁男孩，既往体健，出现：\n          • 皮肤瘀斑（Ecchymotic patches） — 广泛皮下出血\n          • 鼻衄（Epistaxis） — 反复鼻出血\n          • 右侧偏瘫（Right hemiparesis） — 脑血管事件\n          首诊实验室检查：\n          • 血小板（PLT，Platelet）：重度减少\n        ",
+            "c": "red"
+          },
+          {
+            "d": "住院第X天 — 脑出血",
+            "v": "神经影像学：头颅影像显示出血性脑卒中（Hemorrhagic Stroke）\n          → 右侧偏瘫的原因：脑出血",
+            "c": "red"
+          },
+          {
+            "d": "住院进展 — 血栓事件",
+            "v": "住院期间出现两个新的血栓事件：\n          ① 左侧局灶性癫痫（Left focal seizure）\n          　→ 神经影像：双侧大脑中动脉（MCA，Middle Cerebral Artery）供血区脑梗死\n          ② 指端坏疽（Digital Gangrene）\n          　→ 手指末端缺血性坏死 — 外周动脉血栓\n          出血+血栓并存",
+            "c": "red"
+          },
+          {
+            "d": "三联抢救方案",
+            "v": "1. 静脉甲泼尼龙冲击（IV Pulse Methylprednisolone）\n          → 快速抑制全身免疫炎症\n          → 控制SLE活动和aPL介导的内皮损伤\n\n          2. 静脉环磷酰胺（IV Cyclophosphamide）\n          → 针对SLE的基础免疫抑制\n          → 减少自身抗体（包括aPL）的产生\n\n        "
+          },
+          {
+            "d": "转归 — 成功抢救",
+            "v": "三联方案治疗后：\n          • 血小板计数逐步恢复\n          • 无新发血栓事件\n          • 无新发出血事件\n          • 神经系统症状稳定\n          成功阻止CAPS进展，患者康复",
+            "c": "green"
+          },
+          {
+            "d": "三联方案治疗后",
+            "v": "• 血小板计数逐步恢复\n          • 无新发血栓事件\n          • 无新发出血事件\n          • 神经系统症状稳定\n          成功阻止CAPS进展，患者康复",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "特征",
+          "单纯APS",
+          "CAPS"
+        ],
+        "tr": [
+          [
+            "患者",
+            "8岁，男性",
+            "就诊机构",
+            "印度布巴内斯瓦尔，Kalinga Institute of Medical Sciences，儿科+风湿科",
+            "主诉"
+          ],
+          [
+            "皮肤瘀斑伴鼻衄5天，右侧偏瘫1天",
+            "标签",
+            "CAPS 出血+血栓并存 8岁男童 成功抢救",
+            "T",
+            "37.8℃"
+          ],
+          [
+            "HR",
+            "118次/分",
+            "BP",
+            "110/70 mmHg",
+            "体重"
+          ],
+          [
+            "26 kg",
+            "一般情况",
+            "神志清，精神差",
+            "皮肤黏膜",
+            "广泛皮肤瘀斑，手指末端缺血性坏疽"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率118次/分，律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未触及明显肿大",
+            "神经系统",
+            "右侧偏瘫；住院期间出现左侧局灶性癫痫",
+            "外周血管",
+            "指端坏疽（外周动脉血栓）"
+          ]
+        ],
+        "pts": [
+          "左侧局灶性癫痫（Left focal seizure）",
+          "指端坏疽（Digital Gangrene）",
+          "aPL与内皮细胞表面的β2-GP1结合 → 上调组织因子（TF）表达",
+          "TF激活外源性凝血途径 → 凝血酶生成 → 纤维蛋白沉积 → 血栓形成",
+          "内皮细胞活化还释放vWF（von Willebrand Factor，血管性血友病因子）→ 促进血小板聚集",
+          "aPL直接结合血小板膜磷脂 → 血小板活化聚集"
+        ],
+        "ref": "PMCID: PMC9398199 | PMID: 36035039 | DOI: 10.7759/cureus.27205",
+        "pmid": "36035039",
+        "n": 2
+      },
+      {
+        "f": "case_cSLE_LN.html",
+        "t": "病例：12岁女孩 cSLE→LN IV型",
+        "sub": "病例：12岁女孩 cSLE→LN IV型",
+        "nav": "LN",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "第1天 — 初诊",
+            "v": "面部蝶形红斑，双下肢水肿（+++），BP 148/95 mmHg。\n          尿检：蛋白（+++），RBC 15-20/HP，可见RBC管型。\n          24h尿蛋白：3.5 g/d（正常<0.15）"
+          },
+          {
+            "d": "第5天 — 肾活检",
+            "v": "ISN/RPS分类：IV-G（A）——弥漫性球性增殖性狼疮性肾炎，活动性病变\n          免疫荧光：\"满堂亮\"IV型LN——需要积极免疫抑制治疗"
+          },
+          {
+            "d": "4周 — 诱导缓解评估",
+            "v": "尿蛋白从3.5→1.8 g/d，C3从32→58 mg/dL，水肿明显消退",
+            "c": "green"
+          },
+          {
+            "d": "3月 — 进一步改善",
+            "v": "尿蛋白0.9 g/d，C3 82 mg/dL，anti-dsDNA滴度下降",
+            "c": "green"
+          },
+          {
+            "d": "6月 — 接近完全缓解",
+            "v": "尿蛋白0.4 g/d，C3 105 mg/dL（补体恢复正常），血压稳定120/75 mmHg",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "免疫学指标",
+          "指标",
+          "结果"
+        ],
+        "tr": [
+          [
+            "患者",
+            "12岁女孩",
+            "就诊日期",
+            "2026-03（参考）",
+            "主诉"
+          ],
+          [
+            "面部红斑3周，双下肢水肿1周，头痛2天",
+            "标签",
+            "cSLE 狼疮性肾炎IV型 高血压",
+            "T",
+            "36.8℃"
+          ],
+          [
+            "HR",
+            "88次/分",
+            "BP",
+            "148/95 mmHg",
+            "体重"
+          ],
+          [
+            "40 kg",
+            "一般情况",
+            "神志清，精神可",
+            "皮肤黏膜",
+            "面部蝶形红斑，双下肢凹陷性水肿（+++）"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率88次/分，律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "腹软，无压痛，肝脾未触及肿大",
+            "关节",
+            "无肿痛",
+            "ANA",
+            "1:1280"
+          ]
+        ],
+        "pts": [],
+        "ref": "ISN/RPS 2003狼疮性肾炎分类标准。教学病例，综合文献整理。",
+        "pmid": "",
+        "n": 3
+      },
+      {
+        "f": "case_cSLE_MAS_neuro.html",
+        "t": "病例：cSLE-MAS伴广泛脑病变",
+        "sub": "病例：cSLE-MAS伴广泛脑病变",
+        "nav": "MAS_neuro",
+        "tags": [],
+        "alert": "本病例独特性：MAS合并广泛脑部影像学异常在cSLE中极为罕见。该患者入院时即有MRI异常，随后迅速出现嗜睡、淡漠、构音障碍等神经系统症状，需同时针对MAS和NP-SLE（Neuropsychiatric SLE，神经精神狼疮）进行双重治疗。",
+        "tl": [
+          {
+            "d": "入院前6个月 — 反复皮疹",
+            "v": "反复出现皮疹，未明确诊断。",
+            "c": "yellow"
+          },
+          {
+            "d": "入院前2周 — 持续发热",
+            "v": "开始出现持续发热，伴皮疹加重。",
+            "c": "red"
+          },
+          {
+            "d": "入院第1天",
+            "v": "体格检查：发热，面部及躯干皮疹，肝脾肿大\n          实验室检查：\n          \n            指标结果参考值\n            血红蛋白（Hb，Hemoglobin）↓ 降低115-150 g/L\n            白细胞（WBC，White Blood Cell）↓ 降低4.5-13.5 ×10⁹/L\n            血小板（PLT，Platele"
+          },
+          {
+            "d": "入院第5天 — 开始激素治疗",
+            "v": "开始糖皮质激素治疗。",
+            "c": "yellow"
+          },
+          {
+            "d": "入院第7天 — 精神萎靡",
+            "v": "患者出现精神萎靡、乏力、嗜睡，与此前发热+MAS状态不完全匹配。\n          NP-SLE症状开始显现",
+            "c": "red"
+          },
+          {
+            "d": "入院第8天 — 神经系统症状全面爆发",
+            "v": "快速进展为：\n          • 头晕（Dizziness）\n          • 嗜睡（Somnolence） — 意识水平下降\n          • 淡漠（Apathia） — 情感反应迟钝\n          • 构音障碍（Dysarthria） — 言语不清\n          \n          急性脑病（Acute Encephalopathy） NP-SLE确诊",
+            "c": "red"
+          },
+          {
+            "d": "全身治疗 — MAS + SLE控制",
+            "v": "大剂量甲泼尼龙冲击（IV methylprednisolone pulse）\n          → 抑制全身炎症反应和细胞因子风暴\n          环磷酰胺（CTX，Cyclophosphamide）静脉冲击\n          → 控制SLE疾病活动，阻断免疫复合物形成\n          静脉丙种球蛋白（IVIG，Intravenous Immunoglobulin）\n         "
+          },
+          {
+            "d": "鞘内注射 — 直接中枢干预",
+            "v": "鞘内注射地塞米松（Intrathecal Dexamethasone）\n          → 直接作用于中枢神经系统，减轻脑部炎症\n          → 针对NP-SLE的局部强化治疗"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "指标",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "11岁，女性",
+            "就诊机构",
+            "浙江大学医学院附属儿童医院，风湿免疫过敏科（杭州）",
+            "主诉"
+          ],
+          [
+            "反复皮疹6个月，持续发热2周",
+            "标签",
+            "MAS NP-SLE 广泛脑MRI病变 完全缓解",
+            "T",
+            "39.2℃"
+          ],
+          [
+            "HR",
+            "120次/分",
+            "BP",
+            "105/65 mmHg",
+            "体重"
+          ],
+          [
+            "35 kg",
+            "一般情况",
+            "神志清，精神萎靡，发热貌",
+            "皮肤黏膜",
+            "面部及躯干皮疹"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率120次/分，律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "肝脾肿大",
+            "神经系统",
+            "入院时无异常；第7天起出现嗜睡、淡漠、构音障碍",
+            "血红蛋白（Hb，Hemoglobin）",
+            "↓ 降低"
+          ]
+        ],
+        "pts": [
+          "cSLE — 符合SLICC-2012分类标准（ANA+、抗dsDNA+、补体低、皮疹、三系减少）",
+          "cSLE的免疫复合物和自身抗体（抗神经元抗体、抗磷脂抗体等）直接损伤脑血管内皮",
+          "MAS的细胞因子风暴（TNF-α、IL-1β、IL-6）进一步破坏BBB完整性",
+          "BBB破坏 → 血液中的自身抗体、免疫复合物、炎性细胞进入脑实质",
+          "进入脑内的免疫复合物激活小胶质细胞（Microglia）— 脑内的巨噬细胞",
+          "小胶质细胞活化 → 产生IL-1β、TNF-α、IL-6等炎性因子 → 神经元损伤"
+        ],
+        "ref": "PMCID: PMC8713754 | PMID: 34970517 | DOI: 10.3389/fped.2021.767115",
+        "pmid": "34970517",
+        "n": 4
+      },
+      {
+        "f": "case_cSLE_infantile_LN_PE.html",
+        "t": "病例：12月龄男婴以肾病综合征起病的婴儿SLE + IV型LN + 大面积肺栓塞",
+        "sub": "病例：12月龄男婴以肾病综合征起病的婴儿SLE + IV型LN + 大面积肺栓塞",
+        "nav": "infantile_LN_PE",
+        "tags": [],
+        "alert": "本病例5大独特性：\n      ① 12个月男婴 — cSLE的极端低龄端，婴儿SLE（iSLE）全球仅零星报道\n      ② 以肾病综合征为首发和唯一表现（无皮疹/关节痛/光过敏等典型SLE症状）\n      ③ ANA阴性 — SLE中仅约1-2%ANA阴性，婴儿SLE中更为常见，极大增加诊断难度\n      ④ 住院期间合并大面积肺血栓栓塞（aPL阴性！仅因肾病综合征高凝状态）\n      ⑤ 肾活检确诊为IV型狼疮肾炎（弥漫增殖性）+ \"满堂亮\"免疫荧光 — 病理成为确诊关键",
+        "tl": [
+          {
+            "d": "10月龄 — 起病：全身水肿",
+            "v": "男婴约10月龄起出现全身水肿（Generalized Edema）：\n          • 眼睑浮肿（晨起明显）\n          • 双下肢凹陷性水肿\n          • 腹围逐渐增大（腹水）\n          • 体重持续增加\n          基层就诊 → 考虑\"营养不良/低蛋白血症\" → 营养补充治疗 → 无效",
+            "c": "yellow"
+          },
+          {
+            "d": "12月龄 — 转诊入院：多系统异常",
+            "v": "因水肿持续加重2个月，转至安卡拉大学儿科肾脏科。\n\n          体格检查：\n          • 全身重度水肿（眼睑、面部、四肢、腹壁、阴囊）\n          • 腹水征阳性（移动性浊音）\n          • 肝脾肿大\n          • 面色苍白（贫血貌）\n          • 生命体征：体温正常（入院初期无发热）\n          • 无皮疹、无关节肿痛、无光过敏（S",
+            "c": "red"
+          },
+          {
+            "d": "入院期间 — 肾活检",
+            "v": "肾活检（Kidney Biopsy）结果：\n          光镜（Light Microscopy）：\n          • 弥漫性肾小球病变 — ≥50%肾小球受累\n          • 毛细血管内细胞增生（Endocapillary Proliferation）\n          • 可见白细胞浸润、基底膜增厚\n          • 符合ISN/RPS IV型（弥漫增殖性狼疮肾炎）"
+          },
+          {
+            "d": "住院期间 — 突发大面积肺栓塞",
+            "v": "在住院评估期间，患儿突发：\n          症状：\n          • 急性呼吸困难（Acute Dyspnea） — 呼吸频率明显增快\n          • 低氧血症（Hypoxemia） — 血氧饱和度下降\n          • 可能伴有烦躁不安、心率增快\n\n          影像学：\n          • CT肺动脉造影（CTPA）：确认大面积肺血栓栓塞（Massive Pu",
+            "c": "red"
+          },
+          {
+            "d": "阶段1：急性期 — 糖皮质激素",
+            "v": "糖皮质激素（Glucocorticoid） — 可能使用甲泼尼龙冲击后口服序贯\n          • 作用：抑制免疫炎症、减少免疫复合物形成、控制AIHA\n          • 对IV型LN：快速减轻肾小球炎症\n          • 剂量：原文未详述具体方案，参照cSLE IV型LN标准方案推测为甲泼尼龙冲击（15-30 mg/kg/d × 3天）→ 口服泼尼松（1-2 mg/kg/d）\n "
+          },
+          {
+            "d": "阶段2：诱导缓解 — 环磷酰胺（CTX）",
+            "v": "环磷酰胺（Cyclophosphamide, CTX） 静脉冲击\n          • 适应证：IV型LN的诱导缓解金标准\n          • 方案（参照cSLE标准）：NIH方案（500-1000 mg/m²/月 × 6个月）或Euro-Lupus方案（500 mg × 6次，每2周）\n          • 作用：清除增殖的B/T淋巴细胞 → 减少自身抗体和免疫复合物 → 控制肾小球炎症"
+          },
+          {
+            "d": "阶段3：维持缓解 — 吗替麦考酚酯（MMF）",
+            "v": "吗替麦考酚酯（Mycophenolate Mofetil, MMF）\n          • 在CTX诱导缓解后，转换为MMF长期维持\n          • MMF优势：性腺毒性远低于CTX，适合长期使用\n          • 机制：选择性抑制次黄嘌呤单核苷酸脱氢酶（IMPDH）→ 抑制淋巴细胞嘌呤从头合成 → 选择性抑制T/B淋巴细胞增殖\n          • 剂量：cSLE通常 600 "
+          },
+          {
+            "d": "阶段4：抗凝治疗",
+            "v": "抗凝治疗（Anticoagulation）\n          • 适应证：大面积肺栓塞（aPL阴性，但NS高凝状态导致）\n          • 方案（推测）：低分子肝素（LMWH）初始 → 华法林长期维持（INR 2.0-3.0）\n          • NS缓解后高凝状态消除 → 可考虑停用抗凝\n          • 关键：与APS不同，NS相关血栓在NS缓解后血栓风险降低 → 抗凝时限相"
+          }
+        ],
+        "mech_t": "",
+        "mech": "\n      <div class=\"m-title\">维度1：为什么ANA阴性？— 4种可能机制",
+        "th": [
+          "特征",
+          "cSLE（≥5岁）",
+          "iSLE（＜1岁）",
+          "生命体征",
+          "系统查体"
+        ],
+        "tr": [
+          [
+            "患者",
+            "12个月，男性",
+            "就诊机构",
+            "安卡拉大学医学院 儿科肾脏科（Ankara University, Turkey）",
+            "作者团队"
+          ],
+          [
+            "Akar EM, Özçakar ZB, Çakar N, Kiremitçi S, Kurt-Şükür ED, Fitöz S, Yalçınkaya F",
+            "发表",
+            "Turk J Pediatr. 2021;63(2):339-343",
+            "主诉",
+            "全身水肿进行性加重2个月"
+          ],
+          [
+            "标签",
+            "婴儿SLE IV型LN 大面积PE ANA阴性 C1q降低 完全缓解",
+            "ANA阳性率",
+            "＞97%",
+            "较低（可阴性）"
+          ],
+          [
+            "肾脏受累",
+            "50-75%",
+            "更高（＞80%）",
+            "血液系统",
+            "常见"
+          ],
+          [
+            "几乎均有",
+            "严重程度",
+            "中-重度",
+            "更重，更多器官受累",
+            "预后（旧观念）"
+          ],
+          [
+            "较好",
+            "曾认为\"预后极差\" — 本例挑战了这一观念",
+            "T",
+            "36.5℃（入院初期无发热）",
+            "HR"
+          ]
+        ],
+        "pts": [
+          "12个月男婴 — cSLE的极端低龄端，婴儿SLE（iSLE）全球仅零星报道",
+          "以肾病综合征为首发和唯一表现（无皮疹/关节痛/光过敏等典型SLE症状）",
+          "ANA阴性 — SLE中仅约1-2%ANA阴性，婴儿SLE中更为常见，极大增加诊断难度",
+          "住院期间合并大面积肺血栓栓塞（aPL阴性！仅因肾病综合征高凝状态）",
+          "肾病综合征 → 大量蛋白尿 → 抗凝血酶从尿中丢失 → 抗凝能力下降",
+          "低白蛋白血症 → 肝脏代偿合成纤维蛋白原↑ → 血液粘稠度↑"
+        ],
+        "ref": "PMID: 33929126 | DOI: 10.24953/turkjped.2021.02.021",
+        "pmid": "33929126",
+        "n": 5
+      },
+      {
+        "f": "case_cSLE_pancreatitis_MAS.html",
+        "t": "病例：cSLE急性胰腺炎并发MAS",
+        "sub": "病例：cSLE急性胰腺炎并发MAS",
+        "nav": "pancreatitis_MAS",
+        "tags": [],
+        "alert": "本病例独特性：① 胰腺炎在甲泼尼龙冲击治疗第2天出现（与治疗相关？）；② 合并文献回顾87例儿童SLE胰腺炎 — 死亡率33.3%，52.9%合并MAS；③ 提出SLE胰腺炎的MAS高关联性概念。",
+        "tl": [
+          {
+            "d": "基础状态",
+            "v": "11岁女孩，已确诊cSLE。因疾病活动入院，开始甲泼尼龙冲击治疗。",
+            "c": "yellow"
+          },
+          {
+            "d": "甲泼尼龙冲击第2天 — 腹痛发作",
+            "v": "突发剧烈腹痛，伴恶心、呕吐。\n          腹部检查：上腹部压痛、反跳痛\n          实验室：\n          • 血淀粉酶（Amylase，AMS）：显著升高\n          • 血脂肪酶（Lipase，LPS）：显著升高\n          • 腹部影像学（超声/CT）：胰腺肿大、渗出\n          急性胰腺炎（Acute Pancreatitis）确诊",
+            "c": "red"
+          },
+          {
+            "d": "胰腺炎出现后 — MAS征象",
+            "v": "同时出现MAS表现：\n          • 持续高热\n          • 全血细胞减少（三系下降）\n          • 铁蛋白显著升高\n          • 肝酶升高\n          • 甘油三酯升高\n          • MAS确诊",
+            "c": "red"
+          },
+          {
+            "d": "阶段1：急性期控制",
+            "v": "继续甲泼尼龙冲击治疗（500 mg/d）\n          → 不因胰腺炎中断，因MAS是更紧急的威胁\n          DNA免疫吸附（DNA Immunoadsorption）× 3次\n          → 清除抗dsDNA抗体和免疫复合物\n          血液灌流（Hemoperfusion）× 3次\n          → 清除炎性细胞因子"
+          },
+          {
+            "d": "阶段2：巩固治疗（第9天起）",
+            "v": "第二疗程甲泼尼龙冲击\n          环磷酰胺（CTX）冲击：10 mg/kg/d × 2天/月 × 6个月\n          → 控制SLE基础病\n          之后转换为：\n          吗替麦考酚酯（MMF，Mycophenolate Mofetil） 20 mg/kg/d\n          → 长期维持治疗"
+          },
+          {
+            "d": "转归",
+            "v": "• 血淀粉酶、脂肪酶逐步下降\n          • MAS症状缓解\n          • 病情稳定\n          • 13个月随访期保持稳定\n          成功抢救",
+            "c": "green"
+          },
+          {
+            "d": "治疗后 — 逐步改善",
+            "v": "• 血淀粉酶、脂肪酶逐步下降至正常\n          • MAS症状缓解（体温正常、血细胞恢复、铁蛋白下降）\n          • CTX冲击6个月后转换为MMF维持",
+            "c": "green"
+          },
+          {
+            "d": "13个月随访",
+            "v": "• 病情保持稳定，无胰腺炎或MAS复发\n          13个月随访期保持稳定",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "指标",
+          "数据",
+          "维度"
+        ],
+        "tr": [
+          [
+            "患者",
+            "11岁，女性",
+            "就诊机构",
+            "苏州大学附属儿童医院，肾脏免疫科（中国江苏）",
+            "基础疾病"
+          ],
+          [
+            "已确诊cSLE",
+            "主诉",
+            "确诊cSLE后疾病活动，甲泼尼龙冲击第2天突发剧烈腹痛1天",
+            "标签",
+            "急性胰腺炎 MAS 甲泼尼龙冲击第2天发病 13个月随访稳定"
+          ],
+          [
+            "T",
+            "38.5℃",
+            "HR",
+            "115次/分",
+            "BP"
+          ],
+          [
+            "100/65 mmHg",
+            "体重",
+            "33 kg",
+            "一般情况",
+            "急性病容，痛苦表情"
+          ],
+          [
+            "皮肤黏膜",
+            "无特殊",
+            "心肺",
+            "心率115次/分，律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "上腹部压痛、反跳痛，腹肌紧张",
+            "肝脾",
+            "后续出现肝脾肿大（MAS相关）",
+            "文献范围",
+            "近30年报道的儿童SLE胰腺炎"
+          ]
+        ],
+        "pts": [
+          "SLE的免疫复合物沉积于胰腺微血管 → 血管炎 → 胰腺缺血 → 腺泡细胞损伤",
+          "胰腺微血管丰富，对免疫复合物沉积高度敏感",
+          "血管炎导致胰酶外漏 → 自体消化 → 急性胰腺炎",
+          "抗磷脂抗体（aPL）→ 胰腺微血管血栓形成→ 局部缺血坏死",
+          "与APS相关的胰腺炎多表现为微血管血栓而非大血管栓塞",
+          "糖皮质激素本身可诱发胰腺炎（增加血液粘稠度、高脂血症）"
+        ],
+        "ref": "PMID: 31377830 | DOI: 10.1007/s00296-019-04388-4",
+        "pmid": "31377830",
+        "n": 6
+      },
+      {
+        "f": "case_cSLE_recurrent_MAS.html",
+        "t": "病例：cSLE以反复MAS为首发表现",
+        "sub": "病例：cSLE以反复MAS为首发表现",
+        "nav": "recurrent_MAS",
+        "tags": [],
+        "alert": "本病例独特性：儿科SLE中反复MAS发作极为罕见。文献中仅报道过2例反复MAS的儿科SLE病例。本例MAS发作3次，是报道中次数最多的病例之一，为理解cSLE-MAS的病理机制提供了重要线索。",
+        "tl": [
+          {
+            "d": "入院 — 以\"不明原因发热\"就诊",
+            "v": "14岁女孩，表现为持续高热、全血细胞减少、肝脾肿大。\n          实验室检查：\n          • 血红蛋白 ↓、白细胞 ↓、血小板 ↓（三系减少）\n          • 铁蛋白 显著升高\n          • 甘油三酯 ↑、纤维蛋白原 ↓\n          • 肝酶（AST/ALT）↑\n          \n          骨髓穿刺：噬血现象阳性（巨噬细胞吞噬血细胞）\n  ",
+            "c": "red"
+          },
+          {
+            "d": "MAS治疗期间 — SLE线索浮现",
+            "v": "进一步免疫学检查发现：\n          • 抗核抗体（ANA，Anti-Nuclear Antibody）阳性\n          • 抗dsDNA抗体（Anti-double Stranded DNA Antibody，抗双链DNA抗体）阳性\n          • 补体C3、C4降低\n          • 尿检：蛋白尿阳性\n          \n          符合SLICC-201",
+            "c": "yellow"
+          },
+          {
+            "d": "第1次MAS治疗与转归",
+            "v": "方案：静脉甲泼尼龙冲击 + 环孢素A\n          结果：MAS缓解。开始羟氯喹（HCQ，Hydroxychloroquine）+小剂量泼尼松维持治疗。",
+            "c": "green"
+          },
+          {
+            "d": "维持治疗数月后 — 再次高热+三系减少",
+            "v": "在羟氯喹+小剂量泼尼松维持治疗期间，再次出现：\n          • 持续高热\n          • 全血细胞减少\n          • 铁蛋白显著升高\n          • 噬血现象再次阳性\n          第2次MAS确诊",
+            "c": "red"
+          },
+          {
+            "d": "第2次MAS治疗",
+            "v": "方案：再次甲泼尼龙冲击 + 环孢素A\n          加用：吗替麦考酚酯（MMF，Mycophenolate Mofetil，霉酚酸酯）\n          结果：再次缓解。调整维持方案。",
+            "c": "green"
+          },
+          {
+            "d": "第2次缓解后 — 第三次MAS",
+            "v": "第3次出现MAS的典型临床表现。\n          发作细节与第1、2次类似：高热+三系减少+铁蛋白升高+噬血现象。\n          第3次MAS确诊",
+            "c": "red"
+          },
+          {
+            "d": "第3次MAS治疗 — 强化方案",
+            "v": "方案：甲泼尼龙冲击 + 环孢素A\n          调整维持方案：加强免疫抑制，更积极的治疗策略\n          结果：第3次缓解。",
+            "c": "green"
+          },
+          {
+            "d": "第1次MAS — 治疗与缓解",
+            "v": "方案：静脉甲泼尼龙冲击 + 环孢素A\n          结果：MAS缓解。开始羟氯喹+小剂量泼尼松维持治疗。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "14岁，女性",
+            "就诊机构",
+            "印度加尔各答，Postgraduate Medical Education and Research研究所，临床免疫与风湿科",
+            "主诉"
+          ],
+          [
+            "持续高热伴全血细胞减少2周",
+            "起病表现",
+            "以MAS为首发表现，随后确诊cSLE",
+            "标签",
+            "反复MAS ×3 以MAS起病 cSLE 最终缓解"
+          ],
+          [
+            "T",
+            "39.5℃",
+            "HR",
+            "125次/分",
+            "BP"
+          ],
+          [
+            "100/65 mmHg",
+            "体重",
+            "42 kg",
+            "一般情况",
+            "神志清，精神萎靡，高热貌"
+          ],
+          [
+            "皮肤黏膜",
+            "苍白（贫血貌），无皮疹",
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺"
+          ],
+          [
+            "心率125次/分，律齐；双肺呼吸音清",
+            "腹部",
+            "肝脾肿大",
+            "关节",
+            "无肿痛"
+          ]
+        ],
+        "pts": [
+          "I型干扰素通路（cSLE特征性） ② IFN-γ（MAS核心驱动） ③ IL-1/IL-6（放大炎症） ④ NK细胞功能缺陷（刹车失灵）\n      \n    \n\n    \n\n      1. 为什么cSLE特别容易并发MAS？— 四层机制",
+          "cSLE患者的浆细胞样树突状细胞（pDC，Plasmacytoid Dendritic Cell）被自身核酸（DNA/RNA）+ 抗核抗体形成的免疫复合物持续激活",
+          "pDC通过TLR7/TLR9（Toll样受体7/9）产生大量IFN-α — 这是SLE最特征性的细胞因子特征",
+          "IFN-α促进单核细胞/巨噬细胞向M1促炎表型极化，增强其吞噬活性和细胞因子分泌",
+          "IFN-α还促进自身抗原提呈→更多自身抗体→更多免疫复合物→恶性循环",
+          "正常情况下巨噬细胞清除凋亡细胞（凋亡细胞清除是SLE的关键缺陷之一）"
+        ],
+        "ref": "PMID: 35713230 | DOI: 10.1177/09612033221108852",
+        "pmid": "35713230",
+        "n": 7
+      },
+      {
+        "f": "case_cSLE_refractory_NPSLE.html",
+        "t": "病例：难治性cNPSLE——硼替佐米突破治疗",
+        "sub": "病例：难治性cNPSLE——硼替佐米突破治疗",
+        "nav": "refractory_NPSLE",
+        "tags": [],
+        "alert": "本系列独特性：① 首个儿科硼替佐米治疗NP-SLE的病例系列；② 5例患者均经过充分常规治疗失败（甲泼尼龙+环磷酰胺+利妥昔单抗+血浆置换）；③ 硼替佐米引入后所有患者精神病症状快速改善；④ 随访1-10年无一复发。",
+        "tl": [
+          {
+            "d": "硼替佐米引入后",
+            "v": "• 5/5（100%）精神病症状快速改善（数日至数周）\n          • 糖皮质激素快速减量\n          • 抗精神病药物可逐步停用\n          • SLE整体活动度改善",
+            "c": "green"
+          },
+          {
+            "d": "长期随访（1-10年）",
+            "v": "• 无一复发精神病（0%）\n          • 所有患者出现继发性低丙种球蛋白血症 → 需定期IVIG替代\n          5例难治性NP-SLE全部获得长期缓解",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "系统",
+          "表现",
+          "治疗方案",
+          "机制",
+          "本系列中的效果"
+        ],
+        "tr": [
+          [
+            "设计",
+            "5例回顾性病例系列（2011-2017年）",
+            "机构",
+            "美国佛罗里达大学，儿科过敏/免疫/风湿科 + AdventHealth for Children, Orlando",
+            "主诉"
+          ],
+          [
+            "确诊cSLE后出现持续精神症状（幻觉、妄想、行为异常）数周至数月",
+            "纳入标准",
+            "儿童起病的NP-SLE（cNPSLE），以精神病（Psychosis）为主要表现，常规免疫抑制治疗无效",
+            "标签",
+            "难治性 NP-SLE精神病 硼替佐米 全部缓解"
+          ],
+          [
+            "一般情况",
+            "精神症状明显（幻觉、妄想、行为异常），影响学习和生活",
+            "皮肤黏膜",
+            "部分患者有SLE相关皮疹",
+            "心肺"
+          ],
+          [
+            "未见特殊异常",
+            "腹部",
+            "未见特殊异常",
+            "神经系统",
+            "精神病性症状突出，无局灶性神经缺损"
+          ],
+          [
+            "甲泼尼龙冲击",
+            "广谱免疫抑制",
+            "无效",
+            "环磷酰胺（CTX）",
+            "B/T细胞抑制"
+          ],
+          [
+            "无效",
+            "利妥昔单抗（RTX，Rituximab）",
+            "CD20+B细胞清除",
+            "无效",
+            "血浆置换（PEX）"
+          ]
+        ],
+        "pts": [
+          "造血干细胞 → 初始B细胞（Naïve B Cell） → 受抗原刺激 → 浆母细胞（Plasmablast） → 浆细胞（Plasma Cell）",
+          "部分浆细胞迁移至骨髓/炎症组织 → 成为长寿命浆细胞（LLPC，Long-Lived Plasma Cell）",
+          "LLPC存活期可达数年至数十年，持续分泌抗体",
+          "RTX靶向CD20抗原 — CD20表达于B细胞表面，但浆细胞不表达CD20",
+          "RTX清除CD20+B细胞 → 但对已分化的浆细胞/LLPC完全无效",
+          "LLPC继续分泌致病性自身抗体（如抗神经元抗体、抗NMDA受体抗体）"
+        ],
+        "ref": "PMID: 36971919 | DOI: 10.1007/s10067-023-06559-y",
+        "pmid": "36971919",
+        "n": 8
+      }
+    ]
+  },
+  "FMF": {
+    "cn": "FMF家族性地中海热",
+    "cases": [
+      {
+        "f": "case_FMF_colchicine.html",
+        "t": "病例：6岁男孩 FMF→秋水仙碱→早期淀粉样变预警",
+        "sub": "病例：6岁男孩 FMF→秋水仙碱→早期淀粉样变预警",
+        "nav": "colchicine",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议。",
+        "tl": [
+          {
+            "d": "3岁 — 首次发作",
+            "v": "发热39℃+腹痛+呕吐。诊断\"急性胃肠炎\"，3天后自行缓解",
+            "c": "red"
+          },
+          {
+            "d": "3-5岁 — 反复误诊",
+            "v": "反复发热+腹痛，3-5次/年。先后诊断\"反复上感\"\"肠系膜淋巴结炎\"\"心理性腹痛\"。一次误诊\"急性阑尾炎\"手术取消",
+            "c": "red"
+          },
+          {
+            "d": "6岁 — 风湿科转诊",
+            "v": "踝关节肿痛→骨科→小儿风湿科。MEFV基因：M694V纯合突变。确诊FMF",
+            "c": "yellow"
+          },
+          {
+            "d": "秋水仙碱治疗",
+            "v": "0.5mg/d起始→1mg/d。2周后发作频率显著降低，2月后发作消失",
+            "c": "green"
+          },
+          {
+            "d": "⚠️ 蛋白尿预警",
+            "v": "常规随访尿检：ACR 45 mg/g↑，24h尿蛋白180mg↑。早期淀粉样变信号！秋水仙碱加至1.5mg/d",
+            "c": "yellow"
+          },
+          {
+            "d": "3月后 — 蛋白尿消退",
+            "v": "ACR 45→18 mg/g（正常化），24h尿蛋白 180→85mg。无FMF发作，耐受良好",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征（发作期）",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患者",
+            "6岁男孩",
+            "就诊日期",
+            "6岁时风湿科初诊",
+            "主诉"
+          ],
+          [
+            "反复发热伴腹痛、关节痛3年",
+            "标签",
+            "家族性地中海热（FMF） 早期淀粉样变 延误诊断3年",
+            "T",
+            "39.0℃"
+          ],
+          [
+            "HR",
+            "120次/分",
+            "BP",
+            "90/60 mmHg",
+            "体重"
+          ],
+          [
+            "20 kg（P25）",
+            "一般情况",
+            "神志清，精神倦，急性病容",
+            "皮肤粘膜",
+            "未见皮疹、出血点，无苍白"
+          ],
+          [
+            "淋巴结",
+            "未触及肿大",
+            "心肺",
+            "心律齐；双肺呼吸音清",
+            "腹部"
+          ],
+          [
+            "全腹压痛，无反跳痛，无肌紧张，肝脾未触及",
+            "关节",
+            "右踝关节肿胀、压痛、活动受限",
+            "WBC（白细胞）",
+            "升高（发作期）"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Livneh A, et al. Criteria for the diagnosis of familial Mediterranean fever. Arthritis Rheum. 1997;40(10):1879-1880.\n      2. Ozen S, et al. EULAR recommendations for the management of autoinflammatory diseases. Ann Rheum Dis. 2016;75(5):825-837.\n      3. Hentgen V, et al. Evidence-based recommendations for the practical management of FMF. Semin Arthritis Rheum. 2022.",
+        "pmid": "",
+        "n": 1
+      }
+    ]
+  },
+  "JIA": {
+    "cn": "JIA幼年特发性关节炎",
+    "cases": [
+      {
+        "f": "case_JIA_biologics.html",
+        "t": "病例：多关节型JIA → 生物制剂阶梯转换",
+        "sub": "病例：多关节型JIA → 生物制剂阶梯转换",
+        "nav": "biologics",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例基于已发表的医学文献整理，已做脱敏处理。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。",
+        "tl": [
+          {
+            "d": "MTX × 3月 — JADAS-27 24→14",
+            "v": "部分反应。活动关节12→6个，但仍>4个。部分反应≠足够",
+            "c": "yellow"
+          },
+          {
+            "d": "+ETN × 4月 — JADAS-27 14→8",
+            "v": "加用依那西普。活动关节6→4个，晨僵仍存在。ETN部分反应不足",
+            "c": "yellow"
+          },
+          {
+            "d": "换ADA+MTX × 3月 — JADAS-27 8→2",
+            "v": "停ETN换阿达木单抗。活动关节4→0个，无晨僵，ESR 8，CRP<3。✅ 达标：inactive disease！",
+            "c": "green"
+          },
+          {
+            "d": "6月后 — 持续缓解",
+            "v": "JADAS-27持续≤2。讨论MTX减量计划，继续ADA单药维持。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "系统查体",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "孙XX，女，7岁",
+            "就诊日期",
+            "2025-09-15",
+            "主诉"
+          ],
+          [
+            "多个关节肿痛3个月，晨僵明显",
+            "标签",
+            "多关节型JIA（RF阴性） 生物制剂转换",
+            "T",
+            "36.6℃"
+          ],
+          [
+            "HR",
+            "92次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "22 kg（P50）",
+            "一般情况",
+            "神志清，精神可，营养中等",
+            "皮肤粘膜",
+            "无皮疹、无出血点、无苍白"
+          ],
+          [
+            "淋巴结",
+            "未触及明显肿大",
+            "心肺",
+            "心率92次/分，律齐；双肺清",
+            "腹部"
+          ],
+          [
+            "腹软，肝脾未及",
+            "关节",
+            "双手PIP/MCP、双腕、双膝、双踝、右肘肿胀压痛（12个关节），晨僵>30分钟",
+            "WBC",
+            "8.5×10⁹/L"
+          ]
+        ],
+        "pts": [],
+        "ref": "1. Onel KB, et al. 2021 ACR Guideline for the Treatment of JIA. Arthritis Rheumatol. 2022;74(4):555-573.",
+        "pmid": "",
+        "n": 1
+      },
+      {
+        "f": "case_JIA_polyarticular.html",
+        "t": "病例：多关节型JIA（RF阴性）",
+        "sub": "病例：多关节型JIA（RF阴性）",
+        "nav": "polyarticular",
+        "tags": [],
+        "alert": "⚠️ 免责声明　本病例为基于文献典型表现的示范性合成病例，不对应任何真实患者。仅供医学专业人员学习参考，不构成任何诊疗建议，不可替代临床医师的专业判断。具体诊疗方案应由执业医师根据患者实际情况制定。如有疑问请咨询专业医疗机构。",
+        "tl": [
+          {
+            "d": "第4周（2025-12-13）",
+            "v": "关节肿痛有所缓解，晨僵缩短至15-20分钟。\n          ESR 28 mm/h，CRP 10 mg/L，Hb 112 g/L\n          JADAS-27: 6 + 3.5 + 3.0 + 8.0 = 20.5（仍高活动）\n          MTX耐受可，轻度恶心。继续MTX+萘普生。"
+          },
+          {
+            "d": "第12周（2026-02-07）",
+            "v": "双手肿胀明显减轻，但双腕仍有肿胀，晨僵约10分钟。\n          ESR 18 mm/h，CRP 6 mg/L\n          JADAS-27: 4 + 2.5 + 2.0 + 5.0 = 13.5（仍高活动≥12.5）\n          MTX疗效不足（12周未达临床改善） → 升级治疗"
+          },
+          {
+            "d": "第12周决策 — 治疗升级",
+            "v": "依据：ACR 2021指南 — MTX足量12周未达改善 → 加用生物制剂（bDMARD）\n          选择：Etanercept（依那西普）0.8 mg/kg 皮下注射 每周1次（≈17.6mg/周）\n          理由：TNF-α抑制剂是JIA一线生物制剂，多关节型证据最充分\n          Naproxen开始减量。",
+            "c": "red"
+          },
+          {
+            "d": "第24周（2026-05-01）",
+            "v": "关节肿痛基本消失，无晨僵，恢复正常活动。\n          ESR 6 mm/h，CRP <4 mg/L\n          JADAS-27: 0 + 0.5 + 0.5 + 0.0 = 1.0（达到inactive disease！）\n          ✅ Wallace inactive disease标准达成\n          眼科：正常，无葡萄膜炎。Naproxen停用。",
+            "c": "green"
+          },
+          {
+            "d": "第48周（2026-10-15）",
+            "v": "维持缓解6个月。\n          JADAS-27: 0（临床缓解）\n          MTX逐步减量至8mg qw。Etanercept继续。\n          眼科：持续正常（累计4次筛查均阴性）。",
+            "c": "green"
+          }
+        ],
+        "mech_t": "",
+        "mech": "",
+        "th": [
+          "生命体征",
+          "关节检查",
+          "项目",
+          "结果",
+          "参考值"
+        ],
+        "tr": [
+          [
+            "患儿",
+            "张XX，女，6岁8月",
+            "就诊日期",
+            "2025-11-15",
+            "主诉"
+          ],
+          [
+            "双手、双腕、双膝关节肿痛3月，晨僵明显",
+            "标签",
+            "多关节型 RF（类风湿因子）阴性 ANA（抗核抗体）阳性",
+            "T",
+            "36.6℃"
+          ],
+          [
+            "HR",
+            "92次/分",
+            "BP",
+            "95/60 mmHg",
+            "体重"
+          ],
+          [
+            "22 kg（P50）",
+            "双手PIP（近端指间关节）2-4",
+            "肿胀+压痛（6个关节）",
+            "双腕",
+            "肿胀+压痛+活动受限（2个）"
+          ],
+          [
+            "双膝",
+            "肿胀+积液（2个）",
+            "其余关节",
+            "正常",
+            "WBC"
+          ],
+          [
+            "9.2×10⁹/L",
+            "5-12",
+            "正常",
+            "Hb",
+            "108 g/L"
+          ]
+        ],
+        "pts": [
+          "血常规+肝肾功能基线 ②乙肝/丙肝筛查 ③胸片（除外结核）④叶酸处方 ⑤眼科基线检查\n    \n\n    \n    📅 随访经过\n    \n      \n        第4周（2025-12-13）\n        \n          关节肿痛有所缓解，晨僵缩短至15-20分钟。",
+          "≥5个关节受累 + RF阴性 + 病程≥6周 + 排除其他 → 多关节型JIA（RF阴性）",
+          "ANA高≠SLE（系统性红斑狼疮），需综合判断（补体/抗dsDNA/关节外表现）",
+          "MTX（甲氨蝶呤）是多关节型JIA首选传统改善病情抗风湿药（ACR 2021 A级推荐）",
+          "MTX足量12周未达改善 → 加用生物制剂（本例依那西普）",
+          "Treat-to-Target目标：Wallace非活动性疾病标准"
+        ],
+        "ref": "1. Onel KB, et al. 2021 ACR Guideline for the Treatment of JIA. Arthritis Rheumatol. 2022;74(4):555-573.\n      2. Consolaro A, et al. Development and validation of JADAS-27. Arthritis Rheum. 2009;61(5):658-666.\n      3. Wallace CA, et al. Clinical inactive disease criteria for JIA. J Rheumatol. 2004;31(11):2294-2298.\n      4. Beukelman T, et al. 2011 ACR recommendations for JIA treatment. Arthritis Care Res. 2011;63(7):981-990.\n      5. Giancane G, et al. JIA outcome and predictors. Nat Rev Rheu",
+        "pmid": "",
+        "n": 2
+      }
+    ]
+  }
+}
