@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病例：难治性增殖性狼疮肾炎</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="../manifest.json">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --border:#e5e0d8; --radius:10px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; padding-top:42px !important; }
+.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
+.header { background:var(--red); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
+.header h1 { font-size:1.3rem; font-weight:700; }
+.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
+.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
+.body { padding:10px 20px 14px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#20a39e; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
+.sh.red { background:var(--red); } .sh.green { background:var(--green); } .sh.yellow { background:var(--yellow); }
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; }
+td { padding:2.5px 7px; border-bottom:1px solid #f0ede8; vertical-align:top; }
+tr:hover td { background:#faf8f5; }
+.b { font-weight:700; } .c-a { color:var(--accent); } .c-r { color:var(--red); } .c-g { color:var(--green); }
+.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
+.t-g { background:var(--green-bg); color:var(--green); } .t-r { background:var(--red-bg); color:var(--red); } .t-y { background:var(--yellow-bg); color:var(--yellow); } .t-a { background:#d4f0ed; color:#20a39e; }
+.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
+.alert b { color:var(--red); }
+.reasoning { background:#f8f6f2; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin:6px 0; font-size:12px; line-height:1.7; }
+.reasoning .q { font-weight:700; color:var(--accent); margin-bottom:3px; }
+.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--accent);color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;} .nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.timeline { border-left:3px solid var(--accent); margin:6px 0 6px 8px; padding-left:12px; }
+.timeline .t-item { margin-bottom:8px; position:relative; }
+.timeline .t-item::before { content:''; position:absolute; left:-17px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+.timeline .t-item.green::before { background:var(--green); } .timeline .t-item.red::before { background:var(--red); }
+.timeline .t-date { font-size:0.72rem; color:var(--text3); font-weight:600; }
+.timeline .t-content { font-size:12px; margin-top:1px; }
+.note { font-size:11px; color:var(--text2); margin:4px 0; padding:6px 10px; background:#f8f6f2; border-radius:5px; }
+@media(max-width:768px){ .g2{grid-template-columns:1fr;} .wrap{padding:0 4px;} .header{flex-direction:column;gap:6px;} .header .meta{text-align:left;} table{display:block;overflow-x:auto;font-size:11px;} th,td{white-space:nowrap;padding:2px 5px;} }
+.mech-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #f59e0b33; border-left: 4px solid #d97706; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.mech-box .mech-title { font-size: 12.5px; font-weight: 700; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.mech-box .mech-body { font-size: 12px; line-height: 1.85; color: #451a03; }
+.mech-box table { margin: 8px 0; }
+.points-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #22c55e33; border-left: 4px solid #16a34a; border-radius: 8px; padding: 12px 14px; margin: 6px 0; }
+.points-box .pts-title { font-size: 12.5px; font-weight: 700; color: #14532d; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.points-box ul { font-size: 12px; line-height: 1.85; color: #052e16; margin: 4px 0; padding-left: 18px; }
+.points-box ul li { margin-bottom: 3px; }
+details { margin: 6px 0; }
+details summary { cursor: pointer; font-weight: 600; font-size: 12px; color: var(--accent); padding: 4px 0; }
+details summary:hover { color: var(--red); }
+details .ans { padding: 6px 10px; background: #f8f6f2; border-radius: 6px; font-size: 12px; line-height: 1.7; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="index.html">📖 病例目录</a>
+  <span class="nav-title">难治性LN</span>
+</div>
+
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>🔴 病例：难治性增殖性狼疮肾炎 — 阶梯升级治疗</h1>
+      <div class="sub">15岁女孩 — SLE 2年，LN IV型，MMF诱导失败→环磷酰胺→贝利尤单抗</div>
+    </div>
+    <div class="meta">更新: 2026-04-18</div>
+  </div>
+
+  <div class="alert" style="margin:0;border-radius:0;background:#fff3e0;border-left:4px solid #e65100;font-size:11.5px;padding:8px 14px;">
+    <b style="color:#e65100">⚠️ 免责声明</b>　本病例为教学案例，已做脱敏处理。仅供医学专业人员学习参考，<b>不构成任何诊疗建议</b>。
+  </div>
+
+  <div class="body">
+
+    <div class="sh">👤 基本信息</div>
+    <table>
+      <tr><td class="b" style="width:120px">患者</td><td>15岁女孩</td></tr>
+      <tr><td class="b">SLE病史</td><td>2年（13岁确诊）</td></tr>
+      <tr><td class="b">主诉</td><td>尿蛋白反弹伴面部红斑再发2周</td></tr>
+      <tr><td class="b">标签</td><td><span class="tag t-a">cSLE</span> <span class="tag t-r">LN IV型</span> <span class="tag t-r">难治性</span> <span class="tag t-y">贝利尤单抗</span></td></tr>
+    </table>
+
+    <div class="sh">📝 现病史</div>
+    <p style="font-size:12px;margin:4px 0;">
+      13岁确诊SLE（蝶形红斑、多关节炎、ANA 1:2560、anti-dsDNA强阳性、C3/C4下降）。14岁因大量蛋白尿行肾活检：<b>ISN/RPS IV-G(A)</b>。开始MMF 2g/d + 泼尼松1mg/kg/d诱导治疗。<br><br>
+      6个月后达部分缓解：24h尿蛋白从3.2→0.5 g/d，但始终未达完全缓解（<0.2 g/d）。泼尼松已减至10mg/d。<br><br>
+      2周前面部红斑再发，下肢水肿，自测尿蛋白（+++）。门诊复查：<b>24h尿蛋白2.1 g/d</b>，C3再次下降至28 mg/dL，anti-dsDNA滴度显著升高。<br><br>
+      <b>既往治疗</b>：MMF 2g/d + HCQ 200mg/d + 泼尼松10mg/d + 氨氯地平5mg/d。
+    </p>
+
+    <div class="sh red">🩺 体格检查</div>
+    <div class="g2">
+      <table>
+        <tr><th colspan="2">生命体征</th></tr>
+        <tr><td>T</td><td>36.6℃</td></tr>
+        <tr><td>BP</td><td class="c-r">138/88 mmHg</td></tr>
+        <tr><td>体重</td><td>48 kg</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">系统查体</th></tr>
+        <tr><td>皮肤</td><td>面部<b>蝶形红斑</b>，双下肢凹陷性水肿（++）</td></tr>
+        <tr><td>心肺</td><td>未见异常</td></tr>
+        <tr><td>腹部</td><td>无压痛，肝脾未触及</td></tr>
+        <tr><td>关节</td><td>双PIP轻压痛，无肿胀</td></tr>
+      </table>
+    </div>
+
+    <div class="sh">🔬 辅助检查（动态数据）</div>
+    <table>
+      <tr><th>指标</th><th>初诊时</th><th>MMF 6月</th><th>复发时</th><th>CYC 3月</th><th>贝利尤单抗6月</th></tr>
+      <tr><td>24h尿蛋白(g/d)</td><td class="c-r">3.2</td><td>0.5</td><td class="c-r">2.1</td><td class="c-r">1.8</td><td class="c-g">0.3</td></tr>
+      <tr><td>C3 (mg/dL)</td><td class="c-r">25</td><td>65</td><td class="c-r">28</td><td class="c-r">35</td><td class="c-g">98</td></tr>
+      <tr><td>C4 (mg/dL)</td><td class="c-r">4</td><td>12</td><td class="c-r">6</td><td>8</td><td class="c-g">18</td></tr>
+      <tr><td>Anti-dsDNA</td><td>强阳性(+)</td><td>弱阳性</td><td class="c-r">强阳性(++)</td><td>强阳性(+)</td><td>阴性</td></tr>
+      <tr><td>血肌酐(mg/dL)</td><td>0.8</td><td>0.7</td><td>0.9</td><td>0.9</td><td>0.7</td></tr>
+      <tr><td>血白蛋白(g/dL)</td><td class="c-r">2.6</td><td>3.5</td><td class="c-r">2.8</td><td>3.0</td><td class="c-g">4.0</td></tr>
+    </table>
+
+    <div class="sh green">✅ 诊断</div>
+    <table>
+      <tr><th>诊断</th><th>说明</th></tr>
+      <tr><td class="b">cSLE（活动期）</td><td>SLEDAI-2K评分 16分（重度活动）</td></tr>
+      <tr><td class="b">狼疮肾炎IV-G(A)复发</td><td>肾活检确诊（既往），临床指标确认复发</td></tr>
+      <tr><td class="b">MMF诱导治疗失败</td><td>部分缓解后复发，定义为难治性LN</td></tr>
+    </table>
+
+    <div class="sh">🧠 诊断推理</div>
+    <div class="reasoning">
+      <div class="q">❓ 为什么判断MMF诱导失败？</div>
+      MMF治疗6个月后尿蛋白仍>0.5 g/d，属部分缓解。部分缓解者远期肾存活率显著低于完全缓解者。<b>出现复发（尿蛋白>1 g/d + 补体下降 + dsDNA升高）明确提示当前方案不足以控制病情</b>，需要升级。
+    </div>
+    <div class="reasoning">
+      <div class="q">❓ Euro-Lupus vs NIH方案如何选择？</div>
+      Euro-Lupus方案（CYC 500mg×6剂，每2周）与NIH方案（CYC 500-1000mg/m²×7剂，每月）相比：疗效相当，但<b>Euro-Lupus毒性更低、感染风险更小</b>。对于已使用MMF失败的青少年患者，选择低毒性方案更为合理。
+    </div>
+
+    <div class="sh red">💊 治疗决策 — 阶梯升级</div>
+    <table>
+      <tr><th>阶段</th><th>方案</th><th>结果</th><th>决策理由</th></tr>
+      <tr><td class="b">Step 1<br>(初始)</td><td>MMF 2g/d + 泼尼松1mg/kg/d→减量 + HCQ</td><td><span class="t-y tag">部分缓解后复发</span></td><td>标准一线诱导方案</td></tr>
+      <tr><td class="b">Step 2<br>(升级1)</td><td>停MMF→Euro-Lupus CYC 500mg IV q2w×6剂 + 甲强龙冲击→口服减量</td><td><span class="t-r tag">3月后无改善</span><br>UP 1.8g/d，C3仍低</td><td>MMF失败换CYC是标准策略（ALMS试验）</td></tr>
+      <tr><td class="b">Step 3<br>(升级2)</td><td>加用<b>贝利尤单抗</b>10mg/kg IV（0/2/4周→每月）+ 恢复MMF 1.5g/d</td><td><span class="t-g tag">6月后达标</span><br>UP 0.3g/d，C3恢复</td><td>BLISS-LN试验：贝利尤单抗+MMF显著提高肾脏应答率</td></tr>
+    </table>
+
+    <div class="mech-box">
+      <div class="mech-title">🔬 贝利尤单抗作用机制</div>
+      <div class="mech-body">
+        <b>靶点</b>：B淋巴细胞刺激因子（BLyS/BAFF）<br>
+        <b>机制</b>：中和可溶性BAFF，抑制B细胞存活和分化，减少自身抗体产生<br>
+        <b>BLISS-LN试验</b>（PMID 33516346）：贝利尤单抗+标准治疗 vs 安慰剂+标准治疗，104周肾脏应答率：<b>43% vs 32%</b>（OR 1.55, p=0.03），显著降低尿蛋白、改善补体水平<br>
+        <b>适应症</b>：≥5岁的活动性SLE，包括LN。是目前唯一获批用于儿童SLE的生物制剂。
+      </div>
+    </div>
+
+    <div class="sh">📅 随访经过</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">T0 — 复发入院</div>
+        <div class="t-content">UP <span class="c-r">2.1 g/d</span>，C3 28 mg/dL，anti-dsDNA强阳性。SLEDAI-2K 16分。<br><b>决策：MMF→Euro-Lupus环磷酰胺方案</b></div>
+      </div>
+      <div class="t-item red">
+        <div class="t-date">T+3月 — CYC无效</div>
+        <div class="t-content">完成6剂CYC。UP仍 <span class="c-r">1.8 g/d</span>，C3 35 mg/dL。<b>环磷酰胺亦未奏效→难治性LN</b></div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">T+3月 — 加用贝利尤单抗</div>
+        <div class="t-content">贝利尤单抗10mg/kg IV + 恢复MMF 1.5g/d + 泼尼松15mg/d</div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">T+6月（贝利尤单抗3月）</div>
+        <div class="t-content">UP 1.0 g/d，C3 68 mg/dL，anti-dsDNA弱阳性。<b>首次出现明确改善趋势</b></div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">T+9月（贝利尤单抗6月）</div>
+        <div class="t-content">UP <span class="c-g">0.3 g/d</span>，C3 <span class="c-g">98 mg/dL</span>，anti-dsDNA转阴。<b>接近完全缓解</b></div>
+      </div>
+      <div class="t-item green">
+        <div class="t-date">T+12月 — 维持期</div>
+        <div class="t-content">贝利尤单抗每月+MMF 1g/d+泼尼松5mg/d+HCQ。UP稳定0.2 g/d，肾功能正常</div>
+      </div>
+    </div>
+
+    <div class="sh yellow">📝 临床教训</div>
+    <div class="points-box">
+      <div class="pts-title">💡 要点总结</div>
+      <ul>
+        <li><b>部分缓解≠治疗成功</b>：LN治疗目标是完全缓解（UP<0.2-0.5 g/d），部分缓解患者远期预后差</li>
+        <li><b>MMF失败后的升级策略</b>：首选换用环磷酰胺（Euro-Lupus或NIH方案），若仍无效则加用贝利尤单抗</li>
+        <li><b>贝利尤单抗的循证依据</b>：BLISS-LN试验证实其可显著提高肾脏应答率，尤其适合难治性病例</li>
+        <li><b>难治性LN定义</b>：标准诱导治疗6个月后未达完全缓解，或治疗后复发，需升级方案</li>
+        <li><b>补体和dsDNA监测</b>：C3/C4下降+dsDNA升高是LN复发的可靠前驱指标</li>
+      </ul>
+    </div>
+
+    <div class="sh">❓ 自测题</div>
+    <details>
+      <summary>① 何时判断MMF诱导治疗失败？</summary>
+      <div class="ans">MMF诱导治疗<b>6个月</b>后评估：<br>• <b>完全缓解</b>：UP<0.2 g/d + 肾功能正常 + 补体正常<br>• <b>部分缓解</b>：UP下降≥50%但未达完全缓解标准<br>• <b>治疗失败</b>：UP下降<50%或肾功能恶化<br>部分缓解后复发也属治疗失败，需升级方案。
+      </div>
+    </details>
+    <details>
+      <summary>② Euro-Lupus与NIH环磷酰胺方案如何选择？</summary>
+      <div class="ans"><b>Euro-Lupus方案</b>：CYC 500mg IV ×6剂（每2周），累积剂量3g。毒性低，适合青少年。<br><b>NIH方案</b>：CYC 500-1000mg/m² IV ×7剂（每月），累积剂量更高。适合高危/重症。<br>两者远期疗效相当，但Euro-Lupus感染、性腺毒性更低。<b>儿童首选Euro-Lupus</b>。
+      </div>
+    </details>
+    <details>
+      <summary>③ 贝利尤单抗的作用机制和适应症是什么？</summary>
+      <div class="ans"><b>机制</b>：人源化IgG1单克隆抗体，中和可溶性BLyS/BAFF，抑制B细胞存活和分化，减少自身抗体产生。<br><b>适应症</b>：≥5岁的活动性SLE（包括狼疮肾炎）。<b>是唯一获批用于儿童SLE的生物制剂</b>。<br><b>注意事项</b>：不推荐用于严重活动性中枢神经系统狼疮或严重低丙种球蛋白血症。
+      </div>
+    </details>
+
+    <div class="sh">📖 参考文献</div>
+    <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
+      1. Furie R, et al. Two-year, randomized, controlled study of belimumab in lupus nephritis (BLISS-LN). <i>N Engl J Med</i>. 2020;383(12):1117-1128. <b>PMID: 33516346</b><br>
+      2. Appel GB, et al. Mycophenolate mofetil versus cyclophosphamide for induction treatment of lupus nephritis (ALMS). <i>J Am Soc Nephrol</i>. 2009;20(5):1103-1112. <b>PMID: 19880580</b>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);">
+    <a href="case_cSLE_LN.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">⬅ cSLE→LN</a>
+    <a href="case_sJIA_MAS_refractory.html" style="display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;margin:2px;">sJIA→反复MAS ➡</a>
+  </div>
+
+  <div class="footer">教学病例 · 不构成诊疗建议 · MedWiki-Rheum</div>
+</div>
+
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+</body>
+</html>
