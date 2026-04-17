@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>TermRAG 专家盲评</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; padding-bottom: 80px; }
+.header { background: #1a73e8; color: white; padding: 16px; position: sticky; top: 0; z-index: 100; }
+.header h1 { font-size: 18px; font-weight: 600; }
+.header .progress { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+.header .bar { height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-top: 6px; }
+.header .bar-fill { height: 100%; background: white; border-radius: 2px; transition: width 0.3s; }
+
+.login-screen { padding: 20px; max-width: 400px; margin: 40px auto; }
+.login-screen h2 { text-align: center; margin-bottom: 20px; color: #1a73e8; }
+.login-screen input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; margin-bottom: 12px; }
+.login-screen button { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+.login-screen .hint { font-size: 13px; color: #999; text-align: center; margin-top: 8px; }
+
+.block { background: white; margin: 12px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
+.block-header { padding: 14px 16px; background: #f8f9fa; border-bottom: 1px solid #eee; }
+.block-header .qtype { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 500; }
+.block-header .qid { color: #999; font-size: 12px; margin-left: 8px; }
+.question { padding: 12px 16px; font-size: 15px; line-height: 1.6; font-weight: 500; border-bottom: 1px solid #f0f0f0; }
+.ref-answer { padding: 8px 16px; background: #f0f7ff; font-size: 13px; color: #555; border-bottom: 1px solid #eee; }
+.ref-answer b { color: #1a73e8; }
+
+.answer-card { padding: 12px 16px; border-bottom: 1px solid #f0f0f0; }
+.answer-card:last-child { border-bottom: none; }
+.answer-label { font-size: 13px; color: #666; font-weight: 600; margin-bottom: 6px; }
+.answer-text { font-size: 14px; line-height: 1.5; color: #333; margin-bottom: 10px; min-height: 40px; white-space: pre-wrap; }
+.answer-text.empty { color: #ccc; font-style: italic; }
+
+.scores { display: flex; gap: 6px; }
+.score-btn { flex: 1; padding: 8px 4px; border: 2px solid #ddd; border-radius: 8px; background: white; font-size: 13px; cursor: pointer; text-align: center; transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+.score-btn:active { transform: scale(0.95); }
+.score-btn.s4 { border-color: #34a853; color: #34a853; }
+.score-btn.s3 { border-color: #fbbc04; color: #e6a800; }
+.score-btn.s2 { border-color: #ff6d01; color: #ff6d01; }
+.score-btn.s1 { border-color: #ea4335; color: #ea4335; }
+.score-btn.selected.s4 { background: #34a853; color: white; }
+.score-btn.selected.s3 { background: #fbbc04; color: white; }
+.score-btn.selected.s2 { background: #ff6d01; color: white; }
+.score-btn.selected.s1 { background: #ea4335; color: white; }
+
+.comment-input { width: 100%; border: 1px solid #ddd; border-radius: 6px; padding: 6px 10px; font-size: 13px; margin-top: 8px; resize: none; height: 0; overflow: hidden; transition: height 0.2s; }
+.comment-input.show { height: 50px; }
+
+.footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 16px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); display: flex; gap: 10px; z-index: 100; }
+.footer button { flex: 1; padding: 12px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.btn-save { background: #1a73e8; color: white; }
+.btn-save:disabled { background: #ccc; }
+.btn-reset { background: #f5f5f5; color: #666; }
+
+.toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; z-index: 300; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.toast.show { opacity: 1; }
+
+.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div id="loginScreen" class="login-screen">
+  <h2>📋 TermRAG 专家盲评</h2>
+  <input type="text" id="reviewerName" placeholder="请输入您的姓名（如：张医师）" />
+  <button onclick="startReview()">开始评审</button>
+  <p class="hint">评分自动保存到本地，点击"保存到服务器"提交</p>
+</div>
+
+<div id="mainScreen" class="hidden">
+  <div class="header">
+    <h1>📋 专家盲评 · <span id="reviewerLabel"></span></h1>
+    <div class="progress" id="progress">已完成 0/200</div>
+    <div class="bar"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+  </div>
+  <div id="blocks"></div>
+  <div class="footer">
+    <button class="btn-reset" onclick="confirmReset()">重置</button>
+    <button class="btn-save" id="saveBtn" onclick="saveToGitHub()">💾 提交评分</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DATA = [{"qid": "V4001", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：贝利木单抗", "standard_answer": "belimumab", "answers": [{"label": "回答A", "text": "Belimumab"}, {"label": "回答B", "text": "关节与周围软组织（joint and surrounding soft tissues）\n\n贝利木单抗（belimumab）"}, {"label": "回答C", "text": "Belimumab"}, {"label": "回答D", "text": "Belimumab"}]}, {"qid": "V4004", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：瑞沙珠单抗", "standard_answer": "risankizumab", "answers": [{"label": "回答A", "text": "Risankizumab"}, {"label": "回答B", "text": "Risankizumab"}, {"label": "回答C", "text": "risankizumab"}, {"label": "回答D", "text": "Risankizumab"}]}, {"qid": "V4005", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：替拉珠单抗", "standard_answer": "tildrakizumab", "answers": [{"label": "回答A", "text": "tildrakizumab"}, {"label": "回答B", "text": "Tildrakizumab"}, {"label": "回答C", "text": "Tilratizumab"}, {"label": "回答D", "text": "Telitacicept"}]}, {"qid": "V4007", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：布罗利尤单抗", "standard_answer": "brodalumab", "answers": [{"label": "回答A", "text": "Brodalumab"}, {"label": "回答B", "text": "Brodalumab"}, {"label": "回答C", "text": "Brodalumab"}, {"label": "回答D", "text": "Brodalumab"}]}, {"qid": "V4012", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：美泊利珠单抗", "standard_answer": "mepolizumab", "answers": [{"label": "回答A", "text": "Mepolizumab"}, {"label": "回答B", "text": "mepolizumab"}, {"label": "回答C", "text": "Mepolizumab"}, {"label": "回答D", "text": "Mepolizumab"}]}, {"qid": "V4015", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：阿那白滞素", "standard_answer": "anakinra", "answers": [{"label": "回答A", "text": "anakinra"}, {"label": "回答B", "text": "Anakinra"}, {"label": "回答C", "text": "Anakinra"}, {"label": "回答D", "text": "Anakinra"}]}, {"qid": "V4018", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：巴瑞替尼", "standard_answer": "baricitinib", "answers": [{"label": "回答A", "text": "Baricitinib"}, {"label": "回答B", "text": "Baricitinib"}, {"label": "回答C", "text": "Baricitinib"}, {"label": "回答D", "text": "Baricitinib"}]}, {"qid": "V4019", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：乌帕替尼", "standard_answer": "upadacitinib", "answers": [{"label": "回答A", "text": "Upadacitinib"}, {"label": "回答B", "text": "Upadacitinib"}, {"label": "回答C", "text": "upadacitinib"}, {"label": "回答D", "text": "Upadacitinib"}]}, {"qid": "V4022", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：吗替麦考酚酯", "standard_answer": "mycophenolate mofetil", "answers": [{"label": "回答A", "text": "Mycophenolate mofetil"}, {"label": "回答B", "text": "mycophenolate mofetil"}, {"label": "回答C", "text": "Mycophenolate Mofetil"}, {"label": "回答D", "text": "Mycophenolate Mofetil"}]}, {"qid": "V4025", "type": "drug_cn2en", "question": "请写出以下药物的标准英文名：阿伐可泮", "standard_answer": "avacopan", "answers": [{"label": "回答A", "text": "Alprazolam"}, {"label": "回答B", "text": "avacopan"}, {"label": "回答C", "text": "Alprazolam"}, {"label": "回答D", "text": "Avacopan"}]}, {"qid": "V4026", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：belimumab", "standard_answer": "贝利尤单抗", "answers": [{"label": "回答A", "text": "贝利尤单抗"}, {"label": "回答B", "text": "贝利尤单抗"}, {"label": "回答C", "text": "贝利尤单抗"}, {"label": "回答D", "text": "贝利尤单抗"}]}, {"qid": "V4027", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：secukinumab", "standard_answer": "司库奇尤单抗", "answers": [{"label": "回答A", "text": "司库奇尤单抗"}, {"label": "回答B", "text": "司库奇尤单抗"}, {"label": "回答C", "text": "司库奇尤单抗"}, {"label": "回答D", "text": "司库奇尤单抗"}]}, {"qid": "V4028", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：guselkumab", "standard_answer": "古塞奇尤单抗", "answers": [{"label": "回答A", "text": "古塞奇尤单抗"}, {"label": "回答B", "text": "古塞奇尤单抗"}, {"label": "回答C", "text": "古塞奇尤单抗"}, {"label": "回答D", "text": "古塞奇尤单抗"}]}, {"qid": "V4029", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：risankizumab", "standard_answer": "瑞沙珠单抗", "answers": [{"label": "回答A", "text": "瑞沙珠单抗"}, {"label": "回答B", "text": "瑞莎珠单抗"}, {"label": "回答C", "text": "瑞莎珠单抗"}, {"label": "回答D", "text": "利生奇珠单抗"}]}, {"qid": "V4034", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：dupilumab", "standard_answer": "度普利尤单抗", "answers": [{"label": "回答A", "text": "度普利尤单抗"}, {"label": "回答B", "text": "度普利尤单抗"}, {"label": "回答C", "text": "度普利尤单抗"}, {"label": "回答D", "text": "度普利尤单抗"}]}, {"qid": "V4036", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：filgotinib", "standard_answer": "非戈替尼", "answers": [{"label": "回答A", "text": "非戈替尼"}, {"label": "回答B", "text": "非戈替尼"}, {"label": "回答C", "text": "非戈替尼"}, {"label": "回答D", "text": "菲戈替尼"}]}, {"qid": "V4037", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：peficitinib", "standard_answer": "佩莫替尼", "answers": [{"label": "回答A", "text": "培菲替尼"}, {"label": "回答B", "text": "培非替尼"}, {"label": "回答C", "text": "培非替尼"}, {"label": "回答D", "text": "佩莫替尼"}]}, {"qid": "V4042", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：anakinra", "standard_answer": "阿那白滞素", "answers": [{"label": "回答A", "text": "阿那白滞素"}, {"label": "回答B", "text": "阿那白滞素"}, {"label": "回答C", "text": "阿那白滞素"}, {"label": "回答D", "text": "阿那白滞素"}]}, {"qid": "V4043", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：eculizumab", "standard_answer": "依库珠单抗", "answers": [{"label": "回答A", "text": "依库珠单抗"}, {"label": "回答B", "text": "依库珠单抗"}, {"label": "回答C", "text": "艾库珠单抗"}, {"label": "回答D", "text": "艾库珠单抗"}]}, {"qid": "V4045", "type": "drug_en2cn", "question": "请写出以下药物的标准中文名：baricitinib", "standard_answer": "巴瑞替尼", "answers": [{"label": "回答A", "text": "巴瑞替尼"}, {"label": "回答B", "text": "巴瑞替尼"}, {"label": "回答C", "text": "巴瑞替尼"}, {"label": "回答D", "text": "巴瑞替尼"}]}, {"qid": "V4046", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：BAFF", "standard_answer": "B细胞激活因子 (B cell activating factor)", "answers": [{"label": "回答A", "text": "B细胞活化因子（B cell activating factor）"}, {"label": "回答B", "text": "B细胞活化因子（B cell activating factor）"}, {"label": "回答C", "text": "B细胞激活因子 (B-cell activating factor)"}, {"label": "回答D", "text": "B细胞活化因子（B cell activating factor）"}]}, {"qid": "V4047", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：APRIL", "standard_answer": "增殖诱导配体 (a proliferation-inducing ligand)", "answers": [{"label": "回答A", "text": "增殖诱导配体（A proliferation-inducing ligand）"}, {"label": "回答B", "text": "增殖诱导配体（A proliferation-inducing ligand）"}, {"label": "回答C", "text": "增殖诱导配体 (a proliferation-inducing ligand)"}, {"label": "回答D", "text": "增殖诱导配体（A proliferation-inducing ligand）"}]}, {"qid": "V4048", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：TSLP", "standard_answer": "胸腺基质淋巴细胞生成素 (thymic stromal lymphopoietin)", "answers": [{"label": "回答A", "text": "胸腺基质淋巴细胞生成素；thymic stromal lymphopoietin"}, {"label": "回答B", "text": "胸腺基质淋巴细胞生成素；thymic stromal lymphopoietin"}, {"label": "回答C", "text": "胸腺基质淋巴细胞生成素\nThymic stromal lymphopoietin"}, {"label": "回答D", "text": "胸腺基质淋巴细胞生成素\nthymic stromal lymphopoietin"}]}, {"qid": "V4049", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：BLyS", "standard_answer": "B淋巴细胞刺激因子 (B lymphocyte stimulator)", "answers": [{"label": "回答A", "text": "B淋巴细胞刺激因子，B lymphocyte stimulator"}, {"label": "回答B", "text": "B淋巴细胞刺激因子\nB lymphocyte stimulator"}, {"label": "回答C", "text": "B淋巴细胞刺激因子，B lymphocyte stimulator"}, {"label": "回答D", "text": "B淋巴细胞刺激因子（B lymphocyte stimulator）"}]}, {"qid": "V4051", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：TGF-β", "standard_answer": "转化生长因子β (transforming growth factor beta)", "answers": [{"label": "回答A", "text": "中文名：转化生长因子-β\n英文名：Transforming Growth Factor-beta"}, {"label": "回答B", "text": "转化生长因子-β；transforming growth factor-β"}, {"label": "回答C", "text": "转化生长因子-β；transforming growth factor-β"}, {"label": "回答D", "text": "转化生长因子-β\nTransforming Growth Factor-β"}]}, {"qid": "V4052", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名和英文名：G-CSF", "standard_answer": "粒细胞集落刺激因子 (granulocyte colony stimulating factor)", "answers": [{"label": "回答A", "text": "粒细胞集落刺激因子；Granulocyte colony-stimulating factor"}, {"label": "回答B", "text": "粒细胞集落刺激因子；Granulocyte colony-stimulating factor"}, {"label": "回答C", "text": "粒细胞集落刺激因子（Granulocyte Colony-Stimulating Factor）"}, {"label": "回答D", "text": "粒细胞集落刺激因子；Granulocyte colony-stimulating factor"}]}, {"qid": "V4055", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名：STAT", "standard_answer": "信号转导及转录激活因子 (signal transducer and activator of transcription)", "answers": [{"label": "回答A", "text": "信号转导和转录激活因子"}, {"label": "回答B", "text": "信号转导和转录激活因子"}, {"label": "回答C", "text": "信号转导和转录激活因子"}, {"label": "回答D", "text": "信号转导子和转录激活子"}]}, {"qid": "V4057", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名：Syk", "standard_answer": "脾酪氨酸激酶 (spleen tyrosine kinase)", "answers": [{"label": "回答A", "text": "脾酪氨酸激酶"}, {"label": "回答B", "text": "脾酪氨酸激酶"}, {"label": "回答C", "text": "脾酪氨酸激酶"}, {"label": "回答D", "text": "脾酪氨酸激酶"}]}, {"qid": "V4058", "type": "abbr_expand", "question": "请展开以下缩写的标准中文名：PI3K", "standard_answer": "磷酸肌醇3激酶 (phosphoinositide 3-kinase)", "answers": [{"label": "回答A", "text": "磷脂酰肌醇3-激酶"}, {"label": "回答B", "text": "磷脂酰肌醇3-激酶"}, {"label": "回答C", "text": "磷脂酰肌醇3-激酶"}, {"label": "回答D", "text": "关节与周围软组织（joint and surrounding soft tissues）\n\nPI3K的标准中文名是：磷脂酰肌醇3-激酶"}]}, {"qid": "V4060", "type": "abbr_expand", "question": "请展开以下缩写：MMP", "standard_answer": "基质金属蛋白酶 (matrix metalloproteinase)", "answers": [{"label": "回答A", "text": "基质金属蛋白酶"}, {"label": "回答B", "text": "基质金属蛋白酶"}, {"label": "回答C", "text": "基质金属蛋白酶"}, {"label": "回答D", "text": "基质金属蛋白酶"}]}, {"qid": "V4062", "type": "alias_correct", "question": "「过敏性紫癜」在现行标准中应该称为？请给出中英文标准名。", "standard_answer": "IgA血管炎 (IgA vasculitis)", "answers": [{"label": "回答A", "text": "过敏性紫癜  \nIgA vasculitis"}, {"label": "回答B", "text": "IgA血管炎\nIgA vasculitis"}, {"label": "回答C", "text": "过敏性紫癜  \nIgA vasculitis"}, {"label": "回答D", "text": "过敏性紫癜  \nIgA vasculitis"}]}, {"qid": "V4063", "type": "alias_correct", "question": "「变应性肉芽肿性血管炎」在现行标准中应该称为？请给出中英文标准名。", "standard_answer": "嗜酸性肉芽肿性多血管炎 (eosinophilic granulomatosis with polyangiitis)", "answers": [{"label": "回答A", "text": "嗜酸性肉芽肿性多血管炎，Eosinophilic granulomatosis with polyangiitis"}, {"label": "回答B", "text": "嗜酸性肉芽肿性多血管炎\nEosinophilic granulomatosis with polyangiitis"}, {"label": "回答C", "text": "嗜酸性肉芽肿性多血管炎（Eosinophilic granulomatosis with polyangiitis，EGPA）"}, {"label": "回答D", "text": "嗜酸性肉芽肿性多血管炎，Eosinophilic granulomatosis with polyangiitis"}]}, {"qid": "V4064", "type": "alias_correct", "question": "「贝利木单抗」是标准术语吗？如不是，请给出正确标准名和中英文名。", "standard_answer": "不是，标准名为贝利尤单抗 (belimumab)", "answers": [{"label": "回答A", "text": "是。  \n标准名：贝利木单抗  \n英文名：belimumab"}, {"label": "回答B", "text": "贝利尤单抗（belimumab）"}, {"label": "回答C", "text": "关节与周围软组织  \n贝伐珠单抗"}, {"label": "回答D", "text": "是。  \n标准名：贝利木单抗  \n英文名：belimumab"}]}, {"qid": "V4067", "type": "alias_correct", "question": "「显微镜下多动脉炎」在现行标准中应该称为？请给出中英文标准名。", "standard_answer": "显微镜下多血管炎 (microscopic polyangiitis)", "answers": [{"label": "回答A", "text": "显微镜下多血管炎\nMicroscopic polyangiitis"}, {"label": "回答B", "text": "显微镜下多血管炎  \nMicroscopic polyangiitis"}, {"label": "回答C", "text": "显微镜下多血管炎  \nMicroscopic polyangiitis"}, {"label": "回答D", "text": "显微镜下多血管炎\nmicroscopic polyangiitis"}]}, {"qid": "V4069", "type": "alias_correct", "question": "「冷吡啉相关周期性综合征」的现行标准名称是什么？", "standard_answer": "冷调蛋白相关周期性综合征 (cryopyrin-associated periodic syndrome)", "answers": [{"label": "回答A", "text": "冷炎素相关周期性综合征"}, {"label": "回答B", "text": "冷炎素相关周期性综合征"}, {"label": "回答C", "text": "冷吡啉相关周期性综合征"}, {"label": "回答D", "text": "冷炎素相关周期性综合征"}]}, {"qid": "V4071", "type": "alias_correct", "question": "「风湿性多肌痛」的标准英文名是什么？", "standard_answer": "polymyalgia rheumatica", "answers": [{"label": "回答A", "text": "Polymyalgia rheumatica"}, {"label": "回答B", "text": "polymyalgia rheumatica"}, {"label": "回答C", "text": "Polymyalgia rheumatica"}, {"label": "回答D", "text": "Polymyalgia rheumatica"}]}, {"qid": "V4073", "type": "alias_correct", "question": "以下哪个是「Sjögren syndrome」的标准中文译名？A. 舍格伦综合征 B. 干燥综合征 C. 斯耶格伦综合征", "standard_answer": "B. 干燥综合征", "answers": [{"label": "回答A", "text": "干燥综合征"}, {"label": "回答B", "text": "干燥综合征"}, {"label": "回答C", "text": "干燥综合征"}, {"label": "回答D", "text": "B. 干燥综合征"}]}, {"qid": "V4074", "type": "alias_correct", "question": "「Still病」在成人和儿童分别对应什么标准诊断名称？", "standard_answer": "成人Still病 (adult-onset Still's disease)，儿童为全身型幼年特发性关节炎 (systemic juvenile idiopathic arthritis, sJIA)", "answers": [{"label": "回答A", "text": "成人Still病  \n幼年特发性关节炎（全身型）"}, {"label": "回答B", "text": "成人Still病；幼年特发性关节炎（全身型）。"}, {"label": "回答C", "text": "成人Still病；幼年特发性关节炎（全身型）。"}, {"label": "回答D", "text": "成人：成人斯蒂尔病\n儿童：系统型幼年特发性关节炎"}]}, {"qid": "V4078", "type": "alias_correct", "question": "「DMARD」展开后的中文标准名是什么？分为哪两类？", "standard_answer": "改善病情抗风湿药 (disease-modifying antirheumatic drug)，分为传统合成(csDMARD)和靶向合成(tsDMARD)", "answers": [{"label": "回答A", "text": "改善病情抗风湿药。分为传统合成改善病情抗风湿药和生物制剂改善病情抗风湿药。"}, {"label": "回答B", "text": "改善病情的抗风湿药。分为传统合成改善病情的抗风湿药和生物制剂改善病情的抗风湿药。"}, {"label": "回答C", "text": "改善病情抗风湿药。分为传统合成改善病情抗风湿药和生物制剂改善病情抗风湿药。"}, {"label": "回答D", "text": "改善病情抗风湿药；传统合成改善病情抗风湿药、生物改善病情抗风湿药。"}]}, {"qid": "V4079", "type": "alias_correct", "question": "「生物制剂」在风湿免疫学中的标准分类名称是什么？", "standard_answer": "靶向生物制剂 (bDMARD, biologic disease-modifying antirheumatic drug)", "answers": [{"label": "回答A", "text": "生物类改善病情抗风湿药"}, {"label": "回答B", "text": "改善病情的抗风湿药"}, {"label": "回答C", "text": "生物制剂。"}, {"label": "回答D", "text": "生物制剂。"}]}, {"qid": "V4081", "type": "drug_paragraph", "question": "请列举目前获批用于类风湿关节炎治疗的肿瘤坏死因子(TNF)抑制剂类药物的标准中英文名称（至少4种）。", "standard_answer": "英夫利西单抗(infliximab)、阿达木单抗(adalimumab)、依那西普(etanercept)、戈利木单抗(golimumab)、赛妥珠单抗(certolizumab pegol)", "answers": [{"label": "回答A", "text": "英夫利西单抗\n依那西普\n阿达木单抗\n戈利木单抗\n培塞利珠单抗"}, {"label": "回答B", "text": "1. 英夫利西单抗（Infliximab）\n2. 依那西普（Etanercept）\n3. 阿达木单抗（Adalimumab）\n4. 戈利木单抗（Golimumab）\n5. 赛妥珠单抗（Certolizumab pegol）"}, {"label": "回答C", "text": "1. 阿达木单抗（Adalimumab）\n2. 英夫利西单抗（Infliximab）\n3. 依那西普（Etanercept）\n4. 戈利木单抗（Golimumab）\n5. 赛妥珠单抗（Certolizumab pegol）"}, {"label": "回答D", "text": "1. 英夫利西单抗（Infliximab）\n2. 依那西普（Etanercept）\n3. 阿达木单抗（Adalimumab）\n4. 戈利木单抗（Golimumab）\n5. 赛妥珠单抗（Certolizumab pegol）"}]}, {"qid": "V4082", "type": "drug_paragraph", "question": "请列举目前获批用于类风湿关节炎治疗的Janus激酶(JAK)抑制剂类药物的标准中英文名称。", "standard_answer": "托法替布(tofacitinib)、巴瑞替尼(baricitinib)、乌帕替尼(upadacitinib)、非戈替尼(filgotinib)", "answers": [{"label": "回答A", "text": "1.  托法替布（Tofacitinib）\n2.  巴瑞替尼（Baricitinib）\n3.  乌帕替尼（Upadacitinib）\n4.  非戈替尼（Filgotinib）\n5.  培非替尼（Peficitinib）"}, {"label": "回答B", "text": "托法替布\n巴瑞替尼\n乌帕替尼"}, {"label": "回答C", "text": "目前获批用于类风湿关节炎治疗的Janus激酶（JAK）抑制剂类药物的标准中英文名称如下：\n\n1.  托法替布（Tofacitinib）\n2.  巴瑞替尼（Baricitinib）\n3.  乌帕替尼（Upadacitinib）\n4.  非戈替尼（Filgotinib）\n5.  培非替尼（Peficitinib）"}, {"label": "回答D", "text": "1. 托法替布（Tofacitinib）\n2. 巴瑞替尼（Baricitinib）\n3. 乌帕替尼（Upadacitinib）\n4. 非戈替尼（Filgotinib）\n5. 培非替尼（Peficitinib）"}]}, {"qid": "V4084", "type": "drug_paragraph", "question": "IL-17抑制剂在银屑病关节炎和强直性脊柱炎治疗中有哪些药物？请给出标准中英文名。", "standard_answer": "司库奇尤单抗(secukinumab)、依奇珠单抗(ixekizumab)", "answers": [{"label": "回答A", "text": "司库奇尤单抗\n依奇珠单抗\n布罗利尤单抗\n比美吉珠单抗"}, {"label": "回答B", "text": "IL-17抑制剂在银屑病关节炎和强直性脊柱炎治疗中的药物包括：\n1. 司库奇尤单抗（Secukinumab）\n2. 依奇珠单抗（Ixekizumab）\n3. 比美奇珠单抗（Bimekizumab）\n4. 布罗利尤单抗（Brodalumab）"}, {"label": "回答C", "text": "IL-17抑制剂在银屑病关节炎和强直性脊柱炎治疗中的药物包括：\n1.  司库奇尤单抗（Secukinumab）\n2.  依奇珠单抗（Ixekizumab）\n3.  比美奇珠单抗（Bimekizumab）\n4.  奈巴库单抗（Netakimab）"}, {"label": "回答D", "text": "IL-17抑制剂在银屑病关节炎和强直性脊柱炎治疗中的药物包括：\n1. 司库奇尤单抗（Secukinumab）\n2. 依奇珠单抗（Ixekizumab）\n3. 比美奇珠单抗（Bimekizumab）\n4. 布罗利尤单抗（Brodalumab）"}]}, {"qid": "V4086", "type": "drug_paragraph", "question": "B细胞靶向治疗在风湿免疫病中有哪些药物？请给出标准中英文名及作用靶点。", "standard_answer": "利妥昔单抗(rituximab, 抗CD20)、奥法木单抗(ofatumumab, 抗CD20)、贝利尤单抗(belimumab, 抗BAFF)", "answers": [{"label": "回答A", "text": "利妥昔单抗 | Rituximab | CD20\n奥法木单抗 | Ofatumumab | CD20\n奥妥珠单抗 | Obinutuzumab | CD20\n贝利木单抗 | Belimumab | B淋巴细胞刺激因子（BLyS）\n泰它西普 | Telitacicept | B淋巴细胞刺激因子（BLyS）与增殖诱导配体（APRIL）"}, {"label": "回答B", "text": "1. 利妥昔单抗（Rituximab）：靶点为CD20。\n2. 贝利尤单抗（Belimumab）：靶点为B淋巴细胞刺激因子（BLyS）。\n3. 泰它西普（Telitacicept）：靶点为B淋巴细胞刺激因子（BLyS）和增殖诱导配体（APRIL）。"}, {"label": "回答C", "text": "1. 利妥昔单抗（Rituximab）：靶点为CD20。\n2. 贝利尤单抗（Belimumab）：靶点为B淋巴细胞刺激因子（BLyS）。\n3. 泰它西普（Telitacicept）：靶点为B淋巴细胞刺激因子（BLyS）和增殖诱导配体（APRIL）。"}, {"label": "回答D", "text": "B细胞靶向治疗在风湿免疫病中的药物包括：\n1.  **利妥昔单抗（Rituximab）**\n    *   作用靶点：CD20\n2.  **贝利尤单抗（Belimumab）**\n    *   作用靶点：B淋巴细胞刺激因子（BLyS）\n3.  **泰它西普（Telitacicept）**\n    *   作用靶点：B淋巴细胞刺激因子（BLyS）和增殖诱导配体（APRIL）"}]}, {"qid": "V4089", "type": "drug_paragraph", "question": "IL-1通路靶向药物有哪些？请给出标准中英文名。", "standard_answer": "阿那白滞素(anakinra, IL-1受体拮抗剂)、卡那奴单抗(canakinumab, 抗IL-1β单抗)", "answers": [{"label": "回答A", "text": "1. 阿那白滞素（Anakinra）\n2. 卡那单抗（Canakinumab）\n3. 利洛纳塞（Rilonacept）"}, {"label": "回答B", "text": "1. 阿那白滞素（Anakinra）\n2. 卡那单抗（Canakinumab）\n3. 利洛纳塞（Rilonacept）"}, {"label": "回答C", "text": "IL-1通路靶向药物包括：\n1. 阿那白滞素（Anakinra）\n2. 卡那单抗（Canakinumab）\n3. 利纳西普（Rilonacept）"}, {"label": "回答D", "text": "白细胞介素-1受体拮抗剂：阿那白滞素\n白细胞介素-1诱骗受体：利纳西普\n抗白细胞介素-1β单克隆抗体：卡那奴单抗"}]}, {"qid": "V4092", "type": "drug_paragraph", "question": "免疫抑制剂在风湿免疫病中常用的有哪些？请列举标准中英文名（不含生物制剂）。", "standard_answer": "环磷酰胺(cyclophosphamide)、吗替麦考酚酯(mycophenolate mofetil)、硫唑嘌呤(azathioprine)、他克莫司(tacrolimus)、环孢素(cyclosporine)", "answers": [{"label": "回答A", "text": "1. 甲氨蝶呤（Methotrexate）\n2. 来氟米特（Leflunomide）\n3. 硫唑嘌呤（Azathioprine）\n4. 环孢素（Ciclosporin）\n5. 他克莫司（Tacrolimus）\n6. 霉酚酸酯（Mycophenolate Mofetil）\n7. 环磷酰胺（Cyclophosphamide）\n8. 柳氮磺吡啶（Sulfasalazine）\n9. 羟氯喹（Hydroxychloroquine）\n10. 沙利度胺（Thalidomide）"}, {"label": "回答B", "text": "1.  甲氨蝶呤（Methotrexate）\n2.  来氟米特（Leflunomide）\n3.  硫唑嘌呤（Azathioprine）\n4.  环孢素（Ciclosporin）\n5.  他克莫司（Tacrolimus）\n6.  霉酚酸酯（Mycophenolate Mofetil）\n7.  环磷酰胺（Cyclophosphamide）\n8.  柳氮磺吡啶（Sulfasalazine）\n9.  羟氯喹（Hydroxychloroquine）\n10. 雷公藤多苷（Tripterygium Glycosides）"}, {"label": "回答C", "text": "1. 甲氨蝶呤（Methotrexate）\n2. 来氟米特（Leflunomide）\n3. 硫唑嘌呤（Azathioprine）\n4. 环孢素（Ciclosporin）\n5. 他克莫司（Tacrolimus）\n6. 霉酚酸酯（Mycophenolate Mofetil）\n7. 环磷酰胺（Cyclophosphamide）\n8. 柳氮磺吡啶（Sulfasalazine）\n9. 羟氯喹（Hydroxychloroquine）"}, {"label": "回答D", "text": "* 甲氨蝶呤\n* 环磷酰胺\n* 硫唑嘌呤\n* 吗替麦考酚酯\n* 环孢素\n* 他克莫司\n* 来氟米特\n* 柳氮磺吡啶\n* 羟氯喹\n* 雷公藤多苷"}]}, {"qid": "V4095", "type": "drug_paragraph", "question": "赛妥珠单抗在结构上有何特殊之处？这一特点有什么临床意义？", "standard_answer": "赛妥珠单抗(certolizumab pegol)是聚乙二醇化(PEGylated)Fab'片段，无Fc段，理论上不通过胎盘，妊娠期用药更安全", "answers": [{"label": "回答A", "text": "赛妥珠单抗是一种聚乙二醇化的人源化抗肿瘤坏死因子-α（TNF-α）Fab'片段。其结构特殊之处在于不含抗体Fc片段，且Fab'片段经聚乙二醇（PEG）修饰。\n\n这一结构特点的临床意义在于：由于不含Fc片段，该药物不能通过抗体依赖性细胞介导的细胞毒性（ADCC）或补体依赖性细胞毒性（CDC）途径诱导细胞凋亡，且不易通过胎盘转运，在妊娠期使用可能更具安全性。聚乙二醇化则延长了药物的半衰期，减少了免疫原性。"}, {"label": "回答B", "text": "赛妥珠单抗在结构上是一种聚乙二醇化的人源化抗肿瘤坏死因子-α（TNF-α）单克隆抗体的Fab'片段，不含Fc片段。\n\n这一特点的临床意义包括：\n1. 缺乏Fc片段使其不能结合补体与Fc受体，不产生补体依赖的细胞毒性（CDC）和抗体依赖的细胞介导的细胞毒性（ADCC），不会诱导表达跨膜TNF-α的细胞裂解，理论上可降低某些免疫相关不良反应的风险。\n2. 聚乙二醇化修饰弥补了无Fc片段导致的半衰期过短问题，显著延长了该Fab'片段的血浆半衰期，使其能够维持有效的血药浓度。\n3. 因无Fc片段，无法与新生儿Fc受体（FcRn）结合，不会发生主动的跨胎盘转运，在妊娠期及哺乳期具有更高的用药安全性。\n4. 分子量较小且仅含Fab'片段，适合皮下注射给药，提高了患者用药的便捷性与依从性。"}, {"label": "回答C", "text": "赛妥珠单抗是一种人源化抗肿瘤坏死因子-α单克隆抗体，其结构特殊之处在于它是聚乙二醇化的Fab'片段，而非完整的IgG抗体。这一特点的临床意义在于其半衰期延长，可减少给药频率（通常每2周或每4周皮下注射一次），并可能降低免疫原性。"}, {"label": "回答D", "text": "赛妥珠单抗是一种人源化抗肿瘤坏死因子-α单克隆抗体，其结构特殊之处在于它是聚乙二醇化的Fab'片段，而非完整的IgG抗体。这一特点的临床意义在于其半衰期显著延长，可每四周皮下注射一次，提高了患者用药的便利性和依从性。"}]}, {"qid": "V4096", "type": "drug_paragraph", "question": "靶向合成DMARD(tsDMARD)包括哪两类主要药物？请举例说明。", "standard_answer": "JAK抑制剂(如托法替布tofacitinib)和PDE4抑制剂(如阿普斯特apremilast)", "answers": [{"label": "回答A", "text": "靶向合成改善病情抗风湿药（tsDMARD）主要包括两类：  \n1. **Janus激酶（JAK）抑制剂**，例如：托法替布、巴瑞替尼、乌帕替尼。  \n2. **磷酸二酯酶4（PDE4）抑制剂**，例如：阿普斯特。"}, {"label": "回答B", "text": "靶向合成改善病情抗风湿药（tsDMARD）主要包括两类：  \n1. **Janus激酶（JAK）抑制剂**，例如：托法替布、巴瑞替尼。  \n2. **磷酸二酯酶4（PDE4）抑制剂**，例如：阿普斯特。"}, {"label": "回答C", "text": "靶向合成改善病情抗风湿药（tsDMARD）包括Janus激酶（JAK）抑制剂和布鲁顿酪氨酸激酶（BTK）抑制剂两类。\n举例：\n1.  Janus激酶（JAK）抑制剂：如托法替布、巴瑞替尼、乌帕替尼。\n2.  布鲁顿酪氨酸激酶（BTK）抑制剂：如泽布替尼、伊布替尼。"}, {"label": "回答D", "text": "靶向合成DMARD（tsDMARD）主要包括以下两类：\n\n1. JAK抑制剂：如托法替布、巴瑞替尼、乌帕替尼。\n2. 其他靶向合成药物：如布鲁顿酪氨酸激酶（BTK）抑制剂（如泽布替尼）。"}]}, {"qid": "V4098", "type": "drug_paragraph", "question": "贝利尤单抗的作用机制是什么？它靶向哪个细胞因子？", "standard_answer": "贝利尤单抗(belimumab)是抗BAFF(B细胞激活因子)单抗，通过抑制BAFF与B细胞表面的BAFF-R/BCMA/TACI结合，促进自身反应性B细胞凋亡", "answers": [{"label": "回答A", "text": "贝利尤单抗是一种人源化单克隆抗体，其作用机制为特异性结合并抑制B淋巴细胞刺激因子（BAFF，亦称B细胞活化因子）的生物学活性。它靶向的细胞因子是B淋巴细胞刺激因子（BAFF）。"}, {"label": "回答B", "text": "贝利尤单抗是一种B淋巴细胞刺激因子（BLyS）特异性抑制剂，其作用机制为靶向结合并抑制可溶性B淋巴细胞刺激因子（BLyS）的活性。"}, {"label": "回答C", "text": "贝利尤单抗靶向的细胞因子是B淋巴细胞刺激因子（BLyS）。其作用机制为特异性结合可溶性B淋巴细胞刺激因子，阻断其与B细胞表面受体结合，从而抑制B细胞的存活、增殖与分化，减少自身抗体的产生。"}, {"label": "回答D", "text": "贝利尤单抗的作用机制是特异性结合可溶性B淋巴细胞刺激因子（BLyS），阻断其与B细胞表面受体的相互作用，从而抑制B细胞的存活和分化。其靶向的细胞因子是B淋巴细胞刺激因子（BLyS），也称为B细胞活化因子（BAFF）。"}]}, {"qid": "V4100", "type": "drug_paragraph", "question": "请列举目前用于IgG4相关疾病治疗的药物，给出标准中英文名。", "standard_answer": "糖皮质激素(glucocorticoid)为一线，利妥昔单抗(rituximab)用于复发难治患者，其他包括吗替麦考酚酯、硫唑嘌呤等", "answers": [{"label": "回答A", "text": "1. 糖皮质激素（Glucocorticoids）\n2. 免疫抑制剂（Immunosuppressants）\n3. 生物制剂（Biological Agents）\n4. 利妥昔单抗（Rituximab）"}, {"label": "回答B", "text": "糖皮质激素（Glucocorticoids）\n免疫抑制剂（Immunosuppressants）\n生物制剂（Biological agents）"}, {"label": "回答C", "text": "糖皮质激素\n利妥昔单抗\n硫唑嘌呤\n吗替麦考酚酯\n环磷酰胺\n甲氨蝶呤\n环孢素\n他克莫司"}, {"label": "回答D", "text": "1.  糖皮质激素（Glucocorticoids）\n2.  免疫抑制剂（Immunosuppressants）\n    *   霉酚酸酯（Mycophenolate Mofetil）\n    *   硫唑嘌呤（Azathioprine）\n    *   甲氨蝶呤（Methotrexate）\n    *   环磷酰胺（Cyclophosphamide）\n    *   他克莫司（Tacrolimus）\n    *   环孢素（Cyclosporine）\n3.  生物制剂（Biological Agents）\n    *   利妥昔单抗（Rituximab）"}]}];
+const _k = atob(''[REDACTED]');
+const _r = 'docsor1212/MedWiki-Rheum';
+let reviewer = '';
+let scores = {};
+
+function showToast(msg, dur) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), dur || 2500);
+}
+
+function startReview() {
+  reviewer = document.getElementById('reviewerName').value.trim();
+  if (!reviewer) { showToast('请输入姓名', 1500); return; }
+  localStorage.setItem('termrag_reviewer', reviewer);
+  try { scores = JSON.parse(localStorage.getItem('termrag_scores_' + reviewer) || '{}'); } catch(e) { scores = {}; }
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('mainScreen').classList.remove('hidden');
+  document.getElementById('reviewerLabel').textContent = reviewer;
+  render();
+}
+
+function updateProgress() {
+  const total = DATA.reduce((s,b) => s + b.answers.length, 0);
+  const done = Object.keys(scores).filter(k => !k.endsWith('_comment')).length;
+  document.getElementById('progress').textContent = '已完成 ' + done + '/' + total;
+  document.getElementById('barFill').style.width = (done/total*100) + '%';
+}
+
+function sKey(qid, label) { return qid + '_' + label; }
+
+function localSave() {
+  localStorage.setItem('termrag_scores_' + reviewer, JSON.stringify(scores));
+  updateProgress();
+}
+
+function setScore(qid, label, val, btn) {
+  scores[sKey(qid, label)] = val;
+  localSave();
+  const card = btn.closest('.answer-card');
+  card.querySelectorAll('.score-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function toggleComment(el) {
+  const input = el.nextElementSibling;
+  input.classList.toggle('show');
+  if (input.classList.contains('show')) input.focus();
+}
+
+function saveComment(qid, label, el) {
+  const key = sKey(qid, label) + '_comment';
+  if (el.value.trim()) scores[key] = el.value.trim(); else delete scores[key];
+  localSave();
+}
+
+async function saveToGitHub() {
+  const btn = document.getElementById('saveBtn');
+  const scoreKeys = Object.keys(scores).filter(k => !k.endsWith('_comment'));
+  if (scoreKeys.length === 0) { showToast('请先评分再提交', 2000); return; }
+  btn.disabled = true; btn.textContent = '⏳ 提交中...';
+  
+  // Build structured data
+  const results = scoreKeys.map(k => {
+    const idx = k.lastIndexOf('_'); const parts = [k.substring(0, idx), k.substring(idx+1)];
+    return { qid: parts[0], label: parts[1], score: scores[k], comment: scores[k + '_comment'] || '' };
+  });
+  
+  const body = JSON.stringify({
+    reviewer: reviewer,
+    timestamp: new Date().toISOString(),
+    total: scoreKeys.length,
+    scores: results
+  }, null, 2);
+  
+  const issueBody = "\n\n```json\n" + body + "\n```\n\n---\n*Submitted via TermRAG Expert Review System*";
+  
+  try {
+    const resp = await fetch('https://api.github.com/repos/' + _r + '/issues', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + _k,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: '📋 专家评审: ' + reviewer + ' (' + scoreKeys.length + '/200)',
+        body: issueBody,
+        labels: ['expert-review']
+      })
+    });
+    const data = await resp.json();
+    if (resp.ok) {
+      showToast('✅ 已提交 ' + scoreKeys.length + ' 条评分到服务器！', 3000);
+    } else {
+      showToast('❌ 提交失败: ' + (data.message || resp.status), 3000);
+    }
+  } catch(e) {
+    showToast('❌ 网络错误: ' + e.message, 3000);
+  }
+  btn.disabled = false; btn.textContent = '💾 提交评分';
+}
+
+function confirmReset() {
+  if (confirm('确定清除所有评分？不可恢复。')) {
+    scores = {}; localSave(); render();
+  }
+}
+
+function render() {
+  const container = document.getElementById('blocks');
+  let html = '';
+  for (let i = 0; i < DATA.length; i++) {
+    const b = DATA[i];
+    html += '<div class="block"><div class="block-header"><span class="qtype">' + b.type + '</span><span class="qid">' + b.qid + ' · 第' + (i+1) + '/' + DATA.length + '题</span></div>';
+    html += '<div class="question">' + b.question + '</div>';
+    html += '<div class="ref-answer"><b>参考答案：</b>' + b.standard_answer + '</div>';
+    for (const a of b.answers) {
+      const key = sKey(b.qid, a.label);
+      const cs = scores[key] || 0;
+      const cm = scores[key + '_comment'] || '';
+      html += '<div class="answer-card"><div class="answer-label">' + a.label + '</div>';
+      html += '<div class="answer-text' + (a.text === '（空白）' ? ' empty' : '') + '">' + a.text + '</div>';
+      html += '<div class="scores">';
+      html += '<button class="score-btn s4' + (cs===4?' selected':'') + '" onclick="setScore(\''+b.qid+'\',\''+a.label+'\',4,this)">✅正确</button>';
+      html += '<button class="score-btn s3' + (cs===3?' selected':'') + '" onclick="setScore(\''+b.qid+'\',\''+a.label+'\',3,this)">⚠️基本</button>';
+      html += '<button class="score-btn s2' + (cs===2?' selected':'') + '" onclick="setScore(\''+b.qid+'\',\''+a.label+'\',2,this)">❌部分</button>';
+      html += '<button class="score-btn s1' + (cs===1?' selected':'') + '" onclick="setScore(\''+b.qid+'\',\''+a.label+'\',1,this)">⛔错误</button>';
+      html += '</div>';
+      html += '<div style="font-size:12px;color:#1a73e8;margin-top:6px;cursor:pointer" onclick="toggleComment(this)">+ 备注</div>';
+      html += '<textarea class="comment-input' + (cm ? ' show' : '') + '" placeholder="备注（可选）" onblur="saveComment(\''+b.qid+'\',\''+a.label+'\',this)">' + cm + '</textarea>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  container.innerHTML = html;
+  updateProgress();
+}
+
+const saved = localStorage.getItem('termrag_reviewer');
+if (saved) document.getElementById('reviewerName').value = saved;
+</script>
+</body>
+</html>
