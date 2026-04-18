@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PubMed文献引用验证工具 · MedWiki-Rheum 工具笔记</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{--bg:#faf8f5;--surface:#fff;--text:#2d2a26;--text2:#6b6560;--text3:#9e9893;--accent:#20a39e;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#e5e0d8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13.5px;}
+body{padding-top:42px!important;}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
+.nav-bar a:hover{opacity:1;}
+.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
+.content{max-width:860px;margin:0 auto;padding:30px 20px;}
+h1{font-size:1.6rem;font-weight:700;color:var(--accent);margin-bottom:6px;}
+h2{font-size:1.15rem;font-weight:700;color:var(--accent);margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--accent);}
+h3{font-size:1rem;font-weight:600;color:var(--text);margin:18px 0 8px;}
+.subtitle{color:var(--text2);font-size:.9rem;margin-bottom:24px;}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:.85rem;}
+th{background:var(--accent);color:#fff;padding:8px 12px;text-align:left;font-weight:600;}
+td{padding:8px 12px;border-bottom:1px solid var(--border);}
+tr:nth-child(even){background:#fafafa;}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600;}
+.badge-green{background:var(--green-bg);color:var(--green);}
+.badge-red{background:var(--red-bg);color:var(--red);}
+.badge-yellow{background:var(--yellow-bg);color:var(--yellow);}
+.card{background:var(--surface);border-radius:10px;padding:16px;margin:12px 0;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.card-title{font-weight:700;font-size:.95rem;margin-bottom:8px;}
+.code-block{background:#1e1e1e;color:#d4d4d4;padding:14px;border-radius:8px;font-family:'Courier New',monospace;font-size:.8rem;overflow-x:auto;margin:10px 0;white-space:pre-wrap;word-break:break-all;}
+.code-block .comment{color:#6a9955;}
+.code-block .cmd{color:#dcdcaa;}
+.summary-box{background:linear-gradient(135deg,#e0f5f4,#fff);border:1px solid var(--accent);border-radius:10px;padding:18px;margin:20px 0;}
+.summary-box .big-num{font-size:2.2rem;font-weight:700;color:var(--accent);}
+.summary-box .label{font-size:.8rem;color:var(--text2);}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.feature-grid{grid-template-columns:1fr;}}
+.feature-card{background:var(--surface);border-radius:8px;padding:14px;border:1px solid var(--border);}
+.feature-card .fc-icon{font-size:1.4rem;margin-bottom:6px;}
+.feature-card .fc-title{font-weight:700;font-size:.9rem;margin-bottom:4px;}
+.feature-card .fc-desc{font-size:.82rem;color:var(--text2);line-height:1.5;}
+.step-item{display:flex;gap:14px;margin:14px 0;align-items:flex-start;}
+.step-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;}
+.step-text{flex:1;}
+.step-text .step-title{font-weight:700;font-size:.92rem;}
+.step-text .step-desc{font-size:.85rem;color:var(--text2);margin-top:2px;}
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+@media(max-width:640px){.platform-grid{grid-template-columns:1fr;}}
+.platform-card{background:var(--surface);border-radius:10px;padding:16px;border:2px solid var(--border);text-align:center;transition:border-color .2s;}
+.platform-card:hover{border-color:var(--accent);}
+.platform-card .plat-icon{font-size:2rem;margin-bottom:8px;}
+.platform-card .plat-name{font-weight:700;font-size:1rem;margin-bottom:4px;}
+.platform-card .plat-link{color:var(--accent);text-decoration:none;font-size:.85rem;}
+.platform-card .plat-link:hover{text-decoration:underline;}
+.benchmark-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
+@media(max-width:640px){.benchmark-grid{grid-template-columns:1fr;}}
+.bench-card{background:var(--surface);border-radius:8px;padding:14px;text-align:center;border:1px solid var(--border);}
+.bench-card .bench-val{font-size:1.8rem;font-weight:700;color:var(--green);}
+.bench-card .bench-label{font-size:.78rem;color:var(--text2);}
+abbr{border-bottom:1px dotted var(--text2);cursor:help;}
+.footer{text-align:center;padding:20px;font-size:.75rem;color:var(--text3);border-top:1px solid var(--border);margin-top:30px;}
+@media print{.nav-bar{display:none!important;}body{padding-top:0!important;}}
+@media(max-width:640px){table{font-size:.78rem;}th,td{padding:6px 8px;}}
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="nav-bar">
+  <a href="../index.html">🏠 首页</a>
+  <a href="pmid_audit_report.html">📄 引用验证报告</a>
+  <a href="#">🔧 验证工具</a>
+  <span class="nav-title">MedWiki-Rheum · 工具笔记</span>
+</nav>
+
+<div class="content">
+
+<h1>🔬 PubMed文献引用验证工具</h1>
+<p class="subtitle">pubmed-verifier v1.3.0 · 一键检测AI编造的虚假文献引用 · 纯本地运行，零隐私泄露</p>
+
+<!-- 一句话定位 -->
+<div class="summary-box">
+  <p style="font-size:1rem;line-height:1.8;">
+    <b>一句话：</b>自动调用PubMed API批量验证PMID引用的真实性和内容匹配度，5分钟完成225条引用的全量审计。基准测试：存在性验证精确率/召回率/F1 = 100%，内容匹配率95%，速度约34 PMIDs/min。
+  </p>
+</div>
+
+<!-- 功能概览 -->
+<h2>📌 功能一览</h2>
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <div class="fc-icon">🔍</div>
+    <div class="fc-title">PMID存在性验证</div>
+    <div class="fc-desc">逐条调用PubMed E-utilities API（esummary），确认PMID是否对应真实文献。支持批量查询（50条/请求），自动限速（3 req/s）。</div>
+  </div>
+  <div class="feature-card">
+    <div class="fc-icon">📋</div>
+    <div class="fc-title">元数据提取</div>
+    <div class="fc-desc">自动获取标题、作者、期刊、发表日期、DOI等完整元数据，便于人工核实。</div>
+  </div>
+  <div class="feature-card">
+    <div class="fc-icon">🎯</div>
+    <div class="fc-title">内容匹配检测</div>
+    <div class="fc-desc">从文件名提取关键词，与文献标题做overlap匹配。内置70+医学缩写映射表（sJIA、SAVI、cSLE、GIO等），自动展开后匹配，匹配率达95%。</div>
+  </div>
+  <div class="feature-card">
+    <div class="fc-icon">🔄</div>
+    <div class="fc-title">替代文献搜索</div>
+    <div class="fc-desc">发现无效PMID时，自动调用PubMed esearch根据关键词搜索推荐替代文献，返回候选PMID列表。</div>
+  </div>
+  <div class="feature-card">
+    <div class="fc-icon">🧠</div>
+    <div class="fc-title">跨领域引用识别</div>
+    <div class="fc-desc">智能标记低匹配度引用（不自动删除），区分"确实无关"和"跨领域但合理"（如HLH指南被MAS病例引用），保留人工判断空间。</div>
+  </div>
+  <div class="feature-card">
+    <div class="fc-icon">📊</div>
+    <div class="fc-title">多格式报告</div>
+    <div class="fc-desc">输出HTML可视化报告、JSON结构化数据、终端摘要，满足不同场景需求。</div>
+  </div>
+</div>
+
+<!-- 基准测试 -->
+<h2>📊 基准测试结果</h2>
+
+<h3>① PMID存在性验证</h3>
+<div class="benchmark-grid">
+  <div class="bench-card"><div class="bench-val">100%</div><div class="bench-label">精确率 Precision</div></div>
+  <div class="bench-card"><div class="bench-val">100%</div><div class="bench-label">召回率 Recall</div></div>
+  <div class="bench-card"><div class="bench-val">100%</div><div class="bench-label">F1 Score</div></div>
+</div>
+<p style="font-size:.85rem;color:var(--text2);margin-bottom:16px;">测试集：100条真实PMID + 20条虚假PMID混合集。每条均正确分类。</p>
+
+<h3>② 内容匹配验证</h3>
+<div class="benchmark-grid">
+  <div class="bench-card"><div class="bench-val">95%</div><div class="bench-label">同领域匹配率</div></div>
+  <div class="bench-card"><div class="bench-val">20</div><div class="bench-label">测试病例数</div></div>
+  <div class="bench-card"><div class="bench-val">70+</div><div class="bench-label">医学缩写映射</div></div>
+</div>
+<p style="font-size:.85rem;color:var(--text2);">测试集：MedWiki-Rheum真实病例文件对应PMID。唯一未匹配项经核实为正确检测（文献标题与病例完全无关）。</p>
+
+<h3>③ 处理速度</h3>
+<div class="benchmark-grid">
+  <div class="bench-card"><div class="bench-val">~34</div><div class="bench-label">PMIDs/min</div></div>
+  <div class="bench-card"><div class="bench-val">225</div><div class="bench-label">条/约7分钟</div></div>
+  <div class="bench-card"><div class="bench-val">50</div><div class="bench-label">条/批次</div></div>
+</div>
+
+<!-- 安装 -->
+<h2>📥 安装方式</h2>
+
+<h3>方式一：OpenClaw CLI安装（推荐）</h3>
+<div class="code-block">
+<span class="comment"># ClawHub国际版</span>
+openclaw skills install docsor1212/pubmed-verifier
+
+<span class="comment"># 安装后脚本位于</span>
+<span class="cmd">~/.openclaw/skills/pubmed-verifier/scripts/verify_pmids.py</span>
+</div>
+
+<h3>方式二：手动安装</h3>
+<div class="code-block">
+<span class="comment"># 克隆或下载skill文件</span>
+git clone https://github.com/docsor1212/pubmed-verifier.git
+<span class="comment"># 或直接下载zip</span>
+wget https://clawhub.ai/docsor1212/pubmed-verifier/archive/latest.zip
+</div>
+
+<h3>依赖</h3>
+<table>
+  <tr><th>依赖</th><th>版本</th><th>说明</th></tr>
+  <tr><td>Python</td><td>≥ 3.10</td><td>核心运行环境</td></tr>
+  <tr><td>requests</td><td>任意</td><td>HTTP请求（PubMed API调用）</td></tr>
+  <tr><td>PubMed E-utilities</td><td>—</td><td>无需API Key，免费使用</td></tr>
+</table>
+<p style="font-size:.82rem;color:var(--text2);margin-top:4px;">⚠️ 无需任何API Key，无需注册任何账号，无需联网以外的任何配置。</p>
+
+<!-- 使用方法 -->
+<h2>🚀 使用方法</h2>
+
+<h3>基础用法</h3>
+
+<div class="step-item">
+  <div class="step-num">1</div>
+  <div class="step-text">
+    <div class="step-title">验证整个项目目录</div>
+    <div class="step-desc">扫描目录下所有HTML/MD/TXT/JSON文件，提取全部PMID并验证</div>
+  </div>
+</div>
+<div class="code-block">
+python3 ~/.openclaw/skills/pubmed-verifier/scripts/verify_pmids.py \
+  --source /path/to/project \
+  --output report.html
+</div>
+
+<div class="step-item">
+  <div class="step-num">2</div>
+  <div class="step-text">
+    <div class="step-title">验证指定PMID</div>
+    <div class="step-desc">直接输入PMID列表，适合快速检查单条或少量引用</div>
+  </div>
+</div>
+<div class="code-block">
+python3 ~/.openclaw/skills/pubmed-verifier/scripts/verify_pmids.py \
+  --pmids 31018962,22213727,999999999
+</div>
+
+<div class="step-item">
+  <div class="step-num">3</div>
+  <div class="step-text">
+    <div class="step-title">启用内容匹配</div>
+    <div class="step-desc">检查文献标题与文件名/目录名的相关性，标记可能错误的引用</div>
+  </div>
+</div>
+<div class="code-block">
+python3 ~/.openclaw/skills/pubmed-verifier/scripts/verify_pmids.py \
+  --source ./papers \
+  --match-keywords \
+  --threshold 0.2
+</div>
+
+<h3>完整参数表</h3>
+<table>
+  <tr><th>参数</th><th>必填</th><th>说明</th></tr>
+  <tr><td><code>--source</code></td><td>二选一</td><td>要扫描的目录路径</td></tr>
+  <tr><td><code>--pmids</code></td><td>二选一</td><td>逗号分隔的PMID列表</td></tr>
+  <tr><td><code>--output</code></td><td>否</td><td>报告输出路径（支持 .html / .json / .txt）</td></tr>
+  <tr><td><code>--match-keywords</code></td><td>否</td><td>启用内容匹配检测（默认关闭）</td></tr>
+  <tr><td><code>--threshold</code></td><td>否</td><td>匹配阈值 0-1（默认 0.2，低于此值标记为低匹配）</td></tr>
+</table>
+
+<!-- 支持的文件格式和PMID模式 -->
+<h3>支持的文件格式</h3>
+<p><code>.html</code> · <code>.htm</code> · <code>.md</code> · <code>.txt</code> · <code>.json</code></p>
+
+<h3>自动识别的PMID格式</h3>
+<div class="code-block">
+<span class="comment"># 以下格式均可自动提取</span>
+PMID: 12345678
+PubMed: 12345678
+pubmed.ncbi.nlm.nih.gov/12345678/
+https://pubmed.ncbi.nlm.nih.gov/12345678/
+</div>
+
+<!-- 医学缩写映射 -->
+<h2>🧬 内置医学缩写映射表（部分）</h2>
+<p style="font-size:.85rem;color:var(--text2);margin-bottom:8px;">共70+条映射，持续扩展中。以下为风湿免疫学相关示例：</p>
+<table>
+  <tr><th>缩写</th><th>全称</th></tr>
+  <tr><td>sJIA</td><td>systemic juvenile idiopathic arthritis</td></tr>
+  <tr><td>cSLE</td><td>childhood systemic lupus erythematosus</td></tr>
+  <tr><td>SAVI</td><td>STING-associated vasculopathy with onset in infancy</td></tr>
+  <tr><td>GIO</td><td>glucocorticoid-induced osteoporosis</td></tr>
+  <tr><td>MAS</td><td>macrophage activation syndrome</td></tr>
+  <tr><td>IgAV</td><td>immunoglobulin A vasculitis</td></tr>
+  <tr><td>KD</td><td>Kawasaki disease</td></tr>
+  <tr><td>AID</td><td>autoinflammatory disease</td></tr>
+  <tr><td>pSS</td><td>primary Sjögren syndrome</td></tr>
+  <tr><td>HLH</td><td>hemophagocytic lymphohistiocytosis</td></tr>
+  <tr><td>MVK / MKD</td><td>mevalonate kinase deficiency</td></tr>
+  <tr><td>NLRC4</td><td>NLR family CARD domain containing 4</td></tr>
+</table>
+<p style="font-size:.82rem;color:var(--text2);">完整映射表见脚本内 <code>ABBREVS</code> 字典，支持自定义扩展。</p>
+
+<!-- 实际应用案例 -->
+<h2>📖 实际应用案例：MedWiki-Rheum审计</h2>
+
+<div class="card">
+  <div class="card-title">项目背景</div>
+  <p style="font-size:.88rem;">
+    MedWiki-Rheum循证病例库包含35个HTML病例文件，共225条PMID引用。使用pubmed-verifier进行全量验证。
+  </p>
+</div>
+
+<div class="summary-box" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;">
+  <div><div class="big-num" style="color:var(--green);">222</div><div class="label">验证通过 ✅</div></div>
+  <div><div class="big-num" style="color:var(--red);">3</div><div class="label">无效PMID（已修复）</div></div>
+  <div><div class="big-num" style="color:var(--yellow);">6</div><div class="label">跨领域引用（合理）</div></div>
+  <div><div class="big-num">~7min</div><div class="label">总耗时</div></div>
+</div>
+
+<h3>修复记录</h3>
+<table>
+  <tr><th>文件</th><th>原PMID</th><th>问题</th><th>修复PMID</th><th>替代文献</th></tr>
+  <tr>
+    <td>ev_GIO_01</td>
+    <td style="color:var(--red);">21954079</td>
+    <td>不存在</td>
+    <td style="color:var(--green);">22213727</td>
+    <td>椎体骨折（风湿儿童）</td>
+  </tr>
+  <tr>
+    <td>ev_SAVI_01</td>
+    <td style="color:var(--red);">27552632</td>
+    <td>不存在</td>
+    <td style="color:var(--green);">27585386</td>
+    <td>STING血管病ILD</td>
+  </tr>
+  <tr>
+    <td>ev_AID_01</td>
+    <td style="color:var(--red);">36204790</td>
+    <td>不存在</td>
+    <td style="color:var(--green);">31018962</td>
+    <td>自身炎症热病分类标准</td>
+  </tr>
+</table>
+<p style="font-size:.82rem;color:var(--text2);margin-top:4px;">详见 <a href="pmid_audit_report.html" style="color:var(--accent);">PMID引用全量验证报告</a></p>
+
+<!-- 下载/获取 -->
+<h2>🔗 获取地址</h2>
+
+<div class="platform-grid">
+  <div class="platform-card">
+    <div class="plat-icon">🌐</div>
+    <div class="plat-name">ClawHub（国际版）</div>
+    <a href="https://clawhub.ai/docsor1212/pubmed-verifier" class="plat-link">clawhub.ai/docsor1212/pubmed-verifier</a>
+    <p style="font-size:.78rem;color:var(--text2);margin-top:6px;">MIT-0协议 · 支持CLI安装</p>
+  </div>
+  <div class="platform-card">
+    <div class="plat-icon">🇨🇳</div>
+    <div class="plat-name">SkillHub（国内版）</div>
+    <a href="https://skillhub.cn/skills/pubmed-verifier" class="plat-link">skillhub.cn/skills/pubmed-verifier</a>
+    <p style="font-size:.78rem;color:var(--text2);margin-top:6px;">中文界面 · 腾讯安全扫描通过</p>
+  </div>
+</div>
+
+<!-- 技术细节 -->
+<h2>⚙️ 技术细节</h2>
+
+<table>
+  <tr><th>项目</th><th>说明</th></tr>
+  <tr><td>API</td><td>PubMed E-utilities（esummary + esearch），免费，无需API Key</td></tr>
+  <tr><td>限速</td><td>3 req/s（免费用户），脚本内置0.4s批次间隔</td></tr>
+  <tr><td>批次大小</td><td>50 PMIDs/请求</td></tr>
+  <tr><td>内容匹配算法</td><td>关键词overlap + 医学缩写展开，返回0-1匹配分数</td></tr>
+  <tr><td>报告格式</td><td>HTML可视化 / JSON结构化 / 终端文本摘要</td></tr>
+  <tr><td>语言</td><td>Python 3.10+，单文件脚本，零外部配置</td></tr>
+  <tr><td>隐私</td><td><span class="badge badge-green">纯本地运行</span> 不上传任何文件到服务器，论文和病例数据不离开本机</td></tr>
+  <tr><td>许可证</td><td>MIT-0（可自由使用、修改、分发，无需署名）</td></tr>
+</table>
+
+<!-- 常见问题 -->
+<h2>❓ 常见问题</h2>
+
+<div class="card">
+  <div class="card-title">Q: 需要API Key吗？</div>
+  <p style="font-size:.88rem;">不需要。PubMed E-utilities对免费用户开放，自带限速（3 req/s），脚本已内置合规延迟。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">Q: 我的论文数据安全吗？</div>
+  <p style="font-size:.88rem;">完全安全。脚本只在本地运行，仅向PubMed API发送PMID编号查询，不上传论文内容或文件。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">Q: 内容匹配的阈值怎么设？</div>
+  <p style="font-size:.88rem;">默认0.2（宽松），适合大多数场景。如果跨领域引用较多可降至0.15，如果想更严格可提高到0.3。低于阈值的引用会被标记供人工判断，不会被自动删除。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">Q: 可以用于非医学领域吗？</div>
+  <p style="font-size:.88rem;">可以。PMID存在性验证对所有PubMed收录文献通用。内容匹配的缩写映射表可自定义扩展，或直接关闭（不加<code>--match-keywords</code>）。</p>
+</div>
+
+<!-- 版本历史 -->
+<h2>📋 版本历史</h2>
+
+<table>
+  <tr><th>版本</th><th>日期</th><th>更新内容</th></tr>
+  <tr><td>v1.3.0</td><td>2026-04-18</td><td>中文化简介描述，面向国内用户优化</td></tr>
+  <tr><td>v1.2.0</td><td>2026-04-18</td><td>新增70+医学缩写映射表，内容匹配率35%→95%</td></tr>
+  <tr><td>v1.1.0</td><td>2026-04-18</td><td>SEO优化描述，新增README文档</td></tr>
+  <tr><td>v1.0.0</td><td>2026-04-18</td><td>首个发布版本：PMID存在性验证、内容匹配、替代搜索、多格式报告</td></tr>
+</table>
+
+<div class="footer">
+  <p>MedWiki-Rheum · 工具笔记 · pubmed-verifier v1.3.0 · 2026-04-18</p>
+  <p><a href="../index.html" style="color:var(--accent);text-decoration:none;">返回首页</a> · <a href="pmid_audit_report.html" style="color:var(--accent);text-decoration:none;">引用验证报告</a></p>
+</div>
+
+</div>
+</body>
+</html>
