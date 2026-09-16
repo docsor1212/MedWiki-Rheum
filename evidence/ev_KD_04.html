@@ -21,17 +21,32 @@
   }
   .wrap{padding:0 22px;}
 
-  /* ── 站点导航（面包屑） ── */
+  /* ── 站点导航（黄蓝斜线风格吸顶条） ── */
   .sitenav{
-    display:flex; align-items:center; gap:9px; flex-wrap:wrap;
-    max-width:900px; margin:0 auto; padding:11px 22px 0;
-    font-size:12.5px; color:var(--ink-soft);
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:9px 22px;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 70%);
+    border-bottom:4px solid var(--gold-bright);
+    box-shadow:0 2px 10px rgba(18,54,95,.28);
+    font-size:13.5px;
   }
-  .sitenav a{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft);}
-  .sitenav a:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
-  .sitenav .sep{color:#B9C4CF;}
-  .sitenav .cur{color:var(--ink-soft);}
-  .sitenav .brand{margin-left:auto; letter-spacing:.14em; color:#9AA7B4; font-weight:600; font-size:11px;}
+  .sitenav::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(135deg,
+      transparent 0 26px, rgba(232,163,61,.18) 26px 34px,
+      transparent 34px 60px, rgba(127,168,204,.20) 60px 68px);
+  }
+  .sitenav a{
+    position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px;
+    text-decoration:none; font-weight:700; border-radius:999px; padding:5px 16px;
+  }
+  .sitenav a.home{background:var(--gold-bright); color:var(--navy-deep); box-shadow:0 2px 6px rgba(0,0,0,.28);}
+  .sitenav a.home:hover{background:#F2B455;}
+  .sitenav a.list{color:#fff; border:1.5px solid rgba(255,255,255,.65);}
+  .sitenav a.list:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .sitenav .cur{position:relative; z-index:1; color:#E8F0F9; font-weight:600;}
+  .sitenav .brand{margin-left:auto; position:relative; z-index:1; color:var(--gold-bright); font-weight:800; letter-spacing:.14em; font-size:12px;}
 
   /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
   .band{
@@ -219,11 +234,9 @@
 </head>
 <body>
 <nav class="sitenav">
-  <a href="https://docsor1212.github.io/MedWiki-Rheum/">⌂ MedWiki 首页</a>
-  <span class="sep">›</span>
-  <a href="https://docsor1212.github.io/MedWiki-Rheum/evidence/index.html">证据与病例</a>
-  <span class="sep">›</span>
-  <span class="cur">川崎病IVIG使用时机</span>
+  <a class="home" href="https://docsor1212.github.io/MedWiki-Rheum/">⌂ MedWiki 首页</a>
+  <a class="list" href="https://docsor1212.github.io/MedWiki-Rheum/evidence/index.html">证据与病例</a>
+  <span class="cur">› 川崎病IVIG使用时机</span>
   <span class="brand">MedWiki-Rheum</span>
 </nav>
 <div class="band"></div>
