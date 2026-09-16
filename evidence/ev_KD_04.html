@@ -21,6 +21,18 @@
   }
   .wrap{padding:0 22px;}
 
+  /* ── 站点导航（面包屑） ── */
+  .sitenav{
+    display:flex; align-items:center; gap:9px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:11px 22px 0;
+    font-size:12.5px; color:var(--ink-soft);
+  }
+  .sitenav a{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft);}
+  .sitenav a:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
+  .sitenav .sep{color:#B9C4CF;}
+  .sitenav .cur{color:var(--ink-soft);}
+  .sitenav .brand{margin-left:auto; letter-spacing:.14em; color:#9AA7B4; font-weight:600; font-size:11px;}
+
   /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
   .band{
     height:16px;
@@ -206,6 +218,14 @@
 </style>
 </head>
 <body>
+<nav class="sitenav">
+  <a href="https://docsor1212.github.io/MedWiki-Rheum/">⌂ MedWiki 首页</a>
+  <span class="sep">›</span>
+  <a href="https://docsor1212.github.io/MedWiki-Rheum/evidence/index.html">证据与病例</a>
+  <span class="sep">›</span>
+  <span class="cur">川崎病IVIG使用时机</span>
+  <span class="brand">MedWiki-Rheum</span>
+</nav>
 <div class="band"></div>
 
 <header class="hero">
@@ -446,7 +466,8 @@
   <div class="sig">DOCTOR Q</div>
   <div class="fline">
     儿科临床 · 指南原文考据<br>
-    证据核验：六份指南原文逐句截图比对 · 引文32条经 cite-holmes 逐条机械验证（CiteScore 98/100） · 文本质检通过
+    证据核验：六份指南原文逐句截图比对 · 引文32条经 cite-holmes 逐条机械验证（CiteScore 98/100） · 文本质检通过<br>
+    本文收录于 <a class="url" href="https://docsor1212.github.io/MedWiki-Rheum/">MedWiki-Rheum</a> · <a class="url" href="https://docsor1212.github.io/MedWiki-Rheum/evidence/index.html">更多证据与病例</a>
   </div>
 </footer>
 
