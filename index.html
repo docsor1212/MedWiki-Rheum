@@ -414,19 +414,10 @@
 <script src="assets/qrcode.min.js"></script>
 <script src="assets/share.js?v=3" defer></script>
 <script>
+<script>
 if("serviceWorker" in navigator){
-  navigator.serviceWorker.getRegistrations().then(function(regs){
-    var found = false;
-    regs.forEach(function(r){
-      if(r.active && r.active.scriptURL.includes("sw.js")){ var url = new URL(r.active.scriptURL); r.unregister().then(function(){ found=true; }); }
-    });
-    setTimeout(function(){
-      navigator.serviceWorker.register("sw.js").then(function(reg){
-        reg.addEventListener("updatefound", function(){ if(found) location.reload(); });
-        if(found) setTimeout(function(){ location.reload(); }, 1500);
-      });
-    }, 500);
-  });
+  navigator.serviceWorker.getRegistrations().then(function(regs){ regs.forEach(function(r){ r.unregister(); }); });
+  if(window.caches && caches.keys){ caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }); }
 }
 </script>
 </body>
