@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="MedWiki">
 <title>MedWiki-Rheum 儿童风湿免疫临床知识库</title>
 <link rel="stylesheet" href="assets/themes.css?v=5">
-<link rel="stylesheet" href="assets/medwiki.css?v=14">
+<link rel="stylesheet" href="assets/medwiki.css?v=15">
 </head>
 <body>
 
@@ -187,7 +187,7 @@
 <div class="msection">
   <h2 class="msec-title rv">快速入口<span class="sub">QUICK ACCESS</span></h2>
 
-  <div id="topics">
+  <div id="topics" class="qgroup">
     <div class="cat-label rv">疾病专题 <span class="cnt">13个</span></div>
     <div class="qa-grid diseases">
       <a class="qa rv" href="topics/AID.html"><div class="name">AID 自身炎症性疾病</div><div class="desc">FMF/TRAPS/CAPS/SAVI等</div></a>
@@ -206,7 +206,7 @@
     </div>
   </div>
 
-  <div id="drugs">
+  <div id="drugs" class="qgroup">
     <div class="cat-label rv">药物手册 <span class="cnt">22个</span></div>
     <div class="qa-grid">
       <a class="qa c-bio rv" href="drugs/biologics.html"><div class="name">生物制剂总览</div><div class="desc">TNF/IL-6/IL-1/B细胞靶向</div></a>
@@ -241,7 +241,7 @@
     </div>
   </div>
 
-  <div id="tools">
+  <div id="tools" class="qgroup">
     <div class="cat-label rv">临床工具 <span class="cnt">24个</span></div>
     <div class="qa-grid tools">
       <a class="qa rv" data-n="01" href="tools/JADAS27.html"><div class="name">JADAS-27 评分</div><div class="desc">JIA疾病活动度</div></a>
@@ -271,7 +271,7 @@
     </div>
   </div>
 
-  <div id="cases">
+  <div id="cases" class="qgroup">
     <div class="cat-label rv">病例学习 <span class="cnt">53例 + 9个索引页</span></div>
     <div class="qa-grid cases">
       <a class="qa rv case-tag" href="cases/index.html"><div class="name">病例总索引</div><div class="desc">全部病例入口</div></a>
@@ -288,17 +288,17 @@
     </div>
   </div>
 
-  <div id="evidence">
+  <div id="evidence" class="qgroup">
     <div class="cat-label rv">循证病例库 <span class="cnt">35例 · 225条PMID引用已验证</span></div>
-    <div class="qa-grid">
+    <div class="qa-grid evid">
       <a class="qa rv" href="evidence/index.html"><div class="name">循证病例总索引</div><div class="desc">真实PubMed病例 · 可溯源PMID</div></a>
       <a class="qa rv" href="docs/pmid_audit_report.html"><div class="name">引用验证报告</div><div class="desc">225条引用逐条核验</div></a>
     </div>
   </div>
 
-  <div id="templates">
+  <div id="templates" class="qgroup">
     <div class="cat-label rv">医患沟通模板 <span class="cnt">4个</span></div>
-    <div class="qa-grid">
+    <div class="qa-grid comm">
       <a class="qa rv" href="templates/comm_JIA_diagnosis.html"><div class="name">JIA 确诊沟通</div><div class="desc">幼年关节炎确诊谈话</div></a>
       <a class="qa rv" href="templates/comm_SLE_management.html"><div class="name">SLE 管理手册</div><div class="desc">狼疮长期管理指导</div></a>
       <a class="qa rv" href="templates/comm_biologics_informed.html"><div class="name">生物制剂知情</div><div class="desc">生物制剂知情同意</div></a>
