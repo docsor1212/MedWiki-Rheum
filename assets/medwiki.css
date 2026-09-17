@@ -252,12 +252,23 @@ body{
 .qa-grid.tools .qa{position:relative;}
 .qa-grid.tools .qa::after{
   content:attr(data-n); position:absolute; top:8px; right:12px;
-  font-size:20px; font-weight:900; line-height:1; color:var(--accent-soft);
+  font-size:20px; font-weight:900; line-height:1; color:var(--mark); opacity:.4;
   font-variant-numeric:tabular-nums; letter-spacing:.02em;
 }
-/* 旗舰工具：金星+主题色描边+浅底（三卡同貌） */
-.qa.hot{border-color:var(--accent); background:var(--accent-soft);}
-.qa.hot::after{color:var(--surface);}
+/* 旗舰工具：金星+主题色描边（三卡同貌） */
+.qa.hot{border-color:var(--accent);}
+.qa.hot::after{opacity:.55;}
+/* 四环素内容块色系（2026-09-18用户定调：参考新一代四环素指南，黄蓝低饱和色块承载卡片） */
+/* 蓝=疾病专题/病例（临床色），黄=临床工具/医患沟通（暖色），循证=浅绿 */
+.qa-grid.diseases .qa{background:var(--accent-soft);}
+.qa-grid.diseases .qa .name{color:var(--accent-ink);}
+.qa-grid.diseases .qa .desc{color:var(--ink);}
+.qa-grid.diseases .qa .name .dg{background:var(--surface);}
+.qa-grid.tools .qa{background:var(--yellow-bg,#FAF3DC);}
+.qa-grid.cases .qa::before{background:var(--surface); color:var(--accent-deep);}
+.qa-grid.cases .qa .desc{color:var(--ink);}
+.qa-grid.comm .qa{background:var(--yellow-bg,#FAF3DC); border-left:3px solid var(--mark);}
+.qa-grid.evid .qa{background:var(--green-bg,#E2F3DD);}
 .qa.hot .name::before{content:'★ '; color:var(--mark);}
 /* 病例夹：顶部插页签（档签数=例数） */
 .qa-grid.cases{gap:16px 10px;}
