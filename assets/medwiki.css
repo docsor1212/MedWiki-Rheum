@@ -221,14 +221,36 @@ body{
   border-bottom:1px solid var(--border);
 }
 .qgroup .cat-label .cnt{margin-left:auto;}
-/* 各组卡片性格（一种一次）：疾病=左细线 / 工具=角标序号 / 病例=虚线病历夹 / 循证=绿线通栏 / 模板=暖纸 */
-.qa-grid.diseases .qa{border-left:3px solid var(--mark); border-radius:4px 10px 10px 4px;}
-.qa-grid.diseases .qa:hover{border-left-color:var(--accent); background:var(--accent-soft);}
-.qa-grid.tools .qa{position:relative;}
-.qa-grid.tools .qa::before{content:attr(data-n); position:absolute; top:5px; right:9px; font-size:9px; font-weight:800; color:var(--ink-faint); font-variant-numeric:tabular-nums;}
-.qa-grid.cases .qa{position:relative; padding-right:44px; border:1px dashed var(--ink-faint); background:var(--surface);}
-.qa-grid.cases .qa::after{content:'病例'; position:absolute; top:8px; right:8px; font-size:8.5px; font-weight:600; color:var(--ink-faint); background:var(--bg); padding:0 5px; border-radius:3px; line-height:1.6;}
-.qa-grid.cases .qa:hover{border-style:solid;}
+/* 疾病徽章：借Skills面板mono徽章语言，缩写可扫读 */
+.qa .name .dg{
+  display:inline-block; min-width:26px; padding:0 4px; margin-right:7px;
+  border-radius:4px; background:var(--accent-soft); color:var(--accent-deep);
+  font-size:9.5px; font-weight:800; font-style:normal; line-height:1.7;
+  text-align:center; vertical-align:1px; letter-spacing:.02em;
+}
+/* 工具类型签：五类色沿用全站分类色板（同药物组，配图例） */
+.qa .tk{
+  display:inline-block; font-size:9px; font-weight:700; color:var(--ink-soft);
+  border-radius:3px; padding:0 6px 0 8px; margin-right:7px; line-height:1.7; vertical-align:1px;
+}
+.tk-score{background:var(--cat-bio-bg);  box-shadow:inset 3px 0 0 var(--cat-bio);}
+.tk-calc {background:var(--cat-sml-bg);  box-shadow:inset 3px 0 0 var(--cat-sml);}
+.tk-deci {background:var(--cat-ster-bg); box-shadow:inset 3px 0 0 var(--cat-ster);}
+.tk-std  {background:var(--cat-dmard-bg);box-shadow:inset 3px 0 0 var(--cat-dmard);}
+.tk-ref  {background:var(--cat-nsaid-bg);box-shadow:inset 3px 0 0 var(--cat-nsaid);}
+/* 旗舰工具：金星+主题色描边（借视频卡荐标思路） */
+.qa.hot{border-color:var(--accent);}
+.qa.hot .name::before{content:'★ '; color:var(--mark);}
+/* 病例夹：顶部插页签（档签数=例数） */
+.qa-grid.cases{gap:16px 10px;}
+.qa-grid.cases .qa{position:relative; margin-top:8px;}
+.qa-grid.cases .qa::before{
+  content:attr(data-n); position:absolute; top:-9px; left:10px;
+  font-size:9px; font-weight:800; color:var(--accent-deep);
+  background:var(--accent-soft); padding:0 8px; line-height:1.9;
+  border-radius:4px 4px 0 0;
+}
+/* 循证=绿线通栏 / 模板=暖纸 */
 .qa-grid.evid .qa{grid-column:1/-1; display:flex; align-items:baseline; gap:12px; border-left:3px solid var(--green,#4A9E3F);}
 .qa-grid.evid .qa .desc{flex:1; margin-top:0;}
 .qa-grid.comm .qa{background:var(--yellow-bg,#FAF3DC);}
@@ -237,6 +259,12 @@ body{
   .qa-grid.evid .qa{display:block;}
   .qa-grid.evid .qa .desc{margin-top:2px;}
 }
+/* 工具图例（新增五类） */
+.legend .sw i.s-score{background:var(--cat-bio);}
+.legend .sw i.s-calc{background:var(--cat-sml);}
+.legend .sw i.s-deci{background:var(--cat-ster);}
+.legend .sw i.s-std{background:var(--cat-dmard);}
+.legend .sw i.s-ref{background:var(--cat-nsaid);}
 /* 药物分类色（语义税码，随内容不随主题） */
 .qa.c-bio {border-top:4px solid var(--cat-bio); background:var(--cat-bio-bg);}
 .qa.c-sml {border-top:4px solid var(--cat-sml); background:var(--cat-sml-bg);}
