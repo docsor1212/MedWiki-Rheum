@@ -44,15 +44,14 @@
       .from(card.querySelectorAll('.fmeta span'), {y:6, opacity:0, stagger:.06, duration:.35}, '-=.28')
       .from(card.querySelectorAll('.go'), {x:18, opacity:0, duration:.45, ease:'power2.out'}, '-=.35');
   });
-  // 覆盖卡 + 进度条充填
+  // 覆盖卡 + 分段刻度条交错充填
   gsap.utils.toArray('.cov').forEach(function(el, i){
     gsap.from(el, {y:16, opacity:0, delay:(i%5)*.05, duration:.55, scrollTrigger:{trigger:el, start:'top 92%'}});
   });
-  gsap.utils.toArray('.cov .bar i').forEach(function(el){
-    var w = el.getAttribute('style');
-    var target = (w.match(/width:\s*([\d.]+%)/) || [])[1];
-    if (!target) return;
-    gsap.fromTo(el, {width:'0%'}, {width:target, duration:.9, ease:'power2.out', scrollTrigger:{trigger:el, start:'top 92%'}});
+  gsap.utils.toArray('.cov .bar').forEach(function(bar){
+    var segs = bar.querySelectorAll('i.f');
+    if (!segs.length) return;
+    gsap.from(segs, {scaleX:0, transformOrigin:'left center', stagger:.04, duration:.5, ease:'power2.out', scrollTrigger:{trigger:bar, start:'top 92%'}});
   });
   // 入口卡批量交错
   ScrollTrigger.batch('.qa', {
