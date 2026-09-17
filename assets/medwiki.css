@@ -181,10 +181,15 @@ body{
 /* ---------- 覆盖卡（档案刻度卡） ---------- */
 .cov-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;}
 .cov{
-  display:block; text-decoration:none; color:inherit;
+  position:relative; overflow:hidden; display:block; text-decoration:none; color:inherit;
   background:var(--surface); border:1px solid var(--border); border-radius:12px;
-  padding:16px 16px 14px; box-shadow:0 2px 10px rgba(var(--shadow),.07);
+  padding:18px 16px 14px; box-shadow:0 2px 10px rgba(var(--shadow),.07);
   transition:transform .18s, box-shadow .18s, border-color .18s;
+}
+/* 三色顶条回归（用户定调：斜纹/装饰母题=品牌成功要素，该多用） */
+.cov::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg, var(--accent) 0 34%, var(--accent-bright) 34% 67%, var(--stripe-2) 67%);
 }
 .cov:hover{transform:translateY(-3px); border-color:var(--mark); box-shadow:0 8px 22px rgba(var(--shadow),.14);}
 .cov .name{font-weight:800; font-size:15px; color:var(--accent-ink); text-wrap:balance;}
@@ -219,8 +224,17 @@ body{
 .qa .desc{font-size:12px; color:var(--ink-soft); line-height:1.55; margin-top:2px;}
 /* ---------- 快速入口：分组面板（每组一块浅色容器，白卡浮起，终结白卡平铺） ---------- */
 .qgroup{
+  position:relative; overflow:hidden;
   background:var(--surface-2,#EAF1F8); border:1px solid var(--border);
-  border-radius:14px; padding:14px 14px; margin-top:16px;
+  border-radius:14px; padding:18px 14px 14px; margin-top:16px;
+}
+/* 面板品牌斜纹顶带：斜纹母题贯穿全页 */
+.qgroup::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background:repeating-linear-gradient(135deg,
+    var(--stripe-1) 0 7px, transparent 7px 11px,
+    var(--stripe-2) 11px 18px, transparent 18px 23px,
+    var(--stripe-3) 23px 30px, transparent 30px 35px);
 }
 .qgroup .cat-label{
   margin:0 0 12px; padding-bottom:8px;
@@ -267,7 +281,7 @@ body{
 .qa-grid.evid .qa .desc{flex:1; margin-top:0;}
 .qa-grid.comm .qa{background:var(--yellow-bg,#FAF3DC);}
 @media (max-width:680px){
-  .qgroup{padding:12px;}
+  .qgroup{padding:16px 12px 12px;}
   .chip{padding:9px 16px;}
   .qa-grid.evid .qa{display:block;}
   .qa-grid.evid .qa .desc{margin-top:2px;}
@@ -487,9 +501,13 @@ body{
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .vcard:hover{transform:translateY(-4px); box-shadow:0 14px 34px rgba(var(--shadow),.18);}
-/* 视频卡不重复斜纹母题（斜纹=精选卡专属），rec卡用金左条 */
-.vcard::before{content:none;}
-.vcard.rec{border-left:4px solid var(--mark);}
+.vcard::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:7px; z-index:1;
+  background:repeating-linear-gradient(135deg,
+    var(--stripe-1) 0 8px, transparent 8px 13px,
+    var(--stripe-2) 13px 21px, transparent 21px 26px,
+    var(--stripe-3) 26px 34px, transparent 34px 39px);
+}
 .vcard .vbody{display:flex; gap:20px; padding:18px; flex-wrap:wrap; align-items:center;}
 .vcard .vcover{position:relative; flex:0 0 320px; max-width:100%; border-radius:8px; overflow:hidden;}
 .vcard .vcover img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
@@ -518,11 +536,6 @@ body{
 }
 .vcard .vtitle{font-size:16.5px; font-weight:800; color:var(--accent-ink); line-height:1.5; margin-top:8px;}
 .vcard .vdesc{font-size:12.5px; color:var(--ink-soft); line-height:1.7; margin-top:6px;}
-.vcard .vgo{
-  display:inline-block; margin-top:12px; font-size:12px; font-weight:800;
-  color:var(--accent-deep); background:var(--accent-soft);
-  border-radius:6px; padding:5px 14px;
-}
 .vcard .vstats{
   display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;
   font-size:12px; color:var(--ink-faint); font-variant-numeric:tabular-nums;
