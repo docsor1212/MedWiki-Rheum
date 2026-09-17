@@ -252,11 +252,15 @@ body{
 /* 双斜杠标记（对应原文卡题前的 ╲╲ ） */
 .qa-grid.diseases .qa .name::before, .qa-grid.cases .qa .name::before,
 .qa-grid.tools .qa .name::before, .qa-grid.comm .qa .name::before,
-.qa-grid.evid .qa .name::before{
+.qa-grid.evid .qa .name::before,
+.qa.c-bio .name::before, .qa.c-sml .name::before, .qa.c-dmard .name::before,
+.qa.c-ster .name::before, .qa.c-nsaid .name::before{
   content:''; display:inline-block; width:5px; height:11px; margin-right:19px;
   background:var(--accent); transform:skewX(-18deg);
   box-shadow:8px 0 0 var(--accent); vertical-align:-1px;
 }
+/* 换行悬挂缩进：第二行文字与首行文字对齐（不顶到斜杠下方） */
+.qgroup .qa .name{padding-left:24px; text-indent:-24px;}
 .qa-grid.tools .qa .name::before, .qa-grid.comm .qa .name::before{
   background:var(--accent-bright); box-shadow:8px 0 0 var(--accent-bright);
 }
@@ -405,7 +409,7 @@ body{
   background:linear-gradient(0deg, var(--accent-bright), var(--accent-bright)) left bottom / 100% 3px no-repeat;
   padding-bottom:4px;
 }
-.stat .lab{font-size:12px; color:var(--ink-soft); margin-top:6px;}
+.stat .lab{font-size:12px; color:var(--ink-soft); margin-top:6px; word-break:keep-all;}
 
 /* ---------- 免责声明 ---------- */
 .disc{
