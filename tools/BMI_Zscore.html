@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/BMI_Zscore.html">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -10,11 +10,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 
-:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#20a39e;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
+:root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#1B4F8A;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
 .wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(32,163,158,0.06);}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(27,79,138,0.06);}
 h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
 h1 span{color:var(--accent);}
 .sub{font-size:0.78rem;color:var(--text2);margin-bottom:12px;}
@@ -43,7 +43,7 @@ th{background:var(--accent-bg);color:var(--accent);font-weight:700;text-align:le
 td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 tr:hover td{background:#f8fafa;}
 .disclaimer{font-size:0.65rem;color:var(--text2);text-align:center;margin-top:16px;padding:8px;border-top:1px solid var(--border);}
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(32,163,158,0.18);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1B4F8A;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-size:13px;box-shadow:0 2px 6px rgba(27,79,138,0.18);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
@@ -57,7 +57,7 @@ tr:hover td{background:#f8fafa;}
 @media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
 </style>
 <link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#20a39e">
+<meta name="theme-color" content="#1B4F8A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="MedWiki">
@@ -135,7 +135,7 @@ function calc(){
   const diff=bmi-p50;
   let cat,c,pLabel;
   if(diff<-3){cat="体重过低";c="#d45050";pLabel="&lt; 第5百分位";}
-  else if(diff<-1.5){cat="偏瘦";c="#20a39e";pLabel="第5-25百分位";}
+  else if(diff<-1.5){cat="偏瘦";c="#1B4F8A";pLabel="第5-25百分位";}
   else if(diff<=2){cat="正常体重";c="#22a87e";pLabel="第25-75百分位";}
   else if(diff<=3.5){cat="超重";c="#d4892a";pLabel="第85-95百分位";}
   else{cat="肥胖";c="#d45050";pLabel="&gt; 第95百分位";}
@@ -148,12 +148,12 @@ calc();
 </script>
 
 
-<div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="BSA.html" style="color:#20a39e;font-weight:600">BSA</a> · <a href="MTX_dose.html" style="color:#20a39e;font-weight:600">MTX剂量</a> · <a href="CHAQ.html" style="color:#20a39e;font-weight:600">CHAQ</a></div>
+<div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="BSA.html" style="color:#1B4F8A;font-weight:600">BSA</a> · <a href="MTX_dose.html" style="color:#1B4F8A;font-weight:600">MTX剂量</a> · <a href="CHAQ.html" style="color:#1B4F8A;font-weight:600">CHAQ</a></div>
 
-<div style="background:#f0faf9;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:0.72rem;color:#2d2a26;">
-<div style="font-weight:600;color:#20a39e;margin-bottom:4px;">📊 参考标准</div>
+<div style="background:#f0faf9;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:0.72rem;color:#22303F;">
+<div style="font-weight:600;color:#1B4F8A;margin-bottom:4px;">📊 参考标准</div>
 <div>本工具采用 <b>WHO Child Growth Standards</b>（世界卫生组织儿童生长标准，2006/2007）的BMI-for-age Z-score。该标准基于多中心生长参考研究（MGRS），涵盖巴西、加纳、印度、挪威、阿曼和美国6国8440名母乳喂养婴儿，适用于全球0-19岁儿童。</div>
-<div style="margin-top:4px;color:#6b6560;">参考文献：WHO Multicentre Growth Reference Study Group. <i>Acta Paediatr Suppl</i>. 2006;450:1-104. PMID: 16817681</div>
+<div style="margin-top:4px;color:#5A6B7C;">参考文献：WHO Multicentre Growth Reference Study Group. <i>Acta Paediatr Suppl</i>. 2006;450:1-104. PMID: 16817681</div>
 </div>
 <div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
 </div>
@@ -163,4 +163,7 @@ calc();
 <div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
 </div></div>
 <script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=1" defer></script>
+<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body></html>

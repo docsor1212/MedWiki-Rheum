@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/templates/comm_SLE_management.html">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -10,15 +10,15 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 
-:root { --bg:#faf8f5; --surface:#fff; --text:#2d2a26; --text2:#6b6560; --text3:#9e9893; --accent:#20a39e; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#d4f0ed; --border:#e5e0d8; --radius:10px; }
+:root { --bg:#F5F6F8; --surface:#fff; --text:#22303F; --text2:#5A6B7C; --text3:#93A2B1; --accent:#1B4F8A; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#DCE8F4; --border:#DDE5EC; --radius:10px; }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; font-size:14px; }
 .wrap { max-width:800px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:#20a39e; color:#fff; padding:16px 24px; }
+.header { background:#1B4F8A; color:#fff; padding:16px 24px; }
 .header h1 { font-size:1.4rem; font-weight:700; }
 .header .sub { font-size:0.9rem; opacity:0.85; margin-top:4px; }
 .body { padding:16px 24px 20px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#20a39e; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
+.sh { display:flex; align-items:center; gap:5px; font-size:0.85rem; font-weight:700; color:#fff; background:#1B4F8A; padding:6px 12px; border-radius:5px; margin:16px 0 8px; }
 .sh.red { background:var(--red); }
 .sh.green { background:var(--green); }
 .sh.yellow { background:var(--yellow); }
@@ -27,11 +27,11 @@ p { margin:6px 0; }
 ul { margin:6px 0 6px 20px; }
 li { margin:4px 0; }
 table { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
-th { background:#d4f0ed; color:#20a39e; font-weight:600; text-align:left; padding:6px 8px; border-bottom:1.5px solid var(--border); }
+th { background:#DCE8F4; color:#1B4F8A; font-weight:600; text-align:left; padding:6px 8px; border-bottom:1.5px solid var(--border); }
 th.red-hd { background:#fce5e1; color:var(--red); }
 th.green-hd { background:#e2f3dd; color:var(--green); }
-td { padding:5px 8px; border-bottom:1px solid #f0ede8; vertical-align:top; }
-tr:hover td { background:#faf8f5; }
+td { padding:5px 8px; border-bottom:1px solid #EDF1F5; vertical-align:top; }
+tr:hover td { background:#F5F6F8; }
 .b { font-weight:700; }
 .checklist { list-style:none; margin-left:0; padding-left:0; }
 .checklist li { padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
@@ -42,7 +42,7 @@ tr:hover td { background:#faf8f5; }
 .red-box { background:var(--red-bg); padding:8px 12px; border-radius:5px; margin:4px 0; }
 .tip-box { background:var(--yellow-bg); border-left:3px solid var(--yellow); padding:8px 12px; border-radius:0 var(--radius) var(--radius) 0; margin:6px 0; font-size:13px; }
 .footer { text-align:center; font-size:11px; color:var(--text3); padding:10px 24px 14px; border-top:1px solid var(--border); }
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#20a39e;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1B4F8A;color:#fff;padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
 .nav-bar a:hover{opacity:1;}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
@@ -58,7 +58,7 @@ body{padding-top:42px !important;}
 }
 </style>
 <link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#20a39e">
+<meta name="theme-color" content="#1B4F8A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="MedWiki">
@@ -142,5 +142,8 @@ body{padding-top:42px !important;}
   <p style="margin-top:8px;">MedWiki-Rheum · 儿童风湿免疫科普平台 · 不构成诊疗建议 · 请遵医嘱</p>
 </div>
 </div>
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=1" defer></script>
+<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body>
 </html>

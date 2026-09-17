@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/SLE2K.html">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -23,7 +23,7 @@
         .glass-card {
             background: #ffffff;
             border: 1px solid #e8f0ee;
-            box-shadow: 0 2px 8px rgba(32,163,158,0.06);
+            box-shadow: 0 2px 8px rgba(27,79,138,0.06);
             transition: all 0.25s ease;
         }
 
@@ -44,9 +44,9 @@
         }
 
         .selected {
-            background: linear-gradient(135deg, #20a39e 0%, #178f8a 100%) !important;
+            background: linear-gradient(135deg, #1B4F8A 0%, #178f8a 100%) !important;
             color: white !important;
-            box-shadow: 0 4px 12px rgba(32,163,158,0.3);
+            box-shadow: 0 4px 12px rgba(27,79,138,0.3);
         }
 
         .selected .badge {
@@ -82,10 +82,10 @@
 
         .nav-bar {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: #20a39e; color: #fff;
+            background: #1B4F8A; color: #fff;
             padding: 6px 16px; display: flex; align-items: center; gap: 12px;
             font-family: -apple-system,'PingFang SC','Microsoft YaHei', sans-serif; font-size: 13px;
-            box-shadow: 0 2px 6px rgba(32,163,158,0.18);
+            box-shadow: 0 2px 6px rgba(27,79,138,0.18);
         }
         .nav-bar a { color: #fff; text-decoration: none; opacity: .85; transition: opacity .2s; }
         .nav-bar a:hover { opacity: 1; }
@@ -99,7 +99,7 @@
         }
         .rule-box li::before {
             content: '●';
-            color: #20a39e;
+            color: #1B4F8A;
             margin-right: 6px;
             font-size: 8px;
             vertical-align: middle;
@@ -107,7 +107,7 @@
     </style>
 
     <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#20a39e">
+    <meta name="theme-color" content="#1B4F8A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="MedWiki">
@@ -128,13 +128,13 @@
 <meta http-equiv="Expires" content="0">
         <div class="flex items-baseline justify-between border-b-2 border-teal-100 pb-2">
             <h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
-                SLEDAI <span style="color:#20a39e">- 2000</span>
+                SLEDAI <span style="color:#1B4F8A">- 2000</span>
             </h1>
             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index — By DoctorQ 2026.01</span>
         </div>
         
         <div class="rule-box mt-4 p-4 rounded-xl">
-            <h2 class="text-[11px] font-black uppercase tracking-widest mb-2" style="color:#20a39e">计分规则 (Scoring Rules)</h2>
+            <h2 class="text-[11px] font-black uppercase tracking-widest mb-2" style="color:#1B4F8A">计分规则 (Scoring Rules)</h2>
             <ul class="text-[11px] text-slate-600 space-y-1 font-medium leading-relaxed">
                 <li>评估患者在最近 10 天内出现的临床表现。</li>
                 <li>计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
@@ -275,7 +275,7 @@
                 
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-[10px] font-black uppercase tracking-widest" style="color:#20a39e">已选项目</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest" style="color:#1B4F8A">已选项目</span>
                         <button onclick="clearAll()" class="text-[10px] font-black px-2 py-1 rounded transition-colors uppercase" style="color:#e05a5a" onmouseover="this.style.background='#fde8e8'" onmouseout="this.style.background='transparent'">Reset</button>
                     </div>
                     <div id="pathLine" class="text-[11px] text-slate-600 font-bold italic py-2.5 px-3 rounded-lg border leading-relaxed break-words min-h-[40px]" style="background:#f0fafa;border-color:#d5edeb">请勾选最近 10 天内出现的临床表现...</div>
@@ -284,7 +284,7 @@
                 <div class="flex items-center gap-8 justify-between md:justify-end">
                     <div class="flex flex-col items-center">
                         <span class="text-[10px] font-black text-slate-300 uppercase">Total Score</span>
-                        <span id="scoreNum" class="text-5xl font-black leading-none tracking-tighter" style="color:#20a39e">0</span>
+                        <span id="scoreNum" class="text-5xl font-black leading-none tracking-tighter" style="color:#1B4F8A">0</span>
                     </div>
                     <div id="statusBox" class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm border border-slate-200 bg-white text-slate-400">
                         无疾病活动
@@ -328,9 +328,9 @@
             if (sum <= 4) {
                 statusBox.innerText = sum === 0 ? "无疾病活动" : "基本无活动";
                 statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#20a39e";
-                statusBox.style.boxShadow = "0 4px 14px rgba(32,163,158,0.25)";
-                scoreNum.style.color = "#20a39e";
+                statusBox.style.background = "#1B4F8A";
+                statusBox.style.boxShadow = "0 4px 14px rgba(27,79,138,0.25)";
+                scoreNum.style.color = "#1B4F8A";
             } else if (sum <= 9) {
                 statusBox.innerText = "轻度活动";
                 statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
@@ -356,5 +356,8 @@
 <script>
 if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
 </script>
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=1" defer></script>
+<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body>
 </html>
