@@ -248,27 +248,16 @@ body{
   font-size:9.5px; font-weight:800; font-style:normal; line-height:1.7;
   text-align:center; vertical-align:1px; letter-spacing:.02em;
 }
-/* 卡内图标瓦片：类型/类别以图形表达（2026-09-18用户裁定：文字签=无关废话，全删） */
-.qa.ic{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:11px; row-gap:1px; align-items:start;}
-.qa .ico{
-  grid-row:1/3; width:38px; height:38px; border-radius:9px; flex:none;
-  display:flex; align-items:center; justify-content:center;
+/* 工具卡档案序号：大而静的幽灵数字（借精选卡01语言，2026-09-18用户裁定小图标俗，弃用） */
+.qa-grid.tools .qa{position:relative;}
+.qa-grid.tools .qa::after{
+  content:attr(data-n); position:absolute; top:8px; right:12px;
+  font-size:20px; font-weight:900; line-height:1; color:var(--accent-soft);
+  font-variant-numeric:tabular-nums; letter-spacing:.02em;
 }
-.qa .ico svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round;}
-.i-score{background:var(--cat-bio-bg);  color:var(--cat-bio);}
-.i-calc {background:var(--cat-sml-bg);  color:var(--cat-sml);}
-.i-deci {background:var(--cat-ster-bg); color:var(--cat-ster);}
-.i-std  {background:var(--cat-dmard-bg);color:var(--cat-dmard);}
-.i-ref  {background:var(--cat-nsaid-bg);color:var(--cat-nsaid);}
-.i-bio  {background:var(--cat-bio-bg);  color:var(--cat-bio);}
-.i-sml  {background:var(--cat-sml-bg);  color:var(--cat-sml);}
-.i-dmard{background:var(--cat-dmard-bg);color:var(--cat-dmard);}
-.i-ster {background:var(--cat-ster-bg); color:var(--cat-ster);}
-.i-nsaid{background:var(--cat-nsaid-bg);color:var(--cat-nsaid);}
-.qa-grid.cases .qa .ico{background:var(--accent-soft); color:var(--accent);}
-.qa.hot .ico{background:var(--surface);}
 /* 旗舰工具：金星+主题色描边+浅底（三卡同貌） */
 .qa.hot{border-color:var(--accent); background:var(--accent-soft);}
+.qa.hot::after{color:var(--surface);}
 .qa.hot .name::before{content:'★ '; color:var(--mark);}
 /* 病例夹：顶部插页签（档签数=例数） */
 .qa-grid.cases{gap:16px 10px;}
@@ -281,10 +270,8 @@ body{
 }
 /* 循证=绿线通栏 / 模板=暖纸 */
 .qa-grid.evid .qa{grid-column:1/-1; display:flex; align-items:center; gap:12px; border-left:3px solid var(--green,#4A9E3F);}
-.qa-grid.evid .qa .ico{background:var(--green-bg,#E2F3DD); color:var(--green,#4A9E3F);}
 .qa-grid.evid .qa .desc{flex:1; margin-top:0;}
-.qa-grid.comm .qa{background:var(--surface);}
-.qa-grid.comm .qa .ico{background:var(--yellow-bg,#FAF3DC); color:var(--yellow,#B8891A);}
+.qa-grid.comm .qa{background:var(--surface); border-left:3px solid var(--mark);}
 @media (max-width:680px){
   .qgroup{padding:16px 12px 12px;}
   .chip{padding:9px 16px;}
