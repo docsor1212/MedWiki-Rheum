@@ -225,7 +225,11 @@ body{
 /* ---------- 快速入口：分组面板（每组一块浅色容器，白卡浮起，终结白卡平铺） ---------- */
 .qgroup{
   position:relative; overflow:hidden;
-  background:var(--surface-2,#EAF1F8); border:1px solid var(--border);
+  background-color:var(--surface-2,#EAF1F8);
+  /* 四环素画布点阵纹理（对照原文细点阵） */
+  background-image:radial-gradient(rgba(var(--shadow),.09) 1px, transparent 1.3px);
+  background-size:13px 13px;
+  border:1px solid var(--border);
   border-radius:14px; padding:18px 14px 14px; margin-top:16px;
 }
 /* 面板品牌斜纹顶带：斜纹母题贯穿全页 */
@@ -241,47 +245,32 @@ body{
   border-bottom:1px solid var(--border);
 }
 .qgroup .cat-label .cnt{margin-left:auto;}
-/* 疾病徽章：借Skills面板mono徽章语言，缩写可扫读 */
-.qa .name .dg{
-  display:inline-block; min-width:26px; padding:0 4px; margin-right:7px;
-  border-radius:4px; background:var(--accent-soft); color:var(--accent-deep);
-  font-size:9.5px; font-weight:800; font-style:normal; line-height:1.7;
-  text-align:center; vertical-align:1px; letter-spacing:.02em;
+/* 工具类型签已按用户裁定删除（2026-09-18）；类色语义由顶边与斜杠标记承载 */
+/* 四环素卡片解剖（v23，对照tetra原文）：白卡+彩色顶边+标题前双色斜杠，斜纹只留在带与面上 */
+.qa-grid.diseases .qa, .qa-grid.cases .qa{border-top:3px solid var(--accent);}
+.qa-grid.tools .qa, .qa-grid.comm .qa{border-top:3px solid var(--accent-bright);}
+/* 双斜杠标记（对应原文卡题前的 ╲╲ ） */
+.qa-grid.diseases .qa .name::before, .qa-grid.cases .qa .name::before,
+.qa-grid.tools .qa .name::before, .qa-grid.comm .qa .name::before,
+.qa-grid.evid .qa .name::before{
+  content:''; display:inline-block; width:5px; height:11px; margin-right:19px;
+  background:var(--accent); transform:skewX(-18deg);
+  box-shadow:8px 0 0 var(--accent); vertical-align:-1px;
 }
-/* 工具卡档案序号：安静的小号幽灵数字 */
-.qa-grid.tools .qa{position:relative; padding-right:42px;}
-.qa-grid.tools .qa::after{
-  content:attr(data-n); position:absolute; top:10px; right:12px;
-  font-size:16px; font-weight:900; line-height:1; color:var(--mark); opacity:.38;
-  font-variant-numeric:tabular-nums; letter-spacing:.02em;
+.qa-grid.tools .qa .name::before, .qa-grid.comm .qa .name::before{
+  background:var(--accent-bright); box-shadow:8px 0 0 var(--accent-bright);
 }
-/* 旗舰工具：金星+主题色描边（三卡同貌） */
+.qa-grid.evid .qa .name::before{background:var(--green,#4A9E3F); box-shadow:8px 0 0 var(--green,#4A9E3F);}
+.qa.c-bio .name::before{background:var(--cat-bio); box-shadow:8px 0 0 var(--cat-bio);}
+.qa.c-sml .name::before{background:var(--cat-sml); box-shadow:8px 0 0 var(--cat-sml);}
+.qa.c-dmard .name::before{background:var(--cat-dmard); box-shadow:8px 0 0 var(--cat-dmard);}
+.qa.c-ster .name::before{background:var(--cat-ster); box-shadow:8px 0 0 var(--cat-ster);}
+.qa.c-nsaid .name::before{background:var(--cat-nsaid); box-shadow:8px 0 0 var(--cat-nsaid);}
+/* 旗舰工具：藏青描边替代金描边（同一解剖结构内做强调，不另加饰品） */
 .qa.hot{border-color:var(--accent);}
-/* 黄蓝细斜纹书脊：四环素母题落到每张卡左缘（线不是面，2026-09-18用户否决色块填充后改此案） */
-.qa-grid.diseases .qa, .qa-grid.tools .qa, .qa-grid.cases .qa, .qa-grid.comm .qa{
-  background-image:repeating-linear-gradient(135deg,
-    var(--stripe-1) 0 3px, transparent 3px 6px,
-    var(--stripe-2) 6px 9px, transparent 9px 12px,
-    var(--stripe-3) 12px 15px, transparent 15px 18px);
-  background-size:5px 100%;
-  background-repeat:no-repeat;
-  background-position:left top;
-  padding-left:17px;
-}
-.qa.hot .name::before{content:'★ '; color:var(--mark);}
-/* 病例夹：顶部插页签（档签数=例数） */
-.qa-grid.cases{gap:16px 10px;}
-.qa-grid.cases .qa{position:relative; margin-top:8px;}
-.qa-grid.cases .qa::before{
-  content:attr(data-n); position:absolute; top:-9px; left:10px;
-  font-size:9px; font-weight:800; color:var(--accent-deep);
-  background:var(--accent-soft); padding:0 8px; line-height:1.9;
-  border-radius:4px 4px 0 0;
-}
-/* 循证=绿线通栏 / 模板=暖纸 */
+/* 循证=绿线通栏（保留v16语义） */
 .qa-grid.evid .qa{grid-column:1/-1; display:flex; align-items:center; gap:12px; border-left:3px solid var(--green,#4A9E3F);}
 .qa-grid.evid .qa .desc{flex:1; margin-top:0;}
-.qa-grid.comm .qa{background:var(--surface); border-left:3px solid var(--mark);}
 @media (max-width:680px){
   .qgroup{padding:16px 12px 12px;}
   .chip{padding:9px 16px;}
