@@ -1,0 +1,149 @@
+/* ============================================================
+   MedWiki-Rheum 主题层 themes.css
+   主题 = 同名token换值。页面 <html data-theme="glm|honey|teal">
+   v2：语义色（红/绿/黄/橙）与药物分类色改为主题可覆盖 ——
+       各主题内保持和谐，跨主题保持"状态含义"一致。
+   文字对比度均按 WCAG 校验：正文≥4.5:1，大字/粗体≥3:1。
+   ============================================================ */
+
+/* ---------- 默认 = GLM 黄蓝斜线（藏青+金） ---------- */
+:root, [data-theme="glm"]{
+  --bg:#F5F6F8;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F8;
+  --ink:#22303F;
+  --ink-soft:#5A6B7C;
+  --ink-faint:#93A2B1;
+  --accent:#1B4F8A;
+  --accent-deep:#12365F;
+  --accent-ink:#0F2A4A;
+  --accent-bright:#E8A33D;
+  --accent-soft:#DCE8F4;
+  /* 导航/hero（深底 → 白字） */
+  --nav-a:#12365F; --nav-b:#1B4F8A; --nav-c:#2456A6;
+  --nav-edge:#E8A33D;
+  --nav-ink:#F2F7FC;
+  --nav-pill-border:rgba(255,255,255,.62);
+  --nav-brand:#E8A33D;
+  --home-bg:#E8A33D; --home-ink:#12365F;
+  --hero-a:#12365F; --hero-b:#1B4F8A; --hero-c:#2456A6;
+  --hero-ink:#FFFFFF;
+  --hero-ink-2:#E8A33D;
+  --kicker-ink:rgba(255,255,255,.85); --kicker-border:rgba(255,255,255,.45);
+  --pill-bg:rgba(255,255,255,.09); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
+  --pill-label:#E8A33D;        /* 胶囊内标签：金on藏青 5.6:1 */
+  --wash:rgba(255,255,255,.12); /* 面板行hover */
+  --stripe-1:#1B4F8A; --stripe-2:#7FA8CC; --stripe-3:#E8A33D;
+  --mark:#E8A33D;               /* 浅底上的装饰笔色（///、菱形、时间点） */
+  --word-ink:#FFFFFF;           /* 页脚徽章文字 */
+  --go-ink:#FFFFFF;             /* 深底按钮文字 */
+  --link:#1B4F8A;
+  --border:#DDE5EC;
+  --shadow:18,54,95;
+  --hl:232,163,61;
+  /* 药物分类色 */
+  --cat-bio:#20A39E;  --cat-bio-bg:#F2FAF9;
+  --cat-sml:#B8891A;  --cat-sml-bg:#FCF8EC;
+  --cat-dmard:#4A9E3F;--cat-dmard-bg:#F4FAF2;
+  --cat-ster:#D05040; --cat-ster-bg:#FDF3F2;
+  --cat-nsaid:#E87D2F;--cat-nsaid-bg:#FEF6EE;
+}
+
+/* ---------- Bees & Honey（浅珊瑚×奶油×蜂金×薄荷） ----------
+   fill用浅珊瑚，文字用深珊瑚（对比度达标）；状态色换同族软化色 */
+[data-theme="honey"]{
+  --bg:#FBF6EA;
+  --surface:#FFFFFF;
+  --surface-2:#FAF3DD;
+  --ink:#4A4440;
+  --ink-soft:#6B6560;
+  --ink-faint:#A29A8E;
+  --accent:#C4635A;             /* 珊瑚（正文级文字色，4.5:1） */
+  --accent-deep:#A0483E;
+  --accent-ink:#8F4038;
+  --accent-bright:#F2C94C;      /* 蜂金（装饰主轴） */
+  --accent-soft:#FAE3DF;
+  /* 导航/hero（浅珊瑚底 → 深珊瑚字） */
+  --nav-a:#F5A199; --nav-b:#FFA69E; --nav-c:#F7B1A9;
+  --nav-edge:#F2C94C;
+  --nav-ink:#6E2F28;
+  --nav-pill-border:rgba(110,47,40,.42);
+  --nav-brand:#8F4038;
+  --home-bg:#F2C94C; --home-ink:#5F430F;
+  --hero-a:#FFB3AA; --hero-b:#FFA69E; --hero-c:#F5978D;
+  --hero-ink:#6E2F28;
+  --hero-ink-2:#8F4038;
+  --kicker-ink:#8F4038; --kicker-border:rgba(143,64,56,.45);
+  --pill-bg:rgba(255,255,255,.55); --pill-border:rgba(143,64,56,.30); --pill-ink:#8F4038;
+  --pill-label:#8F4038;
+  --wash:rgba(255,255,255,.65);
+  --stripe-1:#F5A199; --stripe-2:#AED9E0; --stripe-3:#F2C94C;
+  --mark:#B0821F;               /* 深蜂金：奶油底上可读 */
+  --word-ink:#6E2F28;           /* 页脚徽章文字（浅珊瑚底） */
+  --go-ink:#FFFFFF;             /* 阅读全文按钮：珊瑚底白字 */
+  --link:#A0483E;
+  --border:#F0E4D0;
+  --shadow:143,64,56;
+  --hl:242,201,76;
+  /* 语义色（同族软化：薄荷=完成、暖红=警示、蜂金=注意） */
+  --green:#3E8E85;  --green-bg:#E4F2F0;
+  --red:#C4635A;    --red-bg:#FBEAE7;
+  --yellow:#B8891A; --yellow-bg:#FBF3D7;
+  --orange:#C97F3D; --orange-bg:#FBEEDE;
+  /* 药物分类色（珊瑚不会误伤分类语义） */
+  --cat-bio:#5F9EA8;  --cat-bio-bg:#EEF6F7;   /* 雾青=生物制剂 */
+  --cat-sml:#B8891A;  --cat-sml-bg:#FBF3D7;   /* 蜂金=小分子 */
+  --cat-dmard:#5FA982;--cat-dmard-bg:#E9F5EE; /* 薄荷=传统DMARD */
+  --cat-ster:#C4635A; --cat-ster-bg:#FBEAE7;  /* 暖红=激素 */
+  --cat-nsaid:#C97F3D;--cat-nsaid-bg:#FBEEDE; /* 暖橙=抗炎 */
+}
+
+/* ---------- Teal（原版遗产配色） ---------- */
+[data-theme="teal"]{
+  --bg:#FAF8F5;
+  --surface:#FFFFFF;
+  --surface-2:#D4F0ED;
+  --ink:#2D2A26;
+  --ink-soft:#6B6560;
+  --ink-faint:#9E9893;
+  --accent:#20A39E;
+  --accent-deep:#1A8580;
+  --accent-ink:#136B67;
+  --accent-bright:#7ED4CE;
+  --accent-soft:#D4F0ED;
+  --nav-a:#1A8580; --nav-b:#20A39E; --nav-c:#2FB5AF;
+  --nav-edge:#7ED4CE;
+  --nav-ink:#F2FBFA;
+  --nav-pill-border:rgba(255,255,255,.62);
+  --nav-brand:#DFF7F5;
+  --home-bg:#D6F3F1; --home-ink:#0E4B47;
+  --hero-a:#20A39E; --hero-b:#1A8580; --hero-c:#17918C;
+  --hero-ink:#FFFFFF;
+  --hero-ink-2:#C9F2EE;
+  --kicker-ink:rgba(255,255,255,.85); --kicker-border:rgba(255,255,255,.45);
+  --pill-bg:rgba(255,255,255,.09); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
+  --pill-label:#DFF9F6;
+  --wash:rgba(255,255,255,.14);
+  --stripe-1:#20A39E; --stripe-2:#8ED0CD; --stripe-3:#C9EDEA;
+  --mark:#2FA39C;               /* teal族装饰笔色（去金黄） */
+  --word-ink:#FFFFFF;
+  --go-ink:#FFFFFF;
+  --link:#1A8580;
+  --border:#E5E0D8;
+  --shadow:19,133,128;
+  --hl:242,201,76;
+  /* 药物分类色（与原版一致） */
+  --cat-bio:#20A39E;  --cat-bio-bg:#F2FAF9;
+  --cat-sml:#B8891A;  --cat-sml-bg:#FCF8EC;
+  --cat-dmard:#4A9E3F;--cat-dmard-bg:#F4FAF2;
+  --cat-ster:#D05040; --cat-ster-bg:#FDF3F2;
+  --cat-nsaid:#E87D2F;--cat-nsaid-bg:#FEF6EE;
+}
+
+/* ---------- 语义色兜底（glm/teal沿用经典值；:where零特异性，主题可覆盖） ---------- */
+:where(:root){
+  --red:#D05040;   --red-bg:#FCE5E1;
+  --green:#4A9E3F; --green-bg:#E2F3DD;
+  --yellow:#B8891A;--yellow-bg:#FAF3DC;
+  --orange:#E87D2F;--orange-bg:#FFE8D6;
+}

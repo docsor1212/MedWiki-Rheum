@@ -37,6 +37,10 @@
       '.mw-share-pop .qr .box{display:inline-block;background:#fff;border:1px solid var(--border,#DDE5EC);border-radius:10px;padding:8px;}',
       '.mw-share-pop .qr .box img,.mw-share-pop .qr .box canvas{display:block;}',
       '.mw-share-pop .qr p{font-size:11px;color:var(--ink-soft,#5A6B7C);margin:7px 0 0;line-height:1.6;}',
+      '.mw-wx-guide{position:fixed;top:0;left:0;right:0;z-index:1400;background:var(--accent-bright,#E8A33D);color:var(--accent-deep,#12365F);font-size:12.5px;font-weight:600;padding:8px 38px 8px 14px;line-height:1.6;box-shadow:0 2px 10px rgba(0,0,0,.20);}',
+      '.mw-wx-guide b{font-weight:800;}',
+      '.mw-wx-guide button{position:absolute;right:10px;top:7px;border:none;background:transparent;font-size:16px;line-height:1;cursor:pointer;color:inherit;font-family:inherit;}',
+      '.mw-wx-guide span{display:block;}',
       '@media (max-width:480px){.mw-share-pop{width:min(92vw,242px);}}'
     ].join('');
     var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st);
@@ -53,8 +57,10 @@
     pop.className = 'mw-share-pop';
     pop.hidden = true;
 
+    var inWeChat = /MicroMessenger/i.test(navigator.userAgent);
     var targets = [
-      {k:'wechat', label:'微信扫码', color:'#2AAE67'},
+      {k:'wechat',  label:'转发给微信好友', color:'#2AAE67', tip:'微信扫描二维码打开本页 → 转发给朋友'},
+      {k:'moments', label:'分享到朋友圈', color:'#2AAE67', tip:'扫描二维码打开本页 → 点右上角「···」→ 分享到朋友圈'},
       {k:'weibo',  label:'微博', color:'#E6162D', href:'https://service.weibo.com/share/share.php?url='+u+'&title='+t},
       {k:'qq',     label:'QQ好友', color:'#12B7F5', href:'https://connect.qq.com/widget/shareqq/index.html?url='+u+'&title='+t},
       {k:'qzone',  label:'QQ空间', color:'#EBB428', href:'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+u+'&title='+t},
@@ -71,7 +77,7 @@
     var map = {};
     targets.forEach(function(tg){
       var el = row(tg);
-      if (tg.k === 'wechat') el.addEventListener('click', function(e){ e.preventDefault(); toggleQR(); });
+      if (tg.k === 'wechat' || tg.k === 'moments') el.addEventListener('click', function(e){ e.preventDefault(); toggleQR(tg.tip); });
       if (tg.k === 'copy') el.addEventListener('click', function(e){ e.preventDefault(); doCopy(el); });
       map[tg.k] = el;
       pop.appendChild(el);
@@ -83,8 +89,11 @@
     pop.appendChild(qrWrap);
 
     var qrMade = false;
-    function toggleQR(){
+    var tipEl = null;
+    function toggleQR(tip){
       var open = qrWrap.classList.toggle('open');
+      if (!tipEl) tipEl = qrWrap.querySelector('p');
+      if (tip && tipEl) tipEl.textContent = tip;
       if (open && !qrMade) {
         var box = qrWrap.querySelector('#mw-qrbox');
         box.innerHTML = '';
@@ -124,6 +133,13 @@
     });
     d.addEventListener('keydown', function(e){ if (e.key === 'Escape') toggle(false); });
 
+    if (inWeChat) {
+      var guide = d.createElement('div');
+      guide.className = 'mw-wx-guide';
+      guide.innerHTML = '<span>微信内浏览：点右上角「···」即可 <b>发送给朋友</b> / <b>分享到朋友圈</b></span><button aria-label="关闭">×</button>';
+      guide.querySelector('button').addEventListener('click', function(){ guide.remove(); });
+      d.body.appendChild(guide);
+    }
     d.body.appendChild(fab);
     d.body.appendChild(pop);
     } catch(err) { window.__mwShareErr = (err && (err.stack || err.message)) || String(err); }
