@@ -24,7 +24,8 @@
   tl.from('.mhero .kicker', {y:14, opacity:0})
     .from('.mhero h1', {y:18, opacity:0}, '-=.45')
     .from('.mhero .lede', {y:12, opacity:0}, '-=.5')
-    .from('.mhero .meta span', {y:10, opacity:0, stagger:.06, duration:.5}, '-=.5')
+    .from('.searchbox', {y:12, opacity:0}, '-=.5')
+    .from('.chips .chip', {y:8, opacity:0, stagger:.05, duration:.4}, '-=.45')
     .from('.hpanel', {x:36, opacity:0, duration:.8}, '-=.55');
 
   if (typeof ScrollTrigger === 'undefined') return;
