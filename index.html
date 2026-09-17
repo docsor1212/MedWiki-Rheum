@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="manifest" href="manifest.json?v=8">
 <meta name="theme-color" content="#12365F">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="MedWiki">
 <title>MedWiki-Rheum 儿童风湿免疫临床知识库</title>
-<link rel="stylesheet" href="assets/themes.css?v=5">
-<link rel="stylesheet" href="assets/medwiki.css?v=16">
+<link rel="stylesheet" href="assets/themes.css?v=6">
+<link rel="stylesheet" href="assets/medwiki.css?v=17">
 </head>
 <body>
 
@@ -117,6 +118,7 @@
       <div class="vinfo">
         <span class="vtag">B站 · 论文工具箱</span>
         <div class="vtitle">装上这个Skill，让AI从数据直接画出出版级论文图表</div>
+        <span class="vgo">去B站观看 →</span>
         <p class="vdesc">Academic Figures 实操演示：一条命令从数据生成顶刊级图表，22种类型、出版级质感，科研出图效率翻倍。</p>
       </div>
     </div>
@@ -131,6 +133,7 @@
       <div class="vinfo">
         <span class="vtag">B站 · IEI病种深读 01</span>
         <div class="vtitle">免疫出生错误（IEI）：从基因到临床的重新认知</div>
+        <span class="vgo">去B站观看 →</span>
         <p class="vdesc">IEI病种深读系列总论：从基因缺陷到临床表型的框架性重新认知，适合免疫与儿科医生入门及进阶。</p>
       </div>
     </div>
@@ -145,6 +148,7 @@
       <div class="vinfo">
         <span class="vtag">B站 · DoctorQ 免疫前沿</span>
         <div class="vtitle">痛风为何"来去如风"？免疫代谢视角下的痛风性关节炎</div>
+        <span class="vgo">去B站观看 →</span>
         <p class="vdesc">免疫代谢视角深读痛风性关节炎：从NLRP3炎症小体到治疗决策，含9节章节时间轴，适合风湿免疫临床与科研。</p>
       </div>
     </div>
@@ -156,29 +160,24 @@
   <h2 class="msec-title rv">覆盖地图<span class="sub">COVERAGE</span></h2>
   <div class="cov-grid">
     <a class="cov rv" href="#topics">
-      <div class="name">疾病专题</div><div class="cs">13/13 已覆盖</div>
+      <div class="name">疾病专题</div><div class="big">13<span class="unit">个</span></div>
       <div class="bar" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
-      <div class="pct">100%</div>
     </a>
     <a class="cov rv" href="#drugs">
-      <div class="name">药物手册</div><div class="cs">22/22 已覆盖</div>
+      <div class="name">药物手册</div><div class="big">22<span class="unit">个</span></div>
       <div class="bar" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
-      <div class="pct">100%</div>
     </a>
     <a class="cov rv" href="#tools">
-      <div class="name">临床工具</div><div class="cs">24/24 已覆盖</div>
+      <div class="name">临床工具</div><div class="big">24<span class="unit">个</span></div>
       <div class="bar" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
-      <div class="pct">100%</div>
     </a>
     <a class="cov rv" href="#cases">
-      <div class="name">病例学习</div><div class="cs">53例 已覆盖</div>
+      <div class="name">病例学习</div><div class="big">52<span class="unit">例</span></div>
       <div class="bar" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
-      <div class="pct">100%</div>
     </a>
     <a class="cov rv" href="#templates">
-      <div class="name">医患沟通</div><div class="cs">4/4 已覆盖</div>
+      <div class="name">医患沟通</div><div class="big">4<span class="unit">个</span></div>
       <div class="bar" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
-      <div class="pct">100%</div>
     </a>
   </div>
 </div>
@@ -209,31 +208,31 @@
   <div id="drugs" class="qgroup">
     <div class="cat-label rv">药物手册 <span class="cnt">22个</span></div>
     <div class="qa-grid">
-      <a class="qa c-bio rv" href="drugs/biologics.html"><div class="name">生物制剂总览</div><div class="desc">TNF/IL-6/IL-1/B细胞靶向</div></a>
-      <a class="qa c-bio rv" href="drugs/etanercept.html"><div class="name">依那西普 ETN</div><div class="desc">TNF受体融合蛋白</div></a>
-      <a class="qa c-bio rv" href="drugs/adalimumab.html"><div class="name">阿达木单抗 ADA</div><div class="desc">抗TNF-α全人源单抗</div></a>
-      <a class="qa c-bio rv" href="drugs/infliximab.html"><div class="name">英夫利西单抗 IFX</div><div class="desc">抗TNF-α嵌合单抗</div></a>
-      <a class="qa c-bio rv" href="drugs/tocilizumab.html"><div class="name">托珠单抗 TCZ</div><div class="desc">抗IL-6受体单抗</div></a>
-      <a class="qa c-bio rv" href="drugs/anakinra.html"><div class="name">阿那白滞素 AKR</div><div class="desc">IL-1受体拮抗剂</div></a>
-      <a class="qa c-bio rv" href="drugs/rituximab.html"><div class="name">利妥昔单抗 RTX</div><div class="desc">抗CD20/B细胞清除</div></a>
-      <a class="qa c-bio rv" href="drugs/belimumab.html"><div class="name">贝利尤单抗 BEL</div><div class="desc">抗BAFF单抗/SLE</div></a>
-      <a class="qa c-sml rv" href="drugs/tofacitinib.html"><div class="name">托法替布 TOF</div><div class="desc">JAK抑制剂</div></a>
-      <a class="qa c-dmard rv" href="drugs/MTX.html"><div class="name">甲氨蝶呤 MTX</div><div class="desc">JIA/csDMARD首选</div></a>
-      <a class="qa c-dmard rv" href="drugs/hydroxychloroquine.html"><div class="name">羟氯喹 HCQ</div><div class="desc">SLE基础用药</div></a>
-      <a class="qa c-dmard rv" href="drugs/mycophenolate.html"><div class="name">吗替麦考酚 MMF</div><div class="desc">狼疮肾炎维持</div></a>
-      <a class="qa c-dmard rv" href="drugs/azathioprine.html"><div class="name">硫唑嘌呤 AZA</div><div class="desc">嘌呤类似物</div></a>
-      <a class="qa c-dmard rv" href="drugs/cyclophosphamide.html"><div class="name">环磷酰胺 CYC</div><div class="desc">重症狼疮/血管炎</div></a>
-      <a class="qa c-dmard rv" href="drugs/cyclosporine.html"><div class="name">环孢素 CsA</div><div class="desc">钙调磷酸酶抑制剂</div></a>
-      <a class="qa c-dmard rv" href="drugs/tacrolimus.html"><div class="name">他克莫司 TAC</div><div class="desc">钙调磷酸酶抑制剂</div></a>
-      <a class="qa c-ster rv" href="drugs/glucocorticoids.html"><div class="name">糖皮质激素总览</div><div class="desc">口服/静脉/关节腔</div></a>
-      <a class="qa c-ster rv" href="drugs/corticosteroids_IV.html"><div class="name">静脉激素冲击</div><div class="desc">甲泼尼龙冲击方案</div></a>
-      <a class="qa c-nsaid rv" href="drugs/NSAIDs.html"><div class="name">非甾体抗炎药 NSAIDs</div><div class="desc">一线对症治疗</div></a>
-      <a class="qa c-nsaid rv" href="drugs/colchicine.html"><div class="name">秋水仙碱 Colchicine</div><div class="desc">FMF一线/抗炎</div></a>
-      <a class="qa c-nsaid rv" href="drugs/IVIG.html"><div class="name">静脉丙种球蛋白 IVIG</div><div class="desc">川崎病/ITP/PID</div></a>
-      <a class="qa c-nsaid rv" href="drugs/calcium_vitd.html"><div class="name">钙剂与维生素D</div><div class="desc">骨保护基础用药</div></a>
+      <a class="qa c-bio rv" href="drugs/biologics.html"><div class="name"><span class="tk tk-bio">生物</span>生物制剂总览</div><div class="desc">TNF/IL-6/IL-1/B细胞靶向</div></a>
+      <a class="qa c-bio rv" href="drugs/etanercept.html"><div class="name"><span class="tk tk-bio">生物</span>依那西普 ETN</div><div class="desc">TNF受体融合蛋白</div></a>
+      <a class="qa c-bio rv" href="drugs/adalimumab.html"><div class="name"><span class="tk tk-bio">生物</span>阿达木单抗 ADA</div><div class="desc">抗TNF-α全人源单抗</div></a>
+      <a class="qa c-bio rv" href="drugs/infliximab.html"><div class="name"><span class="tk tk-bio">生物</span>英夫利西单抗 IFX</div><div class="desc">抗TNF-α嵌合单抗</div></a>
+      <a class="qa c-bio rv" href="drugs/tocilizumab.html"><div class="name"><span class="tk tk-bio">生物</span>托珠单抗 TCZ</div><div class="desc">抗IL-6受体单抗</div></a>
+      <a class="qa c-bio rv" href="drugs/anakinra.html"><div class="name"><span class="tk tk-bio">生物</span>阿那白滞素 Anakinra</div><div class="desc">IL-1受体拮抗剂</div></a>
+      <a class="qa c-bio rv" href="drugs/rituximab.html"><div class="name"><span class="tk tk-bio">生物</span>利妥昔单抗 RTX</div><div class="desc">抗CD20/B细胞清除</div></a>
+      <a class="qa c-bio rv" href="drugs/belimumab.html"><div class="name"><span class="tk tk-bio">生物</span>贝利尤单抗 BEL</div><div class="desc">抗BAFF单抗/SLE</div></a>
+      <a class="qa c-sml rv" href="drugs/tofacitinib.html"><div class="name"><span class="tk tk-sml">小分子</span>托法替布 TOF</div><div class="desc">JAK抑制剂</div></a>
+      <a class="qa c-dmard rv" href="drugs/MTX.html"><div class="name"><span class="tk tk-dmard">传统</span>甲氨蝶呤 MTX</div><div class="desc">JIA/csDMARD首选</div></a>
+      <a class="qa c-dmard rv" href="drugs/hydroxychloroquine.html"><div class="name"><span class="tk tk-dmard">传统</span>羟氯喹 HCQ</div><div class="desc">SLE基础用药</div></a>
+      <a class="qa c-dmard rv" href="drugs/mycophenolate.html"><div class="name"><span class="tk tk-dmard">传统</span>吗替麦考酚 MMF</div><div class="desc">狼疮肾炎维持</div></a>
+      <a class="qa c-dmard rv" href="drugs/azathioprine.html"><div class="name"><span class="tk tk-dmard">传统</span>硫唑嘌呤 AZA</div><div class="desc">嘌呤类似物</div></a>
+      <a class="qa c-dmard rv" href="drugs/cyclophosphamide.html"><div class="name"><span class="tk tk-dmard">传统</span>环磷酰胺 CYC</div><div class="desc">重症狼疮/血管炎</div></a>
+      <a class="qa c-dmard rv" href="drugs/cyclosporine.html"><div class="name"><span class="tk tk-dmard">传统</span>环孢素 CsA</div><div class="desc">钙调磷酸酶抑制剂</div></a>
+      <a class="qa c-dmard rv" href="drugs/tacrolimus.html"><div class="name"><span class="tk tk-dmard">传统</span>他克莫司 TAC</div><div class="desc">钙调磷酸酶抑制剂</div></a>
+      <a class="qa c-ster rv" href="drugs/glucocorticoids.html"><div class="name"><span class="tk tk-ster">激素</span>糖皮质激素总览</div><div class="desc">口服/静脉/关节腔</div></a>
+      <a class="qa c-ster rv" href="drugs/corticosteroids_IV.html"><div class="name"><span class="tk tk-ster">激素</span>静脉激素冲击</div><div class="desc">甲泼尼龙冲击方案</div></a>
+      <a class="qa c-nsaid rv" href="drugs/NSAIDs.html"><div class="name"><span class="tk tk-nsaid">抗炎</span>非甾体抗炎药 NSAIDs</div><div class="desc">一线对症治疗</div></a>
+      <a class="qa c-nsaid rv" href="drugs/colchicine.html"><div class="name"><span class="tk tk-nsaid">抗炎</span>秋水仙碱 Colchicine</div><div class="desc">FMF一线/抗炎</div></a>
+      <a class="qa c-nsaid rv" href="drugs/IVIG.html"><div class="name"><span class="tk tk-nsaid">抗炎</span>静脉丙种球蛋白 IVIG</div><div class="desc">川崎病/ITP/PID</div></a>
+      <a class="qa c-nsaid rv" href="drugs/calcium_vitd.html"><div class="name"><span class="tk tk-nsaid">抗炎</span>钙剂与维生素D</div><div class="desc">骨保护基础用药</div></a>
     </div>
     <div class="legend rv">
-      <span class="sw"><i class="s-bio"></i>生物制剂</span>
+      <span class="lg-tit">药物分类</span><span class="sw"><i class="s-bio"></i>生物制剂</span>
       <span class="sw"><i class="s-sml"></i>小分子靶向</span>
       <span class="sw"><i class="s-dmard"></i>传统DMARD</span>
       <span class="sw"><i class="s-ster"></i>糖皮质激素</span>
@@ -268,12 +267,12 @@
       <a class="qa rv" href="tools/drug_risk_assessment.html"><div class="name"><span class="tk tk-deci">决策</span>药物风险评估</div><div class="desc">免疫抑制剂风险</div></a>
       <a class="qa rv" href="tools/TMA.html"><div class="name"><span class="tk tk-ref">参考</span>TMA 血栓性微血管病</div><div class="desc">诊断与鉴别</div></a>
       <a class="qa rv" href="tools/SLE2K_original.html"><div class="name"><span class="tk tk-ref">参考</span>SLE2K 原版</div><div class="desc">SLICC损伤指数原版</div></a>
-    <div class="legend rv"><span class="sw"><i class="s-score"></i>评分</span><span class="sw"><i class="s-calc"></i>计算</span><span class="sw"><i class="s-deci"></i>决策</span><span class="sw"><i class="s-std"></i>标准</span><span class="sw"><i class="s-ref"></i>参考</span></div>
+    <div class="legend rv"><span class="lg-tit">工具类型</span><span class="sw"><i class="s-score"></i>评分</span><span class="sw"><i class="s-calc"></i>计算</span><span class="sw"><i class="s-deci"></i>决策</span><span class="sw"><i class="s-std"></i>标准</span><span class="sw"><i class="s-ref"></i>参考</span></div>
     </div>
   </div>
 
   <div id="cases" class="qgroup">
-    <div class="cat-label rv">病例学习 <span class="cnt">53例 + 9个索引页</span></div>
+    <div class="cat-label rv">病例学习 <span class="cnt">10组病例集 · 52例</span></div>
     <div class="qa-grid cases">
       <a class="qa rv" data-n="入口" href="cases/index.html"><div class="name">病例总索引</div><div class="desc">全部病例入口</div></a>
       <a class="qa rv" data-n="5例" href="cases/index_sJIA.html"><div class="name">sJIA病例集</div><div class="desc">5例典型/MAS/难治</div></a>
@@ -283,7 +282,7 @@
       <a class="qa rv" data-n="5例" href="cases/index_KD.html"><div class="name">KD病例集</div><div class="desc">5例川崎病</div></a>
       <a class="qa rv" data-n="5例" href="cases/index_AID.html"><div class="name">AID病例集</div><div class="desc">5例自身炎症</div></a>
       <a class="qa rv" data-n="5例" href="cases/index_IgAV.html"><div class="name">IgAV病例集</div><div class="desc">5例过敏性紫癜</div></a>
-      <a class="qa rv" data-n="5例" href="cases/index_ITP.html"><div class="name">ITP病例集</div><div class="desc">5例ITP</div></a>
+      <a class="qa rv" data-n="5例" href="cases/index_ITP.html"><div class="name">ITP病例集</div><div class="desc">5例急慢性/难治性</div></a>
       <a class="qa rv" data-n="5例" href="cases/index_PID.html"><div class="name">PID病例集</div><div class="desc">5例免疫缺陷</div></a>
       <a class="qa rv" data-n="5例" href="cases/index_Uveitis.html"><div class="name">Uveitis病例集</div><div class="desc">5例葡萄膜炎</div></a>
     </div>
@@ -333,7 +332,7 @@
     </div>
     <div class="tl-item rv">
       <span class="tl-date">2026-04-08</span>
-      <div class="tl-text"><b>MedWiki-Rheum 初始Ingest完成</b> — 13个疾病专题、16个药物页、基础工具集、20+临床病例</div>
+      <div class="tl-text"><b>MedWiki-Rheum 初始数据接入完成</b> — 13个疾病专题、16个药物页、基础工具集、20+临床病例</div>
     </div>
   </div>
 </div>
@@ -344,13 +343,13 @@
 <div class="msection" id="stats">
   <h2 class="msec-title rv">统计仪表盘<span class="sub">STATISTICS</span></h2>
   <div class="stats-grid">
-    <div class="stat rv"><div class="num" data-count="116">0</div><div class="lab">总HTML页面</div></div>
-    <div class="stat rv"><div class="num" data-count="13">0</div><div class="lab">疾病专题</div></div>
-    <div class="stat rv"><div class="num" data-count="22">0</div><div class="lab">药物页面</div></div>
-    <div class="stat rv"><div class="num" data-count="24">0</div><div class="lab">临床工具</div></div>
-    <div class="stat rv"><div class="num" data-count="53">0</div><div class="lab">病例学习</div></div>
-    <div class="stat rv"><div class="num" data-count="4">0</div><div class="lab">沟通模板</div></div>
-    <div class="stat rv"><div class="num" data-count="225">0</div><div class="lab">PMID引用已验证</div></div>
+    <div class="stat rv"><div class="num" data-count="116">116</div><div class="lab">总HTML页面</div></div>
+    <div class="stat rv"><div class="num" data-count="13">13</div><div class="lab">疾病专题</div></div>
+    <div class="stat rv"><div class="num" data-count="22">22</div><div class="lab">药物页面</div></div>
+    <div class="stat rv"><div class="num" data-count="24">24</div><div class="lab">临床工具</div></div>
+    <div class="stat rv"><div class="num" data-count="52">52</div><div class="lab">病例学习</div></div>
+    <div class="stat rv"><div class="num" data-count="4">4</div><div class="lab">沟通模板</div></div>
+    <div class="stat rv"><div class="num" data-count="225">225</div><div class="lab">PMID引用已验证</div></div>
     <div class="stat rv"><div class="num">PWA</div><div class="lab">离线可用</div></div>
   </div>
 </div>

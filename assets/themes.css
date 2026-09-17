@@ -24,14 +24,14 @@
   --nav-edge:#E8A33D;
   --nav-ink:#F2F7FC;
   --nav-pill-border:rgba(255,255,255,.62);
-  --nav-brand:#E8A33D;
+  --nav-brand:#F5BC66;
   --home-bg:#E8A33D; --home-ink:#12365F;
   --hero-a:#12365F; --hero-b:#1B4F8A; --hero-c:#2456A6;
   --hero-ink:#FFFFFF;
-  --hero-ink-2:#E8A33D;
+  --hero-ink-2:#F5BC66;
   --kicker-ink:rgba(255,255,255,.85); --kicker-border:rgba(255,255,255,.45);
-  --pill-bg:rgba(255,255,255,.09); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
-  --pill-label:#E8A33D;        /* 胶囊内标签：金on藏青 5.6:1 */
+  --pill-bg:rgba(255,255,255,.14); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
+  --pill-label:#F5BC66;        /* 胶囊内标签：亮金on藏青（评审实测原金3.0-3.4:1不达AA，提亮） */
   --wash:rgba(255,255,255,.12); /* 面板行hover */
   --stripe-1:#1B4F8A; --stripe-2:#7FA8CC; --stripe-3:#E8A33D;
   --mark:#E8A33D;               /* 浅底上的装饰笔色（///、菱形、时间点） */
@@ -119,9 +119,9 @@
   --home-bg:#D6F3F1; --home-ink:#0E4B47;
   --hero-a:#20A39E; --hero-b:#1A8580; --hero-c:#17918C;
   --hero-ink:#FFFFFF;
-  --hero-ink-2:#C9F2EE;
+  --hero-ink-2:#E0F7F4;
   --kicker-ink:rgba(255,255,255,.85); --kicker-border:rgba(255,255,255,.45);
-  --pill-bg:rgba(255,255,255,.09); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
+  --pill-bg:rgba(255,255,255,.14); --pill-border:rgba(255,255,255,.28); --pill-ink:rgba(255,255,255,.92);
   --pill-label:#DFF9F6;
   --wash:rgba(255,255,255,.14);
   --stripe-1:#20A39E; --stripe-2:#8ED0CD; --stripe-3:#C9EDEA;

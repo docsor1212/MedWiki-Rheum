@@ -86,7 +86,7 @@ body{
 }
 .mhero h1{font-size:30px; line-height:1.35; font-weight:800; letter-spacing:.01em;}
 .mhero h1 .en{display:block; font-size:15px; font-weight:600; color:var(--hero-ink-2); margin-top:6px; letter-spacing:.08em;}
-.mhero .lede{font-size:14.5px; color:var(--hero-ink-2); margin-top:6px; max-width:62em; opacity:.92;}
+.mhero .lede{font-size:14.5px; color:rgba(255,255,255,.88); margin-top:6px; max-width:62em;}
 
 
 
@@ -125,8 +125,8 @@ body{
 .hpanel a.row:hover .mono{background:var(--accent-bright); color:#fff;}
 .hpanel a.row .bd{flex:1; min-width:0; display:flex; flex-direction:column;}
 .hpanel a.row .nm{font-weight:700; font-size:11.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.hpanel a.row .sub{font-size:9.5px; opacity:.85; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.hpanel a.row .sub .score{color:var(--accent-bright); font-weight:800; opacity:1;}
+.hpanel a.row .sub{font-size:9.5px; opacity:1; color:var(--pill-ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.hpanel a.row .sub .score{color:var(--pill-label); font-weight:800; opacity:1;}
 .hpanel a.row.rec{background:var(--wash); box-shadow:inset 3px 0 0 var(--accent-bright);}
 .hpanel a.row.rec:hover{transform:translateX(2px);}
 .hpanel a.row.rec .mono{background:var(--accent-bright); color:var(--accent-deep);}
@@ -187,8 +187,14 @@ body{
   transition:transform .18s, box-shadow .18s, border-color .18s;
 }
 .cov:hover{transform:translateY(-3px); border-color:var(--mark); box-shadow:0 8px 22px rgba(var(--shadow),.14);}
-.cov .name{font-weight:800; font-size:15px; color:var(--accent-ink);}
+.cov .name{font-weight:800; font-size:15px; color:var(--accent-ink); text-wrap:balance;}
 .cov .cs{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+/* 大数字主视觉（评审：五卡同值100%无信息量，计数才是主数据） */
+.cov .big{
+  font-size:26px; font-weight:900; color:var(--accent-deep); line-height:1.15;
+  margin-top:6px; font-variant-numeric:tabular-nums; font-feature-settings:"tnum";
+}
+.cov .big .unit{font-size:12px; font-weight:700; color:var(--ink-soft); margin-left:3px;}
 /* 分段刻度条：全站唯一分段进度 */
 .cov .bar{display:flex; gap:3px; margin-top:10px;}
 .cov .bar i{flex:1; height:6px; border-radius:2px; background:var(--bg);}
@@ -197,7 +203,7 @@ body{
 
 /* ---------- 快速入口卡网格 ---------- */
 .cat-label{
-  font-size:14.5px; font-weight:800; color:var(--accent);
+  font-size:14.5px; font-weight:800; color:var(--accent-ink);
   margin:22px 0 10px; display:flex; align-items:center; gap:8px;
 }
 .cat-label::before{content:''; width:8px; height:8px; background:var(--mark); transform:rotate(45deg); flex:none;}
@@ -209,7 +215,7 @@ body{
   padding:11px 13px; transition:transform .15s, box-shadow .15s, border-color .15s;
 }
 .qa:hover{transform:translateY(-2px); border-color:var(--accent); box-shadow:0 5px 14px rgba(var(--shadow),.13);}
-.qa .name{font-weight:700; font-size:13.5px; line-height:1.5;}
+.qa .name{font-weight:700; font-size:13.5px; line-height:1.5; text-wrap:balance;}
 .qa .desc{font-size:12px; color:var(--ink-soft); line-height:1.55; margin-top:2px;}
 /* ---------- 快速入口：分组面板（每组一块浅色容器，白卡浮起，终结白卡平铺） ---------- */
 .qgroup{
@@ -230,7 +236,7 @@ body{
 }
 /* 工具类型签：五类色沿用全站分类色板（同药物组，配图例） */
 .qa .tk{
-  display:inline-block; font-size:9px; font-weight:700; color:var(--ink-soft);
+  display:inline-block; font-size:10px; font-weight:600; color:var(--ink);
   border-radius:3px; padding:0 6px 0 8px; margin-right:7px; line-height:1.7; vertical-align:1px;
 }
 .tk-score{background:var(--cat-bio-bg);  box-shadow:inset 3px 0 0 var(--cat-bio);}
@@ -238,8 +244,14 @@ body{
 .tk-deci {background:var(--cat-ster-bg); box-shadow:inset 3px 0 0 var(--cat-ster);}
 .tk-std  {background:var(--cat-dmard-bg);box-shadow:inset 3px 0 0 var(--cat-dmard);}
 .tk-ref  {background:var(--cat-nsaid-bg);box-shadow:inset 3px 0 0 var(--cat-nsaid);}
-/* 旗舰工具：金星+主题色描边（借视频卡荐标思路） */
-.qa.hot{border-color:var(--accent);}
+/* 药物类别签（WCAG 1.4.1：色彩信息加文字冗余，与工具签同一形态体系） */
+.tk-bio  {background:var(--cat-bio-bg);  box-shadow:inset 3px 0 0 var(--cat-bio);}
+.tk-sml  {background:var(--cat-sml-bg);  box-shadow:inset 3px 0 0 var(--cat-sml);}
+.tk-dmard{background:var(--cat-dmard-bg);box-shadow:inset 3px 0 0 var(--cat-dmard);}
+.tk-ster {background:var(--cat-ster-bg); box-shadow:inset 3px 0 0 var(--cat-ster);}
+.tk-nsaid{background:var(--cat-nsaid-bg);box-shadow:inset 3px 0 0 var(--cat-nsaid);}
+/* 旗舰工具：金星+主题色描边+浅底（借视频卡荐标思路，三卡同貌） */
+.qa.hot{border-color:var(--accent); background:var(--accent-soft);}
 .qa.hot .name::before{content:'★ '; color:var(--mark);}
 /* 病例夹：顶部插页签（档签数=例数） */
 .qa-grid.cases{gap:16px 10px;}
@@ -256,6 +268,7 @@ body{
 .qa-grid.comm .qa{background:var(--yellow-bg,#FAF3DC);}
 @media (max-width:680px){
   .qgroup{padding:12px;}
+  .chip{padding:9px 16px;}
   .qa-grid.evid .qa{display:block;}
   .qa-grid.evid .qa .desc{margin-top:2px;}
 }
@@ -277,6 +290,7 @@ body{
 .legend .sw i.s-ster{background:var(--cat-ster);}
 .legend .sw i.s-nsaid{background:var(--cat-nsaid);}
 .legend{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; font-size:12px; color:var(--ink-soft);}
+.legend .lg-tit{color:var(--ink-faint); font-weight:800; margin-right:2px;}
 .legend .sw{display:inline-flex; align-items:center; gap:5px;}
 .legend .sw i{width:16px; height:4px; border-radius:2px; display:inline-block;}
 
@@ -297,6 +311,12 @@ body{
   .feature::before{animation:stripeFlow 5s linear infinite;}
 }
 @keyframes stripeFlow{to{background-position:55px 0;}}
+/* 精选卡特权：右上角幽灵大序号（全站唯一） */
+.feature::after{
+  content:'01'; position:absolute; right:20px; top:14px;
+  font-size:46px; font-weight:900; line-height:1; letter-spacing:.02em;
+  color:var(--accent-soft); pointer-events:none; font-variant-numeric:tabular-nums;
+}
 .feature .fbody{display:flex; gap:18px; padding:18px 20px 16px; align-items:flex-start; flex-wrap:wrap;}
 .feature .fmain{flex:1 1 340px;}
 .feature .ftag{
@@ -428,10 +448,10 @@ body{
 .theme-dots .dot.honey{background:linear-gradient(135deg,#FFA69E 50%,#F2C94C 50%);}
 .theme-dots .dot.teal{background:linear-gradient(135deg,#20A39E 50%,#8ED0CD 50%);}
 
-/* ---------- 入场动效（尊重 reduced-motion） ---------- */
+/* ---------- 入场动效（尊重 reduced-motion；.js由内联脚本添加——无JS时内容直出不隐藏） ---------- */
 @media (prefers-reduced-motion: no-preference){
-  .rv{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease;}
-  .rv.on{opacity:1; transform:none;}
+  .js .rv{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease;}
+  .js .rv.on{opacity:1; transform:none;}
 }
 
 /* ---------- 打印 ---------- */
@@ -467,13 +487,9 @@ body{
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .vcard:hover{transform:translateY(-4px); box-shadow:0 14px 34px rgba(var(--shadow),.18);}
-.vcard::before{
-  content:''; position:absolute; top:0; left:0; right:0; height:7px; z-index:1;
-  background:repeating-linear-gradient(135deg,
-    var(--stripe-1) 0 8px, transparent 8px 13px,
-    var(--stripe-2) 13px 21px, transparent 21px 26px,
-    var(--stripe-3) 26px 34px, transparent 34px 39px);
-}
+/* 视频卡不重复斜纹母题（斜纹=精选卡专属），rec卡用金左条 */
+.vcard::before{content:none;}
+.vcard.rec{border-left:4px solid var(--mark);}
 .vcard .vbody{display:flex; gap:20px; padding:18px; flex-wrap:wrap; align-items:center;}
 .vcard .vcover{position:relative; flex:0 0 320px; max-width:100%; border-radius:8px; overflow:hidden;}
 .vcard .vcover img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
@@ -502,6 +518,11 @@ body{
 }
 .vcard .vtitle{font-size:16.5px; font-weight:800; color:var(--accent-ink); line-height:1.5; margin-top:8px;}
 .vcard .vdesc{font-size:12.5px; color:var(--ink-soft); line-height:1.7; margin-top:6px;}
+.vcard .vgo{
+  display:inline-block; margin-top:12px; font-size:12px; font-weight:800;
+  color:var(--accent-deep); background:var(--accent-soft);
+  border-radius:6px; padding:5px 14px;
+}
 .vcard .vstats{
   display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;
   font-size:12px; color:var(--ink-faint); font-variant-numeric:tabular-nums;
