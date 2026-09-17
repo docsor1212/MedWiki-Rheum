@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="MedWiki">
 <title>MedWiki-Rheum 儿童风湿免疫临床知识库</title>
 <link rel="stylesheet" href="assets/themes.css?v=5">
-<link rel="stylesheet" href="assets/medwiki.css?v=11">
+<link rel="stylesheet" href="assets/medwiki.css?v=12">
 </head>
 <body>
 
@@ -40,63 +40,45 @@
           <span class="en">Pediatric Rheumatology Clinical Knowledge Base</span>
         </h1>
         <p class="lede">疾病专题 · 药物手册 · 临床工具 · 循证病例 —— 面向儿童风湿免疫临床的离线可用知识库，全部关键引用经 PubMed 逐条验证。</p>
-        <div class="meta">
-          <span><b>版本</b> v1.2</span>
-          <span><b>页面</b> 116+</span>
-          <span><b>引用验证</b> 225条 · 正确率100%</span>
-          <span><b>离线可用</b> PWA</span>
-        </div>
+
+    <div class="searchbox" id="mw-search">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" placeholder="搜索疾病 / 药物 / 工具…如：川崎病、JADAS、IVIG" autocomplete="off">
+      <div class="s-results" hidden></div>
+    </div>
+    <div class="chips">
+      <a class="chip" href="topics/KD.html">川崎病 KD</a>
+      <a class="chip" href="tools/KD_CA_Zscore.html">冠脉Z值计算器</a>
+      <a class="chip" href="tools/MAS_HLH_screening.html">MAS/HLH筛查</a>
+      <a class="chip" href="evidence/index.html">循证病例库</a>
+    </div>
       </div>
       <aside class="hpanel" aria-label="我们发布的 Skills">
         <div class="ph"><b>我们的 Skills</b><span class="cnt">6个 · skillhub.cn</span><a href="https://skillhub.cn/user/user_481397b5" target="_blank" rel="noopener">全部 ↗</a></div>
-        <div class="rows">
+                <div class="rows">
           <a class="row rec" href="https://skillhub.cn/skills/indiv-sorsor/academic-figures" target="_blank" rel="noopener">
             <span class="mono">AF</span>
-            <span class="body">
-              <span class="r1"><span class="nm">Academic Figures</span><span class="score">★ 4.7</span></span>
-              <span class="r2">论文配图 · 22种图表<span class="chip-rec">强烈推荐</span></span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">Academic Figures</span><span class="sub"><span class="score">★4.7</span> 论文配图·22种图表<span class="chip-rec">荐</span></span></span>
           </a>
           <a class="row" href="https://skillhub.cn/skills/indiv-sorsor/cite-holmes" target="_blank" rel="noopener">
             <span class="mono">CH</span>
-            <span class="body">
-              <span class="r1"><span class="nm">Cite Holmes</span><span class="score">★ 4.8</span></span>
-              <span class="r2">深度调研 × AI幻觉检测</span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">Cite Holmes</span><span class="sub"><span class="score">★4.8</span> 深度调研×幻觉检测</span></span>
           </a>
           <a class="row" href="https://skillhub.cn/skills/indiv-sorsor/academic-figures-pro" target="_blank" rel="noopener">
             <span class="mono">AP</span>
-            <span class="body">
-              <span class="r1"><span class="nm">Academic Figures Pro</span><span class="score">★ 4.7</span></span>
-              <span class="r2">云端渲染 · 免安装 · 森林图/KM/ROC直接出图</span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">Academic Figures Pro</span><span class="sub"><span class="score">★4.7</span> 云端渲染·免安装</span></span>
           </a>
           <a class="row" href="https://skillhub.cn/skills/indiv-sorsor/pubmed-verifier" target="_blank" rel="noopener">
             <span class="mono">PV</span>
-            <span class="body">
-              <span class="r1"><span class="nm">PubMed Verifier</span><span class="score">★ 4.4</span></span>
-              <span class="r2">PMID批量验证 · 识破AI编造文献</span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">PubMed Verifier</span><span class="sub"><span class="score">★4.4</span> PMID批量验证</span></span>
           </a>
           <a class="row" href="https://skillhub.cn/skills/indiv-sorsor/paper-polisher-pro" target="_blank" rel="noopener">
             <span class="mono">PP</span>
-            <span class="body">
-              <span class="r1"><span class="nm">Paper Polisher Pro</span><span class="score">★ 4.5</span></span>
-              <span class="r2">中文AI检测 · 四层去AI化 · 润色降重</span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">Paper Polisher Pro</span><span class="sub"><span class="score">★4.5</span> 检测·去AI化·降重</span></span>
           </a>
           <a class="row" href="https://skillhub.cn/skills/indiv-sorsor/cn-med-oa" target="_blank" rel="noopener">
             <span class="mono">OA</span>
-            <span class="body">
-              <span class="r1"><span class="nm">CN-Med-OA</span><span class="score">★ 4.8</span></span>
-              <span class="r2">维普OA + 中华医学期刊库 · 免费PDF</span>
-            </span>
-            <span class="arr">↗</span>
+            <span class="bd"><span class="nm">CN-Med-OA</span><span class="sub"><span class="score">★4.8</span> 中文文献免费PDF</span></span>
           </a>
         </div>
       </aside>
@@ -410,7 +392,7 @@
 </script>
 <script src="assets/gsap.min.js"></script>
 <script src="assets/ScrollTrigger.min.js"></script>
-<script src="assets/site-anim.js?v=5"></script>
+<script src="assets/site-anim.js?v=6"></script>
 <script src="assets/qrcode.min.js"></script>
 <script src="assets/share.js?v=3" defer></script>
 <script>
@@ -420,5 +402,6 @@ if("serviceWorker" in navigator){
   if(window.caches && caches.keys){ caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }); }
 }
 </script>
+<script src="assets/search.js?v=1"></script>
 </body>
 </html>
