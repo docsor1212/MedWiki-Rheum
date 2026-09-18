@@ -1,0 +1,150 @@
+/* ============================================================
+   MedWiki-Rheum 内容页组件层 content.css v1
+   依赖 themes.css(v6) + medwiki.css(v26)。全部组件只消费token。
+   兼容别名：旧内容页内联样式引用的旧变量名在此映射到新token。
+   ============================================================ */
+:where(:root){
+  --text:var(--ink,#22303F);
+  --text2:var(--ink-soft,#5A6B7C);
+  --text3:var(--ink-faint,#93A2B1);
+  --accent-bg:var(--accent-soft,#DCE8F4);
+}
+
+/* ---------- 页容器 ---------- */
+.cw-wrap{max-width:1080px;margin:16px auto 0;padding:0 20px 8px;}
+
+/* ---------- 面包屑 ---------- */
+.cw-crumb{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-faint);margin:14px 0 10px;}
+.cw-crumb a{color:var(--link);text-decoration:none;}
+.cw-crumb a:hover{text-decoration:underline;}
+.cw-crumb .sep{color:var(--ink-faint);opacity:.7;}
+.cw-crumb .here{color:var(--ink);font-weight:600;}
+
+/* ---------- 页头卡（v24卡片解剖） ---------- */
+.cw-head{
+  position:relative;background:var(--surface);border:1px solid var(--border);
+  border-top:3px solid var(--accent);border-radius:14px;
+  padding:20px 24px 16px;box-shadow:0 2px 10px rgba(var(--shadow),.07);
+  display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+}
+.cw-head h1{
+  font-size:23px;font-weight:800;color:var(--accent-ink);line-height:1.35;
+  display:flex;align-items:center;gap:2px;
+}
+.cw-head h1::before{
+  content:'';display:inline-block;width:6px;height:20px;margin-right:13px;
+  background:var(--accent);transform:skewX(-18deg);
+  box-shadow:9px 0 0 var(--accent);flex:none;
+}
+.cw-head .cw-sub{font-size:13.5px;color:var(--ink-soft);margin-top:6px;line-height:1.7;}
+.cw-head .cw-meta{
+  flex:none;text-align:right;font-size:12px;color:var(--ink-faint);line-height:1.8;
+  border-left:1px solid var(--border);padding-left:18px;
+}
+@media (max-width:680px){
+  .cw-head{padding:16px 16px 12px;}
+  .cw-head h1{font-size:19px;}
+  .cw-head h1::before{height:16px;}
+  .cw-head .cw-meta{text-align:left;border-left:none;padding-left:0;border-top:1px dashed var(--border);padding-top:8px;width:100%;}
+}
+
+/* ---------- 正文区 ---------- */
+.cw-body{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:8px 28px 24px;margin-top:16px;box-shadow:0 2px 10px rgba(var(--shadow),.05);}
+.cw-body>h2.sh:first-child{margin-top:16px;}
+@media (max-width:680px){ .cw-body{padding:2px 14px 12px;} }
+
+/* ---------- 小节标题（v24 ╲╲ 语言） ---------- */
+.sh{
+  display:flex;align-items:center;gap:9px;flex-wrap:nowrap;
+  font-size:17px;font-weight:800;color:var(--accent-ink);
+  margin:30px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--accent-soft);
+}
+.cw-body h2.sh:first-child{margin-top:16px;}
+.sh::before{
+  content:'';width:5px;height:15px;background:var(--accent);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent);flex:none;
+  margin-right:9px;
+}
+/* 色彩纪律v2：节标题不再分色（用户裁定 2026-09-18） */
+.sh.red,.sh.green,.sh.yellow{color:var(--accent-ink);border-bottom-color:var(--accent-soft);}
+
+/* ---------- 表格 ---------- */
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+.cw-body tr:nth-child(even) td{background:var(--surface-2);}
+th{
+  background:var(--accent-soft);color:var(--accent-ink);font-weight:700;text-align:left;
+  padding:7px 10px;border-bottom:2px solid var(--accent);font-size:12.5px;white-space:nowrap;
+}
+th.red-hd,th.green-hd,th.yellow-hd{background:var(--accent-soft);color:var(--accent-ink);border-bottom-color:var(--accent);}
+td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.75;}
+.cw-body tr:hover td{background:var(--accent-soft);}
+
+tr.hl-green td,tr.hl-red td,tr.hl-yellow td{background:var(--surface-2);}
+
+/* ---------- 强调色与标签 ---------- */
+.b{font-weight:700;}
+.c-a,.c-r,.c-g,.c-y{color:inherit;}
+.tag{display:inline-block;padding:0 6px;border-radius:4px;font-size:11px;font-weight:700;line-height:1.65;}
+.t-g,.t-r,.t-y,.t-a{background:var(--accent-soft);color:var(--accent-ink);}
+
+/* ---------- 警示框 / 诊疗路径 / 步骤 / 注记 ---------- */
+.alert{
+  background:var(--red-bg);border-left:3px solid var(--red);
+  padding:8px 12px;border-radius:0 10px 10px 0;font-size:12.5px;margin-top:8px;line-height:1.75;
+}
+.alert b{color:var(--accent-ink);}
+.alert ul{margin-left:14px;}
+.alert li{margin:2px 0;}
+.path{
+  background:var(--surface-2);border:1px solid var(--border);border-radius:10px;
+  padding:8px 12px;margin-top:8px;font-size:12.5px;line-height:1.8;
+}
+.path .node{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:2px 9px;margin:2px;font-size:12px;}
+.path .arr{color:var(--mark);font-weight:800;}
+.steps{display:flex;gap:10px;margin:8px 0;counter-reset:stp;}
+.stp .stp-label::before{counter-increment:stp;content:'0' counter(stp) '  ';color:var(--mark);letter-spacing:.08em;}
+.stp{flex:1;background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:10px;padding:9px 12px;font-size:12.5px;line-height:1.7;}
+/* 递进层级由金色序号01/02/03表达，不再用色相（美学专家意见+用户色彩纪律） */
+.stp-label{font-weight:800;font-size:11px;text-transform:uppercase;margin-bottom:3px;letter-spacing:.05em;color:var(--accent-ink);}
+.note{font-size:11.5px;color:var(--ink-soft);margin-top:5px;padding-left:9px;border-left:2px solid var(--mark);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;align-items:start;}
+.g2>div{min-width:0;}
+@media (max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
+
+/* ---------- 相关推荐条（v24小卡） ---------- */
+.cw-rel{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px;}
+.cw-rel a{
+  display:block;text-decoration:none;color:inherit;
+  background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent-bright);
+  border-radius:10px;padding:10px 12px;
+  transition:transform .15s, box-shadow .15s;
+}
+.cw-rel a:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(var(--shadow),.13);}
+.cw-rel .t{font-weight:700;font-size:13px;color:var(--accent-ink);}
+.cw-rel .d{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------- 参考文献 ---------- */
+.cw-refs{font-size:12px;color:var(--ink-soft);line-height:1.8;}
+.cw-refs ol{padding-left:20px;}
+.cw-refs li{margin:4px 0;}
+
+/* ---------- 锚点导航条（v3） ---------- */
+.cw-anchor{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 16px;}
+.cw-anchor a{
+  font-size:12px;font-weight:700;color:var(--link);text-decoration:none;
+  border:1px solid var(--border);border-radius:999px;padding:3px 13px;background:var(--surface);
+  transition:border-color .15s, color .15s;
+}
+.cw-anchor a:hover{border-color:var(--accent);color:var(--accent);}
+.tbl-wrap{overflow-x:auto;}
+
+/* ---------- 移动端 ---------- */
+@media (max-width:640px){
+  .sh{display:block;}
+  .sh::before{display:inline-block;margin-right:9px;transform:skewX(-18deg);}
+  .cw-body table{min-width:560px;}
+}
+/* 内容页分享球常态减淡（hover恢复），降低对正文的视觉干扰 */
+.mw-share-fab{opacity:.62;}
+.mw-share-fab:hover,.mw-share-fab:focus{opacity:1;}

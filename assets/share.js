@@ -133,7 +133,11 @@
       if (savedPos && typeof savedPos.x === 'number' && typeof savedPos.y === 'number'
           && savedPos.x >= 0 && savedPos.y >= 0
           && savedPos.x < window.innerWidth && savedPos.y < window.innerHeight) {
-        placeFab(savedPos.x, savedPos.y);
+        // 横向钳制到左右边沟（永不遮正文），纵向按记忆保留
+        var half = window.innerWidth / 2;
+        var gx = (savedPos.x < half) ? Math.max(8, Math.min(savedPos.x, 64))
+                                     : Math.max(window.innerWidth - 64, Math.min(savedPos.x, window.innerWidth - 54));
+        placeFab(gx, savedPos.y);
       }
     } catch(e){}
     function placePop(){

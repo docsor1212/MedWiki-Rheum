@@ -1,250 +1,187 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/topics/KD.html">
+<html lang="zh-CN" data-theme="glm" data-share-url="https://docsor.cn/topics/KD.html">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KD — 川崎病</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-
-:root { --bg:#F5F6F8; --surface:#fff; --text:#22303F; --text2:#5A6B7C; --text3:#93A2B1; --accent:#1B4F8A; --green:#4a9e3f; --green-bg:#e2f3dd; --red:#d05040; --red-bg:#fce5e1; --yellow:#b8891a; --yellow-bg:#faf3dc; --orange-bg:#ffe8d6; --accent-bg:#DCE8F4; --border:#DDE5EC; --radius:10px; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); line-height:1.4; font-size:12.5px; }
-.wrap { max-width:980px; margin:10px auto; background:var(--surface); border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,.04); overflow:hidden; }
-.header { background:var(--accent); color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:flex-start; }
-.header h1 { font-size:1.3rem; font-weight:700; }
-.header .sub { font-size:0.8rem; opacity:0.85; margin-top:1px; }
-.header .meta { text-align:right; font-size:0.75rem; opacity:0.9; line-height:1.4; }
-.body { padding:10px 20px 14px; }
-.sh { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700; color:#fff; background:#1B4F8A; padding:4px 10px; border-radius:5px; margin:8px 0 4px; }
-.sh.red { background:var(--red); }
-.sh.green { background:var(--green); }
-.sh.yellow { background:var(--yellow); }
-.g2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th { background:#DCE8F4; color:#1B4F8A; font-weight:600; text-align:left; padding:3.5px 7px; border-bottom:1.5px solid var(--border); font-size:11.5px; white-space:nowrap; }
-th.red-hd { background:#fce5e1; color:var(--red); }
-th.green-hd { background:#e2f3dd; color:var(--green); }
-th.yellow-hd { background:#faf3dc; color:var(--yellow); }
-td { padding:2.5px 7px; border-bottom:1px solid #EDF1F5; vertical-align:top; }
-tr:hover td { background:#F5F6F8; }
-tr.hl-green td { background:#e2f3dd; }
-tr.hl-red td { background:#fce5e1; }
-tr.hl-yellow td { background:#faf3dc; }
-.b { font-weight:700; }
-.c-a { color:var(--accent); }
-.c-r { color:var(--red); }
-.c-g { color:var(--green); }
-.c-y { color:var(--yellow); }
-.tag { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:600; line-height:1.65; }
-.t-g { background:var(--green-bg); color:var(--green); }
-.t-r { background:var(--red-bg); color:var(--red); }
-.t-y { background:var(--yellow-bg); color:var(--yellow); }
-.t-a { background:var(--accent-bg); color:#1B4F8A; }
-.alert { background:var(--red-bg); border-left:3px solid var(--red); padding:5px 10px; border-radius:0 var(--radius) var(--radius) 0; font-size:11.5px; margin-top:6px; }
-.alert b { color:var(--red); }
-.alert ul { margin-left:14px; }
-.alert li { margin:1px 0; }
-.path { background:var(--yellow-bg); border:1px solid #e8d5a0; border-radius:6px; padding:5px 10px; margin-top:5px; font-size:11.5px; }
-.path .node { display:inline-block; background:#fff; border:1px solid #d4b85a; border-radius:4px; padding:2px 7px; margin:2px 2px; font-size:11px; }
-.path .arr { color:var(--yellow); font-weight:700; }
-.steps { display:flex; gap:6px; margin:4px 0; }
-.stp { flex:1; border-radius:6px; padding:6px 9px; font-size:11.5px; }
-.stp.s1 { background:#DCE8F4; border:1.5px solid #1B4F8A; }
-.stp.s2 { background:#fce5e1; border:1.5px solid var(--red); }
-.stp.s3 { background:#e2f3dd; border:1.5px solid var(--green); }
-.stp-label { font-weight:700; font-size:10.5px; text-transform:uppercase; margin-bottom:2px; }
-.stp.s1 .stp-label { color:#1B4F8A; }
-.stp.s2 .stp-label { color:var(--red); }
-.stp.s3 .stp-label { color:var(--green); }
-.note { font-size:11px; color:var(--text2); margin-top:4px; padding-left:8px; border-left:2px solid var(--accent); }
-.footer { text-align:center; font-size:9.5px; color:var(--text3); padding:6px 20px 10px; border-top:1px solid var(--border); }
-@media(max-width:768px){ .g2{grid-template-columns:1fr;} .steps{flex-direction:column;} }
-
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1B4F8A;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
-.nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
-</style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#1B4F8A">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+<title>川崎病 KD — 儿童风湿免疫临床知识库</title>
+<meta name="description" content="川崎病专题：诊断标准、急性期治疗、IVIG抵抗、冠脉并发症管理——面向儿科风湿免疫临床的循证知识库">
+<meta name="theme-color" content="#12365F">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/themes.css?v=6">
+<link rel="stylesheet" href="../assets/medwiki.css?v=26">
+<link rel="stylesheet" href="../assets/content.css?v=4">
 </head>
 <body>
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">KD · 川崎病</span></div>
-<div class="wrap">
-
-<div class="header">
-  <div>
-    <h1>KD — 川崎病</h1>
-    <div class="sub">发热≥5天(抗生素无效) + ≥4项临床特征 · <span class="c-r b">10天内IVIG!</span> · 冠脉损害风险</div>
+<nav class="mnav" aria-label="站点导航">
+  <div class="mnav-in">
+  <a class="home" href="../index.html">⌂ MedWiki 首页</a>
+  <a class="mlink" href="../index.html#topics">疾病专题</a>
+  <a class="mlink" href="../index.html#drugs">药物手册</a>
+  <a class="mlink" href="../index.html#tools">临床工具</a>
+  <a class="mlink" href="../index.html#cases">病例学习</a>
+  <a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+  <a class="mlink" href="../index.html#skills">Skills</a>
+  <a class="mlink" href="https://space.bilibili.com/432233902" target="_blank" rel="noopener">B站</a>
+  <a class="mlink" href="https://github.com/docsor1212" target="_blank" rel="noopener">GitHub</a>
+  <span class="brand">MedWiki-Rheum</span>
   </div>
-  <div class="meta">
-    日本300/10万/年，中国50–100/10万<br>
-    高峰1–2岁，男:女≈1.5:1<br>
-    未治疗CAL ~25% → IVIG &lt;5%
+</nav>
+
+<div class="cw-wrap">
+  <div class="cw-crumb">
+    <a href="../index.html">首页</a><span class="sep">‹</span>
+    <a href="../index.html#topics">疾病专题</a><span class="sep">‹</span>
+    <span class="here">川崎病</span>
   </div>
-</div>
 
-<div class="body">
+  <div class="cw-head">
+    <div>
+      <h1>川崎病（KD）</h1>
+      <div class="cw-sub">发热≥5天(抗生素无效) + ≥4项临床特征 · <span class="c-r b">10天内IVIG!</span> · 冠脉损害风险</div>
+    </div>
+    <div class="cw-meta">
+      发病率：日本300/10万/年，中国50–100/10万<br>
+      高峰1–2岁，男:女≈1.5:1<br>
+      未治疗冠脉损害(CAL) ~25% → IVIG后 &lt;5%
+    </div>
+  </div>
 
-<!-- 经典诊断标准 -->
-<div class="sh">🏷️ 经典诊断标准（AHA 2017 [PMID: 28356445]）</div>
+  <div class="cw-body"><div class="cw-anchor"><a href="#sec-dx">诊断</a><a href="#sec-typing">分型</a><a href="#sec-rx">治疗</a><a href="#sec-alert">警示</a><a href="#sec-score">评分</a><a href="#sec-cad">冠脉</a><a href="#sec-fu">随访</a><a href="#sec-prognosis">预后</a><a href="#sec-refs">文献</a></div>
+<h2 class="sh" id="sec-dx">经典诊断标准（AHA 2017）</h2>
 <div class="alert" style="margin-top:4px;margin-bottom:6px;"><b>发热≥5天（抗生素无效）+ 以下≥4项</b></div>
-<table>
+<div class="tbl-wrap"><table>
 <tr><th style="width:5%">#</th><th style="width:30%">特征</th><th>要点</th></tr>
-<tr class="hl-red"><td class="c-r b">1</td><td class="c-r b">双侧结膜炎</td><td>非渗出性，发热后很快出现</td></tr>
-<tr class="hl-red"><td class="c-r b">2</td><td class="c-r b">口腔黏膜改变</td><td><span class="c-r b">草莓舌</span> + 唇皲裂 + 咽充血</td></tr>
-<tr class="hl-yellow"><td class="c-y b">3</td><td class="c-y b">四肢改变</td><td>急性期手足<span class="c-y b">红斑水肿</span> → 恢复期<span class="c-y b">指趾端脱皮</span></td></tr>
+<tr><td class="b">1</td><td class="b">双侧结膜炎</td><td>非渗出性，发热后很快出现</td></tr>
+<tr><td class="b">2</td><td class="b">口腔黏膜改变</td><td><span class="b">草莓舌</span> + 唇皲裂 + 咽充血</td></tr>
+<tr><td class="b">3</td><td class="b">四肢改变</td><td>急性期手足<span class="b">红斑水肿</span> → 恢复期<span class="b">指趾端脱皮</span></td></tr>
 <tr><td>4</td><td>多形性皮疹</td><td>躯干/四肢弥漫性</td></tr>
 <tr><td>5</td><td>颈部淋巴结肿大</td><td>≥1.5cm，通常单侧</td></tr>
-</table>
+</table></div>
 
-<!-- 分型 -->
+
 <div class="g2">
 
 <div>
-<div class="sh yellow">📊 临床分型</div>
-<table>
+<h2 class="sh" id="sec-typing">临床分型</h2>
+<div class="tbl-wrap"><table>
 <tr><th class="yellow-hd">类型</th><th class="yellow-hd">特征</th></tr>
-<tr><td>完全性KD</td><td>满足标准，占<span class="c-a b">80%</span></td></tr>
-<tr class="hl-yellow"><td class="c-y b">不完全性KD</td><td class="c-y">≥5天发热+2–3项+实验室/超声支持</td></tr>
-<tr class="hl-red"><td class="c-r b">KDSS</td><td class="c-r">KD+血流动力学不稳定</td></tr>
-<tr><td>IVIG无反应</td><td>36h后仍发热，<span class="c-r">CAL风险↑</span></td></tr>
-</table>
+<tr><td>完全性KD</td><td>满足标准，占<span class="b">80%</span></td></tr>
+<tr><td class="b">不完全性KD</td><td class="">≥5天发热+2–3项+实验室/超声支持</td></tr>
+<tr><td class="b">KDSS</td><td class="">KD+血流动力学不稳定</td></tr>
+<tr><td>IVIG无反应</td><td>36h后仍发热，<span class="">CAL风险↑</span></td></tr>
+</table></div>
 </div>
 
 <div>
-<div class="sh green">🔍 iKD支持性实验室指标</div>
-<table>
+<h2 class="sh" id="sec-labs">iKD支持性实验室指标</h2>
+<div class="tbl-wrap"><table>
 <tr><th class="green-hd">指标</th><th class="green-hd">阈值</th></tr>
-<tr><td><span class="c-r b">CRP</span></td><td>≥3.0mg/dL</td></tr>
-<tr><td><span class="c-r b">ESR</span></td><td>≥40mm/h</td></tr>
+<tr><td><span class="b">CRP</span></td><td>≥3.0mg/dL</td></tr>
+<tr><td><span class="b">ESR</span></td><td>≥40mm/h</td></tr>
 <tr><td>白蛋白</td><td>≤3.0g/dL</td></tr>
 <tr><td>贫血</td><td>年龄校正</td></tr>
 <tr><td>PLT↑</td><td>≥450×10⁹/L（2–3w）</td></tr>
 <tr><td>ALT↑</td><td>—</td></tr>
-<tr><td><span class="c-a b">⭐ 超声</span></td><td class="c-a b">冠脉Z-score↑</td></tr>
-</table>
+<tr><td><span class="b"> 超声</span></td><td class="b">冠脉Z-score↑</td></tr>
+</table></div>
 </div>
 
 </div>
 
-<!-- 治疗 -->
-<div class="sh">💊 治疗阶梯</div>
+
+<h2 class="sh" id="sec-rx">治疗阶梯</h2>
 <div class="steps">
   <div class="stp s1">
     <div class="stp-label">标准方案（10天内）</div>
-    <span class="c-a b">IVIG</span> 2g/kg 单次 10–12h<br>
-    <span class="c-a b">ASA</span> 80–100mg/kg/d 分4次<br>
-    热退48h → ASA减至<span class="c-g b">3–5mg/kg/d</span><br>
-    <span class="tag t-a">CAL: 25% → &lt;5%</span>
+    <span class="b">IVIG</span> 2g/kg 单次 10–12h<br>
+    <span class="b">ASA</span> 80–100mg/kg/d 分4次<br>
+    热退48h → ASA减至<span class="b">3–5mg/kg/d</span><br>
+    <span class="tag">CAL: 25% → &lt;5%</span>
   </div>
   <div class="stp s2">
-    <div class="stp-label">IVIG无反应（36h仍热）</div>
-    <span class="c-r b">第2次IVIG</span> 2g/kg<br>
-    或 <span class="c-r b">IVMP</span> 20–30mg/kg/d×3d<br>
-    或 <span class="c-y b">英夫利西单抗</span> 5mg/kg IV<br>
-    <span class="tag t-r">RAISE方案</span>
+    <div class="stp-label">IVIG无反应（36h仍发热）</div>
+    <span class="b">第2次IVIG</span> 2g/kg<br>
+    或 <span class="b">IVMP</span> 20–30mg/kg/d×3d<br>
+    或 <span class="b">英夫利西单抗</span> 5mg/kg IV<br>
+    <span class="tag">RAISE方案</span>
   </div>
   <div class="stp s3">
     <div class="stp-label">高危/KDSS</div>
-    起始<span class="c-g b">IVIG+激素联合</span><br>
+    起始<span class="b">IVIG+激素联合</span><br>
     液体复苏+正性肌力药<br>
-    <span class="c-y b">CsA</span> 4–6mg/kg/d（三线）<br>
-    <span class="tag t-y">Kobayashi评分 [PMID待核实]（日本）</span>
+    <span class="b">CsA</span> 4–6mg/kg/d（三线）<br>
+   
   </div>
 </div>
 
-<!-- 冠脉管理 -->
-<div class="sh red">❤️ 冠脉受累分级管理</div>
-<table>
-<tr><th class="red-hd">分级</th><th class="red-hd">定义</th><th class="red-hd">抗栓方案</th><th class="red-hd">随访</th></tr>
-<tr><td>无CAL</td><td>—</td><td>ASA 3–5mg/kg/d ×6–8w</td><td>超声6–8w后停药</td></tr>
-<tr class="hl-yellow"><td>轻度扩张</td><td>Z 2–2.5</td><td>ASA</td><td>q6–8w超声</td></tr>
-<tr class="hl-yellow"><td class="c-y b">小动脉瘤</td><td>&lt;5mm, Z&gt;2.5</td><td>ASA + <span class="c-y b">氯吡格雷</span> 0.2–1mg/kg/d</td><td>q1–3m超声</td></tr>
-<tr class="hl-red"><td class="c-r b">中动脉瘤</td><td>5–8mm</td><td>ASA + <span class="c-r b">华法林</span> INR 2–3</td><td>q1–3m</td></tr>
-<tr class="hl-red"><td class="c-r b">巨大动脉瘤</td><td>≥8mm</td><td>ASA + <span class="c-r b">华法林</span> + <span class="c-r b">LMWH桥接</span></td><td class="c-r b">终身心内科</td></tr>
-</table>
 
-<!-- 特殊 -->
-<div class="sh yellow">⚡ 特殊人群</div>
-<table>
-<tr><th class="yellow-hd">人群</th><th class="yellow-hd">注意</th></tr>
-<tr class="hl-red"><td class="c-r b">&lt;6月婴儿</td><td class="c-r">易不完全表现 + CAL风险高 → <span class="c-r b">低阈值IVIG</span></td></tr>
-<tr class="hl-yellow"><td class="c-y b">&gt;9岁/青少年</td><td class="c-y">不完全表现多、IVIG反应差</td></tr>
-<tr class="hl-red"><td class="c-r b">KDSS</td><td class="c-r">积极液体+IVIG+激素+正性肌力</td></tr>
-</table>
-
-<!-- 随访 -->
-<div class="sh green">📅 随访</div>
-<div class="g2">
-<div>
-<table>
-<tr><th class="green-hd">状态</th><th class="green-hd">超声频率</th></tr>
-<tr><td>无CAL</td><td>2w → 6–8w → 6–12m</td></tr>
-<tr><td>CAL扩张</td><td>q1–3m至稳定</td></tr>
-<tr class="hl-red"><td class="c-r b">动脉瘤</td><td class="c-r b">终身随访</td></tr>
-</table>
-</div>
-<div>
-<table>
-<tr><th class="green-hd">监测</th></tr>
-<tr><td><span class="c-a b">超声心动图</span>（冠脉Z-score+心功能）</td></tr>
-<tr><td>ECG每次随访</td></tr>
-<tr><td>青少年：运动负荷试验</td></tr>
-<tr><td>巨大瘤：冠脉<span class="c-a b">CTA/MRI</span></td></tr>
-</table>
-</div>
-</div>
-
-<!-- 预后 -->
-<div class="sh">📊 预后</div>
-<table>
-<tr><th>指标</th><th>数据</th></tr>
-<tr><td>IVIG时代CAL</td><td class="c-g b">&lt;5%</td></tr>
-<tr><td>轻度扩张恢复</td><td class="c-g b">50% 6–8w内</td></tr>
-<tr><td>急性期死亡率</td><td class="c-g b">&lt;0.1%</td></tr>
-<tr class="hl-red"><td class="c-r b">巨大瘤远期</td><td class="c-r b">冠脉狭窄/MI/缺血性心脏病</td></tr>
-</table>
-
-<!-- 警示 -->
-<div class="sh red">🔴 紧急警示</div>
+<h2 class="sh" id="sec-alert">紧急警示</h2>
 <div class="alert">
   <ul>
-    <li><b>胸痛/呼吸困难</b> → <span class="c-r b">心肌缺血/冠脉血栓</span>，紧急心超+ECG</li>
+    <li><b>胸痛/呼吸困难</b> → <span class="b">心肌缺血/冠脉血栓</span>，紧急心超+ECG</li>
     <li><b>热退后再发热</b> → IVIG无反应，升级治疗</li>
     <li><b>晕厥/活动耐力↓</b> → 心功能评估</li>
-    <li><b>&lt;6月婴儿持续发热</b> → 低门槛查超声，<span class="c-r b">不要等完全标准</span></li>
+    <li><b>&lt;6月婴儿持续发热</b> → 低门槛查超声，<span class="b">不要等完全标准</span></li>
   </ul>
 </div>
 
-<!-- ===== 新增深度内容 ===== -->
 
-<!-- 冠脉Z值评估详解 -->
-<div class="sh">📐 冠脉Z值评估详解</div>
-<div class="note" style="margin-bottom:6px;">
-  <b class="c-a">McCrindle 2007回归方程</b>：基于体表面积(BSA)计算冠脉内径的正常预期值，Z值 = (实测内径 - 预期均值) / 标准差。Z值消除了体型/年龄对冠脉内径的影响，是儿童冠脉评估的金标准。
+<h2 class="sh" id="sec-score">IVIG无反应预测评分</h2>
+<div class="g2">
+<div>
+<div class="tbl-wrap"><table>
+<tr><th colspan="2" class="yellow-hd">Kobayashi评分（日本模型，7项）</th></tr>
+<tr><td class="b">Na ≤ 133 mEq/L</td><td>2分</td></tr>
+<tr><td class="b">AST ≥ 100 IU/L</td><td>2分</td></tr>
+<tr><td class="b">发病 ≤ 4天即用IVIG</td><td>2分</td></tr>
+<tr><td>CRP ≥ 10 mg/dL</td><td>1分</td></tr>
+<tr><td>PLT ≤ 30 × 10⁴/μL</td><td>1分</td></tr>
+<tr><td>年龄 ≤ 12月</td><td>1分</td></tr>
+<tr><td>WBC ≥ 12000/μL</td><td>1分</td></tr>
+<tr><td colspan="2" class="b">≥5分 → IVIG无反应高危（敏感性~80%，日本数据）</td></tr>
+</table></div>
 </div>
-<table>
+<div>
+<div class="tbl-wrap"><table>
+<tr><th class="yellow-hd">其他评分系统</th><th class="yellow-hd">特点</th></tr>
+<tr><td>Egami评分</td><td>日本模型，5项，年龄≤6月、男、CRP≥8、PLT≤30万、ALT≥80</td></tr>
+<tr><td>Sano评分</td><td>日本模型，3项：Na≤133、AST≥70、CRP≥8</td></tr>
+</table></div>
+<div class="alert" style="margin-top:6px;">
+  <b> 适用性警告</b>：上述评分均在<b>日本人群</b>中开发验证。<b class="">中国/欧美人群预测效能下降</b>，需结合临床判断，不宜作为唯一决策依据。
+</div>
+</div>
+</div>
+<div class="note" style="margin-top:6px;">
+  <b class="">处理策略</b>：评分高危 → 可考虑起始<span class="b">IVIG + 激素联合</span>（RAISE方案）预防性升级，而非等待无反应后再补救。IVIG无反应后补救方案见上文治疗阶梯。
+</div>
+
+<div class="note"><b>关键鉴别</b>：巨球星综合征的发热是"一过性反弹"，IVIG无反应的发热是"持续不退"。超声随访是鉴别的重要手段。</div>
+
+
+<h2 class="sh" id="sec-cad">冠脉受累分级管理</h2>
+<div class="tbl-wrap"><table>
+<tr><th class="red-hd">分级</th><th class="red-hd">定义</th><th class="red-hd">抗栓方案</th><th class="red-hd">随访</th></tr>
+<tr><td>无CAL</td><td>—</td><td>ASA 3–5mg/kg/d ×6–8w</td><td>超声6–8w后停药</td></tr>
+<tr><td>轻度扩张</td><td>Z 2–2.5</td><td>ASA</td><td>q6–8w超声</td></tr>
+<tr><td class="b">小动脉瘤</td><td>&lt;5mm, Z&gt;2.5</td><td>ASA + <span class="b">氯吡格雷</span> 0.2–1mg/kg/d</td><td>q1–3m超声</td></tr>
+<tr><td class="b">中动脉瘤</td><td>5–8mm</td><td>ASA + <span class="b">华法林</span> INR 2–3</td><td>q1–3m</td></tr>
+<tr><td class="b">巨大动脉瘤</td><td>≥8mm</td><td>ASA + <span class="b">华法林</span> + <span class="b">LMWH桥接</span></td><td class="b">终身心内科</td></tr>
+</table></div>
+
+
+<h2 class="sh" id="sec-zscore">冠脉Z值评估详解</h2>
+<div class="note" style="margin-bottom:6px;">
+  <b class="">McCrindle 2007回归方程</b>：基于体表面积(BSA)计算冠脉内径的正常预期值，Z值 = (实测内径 - 预期均值) / 标准差。Z值消除了体型/年龄对冠脉内径的影响，是儿童冠脉评估的金标准。
+</div>
+<div class="tbl-wrap"><table>
 <tr><th class="red-hd">分级</th><th class="red-hd">Z值范围</th><th class="red-hd">内径标准</th><th class="red-hd">临床意义</th></tr>
-<tr class="hl-green"><td class="c-g b">正常</td><td>&lt;2</td><td>—</td><td class="c-g">无需特殊处理</td></tr>
-<tr class="hl-yellow"><td class="c-y b">轻度扩张</td><td>2 – 2.5</td><td>—</td><td class="c-y">多数6–8周恢复，密切随访</td></tr>
-<tr class="hl-yellow"><td class="c-y b">小动脉瘤</td><td>&gt;2.5</td><td>&lt;5mm</td><td class="c-y">抗栓治疗，定期超声</td></tr>
-<tr class="hl-red"><td class="c-r b">中动脉瘤</td><td>—</td><td>5 – 8mm</td><td class="c-r b">双抗/华法林，长期随访</td></tr>
-<tr class="hl-red"><td class="c-r b">巨大动脉瘤</td><td>—</td><td>≥8mm</td><td class="c-r b">终身抗栓+心内科随访</td></tr>
-</table>
+<tr><td class="b">正常</td><td>&lt;2</td><td>—</td><td class="">无需特殊处理</td></tr>
+<tr><td class="b">轻度扩张</td><td>2 – 2.5</td><td>—</td><td class="">多数6–8周恢复，密切随访</td></tr>
+<tr><td class="b">小动脉瘤</td><td>&gt;2.5</td><td>&lt;5mm</td><td class="">抗栓治疗，定期超声</td></tr>
+<tr><td class="b">中动脉瘤</td><td>—</td><td>5 – 8mm</td><td class="b">双抗/华法林，长期随访</td></tr>
+<tr><td class="b">巨大动脉瘤</td><td>—</td><td>≥8mm</td><td class="b">终身抗栓+心内科随访</td></tr>
+</table></div>
 <div class="g2" style="margin-top:6px;">
 <div>
 <div class="note">
@@ -257,105 +194,152 @@ body{padding-top:42px !important;}
 </div>
 <div>
 <div class="note" style="border-left-color:var(--green);">
-  <a href="../tools/KD_CA_Zscore.html" style="color:var(--accent);font-weight:700;">🔗 冠脉Z值在线计算器</a><br>
+  <a href="../tools/KD_CA_Zscore.html" style="color:var(--accent);font-weight:700;"> 冠脉Z值在线计算器</a><br>
   输入BSA + 实测冠脉内径 → 自动计算Z值及分级
 </div>
 </div>
 </div>
 
-<!-- IVIG无反应预测 -->
-<div class="sh yellow">📊 IVIG无反应预测评分</div>
+
+<h2 class="sh" id="sec-special">特殊人群</h2>
+<div class="tbl-wrap"><table>
+<tr><th class="yellow-hd">人群</th><th class="yellow-hd">注意</th></tr>
+<tr><td class="b">&lt;6月婴儿</td><td class="">易不完全表现 + CAL风险高 → <span class="b">低阈值IVIG</span></td></tr>
+<tr><td class="b">&gt;9岁/青少年</td><td class="">不完全表现多、IVIG反应差</td></tr>
+<tr><td class="b">KDSS</td><td class="">积极液体+IVIG+激素+正性肌力</td></tr>
+</table></div>
+
+
+<h2 class="sh" id="sec-fu">随访</h2>
 <div class="g2">
 <div>
-<table>
-<tr><th colspan="2" class="yellow-hd">Kobayashi评分（日本模型，7项）</th></tr>
-<tr class="hl-yellow"><td class="c-y b">Na ≤ 133 mEq/L</td><td>2分</td></tr>
-<tr class="hl-yellow"><td class="c-y b">AST ≥ 100 IU/L</td><td>2分</td></tr>
-<tr class="hl-yellow"><td class="c-y b">发病 ≤ 4天即用IVIG</td><td>2分</td></tr>
-<tr><td>CRP ≥ 10 mg/dL</td><td>1分</td></tr>
-<tr><td>PLT ≤ 30 × 10⁴/μL</td><td>1分</td></tr>
-<tr><td>年龄 ≤ 12月</td><td>1分</td></tr>
-<tr><td>WBC ≥ 12000/μL</td><td>1分</td></tr>
-<tr class="hl-red"><td colspan="2" class="c-r b">≥5分 → IVIG无反应高危（敏感性~80%，日本数据）</td></tr>
-</table>
+<div class="tbl-wrap"><table>
+<tr><th class="green-hd">状态</th><th class="green-hd">超声频率</th></tr>
+<tr><td>无CAL</td><td>2w → 6–8w → 6–12m</td></tr>
+<tr><td>CAL扩张</td><td>q1–3m至稳定</td></tr>
+<tr><td class="b">动脉瘤</td><td class="b">终身随访</td></tr>
+</table></div>
 </div>
 <div>
-<table>
-<tr><th class="yellow-hd">其他评分系统</th><th class="yellow-hd">特点</th></tr>
-<tr><td>Egami评分</td><td>日本模型，5项，年龄≤6月、男、CRP≥8、PLT≤30万、ALT≥80</td></tr>
-<tr><td>Sano评分</td><td>日本模型，3项：Na≤133、AST≥70、CRP≥8</td></tr>
-</table>
-<div class="alert" style="margin-top:6px;">
-  <b>⚠️ 适用性警告</b>：上述评分均在<b>日本人群</b>中开发验证。<b class="c-r">中国/欧美人群预测效能下降</b>，需结合临床判断，不宜作为唯一决策依据。
+<div class="tbl-wrap"><table>
+<tr><th class="green-hd">监测</th></tr>
+<tr><td><span class="b">超声心动图</span>（冠脉Z-score+心功能）</td></tr>
+<tr><td>ECG每次随访</td></tr>
+<tr><td>青少年：运动负荷试验</td></tr>
+<tr><td>巨大瘤：冠脉<span class="b">CTA/MRI</span></td></tr>
+</table></div>
 </div>
-</div>
-</div>
-<div class="note" style="margin-top:6px;">
-  <b class="c-a">处理策略</b>：评分高危 → 可考虑起始<span class="c-a b">IVIG + 激素联合</span>（RAISE方案）预防性升级，而非等待无反应后再补救。IVIG无反应后补救方案见上文治疗阶梯。
 </div>
 
-<!-- 巨球星综合征 -->
-<div class="sh red">⭐ 巨球星综合征（Giant Star Syndrome）</div>
-<table>
-<tr><th class="red-hd">项目</th><th class="red-hd">详情</th></tr>
-<tr class="hl-yellow"><td class="c-y b">定义</td><td class="c-y b">IVIG后48–72小时再次发热 + CRP回升，但冠脉超声通常无恶化</td></tr>
-<tr><td>与IVIG无反应鉴别</td><td>IVIG无反应：持续发热不退或36h后仍热 + 炎症指标持续高位 + <span class="c-r">CAL风险↑</span><br>巨球星：短暂发热后自行退热，炎症指标"反弹"后回落</td></tr>
-<tr><td>处理方案</td><td>多数<b class="c-g">自限性</b>，仅需对症退热；若持续发热&gt;24h或CAL进展 → 按IVIG无反应升级治疗</td></tr>
-<tr><td>预后</td><td class="c-g b">通常不增加冠脉损害风险（与真正的IVIG无反应不同）</td></tr>
-</table>
-<div class="note"><b>关键鉴别</b>：巨球星综合征的发热是"一过性反弹"，IVIG无反应的发热是"持续不退"。超声随访是鉴别的重要手段。</div>
 
-<!-- 远期随访与管理 -->
-<div class="sh green">📅 远期随访与管理</div>
+<h2 class="sh" id="sec-fu2">远期随访与管理</h2>
 <div class="g2">
 <div>
-<table>
+<div class="tbl-wrap"><table>
 <tr><th class="green-hd">状态</th><th class="green-hd">随访方案</th></tr>
-<tr class="hl-green"><td class="c-g b">无CAL</td><td class="c-g b">ASA 3–5mg/kg/d × 6–8周后停药<br>超声：6–8周、6–12月各一次</td></tr>
-<tr class="hl-yellow"><td class="c-y b">CAL持续（扩张/小瘤）</td><td class="c-y b">抗栓方案持续<br>超声q1–3m至稳定<br>避免剧烈运动（抗栓期间）</td></tr>
-<tr class="hl-red"><td class="c-r b">中/巨大动脉瘤</td><td class="c-r b">终身抗栓+心内科联合随访<br>冠脉CTA/MRI q1–2年</td></tr>
-</table>
+<tr><td class="b">无CAL</td><td class="b">ASA 3–5mg/kg/d × 6–8周后停药<br>超声：6–8周、6–12月各一次</td></tr>
+<tr><td class="b">CAL持续（扩张/小瘤）</td><td class="b">抗栓方案持续<br>超声q1–3m至稳定<br>避免剧烈运动（抗栓期间）</td></tr>
+<tr><td class="b">中/巨大动脉瘤</td><td class="b">终身抗栓+心内科联合随访<br>冠脉CTA/MRI q1–2年</td></tr>
+</table></div>
 </div>
 <div>
-<table>
+<div class="tbl-wrap"><table>
 <tr><th class="green-hd">青少年过渡期</th><th class="green-hd">建议</th></tr>
-<tr><td>运动评估</td><td><span class="c-a b">运动负荷试验</span>（有CAL者青春期必须完成）</td></tr>
-<tr><td>影像学</td><td>冠脉<span class="c-a b">CTA/MRI</span>：动脉瘤持续者推荐</td></tr>
-<tr><td>生活方式</td><td class="c-r">心血管风险教育：戒烟、控制体重、血脂管理</td></tr>
-</table>
+<tr><td>运动评估</td><td><span class="b">运动负荷试验</span>（有CAL者青春期必须完成）</td></tr>
+<tr><td>影像学</td><td>冠脉<span class="b">CTA/MRI</span>：动脉瘤持续者推荐</td></tr>
+<tr><td>生活方式</td><td class="">心血管风险教育：戒烟、控制体重、血脂管理</td></tr>
+</table></div>
 </div>
 </div>
-<div class="alert" style="background:var(--yellow-bg);border-left-color:var(--yellow);">
-  <b class="c-y">成人长期心血管风险</b>：既往有CAL的KD患者，成年后冠心病/心肌梗死风险增加。建议：<br>
+<div class="alert" style="background:var(--surface-2);border-left-color:var(--mark);">
+  <b class="">成人长期心血管风险</b>：既往有CAL的KD患者，成年后冠心病/心肌梗死风险增加。建议：<br>
   • 终身心血管风险因素管理（血脂、血压、血糖）<br>
   • 有动脉瘤病史者：成人期至少一次冠脉CTA评估<br>
   • 向患者/家属充分告知远期风险，确保从儿科到成人心内科的顺利过渡
 </div>
 
-</div><!-- body -->
 
-  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="../tools/drug_risk_assessment.html?drugs=NSAIDs,GC&tab=ddi" style="display:inline-block;padding:6px 16px;background:#d05040;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;">⚠️ 川崎病用药方案风险评估</a></div>
-<div class="sh">📚 参考文献</div>
+
+
+  <div style="text-align:center;padding:8px 20px;border-top:1px solid var(--border);"><a href="../tools/drug_risk_assessment.html?drugs=NSAIDs,GC&tab=ddi" style="display:inline-block;padding:6px 16px;background:var(--surface);color:var(--red);border:1px solid var(--red);border-radius:6px;text-decoration:none;font-size:12px;font-weight:700;"> 川崎病用药方案风险评估</a></div>
+<h2 class="sh" id="sec-prognosis">预后</h2>
+<div class="tbl-wrap"><table>
+<tr><th>指标</th><th>数据</th></tr>
+<tr><td>IVIG时代CAL</td><td class="b">&lt;5%</td></tr>
+<tr><td>轻度扩张恢复</td><td class="b">50% 6–8w内</td></tr>
+<tr><td>急性期死亡率</td><td class="b">&lt;0.1%</td></tr>
+<tr><td class="b">巨大瘤远期</td><td class="b">冠脉狭窄/MI/缺血性心脏病</td></tr>
+</table></div>
+
+<h2 class="sh" id="sec-refs">参考文献</h2>
 <div style="font-size:11px; color:var(--text2); line-height:1.7; margin:4px 0;">
 <ol style="padding-left:18px;">
 <li>McCrindle BW, et al. Diagnosis, treatment, and long-term management of Kawasaki disease (AHA 2017). <i>Circulation</i>. 2017;135(17):e927-e999. PMID: 28356445.</li>
-<li>Kobayashi T, et al. Kobayashi score for IVIG resistance prediction. <i>Pediatr Int</i>. 2017;59(11):1159-1164. PMID待核实.</li>
-<li>Ogata S, et al. Risk factors for IVIG non-response. <i>Int J Cardiol</i>. 2018;268:45-49. PMID待核实.</li>
-<li>Kobayashi T, et al. Kawasaki disease shock syndrome. <i>Front Pediatr</i>. 2022;10:845298. PMID待核实.</li>
-<li>Yashiro M, et al. Incomplete Kawasaki disease. <i>Pediatr Int</i>. 2012;54(2):243-246. PMID待核实.</li>
+<li>Kobayashi T, et al. Kobayashi score for IVIG resistance prediction. <i>Pediatr Int</i>. 2017;59(11):1159-1164. .</li>
+<li>Ogata S, et al. Risk factors for IVIG non-response. <i>Int J Cardiol</i>. 2018;268:45-49. .</li>
+<li>Kobayashi T, et al. Kawasaki disease shock syndrome. <i>Front Pediatr</i>. 2022;10:845298. .</li>
+<li>Yashiro M, et al. Incomplete Kawasaki disease. <i>Pediatr Int</i>. 2012;54(2):243-246. .</li>
 </ol>
-</div>
-<div class="footer">
-  AHA 2017(McCrindle BW, Circulation) · RAISE RCT(Kobayashi T, Lancet 2012) · 英夫利西单抗(Burns JC, Lancet 2016) · 日本KD指南2020 · 中国KD指南2023(中华儿科杂志)
+<div class="note">注：第2–5条文献PMID核验中。</div>
 </div>
 
+<div style="margin-top:14px;">
+    <h2 class="sh">相关内容与工具</h2>
+    <div class="cw-rel">
+      <a href="../evidence/ev_KD_04.html"><div class="t">川崎病IVIG使用时机</div><div class="d">六份指南原文考据 · 20图</div></a>
+      <a href="../tools/KD_CA_Zscore.html"><div class="t">冠脉Z值计算器</div><div class="d">Dallaire-Dahdah 2011</div></a>
+      <a href="../tools/KD_IVIG_resistance.html"><div class="t">IVIG无反应预测</div><div class="d">Kobayashi评分</div></a>
+      <a href="../cases/index_KD.html"><div class="t">KD病例集</div><div class="d">5例川崎病</div></a>
+      <a href="../drugs/IVIG.html"><div class="t">静脉丙种球蛋白 IVIG</div><div class="d">川崎病/ITP/PID</div></a>
+    </div>
+  </div>
+</div>
+
+<div class="cw-wrap" style="margin-top:14px;">
+  <div class="disc"><b>免责声明</b>本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+</div>
+
+<footer class="mfoot">
+  <div class="band thin"></div>
+  <div class="inner">
+    <span class="word">MedWiki-Rheum</span>
+    <div class="flinks">
+      <a href="https://github.com/docsor1212/MedWiki-Rheum" target="_blank" rel="noopener">GitHub 开源仓库 · 欢迎勘误</a>
+      <a href="https://space.bilibili.com/432233902" target="_blank" rel="noopener">B站 · DoctorQ 免疫前沿</a>
+      <a href="https://skillhub.cn/user/user_481397b5" target="_blank" rel="noopener">SkillHub · 我们的6个Skills</a>
+    </div>
+    儿童风湿免疫临床知识库 · 作者 Doctor Q · 最后更新: 2026-09-16
+  </div>
+</footer>
+
+<div class="theme-dots" role="group" aria-label="主题切换">
+  <span class="lbl">主题</span>
+  <button data-set-theme="glm" aria-pressed="true"><i class="dot glm"></i>GLM</button>
+  <button data-set-theme="honey" aria-pressed="false"><i class="dot honey"></i>Honey</button>
+  <button data-set-theme="teal" aria-pressed="false"><i class="dot teal"></i>Teal</button>
 </div>
 
 <script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
 </script>
 <script src="../assets/qrcode.min.js"></script>
 <script src="../assets/share.js?v=5" defer></script>
-<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body>
 </html>
