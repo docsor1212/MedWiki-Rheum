@@ -17,12 +17,12 @@
     var u = encodeURIComponent(shareUrl), t = encodeURIComponent(shareTitle);
 
     var css = [
-      '.mw-share-fab{position:fixed;left:16px;bottom:16px;z-index:1300;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;',
+      '.mw-share-fab{position:fixed;right:16px;bottom:64px;z-index:1300;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;',
       'background:linear-gradient(135deg,var(--nav-a,#12365F),var(--nav-b,#1B4F8A));border-bottom:3px solid var(--nav-edge,#E8A33D);',
       'box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;transition:transform .18s ease;}',
       '.mw-share-fab:hover{transform:translateY(-2px);}',
       '.mw-share-fab svg{width:20px;height:20px;fill:#fff;pointer-events:none;}',
-      '.mw-share-pop{position:fixed;left:16px;bottom:70px;z-index:1301;width:242px;',
+      '.mw-share-pop{position:fixed;right:16px;bottom:118px;z-index:1301;width:242px;',
       'background:var(--surface,#fff);border:1px solid var(--border,#DDE5EC);border-radius:12px;overflow:hidden;',
       'box-shadow:0 10px 30px rgba(0,0,0,.20);}',
       '.mw-share-pop::before{content:"";display:block;height:5px;',
