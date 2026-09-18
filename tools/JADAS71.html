@@ -72,6 +72,14 @@ tr:hover td{background:#f8fafa;}
 <div class="sub">Juvenile Arthritis Disease Activity Score · 71关节评估 · 扩展版</div>
 
 <div class="section-title">📐 输入参数</div>
+<div class="input-group">
+<label>JIA 亚型（决定活动度切点）</label>
+<div style="display:flex;gap:8px;">
+<span id="sub_oligo" onclick="setSubtype('oligo')" style="flex:1;text-align:center;padding:8px 10px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:700;color:#5A6B7C;">少关节型</span>
+<span id="sub_poly" onclick="setSubtype('poly')" style="flex:1;text-align:center;padding:8px 10px;border:1.5px solid var(--accent);border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--accent);">多关节型</span>
+</div>
+<div style="font-size:10.5px;color:#93A2B1;margin-top:4px;">切点分亚型（来源见下方分级表）；JADAS-71总分范围0–101。</div>
+</div>
 
 <div class="input-group">
 <label>活动关节数（Active Joint Count, 0-71）</label>
@@ -109,10 +117,27 @@ tr:hover td{background:#f8fafa;}
 <table><tr><th>版本</th><th>关节数</th><th>适用</th></tr>
 <tr><td>JADAS-27</td><td>27关节</td><td>日常临床首选</td></tr>
 <tr><td style="font-weight:700;color:#1B4F8A">JADAS-71</td><td>71关节</td><td>全面评估（含手足小关节）</td></tr></table>
+<div class="section-title red">🎯 活动度分级（分亚型切点）</div>
+<table>
+<tr><th>状态</th><th>少关节型</th><th>多关节型</th><th>处理参考</th></tr>
+<tr><td style="font-weight:700;color:#22a87e">不活动(ID)</td><td style="font-weight:700;color:#22a87e">≤ 1.0</td><td style="font-weight:700;color:#22a87e">≤ 1.0</td><td>治疗达标，考虑减量</td></tr>
+<tr><td>低活动度(MDA)</td><td>1.1 – 2.0</td><td>1.1 – 3.8</td><td>接近达标</td></tr>
+<tr><td style="font-weight:700;color:#d4892a">中活动度</td><td>2.1 – 4.2</td><td style="font-weight:700;color:#d4892a">3.9 – 10.5</td><td>考虑升级治疗</td></tr>
+<tr><td style="font-weight:700;color:#d45050">高活动度(HDA)</td><td style="font-weight:700;color:#d45050">&gt; 4.2</td><td style="font-weight:700;color:#d45050">&gt; 10.5</td><td>强化治疗</td></tr></table>
+<div style="font-size:10.5px;color:#5A6B7C;margin-top:4px;line-height:1.8;">切点来源：① 不活动≤1.0与MDA（少关节≤2.0/多关节≤3.8）＝Consolaro A, et al. <i>Arthritis Rheum</i> 2012;64(7):2366-74（PMID 22231288）；② 高活动度（少关节&gt;4.2/多关节&gt;10.5，JADAS-71与JADAS-10同值）＝Consolaro A, et al. <i>Ann Rheum Dis</i> 2014;73(7)（PMID 24347571）。</div>
 <p style="font-size:0.72rem;color:#64748b;margin-top:6px">JADAS-71使用相同的评分公式和分级标准，仅关节数上限不同（71 vs 27）。总分上限 = 71+10+10+10 = 101。</p>
 </div>
 
 <script>
+let subtype='poly';
+function setSubtype(t){
+  subtype=t;
+  const on='flex:1;text-align:center;padding:8px 10px;border:1.5px solid var(--accent);border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--accent);';
+  const off='flex:1;text-align:center;padding:8px 10px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:700;color:#5A6B7C;';
+  document.getElementById('sub_oligo').style.cssText=t==='oligo'?on:off;
+  document.getElementById('sub_poly').style.cssText=t==='poly'?on:off;
+  calc();
+}
 function calc(){
   const j=+document.getElementById('joints').value;
   const p=+document.getElementById('phga').value;
@@ -132,10 +157,12 @@ function calc(){
   path.textContent=parts.join(' + ');
   fs.textContent=score.toFixed(1);
   let label,c;
+  const SUB = {oligo:{mda:2.0,hda:4.2}, poly:{mda:3.8,hda:10.5}}[subtype];
   if(score<=1.0){label="不活动";c="#22a87e";}
-  else if(score<=3.8){label="低活动度";c="#1B4F8A";}
-  else if(score<=10.5){label="中活动度";c="#d4892a";}
+  else if(score<=SUB.mda){label="低活动度";c="#1B4F8A";}
+  else if(score<=SUB.hda){label="中活动度";c="#d4892a";}
   else{label="高活动度";c="#d45050";}
+  label += subtype==='oligo' ? "（少关节型切点）" : "（多关节型切点）";
   st.textContent=label;st.style.background=c;
   fst.textContent=label;fst.style.background=c;
 }
@@ -153,6 +180,6 @@ calc();
 </div></div>
 <script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=5" defer></script>
+<script src="../assets/share.js?v=6" defer></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body></html>
