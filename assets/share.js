@@ -17,12 +17,12 @@
     var u = encodeURIComponent(shareUrl), t = encodeURIComponent(shareTitle);
 
     var css = [
-      '.mw-share-fab{position:fixed;right:16px;bottom:64px;z-index:1300;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;',
+      '.mw-share-fab{position:fixed;left:16px;bottom:96px;z-index:1300;width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;',
       'background:linear-gradient(135deg,var(--nav-a,#12365F),var(--nav-b,#1B4F8A));border-bottom:3px solid var(--nav-edge,#E8A33D);',
       'box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;transition:transform .18s ease;}',
       '.mw-share-fab:hover{transform:translateY(-2px);}',
       '.mw-share-fab svg{width:20px;height:20px;fill:#fff;pointer-events:none;}',
-      '.mw-share-pop{position:fixed;right:16px;bottom:118px;z-index:1301;width:242px;',
+      '.mw-share-pop{position:fixed;z-index:1301;width:242px;',
       'background:var(--surface,#fff);border:1px solid var(--border,#DDE5EC);border-radius:12px;overflow:hidden;',
       'box-shadow:0 10px 30px rgba(0,0,0,.20);}',
       '.mw-share-pop::before{content:"";display:block;height:5px;',
@@ -122,12 +122,75 @@
         d.body.removeChild(ta);
       }
     }
+    // 可拖拽 + 位置记忆（localStorage按设备保存；拖动≥7px算拖拽，否则算点击）
+    var posKey = 'mw-share-pos';
+    function placeFab(x, y){
+      fab.style.left = x + 'px'; fab.style.top = y + 'px';
+      fab.style.right = 'auto'; fab.style.bottom = 'auto';
+    }
+    try {
+      var savedPos = JSON.parse(localStorage.getItem(posKey) || 'null');
+      if (savedPos && typeof savedPos.x === 'number' && typeof savedPos.y === 'number'
+          && savedPos.x >= 0 && savedPos.y >= 0
+          && savedPos.x < window.innerWidth && savedPos.y < window.innerHeight) {
+        placeFab(savedPos.x, savedPos.y);
+      }
+    } catch(e){}
+    function placePop(){
+      var fr = fab.getBoundingClientRect();
+      var pw = pop.offsetWidth || 242, ph = pop.offsetHeight || 300;
+      var left = Math.max(8, Math.min(fr.left, window.innerWidth - pw - 8));
+      var top = fr.top - ph - 10;
+      if (top < 8) top = Math.max(8, Math.min(fr.bottom + 10, window.innerHeight - ph - 8));
+      pop.style.left = left + 'px'; pop.style.top = top + 'px';
+      pop.style.right = 'auto'; pop.style.bottom = 'auto';
+    }
+    var drag = null, suppressTap = false;
+    fab.addEventListener('pointerdown', function(e){
+      if (e.button) return;
+      var r = fab.getBoundingClientRect();
+      drag = { sx: e.clientX, sy: e.clientY, ox: r.left, oy: r.top, moved: false };
+      try { fab.setPointerCapture(e.pointerId); } catch(err){}
+    });
+    fab.addEventListener('pointermove', function(e){
+      if (!drag) return;
+      if (!drag.moved && Math.abs(e.clientX - drag.sx) + Math.abs(e.clientY - drag.sy) < 7) return;
+      drag.moved = true;
+      var fw = fab.offsetWidth || 46, fh = fab.offsetHeight || 46;
+      var nx = Math.max(8, Math.min(drag.ox + e.clientX - drag.sx, window.innerWidth - fw - 8));
+      var ny = Math.max(64, Math.min(drag.oy + e.clientY - drag.sy, window.innerHeight - fh - 8));
+      placeFab(nx, ny);
+      e.preventDefault();
+    });
+    function endDrag(){
+      if (drag && drag.moved) {
+        suppressTap = true;
+        setTimeout(function(){ suppressTap = false; }, 80);
+        var r = fab.getBoundingClientRect();
+        try { localStorage.setItem(posKey, JSON.stringify({ x: Math.round(r.left), y: Math.round(r.top) })); } catch(e){}
+        if (!pop.hidden) placePop();
+      }
+      drag = null;
+    }
+    fab.addEventListener('pointerup', endDrag);
+    fab.addEventListener('pointercancel', function(){ drag = null; });
+    window.addEventListener('resize', function(){
+      try {
+        var sv = JSON.parse(localStorage.getItem(posKey) || 'null');
+        if (sv) placeFab(Math.min(sv.x, window.innerWidth - 54), Math.min(sv.y, window.innerHeight - 54));
+      } catch(e){}
+      if (!pop.hidden) placePop();
+    });
+
     function toggle(force){
       var show = (typeof force === 'boolean') ? force : pop.hidden;
       pop.hidden = !show;
-      if (!show) qrWrap.classList.remove('open');
+      if (show) placePop(); else qrWrap.classList.remove('open');
     }
-    fab.addEventListener('click', function(){ toggle(); });
+    fab.addEventListener('click', function(){
+      if (suppressTap) { suppressTap = false; return; }
+      toggle();
+    });
     d.addEventListener('click', function(e){
       if (!pop.hidden && !pop.contains(e.target) && !fab.contains(e.target)) toggle(false);
     });
