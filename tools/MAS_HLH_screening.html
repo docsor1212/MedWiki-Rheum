@@ -99,6 +99,14 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <input type="number" id="fibrinogen" min="0" max="20" step="0.1" value="" placeholder="g/L" oninput="calc()">
 </div>
 <div class="input-group">
+<label>中性粒细胞绝对值 ANC (×10⁹/L)</label>
+<input type="number" id="anc" min="0" max="50" step="0.1" value="" placeholder="×10⁹/L" oninput="calc()">
+</div>
+<div class="input-group">
+<label>LDH 乳酸脱氢酶 (U/L)</label>
+<input type="number" id="ldh" min="0" max="20000" step="1" value="" placeholder="U/L" oninput="calc()">
+</div>
+<div class="input-group">
 <label>甘油三酯 TG (mmol/L)</label>
 <input type="number" id="tg" min="0" max="50" step="0.1" value="" placeholder="mmol/L" oninput="calc()">
 </div>
@@ -325,24 +333,21 @@ function calc() {
   const masCard = document.getElementById('mas_card');
   if (sjia) {
     masCard.style.display = 'block';
-    // 2016 MAS criteria for sJIA (simplified)
-    // Clinical: fever, splenomegaly/hepatomegaly, CNS dysfunction, hemorrhagic manifestations
-    // Lab: PLT≤181, AST>48, triglycerides>156mg/dL(1.76mmol/L), fibrinogen≤2.5g/L, ferritin>684μg/L
-    // Need: ferritin threshold lowered for sJIA context
+    // 2016 MAS 分类标准（Ravelli A, Ann Rheum Dis 2016;75:481-9 原文）：
+    // 发热 + 铁蛋白 >6800 μg/L(=ng/mL) 为前置必须项 + 以下4项实验室标准中≥2项
+    // 官方4项：PLT≤181×10⁹/L、AST>48 U/L、ANC≤4×10⁹/L、LDH>274 U/L、纤维蛋白原≤3.6 g/L
+    // （2016标准不含甘油三酯；铁蛋白>684为Allen 2008筛查界值，保留为独立警示，不计入判定）
     let masMet = 0;
     let masTotal = 0;
     const masItems = [
-      { name: '铁蛋白 > 684 μg/L (sJIA阈值)', met: ferritin !== null && ferritin > 684 },
       { name: '血小板 ≤ 181 ×10⁹/L', met: plt !== null && plt <= 181 },
       { name: 'AST > 48 U/L', met: ast !== null && ast > 48 },
-      { name: '甘油三酯 > 1.76 mmol/L (156 mg/dL)', met: tg !== null && tg > 1.76 },
-      { name: '纤维蛋白原 ≤ 2.5 g/L', met: fib !== null && fib <= 2.5 }
+      { name: '中性粒细胞 ≤ 4 ×10⁹/L', met: anc !== null && anc > 0 && anc <= 4 },
+      { name: 'LDH > 274 U/L', met: ldh !== null && ldh > 274 },
+      { name: '纤维蛋白原 ≤ 3.6 g/L', met: fib !== null && fib <= 3.6 }
     ];
     masItems.forEach(m => { if (m.met) masMet++; });
-    const masInputCount = masItems.filter(m => {
-      const v = m.name.includes('铁蛋白') ? ferritin : (m.name.includes('血小板') ? plt : (m.name.includes('AST') ? ast : (m.name.includes('甘油') ? tg : fib)));
-      return v !== null && v > 0;
-    }).length;
+    const masInputCount = masItems.filter(m => m.met).length;
     masTotal = masItems.length;
 
     let masHtml = '';
@@ -357,10 +362,11 @@ function calc() {
 
     // MAS verdict: need ≥2 lab criteria (simplified from full classification)
     let masVerdict = '';
-    if (masMet >= 2) {
+    const ferrMet = ferritin !== null && ferritin > 6800;
+    if (ferrMet && masMet >= 2) {
       masVerdict = `<div class="alert-box" style="background:#ede5fc;border:2px solid #7c3aed;"><div style="font-weight:800;color:#7c3aed;">🟣 符合2016 MAS分类标准 (${masMet}/${masTotal}项实验室指标)</div><div>sJIA活动期患者，需考虑MAS可能并启动治疗。</div></div>`;
     } else {
-      masVerdict = `<div class="alert-box" style="background:#f3f4f6;border:1px solid #e0e0e0;"><div style="font-weight:600;color:var(--text2);">目前符合 ${masMet}/${masTotal} 项MAS实验室标准（需≥2项）</div></div>`;
+      masVerdict = `<div class="alert-box" style="background:#f3f4f6;border:1px solid #e0e0e0;"><div style="font-weight:600;color:var(--text2);">符合 ${masMet}/${masTotal} 项实验室标准（需≥2项）${ferrMet ? '' : '；⚠️ 尚需铁蛋白 >6800 μg/L 这一前置标准'}</div></div>`;
     }
     document.getElementById('mas_verdict').innerHTML = masVerdict;
   } else {
@@ -370,6 +376,6 @@ function calc() {
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=5" defer></script>
+<script src="../assets/share.js?v=6" defer></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body></html>
