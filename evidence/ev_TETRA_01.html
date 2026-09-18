@@ -247,6 +247,9 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSys
 .deckdoc{max-width:1280px;margin:0 auto;padding:18px 22px 0;overflow-x:auto}
 .sheet{margin:0 auto 30px;width:max-content;box-shadow:0 3px 18px rgba(18,54,95,.16);border-radius:4px;overflow:hidden}
 .deckdoc section{width:1920px;height:1080px;flex:none;zoom:.62}
+@media (max-width:1280px){.deckdoc section{zoom:.42}}
+@media (max-width:800px){.deckdoc section{zoom:.28}}
+@media (max-width:480px){.deckdoc section{zoom:.2}}
 footer{margin-top:10px}
 footer .fin{max-width:1280px;margin:0 auto;padding:26px 22px;text-align:center;font-size:12.5px;color:var(--ink-soft);line-height:2}
 footer .sig{font-weight:800;letter-spacing:.3em;color:#12365F;font-size:13px;margin-bottom:6px}
@@ -2149,12 +2152,16 @@ section[data-label="问题4·推荐理由"] .callout{padding:10px 22px;line-heig
   function fit(){
     var wrap = document.getElementById('deckdoc');
     if (!wrap) return;
-    var cw = wrap.clientWidth - 0;
-    var z = Math.max(0.5, Math.min(1, cw / 1920));
+    var cs = getComputedStyle(wrap);
+    var cw = wrap.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    if (cw <= 0) return;
+    // 任何屏宽都精确适配（无下限）：手机上等比缩小为"长图"模式，捏合放大看细节
+    var z = Math.min(1, cw / 1920);
     document.querySelectorAll('.deckdoc section').forEach(function(s){ s.style.zoom = z; });
   }
   fit();
   window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', fit);
   var bt = document.getElementById('backtop');
   bt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
