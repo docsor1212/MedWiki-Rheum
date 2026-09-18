@@ -101,12 +101,17 @@ tr:hover td{background:#f8fafa;}
 <div class="section-title yellow">📝 三种模型对比</div>
 <table>
 <tr><th>模型</th><th>项目数</th><th>高危阈值</th><th>敏感性</th><th>特异性</th></tr>
-<tr><td><b>Kobayashi</b></td><td>7项</td><td>≥5分</td><td>~86%</td><td>~68%</td></tr>
+<tr><td><b>Kobayashi</b></td><td>7项</td><td>≥4分</td><td>86%</td><td>68%</td></tr>
 <tr><td><b>Egami</b></td><td>5项</td><td>≥3分</td><td>~78%</td><td>~76%</td></tr>
 <tr><td><b>Sano</b></td><td>3项</td><td>≥2分</td><td>~77%</td><td>~86%</td></tr>
 </table>
 <div style="font-size:0.68rem;color:var(--text2);margin-top:6px;">敏感性/特异性数据来自日本原始队列，其他人群可能不同</div>
 
+<div class="note" style="margin:10px 0;line-height:1.9;">三模型原文出处：
+<b>Kobayashi</b>：Kobayashi T, et al. Prediction of intravenous immunoglobulin unresponsiveness in patients with Kawasaki disease. <i>Circulation</i> 2006;113(22):2606-12（PMID 16735679；7变量：病日≤4天2分、年龄≤6月1分、中性粒≥80%2分、PLT≤30×10⁹/L 1分、AST≥100 IU/L 2分、Na≤133 2分、CRP≥10 mg/dL 1分；≥4分=高危，敏感86%/特异68%）；
+<b>Egami</b>：Egami K, et al. <i>J Pediatr</i> 2006;149(2):237-40（PMID 16887442；5项：年龄≤6月1分、病日<4天1分、PLT≤30×10⁹/L 1分、CRP≥8 mg/dL 1分、ALT≥80 IU/L 2分；≥3分=高危，敏感78%）；
+<b>Sano</b>：Sano T, et al. <i>Eur J Pediatr</i> 2007;166(2):131-7（PMID 16896641；3项各1分：CRP≥7.0 mg/dL、总胆红素≥0.9 mg/dL、AST≥200 IU/L；≥2分=高危）。
+</div>
 <div class="section-title green">💊 高危患者处理建议</div>
 <div class="treatment-box">
 <b>方案A：IVIG + 激素联合</b><br>
@@ -140,28 +145,28 @@ items:[
 {id:'ivig_day',label:'发病至IVIG天数',unit:'天',type:'number',threshold:'≤4天',check:v=>v<=4?2:0},
 {id:'crp',label:'CRP',unit:'mg/dL',type:'number',threshold:'≥10',check:v=>v>=10?1:0},
 {id:'plt',label:'PLT (血小板)',unit:'×10⁴/μL',type:'number',threshold:'≤30',check:v=>v<=30?1:0},
-{id:'age',label:'年龄',unit:'月',type:'number',threshold:'≤12月',check:v=>v<=12?1:0},
-{id:'wbc',label:'WBC',unit:'/μL',type:'number',threshold:'≥12000',check:v=>v>=12000?1:0}
+{id:'age',label:'年龄',unit:'月',type:'number',threshold:'≤6月',check:v=>v<=6?1:0},
+{id:'neu',label:'中性粒细胞比例',unit:'%',type:'number',threshold:'≥80%',check:v=>v>=80?2:0},
 ],
 cutoff:5
 },
 egami:{
 name:'Egami评分 (2006)',
 items:[
-{id:'age_e',label:'年龄',unit:'月',type:'number',threshold:'≤6月',check:v=>v<=6?3:0},
+{id:'age_e',label:'年龄',unit:'月',type:'number',threshold:'≤6月',check:v=>v<=6?1:0},
 {id:'crp_e',label:'CRP',unit:'mg/dL',type:'number',threshold:'≥8',check:v=>v>=8?1:0},
 {id:'plt_e',label:'PLT (血小板)',unit:'×10⁴/μL',type:'number',threshold:'≤30',check:v=>v<=30?1:0},
 {id:'alt_e',label:'ALT',unit:'IU/L',type:'number',threshold:'≥80',check:v=>v>=80?2:0},
-{id:'na_e',label:'Na (钠)',unit:'mmol/L',type:'number',threshold:'≤133',check:v=>v<=133?2:0}
+{id:'day_e',label:'发病至IVIG天数',unit:'天',type:'number',threshold:'<4天',check:v=>v<4?1:0}
 ],
 cutoff:3
 },
 sano:{
 name:'Sano评分 (2007)',
 items:[
-{id:'na_s',label:'Na (钠)',unit:'mmol/L',type:'number',threshold:'≤133',check:v=>v<=133?1:0},
-{id:'ast_s',label:'AST',unit:'IU/L',type:'number',threshold:'≥70',check:v=>v>=70?1:0},
-{id:'ivig_day_s',label:'发病至IVIG天数',unit:'天',type:'number',threshold:'≤4天',check:v=>v<=4?1:0}
+{id:'crp_s',label:'CRP',unit:'mg/dL',type:'number',threshold:'≥7.0',check:v=>v>=7.0?1:0},
+{id:'tb_s',label:'总胆红素 TB',unit:'mg/dL',type:'number',threshold:'≥0.9',check:v=>v>=0.9?1:0},
+{id:'ast_s',label:'AST',unit:'IU/L',type:'number',threshold:'≥200',check:v=>v>=200?1:0}
 ],
 cutoff:2
 }
@@ -251,7 +256,7 @@ switchModel();
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=5" defer></script>
+<script src="../assets/share.js?v=6" defer></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
 </body>
 </html>
