@@ -72,7 +72,7 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <!-- 卡片1：BSA计算 -->
 <div class="card" style="border-color:var(--accent);box-shadow:0 4px 16px rgba(27,79,138,0.12);">
 <h1>冠脉Z值 <span>计算器</span></h1>
-<div class="sub">川崎病冠状动脉Z评分 · McCrindle 2007 / Dallaire 2016</div>
+<div class="sub">川崎病冠状动脉Z评分 · Dallaire-Dahdah 2011（Montreal体系 · JASE 2011;24:60-74）</div>
 
 <div class="section-title">📐 体表面积 (BSA)</div>
 <div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;">
@@ -97,7 +97,7 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 </div>
 
 <div class="result-box">
-<div class="result-label">体表面积 (Mosteller)</div>
+<div class="result-label">体表面积 (Haycock)</div>
 <div class="result-num" id="bsa_result">0.72</div>
 <div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-top:2px;">m²</div>
 </div>
@@ -115,6 +115,10 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <div class="input-group">
 <label>左前降支 (LAD)</label>
 <input type="number" id="d_lad" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+</div>
+<div class="input-group">
+<label>左回旋支 (LCX)</label>
+<input type="number" id="d_lcx" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
 </div>
 <div class="input-group">
 <label>右冠状动脉近段 (Prox RCA)</label>
@@ -155,12 +159,12 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 
 <div class="alert-box" style="background:var(--accent-bg);border:1px solid var(--border);margin-top:8px;">
 <div style="font-weight:700;color:var(--accent);margin-bottom:4px;">📋 Z值计算方法</div>
-<div>Z = (ln(实测值) - 均值_ln) / 标准差_ln<br>
-其中均值_ln = α + β × ln(BSA)，α、β为各冠脉段特异的回归参数。<br>
+<div>Z = (实测内径 − 均值) / SD；均值 = a₁ + b₁×√BSA；SD = a₂ + b₂×√BSA（SD随BSA变化）。BSA采用Haycock公式（与原文推导一致）。<br>
 <b>参考文献：</b><br>
-① McCrindle BW et al. <i>Circulation</i> 2007;115:2725-33<br>
-② Dallaire F et al. <i>JASE</i> 2016;29:794-802<br>
-③ Kobayashi T et al. <i>JCS 2020</i> Guideline
+① Dallaire F, Dahdah N. <i>J Am Soc Echocardiogr</i> 2011;24(1):60-74（本工具采用）<br>
+② McCrindle BW et al. <i>Circulation</i> 2007;116(2):174-9（Boston体系）<br>
+③ Kobayashi T et al. <i>J Am Soc Echocardiogr</i> 2016;29(8):794-801（日本LMS法）<br>
+④ 日本循环学会 JCS 2020 川崎病急性期管理指南（绝对值标准）
 </div>
 </div>
 </div>
@@ -168,23 +172,24 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <!-- 卡片5：参数表 -->
 <div class="card">
 <div class="section-title purple">📋 回归参数参考表</div>
-<div style="font-size:0.68rem;color:var(--text2);margin-bottom:6px;">ln(mean) = α + β × ln(BSA)，Z值基于对数正态分布模型</div>
+<div style="font-size:0.68rem;color:var(--text2);margin-bottom:6px;">均值 = a₁ + b₁×√BSA；SD = a₂ + b₂×√BSA；Z = (实测 − 均值)/SD。内径单位mm。</div>
 <table>
-<tr><th>冠脉段</th><th>α</th><th>β</th><th>SD (ln)</th></tr>
-<tr><td style="font-weight:700;">LMCA</td><td>0.4470</td><td>0.3958</td><td>0.1648</td></tr>
-<tr><td style="font-weight:700;">LAD</td><td>0.3168</td><td>0.4304</td><td>0.1693</td></tr>
-<tr><td style="font-weight:700;">Prox RCA</td><td>0.4021</td><td>0.4117</td><td>0.1725</td></tr>
-<tr><td style="font-weight:700;">Mid RCA</td><td>0.2616</td><td>0.4507</td><td>0.1804</td></tr>
-<tr><td style="font-weight:700;">Distal RCA</td><td>0.0854</td><td>0.4882</td><td>0.1942</td></tr>
+<tr><th>冠脉段</th><th>a₁ (均值)</th><th>b₁ (√BSA)</th><th>a₂ (SD)</th><th>b₂ (√BSA)</th></tr>
+<tr><td style="font-weight:700;">LMCA</td><td>−0.1817</td><td>2.9238</td><td>0.1801</td><td>0.2530</td></tr>
+<tr><td style="font-weight:700;">LAD</td><td>−0.1502</td><td>2.2672</td><td>0.1709</td><td>0.2293</td></tr>
+<tr><td style="font-weight:700;">LCX</td><td>−0.2716</td><td>2.3458</td><td>0.1142</td><td>0.3423</td></tr>
+<tr><td style="font-weight:700;">Prox RCA</td><td>−0.3039</td><td>2.7521</td><td>0.1626</td><td>0.2881</td></tr>
+<tr><td style="font-weight:700;">Mid RCA</td><td>−0.3060</td><td>2.4078</td><td>0.1324</td><td>0.3259</td></tr>
+<tr><td style="font-weight:700;">Distal RCA</td><td>−0.3185</td><td>2.3295</td><td>0.1099</td><td>0.3198</td></tr>
 </table>
 <div style="font-size:0.65rem;color:var(--text2);margin-top:6px;">
-参数来源：Dallaire F et al. JASE 2016，基于485例健康儿童（BSA 0.3-2.0 m²）。<br>
-⚠️ 以上参数为近似参考值，实际临床应用请查阅原文献完整数据。
+参数来源：Dallaire F, Dahdah N. J Am Soc Echocardiogr 2011;24(1):60-74，485例健康儿童（Haycock BSA公式）。<br>
+⚠️ 已对照原文开源实现核验；临床决策仍请结合原始文献与患者实际。
 </div>
 </div>
 
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="BSA.html" style="color:#1B4F8A;font-weight:600">BSA计算器</a> · <a href="BMI_Zscore.html" style="color:#1B4F8A;font-weight:600">BMI Z评分</a> · <a href="MAS_HLH_screening.html" style="color:#1B4F8A;font-weight:600">MAS/HLH筛查</a></div>
-<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。Z值参数为近似值，精确值请查阅原文献。最终决策请结合临床实际并遵循相关指南。</div>
+<div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。Z值采用Dallaire-Dahdah 2011已发表参数（已对照开源实现核验），最终决策请结合临床实际并遵循相关指南。</div>
 </div>
 
 <div class="sticky-footer"><div class="sticky-inner">
@@ -194,18 +199,21 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 </div></div>
 
 <script>
-// 回归参数: [alpha, beta, sd_ln]
+// Dallaire-Dahdah 2011 (Montreal): 均值=a1+b1*sqrt(BSA), SD=a2+b2*sqrt(BSA), 单位mm
+// 核验源: parameterz开源实现ca_defs.js Cor_m + PMC5725343 Table5
 const PARAMS = {
-  lmca:     [0.4470, 0.3958, 0.1648],
-  lad:      [0.3168, 0.4304, 0.1693],
-  rca_prox: [0.4021, 0.4117, 0.1725],
-  rca_mid:  [0.2616, 0.4507, 0.1804],
-  rca_dist: [0.0854, 0.4882, 0.1942]
+  lmca:     { a1: -0.1817, b1: 2.9238, a2: 0.1801, b2: 0.2530 },
+  lad:      { a1: -0.1502, b1: 2.2672, a2: 0.1709, b2: 0.2293 },
+  lcx:      { a1: -0.2716, b1: 2.3458, a2: 0.1142, b2: 0.3423 },
+  rca_prox: { a1: -0.3039, b1: 2.7521, a2: 0.1626, b2: 0.2881 },
+  rca_mid:  { a1: -0.3060, b1: 2.4078, a2: 0.1324, b2: 0.3259 },
+  rca_dist: { a1: -0.3185, b1: 2.3295, a2: 0.1099, b2: 0.3198 }
 };
 
 const SEGMENTS = [
   { key: 'lmca', name: '左主干', abbr: 'LMCA', inputId: 'd_lmca' },
   { key: 'lad', name: '左前降支', abbr: 'LAD', inputId: 'd_lad' },
+  { key: 'lcx', name: '左回旋支', abbr: 'LCX', inputId: 'd_lcx' },
   { key: 'rca_prox', name: '右冠近段', abbr: 'Prox RCA', inputId: 'd_rca_prox' },
   { key: 'rca_mid', name: '右冠中段', abbr: 'Mid RCA', inputId: 'd_rca_mid' },
   { key: 'rca_dist', name: '右冠远段', abbr: 'Dist RCA', inputId: 'd_rca_dist' }
@@ -227,24 +235,25 @@ function getBSA() {
   const h = +document.getElementById('height').value;
   const w = +document.getElementById('weight').value;
   if (h <= 0 || w <= 0) return 0;
-  return Math.sqrt(h * w / 3600);
+  // Haycock公式（Dallaire原文推导所用）
+  return 0.024265 * Math.pow(h, 0.3964) * Math.pow(w, 0.5378);
 }
 
 function calcZ(diameter, segKey) {
-  const [alpha, beta, sd] = PARAMS[segKey];
+  const p = PARAMS[segKey];
   const bsa = getBSA();
   if (bsa <= 0 || diameter <= 0) return null;
-  const mean_ln = alpha + beta * Math.log(bsa);
-  const z = (Math.log(diameter) - mean_ln) / sd;
-  return z;
+  const mean = p.a1 + p.b1 * Math.sqrt(bsa);
+  const sd = p.a2 + p.b2 * Math.sqrt(bsa);
+  return (diameter - mean) / sd;
 }
 
+// 分级对齐AHA 2017：小=Z2.5-5；中=Z5-10且<8mm；巨大=Z>=10或>=8mm
 function classify(z, diameter) {
   if (z === null) return { label: '—', color: '#cbd5e1', bg: '#f3f4f6' };
-  if (diameter >= 8) return { label: '巨大动脉瘤', color: '#8b1a1a', bg: '#f3d0d0' };
-  if (diameter >= 5) return { label: '中动脉瘤', color: '#d45050', bg: '#fde8e8' };
-  if (z > 5) return { label: '大动脉瘤', color: '#d45050', bg: '#fde8e8' };
-  if (z > 2.5) return { label: '小动脉瘤', color: '#e67e22', bg: '#fef0e0' };
+  if (diameter >= 8 || z >= 10) return { label: '巨大动脉瘤', color: '#8b1a1a', bg: '#f3d0d0' };
+  if (z >= 5) return { label: '中动脉瘤', color: '#d45050', bg: '#fde8e8' };
+  if (z >= 2.5) return { label: '小动脉瘤', color: '#e67e22', bg: '#fef0e0' };
   if (z >= 2.0) return { label: '轻度扩张', color: '#d4892a', bg: '#fef3e2' };
   return { label: '正常', color: '#22a87e', bg: '#e2f8ef' };
 }
