@@ -71,6 +71,29 @@ body{
   .panel{padding:10px 14px;}
   .warnbox .l{font-size:10.5px;}
 }
+/* ===== 桌面整页布局(≥1025px)：复刻鸿蒙 Column{Scroll(layoutWeight:1), BottomPanel} =====
+   整页锁定一屏：mnav+面包屑固定，中间内容区滚动(分组卡4列铺开,通常无需滚动)，计分面板常驻 */
+@media (min-width:1025px){
+  body{height:100vh;display:flex;flex-direction:column;overflow:hidden;}
+  .mnav{flex:none;} /* 保留sticky: mnav是::before斜纹层(inset:0)的定位祖先,改static会让斜纹铺满全页 */
+  body>.cw-wrap{flex:none;}
+  .app-scroll{flex:1;min-height:0;overflow-y:auto;}
+  .app-wrap{max-width:1180px;padding:14px 20px 12px;}
+  .app-head{padding-bottom:4px;margin-bottom:8px;}
+  #groups{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:start;}
+  .grp{margin-bottom:0;}
+  .it{padding-top:4px;padding-bottom:4px;}
+  .rules{margin-bottom:10px;}
+  .foot-tip{margin:10px 0 4px;}
+  .panel{position:static;}
+  .disc-wrap{max-width:1180px;padding:0 20px 10px;}
+}
+/* ===== 平板两列(641-1024px) ===== */
+@media (min-width:641px) and (max-width:1024px){
+  .app-wrap{max-width:860px;}
+  #groups{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;align-items:start;}
+  .grp{margin-bottom:0;}
+}
 </style>
 <link rel="stylesheet" href="../assets/themes.css?v=6">
 </head>
@@ -98,6 +121,7 @@ body{
   </div>
 </div>
 
+<div class="app-scroll">
 <div class="app-wrap">
   <div class="app-head">
     <div class="t">SLEDAI<em>-2000</em></div>
@@ -117,6 +141,13 @@ body{
   <div class="foot-tip">SLEDAI-2000 ASSESSMENT SYSTEM</div>
 </div>
 
+<div class="cw-wrap disc-wrap" style="margin-top:0;">
+  <div style="max-width:720px;margin:0 auto;padding:0 16px 0;">
+  <div class="disc" style="margin:0 0 14px;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+  </div>
+</div>
+</div><!-- /app-scroll -->
+
 <div class="panel">
   <div class="r1">
     ACTIVE PATH
@@ -135,12 +166,6 @@ body{
       <div class="num" id="scoreNum">0</div>
     </div>
     <div class="statchip" id="statusChip">基本无活动</div>
-  </div>
-</div>
-
-<div class="cw-wrap" style="margin-top:0;">
-  <div style="max-width:720px;margin:0 auto;padding:0 16px 0;">
-  <div class="disc" style="margin:0 0 14px;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
   </div>
 </div>
 
