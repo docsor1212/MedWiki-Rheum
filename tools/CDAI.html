@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/CDAI.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/CDAI.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CDAI 交互式评分 — MedWiki-Rheum</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
 
 :root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#1B4F8A;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
-.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.wrap{max-width:720px;margin:0 auto;padding:20px 12px 180px;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(27,79,138,0.06);}
 h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
 h1 span{color:var(--accent);}
@@ -55,48 +56,55 @@ tr:hover td{background:#f8fafa;}
 .footer-status{padding:6px 20px;border-radius:20px;font-size:0.75rem;font-weight:800;color:#fff;transition:all 0.3s;}
 .footer-path{flex:1;font-size:0.7rem;color:var(--text2);font-style:italic;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 @media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
-</style>
-<link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#1B4F8A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MedWiki">
-<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MedWiki" name="apple-mobile-web-app-title"/>
+<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
-<body>
-<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">CDAI 评分</span></div>
-<div class="wrap">
+<body><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
+</div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">CDAI 交互式评分</span></div></div>
 
+<div class="wrap">
 <div class="card">
 <h1>CDAI</h1>
 <div class="sub">Clinical Disease Activity Index · 临床疾病活动指数 · ⚠️ 成人RA工具</div>
-
 <div class="section-title">📐 输入参数</div>
-
 <div class="input-group">
 <label>压痛关节数 TJC28（0-28）</label>
-<input type="range" id="tjc" min="0" max="28" value="0" oninput="calc()">
+<input id="tjc" max="28" min="0" oninput="calc()" type="range" value="0"/>
 <div class="range-row"><span>0</span><span class="range-val" id="tjc_val">0</span><span>28</span></div>
 </div>
-
 <div class="input-group">
 <label>肿胀关节数 SJC28（0-28）</label>
-<input type="range" id="sjc" min="0" max="28" value="0" oninput="calc()">
+<input id="sjc" max="28" min="0" oninput="calc()" type="range" value="0"/>
 <div class="range-row"><span>0</span><span class="range-val" id="sjc_val">0</span><span>28</span></div>
 </div>
-
 <div class="input-group">
 <label>医生整体评估 PhGA（0-10 cm VAS）</label>
-<input type="range" id="phga" min="0" max="10" step="0.1" value="0" oninput="calc()">
+<input id="phga" max="10" min="0" oninput="calc()" step="0.1" type="range" value="0"/>
 <div class="range-row"><span>0</span><span class="range-val" id="phga_val">0.0</span><span>10</span></div>
 </div>
-
 <div class="input-group">
 <label>患者整体评估 PtGA（0-10 cm VAS）</label>
-<input type="range" id="ptga" min="0" max="10" step="0.1" value="0" oninput="calc()">
+<input id="ptga" max="10" min="0" oninput="calc()" step="0.1" type="range" value="0"/>
 <div class="range-row"><span>0</span><span class="range-val" id="ptga_val">0.0</span><span>10</span></div>
 </div>
-
 <div class="section-title green">📊 计算结果</div>
 <div class="result-box">
 <div class="result-label">CDAI = TJC + SJC + PhGA + PtGA</div>
@@ -104,7 +112,6 @@ tr:hover td{background:#f8fafa;}
 <div class="result-status" id="status" style="background:#22a87e">缓解</div>
 </div>
 </div>
-
 <div class="card">
 <div class="section-title red">🎯 CDAI分级</div>
 <table><tr><th>CDAI</th><th>活动度</th></tr>
@@ -113,7 +120,6 @@ tr:hover td{background:#f8fafa;}
 <tr><td style="font-weight:700;color:#d4892a">10.1 – 22.0</td><td style="font-weight:700;color:#d4892a">中活动度</td></tr>
 <tr><td style="font-weight:700;color:#d45050">&gt; 22.0</td><td style="font-weight:700;color:#d45050">高活动度</td></tr></table>
 </div>
-
 <script>
 function calc(){
   const tjc=+document.getElementById('tjc').value;
@@ -138,8 +144,6 @@ function calc(){
 }
 calc();
 </script>
-
-
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="DAS28.html" style="color:#1B4F8A;font-weight:600">DAS28</a> · <a href="SDAI.html" style="color:#1B4F8A;font-weight:600">SDAI</a> · <a href="JADAS27.html" style="color:#1B4F8A;font-weight:600">JADAS-27</a> · <a href="ESR_CRP.html" style="color:#1B4F8A;font-weight:600">ESR/CRP判读</a></div>
 <div style="max-width:1100px;margin:10px auto 0;padding:10px 16px;background:#fef3e2;border-left:3px solid #d4892a;border-radius:0 8px 8px 0;font-size:12.5px;line-height:1.8;"><b>儿童/成人差异提示：</b>CDAI 为<b>成人RA</b>疾病活动度工具（儿童不适用）。儿童JIA请使用 <a href="JADAS27.html" style="color:#1B4F8A;font-weight:700;">JADAS-27</a> / <a href="JADAS71.html" style="color:#1B4F8A;font-weight:700;">JADAS-71</a>（或不含ESR的cJADAS）。</div>
 <div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
@@ -149,8 +153,50 @@ calc();
 <div class="footer-score"><div class="lbl">Score</div><div class="num" id="footerScore">—</div></div>
 <div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
 </div></div>
-<script>if('serviceWorker' in navigator){{navigator.serviceWorker.register('../sw.js').catch(()=>{{}})}}</script>
+
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=7"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body></html>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style><style data-mw-bridge="1">@media (max-width:768px){.theme-dots{bottom:96px;}}</style></body></html>

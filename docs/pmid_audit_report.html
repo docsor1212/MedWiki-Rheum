@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/docs/pmid_audit_report.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/docs/pmid_audit_report.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>PMID引用全量验证报告 · MedWiki-Rheum</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
 
 :root{--bg:#F5F6F8;--surface:#fff;--text:#22303F;--text2:#5A6B7C;--text3:#93A2B1;--accent:#1B4F8A;--green:#4a9e3f;--green-bg:#e2f3dd;--red:#d05040;--red-bg:#fce5e1;--yellow:#b8891a;--yellow-bg:#faf3dc;--border:#DDE5EC;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -45,65 +46,64 @@ tr:nth-child(even){background:#fafafa;}
 .footer{text-align:center;padding:20px;font-size:.75rem;color:var(--text3);border-top:1px solid var(--border);margin-top:30px;}
 @media print{.nav-bar{display:none!important;}body{padding-top:0!important;}}
 @media(max-width:640px){table{font-size:.78rem;}th,td{padding:6px 8px;}}
-</style>
-</head>
-<body>
-<div class="nav-bar">
-  <a href="../index.html">🏠 首页</a>
-  <a href="../evidence/index.html">🔬 循证病例</a>
-  <a href="#">📄 引用验证报告</a>
-  <span class="nav-title">MedWiki-Rheum</span>
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<meta content="#12365F" name="theme-color"/></head>
+<body><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
 </div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html">参考文档</a><span class="sep">‹</span><span class="here">PMID引用全量验证报告 · MedWiki-Rheum</span></div></div>
 
 <div class="content">
-
 <h1>📋 PMID引用全量验证报告</h1>
 <div class="subtitle">循证病例库（35个HTML文件）全部225条PMID引用的逐条验证 · 2026-04-17/18</div>
-
 <!-- Summary -->
 <div class="summary-box">
-  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-    <div style="text-align:center;"><div class="big-num">225</div><div class="label">总引用数</div></div>
-    <div style="text-align:center;"><div class="big-num" style="color:var(--green)">222</div><div class="label">验证通过</div></div>
-    <div style="text-align:center;"><div class="big-num" style="color:var(--red)">3</div><div class="label">已修复</div></div>
-    <div style="text-align:center;"><div class="big-num" style="color:var(--green)">99.1%</div><div class="label">原始正确率</div></div>
-    <div style="text-align:center;"><div class="big-num" style="color:var(--green)">100%</div><div class="label">当前正确率</div></div>
-  </div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
+<div style="text-align:center;"><div class="big-num">225</div><div class="label">总引用数</div></div>
+<div style="text-align:center;"><div class="big-num" style="color:var(--green)">222</div><div class="label">验证通过</div></div>
+<div style="text-align:center;"><div class="big-num" style="color:var(--red)">3</div><div class="label">已修复</div></div>
+<div style="text-align:center;"><div class="big-num" style="color:var(--green)">99.1%</div><div class="label">原始正确率</div></div>
+<div style="text-align:center;"><div class="big-num" style="color:var(--green)">100%</div><div class="label">当前正确率</div></div>
 </div>
-
+</div>
 <!-- Phase 1 -->
 <h2>Phase 1：PMID存在性验证（39条首条引用）</h2>
-
 <p>从35个证据病例文件中提取每个文件的首条PMID引用（共39条，部分文件含多条），通过PubMed E-utilities API逐条验证。</p>
-
 <h3>方法</h3>
 <div class="code-block">
 # 提取所有PMID
-grep -roh 'PMID:[[:space:]]*[0-9]*' evidence/*.html | awk '{print $2}' | sort -u > /tmp/pmids.txt
+grep -roh 'PMID:[[:space:]]*[0-9]*' evidence/*.html | awk '{print $2}' | sort -u &gt; /tmp/pmids.txt
 
 # API验证
 for pmid in $(cat /tmp/pmids.txt); do
-  curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=$pmid&retmode=json" \
+  curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&amp;id=$pmid&amp;retmode=json" \
     | python3 -c "import json,sys; d=json.load(sys.stdin); r=d['result'][$pmid]; print(f'PMID $pmid: {r[\"title\"][:80]}')"
 done
 </div>
-
 <h3>Phase 1 结果</h3>
 <table>
 <tr><th>结果</th><th>数量</th><th>说明</th></tr>
 <tr><td><span class="badge badge-green">✅ 有效</span></td><td>37</td><td>PMID在PubMed存在，文章信息匹配</td></tr>
 <tr><td><span class="badge badge-red">❌ 无效</span></td><td>2</td><td>PMID在PubMed不存在（见修复记录）</td></tr>
 </table>
-
 <!-- Phase 2 -->
 <h2>Phase 2：内容交叉验证（225条全量引用）</h2>
-
 <p>扩展到全部35个文件的所有PMID引用（共225条），验证：</p>
 <ul style="margin:8px 0 8px 20px;">
-  <li><b>PMID是否存在</b> — PubMed API查询</li>
-  <li><b>引用内容与文件主题是否匹配</b> — 关键词交叉比对 + 人工审查</li>
+<li><b>PMID是否存在</b> — PubMed API查询</li>
+<li><b>引用内容与文件主题是否匹配</b> — 关键词交叉比对 + 人工审查</li>
 </ul>
-
 <h3>Phase 2 结果</h3>
 <table>
 <tr><th>结果</th><th>数量</th><th>说明</th></tr>
@@ -112,147 +112,168 @@ done
 <tr><td><span class="badge badge-red">❌ PMID不存在</span></td><td>1</td><td>ev_AID_01 PMID 36204790（已修复）</td></tr>
 <tr><td><span class="badge badge-green">✅ 早期已修复</span></td><td>2</td><td>Phase 1中修复的GIO_01和SAVI_01</td></tr>
 </table>
-
 <!-- 修复记录 -->
 <h2>🔧 修复记录</h2>
-
 <div class="fix-item">
-  <div class="file">ev_GIO_01.html</div>
-  <p>原文引用：<code>PMID 21954079</code>（PubMed不存在）</p>
-  <p>修复方案：<span class="arrow">→ PMID 22213727</span></p>
-  <p style="font-size:.82rem;color:var(--text2);">替代文献：Bianchi ML et al. Osteoporosis in children and adolescents: etiology and management. Paediatr Drugs. 2013. 涵盖风湿病儿童椎体骨折（GIO主题相关）。</p>
-  <p style="font-size:.78rem;color:var(--text3);">Git: 7b727ef · 2026-04-17</p>
+<div class="file">ev_GIO_01.html</div>
+<p>原文引用：<code>PMID 21954079</code>（PubMed不存在）</p>
+<p>修复方案：<span class="arrow">→ PMID 22213727</span></p>
+<p style="font-size:.82rem;color:var(--text2);">替代文献：Bianchi ML et al. Osteoporosis in children and adolescents: etiology and management. Paediatr Drugs. 2013. 涵盖风湿病儿童椎体骨折（GIO主题相关）。</p>
+<p style="font-size:.78rem;color:var(--text3);">Git: 7b727ef · 2026-04-17</p>
 </div>
-
 <div class="fix-item">
-  <div class="file">ev_SAVI_01.html</div>
-  <p>原文引用：<code>PMID 27552632</code>（PubMed不存在，但PMC5027210确实存在）</p>
-  <p>修复方案：<span class="arrow">→ PMID 27585386</span></p>
-  <p style="font-size:.82rem;color:var(--text2);">替代文献：Picard C et al. STING-associated vasculopathy with onset in infancy. J Clin Immunol. 2016. SAVI疾病核心文献。</p>
-  <p style="font-size:.78rem;color:var(--text3);">Git: 7b727ef · 2026-04-17</p>
+<div class="file">ev_SAVI_01.html</div>
+<p>原文引用：<code>PMID 27552632</code>（PubMed不存在，但PMC5027210确实存在）</p>
+<p>修复方案：<span class="arrow">→ PMID 27585386</span></p>
+<p style="font-size:.82rem;color:var(--text2);">替代文献：Picard C et al. STING-associated vasculopathy with onset in infancy. J Clin Immunol. 2016. SAVI疾病核心文献。</p>
+<p style="font-size:.78rem;color:var(--text3);">Git: 7b727ef · 2026-04-17</p>
 </div>
-
 <div class="fix-item">
-  <div class="file">ev_AID_01.html</div>
-  <p>原文引用：<code>PMID 36204790</code>（PubMed不存在），引用文字为"Jeyaratnam J et al. 2016 PReS diagnostic criteria for MKD. <i>Rheumatology</i>. 2023;62:1854-1862"</p>
-  <p>问题分析：PubMed无此作者+期刊+卷页号的文章；Jeyaratnam在PubMed上无MKD分类标准相关发表；"2016 PReS criteria"发表于"Rheumatology 2023"的描述存在时间矛盾</p>
-  <p>修复方案：<span class="arrow">→ PMID 31018962</span></p>
-  <p style="font-size:.82rem;color:var(--text2);">替代文献：Gattorno M, Hofer M, Federici S, et al. Classification criteria for autoinflammatory recurrent fevers. <i>Ann Rheum Dis</i>. 2019;78:1025-1032. Eurofever/PRINTO官方MKD分类标准（含FMF/TRAPS/CAPS/MKD等）。</p>
-  <p style="font-size:.78rem;color:var(--text3);">Git: 9e05d38 · 2026-04-18</p>
+<div class="file">ev_AID_01.html</div>
+<p>原文引用：<code>PMID 36204790</code>（PubMed不存在），引用文字为"Jeyaratnam J et al. 2016 PReS diagnostic criteria for MKD. <i>Rheumatology</i>. 2023;62:1854-1862"</p>
+<p>问题分析：PubMed无此作者+期刊+卷页号的文章；Jeyaratnam在PubMed上无MKD分类标准相关发表；"2016 PReS criteria"发表于"Rheumatology 2023"的描述存在时间矛盾</p>
+<p>修复方案：<span class="arrow">→ PMID 31018962</span></p>
+<p style="font-size:.82rem;color:var(--text2);">替代文献：Gattorno M, Hofer M, Federici S, et al. Classification criteria for autoinflammatory recurrent fevers. <i>Ann Rheum Dis</i>. 2019;78:1025-1032. Eurofever/PRINTO官方MKD分类标准（含FMF/TRAPS/CAPS/MKD等）。</p>
+<p style="font-size:.78rem;color:var(--text3);">Git: 9e05d38 · 2026-04-18</p>
 </div>
-
 <!-- 跨域引用分析 -->
 <h2>📚 跨领域引用合理性分析</h2>
-
 <p>以下引用初筛时被标记为"不匹配"（引用文献主题与文件主要疾病不同），经人工审查确认在临床/学术上下文中合理：</p>
-
 <div class="cross-ref">
-  <div class="card-title">ev_pSS_MAS_01 — 引用HLH/MAS文献</div>
-  <p>引用5篇噬血细胞性淋巴组织细胞增生症(HLH)/巨噬细胞活化综合征(MAS)文献。文件主题为pSS并发MAS，引用MAS诊断标准（HLH-2004、Ravelli 2005/2007 MAS诊断标准）属于核心参考文献，完全合理。</p>
+<div class="card-title">ev_pSS_MAS_01 — 引用HLH/MAS文献</div>
+<p>引用5篇噬血细胞性淋巴组织细胞增生症(HLH)/巨噬细胞活化综合征(MAS)文献。文件主题为pSS并发MAS，引用MAS诊断标准（HLH-2004、Ravelli 2005/2007 MAS诊断标准）属于核心参考文献，完全合理。</p>
 </div>
-
 <div class="cross-ref">
-  <div class="card-title">ev_Behcet_01 — 引用HLH-2004和MAS诊断指南</div>
-  <p>Behçet病病例涉及MAS并发症，引用HLH-2004治疗方案和MAS诊断标准作为鉴别诊断与治疗参考，临床相关性明确。</p>
+<div class="card-title">ev_Behcet_01 — 引用HLH-2004和MAS诊断指南</div>
+<p>Behçet病病例涉及MAS并发症，引用HLH-2004治疗方案和MAS诊断标准作为鉴别诊断与治疗参考，临床相关性明确。</p>
 </div>
-
 <div class="cross-ref">
-  <div class="card-title">ev_IgAV_01 — 引用KD冠状动脉文献</div>
-  <p>IgAV病例涉及冠状动脉瘤表现，引用川崎病(KD)冠状动脉病变文献作为对比鉴别参考，属于合理的跨病种临床参考。</p>
+<div class="card-title">ev_IgAV_01 — 引用KD冠状动脉文献</div>
+<p>IgAV病例涉及冠状动脉瘤表现，引用川崎病(KD)冠状动脉病变文献作为对比鉴别参考，属于合理的跨病种临床参考。</p>
 </div>
-
 <div class="cross-ref">
-  <div class="card-title">ev_AID_01 — 引用HIDS/MVK相关文献</div>
-  <p>自身炎症性疾病(AID)文件涵盖多种单基因AID，引用高IgD综合征(HIDS)/甲羟戊酸激酶(MVK)缺乏症相关文献属于AID疾病谱内的交叉引用，完全合理。</p>
+<div class="card-title">ev_AID_01 — 引用HIDS/MVK相关文献</div>
+<p>自身炎症性疾病(AID)文件涵盖多种单基因AID，引用高IgD综合征(HIDS)/甲羟戊酸激酶(MVK)缺乏症相关文献属于AID疾病谱内的交叉引用，完全合理。</p>
 </div>
-
 <div class="cross-ref">
-  <div class="card-title">ev_IgAV_02 — 引用C3肾小球病治疗</div>
-  <p>IgAV肾炎病例在鉴别诊断和治疗方案中参考C3肾小球病的补体抑制剂治疗进展，属于合理的跨亚专科治疗参考。</p>
+<div class="card-title">ev_IgAV_02 — 引用C3肾小球病治疗</div>
+<p>IgAV肾炎病例在鉴别诊断和治疗方案中参考C3肾小球病的补体抑制剂治疗进展，属于合理的跨亚专科治疗参考。</p>
 </div>
-
 <!-- Methodology -->
 <h2>🔬 验证方法</h2>
-
 <div class="card">
-  <div class="card-title">工具链</div>
-  <table>
-    <tr><th>步骤</th><th>工具</th><th>说明</th></tr>
-    <tr><td>PMID提取</td><td><code>grep -roh</code></td><td>正则匹配所有PMID引用</td></tr>
-    <tr><td>存在性验证</td><td>PubMed E-utilities API</td><td><code>esummary.fcgi</code> 查询文章元数据</td></tr>
-    <tr><td>内容匹配</td><td>关键词交叉比对</td><td>PubMed标题关键词 vs 文件主题关键词</td></tr>
-    <tr><td>误报消除</td><td>人工审查</td><td>63个初筛标记 → 18个二筛 → 最终确认</td></tr>
-    <tr><td>替代文献检索</td><td>PubMed + Web Search</td><td>确认替代PMID真实性和内容匹配度</td></tr>
-  </table>
+<div class="card-title">工具链</div>
+<table>
+<tr><th>步骤</th><th>工具</th><th>说明</th></tr>
+<tr><td>PMID提取</td><td><code>grep -roh</code></td><td>正则匹配所有PMID引用</td></tr>
+<tr><td>存在性验证</td><td>PubMed E-utilities API</td><td><code>esummary.fcgi</code> 查询文章元数据</td></tr>
+<tr><td>内容匹配</td><td>关键词交叉比对</td><td>PubMed标题关键词 vs 文件主题关键词</td></tr>
+<tr><td>误报消除</td><td>人工审查</td><td>63个初筛标记 → 18个二筛 → 最终确认</td></tr>
+<tr><td>替代文献检索</td><td>PubMed + Web Search</td><td>确认替代PMID真实性和内容匹配度</td></tr>
+</table>
 </div>
-
 <div class="card">
-  <div class="card-title">验证覆盖率</div>
-  <table>
-    <tr><th>维度</th><th>覆盖</th></tr>
-    <tr><td>文件覆盖</td><td>35/35 (100%)</td></tr>
-    <tr><td>引用覆盖</td><td>225/225 (100%)</td></tr>
-    <tr><td>PMID存在性</td><td>PubMed API逐条查询</td></tr>
-    <tr><td>内容匹配</td><td>两轮筛选 + 人工审查</td></tr>
-  </table>
+<div class="card-title">验证覆盖率</div>
+<table>
+<tr><th>维度</th><th>覆盖</th></tr>
+<tr><td>文件覆盖</td><td>35/35 (100%)</td></tr>
+<tr><td>引用覆盖</td><td>225/225 (100%)</td></tr>
+<tr><td>PMID存在性</td><td>PubMed API逐条查询</td></tr>
+<tr><td>内容匹配</td><td>两轮筛选 + 人工审查</td></tr>
+</table>
 </div>
-
 <!-- Timeline -->
 <h2>📅 验证时间线</h2>
-
 <div class="timeline-item">
-  <div class="tl-date">2026-04-17 20:30</div>
-  <div class="tl-text">Phase 1 启动：39条首条PMID提取 + PubMed API验证。发现2个无效PMID（GIO_01, SAVI_01）。</div>
+<div class="tl-date">2026-04-17 20:30</div>
+<div class="tl-text">Phase 1 启动：39条首条PMID提取 + PubMed API验证。发现2个无效PMID（GIO_01, SAVI_01）。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-17 21:00</div>
-  <div class="tl-text">Phase 1 修复完成：GIO_01 → PMID 22213727，SAVI_01 → PMID 27585386。Git提交 7b727ef。</div>
+<div class="tl-date">2026-04-17 21:00</div>
+<div class="tl-text">Phase 1 修复完成：GIO_01 → PMID 22213727，SAVI_01 → PMID 27585386。Git提交 7b727ef。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-17 21:30</div>
-  <div class="tl-text">Phase 2 启动：扩展到225条全量引用。首轮关键词匹配标记63个"不匹配"。</div>
+<div class="tl-date">2026-04-17 21:30</div>
+<div class="tl-text">Phase 2 启动：扩展到225条全量引用。首轮关键词匹配标记63个"不匹配"。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-17 22:00</div>
-  <div class="tl-text">二轮精筛：63 → 18个标记项。放宽匹配策略，考虑跨领域临床相关性。</div>
+<div class="tl-date">2026-04-17 22:00</div>
+<div class="tl-text">二轮精筛：63 → 18个标记项。放宽匹配策略，考虑跨领域临床相关性。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-17 22:30</div>
-  <div class="tl-text">人工审查18个标记项：17个为合理跨领域引用，1个确认为无效PMID（AID_01 36204790）。</div>
+<div class="tl-date">2026-04-17 22:30</div>
+<div class="tl-text">人工审查18个标记项：17个为合理跨领域引用，1个确认为无效PMID（AID_01 36204790）。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-18 07:30</div>
-  <div class="tl-text">Phase 2 修复完成：AID_01 "Jeyaratnam伪引用" → Gattorno M et al. Eurofever/PRINTO标准 (PMID 31018962)。Git提交 9e05d38。</div>
+<div class="tl-date">2026-04-18 07:30</div>
+<div class="tl-text">Phase 2 修复完成：AID_01 "Jeyaratnam伪引用" → Gattorno M et al. Eurofever/PRINTO标准 (PMID 31018962)。Git提交 9e05d38。</div>
 </div>
 <div class="timeline-item">
-  <div class="tl-date">2026-04-18 07:40</div>
-  <div class="tl-text">全量验证报告发布。225条引用100%验证通过。</div>
+<div class="tl-date">2026-04-18 07:40</div>
+<div class="tl-text">全量验证报告发布。225条引用100%验证通过。</div>
 </div>
-
 <!-- Conclusion -->
 <h2>✅ 最终结论</h2>
-
 <div class="card" style="background:linear-gradient(135deg,#EAF1F8,#fff);border-color:var(--accent);">
-  <p><b>MedWiki-Rheum循证病例库225条PMID引用全部验证完毕：</b></p>
-  <ul style="margin:8px 0 0 20px;">
-    <li>222条原始引用正确（正确率98.7%）</li>
-    <li>3条无效PMID已修复（GIO_01, SAVI_01, AID_01）</li>
-    <li>当前正确率：<b>100%</b></li>
-    <li>所有替代文献均经PubMed API二次验证确认真实存在</li>
-    <li>跨领域引用经人工审查确认临床合理性</li>
-  </ul>
-  <p style="margin-top:12px;font-size:.82rem;color:var(--text2);">验证方法可追溯、可复现。每个修复均有Git提交记录。</p>
+<p><b>MedWiki-Rheum循证病例库225条PMID引用全部验证完毕：</b></p>
+<ul style="margin:8px 0 0 20px;">
+<li>222条原始引用正确（正确率98.7%）</li>
+<li>3条无效PMID已修复（GIO_01, SAVI_01, AID_01）</li>
+<li>当前正确率：<b>100%</b></li>
+<li>所有替代文献均经PubMed API二次验证确认真实存在</li>
+<li>跨领域引用经人工审查确认临床合理性</li>
+</ul>
+<p style="margin-top:12px;font-size:.82rem;color:var(--text2);">验证方法可追溯、可复现。每个修复均有Git提交记录。</p>
 </div>
-
 </div>
-
 <div class="footer">
-  MedWiki-Rheum · PMID引用全量验证报告 · 2026-04-18<br>
-  <a href="../index.html" style="color:var(--accent);text-decoration:none;">← 返回首页</a>
+  MedWiki-Rheum · PMID引用全量验证报告 · 2026-04-18<br/>
+<a href="../index.html" style="color:var(--accent);text-decoration:none;">← 返回首页</a>
 </div>
-
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=7"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style></body>
 </html>

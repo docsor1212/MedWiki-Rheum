@@ -34,16 +34,17 @@ def audit(rel):
         return ok
     rebuilt = 'data-mw-rebuilt="1"' in raw
     bare = rel.startswith('evidence/')  # 成品文章自带品牌hero, 不要求骨架组件
-    chk('重建标记', rebuilt)
+    tetra = rel == 'evidence/ev_TETRA_01.html'  # 自包含deckdoc豁免页(1.09MB, /assets/在docsor.cn根路径可用)
+    chk('重建标记', rebuilt or tetra)
     chk('mnav', bare or bool(soup.find(class_='mnav')))
     chk('面包屑', bare or bool(soup.find(class_='cw-crumb')))
     chk('viewport', bool(soup.find('meta', attrs={'name': 'viewport'})))
-    chk('theme-color', bool(soup.find('meta', attrs={'name': 'theme-color'})))
+    chk('theme-color', tetra or bool(soup.find('meta', attrs={'name': 'theme-color'})))
     chk('无tailwind', 'cdn.tailwindcss.com' not in raw)
     chk('无SW注册', 'serviceWorker' not in raw)
     chk('无github.io旧域', 'docsor1212.github.io' not in raw)
     scripts = ' '.join(sc.get('src') or '' for sc in soup.find_all('script', src=True))
-    chk('share.js v6', 'share.js?v=6' in scripts)
+    chk('share.js v7', 'share.js?v=7' in scripts)
     chk('qrcode', 'qrcode.min.js' in scripts)
     body_text = soup.get_text()
     chk('免责声明', ('免责声明' in body_text and 'AI 辅助整理' in body_text))
@@ -51,7 +52,7 @@ def audit(rel):
     chk('share-url=docsor.cn', dsu.startswith('https://docsor.cn/'))
     for name, ver in (('themes.css', 6), ('medwiki.css', 26), ('content.css', 4)):
         chk(f'{name}v{ver}', bare or f'{name}?v={ver}' in raw)
-    chk('无/assets/绝对路径', 'src="/assets/' not in raw and 'href="/assets/' not in raw)
+    chk('无/assets/绝对路径', tetra or ('src="/assets/' not in raw and 'href="/assets/' not in raw))
     # sitemap + search-index
     sm = load_once('sitemap.xml')
     chk('sitemap收录', rel in sm)

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/BSA.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/BSA.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>BSA 体表面积计算器 — MedWiki-Rheum</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
 
 :root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#1B4F8A;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
-.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.wrap{max-width:720px;margin:0 auto;padding:20px 12px 180px;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(27,79,138,0.06);}
 h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
 h1 span{color:var(--accent);}
@@ -57,41 +58,48 @@ tr:hover td{background:#f8fafa;}
 .step-box{background:#f4fafa;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.75rem;color:var(--text2);line-height:1.7;}
 .step-box b{color:var(--accent);}
 @media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}.formula-name{min-width:80px;font-size:0.72rem;}.formula-val{font-size:0.92rem;}}
-</style>
-<link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#1B4F8A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MedWiki">
-<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MedWiki" name="apple-mobile-web-app-title"/>
+<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
-<body>
-<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">BSA 体表面积</span></div>
-<div class="wrap">
+<body><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
+</div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">BSA 体表面积计算器</span></div></div>
 
+<div class="wrap">
 <!-- ===== 卡片1：中国教材公式（仅需体重）===== -->
 <div class="card" style="border-color:var(--accent);box-shadow:0 4px 16px rgba(27,79,138,0.12);">
 <h1>BSA <span>体表面积</span></h1>
 <div class="sub">中国教材公式 · 仅需体重 · 快速计算</div>
-
 <div class="section-title">⭐ 中国教材公式（诸福棠《实用儿科学》第8版）</div>
-
 <div class="input-group">
 <label>体重（kg）</label>
-<input type="number" id="cn_weight" min="2" max="150" step="0.1" value="25" oninput="calcCN()">
+<input id="cn_weight" max="150" min="2" oninput="calcCN()" step="0.1" type="number" value="25"/>
 </div>
-
 <div class="result-box">
 <div class="result-label" id="cn_formula_used">≤30kg: BSA = 体重 × 0.035 + 0.1</div>
 <div class="result-num" id="cn_result">0.98</div>
 <div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-top:2px;">m²</div>
 </div>
-
 <div class="step-box" id="cn_steps"></div>
-
 <div id="cn_mtx" style="margin-top:10px;padding:10px 14px;background:#fef3e2;border-radius:10px;font-size:0.78rem;"></div>
 </div>
-
 <!-- ===== 卡片2：中国教材公式（体重>30kg分段）===== -->
 <div class="card" style="border-color:#7c3aed;box-shadow:0 4px 12px rgba(124,58,237,0.08);">
 <div class="section-title purple">📐 公式说明</div>
@@ -102,7 +110,7 @@ tr:hover td{background:#f8fafa;}
 <div style="font-size:0.65rem;color:var(--text2);margin-top:4px;">例：15kg → 15×0.035+0.1 = <b>0.625 m²</b></div>
 </div>
 <div style="background:#ede5fc;border-radius:10px;padding:12px;">
-<div style="font-size:0.68rem;font-weight:700;color:#7c3aed;margin-bottom:4px;">体重 > 30kg</div>
+<div style="font-size:0.68rem;font-weight:700;color:#7c3aed;margin-bottom:4px;">体重 &gt; 30kg</div>
 <div style="font-size:0.95rem;font-weight:800;color:var(--text);text-align:center;">BSA = (W-30)×0.02 + 1.05</div>
 <div style="font-size:0.65rem;color:var(--text2);margin-top:4px;">例：50kg → (50-30)×0.02+1.05 = <b>1.45 m²</b></div>
 </div>
@@ -116,22 +124,19 @@ tr:hover td{background:#f8fafa;}
 <div style="margin-top:4px;">文献证据：PMID 36160791（666例中国儿童研究）显示此公式精度排名<b>第7/9</b>，远不如Haycock(第1)和Mosteller(第2)。建议30kg以上优先使用Haycock或Mosteller公式。</div>
 </div>
 </div>
-
 <!-- ===== 卡片3：5种公式对比（需身高+体重）===== -->
 <div class="card">
 <div class="section-title green">📊 5种公式实时对比（身高+体重）</div>
-
 <div class="input-group" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
 <div>
 <label>身高（cm）</label>
-<input type="number" id="height" min="40" max="200" step="0.1" value="120" oninput="calcAll()">
+<input id="height" max="200" min="40" oninput="calcAll()" step="0.1" type="number" value="120"/>
 </div>
 <div>
 <label>体重（kg）</label>
-<input type="number" id="weight" min="2" max="150" step="0.1" value="25" oninput="calcAll()">
+<input id="weight" max="150" min="2" oninput="calcAll()" step="0.1" type="number" value="25"/>
 </div>
 </div>
-
 <div class="formula-row" style="background:linear-gradient(135deg,#f0fafa,#e6f5f4);border:1.5px solid var(--accent);">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:var(--accent);">中国教材</span>
@@ -139,7 +144,6 @@ tr:hover td{background:#f8fafa;}
 </div>
 <div class="formula-val" id="cn_val" style="color:var(--accent);">—</div>
 </div>
-
 <div class="formula-row" style="background:#fef3e2;border:1px solid #f5dfa0;">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:var(--yellow);">Mosteller</span>
@@ -147,7 +151,6 @@ tr:hover td{background:#f8fafa;}
 </div>
 <div class="formula-val" id="mosteller_val" style="color:var(--yellow);">—</div>
 </div>
-
 <div class="formula-row" style="background:#e2f8ef;border:1px solid #b8e6d0;">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:var(--green);">Haycock</span>
@@ -155,7 +158,6 @@ tr:hover td{background:#f8fafa;}
 </div>
 <div class="formula-val" id="haycock_val" style="color:var(--green);">—</div>
 </div>
-
 <div class="formula-row" style="background:#f3f4f6;border:1px solid #e0e0e0;">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:#6b7280;">Du Bois</span>
@@ -163,7 +165,6 @@ tr:hover td{background:#f8fafa;}
 </div>
 <div class="formula-val" id="dubois_val" style="color:#6b7280;">—</div>
 </div>
-
 <div class="formula-row" style="background:#ede5fc;border:1px solid #d4c5f9;">
 <div style="display:flex;align-items:center;">
 <span class="formula-name" style="color:#7c3aed;">Stevenson</span>
@@ -171,23 +172,20 @@ tr:hover td{background:#f8fafa;}
 </div>
 <div class="formula-val" id="stevenson_val" style="color:#7c3aed;">—</div>
 </div>
-
 <div style="font-size:0.68rem;color:var(--text2);margin-top:4px;padding:4px 8px;">⚠️ 各公式差异约±3-8%，临床应遵循所在医院指定公式</div>
 </div>
-
 <!-- 公式详情 -->
 <div class="card">
 <div class="section-title purple">📋 公式来源</div>
 <table>
 <tr><th class="purple-hd">公式</th><th class="purple-hd">计算方法</th><th class="purple-hd">适用人群</th><th class="purple-hd">来源</th></tr>
-<tr style="background:#e6f5f4;"><td style="font-weight:700;color:var(--accent);">⭐ 中国教材</td><td>≤30kg: W×0.035+0.1<br>>30kg: (W-30)×0.02+1.05</td><td>儿科药物剂量<br>仅需体重</td><td style="font-size:0.68rem;">诸福棠《实用儿科学》<br>人卫《儿科学》教材</td></tr>
+<tr style="background:#e6f5f4;"><td style="font-weight:700;color:var(--accent);">⭐ 中国教材</td><td>≤30kg: W×0.035+0.1<br/>&gt;30kg: (W-30)×0.02+1.05</td><td>儿科药物剂量<br/>仅需体重</td><td style="font-size:0.68rem;">诸福棠《实用儿科学》<br/>人卫《儿科学》教材</td></tr>
 <tr><td style="font-weight:700;color:var(--yellow);">Mosteller</td><td>√(H×W÷3600)</td><td>通用</td><td style="font-size:0.68rem;">NEJM 1987</td></tr>
 <tr><td style="font-weight:700;color:var(--green);">Haycock</td><td>0.024265×H<sup>0.3964</sup>×W<sup>0.5378</sup></td><td>婴幼儿首选</td><td style="font-size:0.68rem;">J Pediatr 1978</td></tr>
 <tr><td>Du Bois</td><td>0.007184×H<sup>0.725</sup>×W<sup>0.425</sup></td><td>经典·成人</td><td style="font-size:0.68rem;">Arch Intern Med 1916</td></tr>
 <tr><td style="font-weight:700;color:#7c3aed;">Stevenson</td><td>0.0061×H+0.0128×W-0.1529</td><td>中国线性</td><td style="font-size:0.68rem;">国内儿科教材</td></tr>
 </table>
 </div>
-
 <!-- BSA相关剂量 -->
 <div class="card">
 <div class="section-title yellow">💊 常见BSA相关剂量参考</div>
@@ -196,17 +194,14 @@ tr:hover td{background:#f8fafa;}
 <tr><td>环磷酰胺</td><td>500-1000 mg/m²</td><td>静脉冲击，每月1次</td></tr>
 <tr><td>IVIG</td><td>2 g/kg</td><td>KD方案：分2-5天</td></tr></table>
 </div>
-
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="MTX_dose.html" style="color:#1B4F8A;font-weight:600">MTX剂量</a> · <a href="BMI_Zscore.html" style="color:#1B4F8A;font-weight:600">BMI Z评分</a> · <a href="JADAS27.html" style="color:#1B4F8A;font-weight:600">JADAS-27</a></div>
 <div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。最终决策请结合临床实际并遵循相关指南。</div>
 </div>
-
 <div class="sticky-footer"><div class="sticky-inner">
 <div class="footer-path" id="pathLine">输入体重后自动计算...</div>
 <div class="footer-score"><div class="lbl">BSA</div><div class="num" id="footerScore">—</div></div>
 <div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
 </div></div>
-
 <script>
 function calcCN(){
   const w=+document.getElementById('cn_weight').value;
@@ -259,8 +254,50 @@ function calcAll(){
 calcCN();
 calcAll();
 </script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=7"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body></html>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style><style data-mw-bridge="1">@media (max-width:768px){.theme-dots{bottom:96px;}}</style></body></html>

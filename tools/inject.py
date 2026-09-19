@@ -10,7 +10,7 @@ import io, os, re, sys
 from bs4 import BeautifulSoup
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V_THEMES, V_MEDWIKI, V_CONTENT, V_SHARE = 6, 26, 4, 6
+V_THEMES, V_MEDWIKI, V_CONTENT, V_SHARE = 6, 26, 4, 7
 
 SKIP_FILES = {'index.html', 'index_legacy.html', 'clear-cache.html'}
 SKIP_PATHS = {'topics/KD.html', 'evidence/ev_TETRA_01.html'}

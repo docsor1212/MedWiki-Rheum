@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/vaccine_decision.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/vaccine_decision.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>疫苗决策树 — MedWiki-Rheum</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
 
 :root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#1B4F8A;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--radius:14px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
-.wrap{max-width:720px;margin:0 auto;padding:56px 12px 30px;}
+.wrap{max-width:720px;margin:0 auto;padding:20px 12px 30px;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(27,79,138,0.06);}
 h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
 h1 span{color:var(--accent);}
@@ -46,54 +47,61 @@ tr:hover td{background:#f8fafa;}
 .badge-red{background:var(--red);}
 .drug-check{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;}
 @media(max-width:640px){.drug-check{grid-template-columns:1fr;}}
-</style>
-<link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#1B4F8A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MedWiki">
-<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MedWiki" name="apple-mobile-web-app-title"/>
+<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
-<body>
-<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">疫苗决策树</span></div>
+<body><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
+</div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">疫苗决策树</span></div></div>
 
 <div class="wrap">
-
 <div class="card">
 <h1>免疫抑制患儿 <span>疫苗决策</span></h1>
 <div class="sub">儿童风湿病用药期间的疫苗接种评估 · 交互式决策工具</div>
-
 <div class="section-title">💊 当前用药方案（多选）</div>
 <div class="drug-check">
-<label><input type="checkbox" id="d_mtx" value="mtx"> MTX (甲氨蝶呤)</label>
-<label><input type="checkbox" id="d_hcq" value="hcq"> HCQ (羟氯喹)</label>
-<label><input type="checkbox" id="d_gc_low" value="gc_low"> GC 低剂量 (≤2mg/kg或≤20mg/d)</label>
-<label><input type="checkbox" id="d_gc_high" value="gc_high"> GC 中高剂量 (>2mg/kg或>20mg/d)</label>
-<label><input type="checkbox" id="d_bio" value="bio"> 生物制剂 (TNFi/IL等)</label>
-<label><input type="checkbox" id="d_jaki" value="jaki"> JAK抑制剂</label>
-<label><input type="checkbox" id="d_cyc" value="cyc"> 环磷酰胺 (CYC)</label>
-<label><input type="checkbox" id="d_mmf" value="mmf"> 吗替麦考酚酯 (MMF)</label>
-<label><input type="checkbox" id="d_aza" value="aza"> 硫唑嘌呤 (AZA)</label>
-<label><input type="checkbox" id="d_csa" value="csa"> 环孢素 (CsA)</label>
+<label><input id="d_mtx" type="checkbox" value="mtx"/> MTX (甲氨蝶呤)</label>
+<label><input id="d_hcq" type="checkbox" value="hcq"/> HCQ (羟氯喹)</label>
+<label><input id="d_gc_low" type="checkbox" value="gc_low"/> GC 低剂量 (≤2mg/kg或≤20mg/d)</label>
+<label><input id="d_gc_high" type="checkbox" value="gc_high"/> GC 中高剂量 (&gt;2mg/kg或&gt;20mg/d)</label>
+<label><input id="d_bio" type="checkbox" value="bio"/> 生物制剂 (TNFi/IL等)</label>
+<label><input id="d_jaki" type="checkbox" value="jaki"/> JAK抑制剂</label>
+<label><input id="d_cyc" type="checkbox" value="cyc"/> 环磷酰胺 (CYC)</label>
+<label><input id="d_mmf" type="checkbox" value="mmf"/> 吗替麦考酚酯 (MMF)</label>
+<label><input id="d_aza" type="checkbox" value="aza"/> 硫唑嘌呤 (AZA)</label>
+<label><input id="d_csa" type="checkbox" value="csa"/> 环孢素 (CsA)</label>
 </div>
-
 <div class="section-title yellow">🏥 疾病状态</div>
 <select id="disease_status">
 <option value="stable">稳定期（低活动度/不活动）</option>
 <option value="active">活动期（中高活动度）</option>
 </select>
-
 <div style="display:flex;gap:8px;margin-top:14px;">
 <button class="btn btn-primary" onclick="evaluate()">📋 生成接种建议</button>
 <button class="btn btn-reset" onclick="resetForm()">🔄 重置</button>
 </div>
 </div>
-
 <div class="card" id="resultCard" style="display:none;">
 <div class="section-title green">📊 接种建议结果</div>
 <div id="resultContent"></div>
 </div>
-
 <div class="card">
 <div class="section-title">📖 疫苗分类与原则</div>
 <table>
@@ -104,7 +112,6 @@ tr:hover td{background:#f8fafa;}
 <tr><td style="color:var(--red);font-weight:700;">减毒活疫苗</td><td>MMR、水痘、轮状、OPV、BCG</td><td>⚠️ 免疫抑制者多禁用，需个体化评估</td></tr>
 </table>
 </div>
-
 <div class="card">
 <div class="section-title yellow">🔄 补种时间表参考</div>
 <table>
@@ -117,10 +124,8 @@ tr:hover td{background:#f8fafa;}
 </table>
 <div style="font-size:0.72rem;color:var(--text2);margin-top:6px;">⚠️ 补种时间仅为参考，具体需结合疾病状态、用药时长、免疫功能综合评估</div>
 </div>
-
 <div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。疫苗决策需结合患儿免疫功能、疾病活动度、用药方案个体化制定。请遵循相关指南并咨询专科医师。</div>
 </div>
-
 <script>
 const vaccines=[
 {name:'流感疫苗(灭活)',type:'inactivated',defaultStatus:'ok'},
@@ -205,9 +210,51 @@ document.getElementById('disease_status').value='stable';
 document.getElementById('resultCard').style.display='none';
 }
 </script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=7"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style><style data-mw-bridge="1">@media (max-width:768px){.theme-dots{bottom:96px;}}</style></body>
 </html>

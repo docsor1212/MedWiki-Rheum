@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/SLE2K_original.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/SLE2K_original.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLEDAI-2000 疾病活动度助手</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SLEDAI-2000 疾病活动度助手</title>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
         
 
         body {
@@ -84,193 +85,190 @@ font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
 .nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
 body{padding-top:42px !important;}
 
-</style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#1B4F8A">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MedWiki">
-    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MedWiki" name="apple-mobile-web-app-title"/>
+<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
-<body class="pb-52 md:pb-40">
-<div class="nav-bar"><a href="../index.html">🏠 首页</a><a href="../index.html#topics">📖 疾病</a><a href="../index.html#drugs">💊 药物</a><a href="../index.html#tools">🔬 工具</a><span class="nav-title">SLEDAI-2000 疾病活动度助手</span></div>
+<body class="pb-52 md:pb-40"><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
+</div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">SLEDAI-2000 疾病活动度助手</span></div></div>
 
-    <header class="max-w-5xl mx-auto px-5 pt-8 pb-4">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-        <div class="flex items-baseline justify-between border-b-2 border-slate-100 pb-2">
-            <h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
+<header class="max-w-5xl mx-auto px-5 pt-8 pb-4">
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<div class="flex items-baseline justify-between border-b-2 border-slate-100 pb-2">
+<h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
                 SLEDAI <span class="text-indigo-600">- 2000</span>
-            </h1>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index --By DoctorQ 2026.01</span>
-        </div>
-        
-        <!-- 计分规则说明区 -->
-        <div class="mt-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
-            <h2 class="text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">计分规则 (Scoring Rules)</h2>
-            <ul class="text-[11px] text-slate-600 space-y-1 font-medium leading-relaxed">
-                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 评估患者在最近 10 天内出现的临床表现。</li>
-                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
-                <li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 注意事项：除外感染、代谢紊乱或药物等非狼疮因素。</li>
-            </ul>
-        </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-4 pt-4">
-        
-        <div class="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            
-            <!-- 第一列：低分值区 (1分, 2分) -->
-            <div class="flex flex-col gap-5">
-                <!-- 权重 1分 -->
-                <div class="glass-card weight-1 p-4 rounded-2xl">
-                    <h3 class="text-[10px] font-black text-slate-500 uppercase mb-3 tracking-widest flex justify-between">
-                        <span>全身与血液系统</span>
-                        <span class="bg-slate-100 px-1.5 rounded text-slate-600">1 PT</span>
-                    </h3>
-                    <div class="space-y-1.5">
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="1" data-name="发热" onclick="hit(this)">
-                            <span>发热 (>38℃)</span><span class="badge rounded">1</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="1" data-name="PLT低" onclick="hit(this)">
-                            <span>血小板下降</span><span class="badge rounded">1</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="1" data-name="WBC低" onclick="hit(this)">
-                            <span>白细胞下降 (<3×10⁹/L)</span><span class="badge rounded">1</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 权重 2分 -->
-                <div class="glass-card weight-2 p-4 rounded-2xl">
-                    <h3 class="text-[10px] font-black text-orange-600 uppercase mb-3 tracking-widest flex justify-between">
-                        <span>皮肤、浆膜与免疫</span>
-                        <span class="bg-orange-50 px-1.5 rounded text-orange-600">2 PTS</span>
-                    </h3>
-                    <div class="space-y-1.5">
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="脱发" onclick="hit(this)">
-                            <span>脱发 (新发/复发)</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="皮疹" onclick="hit(this)">
-                            <span>新出现皮疹</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="黏膜溃疡" onclick="hit(this)">
-                            <span>黏膜溃疡 (新发/复发)</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="胸膜炎" onclick="hit(this)">
-                            <span>胸膜炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="心包炎" onclick="hit(this)">
-                            <span>心包炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="低补体" onclick="hit(this)">
-                            <span>低补体 (CH50/C3/C4)</span><span class="badge rounded">2</span>
-                        </div>
-                        <div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-score="2" data-name="dsDNA" onclick="hit(this)">
-                            <span>抗 dsDNA (滴度升高)</span><span class="badge rounded">2</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第二列：权重 4分区 -->
-            <div class="glass-card weight-4 p-4 rounded-2xl">
-                <h3 class="text-[10px] font-black text-rose-600 uppercase mb-3 tracking-widest flex justify-between">
-                    <span>肾脏、骨骼与肌肉</span>
-                    <span class="bg-rose-50 px-1.5 rounded text-rose-600">4 PTS</span>
-                </h3>
-                <div class="space-y-1.5">
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="关节炎" onclick="hit(this)">
-                        <span>关节炎 (≥2关节炎性体征)</span><span class="badge rounded">4</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="肌炎" onclick="hit(this)">
-                        <span>肌炎 (近端无力/肌酶高)</span><span class="badge rounded">4</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="管型尿" onclick="hit(this)">
-                        <span>管型尿 (Hb/颗粒/RBC)</span><span class="badge rounded">4</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="血尿" onclick="hit(this)">
-                        <span>血尿 (>5 RBC/HPF)</span><span class="badge rounded">4</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="蛋白尿" onclick="hit(this)">
-                        <span>蛋白质 (>0.5g/24h)</span><span class="badge rounded">4</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="4" data-name="脓尿" onclick="hit(this)">
-                        <span>脓尿 (>5 WBC/HPF)</span><span class="badge rounded">4</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第三列：最高分值区 (8分) -->
-            <div class="glass-card weight-8 p-4 rounded-2xl">
-                <h3 class="text-[10px] font-black text-rose-900 uppercase mb-3 tracking-widest flex justify-between">
-                    <span>中枢神经 & 血管系统</span>
-                    <span class="bg-rose-100 px-1.5 rounded text-rose-700">8 PTS</span>
-                </h3>
-                <div class="space-y-1.5">
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="癫痫" onclick="hit(this)">
-                        <span>癫痫发作 (新发)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="精神症状" onclick="hit(this)">
-                        <span>精神症状 (严重紊乱)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="器质性脑病" onclick="hit(this)">
-                        <span>器质性脑病</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="视觉障碍" onclick="hit(this)">
-                        <span>视觉障碍 (SLE视网膜病)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="颅神经病" onclick="hit(this)">
-                        <span>颅神经病变 (新发)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="狼疮头痛" onclick="hit(this)">
-                        <span>狼疮性头痛 (持续剧烈)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="CVA" onclick="hit(this)">
-                        <span>脑血管意外 (新发)</span><span class="badge rounded">8</span>
-                    </div>
-                    <div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-score="8" data-name="脉管炎" onclick="hit(this)">
-                        <span>脉管炎 (溃疡/坏疽)</span><span class="badge rounded">8</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">SLEDAI-2000 Assessment System</p>
-
-    </main>
-
-    <!-- 底部操作面板 -->
-    <div class="sticky-footer">
-        <div class="max-w-5xl mx-auto px-6 py-4">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
-                
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-shadow-sm">Active Path (Selected)</span>
-                        <button onclick="clearAll()" class="text-[10px] font-black text-rose-500 hover:bg-rose-50 px-2 py-1 rounded transition-colors uppercase">Reset</button>
-                    </div>
-                    <div id="pathLine" class="text-[11px] text-slate-600 font-bold italic bg-slate-50 py-2.5 px-3 rounded-lg border border-slate-100 leading-relaxed break-words min-h-[40px]">请勾选最近 10 天内出现的临床表现...</div>
-                </div>
-
-                <div class="flex items-center gap-8 justify-between md:justify-end">
-                    <div class="flex flex-col items-center">
-                        <span class="text-[10px] font-black text-slate-300 uppercase">Total Score</span>
-                        <span id="scoreNum" class="text-5xl font-black text-slate-800 leading-none tracking-tighter">0</span>
-                    </div>
-                    <div id="statusBox" class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm border border-slate-200 bg-white text-slate-400">
+</h1>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index --By DoctorQ 2026.01</span>
+</div>
+<!-- 计分规则说明区 -->
+<div class="mt-4 p-4 bg-slate-50 border border-slate-100 rounded-xl">
+<h2 class="text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">计分规则 (Scoring Rules)</h2>
+<ul class="text-[11px] text-slate-600 space-y-1 font-medium leading-relaxed">
+<li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 评估患者在最近 10 天内出现的临床表现。</li>
+<li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
+<li class="flex items-start gap-2"><span class="text-indigo-500">•</span> 注意事项：除外感染、代谢紊乱或药物等非狼疮因素。</li>
+</ul>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-4 pt-4">
+<div class="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- 第一列：低分值区 (1分, 2分) -->
+<div class="flex flex-col gap-5">
+<!-- 权重 1分 -->
+<div class="glass-card weight-1 p-4 rounded-2xl">
+<h3 class="text-[10px] font-black text-slate-500 uppercase mb-3 tracking-widest flex justify-between">
+<span>全身与血液系统</span>
+<span class="bg-slate-100 px-1.5 rounded text-slate-600">1 PT</span>
+</h3>
+<div class="space-y-1.5">
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="发热" data-score="1" onclick="hit(this)">
+<span>发热 (&gt;38℃)</span><span class="badge rounded">1</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="PLT低" data-score="1" onclick="hit(this)">
+<span>血小板下降</span><span class="badge rounded">1</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="WBC低" data-score="1" onclick="hit(this)">
+<span>白细胞下降 (&lt;3×10⁹/L)</span><span class="badge rounded">1</span>
+</div>
+</div>
+</div>
+<!-- 权重 2分 -->
+<div class="glass-card weight-2 p-4 rounded-2xl">
+<h3 class="text-[10px] font-black text-orange-600 uppercase mb-3 tracking-widest flex justify-between">
+<span>皮肤、浆膜与免疫</span>
+<span class="bg-orange-50 px-1.5 rounded text-orange-600">2 PTS</span>
+</h3>
+<div class="space-y-1.5">
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="脱发" data-score="2" onclick="hit(this)">
+<span>脱发 (新发/复发)</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="皮疹" data-score="2" onclick="hit(this)">
+<span>新出现皮疹</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="黏膜溃疡" data-score="2" onclick="hit(this)">
+<span>黏膜溃疡 (新发/复发)</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="胸膜炎" data-score="2" onclick="hit(this)">
+<span>胸膜炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="心包炎" data-score="2" onclick="hit(this)">
+<span>心包炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="低补体" data-score="2" onclick="hit(this)">
+<span>低补体 (CH50/C3/C4)</span><span class="badge rounded">2</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="dsDNA" data-score="2" onclick="hit(this)">
+<span>抗 dsDNA (滴度升高)</span><span class="badge rounded">2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 第二列：权重 4分区 -->
+<div class="glass-card weight-4 p-4 rounded-2xl">
+<h3 class="text-[10px] font-black text-rose-600 uppercase mb-3 tracking-widest flex justify-between">
+<span>肾脏、骨骼与肌肉</span>
+<span class="bg-rose-50 px-1.5 rounded text-rose-600">4 PTS</span>
+</h3>
+<div class="space-y-1.5">
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="关节炎" data-score="4" onclick="hit(this)">
+<span>关节炎 (≥2关节炎性体征)</span><span class="badge rounded">4</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="肌炎" data-score="4" onclick="hit(this)">
+<span>肌炎 (近端无力/肌酶高)</span><span class="badge rounded">4</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="管型尿" data-score="4" onclick="hit(this)">
+<span>管型尿 (Hb/颗粒/RBC)</span><span class="badge rounded">4</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="血尿" data-score="4" onclick="hit(this)">
+<span>血尿 (&gt;5 RBC/HPF)</span><span class="badge rounded">4</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="蛋白尿" data-score="4" onclick="hit(this)">
+<span>蛋白质 (&gt;0.5g/24h)</span><span class="badge rounded">4</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="脓尿" data-score="4" onclick="hit(this)">
+<span>脓尿 (&gt;5 WBC/HPF)</span><span class="badge rounded">4</span>
+</div>
+</div>
+</div>
+<!-- 第三列：最高分值区 (8分) -->
+<div class="glass-card weight-8 p-4 rounded-2xl">
+<h3 class="text-[10px] font-black text-rose-900 uppercase mb-3 tracking-widest flex justify-between">
+<span>中枢神经 &amp; 血管系统</span>
+<span class="bg-rose-100 px-1.5 rounded text-rose-700">8 PTS</span>
+</h3>
+<div class="space-y-1.5">
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="癫痫" data-score="8" onclick="hit(this)">
+<span>癫痫发作 (新发)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="精神症状" data-score="8" onclick="hit(this)">
+<span>精神症状 (严重紊乱)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="器质性脑病" data-score="8" onclick="hit(this)">
+<span>器质性脑病</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="视觉障碍" data-score="8" onclick="hit(this)">
+<span>视觉障碍 (SLE视网膜病)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="颅神经病" data-score="8" onclick="hit(this)">
+<span>颅神经病变 (新发)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="狼疮头痛" data-score="8" onclick="hit(this)">
+<span>狼疮性头痛 (持续剧烈)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="CVA" data-score="8" onclick="hit(this)">
+<span>脑血管意外 (新发)</span><span class="badge rounded">8</span>
+</div>
+<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="脉管炎" data-score="8" onclick="hit(this)">
+<span>脉管炎 (溃疡/坏疽)</span><span class="badge rounded">8</span>
+</div>
+</div>
+</div>
+</div>
+<p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">SLEDAI-2000 Assessment System</p>
+</main>
+<!-- 底部操作面板 -->
+<div class="sticky-footer">
+<div class="max-w-5xl mx-auto px-6 py-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-shadow-sm">Active Path (Selected)</span>
+<button class="text-[10px] font-black text-rose-500 hover:bg-rose-50 px-2 py-1 rounded transition-colors uppercase" onclick="clearAll()">Reset</button>
+</div>
+<div class="text-[11px] text-slate-600 font-bold italic bg-slate-50 py-2.5 px-3 rounded-lg border border-slate-100 leading-relaxed break-words min-h-[40px]" id="pathLine">请勾选最近 10 天内出现的临床表现...</div>
+</div>
+<div class="flex items-center gap-8 justify-between md:justify-end">
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-black text-slate-300 uppercase">Total Score</span>
+<span class="text-5xl font-black text-slate-800 leading-none tracking-tighter" id="scoreNum">0</span>
+</div>
+<div class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm border border-slate-200 bg-white text-slate-400" id="statusBox">
                         Inactivity
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <script>
+</div>
+</div>
+</div>
+</div>
+<script>
         function hit(el) {
             el.classList.toggle('selected');
             runCalc();
@@ -324,12 +322,50 @@ body{padding-top:42px !important;}
         }
     </script>
 
-
-<script>
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}
-</script>
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=7"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style></body>
 </html>

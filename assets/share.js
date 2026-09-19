@@ -181,7 +181,7 @@
     window.addEventListener('resize', function(){
       try {
         var sv = JSON.parse(localStorage.getItem(posKey) || 'null');
-        if (sv) placeFab(Math.min(sv.x, window.innerWidth - 54), Math.min(sv.y, window.innerHeight - 54));
+        if (sv) placeFab(Math.max(8, Math.min(sv.x, window.innerWidth - 54)), Math.max(64, Math.min(sv.y, window.innerHeight - 54)));
       } catch(e){}
       if (!pop.hidden) placePop();
     });
