@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-share-url="https://docsor1212.github.io/MedWiki-Rheum/tools/KD_CA_Zscore.html">
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/KD_CA_Zscore.html" data-theme="glm" lang="zh-CN">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>冠脉Z值计算器 — 川崎病 — MedWiki-Rheum</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
+
+<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
 
 :root{--bg:#f8fafb;--surface:#fff;--text:#1e293b;--text2:#64748b;--accent:#1B4F8A;--accent-dark:#178f8a;--accent-bg:#e6f5f4;--border:#e0edec;--green:#22a87e;--green-bg:#e2f8ef;--yellow:#d4892a;--yellow-bg:#fef3e2;--red:#d45050;--red-bg:#fde8e8;--orange:#e67e22;--orange-bg:#fef0e0;--radius:14px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:13px;}
-.wrap{max-width:720px;margin:0 auto;padding:56px 12px 180px;}
+.wrap{max-width:720px;margin:0 auto;padding:20px 12px 180px;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(27,79,138,0.06);}
 h1{font-size:1.5rem;font-weight:800;margin-bottom:2px;}
 h1 span{color:var(--accent);}
@@ -57,89 +58,94 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 .toggle-btn{display:inline-block;padding:4px 12px;border-radius:6px;font-size:0.72rem;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--surface);color:var(--text2);transition:all 0.2s;user-select:none;}
 .toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 @media(max-width:640px){.sticky-inner{flex-wrap:wrap;}.footer-path{order:3;width:100%;}}
-</style>
-<link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#1B4F8A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MedWiki">
-<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MedWiki" name="apple-mobile-web-app-title"/>
+<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
 </head>
-<body>
-<div class="nav-bar"><a href="../index.html">🏠</a><a href="../index.html#topics">📖</a><a href="../index.html#drugs">💊</a><a href="../index.html#tools">🔬</a><span class="nav-title">冠脉Z值计算器</span></div>
-<div class="wrap">
+<body><nav aria-label="站点导航" class="mnav">
+<div class="mnav-in">
+<a class="home" href="../index.html">⌂ MedWiki 首页</a>
+<a class="mlink" href="../index.html#topics">疾病专题</a>
+<a class="mlink" href="../index.html#drugs">药物手册</a>
+<a class="mlink" href="../index.html#tools">临床工具</a>
+<a class="mlink" href="../index.html#cases">病例学习</a>
+<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+<a class="mlink" href="../index.html#skills">Skills</a>
+<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
+<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
+<span class="brand">MedWiki-Rheum</span>
+</div>
+</nav>
+<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">冠脉Z值计算器 — 川崎病</span></div></div>
 
+<div class="wrap">
 <!-- 卡片1：BSA计算 -->
 <div class="card" style="border-color:var(--accent);box-shadow:0 4px 16px rgba(27,79,138,0.12);">
 <h1>冠脉Z值 <span>计算器</span></h1>
 <div class="sub">川崎病冠状动脉Z评分 · Dallaire-Dahdah 2011（Montreal体系 · JASE 2011;24:60-74）</div>
-
 <div class="section-title">📐 体表面积 (BSA)</div>
 <div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;">
 <span class="toggle-btn active" id="bsa_mode_auto" onclick="setBSAMode('auto')">身高+体重</span>
 <span class="toggle-btn" id="bsa_mode_manual" onclick="setBSAMode('manual')">直接输入BSA</span>
 </div>
-
 <div id="auto_bsa" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
 <div class="input-group">
 <label>身高 (cm)</label>
-<input type="number" id="height" min="40" max="200" step="0.1" value="110" oninput="calc()">
+<input id="height" max="200" min="40" oninput="calc()" step="0.1" type="number" value="110"/>
 </div>
 <div class="input-group">
 <label>体重 (kg)</label>
-<input type="number" id="weight" min="2" max="150" step="0.1" value="18" oninput="calc()">
+<input id="weight" max="150" min="2" oninput="calc()" step="0.1" type="number" value="18"/>
 </div>
 </div>
-
-<div id="manual_bsa" class="input-group" style="display:none;">
+<div class="input-group" id="manual_bsa" style="display:none;">
 <label>BSA (m²)</label>
-<input type="number" id="bsa_manual" min="0.1" max="2.5" step="0.001" value="0.72" oninput="calc()">
+<input id="bsa_manual" max="2.5" min="0.1" oninput="calc()" step="0.001" type="number" value="0.72"/>
 </div>
-
 <div class="result-box">
 <div class="result-label">体表面积 (Haycock)</div>
 <div class="result-num" id="bsa_result">0.72</div>
 <div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-top:2px;">m²</div>
 </div>
 </div>
-
 <!-- 卡片2：冠脉测量输入 -->
 <div class="card">
 <div class="section-title yellow">📏 冠状动脉内径测量 (mm)</div>
 <div style="font-size:0.68rem;color:var(--text2);margin-bottom:10px;">请输入超声心动图测量的各段冠状动脉内径（mm）</div>
-
 <div class="input-group">
 <label>左主干 (LMain / LMCA)</label>
-<input type="number" id="d_lmca" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_lmca" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 <div class="input-group">
 <label>左前降支 (LAD)</label>
-<input type="number" id="d_lad" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_lad" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 <div class="input-group">
 <label>左回旋支 (LCX)</label>
-<input type="number" id="d_lcx" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_lcx" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 <div class="input-group">
 <label>右冠状动脉近段 (Prox RCA)</label>
-<input type="number" id="d_rca_prox" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_rca_prox" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 <div class="input-group">
 <label>右冠状动脉中段 (Mid RCA)</label>
-<input type="number" id="d_rca_mid" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_rca_mid" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 <div class="input-group">
 <label>右冠状动脉远段 (Distal RCA)</label>
-<input type="number" id="d_rca_dist" min="0.5" max="20" step="0.1" value="" placeholder="mm" oninput="calc()">
+<input id="d_rca_dist" max="20" min="0.5" oninput="calc()" placeholder="mm" step="0.1" type="number" value=""/>
 </div>
 </div>
-
 <!-- 卡片3：Z值结果 -->
 <div class="card" id="result_card" style="display:none;">
 <div class="section-title green">📊 Z评分结果</div>
 <div id="z_results"></div>
 </div>
-
 <!-- 卡片4：诊断分级 -->
 <div class="card">
 <div class="section-title red">🏥 冠脉病变分级（AHA 2017 / JCS 2020）</div>
@@ -151,24 +157,21 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <tr style="background:var(--red-bg);"><td style="color:var(--red);font-weight:700;">中动脉瘤</td><td>—</td><td>5 ~ 8mm</td></tr>
 <tr style="background:#f3d0d0;"><td style="color:#8b1a1a;font-weight:700;">巨大动脉瘤</td><td>—</td><td>≥ 8mm</td></tr>
 </table>
-
 <div class="alert-box" style="background:var(--yellow-bg);border:1px solid #f5dfa0;margin-top:10px;">
 <div style="font-weight:700;color:var(--yellow);margin-bottom:4px;">📌 日本循环学会 (JCS 2020) 标准</div>
 <div>JCS 2020指南建议：≥5岁儿童冠脉内径≥4mm，或&lt;5岁冠脉内径≥3mm，或冠脉内径≥1.5倍相邻段，即可诊断冠脉扩张。日本标准不依赖Z值，更便于快速判断。</div>
 </div>
-
 <div class="alert-box" style="background:var(--accent-bg);border:1px solid var(--border);margin-top:8px;">
 <div style="font-weight:700;color:var(--accent);margin-bottom:4px;">📋 Z值计算方法</div>
-<div>Z = (实测内径 − 均值) / SD；均值 = a₁ + b₁×√BSA；SD = a₂ + b₂×√BSA（SD随BSA变化）。BSA采用Haycock公式（与原文推导一致）。<br>
-<b>参考文献：</b><br>
-① Dallaire F, Dahdah N. <i>J Am Soc Echocardiogr</i> 2011;24(1):60-74（本工具采用）<br>
-② McCrindle BW et al. <i>Circulation</i> 2007;116(2):174-9（Boston体系）<br>
-③ Kobayashi T et al. <i>J Am Soc Echocardiogr</i> 2016;29(8):794-801（日本LMS法）<br>
+<div>Z = (实测内径 − 均值) / SD；均值 = a₁ + b₁×√BSA；SD = a₂ + b₂×√BSA（SD随BSA变化）。BSA采用Haycock公式（与原文推导一致）。<br/>
+<b>参考文献：</b><br/>
+① Dallaire F, Dahdah N. <i>J Am Soc Echocardiogr</i> 2011;24(1):60-74（本工具采用）<br/>
+② McCrindle BW et al. <i>Circulation</i> 2007;116(2):174-9（Boston体系）<br/>
+③ Kobayashi T et al. <i>J Am Soc Echocardiogr</i> 2016;29(8):794-801（日本LMS法）<br/>
 ④ 日本循环学会 JCS 2020 川崎病急性期管理指南（绝对值标准）
 </div>
 </div>
 </div>
-
 <!-- 卡片5：参数表 -->
 <div class="card">
 <div class="section-title purple">📋 回归参数参考表</div>
@@ -183,21 +186,18 @@ td{padding:4px 8px;border-bottom:1px solid #f0f5f4;}
 <tr><td style="font-weight:700;">Distal RCA</td><td>−0.3185</td><td>2.3295</td><td>0.1099</td><td>0.3198</td></tr>
 </table>
 <div style="font-size:0.65rem;color:var(--text2);margin-top:6px;">
-参数来源：Dallaire F, Dahdah N. J Am Soc Echocardiogr 2011;24(1):60-74，485例健康儿童（Haycock BSA公式）。<br>
+参数来源：Dallaire F, Dahdah N. J Am Soc Echocardiogr 2011;24(1):60-74，485例健康儿童（Haycock BSA公式）。<br/>
 ⚠️ 已对照原文开源实现核验；临床决策仍请结合原始文献与患者实际。
 </div>
 </div>
-
 <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:#64748b">🔗 相关工具：<a href="BSA.html" style="color:#1B4F8A;font-weight:600">BSA计算器</a> · <a href="BMI_Zscore.html" style="color:#1B4F8A;font-weight:600">BMI Z评分</a> · <a href="MAS_HLH_screening.html" style="color:#1B4F8A;font-weight:600">MAS/HLH筛查</a></div>
 <div class="disclaimer">⚠️ 本工具仅供临床参考，不构成诊疗建议。Z值采用Dallaire-Dahdah 2011已发表参数（已对照开源实现核验），最终决策请结合临床实际并遵循相关指南。</div>
 </div>
-
 <div class="sticky-footer"><div class="sticky-inner">
 <div class="footer-path" id="pathLine">输入BSA和冠脉内径后自动计算...</div>
 <div class="footer-score"><div class="lbl">Max Z</div><div class="num" id="footerScore">—</div></div>
 <div class="footer-status" id="footerStatus" style="background:#cbd5e1;color:#fff">待评估</div>
 </div></div>
-
 <script>
 // Dallaire-Dahdah 2011 (Montreal): 均值=a1+b1*sqrt(BSA), SD=a2+b2*sqrt(BSA), 单位mm
 // 核验源: parameterz开源实现ca_defs.js Cor_m + PMC5725343 Table5
@@ -316,8 +316,50 @@ function calc() {
 
 calc();
 </script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{})}</script>
+
 <script src="../assets/qrcode.min.js"></script>
-<script src="../assets/share.js?v=6" defer></script>
+<script defer="" src="../assets/share.js?v=6"></script>
 <div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-</body></html>
+<div aria-label="主题切换" class="theme-dots" role="group">
+<span class="lbl">主题</span>
+<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
+<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
+<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+</div>
+<script>
+(function(){
+  var THEMES = ["glm","honey","teal"];
+  var saved = null;
+  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
+  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
+  var current = document.documentElement.getAttribute("data-theme") || "glm";
+  var btns = document.querySelectorAll("[data-set-theme]");
+  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-set-theme");
+      document.documentElement.setAttribute("data-theme", current);
+      try { localStorage.setItem("mw-theme", current); } catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+<style data-mw-bridge="1">
+/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
+body{padding-top:0 !important;}
+.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
+.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
+  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
+  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
+  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
+  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
+.wrap table{font-size:13px;}
+.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
+  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
+.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
+.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
+.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
+</style><style data-mw-bridge="1">@media (max-width:768px){.theme-dots{bottom:96px;}}</style></body></html>
