@@ -129,6 +129,30 @@ body{
 .hpanel a.row .sub .score{color:var(--pill-label); font-weight:800; opacity:1;}
 .hpanel a.row.rec{background:var(--wash); box-shadow:inset 3px 0 0 var(--accent-bright);}
 .hpanel a.row.rec:hover{transform:translateX(2px);}
+
+/* AF旗舰卡：技能面板签名元素(金边+下载量大数字,真实数据) */
+.hpanel a.afcard{
+  grid-column:1 / -1;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  background:var(--wash); border:1px solid var(--accent-bright); border-radius:10px;
+  box-shadow:inset 3px 0 0 var(--accent-bright);
+  padding:10px 12px; margin:2px 2px 8px; text-decoration:none; color:var(--pill-ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.hpanel a.afcard:hover{transform:translateY(-2px);}
+.hpanel a.afcard .mono{
+  flex:none; width:36px; height:36px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--accent-bright); color:var(--accent-deep); font-size:14px; font-weight:800;
+}
+.hpanel a.afcard .bd{flex:1; min-width:0; display:flex; flex-direction:column;}
+.hpanel a.afcard .nm{font-size:13.5px; font-weight:800; color:var(--pill-label); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.hpanel a.afcard .sub{font-size:10px; color:var(--pill-ink); margin-top:2px;}
+.hpanel a.afcard .dl{flex:none; text-align:right;}
+.hpanel a.afcard .dl .n{font-size:25px; font-weight:900; line-height:1; color:var(--pill-label); font-variant-numeric:tabular-nums; letter-spacing:.01em;}
+.hpanel a.afcard .dl .l{display:block; font-size:9px; color:var(--pill-ink); letter-spacing:.14em; margin-top:3px;}
+.hpanel a.afcard .badges{display:flex; gap:5px; flex-wrap:wrap; width:100%; padding-left:46px;}
+.hpanel a.afcard .badge{font-size:9px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); background:var(--accent-bright); border-radius:3px; padding:1.5px 7px;}
 .hpanel a.row.rec .mono{background:var(--accent-bright); color:var(--accent-deep);}
 .hpanel .chip-rec{flex:none; font-size:8.5px; font-weight:800; color:var(--accent-deep); background:var(--accent-bright); border-radius:3px; padding:0 4px; line-height:1.5; margin-left:4px;}
 @media (max-width:980px){
