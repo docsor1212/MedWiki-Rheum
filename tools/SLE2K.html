@@ -1,394 +1,270 @@
 <!DOCTYPE html>
-
-<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/SLE2K.html" data-theme="glm" lang="zh-CN">
+<html lang="zh-CN" data-theme="glm" data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/SLE2K.html">
 <head>
-<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SLEDAI-2000 疾病活动度助手</title>
-
-<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
-        
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: #f8fafb;
-            color: #1e293b;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .serif-title { font-family: 'Noto Serif SC', serif; }
-
-        .glass-card {
-            background: #ffffff;
-            border: 1px solid #e8f0ee;
-            box-shadow: 0 2px 8px rgba(27,79,138,0.06);
-            transition: all 0.25s ease;
-        }
-
-        /* 分值权重色条 — teal系渐变 */
-        .weight-1 { border-top: 3px solid #a7d8d5; }
-        .weight-2 { border-top: 3px solid #f0a844; }
-        .weight-4 { border-top: 3px solid #e05a5a; }
-        .weight-8 { border-top: 3px solid #8b2020; }
-
-        .clickable-item {
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #f4fafa;
-        }
-
-        .clickable-item:hover {
-            background: #e6f5f4;
-        }
-
-        .selected {
-            background: linear-gradient(135deg, #1B4F8A 0%, #178f8a 100%) !important;
-            color: white !important;
-            box-shadow: 0 4px 12px rgba(27,79,138,0.3);
-        }
-
-        .selected .badge {
-            background: rgba(255, 255, 255, 0.2) !important;
-            color: white !important;
-        }
-
-        .badge {
-            background: #e2eceb;
-            color: #5f8a88;
-            font-size: 0.7rem;
-            width: 24px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-        }
-
-        .sticky-footer {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: saturate(180%) blur(20px);
-            border-top: 1px solid #e0edec;
-            z-index: 50;
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-
-        @media (max-width: 640px) {
-            .card-grid { grid-template-columns: 1fr; gap: 0.75rem; }
-        }
-
-        .nav-bar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: #1B4F8A; color: #fff;
-            padding: 6px 16px; display: flex; align-items: center; gap: 12px;
-            font-family: -apple-system,'PingFang SC','Microsoft YaHei', sans-serif; font-size: 13px;
-            box-shadow: 0 2px 6px rgba(27,79,138,0.18);
-        }
-        .nav-bar a { color: #fff; text-decoration: none; opacity: .85; transition: opacity .2s; }
-        .nav-bar a:hover { opacity: 1; }
-        .nav-bar .nav-title { font-weight: 600; margin-left: auto; opacity: .7; font-size: 12px; }
-        body { padding-top: 42px !important; }
-
-        /* 计分规则区域 */
-        .rule-box {
-            background: linear-gradient(135deg, #f0fafa 0%, #e8f5f3 100%);
-            border: 1px solid #c8e6e3;
-        }
-        .rule-box li::before {
-            content: '●';
-            color: #1B4F8A;
-            margin-right: 6px;
-            font-size: 8px;
-            vertical-align: middle;
-        }
-    </style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
-<link href="../manifest.json" rel="manifest"/>
-<meta content="#1B4F8A" name="theme-color"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="MedWiki" name="apple-mobile-web-app-title"/>
-<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLEDAI-2000 疾病活动指数 — MedWiki-Rheum</title>
+<meta name="description" content="SLEDAI-2000 疾病活动指数评分工具：24项临床表现按1/2/4/8分权重分组直接累加，移植自鸿蒙版 Sledai2000App">
+<meta name="theme-color" content="#12365F">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/content.css?v=4">
+<link rel="stylesheet" href="../assets/medwiki.css?v=26">
+<style>
+/* ============================================================
+   SLEDAI-2000 网页版 —— 1:1 移植自鸿蒙 Sledai2000App (Index.ets)
+   保留 Bees & Honey v2 原配色（用户裁定：保留鸿蒙版布局与配色）
+   ============================================================ */
+:root{
+  --b-bg:#FAF3DD; --b-card:#FFFFFF; --b-ink:#5E6472;
+  --b-peach:#FFA69E; --b-mint:#B8F2E6; --b-sky:#AED9E0;
+  --b-dim:rgba(94,100,114,.62); --b-faint:rgba(94,100,114,.45);
+  --b-row:rgba(250,243,221,.85); --b-border:rgba(94,100,114,.12);
+  --b-panel:rgba(255,255,255,.88);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:var(--b-bg);color:var(--b-ink);line-height:1.5;font-size:13px;
+}
+.cw-wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+.app-wrap{max-width:720px;margin:0 auto;padding:10px 16px 230px;}
+.app-head{padding-bottom:6px;border-bottom:2px solid var(--b-border);margin-bottom:10px;}
+.app-head .t{font-size:24px;font-weight:900;line-height:1.2;}
+.app-head .t em{font-style:normal;color:var(--b-peach);}
+.app-head .sub{display:flex;justify-content:space-between;font-size:9px;font-weight:700;color:var(--b-faint);letter-spacing:1px;margin-top:2px;}
+.rules{padding:12px;border-radius:12px;background:var(--b-sky);border:1px solid var(--b-border);margin-bottom:8px;}
+.rules h2{font-size:10px;font-weight:900;letter-spacing:1px;margin-bottom:3px;}
+.rules p{font-size:10px;font-weight:500;margin:1px 0;}
+.rules .src{margin-top:4px;font-size:9.5px;color:var(--b-dim);}
+.grp{background:var(--b-card);border:1px solid var(--b-border);border-radius:10px;overflow:hidden;margin-bottom:8px;}
+.grp .bar{height:3px;}
+.grp .in{padding:10px 12px;}
+.grp .hd{display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:1px;margin-bottom:4px;}
+.grp .hd .pts{margin-left:auto;font-size:9px;font-weight:900;padding:3px 8px;border-radius:6px;background:var(--b-row);}
+.it{display:flex;align-items:center;width:100%;padding:6px 10px;border-radius:8px;background:var(--b-row);border:none;cursor:pointer;margin-top:4px;text-align:left;font:inherit;color:inherit;}
+.it .desc{flex:1;font-size:11px;font-weight:700;}
+.it .sc{flex:none;width:22px;height:17px;border-radius:4px;text-align:center;font-size:11px;font-weight:900;background:var(--b-sky);color:var(--b-ink);margin-left:8px;line-height:17px;}
+.it.on{background:var(--b-peach);}
+.it.on .desc{font-weight:900;}
+.it.on .sc{background:var(--b-ink);color:#fff;}
+.foot-tip{text-align:center;font-size:10px;font-weight:500;color:var(--b-faint);letter-spacing:4px;margin:16px 0;}
+/* 底部固定面板（鸿蒙 BottomPanel 1:1） */
+.panel{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--b-panel);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-top:2px solid var(--b-mint);
+  padding:10px 20px;padding-bottom:calc(10px + env(safe-area-inset-bottom));}
+.panel .r1{display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:2px;color:var(--b-dim);}
+.panel > .r1, .panel > .path, .panel > .r3{max-width:688px;margin-left:auto;margin-right:auto;}
+.panel .r1 .act{margin-left:auto;font-size:10px;font-weight:900;letter-spacing:0;color:var(--b-ink);cursor:pointer;background:none;border:none;font-family:inherit;padding:2px 4px;}
+.panel .r1 .act.reset{color:var(--b-peach);margin-left:12px;}
+.path{width:100%;margin-top:6px;padding:6px;border-radius:8px;background:#fff;border:1px solid var(--b-sky);
+  font-size:10px;font-weight:700;font-style:italic;min-height:30px;}
+.panel .r3{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.warnbox{display:flex;align-items:center;gap:8px;max-width:46%;padding:9px 12px;border-radius:10px;background:var(--b-sky);border:1px solid var(--b-ink);}
+.warnbox .w{font-size:20px;font-weight:900;color:var(--b-peach);}
+.warnbox .l{font-size:12px;font-weight:700;line-height:1.4;}
+.panel .sp{flex:1;}
+.scorebox .lbl{font-size:10px;font-weight:900;letter-spacing:2px;color:var(--b-faint);}
+.scorebox .num{font-size:44px;font-weight:900;line-height:48px;}
+.statchip{font-size:10px;font-weight:900;padding:10px 12px;border-radius:14px;text-align:center;}
+@media (max-width:640px){
+  .app-wrap{padding:8px 12px 250px;}
+  .panel{padding:10px 14px;}
+  .warnbox .l{font-size:10.5px;}
+}
+</style>
+<link rel="stylesheet" href="../assets/themes.css?v=6">
 </head>
-<body class="pb-52 md:pb-40"><nav aria-label="站点导航" class="mnav">
-<div class="mnav-in">
-<a class="home" href="../index.html">⌂ MedWiki 首页</a>
-<a class="mlink" href="../index.html#topics">疾病专题</a>
-<a class="mlink" href="../index.html#drugs">药物手册</a>
-<a class="mlink" href="../index.html#tools">临床工具</a>
-<a class="mlink" href="../index.html#cases">病例学习</a>
-<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
-<a class="mlink" href="../index.html#skills">Skills</a>
-<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
-<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
-<span class="brand">MedWiki-Rheum</span>
-</div>
+<body>
+<nav class="mnav" aria-label="站点导航">
+  <div class="mnav-in">
+  <a class="home" href="../index.html">⌂ MedWiki 首页</a>
+  <a class="mlink" href="../index.html#topics">疾病专题</a>
+  <a class="mlink" href="../index.html#drugs">药物手册</a>
+  <a class="mlink" href="../index.html#tools">临床工具</a>
+  <a class="mlink" href="../index.html#cases">病例学习</a>
+  <a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+  <a class="mlink" href="../index.html#skills">Skills</a>
+  <a class="mlink" href="https://space.bilibili.com/432233902" target="_blank" rel="noopener">B站</a>
+  <a class="mlink" href="https://github.com/docsor1212" target="_blank" rel="noopener">GitHub</a>
+  <span class="brand">MedWiki-Rheum</span>
+  </div>
 </nav>
-<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">SLEDAI-2000 疾病活动度助手</span></div></div>
 
-<header class="max-w-5xl mx-auto px-5 pt-8 pb-4">
-<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<div class="flex items-baseline justify-between border-b-2 border-teal-100 pb-2">
-<h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
-                SLEDAI <span style="color:#1B4F8A">- 2000</span>
-</h1>
-<span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Activity Index — By DoctorQ 2026.01</span>
+<div class="cw-wrap">
+  <div class="cw-crumb">
+    <a href="../index.html">首页</a><span class="sep">‹</span>
+    <a href="../index.html#tools">临床工具</a><span class="sep">‹</span>
+    <span class="here">SLEDAI-2000 疾病活动指数</span>
+  </div>
 </div>
-<div class="rule-box mt-4 p-4 rounded-xl">
-<h2 class="text-[11px] font-black uppercase tracking-widest mb-2" style="color:#1B4F8A">计分规则 (Scoring Rules)</h2>
-<ul class="text-[11px] text-slate-600 space-y-1 font-medium leading-relaxed">
-<li>评估患者在最近 10 天内出现的临床表现。</li>
-<li>计分逻辑：存在该项表现即得对应分值，各项分值直接累加。</li>
-<li>注意事项：除外感染、代谢紊乱或药物等非狼疮因素。</li>
-</ul>
-</div>
-</header>
-<main class="max-w-5xl mx-auto px-4 pt-4">
-<div class="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-<!-- 第一列：低分值区 -->
-<div class="flex flex-col gap-5">
-<!-- 权重 1分 -->
-<div class="glass-card weight-1 p-4 rounded-2xl">
-<h3 class="text-[10px] font-black text-slate-500 uppercase mb-3 tracking-widest flex justify-between">
-<span>全身与血液系统</span>
-<span class="bg-slate-100 px-1.5 rounded text-slate-600">1 PT</span>
-</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="发热" data-score="1" onclick="hit(this)">
-<span>发热 (&gt;38℃)</span><span class="badge rounded">1</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="PLT低" data-score="1" onclick="hit(this)">
-<span>血小板下降</span><span class="badge rounded">1</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="WBC低" data-score="1" onclick="hit(this)">
-<span>白细胞下降 (&lt;3×10⁹/L)</span><span class="badge rounded">1</span>
-</div>
-</div>
-</div>
-<!-- 权重 2分 -->
-<div class="glass-card weight-2 p-4 rounded-2xl">
-<h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#d4892a">
-<span>皮肤、浆膜与免疫</span>
-<span class="px-1.5 rounded" style="background:#fef3e2;color:#d4892a">2 PTS</span>
-</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="脱发" data-score="2" onclick="hit(this)">
-<span>脱发 (新发/复发)</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="皮疹" data-score="2" onclick="hit(this)">
-<span>新出现皮疹</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="黏膜溃疡" data-score="2" onclick="hit(this)">
-<span>黏膜溃疡 (新发/复发)</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="胸膜炎" data-score="2" onclick="hit(this)">
-<span>胸膜炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="心包炎" data-score="2" onclick="hit(this)">
-<span>心包炎 (痛/摩擦音/积液)</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="低补体" data-score="2" onclick="hit(this)">
-<span>低补体 (CH50/C3/C4)</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-xl text-[11px] font-bold" data-name="dsDNA" data-score="2" onclick="hit(this)">
-<span>抗 dsDNA (滴度升高)</span><span class="badge rounded">2</span>
-</div>
-</div>
-</div>
-</div>
-<!-- 第二列：权重 4分 -->
-<div class="glass-card weight-4 p-4 rounded-2xl">
-<h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#c94545">
-<span>肾脏、骨骼与肌肉</span>
-<span class="px-1.5 rounded" style="background:#fde8e8;color:#c94545">4 PTS</span>
-</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="关节炎" data-score="4" onclick="hit(this)">
-<span>关节炎 (≥2关节炎性体征)</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="肌炎" data-score="4" onclick="hit(this)">
-<span>肌炎 (近端无力/肌酶高)</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="管型尿" data-score="4" onclick="hit(this)">
-<span>管型尿 (Hb/颗粒/RBC)</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="血尿" data-score="4" onclick="hit(this)">
-<span>血尿 (&gt;5 RBC/HPF)</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="蛋白尿" data-score="4" onclick="hit(this)">
-<span>蛋白尿 (&gt;0.5g/24h)</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="脓尿" data-score="4" onclick="hit(this)">
-<span>脓尿 (&gt;5 WBC/HPF)</span><span class="badge rounded">4</span>
-</div>
-</div>
-</div>
-<!-- 第三列：最高分值区 8分 -->
-<div class="glass-card weight-8 p-4 rounded-2xl">
-<h3 class="text-[10px] font-black uppercase mb-3 tracking-widest flex justify-between" style="color:#8b2020">
-<span>中枢神经 &amp; 血管系统</span>
-<span class="px-1.5 rounded" style="background:#f5dede;color:#8b2020">8 PTS</span>
-</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="癫痫" data-score="8" onclick="hit(this)">
-<span>癫痫发作 (新发)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="精神症状" data-score="8" onclick="hit(this)">
-<span>精神症状 (严重紊乱)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="器质性脑病" data-score="8" onclick="hit(this)">
-<span>器质性脑病</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="视觉障碍" data-score="8" onclick="hit(this)">
-<span>视觉障碍 (SLE视网膜病)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="颅神经病" data-score="8" onclick="hit(this)">
-<span>颅神经病变 (新发)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="狼疮头痛" data-score="8" onclick="hit(this)">
-<span>狼疮性头痛 (持续剧烈)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="CVA" data-score="8" onclick="hit(this)">
-<span>脑血管意外 (新发)</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-xl text-[11px] font-bold" data-name="脉管炎" data-score="8" onclick="hit(this)">
-<span>脉管炎 (溃疡/坏疽)</span><span class="badge rounded">8</span>
-</div>
-</div>
-</div>
-</div>
-<p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">SLEDAI-2000 Assessment System — 儿科分级标准</p>
-</main>
-<!-- 底部操作面板 -->
-<div class="sticky-footer">
-<div class="max-w-5xl mx-auto px-6 py-4">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
-<div class="flex-1 min-w-0">
-<div class="flex items-center justify-between mb-2">
-<span class="text-[10px] font-black uppercase tracking-widest" style="color:#1B4F8A">已选项目</span>
-<button class="text-[10px] font-black px-2 py-1 rounded transition-colors uppercase" onclick="clearAll()" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='#fde8e8'" style="color:#e05a5a">Reset</button>
-</div>
-<div class="text-[11px] text-slate-600 font-bold italic py-2.5 px-3 rounded-lg border leading-relaxed break-words min-h-[40px]" id="pathLine" style="background:#f0fafa;border-color:#d5edeb">请勾选最近 10 天内出现的临床表现...</div>
-</div>
-<div class="flex items-center gap-8 justify-between md:justify-end">
-<div class="flex flex-col items-center">
-<span class="text-[10px] font-black text-slate-300 uppercase">Total Score</span>
-<span class="text-5xl font-black leading-none tracking-tighter" id="scoreNum" style="color:#1B4F8A">0</span>
-</div>
-<div class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm border border-slate-200 bg-white text-slate-400" id="statusBox">
-                        无疾病活动
-                    </div>
-</div>
-</div>
-</div>
-</div>
-<script>
-        function hit(el) {
-            el.classList.toggle('selected');
-            runCalc();
-        }
 
-        function clearAll() {
-            document.querySelectorAll('.selected').forEach(e => e.classList.remove('selected'));
-            runCalc();
-        }
+<div class="app-wrap">
+  <div class="app-head">
+    <div class="t">SLEDAI<em>-2000</em></div>
+    <div class="sub"><span>ACTIVITY INDEX · SLE</span><span>DOCTOR Q</span></div>
+  </div>
 
-        function runCalc() {
-            let sum = 0;
-            let path = [];
-            
-            document.querySelectorAll('.selected').forEach(el => {
-                const val = parseInt(el.dataset.score);
-                const txt = el.dataset.name;
-                sum += val;
-                path.push(`${txt}(${val})`);
-            });
+  <div class="rules">
+    <h2>计分规则 (SCORING RULES)</h2>
+    <p>• 评估患者在最近 10 天内出现的临床表现</p>
+    <p>• 计分逻辑：存在该项表现即得对应分值，各项直接累加</p>
+    <p>• 注意事项：除外感染、代谢紊乱或药物等非狼疮因素</p>
+    <p class="src">计分依据：Gladman DD, et al. J Rheumatol 2002;29:288-91（PMID 11838846）</p>
+  </div>
 
-            const scoreNum = document.getElementById('scoreNum');
-            const statusBox = document.getElementById('statusBox');
-            const pathLine = document.getElementById('pathLine');
+  <div id="groups"></div>
 
-            scoreNum.innerText = sum;
-            pathLine.innerText = path.length > 0 ? path.join(' + ') : '请勾选最近 10 天内出现的临床表现...';
-
-            /* 儿科SLEDAI分级标准 */
-            if (sum <= 4) {
-                statusBox.innerText = sum === 0 ? "无疾病活动" : "基本无活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#1B4F8A";
-                statusBox.style.boxShadow = "0 4px 14px rgba(27,79,138,0.25)";
-                scoreNum.style.color = "#1B4F8A";
-            } else if (sum <= 9) {
-                statusBox.innerText = "轻度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#f0a844";
-                statusBox.style.boxShadow = "0 4px 14px rgba(240,168,68,0.25)";
-                scoreNum.style.color = "#d4892a";
-            } else if (sum <= 14) {
-                statusBox.innerText = "中度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#e05a5a";
-                statusBox.style.boxShadow = "0 4px 14px rgba(224,90,90,0.25)";
-                scoreNum.style.color = "#c94545";
-            } else {
-                statusBox.innerText = "重度活动";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest text-white shadow-lg";
-                statusBox.style.background = "#8b2020";
-                statusBox.style.boxShadow = "0 4px 14px rgba(139,32,32,0.3)";
-                scoreNum.style.color = "#8b2020";
-            }
-        }
-    </script>
-
-<script src="../assets/qrcode.min.js"></script>
-<script defer="" src="../assets/share.js?v=7"></script>
-<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-<div aria-label="主题切换" class="theme-dots" role="group">
-<span class="lbl">主题</span>
-<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
-<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
-<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+  <div class="foot-tip">SLEDAI-2000 ASSESSMENT SYSTEM</div>
 </div>
+
+<div class="panel">
+  <div class="r1">
+    ACTIVE PATH
+    <button class="act" id="btnCopy" type="button">Copy</button>
+    <button class="act reset" id="btnReset" type="button">Reset</button>
+  </div>
+  <div class="path" id="pathLine">请勾选最近 10 天内出现的临床表现...</div>
+  <div class="r3">
+    <div class="warnbox">
+      <span class="w">⚠</span>
+      <span class="l">仅供学习参考<br>不构成诊疗建议</span>
+    </div>
+    <span class="sp"></span>
+    <div class="scorebox">
+      <div class="lbl">TOTAL SCORE</div>
+      <div class="num" id="scoreNum">0</div>
+    </div>
+    <div class="statchip" id="statusChip">基本无活动</div>
+  </div>
+</div>
+
+<div class="cw-wrap" style="margin-top:0;">
+  <div style="max-width:720px;margin:0 auto;padding:0 16px 0;">
+  <div class="disc" style="margin:0 0 14px;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+  </div>
+</div>
+
 <script>
 (function(){
-  var THEMES = ["glm","honey","teal"];
-  var saved = null;
-  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
-  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
-  var current = document.documentElement.getAttribute("data-theme") || "glm";
-  var btns = document.querySelectorAll("[data-set-theme]");
-  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
-  btns.forEach(function(b){
-    b.addEventListener("click", function(){
-      current = b.getAttribute("data-set-theme");
-      document.documentElement.setAttribute("data-theme", current);
-      try { localStorage.setItem("mw-theme", current); } catch(e){}
-      paint();
+  // ---- 数据：1:1 对应鸿蒙 GROUPS（SLEDAI-2000 24条目，权重1/2/4/8）n=路径短名 ----
+  var GROUPS = [
+    {key:'w1', title:'全身与血液系统', weight:1, items:[
+      {key:'fever', n:'发热', desc:'发热 (>38℃)', score:1},
+      {key:'plt',   n:'PLT低', desc:'血小板下降', score:1},
+      {key:'wbc',   n:'WBC低', desc:'白细胞下降 (<3×10⁹/L)', score:1}]},
+    {key:'w2', title:'皮肤、浆膜与免疫', weight:2, items:[
+      {key:'alopecia',    n:'脱发', desc:'脱发 (新发/复发)', score:2},
+      {key:'rash',        n:'皮疹', desc:'新出现皮疹', score:2},
+      {key:'ulcer',       n:'黏膜溃疡', desc:'黏膜溃疡 (新发/复发)', score:2},
+      {key:'pleuritis',   n:'胸膜炎', desc:'胸膜炎 (痛/摩擦音/积液)', score:2},
+      {key:'pericarditis',n:'心包炎', desc:'心包炎 (痛/摩擦音/积液)', score:2},
+      {key:'lowc',        n:'低补体', desc:'低补体 (CH50/C3/C4)', score:2},
+      {key:'dsdna',       n:'dsDNA', desc:'抗 dsDNA (滴度升高)', score:2}]},
+    {key:'w4', title:'肾脏、骨骼与肌肉', weight:4, items:[
+      {key:'arthritis',   n:'关节炎', desc:'关节炎 (≥2关节炎性体征)', score:4},
+      {key:'myositis',    n:'肌炎', desc:'肌炎 (近端无力/肌酶高)', score:4},
+      {key:'cast',        n:'管型尿', desc:'管型尿 (Hb/颗粒/RBC)', score:4},
+      {key:'hematuria',   n:'血尿', desc:'血尿 (>5 RBC/HPF)', score:4},
+      {key:'proteinuria', n:'蛋白尿', desc:'蛋白尿 (>0.5g/24h)', score:4},
+      {key:'pyuria',      n:'脓尿', desc:'脓尿 (>5 WBC/HPF)', score:4}]},
+    {key:'w8', title:'中枢神经 & 血管系统', weight:8, items:[
+      {key:'seizure',    n:'癫痫', desc:'癫痫发作 (新发)', score:8},
+      {key:'psychosis',  n:'精神症状', desc:'精神症状 (严重紊乱)', score:8},
+      {key:'organic',    n:'器质性脑病', desc:'器质性脑病', score:8},
+      {key:'vision',     n:'视觉障碍', desc:'视觉障碍 (SLE视网膜病)', score:8},
+      {key:'cranial',    n:'颅神经病', desc:'颅神经病变 (新发)', score:8},
+      {key:'headache',   n:'狼疮头痛', desc:'狼疮性头痛 (持续剧烈)', score:8},
+      {key:'cva',        n:'CVA', desc:'脑血管意外 (新发)', score:8},
+      {key:'vasculitis', n:'脉管炎', desc:'脉管炎 (溃疡/坏疽)', score:8}]}
+  ];
+  // 权重顶条色：1浅蓝 2蜜桃 4薄荷 8深灰蓝（鸿蒙 weightColor 1:1）
+  function weightColor(w){ return w===2?'#FFA69E' : w===4?'#B8F2E6' : w===8?'#5E6472' : '#AED9E0'; }
+
+  var selected = {};
+  var pathLine = document.getElementById('pathLine');
+  var scoreEl  = document.getElementById('scoreNum');
+  var chip     = document.getElementById('statusChip');
+
+  // 活动度分级与配色（鸿蒙 getStatus* 1:1）
+  function statusOf(s){
+    if(s===0) return '无疾病活动';
+    if(s<=4)  return '基本无活动';
+    if(s<=9)  return '轻度活动';
+    if(s<=14) return '中度活动';
+    return '重度活动';
+  }
+  function bandColor(s){ return s<=4 ? '#B8F2E6' : s<=9 ? '#FFA69E' : '#5E6472'; }
+
+  function calc(){
+    var sum=0, parts=[];
+    GROUPS.forEach(function(g){ g.items.forEach(function(it){
+      if(selected[it.key]){ sum+=it.score; parts.push(it.n+'('+it.score+')'); }
+    });});
+    return {sum:sum, path:parts.join(' + ')};
+  }
+
+  function refresh(){
+    var r = calc(), s = r.sum;
+    scoreEl.textContent = s;
+    scoreEl.style.color = bandColor(s);
+    pathLine.textContent = r.path || '请勾选最近 10 天内出现的临床表现...';
+    chip.textContent = statusOf(s);
+    chip.style.background = bandColor(s);
+    chip.style.color = s<=9 ? '#5E6472' : '#fff';
+    chip.style.border = s>=15 ? '2px solid #FFA69E' : '0 solid #fff';
+    // 行选中态
+    document.querySelectorAll('.it').forEach(function(el){
+      var on = !!selected[el.getAttribute('data-key')];
+      el.classList.toggle('on', on);
     });
+  }
+
+  // 渲染分组卡
+  var host = document.getElementById('groups');
+  GROUPS.forEach(function(g){
+    var card = document.createElement('div'); card.className='grp';
+    var bar = document.createElement('div'); bar.className='bar'; bar.style.background = weightColor(g.weight);
+    var inn = document.createElement('div'); inn.className='in';
+    var hd = document.createElement('div'); hd.className='hd';
+    hd.innerHTML = '<span>'+g.title+'</span><span class="pts">'+g.weight+' PTS</span>';
+    inn.appendChild(hd);
+    g.items.forEach(function(it){
+      var row = document.createElement('button'); row.type='button'; row.className='it';
+      row.setAttribute('data-key', it.key);
+      row.setAttribute('aria-pressed','false');
+      row.innerHTML = '<span class="desc">'+it.desc+'</span><span class="sc">'+it.score+'</span>';
+      row.addEventListener('click', function(){
+        selected[it.key] = !selected[it.key];
+        if(!selected[it.key]) delete selected[it.key];
+        row.setAttribute('aria-pressed', selected[it.key]?'true':'false');
+        refresh();
+      });
+      inn.appendChild(row);
+    });
+    card.appendChild(bar); card.appendChild(inn); host.appendChild(card);
   });
-  paint();
+
+  document.getElementById('btnReset').addEventListener('click', function(){
+    selected = {}; refresh();
+  });
+  document.getElementById('btnCopy').addEventListener('click', function(){
+    var r = calc();
+    var report = 'SLEDAI-2000 疾病活动度评分\n选中: '+(r.path||'无')+'\n总分: '+r.sum+'\n结论: '+statusOf(r.sum);
+    function ok(){ pathLine.textContent = '已复制到剪贴板 ✓'; setTimeout(refresh, 1200); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(report).then(ok, function(){ fallback(report, ok); });
+    } else { fallback(report, ok); }
+  });
+  function fallback(text, ok){
+    var ta = document.createElement('textarea'); ta.value = text;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); ok(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+  refresh();
 })();
 </script>
-<style data-mw-bridge="1">
-/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
-body{padding-top:0 !important;}
-.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
-.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
-  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
-  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
-  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
-.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
-  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
-.wrap table{font-size:13px;}
-.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
-  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
-.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
-.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
-.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
-</style></body>
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=7" defer></script>
+</body>
 </html>

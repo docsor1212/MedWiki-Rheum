@@ -1,405 +1,311 @@
 <!DOCTYPE html>
-
-<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/SLE_2019_EULAR_ACR.html" data-theme="glm" lang="zh-CN">
+<html lang="zh-CN" data-theme="glm" data-mw-rebuilt="1" data-share-url="https://docsor.cn/tools/SLE_2019_EULAR_ACR.html">
 <head>
-<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2019 EULAR/ACR SLE 分类助手</title>
-
-<link href="../assets/content.css?v=4" rel="stylesheet"/><link href="../assets/medwiki.css?v=26" rel="stylesheet"/><style>
-        
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: #fdfdfe;
-            color: #1e293b;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .serif-title { font-family: 'Noto Serif SC', serif; }
-
-        /* 典雅卡片设计 */
-        .glass-card {
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: all 0.25s ease;
-            position: relative;
-        }
-
-        .card-clinical { border-top: 3px solid #64748b; }
-        .card-immuno { border-top: 3px solid #be123c; }
-        .card-special { border-top: 3px solid #4f46e5; }
-
-        /* 点击项紧凑设计 */
-        .clickable-item {
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #f8fafc;
-        }
-
-        .selected {
-            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
-            color: white !important;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
-        }
-
-        .selected .badge {
-            background: rgba(255, 255, 255, 0.2) !important;
-            color: white !important;
-        }
-
-        .badge {
-            background: #e2e8f0;
-            color: #64748b;
-            font-size: 0.7rem;
-            width: 24px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-        }
-
-        .sticky-footer {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: saturate(180%) blur(20px);
-            border-top: 1px solid rgba(226, 232, 240, 0.6);
-            z-index: 50;
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-
-        @media (max-width: 640px) {
-            .card-grid { grid-template-columns: 1fr; gap: 0.75rem; }
-            /* 手机端进一步优化底部空间 */
-            .sticky-footer { padding-top: 0.75rem; padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)); }
-        }
-    
-.nav-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1B4F8A;color:#fff;
-padding:6px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
-font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.12);}
-.nav-bar a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .2s;}
-.nav-bar a:hover{opacity:1;}
-.nav-bar .nav-title{font-weight:600;margin-left:auto;opacity:.7;font-size:12px;}
-body{padding-top:42px !important;}
-
-</style><link href="../assets/themes.css?v=6" rel="stylesheet"/>
-<link href="../manifest.json" rel="manifest"/>
-<meta content="#1B4F8A" name="theme-color"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="MedWiki" name="apple-mobile-web-app-title"/>
-<link href="../icons/icon-192.png" rel="apple-touch-icon"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLE 2019 EULAR/ACR 分类标准 — MedWiki-Rheum</title>
+<meta name="description" content="2019 EULAR/ACR SLE 分类标准计分工具：ANA≥1:80 准入，10个领域各取最高分，≥10分且≥1条临床领域即分类——移植自鸿蒙版 SleEularAcr">
+<meta name="theme-color" content="#12365F">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/content.css?v=4">
+<link rel="stylesheet" href="../assets/medwiki.css?v=26">
+<style>
+/* ============================================================
+   2019 EULAR/ACR SLE 分类助手网页版 —— 1:1 移植自鸿蒙 SleEularAcr
+   保留 Bees & Honey 原配色（用户裁定：保留鸿蒙版布局与配色）
+   ============================================================ */
+:root{
+  --b-bg:#FAF3DD; --b-ink:#5E6472; --b-peach:#FFA69E; --b-mint:#B8F2E6; --b-sky:#AED9E0;
+  --b-dim:rgba(94,100,114,.62); --b-faint:rgba(94,100,114,.45);
+  --b-row:rgba(250,243,221,.85); --b-border:rgba(94,100,114,.12);
+  --b-ring:rgba(184,242,230,.45); --b-panel:rgba(255,255,255,.88);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:var(--b-bg);color:var(--b-ink);line-height:1.5;font-size:13px;
+}
+.cw-wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+.app-wrap{max-width:720px;margin:0 auto;padding:10px 16px 230px;}
+.app-head{padding-bottom:8px;border-bottom:2px solid var(--b-border);margin-bottom:10px;}
+.app-head .t{font-size:28px;font-weight:900;line-height:1.2;}
+.app-head .t em{font-style:normal;color:var(--b-peach);}
+.app-head .sub{display:flex;justify-content:space-between;font-size:10px;font-weight:700;margin-top:2px;}
+.app-head .sub .sig{font-size:9px;color:var(--b-faint);letter-spacing:1px;}
+/* 准入标准卡（鸿蒙 EntryGate 1:1） */
+.gate{display:flex;align-items:center;width:100%;padding:10px 12px;border-radius:14px;
+  background:var(--b-mint);border:2.5px solid var(--b-peach);margin-bottom:8px;
+  box-shadow:0 2px 8px rgba(255,166,158,.30);}
+.gate .chk{flex:none;width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--b-ink);
+  display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;}
+.gate .tt{margin-left:10px;}
+.gate .tt b{display:block;font-size:14px;}
+.gate .tt span{font-size:10px;font-weight:500;}
+.gate .sp{flex:1;}
+/* 开关 */
+.switch{position:relative;flex:none;width:46px;height:26px;background:var(--b-ink);border-radius:13px;
+  cursor:pointer;transition:background .2s;border:none;padding:0;}
+.switch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;
+  background:#fff;transition:left .2s;}
+.switch.on{background:var(--b-peach);}
+.switch.on::after{left:23px;}
+/* 领域卡（鸿蒙 DomainCard 1:1）：临床=浅蓝条 免疫=蜜桃条 肾脏核心=薄荷条+外圈 */
+.dom{background:#fff;border:1px solid var(--b-border);border-radius:12px;overflow:hidden;margin-bottom:8px;}
+.dom.special{border:4px solid var(--b-ring);}
+.dom .bar{height:3px;}
+.dom .in{padding:10px 12px;}
+.dom .hd{font-size:10px;font-weight:900;letter-spacing:1px;margin-bottom:4px;color:var(--b-dim);}
+.dom.immuno .hd, .dom.special .hd{color:var(--b-ink);}
+.it{display:flex;align-items:center;width:100%;padding:6px 10px;border-radius:8px;background:var(--b-row);
+  border:none;cursor:pointer;margin-top:4px;text-align:left;font:inherit;color:var(--b-ink);}
+.it .desc{flex:1;font-size:11px;font-weight:700;}
+.it .sc{flex:none;width:22px;height:17px;border-radius:4px;text-align:center;font-size:11px;font-weight:900;
+  background:var(--b-sky);color:var(--b-ink);line-height:17px;}
+.it.on{background:var(--b-peach);box-shadow:0 3px 10px rgba(255,166,158,.35);}
+.it.on .sc{background:var(--b-ink);color:#fff;}
+.foot-tip{text-align:center;font-size:10px;font-weight:500;color:var(--b-faint);letter-spacing:4px;margin:16px 0;}
+/* 底部固定面板（鸿蒙 BottomPanel 1:1，顶边薄荷） */
+.panel{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--b-panel);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-top:2px solid var(--b-mint);
+  padding:10px 24px;padding-bottom:calc(10px + env(safe-area-inset-bottom));}
+.panel .r1{display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:2px;color:var(--b-dim);}
+.panel > .r1, .panel > .path, .panel > .r3{max-width:688px;margin-left:auto;margin-right:auto;}
+.panel .r1 .act{margin-left:auto;font-size:10px;font-weight:900;letter-spacing:0;color:var(--b-ink);cursor:pointer;background:none;border:none;font-family:inherit;padding:2px 4px;}
+.panel .r1 .act.reset{color:var(--b-peach);margin-left:12px;}
+.path{width:100%;margin-top:6px;padding:6px;border-radius:8px;background:#fff;border:1px solid var(--b-sky);
+  font-size:10px;font-weight:700;font-style:italic;min-height:30px;}
+.panel .r3{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.warnbox{display:flex;align-items:center;gap:8px;max-width:46%;padding:9px 12px;border-radius:10px;background:var(--b-sky);border:1px solid var(--b-ink);}
+.warnbox .w{font-size:20px;font-weight:900;color:var(--b-peach);}
+.warnbox .l{font-size:12px;font-weight:700;line-height:1.4;}
+.panel .sp{flex:1;}
+.scorebox .lbl{font-size:10px;font-weight:900;letter-spacing:2px;color:var(--b-faint);}
+.scorebox .num{font-size:44px;font-weight:900;line-height:48px;}
+.statchip{font-size:10px;font-weight:900;padding:10px 12px;border-radius:16px;text-align:center;background:#fff;border:1px solid var(--b-sky);}
+.statchip.ok{background:var(--b-mint);border:none;}
+.statchip.na{background:#fff;border:2px solid var(--b-peach);}
+@media (max-width:640px){
+  .app-wrap{padding:8px 12px 250px;}
+  .panel{padding:10px 14px;}
+  .warnbox .l{font-size:10.5px;}
+}
+</style>
+<link rel="stylesheet" href="../assets/themes.css?v=6">
 </head>
-<body class="pb-52 md:pb-40"><nav aria-label="站点导航" class="mnav">
-<div class="mnav-in">
-<a class="home" href="../index.html">⌂ MedWiki 首页</a>
-<a class="mlink" href="../index.html#topics">疾病专题</a>
-<a class="mlink" href="../index.html#drugs">药物手册</a>
-<a class="mlink" href="../index.html#tools">临床工具</a>
-<a class="mlink" href="../index.html#cases">病例学习</a>
-<a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
-<a class="mlink" href="../index.html#skills">Skills</a>
-<a class="mlink" href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站</a>
-<a class="mlink" href="https://github.com/docsor1212" rel="noopener" target="_blank">GitHub</a>
-<span class="brand">MedWiki-Rheum</span>
-</div>
+<body>
+<nav class="mnav" aria-label="站点导航">
+  <div class="mnav-in">
+  <a class="home" href="../index.html">⌂ MedWiki 首页</a>
+  <a class="mlink" href="../index.html#topics">疾病专题</a>
+  <a class="mlink" href="../index.html#drugs">药物手册</a>
+  <a class="mlink" href="../index.html#tools">临床工具</a>
+  <a class="mlink" href="../index.html#cases">病例学习</a>
+  <a class="mlink" href="../docs/pmid_audit_report.html">引用验证</a>
+  <a class="mlink" href="../index.html#skills">Skills</a>
+  <a class="mlink" href="https://space.bilibili.com/432233902" target="_blank" rel="noopener">B站</a>
+  <a class="mlink" href="https://github.com/docsor1212" target="_blank" rel="noopener">GitHub</a>
+  <span class="brand">MedWiki-Rheum</span>
+  </div>
 </nav>
-<div class="cw-wrap"><div class="cw-crumb"><a href="../index.html">首页</a><span class="sep">‹</span><a href="../index.html#tools">临床工具</a><span class="sep">‹</span><span class="here">2019 EULAR/ACR SLE 分类助手</span></div></div>
 
-<!-- 顶部导航 -->
-<header class="max-w-4xl mx-auto px-5 pt-8 pb-4">
-<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<div class="flex items-baseline justify-between border-b-2 border-slate-100 pb-2">
-<h1 class="serif-title text-2xl md:text-3xl font-black text-slate-800">
-                SLE <span class="text-indigo-600">Criteria</span>
-</h1>
-<span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Version 2019     --By DoctorQ</span>
+<div class="cw-wrap">
+  <div class="cw-crumb">
+    <a href="../index.html">首页</a><span class="sep">‹</span>
+    <a href="../index.html#tools">临床工具</a><span class="sep">‹</span>
+    <span class="here">SLE 2019 EULAR/ACR 分类标准</span>
+  </div>
 </div>
-</header>
-<main class="max-w-4xl mx-auto px-4 pt-4">
-<!-- 准入标准 -->
-<section class="mb-5">
-<div class="bg-slate-800 rounded-2xl p-4 flex items-center justify-between shadow-md">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<h2 class="text-white text-sm font-bold tracking-wide">准入标准 (Entry Criterion)</h2>
-<p class="text-slate-400 text-[10px] font-medium">ANA ≥ 1:80 (HEp-2) 为分类前提</p>
-</div>
-</div>
-<label class="relative inline-flex items-center cursor-pointer">
-<input class="sr-only peer" id="anaCheck" onchange="runCalc()" type="checkbox"/>
-<div class="w-12 h-6 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500"></div>
-</label>
-</div>
-</section>
-<!-- 网格排版 -->
-<div class="card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<!-- 整合列：全身状况 + 肌肉骨骼 -->
-<div class="flex flex-col gap-4">
-<!-- 全身状况 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl flex-1" data-domain="const">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">全身状况</h3>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-xs font-bold" data-name="发热" data-score="2" onclick="hit(this)">
-<span>发热 &gt;38.3°C</span><span class="badge rounded">2</span>
-</div>
-</div>
-<!-- 肌肉骨骼 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl flex-1" data-domain="joint">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">肌肉骨骼</h3>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-xs font-bold" data-name="关节炎" data-score="6" onclick="hit(this)">
-<span>≥2关节滑膜炎</span><span class="badge rounded">6</span>
-</div>
-</div>
-</div>
-<!-- 皮肤黏膜 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="muco">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">皮肤黏膜</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="急性皮损" data-score="6" onclick="hit(this)">
-<span>急性皮肤狼疮</span><span class="badge rounded">6</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="亚急性/盘状" data-score="4" onclick="hit(this)">
-<span>亚急性/盘状</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="口腔溃疡" data-score="2" onclick="hit(this)">
-<span>口腔溃疡</span><span class="badge rounded">2</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="脱发" data-score="2" onclick="hit(this)">
-<span>非瘢痕性脱发</span><span class="badge rounded">2</span>
-</div>
-</div>
-</div>
-<!-- 肾脏受累 -->
-<div class="glass-card card-special p-3.5 rounded-xl ring-4 ring-indigo-50" data-domain="renal">
-<h3 class="text-[10px] font-black text-indigo-600 uppercase mb-3 tracking-wider">肾脏受累 (核心)</h3>
-<div class="space-y-1.5">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-bold" data-name="LN III/IV" data-score="10" onclick="hit(this)">
-<span>LN III/IV 型</span><span class="badge rounded">10</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="LN II/V" data-score="8" onclick="hit(this)">
-<span>LN II/V 型</span><span class="badge rounded">8</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg text-[11px] font-semibold" data-name="蛋白尿" data-score="4" onclick="hit(this)">
-<span>蛋白尿 &gt;0.5g/24h</span><span class="badge rounded">4</span>
-</div>
-</div>
-</div>
-<!-- 神经精神 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="neuro">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">神经精神</h3>
-<div class="space-y-1.5 text-[11px] font-semibold">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="癫痫" data-score="5" onclick="hit(this)">
-<span>癫痫发作</span><span class="badge rounded">5</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="精神病" data-score="3" onclick="hit(this)">
-<span>精神病</span><span class="badge rounded">3</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="谵妄" data-score="2" onclick="hit(this)">
-<span>谵妄 (精神错乱)</span><span class="badge rounded">2</span>
-</div>
-</div>
-</div>
-<!-- 浆膜炎 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="sero">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">浆膜炎</h3>
-<div class="space-y-1.5 text-[11px] font-semibold">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="心包炎" data-score="6" onclick="hit(this)">
-<span>急性心包炎</span><span class="badge rounded">6</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="积液" data-score="5" onclick="hit(this)">
-<span>胸腔/心包积液</span><span class="badge rounded">5</span>
-</div>
-</div>
-</div>
-<!-- 血液系统 -->
-<div class="glass-card card-clinical p-3.5 rounded-xl" data-domain="hem">
-<h3 class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-wider">血液系统</h3>
-<div class="space-y-1.5 text-[11px] font-semibold">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="溶贫" data-score="4" onclick="hit(this)">
-<span>自身免疫溶贫</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="PLT低" data-score="4" onclick="hit(this)">
-<span>PLT &lt;100×10⁹/L</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="WBC低" data-score="3" onclick="hit(this)">
-<span>WBC &lt;4×10⁹/L</span><span class="badge rounded">3</span>
-</div>
-</div>
-</div>
-<!-- 免疫领域：抗磷脂 -->
-<div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="apl">
-<h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">抗磷脂抗体</h3>
-<div class="clickable-item flex justify-between items-center px-3 py-2.5 rounded-lg text-[10px] font-bold leading-tight" data-name="APL" data-score="2" onclick="hit(this)">
-<span>LA / ACL / β2GP1</span><span class="badge rounded">2</span>
-</div>
-</div>
-<!-- 补体蛋白 -->
-<div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="comp">
-<h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">补体蛋白</h3>
-<div class="space-y-1.5 text-[11px] font-semibold">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="C3/C4均低" data-score="4" onclick="hit(this)">
-<span>C3 且 C4 降低</span><span class="badge rounded">4</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="C3或C4低" data-score="3" onclick="hit(this)">
-<span>C3 或 C4 降低</span><span class="badge rounded">3</span>
-</div>
-</div>
-</div>
-<!-- 特异抗体 -->
-<div class="glass-card card-immuno p-3.5 rounded-xl" data-domain="spec">
-<h3 class="text-[10px] font-black text-rose-800 uppercase mb-3 tracking-wider">特异抗体</h3>
-<div class="space-y-1.5 text-[11px] font-bold">
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="dsDNA" data-score="6" onclick="hit(this)">
-<span>抗 dsDNA 抗体</span><span class="badge rounded">6</span>
-</div>
-<div class="clickable-item flex justify-between items-center px-3 py-2 rounded-lg" data-name="Sm" data-score="6" onclick="hit(this)">
-<span>抗 Sm 抗体</span><span class="badge rounded">6</span>
-</div>
-</div>
-</div>
-</div>
-<p class="mt-8 mb-12 text-[10px] text-slate-400 text-center uppercase tracking-[0.4em] font-medium">Precision Medicine Diagnostic Support</p>
-</main>
-<!-- 底部操作面板 -->
-<div class="sticky-footer">
-<div class="max-w-4xl mx-auto px-6 py-4">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
-<div class="flex-1 min-w-0">
-<div class="flex items-center justify-between mb-2">
-<span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active Path</span>
-<button class="text-[10px] font-black text-rose-500 hover:bg-rose-50 px-2 py-1 rounded transition-colors uppercase" onclick="clearAll()">Reset</button>
-</div>
-<!-- 优化：移除 truncate，改用折行显示 -->
-<div class="text-[11px] text-slate-500 font-bold italic bg-slate-50 py-2.5 px-3 rounded-lg border border-slate-100 leading-relaxed break-words" id="pathLine">请选择临床表现以开始计算...</div>
-</div>
-<div class="flex items-center gap-8 justify-between md:justify-end">
-<div class="flex flex-col items-center">
-<span class="text-[10px] font-black text-slate-300 uppercase">Score</span>
-<span class="text-5xl font-black text-slate-800 leading-none tracking-tighter" id="scoreNum">0</span>
-</div>
-<div class="h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest transition-all duration-500 shadow-sm" id="statusBox">
-                        ANA Required
-                    </div>
-</div>
-</div>
-</div>
-</div>
-<script>
-        function hit(el) {
-            el.classList.toggle('selected');
-            runCalc();
-        }
 
-        function clearAll() {
-            document.querySelectorAll('.selected').forEach(e => e.classList.remove('selected'));
-            document.getElementById('anaCheck').checked = false;
-            runCalc();
-        }
+<div class="app-wrap">
+  <div class="app-head">
+    <div class="t">SLE <em>Criteria</em></div>
+    <div class="sub"><span>2019 EULAR/ACR SLE 分类标准</span><span class="sig">DOCTOR Q</span></div>
+  </div>
 
-        function runCalc() {
-            const isAna = document.getElementById('anaCheck').checked;
-            const domains = {};
-            const clinicalKeys = ['const', 'muco', 'joint', 'renal', 'neuro', 'sero', 'hem'];
-            let hasClin = false;
+  <div class="gate">
+    <div class="chk">✓</div>
+    <div class="tt">
+      <b>准入标准 (Entry Criterion)</b>
+      <span>ANA ≥ 1:80 (HEp-2) 为分类前提</span>
+    </div>
+    <span class="sp"></span>
+    <button class="switch" id="anaSwitch" type="button" role="switch" aria-checked="false" aria-label="ANA ≥ 1:80 阳性"></button>
+  </div>
 
-            document.querySelectorAll('.selected').forEach(el => {
-                const dom = el.closest('[data-domain]').dataset.domain;
-                const val = parseInt(el.dataset.score);
-                const txt = el.dataset.name;
-                if (!domains[dom] || val > domains[dom].val) {
-                    domains[dom] = { val, txt };
-                }
-            });
+  <div id="domains"></div>
 
-            let sum = 0;
-            let path = [];
-            for (let k in domains) {
-                sum += domains[k].val;
-                path.push(`${domains[k].txt}(${domains[k].val})`);
-                if (clinicalKeys.includes(k)) hasClin = true;
-            }
-
-            const scoreNum = document.getElementById('scoreNum');
-            const statusBox = document.getElementById('statusBox');
-            const pathLine = document.getElementById('pathLine');
-
-            scoreNum.innerText = sum;
-            pathLine.innerText = path.length > 0 ? path.join(' + ') : '请选择临床表现以开始计算...';
-
-            if (!isAna) {
-                statusBox.innerText = "ANA 阴性 / 待填";
-                statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-slate-100 text-slate-400 border border-slate-200";
-                scoreNum.className = "text-5xl font-black text-slate-200 leading-none tracking-tighter";
-            } else {
-                scoreNum.className = "text-5xl font-black text-slate-800 leading-none tracking-tighter";
-                if (sum >= 10 && hasClin) {
-                    statusBox.innerText = "符合分类标准";
-                    statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-indigo-600 text-white shadow-xl shadow-indigo-100";
-                    scoreNum.className = "text-5xl font-black text-indigo-600 leading-none tracking-tighter";
-                } else {
-                    let msg = sum >= 10 ? "缺临床标准" : "积分不足";
-                    statusBox.innerText = msg;
-                    statusBox.className = "h-12 px-8 rounded-2xl flex items-center justify-center text-[11px] font-black uppercase tracking-widest bg-white text-indigo-600 border-2 border-indigo-100 shadow-sm";
-                }
-            }
-        }
-    </script>
-
-<script src="../assets/qrcode.min.js"></script>
-<script defer="" src="../assets/share.js?v=7"></script>
-<div style="max-width:1100px;margin:0 auto;padding:12px 20px 18px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本站内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
-<div aria-label="主题切换" class="theme-dots" role="group">
-<span class="lbl">主题</span>
-<button aria-pressed="true" data-set-theme="glm"><i class="dot glm"></i>GLM</button>
-<button aria-pressed="false" data-set-theme="honey"><i class="dot honey"></i>Honey</button>
-<button aria-pressed="false" data-set-theme="teal"><i class="dot teal"></i>Teal</button>
+  <div class="foot-tip">PRECISION MEDICINE DIAGNOSTIC SUPPORT</div>
 </div>
+
+<div class="panel">
+  <div class="r1">
+    ACTIVE PATH
+    <button class="act" id="btnCopy" type="button">Copy</button>
+    <button class="act reset" id="btnReset" type="button">Reset</button>
+  </div>
+  <div class="path" id="pathLine">请选择临床表现以开始计算...</div>
+  <div class="r3">
+    <div class="warnbox">
+      <span class="w">⚠</span>
+      <span class="l">仅供学习参考<br>不构成诊疗建议</span>
+    </div>
+    <span class="sp"></span>
+    <div class="scorebox">
+      <div class="lbl">SCORE</div>
+      <div class="num" id="scoreNum">0</div>
+    </div>
+    <div class="statchip" id="statusChip">ANA 阴性 / 待填</div>
+  </div>
+</div>
+
+<div class="cw-wrap" style="margin-top:0;">
+  <div style="max-width:720px;margin:0 auto;padding:0 16px 0;">
+  <div class="disc" style="margin:0 0 14px;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+  </div>
+</div>
+
 <script>
 (function(){
-  var THEMES = ["glm","honey","teal"];
-  var saved = null;
-  try { saved = localStorage.getItem("mw-theme"); } catch(e){}
-  if (THEMES.indexOf(saved) >= 0) document.documentElement.setAttribute("data-theme", saved);
-  var current = document.documentElement.getAttribute("data-theme") || "glm";
-  var btns = document.querySelectorAll("[data-set-theme]");
-  function paint(){ btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === current)); }); }
-  btns.forEach(function(b){
-    b.addEventListener("click", function(){
-      current = b.getAttribute("data-set-theme");
-      document.documentElement.setAttribute("data-theme", current);
-      try { localStorage.setItem("mw-theme", current); } catch(e){}
-      paint();
+  // ---- 数据：1:1 对应鸿蒙 DOMAINS（2019 EULAR/ACR，10领域各取最高分） ----
+  // style: 0=临床(浅蓝条) 1=免疫(蜜桃条) 2=肾脏核心(薄荷条+外圈)
+  var DOMAINS = [
+    {key:'const', title:'全身状况', style:0, clin:true, items:[
+      {key:'fever', n:'发热', desc:'发热 >38.3°C', score:2}]},
+    {key:'joint', title:'肌肉骨骼', style:0, clin:true, items:[
+      {key:'arthritis', n:'关节炎', desc:'≥2关节滑膜炎', score:6}]},
+    {key:'muco', title:'皮肤黏膜', style:0, clin:true, items:[
+      {key:'acute_cut', n:'急性皮损', desc:'急性皮肤狼疮', score:6},
+      {key:'sub_disc',  n:'亚急性/盘状', desc:'亚急性/盘状', score:4},
+      {key:'ulcer',     n:'口腔溃疡', desc:'口腔溃疡', score:2},
+      {key:'alopecia',  n:'脱发', desc:'非瘢痕性脱发', score:2}]},
+    {key:'renal', title:'肾脏受累 (核心)', style:2, clin:true, items:[
+      {key:'ln34',        n:'LN III/IV', desc:'LN III/IV 型', score:10},
+      {key:'ln25',        n:'LN II/V', desc:'LN II/V 型', score:8},
+      {key:'proteinuria', n:'蛋白尿', desc:'蛋白尿 >0.5g/24h', score:4}]},
+    {key:'neuro', title:'神经精神', style:0, clin:true, items:[
+      {key:'seizure',   n:'癫痫', desc:'癫痫发作', score:5},
+      {key:'psychosis', n:'精神病', desc:'精神病', score:3},
+      {key:'confusion', n:'谵妄', desc:'谵妄 (精神错乱)', score:2}]},
+    {key:'sero', title:'浆膜炎', style:0, clin:true, items:[
+      {key:'pericarditis', n:'心包炎', desc:'急性心包炎', score:6},
+      {key:'effusion',     n:'积液', desc:'胸腔/心包积液', score:5}]},
+    {key:'hem', title:'血液系统', style:0, clin:true, items:[
+      {key:'aiha', n:'溶贫', desc:'自身免疫溶贫', score:4},
+      {key:'plt',  n:'PLT低', desc:'PLT <100×10⁹/L', score:4},
+      {key:'wbc',  n:'WBC低', desc:'WBC <4×10⁹/L', score:3}]},
+    {key:'apl', title:'抗磷脂抗体', style:1, clin:false, items:[
+      {key:'apl', n:'APL', desc:'LA / ACL / β2GP1', score:2}]},
+    {key:'comp', title:'补体蛋白', style:1, clin:false, items:[
+      {key:'c3c4',  n:'C3/C4均低', desc:'C3 且 C4 降低', score:4},
+      {key:'c3or4', n:'C3或C4低', desc:'C3 或 C4 降低', score:3}]},
+    {key:'spec', title:'特异抗体', style:1, clin:false, items:[
+      {key:'dsdna', n:'dsDNA', desc:'抗 dsDNA 抗体', score:6},
+      {key:'sm',    n:'Sm', desc:'抗 Sm 抗体', score:6}]}
+  ];
+  function topColor(style){ return style===1 ? '#FFA69E' : style===2 ? '#B8F2E6' : '#AED9E0'; }
+
+  var ana = false;
+  var selected = {};
+  var pathLine = document.getElementById('pathLine');
+  var scoreEl  = document.getElementById('scoreNum');
+  var chip     = document.getElementById('statusChip');
+  var DEFAULT_PATH = '请选择临床表现以开始计算...';
+
+  // 鸿蒙 calc() 1:1：每领域只取最高分项
+  function calc(){
+    var sum=0, hasClin=false, parts=[];
+    DOMAINS.forEach(function(d){
+      var best=null;
+      d.items.forEach(function(it){
+        if(selected[it.key] && (best===null || it.score>best.score)) best=it;
+      });
+      if(best){ sum+=best.score; parts.push(best.n+'('+best.score+')'); if(d.clin) hasClin=true; }
     });
+    return {sum:sum, path:parts.join(' + '), hasClin:hasClin};
+  }
+  function qualified(){ var r=calc(); return ana && r.sum>=10 && r.hasClin; }
+  function statusText(){
+    if(!ana) return 'ANA 阴性 / 待填';
+    var r=calc();
+    if(r.sum>=10 && r.hasClin) return '符合分类标准';
+    if(r.sum>=10) return '缺临床标准';
+    return '积分不足';
+  }
+
+  function refresh(){
+    var r=calc();
+    scoreEl.textContent = r.sum;
+    scoreEl.style.color = ana ? '#5E6472' : '#AED9E0';
+    pathLine.textContent = r.path || DEFAULT_PATH;
+    var st = statusText();
+    chip.textContent = st;
+    chip.className = 'statchip' + (qualified() ? ' ok' : (!ana ? ' na' : ''));
+    document.querySelectorAll('.it').forEach(function(el){
+      var on = !!selected[el.getAttribute('data-key')];
+      el.classList.toggle('on', on);
+      el.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  // 渲染领域卡
+  var host = document.getElementById('domains');
+  DOMAINS.forEach(function(d){
+    var card = document.createElement('div');
+    card.className = 'dom' + (d.style===1 ? ' immuno' : d.style===2 ? ' special' : '');
+    var bar = document.createElement('div'); bar.className='bar'; bar.style.background = topColor(d.style);
+    var inn = document.createElement('div'); inn.className='in';
+    var hd = document.createElement('div'); hd.className='hd'; hd.textContent = d.title;
+    inn.appendChild(hd);
+    d.items.forEach(function(it){
+      var row = document.createElement('button'); row.type='button'; row.className='it';
+      row.setAttribute('data-key', it.key);
+      row.setAttribute('aria-pressed','false');
+      row.innerHTML = '<span class="desc">'+it.desc+'</span><span class="sc">'+it.score+'</span>';
+      row.addEventListener('click', function(){
+        selected[it.key] = !selected[it.key];
+        if(!selected[it.key]) delete selected[it.key];
+        row.setAttribute('aria-pressed', selected[it.key]?'true':'false');
+        refresh();
+      });
+      inn.appendChild(row);
+    });
+    card.appendChild(bar); card.appendChild(inn); host.appendChild(card);
   });
-  paint();
+
+  var sw = document.getElementById('anaSwitch');
+  sw.addEventListener('click', function(){
+    ana = !ana;
+    sw.classList.toggle('on', ana);
+    sw.setAttribute('aria-checked', ana?'true':'false');
+    refresh();
+  });
+  document.getElementById('btnReset').addEventListener('click', function(){
+    selected={}; ana=false;
+    sw.classList.remove('on'); sw.setAttribute('aria-checked','false');
+    document.querySelectorAll('.it').forEach(function(el){
+      el.classList.remove('on'); el.setAttribute('aria-pressed','false');
+    });
+    refresh();
+  });
+  document.getElementById('btnCopy').addEventListener('click', function(){
+    var r=calc();
+    var anaText = ana ? 'ANA ≥ 1:80 阳性 (HEp-2)' : 'ANA 未满足 (<1:80)';
+    var report = '2019 EULAR/ACR SLE 分类\nANA: '+anaText+'\n选中: '+(r.path||'无')+'\n总分: '+r.sum+'\n结论: '+statusText();
+    function ok(){ pathLine.textContent = '已复制到剪贴板 ✓'; setTimeout(refresh, 1200); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(report).then(ok, function(){ fallback(report, ok); });
+    } else { fallback(report, ok); }
+  });
+  function fallback(text, ok){
+    var ta = document.createElement('textarea'); ta.value = text;
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); ok(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+  refresh();
 })();
 </script>
-<style data-mw-bridge="1">
-/* inject.py 桥接层: 旧fixed导航补偿 + 内容卡对齐 + .sh节标题统一(双斜杠) */
-body{padding-top:0 !important;}
-.cw-wrap ~ .wrap{max-width:1040px;margin:14px auto 0;}
-.wrap .sh, .wrap .sh.red, .wrap .sh.green, .wrap .sh.yellow, .wrap .sh.blue{
-  background:transparent;color:var(--accent-ink,#22303F);padding:0 0 6px;border-radius:0;
-  border-bottom:2px solid var(--accent-soft,#DCE8F4);box-shadow:none;margin:22px 0 10px;
-  font-size:15px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
-.wrap .sh::before{content:'';width:5px;height:15px;background:var(--accent,#1B4F8A);
-  transform:skewX(-18deg);box-shadow:8px 0 0 var(--accent,#1B4F8A);flex:none;}
-.wrap table{font-size:13px;}
-.wrap th{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);
-  border-bottom:2px solid var(--accent,#1B4F8A);padding:7px 10px;}
-.wrap td{padding:6px 10px;border-bottom:1px solid var(--border,#DDE5EC);line-height:1.65;}
-.wrap tr:hover td{background:var(--surface-2,#F5F6F8);}
-.wrap .t-a,.wrap .score-box{background:var(--accent-soft,#DCE8F4);color:var(--accent-ink,#22303F);}
-</style></body>
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=7" defer></script>
+</body>
 </html>
