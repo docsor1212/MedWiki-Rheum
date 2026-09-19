@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 """publish.py — MedWiki 新文章一键发布
 用法: python3 tools/publish.py <article.html> --title "标题" --desc "一句话简介" [--push]
-行为: 复制文章到 evidence/ → 索引卡片 → 首页时间线 → sitemap → log.md →(--push) commit+push
+行为: 复制文章到 evidence/ → 自动合规注入(inject.py) → 索引卡片 → 首页时间线
+      → sitemap → 搜索索引 → log.md → 验收(audit.py, FAIL即中止) →(--push) commit+push
 """
-import argparse, shutil, os, sys, datetime
+import argparse, shutil, os, sys, json, subprocess, datetime
 
 os.chdir(os.path.expanduser("~/MedWiki-Rheum"))
 ap = argparse.ArgumentParser()
@@ -16,8 +17,15 @@ ap.add_argument("--push", action="store_true")
 a = ap.parse_args()
 name = a.name or os.path.basename(a.file)
 today = datetime.date.today().isoformat()
+rel = "evidence/" + name
 
 shutil.copy(a.file, os.path.join("evidence", name))
+
+# ---- 自动合规注入(骨架/旧域/share/SW/免责; 自包含文章自动走bare模式) ----
+r = subprocess.run([sys.executable, "tools/inject.py", rel], capture_output=True, text=True)
+print(r.stdout.strip())
+if r.returncode != 0:
+    sys.exit("inject 失败:\n" + r.stderr)
 
 p = "evidence/index.html"; s = open(p, encoding="utf-8").read()
 anchor = "<!--PUBLISH:CARDS-->"
@@ -37,16 +45,32 @@ s = s.replace(anchor, anchor + entry, 1)
 open(p, "w", encoding="utf-8", newline="\n").write(s)
 
 p = "sitemap.xml"; s = open(p, encoding="utf-8").read()
-u = "  <url><loc>https://docsor1212.github.io/MedWiki-Rheum/evidence/%s</loc></url>\n" % name
+u = "  <url><loc>https://docsor.cn/evidence/%s</loc></url>\n" % name
 if name not in s:
     s = s.replace("</urlset>", u + "</urlset>")
     open(p, "w", encoding="utf-8", newline="\n").write(s)
 
+p = "assets/search-index.json"
+try:
+    entries = json.load(open(p, encoding="utf-8"))
+except Exception:
+    entries = []
+if not any(e.get("u") == rel for e in entries):
+    entries.append({"t": a.title, "u": rel, "c": "循证证据"})
+    open(p, "w", encoding="utf-8", newline="\n").write(json.dumps(entries, ensure_ascii=False, indent=1))
+
 p = "log.md"; s = open(p, encoding="utf-8").read()
-entry = "\n## %s — 新增：%s\n- 文件：evidence/%s\n- 简介：%s\n" % (today, a.title, name, a.desc)
+entry = "\n## %s — 新增：%s\n- 文件：%s\n- 简介：%s\n" % (today, a.title, rel, a.desc)
 anchor2 = "\n---\n"
 s = s.replace(anchor2, "\n" + entry + anchor2, 1)
 open(p, "w", encoding="utf-8", newline="\n").write(s)
+
+# ---- 验收: audit不过不发布 ----
+import re
+r = subprocess.run([sys.executable, "tools/audit.py", "--quiet", rel], capture_output=True, text=True)
+print(r.stdout.strip())
+if re.search(r'^\[FAIL', r.stdout, flags=re.M):
+    sys.exit("audit FAIL — 已保留工作区改动供修查, 未 commit/push")
 
 print("published:", name)
 if a.push:
