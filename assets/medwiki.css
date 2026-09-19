@@ -321,9 +321,10 @@ body{
   .feature::before{animation:stripeFlow 5s linear infinite;}
 }
 @keyframes stripeFlow{to{background-position:55px 0;}}
-/* 精选卡特权：右上角幽灵大序号（全站唯一） */
+/* 精选卡特权：右上角幽灵大序号（CSS counter自动编号,新卡在前自动重排） */
+.msection{counter-reset:feat;}
 .feature::after{
-  content:'01'; position:absolute; right:20px; top:14px;
+  counter-increment:feat; content:'0' counter(feat); position:absolute; right:20px; top:14px;
   font-size:46px; font-weight:900; line-height:1; letter-spacing:.02em;
   color:var(--accent-soft); pointer-events:none; font-variant-numeric:tabular-nums;
 }

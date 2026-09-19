@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-title" content="MedWiki">
 <title>MedWiki-Rheum 儿童风湿免疫临床知识库</title>
 <link rel="stylesheet" href="assets/themes.css?v=6">
-<link rel="stylesheet" href="assets/medwiki.css?v=26">
+<link rel="stylesheet" href="assets/medwiki.css?v=27">
 </head>
 <body>
 
@@ -90,9 +90,8 @@
 <div class="msection">
   <h2 class="msec-title rv">最新深度<span class="sub">FEATURED</span></h2>
   <style>
-    /* 首发卡在上（保留幽灵序号01），其余精选卡不显示序号并留间距 */
+    /* 精选卡自动编号(medwiki.css counter)，间距规则 */
     .msection .feature + .feature{margin-top:14px;}
-    .msection .feature + .feature::after{content:none;}
   </style>
   <a class="feature rv" href="evidence/ev_TETRA_01.html">
     <div class="fbody">
