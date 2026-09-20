@@ -83,7 +83,17 @@ def main():
                 if fn.endswith('.html'):
                     targets.append(os.path.relpath(os.path.join(dirpath, fn), ROOT))
     else:
-        targets = [a for a in argv if not a.startswith('--')]
+        targets = []
+        for a in [x for x in argv if not x.startswith('--')]:
+            a = a.rstrip('/')
+            full = os.path.join(ROOT, a)
+            if os.path.isdir(full):
+                for dirpath, dirnames, filenames in os.walk(full):
+                    for fn in filenames:
+                        if fn.endswith('.html'):
+                            targets.append(os.path.relpath(os.path.join(dirpath, fn), ROOT))
+            else:
+                targets.append(a)
     npass = nfail = 0
     failed = []
     for t in sorted(targets):
