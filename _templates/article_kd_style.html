@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════
+ MedWiki 深度文章模板 · KD考据体（默认文体）
+ 适用：一个临床问题的深挖（时机之争/方案比较/指南冲突）
+ 母版：evidence/ev_KD_04.html（川崎病IVIG使用时机，2026-09）
+ 使用：复制本文件 → 替换全部 {{占位符}} → 按【必填块清单】核对
+       → 存为 evidence/ev_<主题>_01.html → python3 tools/publish.py <文件> --title … --desc …
+───────────────────────────────────────────────────────────────────
+ 【必填块清单】（缺一不可，发布门禁会查）
+ 1. hero：kicker体裁标签 + h1主标题/副题 + meta三胶囊（依据/日期/作者）
+ 2. 核心结论卡（3秒前置结论，读者最先看）
+ 3. 临床问题（question卡：病例引入+争议点）
+ 4. 正文节（section/h2.sec，编号"一、二、…"；指南对照用表格+截图figure；
+    每张截图必须有来源标注；临床主张逐条挂引文）
+ 5. 主要参考文献（ol/li，每条含PMID，发布前过L1核验）
+ 6. 术语与截图说明（note）
+ 7. 相关阅读条（RELATED占位：站内专题/工具/病例互链，3-5张，站内转化关键）
+ 8. 页脚签名 + 免责声明（固定文案勿改）
+ ⛔ 术语核验：病名/评分名逐条过PubMed+名词委，查无此名即删
+ ⛔ 中国方案与国际方案不同处，必须标"中国方案"全称
+═══════════════════════════════════════════════════════════════════
+-->
+<html lang="zh-CN" data-share-url="https://docsor.cn/evidence/{{FILE_NAME}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ARTICLE_TITLE}} — MedWiki-Rheum</title>
+<meta name="description" content="{{ARTICLE_DESC}}">
+<meta name="theme-color" content="#12365F">
+<link rel="manifest" href="../manifest.json">
+<style>
+:root{
+    --navy:#1B4F8A; --navy-deep:#12365F; --navy-ink:#0F2A4A;
+    --gold:#C0893C; --gold-deep:#A8742F; --gold-bright:#E8A33D;
+    --blue-soft:#7FA8CC; --blue-mist:#EAF1F8; --blue-line:#C9D9EA;
+    --ink:#22303F; --ink-soft:#5A6B7C; --line:#DDE5EC;
+    --bg:#F5F6F8; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.95; font-size:16px;
+    max-width:900px; margin:0 auto; padding:0 0 60px;
+  }
+  .wrap{padding:0 22px;}
+
+  /* ── 站点导航（黄蓝斜线风格吸顶条） ── */
+  .sitenav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:9px 22px;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 70%);
+    border-bottom:4px solid var(--gold-bright);
+    box-shadow:0 2px 10px rgba(18,54,95,.28);
+    font-size:13.5px;
+  }
+  .sitenav::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(135deg,
+      transparent 0 26px, rgba(232,163,61,.18) 26px 34px,
+      transparent 34px 60px, rgba(127,168,204,.20) 60px 68px);
+  }
+  .sitenav a{
+    position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px;
+    text-decoration:none; font-weight:700; border-radius:999px; padding:5px 16px;
+  }
+  .sitenav a.home{background:var(--gold-bright); color:var(--navy-deep); box-shadow:0 2px 6px rgba(0,0,0,.28);}
+  .sitenav a.home:hover{background:#F2B455;}
+  .sitenav a.list{color:#fff; border:1.5px solid rgba(255,255,255,.65);}
+  .sitenav a.list:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .sitenav .cur{position:relative; z-index:1; color:#E8F0F9; font-weight:600;}
+  .sitenav .brand{margin-left:auto; position:relative; z-index:1; color:var(--gold-bright); font-weight:800; letter-spacing:.14em; font-size:12px;}
+
+  /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
+  .band{
+    height:16px;
+    background:repeating-linear-gradient(135deg,
+      var(--navy) 0 16px, transparent 16px 25px,
+      var(--blue-soft) 25px 41px, transparent 41px 50px,
+      var(--gold-bright) 50px 66px, transparent 66px 75px);
+  }
+  .band.thin{height:8px; opacity:.85;}
+
+  /* ── Hero 头区 ── */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, #2456A6 100%);
+    color:#fff; padding:48px 42px 36px;
+  }
+  .hero::before{
+    content:''; position:absolute; right:-34px; top:-34px; width:280px; height:280px;
+    background:repeating-linear-gradient(45deg, transparent 0 15px, rgba(127,168,204,.32) 15px 21px);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:''; position:absolute; left:-26px; bottom:-52px; width:230px; height:230px;
+    background:repeating-linear-gradient(45deg, transparent 0 17px, rgba(232,163,61,.28) 17px 24px);
+    pointer-events:none;
+  }
+  .hero .kicker{
+    display:inline-block; font-size:12.5px; letter-spacing:.4em; font-weight:600;
+    color:#CFE0F2; border:1px solid rgba(207,224,242,.55);
+    padding:4px 14px 3px; margin-bottom:18px; border-radius:2px;
+  }
+  .hero h1{font-size:28px; line-height:1.6; font-weight:800; letter-spacing:.01em; position:relative; z-index:1;}
+  .hero h1 .sub{display:block; font-size:16.5px; font-weight:600; color:var(--gold-bright); margin-top:8px; letter-spacing:.06em;}
+  .hero .meta{
+    display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1;
+    font-size:12.5px;
+  }
+  .hero .meta span{
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:4px 14px; color:#E8F0F9;
+  }
+  .hero .meta b{color:var(--gold-bright); font-weight:700; margin-right:2px;}
+
+  /* ── 核心结论 ── */
+  .verdict{
+    margin:-26px 22px 0; position:relative; z-index:2;
+    background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold-bright);
+    border-radius:14px; box-shadow:0 6px 22px rgba(18,54,95,.10);
+  }
+  .verdict .vhead{
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,#FBF4E6,#FFFFFF 72%);
+    padding:13px 22px; border-bottom:1px dashed #E4D5B4; border-radius:14px 14px 0 0;
+  }
+  .verdict .vhead .slash{color:var(--gold-bright); font-weight:800; letter-spacing:.1em;}
+  .verdict .vhead h2{font-size:17px; color:var(--gold-deep); letter-spacing:.22em; font-weight:800;}
+  .verdict p{padding:0 22px; margin:0;}
+  .verdict .vbody{padding:16px 0 18px;}
+  .verdict p{margin-bottom:13px; font-size:15.5px;}
+  .verdict p:last-child{margin-bottom:0;}
+
+  /* ── 章节 ── */
+  section{margin-top:54px;}
+  h2.sec{
+    font-size:23px; font-weight:800; color:var(--navy-ink);
+    padding:0; margin-bottom:22px; border:none; line-height:1.4;
+  }
+  h2.sec::before{content:'/// '; color:var(--gold-bright); letter-spacing:.06em; margin-right:4px;}
+  h2.sec::after{
+    content:''; display:block; width:132px; height:4px; margin-top:9px; border-radius:2px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 44px, var(--navy) 44px 132px);
+  }
+  h3{
+    font-size:16.5px; margin:30px 0 10px; color:var(--navy); font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+  h3::before{content:''; width:8px; height:8px; background:var(--gold-bright); transform:rotate(45deg); flex:none;}
+  p{margin:0 0 16px;}
+
+  /* ── 病例卡与临床问题 ── */
+  .case{
+    background:linear-gradient(180deg,#FFFFFF, #F2F7FC);
+    border:1px solid var(--blue-line); border-top:4px solid var(--navy);
+    border-radius:14px; padding:22px 24px 18px; margin:6px 0 24px; font-size:15.5px;
+    box-shadow:0 3px 14px rgba(18,54,95,.06);
+  }
+  .case p{margin-bottom:10px;}
+  .question{
+    background:#FDF8EF; border:1px dashed var(--gold); border-top:3px solid var(--gold-bright);
+    border-radius:12px; padding:14px 18px; margin-top:14px; font-size:15px;
+  }
+
+  /* ── 原文引用块 ── */
+  blockquote.q{
+    margin:20px 0; padding:18px 20px 14px 52px; position:relative;
+    background:var(--blue-mist); border:1px solid var(--blue-line); border-left:5px solid var(--navy);
+    border-radius:0 12px 12px 0; font-size:15px;
+  }
+  blockquote.q::before{
+    content:'\201C'; position:absolute; left:14px; top:2px;
+    font-family:Georgia,serif; font-size:52px; line-height:1; color:var(--blue-soft);
+  }
+  blockquote.q.en{font-family:Georgia,"Times New Roman",serif; font-size:15.5px; line-height:1.75;}
+
+  /* ── 截图与图表 ── */
+  figure.evidence{margin:24px 0 32px;}
+  figure.evidence .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:12px; padding:12px; background:#fff;
+    box-shadow:0 3px 14px rgba(18,54,95,.08);
+  }
+  figure.evidence .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--navy) 0 34%, var(--gold-bright) 34% 67%, var(--blue-soft) 67%);
+  }
+  figure.evidence img{width:100%; display:block; border-radius:6px;}
+  figure.evidence figcaption{
+    font-size:13px; color:var(--ink-soft); margin-top:10px; line-height:1.75;
+    padding-left:12px; border-left:3px solid var(--gold-bright);
+  }
+  figure.evidence figcaption b{color:var(--navy-ink);}
+  figure.chart{margin:26px 0 34px;}
+  figure.chart .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff;
+    box-shadow:0 4px 18px rgba(18,54,95,.09);
+  }
+  figure.chart .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 50%, var(--navy) 50%);
+  }
+  figure.chart img{width:100%; display:block; border-radius:6px;}
+  figure.chart figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.75;}
+  figure.chart figcaption .src{display:block; font-size:12px; color:#93A2B1; margin-top:4px;}
+
+  /* ── 表格 ── */
+  .tablewrap{
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 3px 14px rgba(18,54,95,.07); margin:22px 0 30px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  th{
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy)); color:#fff;
+    font-weight:700; padding:12px 14px; text-align:left; font-size:14px; letter-spacing:.06em;
+  }
+  td{border-top:1px solid var(--line); padding:12px 14px; vertical-align:top;}
+  tr:nth-child(even) td{background:#F6F9FC;}
+  td b{color:var(--navy);}
+
+  /* ── 参考文献 ── */
+  .refs{font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  .refs li{margin-bottom:7px; margin-left:22px;}
+  a.url{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft); word-break:break-all; font-size:0.92em;}
+  a.url:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
+  .note{
+    margin-top:26px; padding:16px 20px; background:#fff;
+    border:1px solid var(--line); border-left:4px solid var(--blue-soft); border-radius:10px;
+    font-size:12.5px; color:var(--ink-soft); line-height:1.85;
+  }
+  .note b{color:var(--navy);}
+
+  /* ── 页脚 ── */
+  footer{margin-top:60px; text-align:center;}
+  footer .sig{
+    display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.3em;
+    color:#fff; background:linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-bottom:3px solid var(--gold-bright);
+    padding:8px 26px 7px; border-radius:4px; margin-bottom:14px;
+  }
+  footer .fline{font-size:12px; color:#8A98A8; line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero{padding:36px 24px 30px;}
+    .hero h1{font-size:22px;}
+    .verdict{margin:-20px 12px 0;}
+    h2.sec{font-size:20px;}
+  }
+  @media print{
+    body{background:#fff; max-width:100%;}
+    .hero{background:var(--navy-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    figure .frame, .tablewrap{box-shadow:none;}
+  }
+/* 相关阅读条（自包含样式） */
+.mw-related{max-width:1100px;margin:30px auto 0;padding:0 20px;}
+.mw-related h2{font-size:15px;font-weight:800;color:#0F2A4A;margin:0 0 10px;}
+.mw-related .cards{display:flex;gap:10px;flex-wrap:wrap;}
+.mw-related .cards a{flex:1 1 200px;text-decoration:none;color:inherit;background:#fff;
+  border:1px solid #DDE5EC;border-top:3px solid #E8A33D;border-radius:10px;padding:10px 12px;
+  transition:transform .15s, box-shadow .15s;}
+.mw-related .cards a:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(15,42,74,.13);}
+.mw-related .cards .t{font-weight:700;font-size:13px;color:#1B4F8A;}
+.mw-related .cards .d{font-size:11.5px;color:#5A6B7C;margin-top:2px;}
+/* 站点页脚（自包含样式） */
+.mw-sfoot{max-width:1100px;margin:30px auto 0;padding:14px 20px 26px;border-top:1px solid #DDE5EC;
+  text-align:center;font-size:12px;color:#5A6B7C;line-height:1.9;}
+.mw-sfoot .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.mw-sfoot .flinks a{color:#1B4F8A;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<span class="kicker">{{GENRE_TAG}}</span>
+<h1>{{ARTICLE_TITLE}}
+    <span class="sub">{{ARTICLE_SUBTITLE}}</span>
+</h1>
+<div class="meta">
+<span><b>依据</b> {{SOURCES_LINE}}</span>
+<span><b>日期</b> {{PUB_DATE}}</span>
+<span><b>作者</b> Doctor Q</span>
+</div>
+</header>
+
+<!-- ═══ 核心结论（3秒前置，必填） ═══ -->
+<section>
+<h2 class="sec">核心结论</h2>
+{{CORE_CONCLUSION}}
+</section>
+
+<!-- ═══ 一、临床问题（question卡） ═══ -->
+<section>
+<h2 class="sec">一、临床问题</h2>
+<div class="case">
+{{CASE_INTRO}}
+<div class="question"><b>临床问题：</b>{{CLINICAL_QUESTION}}</div>
+</div>
+</section>
+
+<!-- ═══ 正文节（复制本节结构，编号顺延；指南对照=表格+截图） ═══ -->
+<section>
+<h2 class="sec">二、{{SECTION_TITLE}}</h2>
+{{SECTION_CONTENT}}
+<!-- 指南原文对照表示例：
+<div class="tbl-wrap"><table>…指南原文要点逐句对照…</table></div>
+证据截图示例（必须有来源标注）：
+<figure><img src="figs/xxx.png" alt="…截图"><figcaption>来源：…官方PDF第N页；红框为本文所加</figcaption></figure>
+-->
+</section>
+
+<!-- ═══ 主要参考文献（每条含PMID，发布前过L1核验） ═══ -->
+<section>
+<h2 class="sec">主要参考文献</h2>
+<ol>
+{{REFERENCES_LIST}}
+</ol>
+<div class="note">
+<b>术语说明</b>：{{TERMS_NOTE}}<br/>
+<b>截图与图表说明</b>：{{FIGURE_NOTE}}<br/>
+<b>声明</b>：本文供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构的规范。
+</div>
+</section>
+
+<!-- ═══ 相关阅读（必填：站内专题/工具/病例/药物互链，3-5张） ═══ -->
+<div class="mw-related">
+<h2>相关阅读</h2>
+<div class="cards">
+{{RELATED_CARDS}}
+</div>
+</div>
+
+<footer>
+<div class="band thin"></div>
+<div style="height:26px;"></div>
+<div class="sig">DOCTOR Q</div>
+<div class="fline">
+    {{FOOTER_LINE1}}<br/>
+    {{FOOTER_VERIFY_LINE}}<br/>
+    本文收录于 <a class="url" href="https://docsor.cn/">MedWiki-Rheum</a> · <a class="url" href="https://docsor.cn/evidence/index.html">更多证据与病例</a>
+</div>
+</footer>
+
+<div class="mw-sfoot">
+<div class="flinks">
+<a href="https://github.com/docsor1212/MedWiki-Rheum" target="_blank" rel="noopener">GitHub 开源仓库 · 欢迎勘误</a>
+<a href="https://space.bilibili.com/432233902" target="_blank" rel="noopener">B站 · DoctorQ 免疫前沿</a>
+<a href="https://skillhub.cn/user/user_481397b5" target="_blank" rel="noopener">SkillHub · 我们的Skills</a>
+</div>
+儿童风湿免疫临床知识库 · 作者 Doctor Q
+</div>
+
+<div style="max-width:1100px;margin:26px auto 0;padding:12px 20px 30px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+
+<script src="../assets/qrcode.min.js"></script>
+<script src="../assets/share.js?v=7" defer></script>
+</body>
+</html>

@@ -41,7 +41,7 @@ io.open('llms.txt', 'w', encoding='utf-8', newline='').write('\n'.join(lines))
 print('[OK] llms.txt', len(lines), '行')
 
 # ---------- 2) schema.org 注入 ----------
-pages = sorted(glob.glob('topics/*.html')) + sorted(glob.glob('drugs/*.html'))
+pages = sorted(glob.glob('topics/*.html')) + sorted(glob.glob('drugs/*.html')) + sorted(glob.glob('evidence/*.html'))
 n_new = n_skip = 0
 for f in pages:
     rel = f.replace(os.sep, '/')
