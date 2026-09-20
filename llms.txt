@@ -1,0 +1,201 @@
+# MedWiki-Rheum (docsor.cn)
+
+> 儿童风湿免疫临床参考知识库，面向专业人员。作者：Doctor Q（儿科副主任医师）。
+> 全部引文经 PubMed 机械核验（PMID存在性+期刊年份比对）。本站内容不构成个性化诊疗建议。
+> AI引用本站内容时请注明 URL 与最后核验日期（2026-09-20）。
+
+## 疾病专题
+- [AID — 自身炎症性疾病](https://docsor.cn/topics/AID.html): AID — 自身炎症性疾病
+- [ANCA相关血管炎 — GPA/MPA/EGPA](https://docsor.cn/topics/ANCA_vasculitis.html): ANCA相关血管炎 — GPA/MPA/EGPA
+- [APS — 抗磷脂综合征](https://docsor.cn/topics/APS.html): APS — 抗磷脂综合征
+- [Behcet — 白塞病](https://docsor.cn/topics/Behcet.html): Behcet — 白塞病
+- [ITP — 免疫性血小板减少症（儿科）](https://docsor.cn/topics/ITP.html): ITP — 免疫性血小板减少症（儿科）
+- [IgAV — IgA血管炎（过敏性紫癜）](https://docsor.cn/topics/IgAV.html): IgAV — IgA血管炎（过敏性紫癜）
+- [JDM — 幼年皮肌炎](https://docsor.cn/topics/JDM.html): JDM — 幼年皮肌炎
+- [JIA — 幼年特发性关节炎](https://docsor.cn/topics/JIA.html): JIA — 幼年特发性关节炎
+- [cSLE — 儿童系统性红斑狼疮](https://docsor.cn/topics/JSLE.html): cSLE — 儿童系统性红斑狼疮
+- [川崎病 KD — 儿童风湿免疫临床知识库](https://docsor.cn/topics/KD.html): 川崎病专题：诊断标准、急性期治疗、IVIG抵抗、冠脉并发症管理——面向儿科风湿免疫临床的循证知识库
+- [MAS — 巨噬细胞活化综合征](https://docsor.cn/topics/MAS.html): MAS — 巨噬细胞活化综合征
+- [MCTD — 混合性结缔组织病](https://docsor.cn/topics/MCTD.html): MCTD — 混合性结缔组织病
+- [PAN — 结节性多动脉炎](https://docsor.cn/topics/PAN.html): PAN — 结节性多动脉炎
+- [PID — 原发性免疫缺陷病](https://docsor.cn/topics/PID.html): PID — 原发性免疫缺陷病
+- [SLE — 系统性红斑狼疮](https://docsor.cn/topics/SLE.html): SLE — 系统性红斑狼疮
+- [Uveitis — 儿童非感染性葡萄膜炎](https://docsor.cn/topics/Uveitis.html): Uveitis — 儿童非感染性葡萄膜炎
+- [jSSc — 幼年系统性硬化症](https://docsor.cn/topics/jSSc.html): jSSc — 幼年系统性硬化症
+
+## 药物手册
+- [静脉丙种球蛋白 — IVIG](https://docsor.cn/drugs/IVIG.html): 静脉丙种球蛋白 — IVIG
+- [MTX — 甲氨蝶呤](https://docsor.cn/drugs/MTX.html): MTX — 甲氨蝶呤
+- [非甾体抗炎药 — NSAIDs](https://docsor.cn/drugs/NSAIDs.html): 非甾体抗炎药 — NSAIDs
+- [ADA — 阿达木单抗](https://docsor.cn/drugs/adalimumab.html): ADA — 阿达木单抗
+- [阿那白滞素 Anakinra — MedWiki-Rheum](https://docsor.cn/drugs/anakinra.html): 阿那白滞素 Anakinra — MedWiki-Rheum
+- [AZA — 硫唑嘌呤](https://docsor.cn/drugs/azathioprine.html): AZA — 硫唑嘌呤
+- [Belimumab — 贝利尤单抗](https://docsor.cn/drugs/belimumab.html): Belimumab — 贝利尤单抗
+- [生物制剂 — Biologics (bDMARDs)](https://docsor.cn/drugs/biologics.html): 生物制剂 — Biologics (bDMARDs)
+- [钙 + 维生素D — Ca+VitD](https://docsor.cn/drugs/calcium_vitd.html): 钙 + 维生素D — Ca+VitD
+- [Colchicine — 秋水仙碱](https://docsor.cn/drugs/colchicine.html): Colchicine — 秋水仙碱
+- [静脉糖皮质激素 — IV Corticosteroids](https://docsor.cn/drugs/corticosteroids_IV.html): 静脉糖皮质激素 — IV Corticosteroids
+- [CYC — 环磷酰胺](https://docsor.cn/drugs/cyclophosphamide.html): CYC — 环磷酰胺
+- [环孢素A — Cyclosporine A](https://docsor.cn/drugs/cyclosporine.html): 环孢素A — Cyclosporine A
+- [ETN — 依那西普](https://docsor.cn/drugs/etanercept.html): ETN — 依那西普
+- [糖皮质激素 — Glucocorticoids](https://docsor.cn/drugs/glucocorticoids.html): 糖皮质激素 — Glucocorticoids
+- [HCQ — 羟氯喹](https://docsor.cn/drugs/hydroxychloroquine.html): HCQ — 羟氯喹
+- [IFX — 英夫利西单抗](https://docsor.cn/drugs/infliximab.html): IFX — 英夫利西单抗
+- [MMF — 吗替麦考酚酯](https://docsor.cn/drugs/mycophenolate.html): MMF — 吗替麦考酚酯
+- [RTX — 利妥昔单抗](https://docsor.cn/drugs/rituximab.html): RTX — 利妥昔单抗
+- [他克莫司 — Tacrolimus](https://docsor.cn/drugs/tacrolimus.html): 他克莫司 — Tacrolimus
+- [TCZ — 托珠单抗](https://docsor.cn/drugs/tocilizumab.html): TCZ — 托珠单抗
+- [Tofacitinib — 托法替布](https://docsor.cn/drugs/tofacitinib.html): Tofacitinib — 托法替布
+
+## 临床工具
+- [2023 ACR/EULAR APS分类标准详情卡](https://docsor.cn/tools/APS_2023_ACR_EULAR.html): 2023 ACR/EULAR APS分类标准详情卡
+- [BMI Z-score 计算器 — MedWiki-Rheum](https://docsor.cn/tools/BMI_Zscore.html): BMI Z-score 计算器 — MedWiki-Rheum
+- [BSA 体表面积计算器 — MedWiki-Rheum](https://docsor.cn/tools/BSA.html): BSA 体表面积计算器 — MedWiki-Rheum
+- [CDAI 交互式评分 — MedWiki-Rheum](https://docsor.cn/tools/CDAI.html): CDAI 交互式评分 — MedWiki-Rheum
+- [CHAQ 问卷评分 — MedWiki-Rheum](https://docsor.cn/tools/CHAQ.html): CHAQ 问卷评分 — MedWiki-Rheum
+- [DAS28 交互式评分 — MedWiki-Rheum](https://docsor.cn/tools/DAS28.html): DAS28 交互式评分 — MedWiki-Rheum
+- [ESR/CRP 参考值查询 — MedWiki-Rheum](https://docsor.cn/tools/ESR_CRP.html): ESR/CRP 参考值查询 — MedWiki-Rheum
+- [JADAS-27 交互式评分 — MedWiki-Rheum](https://docsor.cn/tools/JADAS27.html): JADAS-27 交互式评分 — MedWiki-Rheum
+- [JADAS-71 交互式评分 — MedWiki-Rheum](https://docsor.cn/tools/JADAS71.html): JADAS-71 交互式评分 — MedWiki-Rheum
+- [冠脉Z值计算器 — 川崎病 — MedWiki-Rheum](https://docsor.cn/tools/KD_CA_Zscore.html): 冠脉Z值计算器 — 川崎病 — MedWiki-Rheum
+- [IVIG无反应预测 — MedWiki-Rheum](https://docsor.cn/tools/KD_IVIG_resistance.html): IVIG无反应预测 — MedWiki-Rheum
+- [MAS/HLH 快速筛查 — MedWiki-Rheum](https://docsor.cn/tools/MAS_HLH_screening.html): MAS/HLH 快速筛查 — MedWiki-Rheum
+- [MTX 甲氨蝶呤剂量计算器 — MedWiki-Rheum](https://docsor.cn/tools/MTX_dose.html): MTX 甲氨蝶呤剂量计算器 — MedWiki-Rheum
+- [SDAI 交互式评分 — MedWiki-Rheum](https://docsor.cn/tools/SDAI.html): SDAI 交互式评分 — MedWiki-Rheum
+- [SLEDAI-2000 疾病活动指数 — MedWiki-Rheum](https://docsor.cn/tools/SLE2K.html): SLEDAI-2000 疾病活动指数评分工具：24项临床表现按1/2/4/8分权重分组直接累加，移植自鸿蒙版 Sledai2000App
+- [SLEDAI-2000 疾病活动度助手（存档版）](https://docsor.cn/tools/SLE2K_original.html): SLEDAI-2000 疾病活动度助手（存档版）
+- [SLE 2019 EULAR/ACR 分类标准 — MedWiki-Rheum](https://docsor.cn/tools/SLE_2019_EULAR_ACR.html): 2019 EULAR/ACR SLE 分类标准计分工具：ANA≥1:80 准入，10个领域各取最高分，≥10分且≥1条临床领域即分类——移植自鸿蒙版 SleEularAcr
+- [儿童血栓性微血管病 (TMA) 诊疗卡](https://docsor.cn/tools/TMA.html): 儿童血栓性微血管病 (TMA) 诊疗卡
+- [自身抗体全面解读 — MedWiki-Rheum](https://docsor.cn/tools/autoantibodies.html): 自身抗体全面解读 — MedWiki-Rheum
+- [药物风险评估 — MedWiki-Rheum](https://docsor.cn/tools/drug_risk_assessment.html): 药物风险评估 — MedWiki-Rheum
+- [智能随访计划 — MedWiki-Rheum](https://docsor.cn/tools/followup.html): 智能随访计划 — MedWiki-Rheum
+- [肝肾功能解读 — MedWiki-Rheum](https://docsor.cn/tools/liver_kidney.html): 肝肾功能解读 — MedWiki-Rheum
+- [免疫抑制状态疫苗策略 — MedWiki-Rheum](https://docsor.cn/tools/vaccine.html): 免疫抑制状态疫苗策略 — MedWiki-Rheum
+- [疫苗决策树 — MedWiki-Rheum](https://docsor.cn/tools/vaccine_decision.html): 疫苗决策树 — MedWiki-Rheum
+
+## 病例学习
+- [病例：冷吡啉相关周期性发热综合征（CAPS）](https://docsor.cn/cases/case_AID_CAPS.html): 病例：冷吡啉相关周期性发热综合征（CAPS）
+- [病例：家族性地中海热（FMF）](https://docsor.cn/cases/case_AID_FMF.html): 病例：家族性地中海热（FMF）
+- [病例：NLRC4炎症小体病合并MAS](https://docsor.cn/cases/case_AID_NLRC4.html): 病例：NLRC4炎症小体病合并MAS
+- [病例：SAVI — STING相关血管病](https://docsor.cn/cases/case_AID_SAVI.html): 病例：SAVI — STING相关血管病
+- [病例：TRAPS — TNF受体相关周期性发热综合征](https://docsor.cn/cases/case_AID_TRAPS.html): 病例：TRAPS — TNF受体相关周期性发热综合征
+- [病例：6岁男孩 FMF→秋水仙碱→早期淀粉样变预警](https://docsor.cn/cases/case_FMF_colchicine.html): 病例：6岁男孩 FMF→秋水仙碱→早期淀粉样变预警
+- [病例：Evans综合征（ITP+AIHA）](https://docsor.cn/cases/case_ITP_Evans.html): 病例：Evans综合征（ITP+AIHA）
+- [TPO-RA治疗儿童慢性ITP](https://docsor.cn/cases/case_ITP_TPO.html): TPO-RA治疗儿童慢性ITP
+- [病例：急性免疫性血小板减少症（ITP）](https://docsor.cn/cases/case_ITP_acute.html): 病例：急性免疫性血小板减少症（ITP）
+- [病例：慢性免疫性血小板减少症（ITP）](https://docsor.cn/cases/case_ITP_chronic.html): 病例：慢性免疫性血小板减少症（ITP）
+- [继发性ITP（SLE相关）](https://docsor.cn/cases/case_ITP_secondary.html): 继发性ITP（SLE相关）
+- [IgAV神经系统受累](https://docsor.cn/cases/case_IgAV_CNS.html): IgAV神经系统受累
+- [IgAV消化道并发症](https://docsor.cn/cases/case_IgAV_GI.html): IgAV消化道并发症
+- [IgAV肾炎](https://docsor.cn/cases/case_IgAV_nephritis.html): IgAV肾炎
+- [IgAV肺出血](https://docsor.cn/cases/case_IgAV_pulmonary.html): IgAV肺出血
+- [非典型IgAV](https://docsor.cn/cases/case_IgAV_special.html): 非典型IgAV
+- [病例：JDM合并致命性间质性肺炎 — 5岁女孩急进性ILD](https://docsor.cn/cases/case_JDM_ILD.html): 病例：JDM合并致命性间质性肺炎 — 5岁女孩急进性ILD
+- [病例：JDM钙质沉着 — 12岁男孩严重Calcinosis Cutis+地尔硫卓治疗](https://docsor.cn/cases/case_JDM_calcinosis.html): 病例：JDM钙质沉着 — 12岁男孩严重Calcinosis Cutis+地尔硫卓治疗
+- [病例：JDM难治性—Anifrolumab突破治疗](https://docsor.cn/cases/case_JDM_refractory.html): 病例：JDM难治性—Anifrolumab突破治疗
+- [病例：JDM延迟识别+钙质沉着+双侧肾钙质沉着](https://docsor.cn/cases/case_JDM_special.html): 病例：JDM延迟识别+钙质沉着+双侧肾钙质沉着
+- [病例：JDM典型表现 — Gottron丘疹+Heliotrope疹+近端肌无力](https://docsor.cn/cases/case_JDM_typical.html): 病例：JDM典型表现 — Gottron丘疹+Heliotrope疹+近端肌无力
+- [病例：生物制剂转换失败的JIA](https://docsor.cn/cases/case_JIA_biologic_failure.html): 病例：生物制剂转换失败的JIA
+- [病例：多关节型JIA → 生物制剂阶梯转换](https://docsor.cn/cases/case_JIA_biologics.html): 病例：多关节型JIA → 生物制剂阶梯转换
+- [病例：多关节型JIA（RF阴性）](https://docsor.cn/cases/case_JIA_polyarticular.html): 病例：多关节型JIA（RF阴性）
+- [病例：IVIG双重无反应川崎病](https://docsor.cn/cases/case_KD_IVIG_double_failure.html): 病例：IVIG双重无反应川崎病
+- [病例：不完全KD → IVIG无反应 → 冠脉瘤](https://docsor.cn/cases/case_KD_IVIG_resistant.html): 病例：不完全KD → IVIG无反应 → 冠脉瘤
+- [病例：KD合并巨大冠状动脉瘤与血栓](https://docsor.cn/cases/case_KD_giant_CAL.html): 病例：KD合并巨大冠状动脉瘤与血栓
+- [病例：不完全型KD — 非典型表现的诊断挑战](https://docsor.cn/cases/case_KD_incomplete.html): 病例：不完全型KD — 非典型表现的诊断挑战
+- [病例：2月龄婴儿不完全型KD+多发动脉瘤](https://docsor.cn/cases/case_KD_infant.html): 病例：2月龄婴儿不完全型KD+多发动脉瘤
+- [病例：川崎病休克综合征合并ARDS](https://docsor.cn/cases/case_KD_shock.html): 病例：川崎病休克综合征合并ARDS
+- [病例：自身免疫性淋巴增生综合征（ALPS）](https://docsor.cn/cases/case_PID_ALPS.html): 病例：自身免疫性淋巴增生综合征（ALPS）
+- [病例：慢性肉芽肿病（CGD）](https://docsor.cn/cases/case_PID_CGD.html): 病例：慢性肉芽肿病（CGD）
+- [病例：常见变异型免疫缺陷病（CVID）](https://docsor.cn/cases/case_PID_CVID.html): 病例：常见变异型免疫缺陷病（CVID）
+- [病例：重症联合免疫缺陷病（SCID）](https://docsor.cn/cases/case_PID_SCID.html): 病例：重症联合免疫缺陷病（SCID）
+- [病例：X连锁无丙种球蛋白血症（XLA）](https://docsor.cn/cases/case_PID_XLA.html): 病例：X连锁无丙种球蛋白血症（XLA）
+- [病例：抗磷脂综合征合并SLE](https://docsor.cn/cases/case_SLE_APLS.html): 病例：抗磷脂综合征合并SLE
+- [病例：难治性增殖性狼疮肾炎](https://docsor.cn/cases/case_SLE_LN_refractory.html): 病例：难治性增殖性狼疮肾炎
+- [病例：药物性红斑狼疮](https://docsor.cn/cases/case_SLE_drug_induced.html): 病例：药物性红斑狼疮
+- [病例：狼疮性肾炎IV型 — 弥漫增殖](https://docsor.cn/cases/case_SLE_lupus_nephritis.html): 病例：狼疮性肾炎IV型 — 弥漫增殖
+- [病例：SLE合并巨噬细胞活化综合征](https://docsor.cn/cases/case_SLE_macrophage.html): 病例：SLE合并巨噬细胞活化综合征
+- [病例：神经精神性狼疮（NPSLE）](https://docsor.cn/cases/case_SLE_neuropsychiatric.html): 病例：神经精神性狼疮（NPSLE）
+- [病例：Behçet病葡萄膜炎](https://docsor.cn/cases/case_Uveitis_Behcet.html): 病例：Behçet病葡萄膜炎
+- [病例：JIA相关葡萄膜炎](https://docsor.cn/cases/case_Uveitis_JIA.html): 病例：JIA相关葡萄膜炎
+- [病例：TINU综合征](https://docsor.cn/cases/case_Uveitis_TINU.html): 病例：TINU综合征
+- [病例：VKH综合征](https://docsor.cn/cases/case_Uveitis_Vogt.html): 病例：VKH综合征
+- [病例：感染性葡萄膜炎（眼弓形虫病）](https://docsor.cn/cases/case_Uveitis_infectious.html): 病例：感染性葡萄膜炎（眼弓形虫病）
+- [病例：cSLE以AIHA起病合并LAHPS](https://docsor.cn/cases/case_cSLE_AIHA_LAHPS.html): 病例：cSLE以AIHA起病合并LAHPS
+- [病例：cSLE合并灾难性抗磷脂综合征](https://docsor.cn/cases/case_cSLE_CAPS.html): 病例：cSLE合并灾难性抗磷脂综合征
+- [病例：12岁女孩 cSLE→LN IV型](https://docsor.cn/cases/case_cSLE_LN.html): 病例：12岁女孩 cSLE→LN IV型
+- [病例：cSLE-MAS伴广泛脑病变](https://docsor.cn/cases/case_cSLE_MAS_neuro.html): 病例：cSLE-MAS伴广泛脑病变
+- [病例：12月龄男婴以肾病综合征起病的婴儿SLE + IV型LN + 大面积肺栓塞](https://docsor.cn/cases/case_cSLE_infantile_LN_PE.html): 病例：12月龄男婴以肾病综合征起病的婴儿SLE + IV型LN + 大面积肺栓塞
+- [病例：cSLE急性胰腺炎并发MAS](https://docsor.cn/cases/case_cSLE_pancreatitis_MAS.html): 病例：cSLE急性胰腺炎并发MAS
+- [病例：cSLE以反复MAS为首发表现](https://docsor.cn/cases/case_cSLE_recurrent_MAS.html): 病例：cSLE以反复MAS为首发表现
+- [病例：难治性cNPSLE——硼替佐米突破治疗](https://docsor.cn/cases/case_cSLE_refractory_NPSLE.html): 病例：难治性cNPSLE——硼替佐米突破治疗
+- [病例2：sJIA并发MAS急重症](https://docsor.cn/cases/case_sJIA_MAS.html): 病例2：sJIA并发MAS急重症
+- [病例：sJIA → MAS 急速演变](https://docsor.cn/cases/case_sJIA_MAS_new.html): 病例：sJIA → MAS 急速演变
+- [病例：反复MAS发作的sJIA](https://docsor.cn/cases/case_sJIA_MAS_refractory.html): 病例：反复MAS发作的sJIA
+- [病例3：生物制剂治疗中发生MAS](https://docsor.cn/cases/case_sJIA_biologic_MAS.html): 病例3：生物制剂治疗中发生MAS
+- [病例4：sJIA-MAS早期识别](https://docsor.cn/cases/case_sJIA_early_MAS.html): 病例4：sJIA-MAS早期识别
+- [病例5：难治性sJIA](https://docsor.cn/cases/case_sJIA_refractory.html): 病例5：难治性sJIA
+- [病例1：sJIA典型起病](https://docsor.cn/cases/case_sJIA_typical.html): 病例1：sJIA典型起病
+- [临床病例专题 — MedWiki-Rheum](https://docsor.cn/cases/index.html): 临床病例专题 — MedWiki-Rheum
+- [AID自身炎症性疾病临床病例专题](https://docsor.cn/cases/index_AID.html): AID自身炎症性疾病临床病例专题
+- [ITP免疫性血小板减少症临床病例专题](https://docsor.cn/cases/index_ITP.html): ITP免疫性血小板减少症临床病例专题
+- [IgAV临床病例专题](https://docsor.cn/cases/index_IgAV.html): IgAV临床病例专题
+- [JDM临床病例专题](https://docsor.cn/cases/index_JDM.html): JDM临床病例专题
+- [KD临床病例专题](https://docsor.cn/cases/index_KD.html): KD临床病例专题
+- [PID原发性免疫缺陷病临床病例专题](https://docsor.cn/cases/index_PID.html): PID原发性免疫缺陷病临床病例专题
+- [SLE系统性红斑狼疮临床病例专题](https://docsor.cn/cases/index_SLE.html): SLE系统性红斑狼疮临床病例专题
+- [葡萄膜炎临床病例专题](https://docsor.cn/cases/index_Uveitis.html): 葡萄膜炎临床病例专题
+- [cSLE临床病例专题](https://docsor.cn/cases/index_cSLE.html): cSLE临床病例专题
+- [sJIA临床病例专题](https://docsor.cn/cases/index_sJIA.html): sJIA临床病例专题
+
+## 医患沟通模板
+- [给家长的信 — JIA诊断](https://docsor.cn/templates/comm_JIA_diagnosis.html): 给家长的信 — JIA诊断
+- [川崎病出院后家庭指导](https://docsor.cn/templates/comm_KD_discharge.html): 川崎病出院后家庭指导
+- [SLE家庭管理手册](https://docsor.cn/templates/comm_SLE_management.html): SLE家庭管理手册
+- [生物制剂治疗知情沟通](https://docsor.cn/templates/comm_biologics_informed.html): 生物制剂治疗知情沟通
+
+## 循证深度文章
+- [循证病例: 早发型甲羟戊酸尿症 — PMID 41869348](https://docsor.cn/evidence/ev_AID_01.html): 循证病例: 早发型甲羟戊酸尿症 — PMID 41869348
+- [病例：儿童肉芽肿性多血管炎（GPA）](https://docsor.cn/evidence/ev_ANCA_01.html): 病例：儿童肉芽肿性多血管炎（GPA）
+- [循证病例: 儿童原发性灾难性抗磷脂综合征](https://docsor.cn/evidence/ev_APS_01.html): 循证病例: 儿童原发性灾难性抗磷脂综合征
+- [病例：儿童白塞病伴吞噬血细胞综合征](https://docsor.cn/evidence/ev_Behcet_01.html): 病例：儿童白塞病伴吞噬血细胞综合征
+- [病例：CANDLE综合征](https://docsor.cn/evidence/ev_CANDLE_01.html): 病例：CANDLE综合征
+- [病例：DADA2（腺苷脱氨酶2缺乏症）](https://docsor.cn/evidence/ev_DADA2_01.html): 病例：DADA2（腺苷脱氨酶2缺乏症）
+- [病例：婴儿Evans综合征](https://docsor.cn/evidence/ev_Evans_01.html): 病例：婴儿Evans综合征
+- [家族性地中海热（FMF）伴肝损害](https://docsor.cn/evidence/ev_FMF_01.html): 家族性地中海热（FMF）伴肝损害
+- [糖皮质激素诱导性骨质疏松伴椎体压缩骨折](https://docsor.cn/evidence/ev_GIO_01.html): 糖皮质激素诱导性骨质疏松伴椎体压缩骨折
+- [循证病例: COVID-19后重症ITP — PMID 37033169](https://docsor.cn/evidence/ev_ITP_01.html): 循证病例: COVID-19后重症ITP — PMID 37033169
+- [循证病例: COVID-19后难治性ITP — PMID 38145004](https://docsor.cn/evidence/ev_ITP_02.html): 循证病例: COVID-19后难治性ITP — PMID 38145004
+- [循证病例: IgAV合并冠状动脉瘤 — PMID 35186817](https://docsor.cn/evidence/ev_IgAV_01.html): 循证病例: IgAV合并冠状动脉瘤 — PMID 35186817
+- [循证病例: 低补体性非典型IgAV — PMID 35757129](https://docsor.cn/evidence/ev_IgAV_02.html): 循证病例: 低补体性非典型IgAV — PMID 35757129
+- [循证病例: 幼年皮肌炎并发肾病综合征(anti-NXP2)](https://docsor.cn/evidence/ev_JDM_01.html): 循证病例: 幼年皮肌炎并发肾病综合征(anti-NXP2)
+- [循证病例: 抗MDA5幼年皮肌炎并发视神经脊髓炎](https://docsor.cn/evidence/ev_JDM_02.html): 循证病例: 抗MDA5幼年皮肌炎并发视神经脊髓炎
+- [循证病例: 少关节型JIA — PMID 40964590](https://docsor.cn/evidence/ev_JIA_01.html): 循证病例: 少关节型JIA — PMID 40964590
+- [循证病例: 多关节型JIA（难治性）— PMID 33451288](https://docsor.cn/evidence/ev_JIA_02.html): 循证病例: 多关节型JIA（难治性）— PMID 33451288
+- [循证病例: IVIG抵抗型川崎病伴巨大冠状动脉瘤](https://docsor.cn/evidence/ev_KD_01.html): 循证病例: IVIG抵抗型川崎病伴巨大冠状动脉瘤
+- [循证病例: IVIG抵抗型不完全川崎病](https://docsor.cn/evidence/ev_KD_02.html): 循证病例: IVIG抵抗型不完全川崎病
+- [循证病例: 不完全川崎病并发休克综合征(KDSS)](https://docsor.cn/evidence/ev_KD_03.html): 循证病例: 不完全川崎病并发休克综合征(KDSS)
+- [川崎病静脉注射免疫球蛋白的使用时机：发病第5日？——六份指南原文与研究证据](https://docsor.cn/evidence/ev_KD_04.html): 川崎病静脉注射免疫球蛋白的使用时机：发病第5日？——六份指南原文与研究证据
+- [病例：混合性结缔组织病（MCTD）合并肺动脉高压](https://docsor.cn/evidence/ev_MCTD_01.html): 病例：混合性结缔组织病（MCTD）合并肺动脉高压
+- [病例：新生儿狼疮伴完全性心脏传导阻滞](https://docsor.cn/evidence/ev_NLE_01.html): 病例：新生儿狼疮伴完全性心脏传导阻滞
+- [病例：NLRC4相关自身炎症性疾病（AIFEC）](https://docsor.cn/evidence/ev_NLRC4_01.html): 病例：NLRC4相关自身炎症性疾病（AIFEC）
+- [病例：皮肤型结节性多动脉炎（cPAN）](https://docsor.cn/evidence/ev_PAN_01.html): 病例：皮肤型结节性多动脉炎（cPAN）
+- [循证病例: X-CGD合并重叠感染 — PMID 35057749](https://docsor.cn/evidence/ev_PID_01.html): 循证病例: X-CGD合并重叠感染 — PMID 35057749
+- [循证病例: XLA合并肾脏病变 — PMID 39119334](https://docsor.cn/evidence/ev_PID_02.html): 循证病例: XLA合并肾脏病变 — PMID 39119334
+- [SAVI（STING相关血管病）](https://docsor.cn/evidence/ev_SAVI_01.html): SAVI（STING相关血管病）
+- [新一代四环素类抗生素儿科应用临床实践指南（2026版）全文图解——84页结构化精读](https://docsor.cn/evidence/ev_TETRA_01.html): 新一代四环素类抗生素儿科应用临床实践指南（2026版）全文图解——84页结构化精读
+- [儿童大动脉炎（Takayasu动脉炎）](https://docsor.cn/evidence/ev_Takayasu_01.html): 儿童大动脉炎（Takayasu动脉炎）
+- [病例：VEXAS综合征（早发型）](https://docsor.cn/evidence/ev_VEXAS_01.html): 病例：VEXAS综合征（早发型）
+- [循证病例: 儿童SLE并发Fanconi综合征](https://docsor.cn/evidence/ev_cSLE_01.html): 循证病例: 儿童SLE并发Fanconi综合征
+- [循证病例: 儿童SLE狼疮肾炎IV型伴高IgE](https://docsor.cn/evidence/ev_cSLE_02.html): 循证病例: 儿童SLE狼疮肾炎IV型伴高IgE
+- [病例：幼年系统性硬化症伴钙质沉着和ILD](https://docsor.cn/evidence/ev_jSSc_01.html): 病例：幼年系统性硬化症伴钙质沉着和ILD
+- [病例：儿童原发干燥综合征](https://docsor.cn/evidence/ev_pSS_01.html): 病例：儿童原发干燥综合征
+- [循证病例: pSS+MAS — PMID 41439070](https://docsor.cn/evidence/ev_pSS_MAS_01.html): 循证病例: pSS+MAS — PMID 41439070
+- [循证病例: sJIA并发难治性MAS（阿那白滞素+血浆置换）](https://docsor.cn/evidence/ev_sJIA_MAS_01.html): 循证病例: sJIA并发难治性MAS（阿那白滞素+血浆置换）
+- [病例：早发型sJIA合并难治性MAS（腺病毒血症诱发）](https://docsor.cn/evidence/ev_sJIA_MAS_02.html): 病例：早发型sJIA合并难治性MAS（腺病毒血症诱发）
+- [循证病例: JIA相关葡萄膜炎 — PMID 24886032](https://docsor.cn/evidence/ev_uveitis_01.html): 循证病例: JIA相关葡萄膜炎 — PMID 24886032
+- [🔬 循证病例库 — MedWiki-Rheum](https://docsor.cn/evidence/index.html): 🔬 循证病例库 — MedWiki-Rheum
+
+## 站点说明
+- 主题系统: glm/honey/teal 三主题
+- 核心计算器均经文献锚点校验
+- 联系/勘误: https://github.com/docsor1212/MedWiki-Rheum/issues
