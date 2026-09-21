@@ -266,7 +266,7 @@ footer a{color:#1B4F8A}
 <nav class="sitenav">
 <a class="home" href="https://docsor.cn/">⌂ MedWiki 首页</a>
 <a class="list" href="https://docsor.cn/evidence/index.html">证据与病例</a>
-<span class="cur">› 四环素指南全文图解</span>
+<span class="cur">› 新四环素指南全文图解</span>
 <span class="brand">MedWiki-Rheum</span>
 </nav>
 <div class="band"></div>
@@ -366,36 +366,110 @@ section[data-label="框架总览"] .callout{padding:10px 22px;line-height:1.4}</
 <div class="spine"></div><div class="corner"></div><div class="corner2"></div>
 </section></div>
 <div class="sheet"><section data-label="引言·代际与机制" data-sec="s1" id="p04">
-<div class="topband"></div>
-<div class="titlebar"><div>
-<div class="eyebrow">INTRODUCTION · 引言</div>
-<h2 class="title">四环素类的代际演进与抗菌机制</h2>
-</div><div class="slide-no">04</div></div>
-<div class="body">
-<div class="flow">
-<div class="frow">
-<div class="fb" style="background:#2B5C8F;flex:1"><b>第一代（天然产物）</b><span>四环素 · 土霉素 · 金霉素<br/>20世纪50年代上市 · 结构不稳定易致耐药</span></div>
-<div class="arr">→</div>
-<div class="fb" style="background:#70A0D0;flex:1"><b>第二代（半合成）</b><span>多西环素 · 米诺环素<br/>半合成修饰提高稳定性和亲脂性 · 细胞吸收更优</span></div>
-<div class="arr">→</div>
-<div class="fb" style="background:#D79D55;flex:1"><b>第三代（C7、C9修饰）</b><span>替加环素 · 奥马环素 · 依拉环素<br/>规避主要耐药机制 · 扩大抗菌谱 · 改善药代动力学</span></div>
-</div>
-<div class="blab b">↓ 作用机制与抗菌谱</div>
-<div class="frow">
-<div class="fb" style="background:#2B5C8F;flex:1"><b>机制</b><span>结合细菌核糖体30S亚基16S rRNA，抑制蛋白质合成</span></div>
-<div class="arr">→</div>
-<div class="fb" style="background:#70A0D0;flex:1.15"><b>抗菌谱</b><span>革兰阳性菌 · 革兰阴性菌 · 非典型病原体 · 厌氧菌<br/>抗菌谱广 · 口服生物利用度高</span></div>
-</div>
-<div class="blab">↓ 临床定位</div>
-<div class="frow">
-<div class="fb" style="background:#D79D55;flex:1"><b>第二代</b><span>立克次体 · 螺旋体 · 鼠疫耶尔森菌等特殊病原体<br/>治疗大环内酯耐药肺炎支原体（MRMP）优势明显</span></div>
-<div class="arr">→</div>
-<div class="fb" style="background:#8C5A22;flex:1"><b>第三代（备选）</b><span>多重耐药革兰阴性杆菌（MDR-GNB）：<br/>CRE · CRAB · 嗜麦芽窄食单胞菌</span></div>
-</div>
-</div>
-</div>
-<div class="foot">来源：<b>本指南</b> 引言部分（参考文献1-7）</div>
-<div class="spine"></div><div class="corner"></div><div class="corner2"></div>
+<style>
+
+
+.mws04 *{margin:0;padding:0;box-sizing:border-box}
+.mws04{width:1920px;height:1080px;background:var(--paper);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:var(--ink);overflow:hidden;position:relative}
+.mw-page{position:absolute;inset:0 60px;display:flex;flex-direction:column}
+.mw-head{padding-top:18px;display:flex;align-items:flex-end;justify-content:space-between}
+.mw-eyebrow .mw-tick{display:inline-block;width:78px;height:18px;background:var(--stripe-y);border-radius:4px;vertical-align:middle;margin-right:20px}
+.mw-eyebrow span{font-size:27px;font-weight:700;letter-spacing:.35em;color:var(--blue-ink)}
+.mw-h1{font-size:72px;font-weight:900;margin-top:6px;line-height:1.12}
+.mw-h1 em{font-style:normal;color:var(--yellow-deep)}
+.mw-pageno{font-size:40px;font-weight:900;color:var(--blue)}
+/* 三条全幅斜纹带：flex撑满中部 */
+.mw-bands{margin-top:14px;display:flex;flex-direction:column;gap:14px;flex:1}
+.mw-band{border-radius:16px;padding:10px 24px;display:flex;align-items:center;gap:32px;border:4px solid var(--ink);flex:1}
+.mw-band.mw-b1{background:var(--stripe-b)}
+.mw-band.mw-b2{background:var(--stripe-y)}
+.mw-band.mw-b3{background:var(--stripe-b)}
+.mw-band .mw-gnum{flex:none;width:128px;height:128px;border-radius:50%;background:var(--paper);border:4px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mw-band .mw-gnum b{font-size:62px;font-weight:900;line-height:1}
+.mw-band .mw-gnum i{font-style:normal;font-size:17px;color:var(--ink-2);letter-spacing:.2em;font-weight:800}
+.mw-b1 .mw-gnum b{color:var(--blue-deep)} .mw-b2 .mw-gnum b{color:var(--yellow-deep)} .mw-b3 .mw-gnum b{color:var(--blue-deep)}
+.mw-band .mw-panel{flex:1;background:var(--paper);border-radius:12px;padding:8px 32px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.mw-band .mw-panel .mw-row1{display:flex;align-items:baseline;gap:26px}
+.mw-band .mw-panel h2{font-size:42px;font-weight:900}
+.mw-b1 .mw-panel h2,.mw-b3 .mw-panel h2{color:var(--blue-deep)}
+.mw-b2 .mw-panel h2{color:var(--yellow-deep)}
+.mw-band .mw-panel .mw-sub{font-size:26px;color:var(--ink-2)}
+.mw-band .mw-panel .mw-row2{display:flex;align-items:baseline;gap:30px;margin-top:5px}
+.mw-band .mw-panel .mw-drugs{font-size:52px;font-weight:900;letter-spacing:.01em}
+.mw-band .mw-panel .mw-feat{font-size:30px;color:var(--ink-2)}
+.mw-band .mw-panel .mw-feat strong{color:var(--ink)}
+/* 底部：机制通栏+定位双签 */
+.mw-bottom{margin-top:16px;margin-bottom:36px}
+.mw-mech{border:3px solid var(--line);border-radius:16px;padding:12px 30px;display:flex;align-items:center;gap:30px;background:var(--paper)}
+.mw-mech .mw-lab{flex:none;font-size:33px;font-weight:900;color:var(--blue-deep);padding-right:28px;border-right:8px solid;border-image:repeating-linear-gradient(45deg,var(--blue) 0 9px,transparent 9px 21px) 4}
+.mw-mech p{font-size:28px;line-height:1.5;color:var(--ink-2)}
+.mw-mech p strong{color:var(--ink)}
+.mw-pos{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mw-chip{border-radius:16px;padding:12px 28px;display:flex;gap:22px;align-items:flex-start}
+.mw-chip .mw-dot{flex:none;width:20px;height:64px;border-radius:6px;margin-top:8px}
+.mw-chip.mw-k2{background:var(--blue-wash)}
+.mw-chip.mw-k2 .mw-dot{background:var(--stripe-b)}
+.mw-chip.mw-k3{background:var(--yellow-wash)}
+.mw-chip.mw-k3 .mw-dot{background:var(--stripe-y)}
+.mw-chip h3{font-size:30px;font-weight:900}
+.mw-chip.mw-k2 h3{color:var(--blue-deep)}
+.mw-chip.mw-k3 h3{color:var(--yellow-deep)}
+.mw-chip p{font-size:25px;line-height:1.48;color:var(--ink-2);margin-top:6px}
+.mw-chip p strong{color:var(--ink)}
+.mw-source{position:absolute;bottom:8px;left:0;font-size:21px;color:var(--ink-2)}
+.mw-source b{color:var(--blue-ink)}
+
+.mws04{position:absolute;inset:0;width:auto;height:auto;--ink:#16283F; --ink-2:#3D5570;
+  --blue:#70A0D0; --blue-deep:#2B5C8F; --blue-ink:#1F4E79;
+  --blue-wash:rgba(112,160,208,.14);
+  --yellow:#D79D55; --yellow-deep:#9C6B2A; --yellow-wash:rgba(215,157,85,.18);
+  --paper:#FFFFFF; --line:#D7E2EF;
+  --stripe-b:repeating-linear-gradient(45deg,var(--blue) 0 12px,transparent 12px 28px);
+  --stripe-y:repeating-linear-gradient(-45deg,var(--yellow) 0 12px,transparent 12px 28px);}
+</style>
+<div class="mws04"><div class="mw-page">
+  <div class="mw-head">
+    <div>
+      <div class="mw-eyebrow"><span class="mw-tick"></span><span>INTRODUCTION · 引言</span></div>
+      <div class="mw-h1">四环素类的<em>代际演进</em>与抗菌机制</div>
+    </div>
+    <div class="mw-pageno">04</div>
+  </div>
+
+  <div class="mw-bands">
+    <div class="mw-band mw-b1"><div class="mw-gnum"><b>1</b><i>GEN</i></div>
+      <div class="mw-panel">
+        <div class="mw-row1"><h2>第一代 · 天然产物</h2><span class="mw-sub">20世纪50年代上市 · 微生物代谢天然产物</span></div>
+        <div class="mw-row2"><span class="mw-drugs">四环素 · 土霉素 · 金霉素</span><span class="mw-feat"><strong>结构不稳定，易致耐药</strong></span></div>
+      </div>
+    </div>
+    <div class="mw-band mw-b2"><div class="mw-gnum"><b>2</b><i>GEN</i></div>
+      <div class="mw-panel">
+        <div class="mw-row1"><h2>第二代 · 半合成</h2><span class="mw-sub">半合成修饰品种</span></div>
+        <div class="mw-row2"><span class="mw-drugs">多西环素 · 米诺环素</span><span class="mw-feat"><strong>稳定性、亲脂性提高</strong> · 细胞吸收更优</span></div>
+      </div>
+    </div>
+    <div class="mw-band mw-b3"><div class="mw-gnum"><b>3</b><i>GEN</i></div>
+      <div class="mw-panel">
+        <div class="mw-row1"><h2>第三代 · C7、C9位修饰</h2><span class="mw-sub">规避主要耐药机制</span></div>
+        <div class="mw-row2"><span class="mw-drugs">替加环素 · 奥马环素 · 依拉环素</span><span class="mw-feat"><strong>扩大抗菌谱</strong> · 改善药代动力学</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mw-bottom">
+    <div class="mw-mech"><div class="mw-lab">机制与谱</div>
+      <p>结合细菌核糖体<strong>30S亚基</strong>的<strong>16S rRNA</strong>，抑制蛋白质合成；覆盖<strong>革兰阳性菌 · 革兰阴性菌 · 非典型病原体 · 厌氧菌</strong>，抗菌谱广、口服生物利用度高。</p>
+    </div>
+    <div class="mw-pos">
+      <div class="mw-chip mw-k2"><span class="mw-dot"></span><div><h3>第二代临床定位</h3>
+        <p>立克次体 · 螺旋体 · 鼠疫耶尔森菌等<strong>特殊病原体</strong>；大环内酯耐药肺炎支原体（MRMP）优势明显</p></div></div>
+      <div class="mw-chip mw-k3"><span class="mw-dot"></span><div><h3>第三代 · 备选定位</h3>
+        <p>多重耐药革兰阴性杆菌（MDR-GNB）：<strong>CRE · CRAB · 嗜麦芽窄食单胞菌</strong></p></div></div>
+    </div>
+  </div>
+  <div class="mw-source">来源：<b>本指南</b> 引言部分（参考文献 1-7）</div>
+</div></div>
 </section></div>
 <div class="sheet"><section data-label="引言·禁用由来" data-sec="s1" id="p05">
 <style>section[data-label="引言·禁用由来"] .titlebar{margin-bottom:10px;padding-bottom:8px}section[data-label="引言·禁用由来"] .callout{padding:8px 22px;line-height:1.4}</style>
@@ -1857,6 +1931,79 @@ section[data-label="问题4·推荐理由"] .callout{padding:10px 22px;line-heig
 <div class="foot">来源：<b>本指南</b> 附注与版权页信息（原文）</div>
 <div class="spine"></div><div class="corner"></div><div class="corner2"></div>
 </section></div>
+<!-- 解读与延伸（导流） -->
+<div class="sheet"><section data-sec="s3" data-label="解读与延伸">
+<style>
+
+
+.mwend *{margin:0;padding:0;box-sizing:border-box}
+.mwend{width:1920px;height:1080px;background:var(--paper);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:var(--ink);overflow:hidden;position:relative}
+.mw-cs{position:absolute;opacity:.6;pointer-events:none}
+.mw-cs.mw-tr{top:0;right:0;width:640px;height:400px;
+  background:linear-gradient(135deg,transparent 150px,var(--yellow) 150px 186px,transparent 186px 252px,var(--blue) 252px 292px,transparent 292px 368px,var(--yellow) 368px 396px,transparent 396px);
+  clip-path:polygon(26% 0,100% 0,100% 100%,58% 100%)}
+.mw-cs.mw-bl{bottom:0;left:0;width:600px;height:360px;
+  background:linear-gradient(-45deg,transparent 130px,var(--blue) 130px 166px,transparent 166px 232px,var(--yellow) 232px 268px,transparent 268px 344px,var(--blue) 344px 372px,transparent 372px);
+  clip-path:polygon(0 0,40% 0,100% 100%,0 100%)}
+.mw-cs.mw-tl{top:44px;left:96px;width:150px;height:20px;border-radius:4px;background:var(--stripe-b)}
+.mw-page{position:absolute;inset:0 200px;display:flex;flex-direction:column;justify-content:center}
+.mw-eyebrow{font-size:27px;font-weight:700;letter-spacing:.4em;color:var(--blue-ink)}
+.mw-h1{font-size:76px;font-weight:900;margin-top:18px}
+.mw-h1 em{font-style:normal;color:var(--yellow-deep)}
+.mw-sub{font-size:30px;color:var(--ink-2);margin-top:14px}
+/* 资源行：名称与网址彻底分离——名称行(中文)+独立大字网址行 */
+.mw-res{margin-top:52px;display:flex;flex-direction:column;gap:26px;max-width:1320px}
+.mw-pill{display:flex;align-items:center;gap:30px;border:3px solid;border-radius:18px;padding:20px 36px;background:var(--paper)}
+.mw-pill.mw-pb{border-color:var(--blue)}
+.mw-pill.mw-py{border-color:var(--yellow)}
+.mw-pill .mw-tag{flex:none;font-size:25px;font-weight:900;letter-spacing:.18em;padding:10px 24px;border-radius:10px;color:var(--paper)}
+.mw-pill.mw-pb .mw-tag{background:var(--blue-deep)}
+.mw-pill.mw-py .mw-tag{background:var(--yellow-deep)}
+.mw-pill .mw-txt{flex:1}
+.mw-pill .mw-name{font-size:31px;font-weight:800;color:var(--ink)}
+.mw-pill .mw-url{font-size:42px;font-weight:900;letter-spacing:.02em;margin-top:6px}
+.mw-pill.mw-pb .mw-url{color:var(--blue-deep)}
+.mw-pill.mw-py .mw-url{color:var(--yellow-deep)}
+.mw-pill .mw-url .mw-small{font-size:24px;font-weight:700;color:var(--ink-2);letter-spacing:0;margin-right:16px;font-family:inherit}
+.mw-disc{margin-top:48px;font-size:21px;color:var(--ink-2);line-height:1.6;max-width:1420px}
+.mw-disc strong{color:var(--ink)}
+
+.mwend{position:absolute;inset:0;width:auto;height:auto;--ink:#16283F; --ink-2:#3D5570;
+  --blue:#70A0D0; --blue-deep:#2B5C8F; --blue-ink:#1F4E79;
+  --blue-wash:rgba(112,160,208,.14);
+  --yellow:#D79D55; --yellow-deep:#9C6B2A; --yellow-wash:rgba(215,157,85,.18);
+  --paper:#FFFFFF; --line:#D7E2EF;
+  --stripe-b:repeating-linear-gradient(45deg,var(--blue) 0 10px,transparent 10px 24px);
+  --stripe-y:repeating-linear-gradient(-45deg,var(--yellow) 0 10px,transparent 10px 24px);}
+</style>
+<div class="mwend"><div class="mw-cs mw-tr"></div><div class="mw-cs mw-bl"></div><div class="mw-cs mw-tl"></div>
+<div class="mw-page">
+  <div class="mw-eyebrow">CLOSING · 解读与延伸</div>
+  <div class="mw-h1">让循证<em>可检索</em>，让知识<em>可回溯</em></div>
+  <div class="mw-sub">本片为《新一代四环素类抗生素儿科应用临床实践指南（2026版）》全文解读</div>
+
+  <div class="mw-res">
+    <div class="mw-pill mw-pb"><span class="mw-tag">官　网</span>
+      <div class="mw-txt">
+        <div class="mw-name">MedWiki-Rheum —— 儿童风湿免疫临床知识库</div>
+        <div class="mw-url"><span class="mw-small">网址</span>docsor.cn</div>
+      </div></div>
+    <div class="mw-pill mw-pb"><span class="mw-tag">主　页</span>
+      <div class="mw-txt">
+        <div class="mw-name">B站 DoctorQ 免疫前沿 —— 免疫与感染系列解读（主页可看全部视频）</div>
+        <div class="mw-url"><span class="mw-small">B站主页</span>space.bilibili.com/432233902</div>
+      </div></div>
+    <div class="mw-pill mw-py"><span class="mw-tag">原　文</span>
+      <div class="mw-txt">
+        <div class="mw-name">《新一代四环素类抗生素儿科应用临床实践指南（2026版）》</div>
+        <div class="mw-url"><span class="mw-small">刊于</span>中华医学杂志 2026, 106(11): 976-994</div>
+      </div></div>
+  </div>
+
+  <div class="mw-disc"><strong>声明：</strong>本内容为学术文献解读，仅供专业交流，不构成对具体患者的诊疗建议；指南原文版权归原作者与中华医学会所有，解读中的循证表述均以原文为准。</div>
+</div></div>
+</section></div>
+
 <div class="sheet"><section data-label="参考文献" data-sec="s4" id="p62">
 <div class="topband"></div>
 <div class="titlebar"><div>
