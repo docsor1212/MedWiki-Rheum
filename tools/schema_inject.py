@@ -6,7 +6,7 @@ import io, os, re, glob, json, datetime
 from bs4 import BeautifulSoup
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TODAY = '2026-09-20'
+TODAY = '2026-09-22'
 
 CATS = {'topics': ('疾病专题', 'MedicalWebPage'), 'drugs': ('药物手册', 'MedicalWebPage'),
         'tools': ('临床工具', 'MedicalWebPage'), 'cases': ('病例学习', 'MedicalWebPage'),
@@ -41,7 +41,7 @@ io.open('llms.txt', 'w', encoding='utf-8', newline='').write('\n'.join(lines))
 print('[OK] llms.txt', len(lines), '行')
 
 # ---------- 2) schema.org 注入 ----------
-pages = sorted(glob.glob('topics/*.html')) + sorted(glob.glob('drugs/*.html')) + sorted(glob.glob('evidence/*.html'))
+pages = sorted(glob.glob('topics/*.html')) + sorted(glob.glob('drugs/*.html')) + sorted(glob.glob('evidence/*.html')) + sorted(glob.glob('tools/*.html')) + sorted(glob.glob('cases/*.html')) + sorted(glob.glob('templates/*.html'))
 n_new = n_skip = 0
 for f in pages:
     rel = f.replace(os.sep, '/')

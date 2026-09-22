@@ -566,3 +566,13 @@ body{
 @media (max-width:680px){
   .vcard .vcover{flex:1 1 100%;}
 }
+
+/* ---------- 移动端触控目标≥44px + 主题浮窗半透明不遮内容（v30） ---------- */
+@media (max-width:680px){
+  .mnav a{padding:10px 16px;}
+  .chip{padding:12px 18px;}
+  .theme-dots{right:10px; bottom:10px; opacity:.38; transition:opacity .25s ease;}
+  .theme-dots:hover, .theme-dots:focus-within, .theme-dots:active{opacity:1;}
+  .theme-dots button{padding:9px 14px; font-size:13px; min-height:40px;}
+  .theme-dots .lbl{font-size:12px;}
+}
