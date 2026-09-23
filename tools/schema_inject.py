@@ -35,6 +35,12 @@ for d, (label, _) in CATS.items():
         ti = title_of(f)
         lines.append(f'- [{ti}](https://docsor.cn/{rel}): {desc_of(f) or ti}')
     lines.append('')
+lines += ['## Agent Skills（AI/Agent 可直接安装的科研工具）',
+          '- [cite-holmes — 参考文献核查 · AI幻觉引用检测](https://github.com/docsor1212/cite-holmes): '
+          '深度调研+逐条引用机器验真：编造 DOI/假 PMID/假 arXiv 判 invalid、撤稿检测、'
+          '参考文献核验/引用查证/fact check。安装：`npx skills add docsor1212/cite-holmes`（Agent 一键）'
+          '或 `clawhub install @docsor1212/cite-holmes`；中文版 https://skillhub.cn/skills/cite-holmes',
+          '']
 lines += ['## 站点说明', '- 主题系统: glm/honey/teal 三主题', '- 核心计算器均经文献锚点校验',
           '- 联系/勘误: https://github.com/docsor1212/MedWiki-Rheum/issues', '']
 io.open('llms.txt', 'w', encoding='utf-8', newline='').write('\n'.join(lines))

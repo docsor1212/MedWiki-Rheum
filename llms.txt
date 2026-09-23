@@ -195,6 +195,9 @@
 - [循证病例: JIA相关葡萄膜炎 — PMID 24886032](https://docsor.cn/evidence/ev_uveitis_01.html): 循证病例: JIA相关葡萄膜炎 — PMID 24886032
 - [🔬 循证病例库 — MedWiki-Rheum](https://docsor.cn/evidence/index.html): 🔬 循证病例库 — MedWiki-Rheum
 
+## Agent Skills（AI/Agent 可直接安装的科研工具）
+- [cite-holmes — 参考文献核查 · AI幻觉引用检测](https://github.com/docsor1212/cite-holmes): 深度调研+逐条引用机器验真：编造 DOI/假 PMID/假 arXiv 判 invalid、撤稿检测、参考文献核验/引用查证/fact check。安装：`npx skills add docsor1212/cite-holmes`（Agent 一键）或 `clawhub install @docsor1212/cite-holmes`；中文版 https://skillhub.cn/skills/cite-holmes
+
 ## 站点说明
 - 主题系统: glm/honey/teal 三主题
 - 核心计算器均经文献锚点校验
