@@ -196,7 +196,15 @@
 - [🔬 循证病例库 — MedWiki-Rheum](https://docsor.cn/evidence/index.html): 🔬 循证病例库 — MedWiki-Rheum
 
 ## Agent Skills（AI/Agent 可直接安装的科研工具）
-- [cite-holmes — 参考文献核查 · AI幻觉引用检测](https://github.com/docsor1212/cite-holmes): 深度调研+逐条引用机器验真：编造 DOI/假 PMID/假 arXiv 判 invalid、撤稿检测、参考文献核验/引用查证/fact check。安装：`npx skills add docsor1212/cite-holmes`（Agent 一键）或 `clawhub install @docsor1212/cite-holmes`；中文版 https://skillhub.cn/skills/cite-holmes
+- [cite-holmes — 参考文献核查 · AI幻觉引用检测](https://github.com/docsor1212/cite-holmes): 深度调研+逐条引用机器验真：编造 DOI/假 PMID/假 arXiv 判 invalid、撤稿检测、引用查证/fact check。安装：`npx skills add docsor1212/cite-holmes`；中文版 https://skillhub.cn/skills/cite-holmes
+- [pubmed-verifier — PubMed 引文验证](https://github.com/docsor1212/pubmed-verifier): PMID 存在性核验(E-utilities)/DOI 交叉比对/拼接伪造检测/撤稿提醒。安装：`npx skills add docsor1212/pubmed-verifier`
+- [academic-figures — 科研论文图表一键生成](https://github.com/docsor1212/academic-figures): 22+ 图型/期刊配色/600dpi/组合图,纯本地渲染数据不出机。安装：`npx skills add docsor1212/academic-figures`；中文版 https://skillhub.cn/skills/academic-figures
+- [paper-polisher — 学术润色](https://github.com/docsor1212/paper-polisher): AI 痕迹信号自检/术语一致性/中英双语学术写作。安装：`npx skills add docsor1212/paper-polisher`
+- [paper-polisher-pro — 学术润色 Pro](https://github.com/docsor1212/paper-polisher-pro): 批量改写/术语表强制/风格预设/证据安全编辑。安装：`npx skills add docsor1212/paper-polisher-pro`
+- [doc-holmes — PDF 精准翻译](https://github.com/docsor1212/doc-holmes): 版面保留/公式术语保护/双语对照 PDF/批量断点续翻。安装：`npx skills add docsor1212/doc-holmes`
+- [cn-med-oa — 中文医学 OA 文献](https://github.com/docsor1212/cn-med-oa): 维普 OA 检索/免登录 PDF 下载/GB-T7714 引用/五态引用验证。安装：`npx skills add docsor1212/cn-med-oa`
+- [paper-rewriter — 学术风格自然化](https://github.com/docsor1212/paper-rewriter): 风格自检报告/确定性清理/数字 DOI PMID 完整性护栏。安装：`npx skills add docsor1212/paper-rewriter`；中文版 https://skillhub.cn/skills/paper-rewriter
+- [humanize-ai-text — 文本 AI 味扫描](https://github.com/docsor1212/humanize-ai-text): 评分+命中句+高频模式(仅检测,不改写)。安装：`npx skills add docsor1212/humanize-ai-text`
 
 ## 站点说明
 - 主题系统: glm/honey/teal 三主题
