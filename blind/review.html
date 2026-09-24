@@ -44,8 +44,8 @@ textarea{width:100%;box-sizing:border-box;min-height:48px;border:1px solid #ccc;
       <button onclick="prev()" id="bprev">‹ 上一张</button>
       <button onclick="next()" id="bnext">保存并下一张 ›</button>
     </div>
-    <div class="nav"><button onclick="finish()" id="bfin" style="background:#A85A4A">完成并导出结果</button></div>
-    <p class="muted">评分实时保存（断点续评）。全部完成后点"完成并导出结果"，把下载的 JSON 文件发回即可。</p>
+    <div class="nav"><button onclick="finish()" id="bfin" style="background:#A85A4A">完成并导出结果</button><button onclick="copyResults()" style="background:#3E6C8E">复制结果到剪贴板</button></div>
+    <p class="muted" id="copymsg">评分实时保存（断点续评，换设备不通用）。全部完成后点「复制结果到剪贴板」，打开微信粘贴发送即可；如复制失败再用「完成并导出结果」下载 JSON 文件发回。</p>
   </div>
 </div>
 <script>
@@ -80,5 +80,11 @@ function finish(){grab();
   const blob=new Blob([JSON.stringify(data,null,1)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
   a.download='review_results.json';a.click();
+}
+async function copyResults(){grab();
+  if(!Object.keys(data).length){$('copymsg').textContent='还没有评分内容';return}
+  try{await navigator.clipboard.writeText(JSON.stringify(data,null,1));
+    $('copymsg').textContent='✓ 已复制全部评分结果，打开微信粘贴发送即可';
+  }catch(e){$('copymsg').textContent='复制失败（浏览器限制），请改用「完成并导出结果」下载 JSON 文件发回';}
 }
 </script></body></html>
