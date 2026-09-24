@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机制图专家评审</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;background:#f4f6f8;color:#222}
+#gate,#app{max-width:860px;margin:0 auto;padding:24px 16px}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+h1{font-size:20px} .muted{color:#888;font-size:13px}
+#code{font-size:22px;letter-spacing:8px;padding:8px 12px;width:160px;text-align:center;border:2px solid #3E6C8E;border-radius:8px}
+button{background:#2E6654;color:#fff;border:0;border-radius:8px;padding:10px 22px;font-size:16px;cursor:pointer}
+button:disabled{background:#aaa}
+#img{width:100%;border:1px solid #ddd;border-radius:8px;background:#fff}
+.dim{display:flex;align-items:center;gap:10px;margin:10px 0}
+.dim b{width:150px;font-size:14px}
+.dim input[type=range]{flex:1}
+.dim .v{width:36px;text-align:center;font-weight:bold;color:#2E6654}
+.nav{display:flex;gap:10px;margin-top:16px}
+.nav button{flex:1}
+#prog{font-size:13px;color:#666;margin:8px 0}
+textarea{width:100%;box-sizing:border-box;min-height:48px;border:1px solid #ccc;border-radius:8px;padding:8px;font-size:14px}
+.warn{color:#A85A4A;font-size:13px}
+.done{background:#e8f5ee;border:1px solid #2E6654;padding:12px;border-radius:8px;margin:10px 0;font-size:14px}
+</style></head><body>
+<div id="gate" class="card">
+  <h1>机制图专家评审</h1>
+  <p class="muted">共 30 张免疫机制图。每张请给三个 1–10 分（10=最好）+ 一道选择题，约 90 秒/张。<br>
+  支持断点续评：中途关闭页面，重新输入访问码即可从上次位置继续。</p>
+  <p>请输入访问码：<input id="code" type="password" placeholder="4位数字码" oninput="this.value=this.value.replace(/\D/g,'')">
+  <button onclick="enter()">进入评审</button></p>
+  <p class="warn" id="gerr"></p>
+</div>
+<div id="app" style="display:none">
+  <div class="card">
+    <h1 style="margin:0 0 4px">机制图评审 <span class="muted" id="pos"></span></h1>
+    <div id="prog"></div>
+    <img id="img" src="">
+    <div class="dim"><b>① 科学准确性</b><input type="range" min="1" max="10" value="5" id="s1" oninput="$('v1').textContent=this.value"><span class="v" id="v1">5</span></div>
+    <div class="dim"><b>② 信息完整性</b><input type="range" min="1" max="10" value="5" id="s2" oninput="$('v2').textContent=this.value"><span class="v" id="v2">5</span></div>
+    <div class="dim"><b>③ 可读性与排版</b><input type="range" min="1" max="10" value="5" id="s3" oninput="$('v3').textContent=this.value"><span class="v" id="v3">5</span></div>
+    <div class="dim"><b>④ 小修后可用于论文？</b><select id="s4"><option>— 请选择 —</option><option>是，可直接用</option><option>小修后可用</option><option>大修后才可用</option><option>不建议使用</option></select></div>
+    <div class="dim"><b>意见（可选）</b><textarea id="note" placeholder="一句话指出最需要改进的点"></textarea></div>
+    <div class="nav">
+      <button onclick="prev()" id="bprev">‹ 上一张</button>
+      <button onclick="next()" id="bnext">保存并下一张 ›</button>
+    </div>
+    <div class="nav"><button onclick="finish()" id="bfin" style="background:#A85A4A">完成并导出结果</button></div>
+    <p class="muted">评分实时保存（断点续评）。全部完成后点"完成并导出结果"，把下载的 JSON 文件发回即可。</p>
+  </div>
+</div>
+<script>
+const CODE='4826';
+const N=[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130];
+const $=id=>document.getElementById(id);
+let cur=0, data=JSON.parse(localStorage.getItem('rev_'+CODE)||'{}');
+function save(){localStorage.setItem('rev_'+CODE, JSON.stringify(data))}
+function enter(){
+  if($('code').value!==CODE){$('gerr').textContent='访问码不对，请核对';return}
+  $('gate').style.display='none';$('app').style.display='block';show(0);
+}
+function show(i){
+  cur=i;const n=N[i];$('pos').textContent='图 '+n+'（编号即图名，与来源无关）';
+  $('img').src='images/'+n+'.png';
+  const d=data[n]||{};
+  $('s1').value=d.s1||5;$('s2').value=d.s2||5;$('s3').value=d.s3||5;
+  $('v1').textContent=$('s1').value;$('v2').textContent=$('s2').value;$('v3').textContent=$('s3').value;
+  $('s4').value=d.s4||'';$('note').value=d.note||'';
+  $('bprev').disabled=(i===0);
+  $('bnext').textContent=(i===N.length-1)?'保存（最后一张）':'保存并下一张 ›';
+  const done=Object.keys(data).filter(k=>data[k].s4).length;
+  $('prog').textContent='已完成评分 '+done+' / '+N.length+' 张';
+}
+function grab(){const n=N[cur];data[n]={n:n,s1:+$('s1').value,s2:+$('s2').value,s3:+$('s3').value,
+  s4:$('s4').value,note:$('note').value.trim()};save()}
+function next(){grab();show(Math.min(cur+1,N.length-1))}
+function prev(){show(Math.max(cur-1,0))}
+function finish(){grab();
+  const missing=N.filter(n=>!data[n]||!data[n].s4);
+  if(missing.length&&!confirm('还有 '+missing.length+' 张未完成评分（编号 '+missing.join(',')+'）。\n确定先导出已完成部分吗？'))return;
+  const blob=new Blob([JSON.stringify(data,null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='review_results.json';a.click();
+}
+</script></body></html>
