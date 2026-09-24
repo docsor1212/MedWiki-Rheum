@@ -50,10 +50,12 @@ textarea{width:100%;box-sizing:border-box;min-height:48px;border:1px solid #ccc;
 </div>
 <script>
 const CODE='4826';
+const SAVE_URL='/api/blind-save';
 const N=[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130];
 const $=id=>document.getElementById(id);
 let cur=0, data=JSON.parse(localStorage.getItem('rev_'+CODE)||'{}');
-function save(){localStorage.setItem('rev_'+CODE, JSON.stringify(data))}
+function save(){localStorage.setItem('rev_'+CODE, JSON.stringify(data));
+  try{fetch(SAVE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:CODE,data:data})}).catch(function(){})}catch(e){}}
 function enter(){
   if($('code').value!==CODE){$('gerr').textContent='访问码不对，请核对';return}
   $('gate').style.display='none';$('app').style.display='block';show(0);
