@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>页面未找到 · MedWiki-Rheum</title>
+<style>
+  :root{
+    --navy:#12365F; --ink:#1c2b3a; --gray:#5e6a78; --faint:#93a1b0;
+    --accent:#E8A33D; --accent-soft:#e7edf5; --bg:#f6f8fb; --line:#e3e9f0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    min-height:100vh;display:flex;flex-direction:column}
+  /* 顶部细品牌斜纹带（线与带，不做面） */
+  .band{height:7px;background:
+    repeating-linear-gradient(135deg,var(--navy) 0 14px,#3E6C8E 14px 28px,var(--accent) 28px 42px)}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px}
+  .card{max-width:560px;width:100%;text-align:center}
+  .ghost{font-size:clamp(120px,26vw,190px);line-height:.9;font-weight:800;letter-spacing:6px;
+    color:var(--accent-soft);user-select:none}
+  h1{margin:10px 0 12px;font-size:27px;letter-spacing:2px;color:var(--navy)}
+  p.desc{margin:0 0 30px;font-size:15px;line-height:1.8;color:var(--gray)}
+  .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+  .btn{display:inline-block;padding:11px 26px;border-radius:10px;font-size:15px;font-weight:600;
+    text-decoration:none;letter-spacing:1px}
+  .btn.primary{background:var(--navy);color:#fff}
+  .btn.primary:hover{background:#0d2a4c}
+  .btn.ghostb{border:1px solid var(--line);background:#fff;color:var(--navy)}
+  .btn.ghostb:hover{border-color:var(--navy)}
+  .hot{border-top:1px solid var(--line);padding-top:22px}
+  .hot .t{font-size:12.5px;color:var(--faint);letter-spacing:3px;margin-bottom:12px}
+  .hot .links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px}
+  .hot a{font-size:14px;color:var(--navy);
+    text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+  .hot a:hover{border-bottom-color:var(--accent)}
+  footer{text-align:center;padding:18px 0 22px;font-size:12.5px;color:var(--faint);letter-spacing:1px}
+  footer b{color:var(--gray);font-weight:600}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<main>
+  <div class="card">
+    <div class="ghost" aria-hidden="true">404</div>
+    <h1>页面走丢了</h1>
+    <p class="desc">您访问的链接可能已变更，或页面尚不存在。<br>内容都在，只是不在这条路上。</p>
+    <div class="actions">
+      <a class="btn primary" href="/">返回首页</a>
+      <a class="btn ghostb" href="/#mw-search">去站内搜索</a>
+    </div>
+    <div class="hot">
+      <div class="t">常 用 入 口</div>
+      <div class="links">
+        <a href="/topics/KD.html">川崎病 KD</a>
+        <a href="/tools/KD_CA_Zscore.html">冠脉Z值计算器</a>
+        <a href="/evidence/index.html">循证病例库</a>
+        <a href="/evidence/ev_TETRA_01.html">四环素指南图解</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>MedWiki-Rheum · 儿童风湿免疫临床知识库</footer>
+</body>
+</html>
