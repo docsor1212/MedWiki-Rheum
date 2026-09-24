@@ -8,6 +8,17 @@
 (function(){
   if (window.__mwShare) return; window.__mwShare = true;
   var d = document;
+  /* Cloudflare Web Analytics 信标（该域自动注入不生效，改由share.js全站手动注入） */
+  try {
+    if (!window.__mwCfBeacon) {
+      window.__mwCfBeacon = true;
+      var cf = d.createElement('script');
+      cf.type = 'module';
+      cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      cf.setAttribute('data-cf-beacon', '{"token": "b42c17497f7e4281bd48d2d184c40f4e"}');
+      (d.head || d.documentElement).appendChild(cf);
+    }
+  } catch(e) {}
   function init(){
     try {
     var shareUrl = d.documentElement.getAttribute('data-share-url')
