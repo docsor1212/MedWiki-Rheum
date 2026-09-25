@@ -17,7 +17,7 @@
 
 | Skill | 用途 | 链接 |
 |---|---|---|
-| Academic Figures ⭐ | 论文配图一键生成（22种顶刊级图表）· 下载95,000+ | [SkillHub](https://skillhub.cn/skills/indiv-sorsor/academic-figures) |
+| Academic Figures ⭐ | 论文配图一键生成（22种顶刊级图表）· 下载100,000+ | [SkillHub](https://skillhub.cn/skills/indiv-sorsor/academic-figures) |
 | Cite Holmes | 深度调研 × AI幻觉检测 | [SkillHub](https://skillhub.cn/skills/indiv-sorsor/cite-holmes) |
 | Academic Figures Pro | 云端渲染 · 免安装（森林图/KM/ROC） | [SkillHub](https://skillhub.cn/skills/indiv-sorsor/academic-figures-pro) |
 | PubMed Verifier | PMID批量验证 · 识破AI编造文献 | [SkillHub](https://skillhub.cn/skills/indiv-sorsor/pubmed-verifier) |
