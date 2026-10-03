@@ -44,6 +44,11 @@
 - 引文32条经cite-holmes逐条机械验证（CiteScore 98/100）；AHA 2024两份勘误内容已核
 - 同步更新：evidence/index.html（川崎病分类新增卡片）、index.html（最近更新时间线）、sitemap.xml
 
+
+## 2026-10-03 — 新增：儿童西替利嗪急性过量：循证依据与处置建议
+- 文件：evidence/ev_cetirizine_overdose_01.html
+- 简介：3岁患儿西替利嗪过量20mg（4倍日剂量）的循证处置：剂量评估、去污染取舍、观察时长、心电图指征与家庭管理，20篇核验文献支撑
+
 ---
 
 *每次Ingest/Query/Lint操作后追加记录*

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<!--
+═══════════════════════════════════════════════════════════════════
+ MedWiki 深度文章模板 · KD考据体（默认文体）
+ 适用：一个临床问题的深挖（时机之争/方案比较/指南冲突）
+ 母版：evidence/ev_KD_04.html（川崎病IVIG使用时机，2026-09）
+ 使用：复制本文件 → 替换全部 {{占位符}} → 按【必填块清单】核对
+       → 存为 evidence/ev_<主题>_01.html → python3 tools/publish.py <文件> --title … --desc …
+───────────────────────────────────────────────────────────────────
+ 【必填块清单】（缺一不可，发布门禁会查）
+ 1. hero：kicker体裁标签 + h1主标题/副题 + meta三胶囊（依据/日期/作者）
+ 2. 核心结论卡（3秒前置结论，读者最先看）
+ 3. 临床问题（question卡：病例引入+争议点）
+ 4. 正文节（section/h2.sec，编号"一、二、…"；指南对照用表格+截图figure；
+    每张截图必须有来源标注；临床主张逐条挂引文）
+ 5. 主要参考文献（ol/li，每条含PMID，发布前过L1核验）
+ 6. 术语与截图说明（note）
+ 7. 相关阅读条（RELATED占位：站内专题/工具/病例互链，3-5张，站内转化关键）
+ 8. 页脚签名 + 免责声明（固定文案勿改）
+ ⛔ 术语核验：病名/评分名逐条过PubMed+名词委，查无此名即删
+ ⛔ 中国方案与国际方案不同处，必须标"中国方案"全称
+═══════════════════════════════════════════════════════════════════
+-->
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/evidence/ev_cetirizine_overdose_01" data-theme="glm" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>儿童西替利嗪急性过量：循证依据与处置建议 — MedWiki-Rheum</title>
+<meta content="3岁患儿西替利嗪过量20mg的循证处置：剂量评估、去污染取舍、观察时长与心电图指征，20篇核验文献支撑" name="description"/>
+<meta content="#12365F" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<style>
+:root{
+    --navy:#1B4F8A; --navy-deep:#12365F; --navy-ink:#0F2A4A;
+    --gold:#C0893C; --gold-deep:#A8742F; --gold-bright:#E8A33D;
+    --blue-soft:#7FA8CC; --blue-mist:#EAF1F8; --blue-line:#C9D9EA;
+    --ink:#22303F; --ink-soft:#5A6B7C; --line:#DDE5EC;
+    --bg:#F5F6F8; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.95; font-size:16px;
+    max-width:900px; margin:0 auto; padding:0 0 60px;
+  }
+  .wrap{padding:0 22px;}
+
+  /* ── 站点导航（黄蓝斜线风格吸顶条） ── */
+  .sitenav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:9px 22px;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 70%);
+    border-bottom:4px solid var(--gold-bright);
+    box-shadow:0 2px 10px rgba(18,54,95,.28);
+    font-size:13.5px;
+  }
+  .sitenav::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(135deg,
+      transparent 0 26px, rgba(232,163,61,.18) 26px 34px,
+      transparent 34px 60px, rgba(127,168,204,.20) 60px 68px);
+  }
+  .sitenav a{
+    position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px;
+    text-decoration:none; font-weight:700; border-radius:999px; padding:5px 16px;
+  }
+  .sitenav a.home{background:var(--gold-bright); color:var(--navy-deep); box-shadow:0 2px 6px rgba(0,0,0,.28);}
+  .sitenav a.home:hover{background:#F2B455;}
+  .sitenav a.list{color:#fff; border:1.5px solid rgba(255,255,255,.65);}
+  .sitenav a.list:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .sitenav .cur{position:relative; z-index:1; color:#E8F0F9; font-weight:600;}
+  .sitenav .brand{margin-left:auto; position:relative; z-index:1; color:var(--gold-bright); font-weight:800; letter-spacing:.14em; font-size:12px;}
+
+  /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
+  .band{
+    height:16px;
+    background:repeating-linear-gradient(135deg,
+      var(--navy) 0 16px, transparent 16px 25px,
+      var(--blue-soft) 25px 41px, transparent 41px 50px,
+      var(--gold-bright) 50px 66px, transparent 66px 75px);
+  }
+  .band.thin{height:8px; opacity:.85;}
+
+  /* ── Hero 头区 ── */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, #2456A6 100%);
+    color:#fff; padding:48px 42px 36px;
+  }
+  .hero::before{
+    content:''; position:absolute; right:-34px; top:-34px; width:280px; height:280px;
+    background:repeating-linear-gradient(45deg, transparent 0 15px, rgba(127,168,204,.32) 15px 21px);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:''; position:absolute; left:-26px; bottom:-52px; width:230px; height:230px;
+    background:repeating-linear-gradient(45deg, transparent 0 17px, rgba(232,163,61,.28) 17px 24px);
+    pointer-events:none;
+  }
+  .hero .kicker{
+    display:inline-block; font-size:12.5px; letter-spacing:.4em; font-weight:600;
+    color:#CFE0F2; border:1px solid rgba(207,224,242,.55);
+    padding:4px 14px 3px; margin-bottom:18px; border-radius:2px;
+  }
+  .hero h1{font-size:28px; line-height:1.6; font-weight:800; letter-spacing:.01em; position:relative; z-index:1;}
+  .hero h1 .sub{display:block; font-size:16.5px; font-weight:600; color:var(--gold-bright); margin-top:8px; letter-spacing:.06em;}
+  .hero .meta{
+    display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1;
+    font-size:12.5px;
+  }
+  .hero .meta span{
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:4px 14px; color:#E8F0F9;
+  }
+  .hero .meta b{color:var(--gold-bright); font-weight:700; margin-right:2px;}
+
+  /* ── 核心结论 ── */
+  .verdict{
+    margin:-26px 22px 0; position:relative; z-index:2;
+    background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold-bright);
+    border-radius:14px; box-shadow:0 6px 22px rgba(18,54,95,.10);
+  }
+  .verdict .vhead{
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,#FBF4E6,#FFFFFF 72%);
+    padding:13px 22px; border-bottom:1px dashed #E4D5B4; border-radius:14px 14px 0 0;
+  }
+  .verdict .vhead .slash{color:var(--gold-bright); font-weight:800; letter-spacing:.1em;}
+  .verdict .vhead h2{font-size:17px; color:var(--gold-deep); letter-spacing:.22em; font-weight:800;}
+  .verdict p{padding:0 22px; margin:0;}
+  .verdict .vbody{padding:16px 0 18px;}
+  .verdict p{margin-bottom:13px; font-size:15.5px;}
+  .verdict p:last-child{margin-bottom:0;}
+
+  /* ── 章节 ── */
+  section{margin-top:54px;}
+  h2.sec{
+    font-size:23px; font-weight:800; color:var(--navy-ink);
+    padding:0; margin-bottom:22px; border:none; line-height:1.4;
+  }
+  h2.sec::before{content:'/// '; color:var(--gold-bright); letter-spacing:.06em; margin-right:4px;}
+  h2.sec::after{
+    content:''; display:block; width:132px; height:4px; margin-top:9px; border-radius:2px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 44px, var(--navy) 44px 132px);
+  }
+  h3{
+    font-size:16.5px; margin:30px 0 10px; color:var(--navy); font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+  h3::before{content:''; width:8px; height:8px; background:var(--gold-bright); transform:rotate(45deg); flex:none;}
+  p{margin:0 0 16px;}
+
+  /* ── 病例卡与临床问题 ── */
+  .case{
+    background:linear-gradient(180deg,#FFFFFF, #F2F7FC);
+    border:1px solid var(--blue-line); border-top:4px solid var(--navy);
+    border-radius:14px; padding:22px 24px 18px; margin:6px 0 24px; font-size:15.5px;
+    box-shadow:0 3px 14px rgba(18,54,95,.06);
+  }
+  .case p{margin-bottom:10px;}
+  .question{
+    background:#FDF8EF; border:1px dashed var(--gold); border-top:3px solid var(--gold-bright);
+    border-radius:12px; padding:14px 18px; margin-top:14px; font-size:15px;
+  }
+
+  /* ── 原文引用块 ── */
+  blockquote.q{
+    margin:20px 0; padding:18px 20px 14px 52px; position:relative;
+    background:var(--blue-mist); border:1px solid var(--blue-line); border-left:5px solid var(--navy);
+    border-radius:0 12px 12px 0; font-size:15px;
+  }
+  blockquote.q::before{
+    content:'\201C'; position:absolute; left:14px; top:2px;
+    font-family:Georgia,serif; font-size:52px; line-height:1; color:var(--blue-soft);
+  }
+  blockquote.q.en{font-family:Georgia,"Times New Roman",serif; font-size:15.5px; line-height:1.75;}
+
+  /* ── 截图与图表 ── */
+  figure.evidence{margin:24px 0 32px;}
+  figure.evidence .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:12px; padding:12px; background:#fff;
+    box-shadow:0 3px 14px rgba(18,54,95,.08);
+  }
+  figure.evidence .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--navy) 0 34%, var(--gold-bright) 34% 67%, var(--blue-soft) 67%);
+  }
+  figure.evidence img{width:100%; display:block; border-radius:6px;}
+  figure.evidence figcaption{
+    font-size:13px; color:var(--ink-soft); margin-top:10px; line-height:1.75;
+    padding-left:12px; border-left:3px solid var(--gold-bright);
+  }
+  figure.evidence figcaption b{color:var(--navy-ink);}
+  figure.chart{margin:26px 0 34px;}
+  figure.chart .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff;
+    box-shadow:0 4px 18px rgba(18,54,95,.09);
+  }
+  figure.chart .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 50%, var(--navy) 50%);
+  }
+  figure.chart img{width:100%; display:block; border-radius:6px;}
+  figure.chart figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.75;}
+  figure.chart figcaption .src{display:block; font-size:12px; color:#93A2B1; margin-top:4px;}
+
+  /* ── 表格 ── */
+  .tablewrap{
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 3px 14px rgba(18,54,95,.07); margin:22px 0 30px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  th{
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy)); color:#fff;
+    font-weight:700; padding:12px 14px; text-align:left; font-size:14px; letter-spacing:.06em;
+  }
+  td{border-top:1px solid var(--line); padding:12px 14px; vertical-align:top;}
+  tr:nth-child(even) td{background:#F6F9FC;}
+  td b{color:var(--navy);}
+
+  /* ── 参考文献 ── */
+  .refs{font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  .refs li{margin-bottom:7px; margin-left:22px;}
+  a.url{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft); word-break:break-all; font-size:0.92em;}
+  a.url:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
+  .note{
+    margin-top:26px; padding:16px 20px; background:#fff;
+    border:1px solid var(--line); border-left:4px solid var(--blue-soft); border-radius:10px;
+    font-size:12.5px; color:var(--ink-soft); line-height:1.85;
+  }
+  .note b{color:var(--navy);}
+
+  /* ── 页脚 ── */
+  footer{margin-top:60px; text-align:center;}
+  footer .sig{
+    display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.3em;
+    color:#fff; background:linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-bottom:3px solid var(--gold-bright);
+    padding:8px 26px 7px; border-radius:4px; margin-bottom:14px;
+  }
+  footer .fline{font-size:12px; color:#8A98A8; line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero{padding:36px 24px 30px;}
+    .hero h1{font-size:22px;}
+    .verdict{margin:-20px 12px 0;}
+    h2.sec{font-size:20px;}
+  }
+  @media print{
+    body{background:#fff; max-width:100%;}
+    .hero{background:var(--navy-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    figure .frame, .tablewrap{box-shadow:none;}
+  }
+/* 相关阅读条（自包含样式） */
+.mw-related{max-width:1100px;margin:30px auto 0;padding:0 20px;}
+.mw-related h2{font-size:15px;font-weight:800;color:#0F2A4A;margin:0 0 10px;}
+.mw-related .cards{display:flex;gap:10px;flex-wrap:wrap;}
+.mw-related .cards a{flex:1 1 200px;text-decoration:none;color:inherit;background:#fff;
+  border:1px solid #DDE5EC;border-top:3px solid #E8A33D;border-radius:10px;padding:10px 12px;
+  transition:transform .15s, box-shadow .15s;}
+.mw-related .cards a:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(15,42,74,.13);}
+.mw-related .cards .t{font-weight:700;font-size:13px;color:#1B4F8A;}
+.mw-related .cards .d{font-size:11.5px;color:#5A6B7C;margin-top:2px;}
+/* 站点页脚（自包含样式） */
+.mw-sfoot{max-width:1100px;margin:30px auto 0;padding:14px 20px 26px;border-top:1px solid #DDE5EC;
+  text-align:center;font-size:12px;color:#5A6B7C;line-height:1.9;}
+.mw-sfoot .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.mw-sfoot .flinks a{color:#1B4F8A;text-decoration:none;}
+</style>
+<!--mw-seo-->
+<link href="https://docsor.cn/_templates/article_kd_style.html" rel="canonical"/>
+<meta content="儿童西替利嗪急性过量：循证依据与处置建议 — MedWiki-Rheum" property="og:title"/>
+<meta content="3岁患儿西替利嗪过量20mg的循证处置：剂量评估、去污染取舍、观察时长与心电图指征，20篇核验文献支撑" property="og:description"/>
+<meta content="https://docsor.cn/_templates/article_kd_style.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="MedWiki-Rheum" property="og:site_name"/>
+<meta content="zh_CN" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+</head>
+<body>
+<header class="hero">
+<h1>儿童西替利嗪急性过量：循证依据与处置建议
+    <span class="sub"></span>
+</h1>
+<div class="meta">
+<span><b>依据</b> 20 篇核验文献（Cite-holmes 评分 78/100·B 级）</span>
+<span><b>日期</b> 2026-10-03</span>
+<span><b>作者</b> Doctor Q</span>
+</div>
+</header>
+<div style="max-width:900px;margin:0 auto;padding:8px 22px;font-size:12px;color:#5A6B7C;text-align:center;background:#EAF1F8;border-bottom:1px solid #DDE5EC;">引文经 Cite-holmes 双层核验 ｜ 方法学工具：Cite-holmes · Academic-figures · Paper-polisher-pro · DoctorQ MedPub</div>
+<!-- ═══ 核心结论（3秒前置，必填） ═══ -->
+<section>
+<h2 class="sec">核心结论</h2>
+<p>3岁7月患儿误服0.1%盐酸西替利嗪口服溶液20 ml（含西替利嗪20 mg），约为该年龄段推荐日最大剂量的4倍（约1.4 mg/kg），就诊时无症状。文献证据一致提示儿童第二代H1抗组胺药过量总体结局良好：5 980例大系列研究中仅9%出现症状、97%为轻度，无死亡与心律失常事件；部分药物暴露达日剂量16～69倍仍无症状。处置要点：不推荐催吐、洗胃及活性炭吸附，留院观察2～4 h并予对症支持；该年龄段血浆半衰期约5.5 h、达峰约1.9 h。无心脏危险因素者不推荐常规心电图与电解质检测，仅在出现症状或存在长QT、肾损害、低钾血症、合用QT延长药物等危险因素时完善。已报道的严重事件均合并明确混杂因素（厌食症、低钾血症、慢性肾衰竭），不能外推至肾功能正常的儿童意外过量。</p>
+</section>
+<!-- ═══ 一、临床问题（question卡） ═══ -->
+<section>
+<h2 class="sec">一、临床问题</h2>
+<div class="case">
+<div class="question"><b>临床问题：</b><div class="question"><b>临床问题：</b><p>患儿，3岁7月。因误服盐酸西替利嗪口服溶液20 ml，约半小时由家长陪同就诊。患儿服药后无嗜睡、烦躁、头晕、乏力、呕吐、抽搐等不适，一般情况良好。体格检查：体温、脉搏、呼吸、血压均在正常范围；神志清楚，精神反应可；心肺腹及神经系统查体未见异常。既往体健，无肝肾疾病史，无药物过敏史。诊断为急性药物过量（盐酸西替利嗪）。</p></div></div>
+</div>
+</section>
+<!-- ═══ 正文节（复制本节结构，编号顺延；指南对照=表格+截图） ═══ -->
+<!-- ═══ 主要参考文献（每条含PMID，发布前过L1核验） ═══ -->
+<section>
+<section><h2 class="sec">二、暴露剂量评估</h2><p>本例所用制剂为盐酸西替利嗪口服溶液（仙达安®，北京韩美药品有限公司，国药准字H20093320），规格0.1%（1 mg/ml）<sup class="xref">[1]</sup>，与FDA已批准的同规格制剂（5 mg/5 ml）一致<sup class="xref">[2]</sup>。本例摄入总量为20 mg，按该年龄段体质量估算（14～15 kg）约为1.3～1.4 mg/kg。</p>
+<p>该说明书2～5岁儿童推荐剂量为每次5 mg、每日1次，或每次2.5 mg、每日2次（日最大剂量5 mg）<sup class="xref">[1]</sup>；《儿科常用H1抗组胺药处方审核专家共识》所列西替利嗪剂量表亦为2～6岁每日5 mg顿服或2.5 mg每日2次<sup class="xref">[3]</sup>。故本例暴露量为推荐日最大剂量的<span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">4倍</span>，属低-中度过量。因该制剂与10 mg/ml规格的滴剂存在10倍浓度差异，核对瓶签规格是剂量评估的前提（表1）。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">表1 本例暴露剂量换算</span></p>
+<div class="tablewrap"><table><thead><tr><th>项目</th><th>数值</th><th>依据</th></tr></thead><tr><td>制剂规格</td><td>0.1%（1 mg/ml）</td><td>国内说明书<sup class="xref">[1]</sup>，与FDA同规格制剂一致<sup class="xref">[2]</sup></td></tr><tr><td>摄入总量</td><td>20 mg</td><td>1 mg/ml × 20 ml</td></tr><tr><td>估算体质量</td><td>14～15 kg</td><td>年龄3岁7月</td></tr><tr><td>mg/kg 剂量</td><td>约1.3～1.4 mg/kg</td><td>计算值</td></tr><tr><td>相对日最大剂量</td><td>4倍</td><td>国内说明书<sup class="xref">[1]</sup>；儿科专家共识<sup class="xref">[3]</sup></td></tr><tr><td>相对单次治疗剂量</td><td>4～8倍</td><td>计算</td></tr></table></div></section>
+<section><h2 class="sec">三、循证依据</h2><h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">3.1 流行病学与总体结局</h3>
+<p>法国5家中毒控制中心2001—2016年回顾性多中心系列研究纳入9 403例抗组胺药单药暴露儿童，其中第二代抗组胺药暴露5 980例：仅9%出现症状，且97%为轻度（以嗜睡、烦躁为主）；部分药物的暴露量达推荐日剂量的16～69倍仍可无症状；全部病例中无死亡、无重度反应、无QT间期延长及心律失常事件<sup class="xref">[4]</sup>。作为对照，第一代抗组胺药美喹他嗪的症状发生率（14.8%对7.5%）与住院率（19.1%对8.7%）均显著更高，定量支持第二代制剂在儿童过量场景下的安全边界。</p>
+<p>个案层面，与本病年龄、剂型最接近的报道为1例4岁（体质量20 kg）男童误服西替利嗪60 mg（12倍日剂量，3 mg/kg），仅表现为嗜睡，未予特殊治疗，5～6 h完全恢复，心电监护正常；该文汇总此前5例儿童过量亦均仅见镇静表现<sup class="xref">[5]</sup>。早期文献另有个案报道<sup class="xref">[6]</sup>。国内数据方面，基于北京大学第三医院63例儿童的前瞻性群体药代动力学研究（其中24例超说明书剂量用药）未观察到药物不良反应<sup class="xref">[7]</sup>。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">3.2 临床表现谱</h3>
+<p>西替利嗪为第二代H1抗组胺药，亲脂性低、中枢穿透弱。治疗剂量下嗜睡发生率呈剂量相关性（安慰剂6%，5 mg 11%，10 mg 14%）<sup class="xref">[1]</sup>，过量时嗜睡为最应预期的表现；其次为激越、烦躁。国内说明书药物过量节记载：成人150 mg仅嗜睡；18月龄幼儿约180 mg暴露表现为先躁动易怒、继而困倦<sup class="xref">[1]</sup>（FDA说明书同源记载<sup class="xref">[2]</sup>），按体质量折算其暴露强度达本例的10倍以上。</p>
+<p>罕见表现需在观察中识别：（1）抗胆碱样症状。1例6岁男童误服后数小时出现躁动、幻觉、瞳孔固定散大、心动过速及高热<sup class="xref">[8]</sup>，虽属低频事件，但提示观察期症状清单应包含抗胆碱征象。（2）严重事件的背景限定。文献首例致死性中毒为18岁女性口服270 mg（本例的13.5倍）自杀暴露，合并厌食症、代谢性酸中毒及低钾血症，心室颤动死亡<sup class="xref">[9]</sup>；唯一1例尖端扭转型室性心动过速发生于慢性肾衰竭透析合并低钾血症背景<sup class="xref">[10]</sup>。上述事件均有明确混杂因素，不能外推至肾功能正常、电解质正常的儿童意外过量。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">3.3 药代动力学特征</h3>
+<p>2～6岁儿童单次口服5 mg的药代动力学参数：达峰时间约1.9 h，血浆半衰期（5.55±0.98）h，约为成人（8.3 h）的一半<sup class="xref">[1,11]</sup>；汇总6月龄至12岁112例的群体药代动力学分析显示，表观清除率随年龄线性增长，半衰期自婴儿期&lt;4 h渐近成人值，幼儿清除并不慢于成人<sup class="xref">[12]</sup>。西替利嗪在5～60 mg范围内药代动力学呈线性，无饱和蓄积<sup class="xref">[2]</sup>；血浆蛋白结合率93%，约2/3以原形经尿排泄<sup class="xref">[1]</sup>。据此，本例潜在症状窗为摄入后1～4 h（覆盖达峰时间），如患儿存在脱水或肾功能损害则半衰期显著延长（中度肾功能损害者半衰期增加3倍、清除率下降70%）<sup class="xref">[1]</sup>，观察时长应相应延长。基于中国儿童建立的群体药代动力学模型可用于个体暴露模拟<sup class="xref">[7]</sup>。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">3.4 心脏安全性</h3>
+<p>对本领域证据的分层评价：（1）直接儿童证据：5 980例系列中QT间期延长及心律失常事件为0<sup class="xref">[4]</sup>。（2）系统评价：第二代H1抗组胺药（含西替利嗪）加量至4倍标准剂量仍无心脏毒性证据，前提是排除遗传性长QT综合征、器质性心脏病、低钾低镁血症及合用QT延长药物<sup class="xref">[13]</sup>。（3）独立审查：截至2009年仅2例QT延长报道（1例为过量合并肾衰竭），报告模糊无法归因<sup class="xref">[14]</sup>。（4）药物警戒信号：美国FDA不良事件报告系统 disproportionate 分析将西替利嗪列为尖端扭转型室速"新信号"，但该设计无分母、无法控制共用药与基础疾病混杂，作者亦指出需临床研究证实<sup class="xref">[20]</sup>，与前述证据构成证据层级差异而非事实矛盾。综合判断：无心脏危险因素者不推荐常规心电图检查；存在危险因素者应完善心电图及电解质检测。</p></section>
+<section><h2 class="sec">四、处置建议</h2><h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">4.1 胃肠道去污染</h3>
+<p>本例不推荐催吐、洗胃及活性炭吸附。依据：（1）活性炭立场文件明确单剂活性炭不应常规使用，仅在1 h内摄入潜在中毒量且药物可被吸附时考虑；30、60 min给药仅减少吸收47.3%、40.1%，且无改善临床结局的证据；气道未受保护者禁用<sup class="xref">[16]</sup>。本例暴露量远低于"潜在中毒量"，就诊时已近1 h，不具备使用条件。（2）《急性中毒诊断与治疗中国专家共识》建议短时间吞服有潜在毒性、过量的药物后立即口服活性炭（儿童1 g/kg），服毒&lt;1 h给予有意义，肠梗阻为禁忌<sup class="xref">[17]</sup>；本例不满足该适应证。（3）洗胃立场文件不推荐常规洗胃<sup class="xref">[18]</sup>；对无症状的低毒药物暴露，误吸风险大于获益。（4）国内血液净化治疗共识按药代动力学逐药制定推荐，西替利嗪不在其推荐行血液净化的药物之列<sup class="xref">[19]</sup>；说明书亦明确该药不能被透析有效清除<sup class="xref">[1]</sup>。无特异性解毒剂，治疗以对症支持为主<sup class="xref">[1,2,15]</sup>。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">4.2 观察与对症支持</h3>
+<p>本例暴露量为推荐日剂量的4倍，符合"摄入量超过正常治疗日剂量3～4倍者应就医并观察2～3 h"的经典管理阈值<sup class="xref">[15]</sup>；结合达峰时间（本年龄段约1.9 h）与血浆半衰期（约5.5 h），建议留院观察2～4 h。观察内容包括意识状态、生命体征、瞳孔、皮肤干湿及尿潴留征象，重点识别嗜睡与激越。若出现嗜睡，以体位管理、气道保护、必要时补液为主，多在数小时内自限<sup class="xref">[5]</sup>；若出现激越或抗胆碱征象，按抗胆碱毒性处理原则管理并避免不必要的有创检查<sup class="xref">[8]</sup>。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">4.3 实验室与心电检查</h3>
+<p>无症状且无基础疾病者无需常规检测电解质、血糖及心电图<sup class="xref">[4]</sup>。出现临床症状、有心脏病史或电解质紊乱史、合用QT延长药物或镇静药物、怀疑共暴露时，应完善心电图与电解质（钾、镁、钙）检测<sup class="xref">[13]</sup>。单次过量后无需常规肝功能检查；如后续出现持续呕吐、腹痛或黄疸，应予评估（说明书载个别肝酶升高病例，停药后多恢复<sup class="xref">[1]</sup>）。</p>
+<h3 style="font-size:15px;color:#12365F;margin:12px 0 6px;">4.4 出院标准与升级指征</h3>
+<p>观察期满且生命体征正常、无镇静及激越表现，向家长完成告知后可出院。出现以下任一情形应收住院或转入监护：观察期后新发或进展性症状；意识改变需气道干预、抽搐、心律失常、高热；合并急性肾损伤或中重度脱水；合用茶碱（可使西替利嗪清除率下降16%<sup class="xref">[2]</sup>）、镇静剂或其他QT延长药物；已知长QT综合征或先天性心脏病；怀疑第二种药物共暴露。</p></section>
+<section><h2 class="sec">五、预后与随访</h2><p>文献证据一致提示本例预后良好：12倍剂量暴露的4岁男童5～6 h完全恢复<sup class="xref">[5]</sup>；大系列研究中部分药物暴露达16～69倍日剂量仍可无症状<sup class="xref">[4]</sup>；说明书收录的最大儿童过量（约180 mg）仅表现为行为异常与困倦<sup class="xref">[1]</sup>。本例暴露强度更低，预期最多出现自限性嗜睡或激越。出院后24 h内家庭观察为主，无需复查实验室指标；如再现或新发嗜睡、激越、高热、心悸、尿潴留等表现，随时返诊。</p></section>
+<section><h2 class="sec">六、家庭管理与用药教育</h2><p>本次事件属给药量具错误所致的家庭意外暴露。出院宣教要点：（1）本次暴露预期仅可能有一过性嗜睡或烦躁，会自行恢复，24 h内避免患儿自行活动以防跌倒；（2）不要诱导呕吐，不要自行喂服活性炭；（3）出现叫不醒、异常烦躁或胡言乱语、抽搐、明显心悸、发热、尿少伴口唇干燥、视物模糊或瞳孔异常散大时立即返院；（4）正常饮食饮水，无需特殊处理；（5）药品存放于儿童不能触及处，每次使用带刻度的量具量取。《儿科常用H1抗组胺药处方审核专家共识》强调处方审核时需核对年龄适应证、剂量与剂型，同类药物重复使用及复方制剂中隐藏的抗组胺成分是剂量超限的常见原因<sup class="xref">[3]</sup>，可作为本次事件家庭预防的核心建议。</p>
+<p>本文证据存在以下局限：儿童西替利嗪过量的高质量证据以中毒控制中心系列研究及个案报告为主，缺乏前瞻性队列；FAERS药物警戒信号与系统评价结论的分歧源于证据层级差异，需临床研究澄清<sup class="xref">[20]</sup>；本例患儿体质量为估算值，精确剂量评估应以实测体质量为准。</p></section><h2 class="sec">主要参考文献</h2>
+<ol>
+<p><sup class="xref">[1]</sup> 北京韩美药品有限公司. 仙达安®盐酸西替利嗪口服溶液说明书（国药准字H20093320）[EB/OL]. (2014-01-13)<sup class="xref">[2026-09-28]</sup>. https://www.bjhanmi.com.cn/front/cn/cpzx_1_6.jsp.</p>
+<p><sup class="xref">[2]</sup> U.S. Food and Drug Administration. Cetirizine hydrochloride oral solution, USP prescribing information[EB/OL]. <sup class="xref">[2026-09-28]</sup>. https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9c6a440b-bd0f-414b-bab3-3b2f57c479d7.xml.</p>
+<p><sup class="xref">[3]</sup> 胡利华, 刘璐, 陈慧颖, 等. 儿科常用H1抗组胺药处方审核专家共识[J]. 中华实用儿科临床杂志, 2023, 38(10): 733-739. DOI: 10.3760/cma.j.cn101070-20230802-00060.</p>
+<p><sup class="xref">[4]</sup> VERDU E, BLANC-BRISSET I, MEYER G, et al. Second-generation antihistamines: a study of poisoning in children[J]. Clin Toxicol (Phila), 2020, 58(4): 275-283.</p>
+<p><sup class="xref">[5]</sup> HANSEN J J, FEILBERG JØRGENSEN N H. Accidental cetirizine poisoning in a four-year-old boy[J]. Ugeskr Laeger, 1998, 160(41): 5946-5947.</p>
+<p><sup class="xref">[6]</sup> RIDOUT S M, TARIQ S M. Cetirizine overdose in a young child[J]. J Allergy Clin Immunol, 1997, 99(6 Pt 1): 860-861.</p>
+<p><sup class="xref">[7]</sup> LIU W, TAN Z, YANG P, et al. Model-based exploration of the rationality of off-label use of cetirizine in Chinese pediatric patients: a prospective cohort study[J]. Front Pharmacol, 2024, 15: 1322788.</p>
+<p><sup class="xref">[8]</sup> RENKO A, CORTESE T, KARAGIANNIS P, et al. Unintentional cetirizine overdose causing anticholinergic syndrome[J]. Am J Emerg Med, 2022, 52: 270.e1-270.e3.</p>
+<p><sup class="xref">[9]</sup> CHODOROWSKI Z, SEIN ANAND J, KUJAWSKA H. Fatal suicidal intoxication with cetirizine in patient with anorexia—a case report[J]. Przegl Lek, 2004, 61(4): 433-434.</p>
+<p><sup class="xref">[10]</sup> RENARD S, OSTORERO M, YVORRA S, et al. Torsades de pointes caused by cetirizine overdose[J]. Arch Mal Coeur Vaiss, 2005, 98(2): 157-161.</p>
+<p><sup class="xref">[11]</sup> PARIENTE-KHAYAT A, REY E, DUBOIS M C, et al. Pharmacokinetics of cetirizine in 2- to 6-year-old children[J]. Int J Clin Pharmacol Ther, 1995, 33(6): 340-344.</p>
+<p><sup class="xref">[12]</sup> PITSIU M, HUSSEIN Z, MAJID O, et al. Retrospective population pharmacokinetic analysis of cetirizine in children aged 6 months to 12 years[J]. Br J Clin Pharmacol, 2004, 57(4): 402-411.</p>
+<p><sup class="xref">[13]</sup> CATALDI M, MAURER M, TAGLIALATELA M, et al. Cardiac safety of second-generation H1-antihistamines when updosed in chronic spontaneous urticaria[J]. Clin Exp Allergy, 2019, 49(12): 1615-1623.</p>
+<p><sup class="xref">[14]</sup> Prescrire International. Cetirizine and loratadine: minimal risk of QT prolongation[J]. Prescrire Int, 2010, 19(105): 26-28.</p>
+<p><sup class="xref">[15]</sup> TEN EICK A P, BLUMER J L, REED M D. Safety of antihistamines in children[J]. Drug Saf, 2001, 24(2): 119-147.</p>
+<p><sup class="xref">[16]</sup> CHYKA P A, SEGER D, KRENZELOK E P, et al. Position paper: single-dose activated charcoal[J]. Clin Toxicol (Phila), 2005, 43(2): 61-87.</p>
+<p><sup class="xref">[17]</sup> 中国医师协会急诊医师分会, 中国毒理学会中毒与救治专业委员会. 急性中毒诊断与治疗中国专家共识[J]. 中华急诊医学杂志, 2016, 25(11): 1361-1375.</p>
+<p><sup class="xref">[18]</sup> American Academy of Clinical Toxicology, European Association of Poisons Centres and Clinical Toxicologists. Position paper update: gastric lavage for gastrointestinal decontamination of the poisoned patient[J]. Clin Toxicol (Phila), 2013, 51(3): 140-146.</p>
+<p><sup class="xref">[19]</sup> 《基于药代动力学的临床常见药物急性中毒血液净化治疗共识》专家组. 基于药代动力学的临床常见药物急性中毒血液净化治疗共识[J]. 中国全科医学, 2024(网络首发). DOI: 10.12114/j.issn.1007-9572.2024.0514.</p>
+<p><sup class="xref">[20]</sup> ALI Z, ISMAIL M, KHAN F, et al. Association of H1-antihistamines with torsade de pointes: a pharmacovigilance study of the Food and Drug Administration Adverse Event Reporting System[J]. Expert Opin Drug Saf, 2021, 20(1): 101-107.</p>
+</ol>
+<div class="note">
+<b>术语说明</b>：西替利嗪：第二代口服H1抗组胺药，亲脂性低、中枢镇静作用弱，原形经肾排泄。FAERS：美国FDA不良事件报告系统，自发上报数据库，可做失衡分析但无分母、不能推断因果。尖端扭转型室性心动过速（TdP）：一种多形性室速，多与QT间期延长、电解质紊乱相关。单剂活性炭：中毒后早期口服以吸附胃肠道内毒物的治疗手段，有明确时限与适应证。血液净化：包括血液透析、血液灌流等的中毒清除手段，需按药物药代动力学特征逐药评估指征。<br/>
+<b>截图与图表说明</b>：本文无截图；表格数据均标注来源引文。<br/>
+<b>声明</b>：本文供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构的规范。
+</div>
+</section>
+<!-- ═══ 相关阅读（必填：站内专题/工具/病例/药物互链，3-5张） ═══ -->
+<div class="mw-related">
+<h2>相关阅读</h2>
+<div class="cards">
+<ul><li>&lt;a href="https://docsor.cn/evidence/ev_TETRA_01.html"&gt;新一代四环素类抗生素儿科应用指南（2026版）84页全文图解——同为儿科用药循证深读&lt;/a&gt;</li><li>&lt;a href="https://docsor.cn/evidence/ev_KD_04.html"&gt;川崎病IVIG使用时机——六份指南逐句勘照对照&lt;/a&gt;</li><li>&lt;a href="https://docsor.cn/evidence/ev_AID_01.html"&gt;自身炎症性疾病深读&lt;/a&gt;</li><li>&lt;a href="https://docsor.cn/topics/PID.html"&gt;原发性免疫缺陷病（PID）专题&lt;/a&gt;</li><li>后续追问：FAERS西替利嗪TdP信号能否被临床研究证实；儿童大剂量暴露的前瞻性药代动力学数据；本例所涉复方感冒药中隐藏抗组胺成分的处方审核实践。</li></ul>
+</div>
+</div>
+<footer>
+<div class="band thin"></div>
+<div style="height:26px;"></div>
+<div class="sig">DOCTOR Q</div>
+<div class="fline">
+    作者 Doctor Q · 儿科临床知识整理<br/>
+    引文经 Cite-holmes 双层核验 · 发布日期 2026-10-03<br/>
+    本文收录于 <a class="url" href="https://docsor.cn/">MedWiki-Rheum</a> · <a class="url" href="https://docsor.cn/evidence/index.html">更多证据与病例</a>
+</div>
+</footer>
+<div class="mw-sfoot">
+<div class="flinks">
+<a href="https://github.com/docsor1212/MedWiki-Rheum" rel="noopener" target="_blank">GitHub 开源仓库 · 欢迎勘误</a>
+<a href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站 · DoctorQ 免疫前沿</a>
+<a href="https://skillhub.cn/user/user_481397b5" rel="noopener" target="_blank">SkillHub · 我们的Skills</a>
+</div>
+儿童风湿免疫临床知识库 · 作者 Doctor Q
+</div>
+<div style="max-width:1100px;margin:26px auto 0;padding:12px 20px 30px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+<script src="../assets/qrcode.min.js"></script>
+<script defer="" src="../assets/share.js?v=7"></script>
+</body>
+</html>
