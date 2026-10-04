@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/evidence/ped_rheum_criteria_2026.html" data-theme="glm" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#ffa69e" name="theme-color"/>
+<!-- 声明本页只支持浅色模式，阻止手机深色/夜间模式自动调色导致文字不可读 -->
+<meta content="light" name="color-scheme"/>
+<meta content="light" name="supported-color-schemes"/>
+<title>儿童风湿免疫疾病诊断与分类标准汇总（2026版）</title>
+<meta content="儿童风湿免疫疾病诊断与分类标准2026汇总：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等分类/诊断标准逐条对照，含国内外差异与33篇核验文献。" name="description"/>
+<style>
+:root {
+  /* ===== 强制浅色模式：阻止浏览器/手机深色主题自动反转颜色 ===== */
+  color-scheme: light;
+  forced-color-adjust: none;
+
+  /* ===== 用户指定配色：Bees & Honey，严格只用这 5 色 ===== */
+  --powder-blush: #ffa69e;   /* 珊瑚粉：警示 / 强调 / 标志色块 */
+  --eggshell: #faf3dd;       /* 奶油黄：页面底色（温暖主基调） */
+  --icy-aqua: #b8f2e6;       /* 薄荷青：章节色块、表格头 */
+  --light-blue: #aed9e0;     /* 雾蓝：卡片、副标题色块 */
+  --blue-slate: #5e6472;     /* 石板灰：正文、标题文字 */
+
+  /* 派生色（只调透明度，不引入新色相） */
+  --slate-text: rgba(94, 100, 114, 0.95);
+  --slate-muted: rgba(94, 100, 114, 0.72);
+  --slate-faint: rgba(94, 100, 114, 0.50);
+  --line: rgba(94, 100, 114, 0.18);
+  --line-soft: rgba(94, 100, 114, 0.10);
+  --blush-wash: rgba(255, 166, 158, 0.22);
+  --blush-wash-strong: rgba(255, 166, 158, 0.40);
+  --aqua-wash: rgba(184, 242, 230, 0.45);
+  --blue-wash: rgba(174, 217, 224, 0.40);
+  --cream-wash: rgba(250, 243, 221, 0.65);
+
+  /* 字体角色 */
+  --font-serif: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --font-sans: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  --font-mono: "JetBrains Mono", "Source Code Pro", "SF Mono", "Menlo", Consolas, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--slate-text);
+  background: var(--eggshell);
+  line-height: 1.8;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+}
+
+/* ===== 布局：侧栏 + 主内容 ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ===== 侧栏导航 ===== */
+.toc {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 20px 28px 24px;
+  background: var(--icy-aqua);
+  border-right: 3px solid var(--powder-blush);
+}
+.toc-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue-slate);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.toc-brand-sub {
+  font-size: 11px;
+  color: var(--blue-slate);
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+  opacity: 0.75;
+}
+.toc h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--blue-slate);
+  margin: 18px 0 8px;
+  opacity: 0.7;
+}
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+.toc > ol > li {
+  counter-increment: toc;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+.toc > ol > li > a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--powder-blush);
+  margin-right: 8px;
+  font-weight: 700;
+}
+.toc a {
+  display: block;
+  padding: 6px 8px;
+  color: var(--blue-slate);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.toc a:hover { background: var(--eggshell); }
+.toc .toc-sub {
+  padding-left: 28px;
+  font-size: 12px;
+  opacity: 0.78;
+}
+.toc .toc-sub li a::before { content: "·"; color: var(--blue-slate); margin-right: 6px; }
+
+/* ===== 主内容 ===== */
+.main { padding: 0 0 60px; min-width: 0; }
+
+/* ===== Hero（纯色块，无渐变） ===== */
+.hero {
+  background: var(--powder-blush);
+  padding: 64px 40px 56px;
+  border-bottom: 6px solid var(--icy-aqua);
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--blue-slate);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--blue-slate);
+  margin-bottom: 16px;
+}
+.hero-lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blue-slate);
+  max-width: 56ch;
+  opacity: 0.9;
+}
+.hero-author {
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--blue-slate);
+  display: inline-block;
+  background: var(--icy-aqua);
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+/* ===== 章节通用 ===== */
+.section {
+  padding: 44px 40px 8px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--eggshell);
+  background: var(--blue-slate);
+  padding: 4px 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--blue-slate);
+  line-height: 1.3;
+}
+h3 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--blue-slate);
+  margin: 28px 0 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--icy-aqua);
+}
+h4 {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue-slate);
+  margin: 20px 0 10px;
+  letter-spacing: 0.02em;
+}
+p { margin-bottom: 14px; }
+strong { font-weight: 700; color: var(--blue-slate); }
+a { color: var(--blue-slate); text-decoration: underline; text-decoration-color: var(--powder-blush); text-underline-offset: 3px; }
+
+/* ===== 正文列表 ===== */
+ul, ol { margin: 0 0 16px 0; padding-left: 24px; }
+li { margin-bottom: 6px; }
+ol li::marker { color: var(--powder-blush); font-weight: 700; font-family: var(--font-mono); }
+
+/* ===== 核心提示卡片（珊瑚粉高亮区） ===== */
+.core-alert {
+  background: var(--blush-wash);
+  border: 2px solid var(--powder-blush);
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.core-alert-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-slate);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.core-alert-title::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  background: var(--powder-blush);
+  color: var(--eggshell);
+  border-radius: 50%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+}
+.core-alert ol { padding-left: 22px; }
+
+/* ===== 卡片（雾蓝柔和块） ===== */
+.card {
+  background: var(--blue-wash);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.card-cyan {
+  background: var(--aqua-wash);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+
+/* ===== 表格 ===== */
+.table-wrap { overflow-x: auto; margin: 16px 0 20px; -webkit-overflow-scrolling: touch; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--eggshell);
+}
+thead th {
+  background: var(--icy-aqua);
+  color: var(--blue-slate);
+  font-weight: 700;
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 2px solid var(--blue-slate);
+  white-space: nowrap;
+}
+tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: var(--cream-wash); }
+tbody tr:last-child td { border-bottom: none; }
+td .num, td .thr { font-family: var(--font-mono); font-weight: 700; color: var(--blue-slate); white-space: nowrap; }
+td.center, th.center { text-align: center; }
+
+/* 阈值突出（关键数字标珊瑚色） */
+.hl { color: var(--blue-slate); background: var(--blush-wash); padding: 1px 5px; border-radius: 3px; font-family: var(--font-mono); font-weight: 700; }
+
+/* ===== 文献块 ===== */
+.refs {
+  background: var(--cream-wash);
+  border-left: 3px solid var(--light-blue);
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--slate-muted);
+}
+.refs strong { color: var(--blue-slate); font-size: 12px; letter-spacing: 0.05em; }
+.refs em { font-style: italic; }
+
+/* 标准块标识（标准①/标准②等） */
+.std-block {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  margin: 18px 0;
+  overflow: hidden;
+}
+.std-block-head {
+  background: var(--light-blue);
+  padding: 10px 18px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--blue-slate);
+}
+.std-block-body { padding: 16px 20px; }
+
+/* 警示小条 */
+.warn {
+  background: var(--blush-wash-strong);
+  border-radius: 4px;
+  padding: 8px 14px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* 权重数字大字 */
+.big-num {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--powder-blush);
+  line-height: 1;
+}
+
+/* 尾注 */
+.footer-note {
+  padding: 30px 40px 50px;
+  font-size: 13px;
+  color: var(--slate-muted);
+  text-align: center;
+  border-top: 2px solid var(--icy-aqua);
+}
+
+/* 返回顶部 */
+.totop {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  width: 44px; height: 44px;
+  background: var(--powder-blush);
+  color: var(--eggshell);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(94,100,114,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 50;
+}
+.totop.show { opacity: 1; pointer-events: auto; }
+
+/* 汉堡按钮 */
+.menu-btn {
+  display: none;
+  position: fixed;
+  top: 14px; left: 14px;
+  z-index: 100;
+  width: 42px; height: 42px;
+  background: var(--powder-blush);
+  color: var(--eggshell);
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(94,100,114,0.3);
+}
+.overlay { display: none; }
+
+/* ===== 响应式：平板/手机 ===== */
+@media (max-width: 880px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc {
+    position: fixed;
+    top: 0; left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    box-shadow: 4px 0 24px rgba(94,100,114,0.2);
+  }
+  .toc.open { transform: translateX(0); }
+  .menu-btn { display: flex; align-items: center; justify-content: center; }
+  .overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(94,100,114,0.4);
+    z-index: 98;
+  }
+  .overlay.show { display: block; }
+  .hero { padding: 56px 22px 40px; margin-top: 0; }
+  .hero h1 { font-size: 26px; }
+  .hero-lead { font-size: 14px; }
+  .section { padding: 32px 20px 8px; }
+  .section h2 { font-size: 22px; }
+  h3 { font-size: 17px; }
+  .section-head { gap: 10px; flex-wrap: wrap; }
+  .core-alert, .card, .card-cyan { padding: 16px 18px; }
+  table { font-size: 13px; }
+  thead th, tbody td { padding: 9px 10px; }
+  .footer-note { padding: 24px 20px 40px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 15px; line-height: 1.78; }
+  .hero { padding: 50px 18px 34px; }
+  .hero h1 { font-size: 22px; }
+  .hero-eyebrow { font-size: 11px; }
+  .section { padding: 28px 16px 6px; }
+  .section h2 { font-size: 20px; }
+  .section-num { font-size: 12px; padding: 3px 8px; }
+  h3 { font-size: 16px; }
+  h4 { font-size: 14px; }
+  table { font-size: 12.5px; min-width: 360px; }
+  thead th, tbody td { padding: 8px 8px; }
+  .refs { font-size: 12px; padding: 12px 14px; }
+  ul, ol { padding-left: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ===== 深色模式兜底：手机夜间模式下强制锁定浅色，确保文字可读 ===== */
+@media (prefers-color-scheme: dark) {
+  html { background: var(--eggshell); }
+  body {
+    background: var(--eggshell);
+    color: rgba(94, 100, 114, 0.95);
+  }
+  /* 锁定所有文字与背景为本配色，拒绝浏览器自动反转 */
+  body, .hero, .toc, .section, .core-alert, .card, .card-cyan,
+  table, thead th, tbody td, .std-block, .std-block-head, .std-block-body,
+  .refs, .warn, .footer-note, h1, h2, h3, h4, p, li, strong, a, td, th {
+    color: rgba(94, 100, 114, 0.95) !important;
+  }
+  .hero h1, .hero-eyebrow, .hero-lead { color: var(--blue-slate) !important; }
+  .hero-author { color: var(--blue-slate) !important; background: var(--icy-aqua); }
+  .toc-brand, .toc-brand-sub, .toc h3, .toc a { color: var(--blue-slate) !important; }
+  .toc a:hover { background: var(--eggshell); }
+  /* 背景色维持原配色，不被压暗 */
+  .hero { background: var(--powder-blush); }
+  .toc { background: var(--icy-aqua); }
+  thead th { background: var(--icy-aqua); }
+  .std-block-head { background: var(--light-blue); }
+  .core-alert { background: var(--blush-wash); border-color: var(--powder-blush); }
+  .card { background: var(--blue-wash); }
+  .card-cyan { background: var(--aqua-wash); }
+  .refs { background: var(--cream-wash); }
+  tbody tr:nth-child(even) td { background: var(--cream-wash); }
+  .warn { background: var(--blush-wash-strong); }
+  .totop, .menu-btn { background: var(--powder-blush); color: var(--eggshell) !important; }
+  .section-num { background: var(--blue-slate); color: var(--eggshell) !important; }
+}
+</style>
+</head>
+<body>
+<style>.sitenav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:900px;margin:0 auto;padding:9px 22px;background:linear-gradient(135deg,#12365F 0%,#1B4F8A 70%);border-bottom:4px solid #E8A33D;box-shadow:0 2px 10px rgba(18,54,95,.28);font-size:13.5px;}.sitenav::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 26px,rgba(232,163,61,.18) 26px 34px,transparent 34px 60px,rgba(127,168,204,.20) 60px 68px);}.sitenav a{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:700;border-radius:999px;padding:5px 16px;}.sitenav a.home{background:#E8A33D;color:#12365F;box-shadow:0 2px 6px rgba(0,0,0,.28);}.sitenav a.home:hover{background:#F2B455;}.sitenav a.list{color:#fff;border:1.5px solid rgba(255,255,255,.65);}.sitenav a.list:hover{border-color:#E8A33D;color:#E8A33D;}.sitenav .cur{position:relative;z-index:1;color:#E8F0F9;font-weight:600;}.sitenav .brand{margin-left:auto;position:relative;z-index:1;color:#E8A33D;font-weight:800;letter-spacing:.14em;font-size:12px;}</style>
+<nav class="sitenav"><a class="home" href="https://docsor.cn/">⌂ MedWiki 首页</a><a class="list" href="https://docsor.cn/evidence/index.html">证据与病例</a><span class="cur">› 儿童风湿免疫疾病诊断与分类标准汇总（2026版）</span><span class="brand">MedWiki-Rheum</span></nav>
+<button aria-label="目录" class="menu-btn" onclick="toggleMenu()">≡</button>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="layout">
+<!-- ============ 侧栏目录 ============ -->
+<nav class="toc" id="toc">
+<div class="toc-brand">儿童风湿免疫疾病<br/>诊断与分类标准</div>
+<div class="toc-brand-sub">2026 版 · 终版</div>
+<h3>速查</h3>
+<ol>
+<li><a href="#core">核心提示</a></li>
+<li><a href="#quick">快速参考总表</a></li>
+<li><a href="#frame">血管炎分类框架</a></li>
+</ol>
+<h3>分论</h3>
+<ol>
+<li><a href="#csle">儿童系统性红斑狼疮 cSLE</a></li>
+<li><a href="#jia">幼年特发性关节炎 JIA</a></li>
+<li><a href="#mas">sJIA 合并 MAS</a></li>
+<li><a href="#jdm">幼年皮肌炎 JDM</a></li>
+<li><a href="#vasc">儿童血管炎</a></li>
+<li><a href="#other">其他风湿免疫疾病</a>
+<ol class="toc-sub">
+<li><a href="#behcet">白塞病</a></li>
+<li><a href="#sjogren">干燥综合征</a></li>
+<li><a href="#mctd">MCTD</a></li>
+</ol>
+</li>
+<li><a href="#notes">重要注意事项</a></li>
+<li><a href="#refs">参考文献</a></li>
+</ol>
+</nav>
+<!-- ============ 主内容 ============ -->
+<main class="main">
+<!-- HERO -->
+<section class="hero">
+<div class="hero-eyebrow">CLINICAL REFERENCE · 2026</div>
+<h1>儿童风湿免疫疾病<br/>诊断与分类标准汇总</h1>
+<p class="hero-lead">供儿童风湿免疫科临床应用。依据国内外最新指南、专家共识与权威文献整理，并经联网核实（截至 2026 年）。所有标准标注性质（分类/诊断）、推荐标准、国内外差异与完整文献出处，对缺乏儿童专属标准的疾病明确警示。</p>
+<p class="hero-author">Doctor Q　·　2026 年 07 月</p>
+</section>
+<!-- 0. 核心提示 -->
+<section class="section" id="core">
+<div class="section-head"><span class="section-num">00</span><h2>核心提示</h2></div>
+<div class="core-alert">
+<div class="core-alert-title">三个最易犯错的要点</div>
+<ol>
+<li><strong>分类标准 ≠ 诊断标准。</strong>分类标准用于研究入组与亚型分类，不能直接替代临床诊断。诊断需综合病史、查体、实验室、影像及病理，并排除感染、肿瘤等。</li>
+<li><strong>cSLE 的诊断：</strong>《儿童 SLE 临床诊断与治疗专家共识（2025 版）》推荐 SLICC-2012 与 EULAR/ACR-2019 两个标准，不推荐 ACR-1997。2019 标准以 ANA≥1:80 为准入，加权评分 ≥10 分。</li>
+<li><strong>警惕缺乏儿童专属标准的疾病：</strong>干燥综合征目前无公认儿童标准，借用成人 2016 ACR/EULAR；MPA、EGPA 无儿童专属分类标准；MCTD 无儿童专属，沿用成人 Sharp 等标准。但儿童白塞病有专属标准（PEDBD 2015）。</li>
+</ol>
+</div>
+</section>
+<!-- 1. 快速参考总表 -->
+<section class="section" id="quick">
+<div class="section-head"><span class="section-num">01</span><h2>快速参考总表</h2></div>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>疾病</th><th>推荐标准</th><th>性质</th><th>国内最新依据</th><th class="center">儿童专属</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>cSLE</strong></td><td>SLICC-2012 + EULAR/ACR-2019</td><td>分类</td><td>《儿童 SLE 共识 2025》；《中国儿童 SLE 指南 2021》</td><td class="center">沿用成人</td></tr>
+<tr><td><strong>JIA（分型）</strong></td><td>ILAR 2004（PRINTO 2019 暂定待验证）</td><td>分类</td><td>《中国 JIA 临床实践指南 2023》</td><td class="center">是</td></tr>
+<tr><td><strong>sJIA</strong></td><td>ILAR 2004；2023 共识放宽关节炎</td><td>分类</td><td>《sJIA 中国专家共识 2023》</td><td class="center">是</td></tr>
+<tr><td><strong>sJIA+MAS</strong></td><td>2016 EULAR/ACR/PRINTO</td><td>分类</td><td>《sJIA 合并 MAS 共识 2025》</td><td class="center">是</td></tr>
+<tr><td><strong>JDM</strong></td><td>EULAR/ACR-2017 + Bohan-Peter 1975</td><td>分类</td><td>《中国 JDM 指南 2022》</td><td class="center">部分</td></tr>
+<tr><td><strong>IgAV</strong></td><td>EULAR/PRINTO/PRES Ankara 2008</td><td>分类</td><td>《中国儿童 IgAV 指南 2023》</td><td class="center">是</td></tr>
+<tr><td><strong>川崎病</strong></td><td>经典临床标准；2023 循证指南</td><td>诊断</td><td>《中国儿童 KD 循证指南 2023》；2022 共识</td><td class="center">是</td></tr>
+<tr><td><strong>儿童大动脉炎</strong></td><td>2010 EULAR/PRINTO/PRES</td><td>分类</td><td>《儿童血管炎系列共识之二 2023》</td><td class="center">是</td></tr>
+<tr><td><strong>儿童 GPA</strong></td><td>2010 EULAR/PRINTO/PRES</td><td>分类</td><td>《儿童血管炎系列共识之五 AAV》</td><td class="center">是</td></tr>
+<tr><td><strong>MPA / EGPA</strong></td><td>无儿童专属；参考 CHCC 2012</td><td>—</td><td>—</td><td class="center">否</td></tr>
+<tr><td><strong>PAN</strong></td><td>2010 Ankara（儿童）/1990 ACR（成人）</td><td>分类</td><td>沿用</td><td class="center">部分</td></tr>
+<tr><td><strong>白塞病</strong></td><td>PEDBD 2015 + ICBD 2014</td><td>分类</td><td>《儿童血管炎系列共识之三》</td><td class="center">是</td></tr>
+<tr><td><strong>干燥综合征</strong></td><td>无儿童专属；借用 2016 ACR/EULAR</td><td>—</td><td>《pSS 诊疗规范 2020》</td><td class="center">否</td></tr>
+<tr><td><strong>MCTD</strong></td><td>无儿童专属；沿用 Sharp 1987 等四套</td><td>诊断</td><td>2011《MCTD 指南》</td><td class="center">否</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 2. 血管炎分类框架 -->
+<section class="section" id="frame">
+<div class="section-head"><span class="section-num">02</span><h2>血管炎总体分类框架</h2></div>
+<p>儿童血管炎分类 = CHCC 命名（2012）+ Ozen 修订分类（2005/2006，2010 验证）+ EULAR/PRINTO/PRES 分类标准。按受累血管大小：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类别</th><th>代表疾病</th></tr></thead>
+<tbody>
+<tr><td><strong>大血管炎</strong></td><td>大动脉炎（Takayasu）、白塞病</td></tr>
+<tr><td><strong>中血管炎</strong></td><td>川崎病、结节性多动脉炎（PAN）</td></tr>
+<tr><td><strong>小血管炎</strong></td><td>IgA 血管炎（IgAV）、ANCA 相关性血管炎（GPA/MPA/EGPA）</td></tr>
+<tr><td><strong>变异性血管炎</strong></td><td>白塞病（可累及任意管径）</td></tr>
+</tbody>
+</table>
+</div>
+<div class="refs"><strong>文献</strong>：Ozen S, Ruperto N, Dillon MJ, et al. EULAR/PRINTO/PRES criteria for Henoch-Schönlein purpura, childhood polyarteritis nodosa, childhood Wegener granulomatosis and childhood Takayasu arteritis: Ankara 2008. Part II: Final classification criteria. <em>Ann Rheum Dis.</em> 2010;69(5):798-806。儿童 IgAV、c-PAN、儿童 GPA、儿童大动脉炎的分类标准均出自此文献。</div>
+</section>
+<!-- 一、cSLE -->
+<section class="section" id="csle">
+<div class="section-head"><span class="section-num">Ⅰ</span><h2>儿童系统性红斑狼疮（cSLE）</h2></div>
+<h3>1.1 概述</h3>
+<p>cSLE 是多系统、多脏器受累的自身免疫病，发病高峰 12~14 岁，较成人起病更急、脏器受累更重。</p>
+<h3>1.2 推荐标准与国内依据</h3>
+<p>《儿童系统性红斑狼疮临床诊断与治疗专家共识（2025 版）》（海峡两岸医药卫生交流协会儿童风湿免疫专业委员会、北京整合医学学会、中国医师协会风湿免疫科医师分会儿童风湿免疫专业委员会联合制定，<em>中华风湿病学杂志</em> 2025;29(7)）推荐两个分类标准：<strong>SLICC-2012</strong> 与 <strong>EULAR/ACR-2019</strong>，不推荐 ACR-1997。</p>
+<p>此前《中国儿童系统性红斑狼疮诊断与治疗指南》（中华医学会儿科学分会免疫学组、中华儿科杂志编辑委员会，<em>中华儿科杂志</em> 2021;59(12):1009）的推荐意见 1 即为同一结论（证据等级 1C）。</p>
+<h3>1.3 标准①：2012 SLICC 分类标准</h3>
+<div class="std-block">
+<div class="std-block-head">满足以下任一即分类</div>
+<div class="std-block-body">
+<p><strong>路径 A：</strong>≥4 条标准（至少 1 条临床 + 1 条免疫学），或</p>
+<p><strong>路径 B：</strong>肾活检证实狼疮肾炎（III 或 IV 型）+ ANA 或抗 dsDNA 阳性</p>
+</div>
+</div>
+<p>17 条标准及官方详细定义（依据 Petri M, et al. <em>Arthritis Rheum.</em> 2012;64(8):2677-2686，Table 1）：</p>
+<h4>临床标准（11 条）</h4>
+<ol>
+<li><strong>急性皮肤狼疮</strong>：狼疮颊部疹（非盘状颊部疹）/ 大疱性狼疮 / SLE 的中毒性表皮坏死松解症（TEN）变异型 / 斑丘疹性狼疮皮疹 / 光敏感性狼疮皮疹（需排除皮肌炎）/ 亚急性皮肤狼疮（非硬结性银屑病样或环形多环状皮损，愈后不留瘢痕）。满足任一子项即计为本条。</li>
+<li><strong>慢性皮肤狼疮</strong>：典型盘状疹（局限性颈部以上和/或泛发性颈部上下均有）/ 肥厚性（疣状）狼疮 / 狼疮脂膜炎（深部狼疮）/ 黏膜狼疮 / 肿胀性红斑狼疮 / 冻疮样狼疮 / 盘状狼疮-扁平苔藓重叠。满足任一子项即计为本条。</li>
+<li><strong>口腔或鼻腔溃疡</strong>（腭、颊、舌或鼻腔），需排除其他原因（如药物性、感染性）。</li>
+<li><strong>非瘢痕性脱发</strong>：排除其他原因后，由医师观察到的非瘢痕性脱发。</li>
+<li><strong>滑膜炎</strong>：累及 ≥2 个关节，表现为肿胀或积液；或 ≥2 个关节压痛 + 晨僵 ≥30 分钟。</li>
+<li><strong>浆膜炎</strong>：典型胸膜炎性疼痛 &gt;1 天、胸腔积液或胸膜摩擦音；或典型心包炎性疼痛 &gt;1 天、心包积液、心包摩擦音或心电图证实的心包炎。需排除其他原因。</li>
+<li><strong>肾脏</strong>：尿蛋白/肌酐比值（或 24 小时尿蛋白）相当于 ≥500 mg 蛋白质/24 小时；或红细胞管型。</li>
+<li><strong>神经系统</strong>（6 种任一）：癫痫发作 / 精神病 / 多发性单神经炎（排除其他原因）/ 脊髓炎 / 周围神经病变或颅神经病变（排除其他原因）/ 急性意识模糊状态（排除其他原因）。</li>
+<li><strong>溶血性贫血</strong>（排除其他原因）。</li>
+<li><strong>白细胞减少</strong>（<span class="hl">&lt;4×10⁹/L</span>，至少一次）或<strong>淋巴细胞减少</strong>（<span class="hl">&lt;1×10⁹/L</span>，至少一次），排除其他原因。</li>
+<li><strong>血小板减少</strong>（<span class="hl">&lt;100×10⁹/L</span>，至少一次），排除其他原因。</li>
+</ol>
+<h4>免疫学标准（6 条）</h4>
+<ol start="12">
+<li><strong>ANA</strong> 高于实验室正常参考范围。</li>
+<li><strong>抗 dsDNA</strong> 高于实验室正常参考范围（若用 ELISA 法，需 ≥2 倍正常参考范围上限）。</li>
+<li><strong>抗 Sm</strong> 阳性。</li>
+<li><strong>抗磷脂抗体</strong>，包括任一：狼疮抗凝物 / 梅毒血清学假阳性（RPR 假阳性）/ 中度或高滴度抗心磷脂抗体（IgA、IgG 或 IgM）/ 抗 β2 糖蛋白 I 抗体（IgA、IgG 或 IgM）。</li>
+<li><strong>补体降低</strong>：C3、C4 或 CH50 任一降低。</li>
+<li><strong>直接 Coombs 试验阳性</strong>（须在无溶血性贫血的情况下）。</li>
+</ol>
+<div class="card">
+<strong>儿童诊断效能：</strong>SLICC-2012 敏感度 99.9%，ACR-1997 敏感度 84.3%；SLICC 特异度 82.0%，ACR-1997 特异度 94.1%（数据出自《中国儿童 SLE 指南》2021 版）。
+      </div>
+<h3>1.4 标准②：2019 EULAR/ACR 分类标准</h3>
+<p><strong>准入条件：</strong>ANA 阳性（HEp-2 免疫荧光 <span class="hl">≥1:80</span>），至少 1 次。未达此准入者不予计分。</p>
+<p><strong>分类规则：</strong>加权评分 <span class="hl">≥10 分</span>，且至少 1 条临床标准；每领域只取最高分；有更合理解释的表现不计入（依据 Aringer M, et al. <em>Arthritis Rheumatol.</em> 2019;71(9):1400-1412）。</p>
+<p>完整加权表（20 条，7 个领域）：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>领域</th><th>条目</th><th class="center">权重</th></tr></thead>
+<tbody>
+<tr><td>全身</td><td>发热 &gt;38.3°C</td><td class="center num">2</td></tr>
+<tr><td rowspan="4">皮肤粘膜</td><td>急性皮肤狼疮</td><td class="center num">6</td></tr>
+<tr><td>亚急性皮肤型或盘状狼疮</td><td class="center num">4</td></tr>
+<tr><td>口腔溃疡</td><td class="center num">2</td></tr>
+<tr><td>非瘢痕性脱发</td><td class="center num">2</td></tr>
+<tr><td>骨骼肌肉</td><td>关节受累（≥2 关节滑膜炎，或压痛+晨僵 ≥30min）</td><td class="center num">6</td></tr>
+<tr><td rowspan="2">浆膜</td><td>急性心包炎</td><td class="center num">6</td></tr>
+<tr><td>胸腔或心包积液</td><td class="center num">5</td></tr>
+<tr><td rowspan="3">肾脏</td><td>肾活检 III 型或 IV 型狼疮肾炎</td><td class="center num">10</td></tr>
+<tr><td>肾活检 II 型或 V 型</td><td class="center num">8</td></tr>
+<tr><td>蛋白尿 &gt;0.5 g/24h</td><td class="center num">4</td></tr>
+<tr><td rowspan="3">神经精神</td><td>癫痫发作</td><td class="center num">5</td></tr>
+<tr><td>精神病样表现</td><td class="center num">3</td></tr>
+<tr><td>谵妄</td><td class="center num">2</td></tr>
+<tr><td rowspan="3">血液学</td><td>自身免疫性溶血</td><td class="center num">4</td></tr>
+<tr><td>血小板减少 &lt;100×10⁹/L</td><td class="center num">4</td></tr>
+<tr><td>白细胞减少 &lt;4×10⁹/L</td><td class="center num">3</td></tr>
+<tr><td rowspan="4">免疫学</td><td>抗 dsDNA 或抗 Sm 阳性</td><td class="center num">6</td></tr>
+<tr><td>抗磷脂抗体阳性</td><td class="center num">2</td></tr>
+<tr><td>低 C3 且低 C4</td><td class="center num">4</td></tr>
+<tr><td>低 C3 或低 C4</td><td class="center num">3</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card-cyan"><strong>记忆要点：</strong>肾脏（III/IV 型）10 分最重；急性皮肤狼疮与关节受累各 6 分；抗 dsDNA/Sm 6 分。补体双双降低（4 分）高于单一降低（3 分）。</div>
+<h3>1.5 单基因狼疮的识别</h3>
+<p>下列特征需高度怀疑单基因狼疮，应行基因检测：儿童早期发病（&lt;5 岁）；父母近亲婚配；一级亲属有自身免疫病或类似病史；异常综合征样表现、反复感染、特殊面容。</p>
+<h3>1.6 狼疮肾炎评估</h3>
+<p>金标准为肾活检（24h 尿蛋白 ≥500 mg、持续尿沉渣异常或肾功能下降者推荐）。分类参照 ISN/RPS 2003（III/IV 型为增殖性，预后与治疗强度差异大）。</p>
+<h3>1.7 国内外差异</h3>
+<p><strong>无差异。</strong>《儿童 SLE 共识（2025 版）》与《中国儿童 SLE 指南》（2021）均推荐 SLICC-2012 + EULAR/ACR-2019，与国际共识一致。</p>
+<div class="refs"><strong>文献</strong>：Petri M, Orbai AM, et al. <em>Arthritis Rheum.</em> 2012;64(8):2677-2686（SLICC）；Aringer M, Costenbader KH, et al. <em>Arthritis Rheumatol.</em> 2019;71(9):1400-1412（EULAR/ACR）；《中国儿童 SLE 指南》<em>中华儿科杂志</em> 2021;59(12):1009；《儿童 SLE 共识 2025 版》<em>中华风湿病学杂志</em> 2025;29(7)。</div>
+</section>
+<!-- 二、JIA -->
+<section class="section" id="jia">
+<div class="section-head"><span class="section-num">Ⅱ</span><h2>幼年特发性关节炎（JIA）</h2></div>
+<h3>2.1 概述与分型依据</h3>
+<p>JIA 是 16 岁前起病、关节炎持续 ≥6 周、排除其他病因的一组异质性疾病。</p>
+<div class="card"><strong>通用前提：</strong>起病年龄 &lt;16 岁；关节炎持续 ≥6 周；排除其他已知病因。<br/>关节炎定义 = 关节肿胀和（或）积液，或存在以下体征中 ≥2 项：活动受限、关节触痛、活动时疼痛、局部皮温增高。</div>
+<h3>2.2 当前推荐标准：ILAR 2004 修订（7 亚型）</h3>
+<p>国内《中国幼年特发性关节炎诊断及治疗临床实践指南（2023 版）》（中华医学会儿科学分会免疫学组、中华儿科杂志编辑委员会，<em>中华儿科杂志</em> 2023，PMID:37096259）沿用 ILAR（国际抗风湿联盟）分类标准（2004 修订）。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>亚型</th><th>核心要点</th></tr></thead>
+<tbody>
+<tr><td><strong>全身型（sJIA）</strong></td><td>驰张热 ≥2 周（连续 ≥3 天）+ ≥1 项：一过性皮疹、淋巴结肿大、肝/脾肿大、浆膜炎。ILAR 原文要求关节炎，2023 中国 sJIA 共识思路已放宽（见 2.4）</td></tr>
+<tr><td><strong>少关节型</strong></td><td>起病 6 个月内受累关节 ≤4 个。分持续型（始终 ≤4）与扩展型（6 个月后 ≥5）。最常见，女童多，ANA 常阳性，易并发葡萄膜炎</td></tr>
+<tr><td><strong>多关节型（RF 阴性）</strong></td><td>起病 6 个月内 ≥5 关节受累，RF 阴性</td></tr>
+<tr><td><strong>多关节型（RF 阳性）</strong></td><td>起病 6 个月内 ≥5 关节受累，RF 阳性（最初 6 个月内 2 次阳性，间隔 ≥3 个月）。临床更接近成人 RA</td></tr>
+<tr><td><strong>附着点炎相关关节炎（ERA）</strong></td><td>关节炎+附着点炎；或关节炎/附着点炎+以下 ≥2 项：HLA-B27 阳性；男性、&gt;6 岁起病；骶髂关节压痛/炎症性脊柱痛；急性前葡萄膜炎；一级亲属 AS 等 HLA-B27 相关病史</td></tr>
+<tr><td><strong>银屑病关节炎（PsJIA）</strong></td><td>关节炎+银屑病；或关节炎+以下 ≥2 项：指（趾）炎；指甲改变（顶针样凹陷、甲脱离）；一级亲属银屑病史</td></tr>
+<tr><td><strong>未分化关节炎</strong></td><td>不符合上述任一，或符合 ≥2 类（互斥排除项）</td></tr>
+</tbody>
+</table>
+</div>
+<h3>2.3 PRINTO 暂定新标准（2019，了解与展望）</h3>
+<p>由于 ILAR 标准存在约 20% 患者无法正确归类的问题（PRINTO 1.2 万例数据分析），Martini、Ravelli、Avcin 等代表 PRINTO 提出了新的暂定分类标准（Martini A, et al. <em>J Rheumatol.</em> 2019;46:190-197，PMID:30275259）。</p>
+<p>PRINTO 暂定标准提出 <strong>4 个已定义疾病（disorders）+ 2 个残余类别</strong>（原文："Four disorders were proposed..."）。PRINTO 特意用 "disorders" 取代 ILAR 的 "categories"，强调 JIA 并非单一疾病。</p>
+<h4>4 个已定义疾病</h4>
+<ol>
+<li><strong>全身型 JIA：</strong>每日发热 ≥39°C（连续 ≥3 天，持续 ≥2 周）+ 2 项主要标准或 1 项主要+2 项次要。主要标准：一过性红斑皮疹、关节炎；次要标准：全身淋巴结肿大和/或肝脾肿大、浆膜炎、关节痛 ≥2 周、白细胞 ≥15×10⁹/L 伴中性粒细胞增多。相当于成人 Still 病，关节炎不再为绝对必需（主要标准之一）。</li>
+<li><strong>RF 阳性 JIA：</strong>关节炎 ≥6 周；2 次 RF 阳性（间隔 ≥3 个月）或至少 1 次抗 CCP 抗体阳性。相当于成人 RF 阳性类风湿关节炎。</li>
+<li><strong>附着点炎/脊柱炎相关 JIA：</strong>外周关节炎+附着点炎；或关节炎/附着点炎+≥3 个月炎性背痛+影像学骶髂关节炎；或关节炎/附着点炎+以下 5 项中 ≥2 项（骶髂关节压痛、炎性背痛、HLA-B27 阳性、急性前葡萄膜炎、一级亲属 SpA 病史）。相当于成人中轴型脊柱关节炎。</li>
+<li><strong>早发 ANA 阳性 JIA：</strong>关节炎 ≥6 周；起病年龄 ≤6 岁；2 次 ANA 阳性（≥1:160，免疫荧光法，间隔 ≥3 个月）；排除全身型/RF 阳性/附着点炎脊柱炎型。涵盖原 ILAR 少关节型与 RF 阴性多关节型的相当比例患者；慢性前葡萄膜炎高危。</li>
+</ol>
+<h4>2 个残余类别（非已定义疾病实体）</h4>
+<ol start="5">
+<li><strong>其他 JIA：</strong>关节炎 ≥6 周，不符合上述 4 个疾病标准。</li>
+<li><strong>未分类 JIA：</strong>关节炎 ≥6 周，符合 &gt;1 个上述疾病标准（互斥）。</li>
+</ol>
+<p>PRINTO 标准的优势：将 ILAR 体系下约 15.5% 的"未分化 JIA"降至 1.6%（"未分类"残余类别人数大幅减少）（Yildiz M, et al. <em>J Rheumatol.</em> 2026;53(7):800-807，PMID:41621940）。局限："其他 JIA"组占比偏大（约 30%）。</p>
+<div class="core-alert">
+<div class="core-alert-title">当前地位</div>
+        PRINTO 标准目前仍为 <strong>provisional（暂定）</strong>，多国队列仍在验证中，<strong>尚未正式取代 ILAR</strong>。国内 2023 指南仍采用 ILAR 分类。临床医生应知晓此新标准的方向（尤其"早发 ANA 阳性 JIA"这一独立亚型及其葡萄膜炎高危），但现阶段分型诊断仍以 ILAR 为准。
+      </div>
+<h3>2.4 sJIA 的特殊说明</h3>
+<p>ILAR 2004 要求驰张热 + 关节炎。但 sJIA 早期可无关节炎，导致诊断延迟。《全身型幼年特发性关节炎诊断与治疗中国专家共识（2023 年版）》（中华医学会儿科学分会风湿病学组等）思路已放宽：不再将关节炎作为 sJIA 诊断的绝对必需条件，强调发热 + 典型皮疹 + 显著炎症指标（铁蛋白、SAA）+ 排除感染/肿瘤/其他自身炎症。sJIA 易合并 MAS，可危及生命（见第三章）。</p>
+<h3>2.5 鉴别与注意事项</h3>
+<p>JIA 无特异性诊断指标，为排除性诊断。需与感染（化脓性、结核性）、恶性病（白血病、神经母细胞瘤）、其他风湿免疫病（SLE、JDM）鉴别。分类基于起病后前 6 个月的临床特征。</p>
+<h3>2.6 国内外差异</h3>
+<p>基本一致，国内采用 ILAR 分类。sJIA 诊断理念（2023 共识放宽关节炎要求）是国内特色进展，方向与 PRINTO 暂定标准一致（均不再要求关节炎）。</p>
+<div class="refs"><strong>文献</strong>：Petty RE, Southwood TR, et al. <em>J Rheumatol.</em> 2004;31(2):390-392（ILAR）；Martini A, Ravelli A, et al. <em>J Rheumatol.</em> 2019;46:190-197（PRINTO 暂定标准）；《中国 JIA 临床实践指南 2023 版》<em>中华儿科杂志</em> 2023（PMID:37096259）；《sJIA 中国专家共识 2023 年版》。</div>
+</section>
+<!-- 三、MAS -->
+<section class="section" id="mas">
+<div class="section-head"><span class="section-num">Ⅲ</span><h2>sJIA 合并巨噬细胞活化综合征（MAS）</h2></div>
+<h3>3.1 概述</h3>
+<p>MAS 是 sJIA 的危重并发症，本质为继发性噬血细胞性淋巴组织细胞增多症（sHLH），病死率高，早期识别至关重要。《全身型幼年特发性关节炎合并巨噬细胞活化综合征诊疗专家共识（2025 版）》（中华医学会儿科学分会风湿病学组、海峡两岸医药卫生交流协会儿童风湿免疫专业委员会等）沿用 2016 EULAR/ACR/PRINTO 分类标准。</p>
+<h3>3.2 2016 分类标准</h3>
+<div class="std-block">
+<div class="std-block-head">在 sJIA 患者中，满足以下即分类为 MAS</div>
+<div class="std-block-body">
+<p><strong>发热</strong>（必备）+ <strong>铁蛋白 <span class="hl">&gt;684 ng/mL</span></strong>（μg/L），再加以下 4 项实验室指标中 <strong>≥2 项</strong>：</p>
+</div>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th class="center">#</th><th>指标</th><th>界值</th></tr></thead>
+<tbody>
+<tr><td class="center">1</td><td>血小板计数</td><td class="thr">≤181 ×10⁹/L</td></tr>
+<tr><td class="center">2</td><td>AST</td><td class="thr">&gt;48 U/L</td></tr>
+<tr><td class="center">3</td><td>甘油三酯</td><td class="thr">&gt;1.76 mmol/L（156 mg/dL）</td></tr>
+<tr><td class="center">4</td><td>纤维蛋白原</td><td class="thr">≤3.6 g/L（360 mg/dL）</td></tr>
+</tbody>
+</table>
+</div>
+<p>敏感性 73%~76%，特异性 99%（Ravelli A, et al. <em>Ann Rheum Dis.</em> 2016;75(3):481-489；<em>Arthritis Rheumatol.</em> 2016;68(3):566-576，PMID:26314788）。<strong>铁蛋白界值 684 与 HLH-2004 的 500 不同，勿混用。</strong></p>
+<h3>3.3 临床警示</h3>
+<div class="warn">铁蛋白短期内进行性升高，即使数值未达 684 也需高度警觉。纤维蛋白原下降、血小板下降是活动性标志（sJIA 本身可高，下降趋势比绝对值更关键）。常伴肝脾迅速增大、中枢神经症状、出血倾向。</div>
+<h3>3.4 HLH-2004 诊断标准（完整，便于对比记忆）</h3>
+<p>HLH-2004（Henter JI, et al. <em>Pediatr Blood Cancer.</em> 2007;48(2):124-131，PMID:16937360）——满足以下 8 条中 <strong>≥5 条</strong>，或分子诊断阳性（致病基因突变如 PRF1、UNC13D、STX11、STXBP2、RAB27A 等），即可诊断：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th class="center">#</th><th>标准</th><th>界值</th></tr></thead>
+<tbody>
+<tr><td class="center">1</td><td>发热</td><td class="thr">&gt;38.5°C</td></tr>
+<tr><td class="center">2</td><td>脾大</td><td class="thr">查体触及</td></tr>
+<tr><td class="center">3</td><td>血细胞减少（≥2 系）</td><td class="thr">Hb&lt;90 g/L（&lt;4 周婴儿&lt;100）；PLT&lt;100×10⁹/L；或 ANC&lt;1.0×10⁹/L</td></tr>
+<tr><td class="center">4</td><td>高甘油三酯血症和/或低纤维蛋白原血症</td><td class="thr">空腹 TG≥3.0 mmol/L（≥265 mg/dL）；和/或 Fib≤1.5 g/L</td></tr>
+<tr><td class="center">5</td><td>噬血细胞现象</td><td class="thr">骨髓、脾或淋巴结活检见噬血细胞（无恶性肿瘤证据）</td></tr>
+<tr><td class="center">6</td><td>NK 细胞活性降低或缺失</td><td class="thr">—</td></tr>
+<tr><td class="center">7</td><td>铁蛋白</td><td class="thr">≥500 ng/mL（μg/L）</td></tr>
+<tr><td class="center">8</td><td>可溶性 CD25（sIL-2 受体）升高</td><td class="thr">≥2400 U/mL</td></tr>
+</tbody>
+</table>
+</div>
+<h3>3.5 MAS 2016 与 HLH-2004 对比</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th>MAS 2016（sJIA 语境）</th><th>HLH-2004</th></tr></thead>
+<tbody>
+<tr><td><strong>适用对象</strong></td><td>已确诊或拟诊 sJIA 患者</td><td>原发/继发 HLH 通用</td></tr>
+<tr><td><strong>核心条件</strong></td><td>发热 + 铁蛋白 &gt;684（必备）</td><td>8 条中 ≥5 条（发热为其中 1 条，非独立必备）</td></tr>
+<tr><td><strong>铁蛋白界值</strong></td><td class="hl">&gt;684 ng/mL</td><td class="hl">≥500 ng/mL</td></tr>
+<tr><td><strong>脾大/噬血细胞</strong></td><td>未纳入</td><td>明确纳入</td></tr>
+<tr><td><strong>NK 细胞/sCD25</strong></td><td>未纳入</td><td>明确纳入</td></tr>
+<tr><td><strong>血细胞减少</strong></td><td>仅血小板 ≤181（4 项之一）</td><td>≥2 系降低</td></tr>
+<tr><td><strong>纤维蛋白原界值</strong></td><td class="hl">≤3.6 g/L</td><td class="hl">≤1.5 g/L</td></tr>
+<tr><td><strong>甘油三酯界值</strong></td><td class="hl">&gt;1.76 mmol/L</td><td class="hl">≥3.0 mmol/L</td></tr>
+<tr><td><strong>敏感性/特异性</strong></td><td>73%~76% / 99%</td><td>约 93% / 86%（儿童队列）</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card-cyan"><strong>对比记忆要点：</strong>MAS-2016 专为 sJIA 设计，铁蛋白界值更高（684 vs 500）、纤维蛋白原界值更宽松（3.6 vs 1.5）、甘油三酯界值更低（1.76 vs 3.0），更敏感于 sJIA 早期 MAS；HLH-2004 适用面广但界值偏重，对 sJIA 早期 MAS 敏感性不足。临床对 sJIA 患儿应首选 MAS-2016，对非 sJIA 的噬血细胞综合征用 HLH-2004。</div>
+<h3>3.6 国内外差异</h3>
+<p>一致。《sJIA 合并 MAS 共识（2025 版）》沿用国际 2016 标准。</p>
+<div class="refs"><strong>文献</strong>：Ravelli A, Minoia F, Davì S, et al. <em>Ann Rheum Dis.</em> 2016;75(3):481-489；<em>Arthritis Rheumatol.</em> 2016;68(3):566-576（2016 MAS 标准）。</div>
+</section>
+<!-- 四、JDM -->
+<section class="section" id="jdm">
+<div class="section-head"><span class="section-num">Ⅳ</span><h2>幼年皮肌炎（JDM）</h2></div>
+<h3>4.1 概述</h3>
+<p>JDM 是儿童最常见的特发性炎症性肌病。《中国幼年皮肌炎诊断与治疗指南》（中华医学会儿科学分会免疫学组、中华儿科杂志编辑委员会、儿童风湿免疫病联盟，<em>中华儿科杂志</em> 2022;60(12):1236-1247，PMID:36444423，DOI:10.3760/cma.j.cn112140-20221019-00886）为国内首部。另有《幼年皮肌炎诊断与治疗专家共识》（<em>中华实用儿科临床杂志</em> 2022）可作补充。</p>
+<h3>4.2 推荐标准</h3>
+<p>临床诊断参考 1975 Bohan-Peter 标准；分类使用 2017 EULAR/ACR 标准。</p>
+<h3>4.3 2017 EULAR/ACR IIM 分类标准</h3>
+<p>采用加权概率评分系统，分有/无肌活检两套阈值（Lundberg IE, Tjärnlund A, Bottai M, et al. <em>Ann Rheum Dis.</em> 2017;76(12):1955-1964）：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>分类</th><th class="center">无肌活检</th><th class="center">有肌活检</th><th>对应概率</th></tr></thead>
+<tbody>
+<tr><td><strong>确诊 IIM</strong></td><td class="center num">≥7.5</td><td class="center num">≥8.7</td><td>≥90%</td></tr>
+<tr><td><strong>拟诊 IIM</strong></td><td class="center num">≥5.5</td><td class="center num">≥6.7</td><td>55%~90%</td></tr>
+<tr><td><strong>可能 IIM</strong></td><td class="center num">≥5.3</td><td class="center num">≥6.5</td><td>50%~55%</td></tr>
+</tbody>
+</table>
+</div>
+<p>完整加权评分系统（依据 Lundberg IE, et al. <em>Ann Rheum Dis.</em> 2017;76(12):1955-1964，Table 1；Bottai M, et al. <em>RMD Open.</em> 2017 方法学）。系统含 16 项变量分 6 类，无活检/有活检两套权重。下表列出经多来源确认的关键变量分值：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>变量</th><th>条件</th><th class="center">无活检</th><th class="center">有活检</th></tr></thead>
+<tbody>
+<tr><td>发病年龄</td><td>≥18 且 &lt;40 岁</td><td class="center num">1.3</td><td class="center num">1.5</td></tr>
+<tr><td>发病年龄</td><td>≥40 岁</td><td class="center num">2.1</td><td class="center num">2.2</td></tr>
+<tr><td>发病年龄</td><td>&lt;18 岁（儿童/JDM）</td><td class="center num">1.5</td><td class="center num">1.5</td></tr>
+<tr><td>Gottron 征或丘疹</td><td>存在</td><td class="center num">3.1</td><td class="center num">3.7</td></tr>
+<tr><td>Heliotrope 紫罗兰色皮疹</td><td>存在</td><td class="center num">1.4</td><td class="center num">1.6</td></tr>
+<tr><td>肌无力</td><td>对称性近端为主（肢带肌）</td><td class="center">按严重程度加权</td><td class="center">按严重程度加权</td></tr>
+<tr><td>肌酶 CK</td><td>正常</td><td class="center num">0</td><td class="center num">0</td></tr>
+<tr><td>肌酶 CK</td><td>&gt;正常上限~3 倍</td><td class="center">按倍数加权（低档）</td><td class="center">按倍数加权（低档）</td></tr>
+<tr><td>肌酶 CK</td><td>&gt;3 倍~6 倍</td><td class="center">按倍数加权（中档）</td><td class="center">按倍数加权（中档）</td></tr>
+<tr><td>肌酶 CK</td><td>&gt;6 倍~10 倍</td><td class="center">按倍数加权（高档）</td><td class="center">按倍数加权（高档）</td></tr>
+<tr><td>肌酶 CK</td><td>&gt;10 倍正常上限</td><td class="center num">1.9</td><td class="center num">1.9</td></tr>
+<tr><td>肌活检</td><td>束周萎缩和/或 MHC-I 弥漫上调</td><td class="center">—</td><td class="center num">2.2（最高档）</td></tr>
+<tr><td>肌活检</td><td>肌内膜 CD8+ T 细胞浸润</td><td class="center">—</td><td class="center">按表现加权</td></tr>
+<tr><td>肌活检</td><td>坏死为主</td><td class="center">—</td><td class="center">按表现加权</td></tr>
+<tr><td>抗 Jo-1 抗体</td><td>阳性（抗合成酶综合征）</td><td class="center num">3.8</td><td class="center num">3.8</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card"><strong>说明：</strong>肌无力分度、CK 中间档（1~10 倍）及肌活检各表现的精确单值属原始 Table 1 的连续加权变量，临床计算建议使用 Karolinska 在线计算器（https://www.imm.ki.se/biostatistics/calculators/iim/）输入具体数据得出总分。已确认的关键单项：Gottron（3.1/3.7）权重最高，其次 CK&gt;10 倍（1.9）、抗 Jo-1（3.8，但儿童罕见）、Heliotrope（1.4/1.6）、发病年龄。</div>
+<div class="card-cyan"><strong>JDM 临床要点：</strong>JDM 患儿很少行肌活检，临床多走"无活检"路径，<span class="hl">≥7.5 为确诊阈值</span>。儿童 JDM 关键得分点：发病年龄 &lt;18 岁（1.5 分）+ Gottron 征/丘疹（3.1 分）+ Heliotrope 皮疹（1.4 分）+ CK 显著升高（&gt;10 倍给 1.9 分）+ 对称性近端肌无力（0.7~0.9 分）即可达确诊阈值。儿童验证（Sag E, et al. 2021）：2017 EULAR/ACR 标准在 JDM 分类能力 88%，Bohan/Peter 96%。</div>
+<h3>4.4 1975 Bohan-Peter 标准（临床常用）</h3>
+<p>5 条：对称性近端肌无力；肌酶升高；肌电图肌源性损害；肌活检符合；典型皮疹（Gottron 征、Heliotrope 疹）。<strong>确诊 = 4 条+皮疹；可能 = 3 条+皮疹</strong>等。</p>
+<h3>4.5 辅助检查</h3>
+<p><strong>肌肉 MRI：</strong>协助诊断、评估活动度、随访疗效、指导活检定位（首选）。<strong>肌炎特异性抗体（MSA）：</strong>抗 Mi-2、抗 TIF1-γ、抗 NXP2、抗 MDA5 等，与临床亚型、治疗反应、预后密切相关。</p>
+<h3>4.6 国内外差异</h3>
+<p>一致。《中国 JDM 指南》（2022）与 2017 EULAR/ACR 接轨。</p>
+<div class="refs"><strong>文献</strong>：Lundberg IE, Tjärnlund A, Bottai M, et al. <em>Ann Rheum Dis.</em> 2017;76(12):1955-1964；《中国 JDM 指南》<em>中华儿科杂志</em> 2022;60(12):1236-1247（PMID:36444423）。</div>
+</section>
+<!-- 五、血管炎 -->
+<section class="section" id="vasc">
+<div class="section-head"><span class="section-num">Ⅴ</span><h2>儿童血管炎（总）</h2></div>
+<p>儿童血管炎分类基于 CHCC 2012 命名 + Ozen 修订分类，分类标准核心来源为 2010 EULAR/PRINTO/PRES（Ankara 2008）（Ozen S, et al. <em>Ann Rheum Dis.</em> 2010;69(5):798-806）。IgAV、c-PAN、儿童 GPA、儿童大动脉炎的分类标准均出自此文献。</p>
+<p>国内系列共识：《中国儿童血管炎诊断与治疗系列专家共识》（中国医师协会儿科医师分会风湿免疫学组，<em>中国实用儿科杂志</em> 2023 年第 4 期）——之一总论、之二多发性大动脉炎、之三白塞、之五 ANCA 相关性血管炎等。</p>
+<h3>5.1 IgA 血管炎（IgAV，旧称过敏性紫癜）</h3>
+<p>标准来源：EULAR/PRINTO/PRES Ankara 2008 分类标准（2010 发表）。国内《中国儿童 IgA 血管炎诊断与治疗指南（2023）》（<em>中华儿科杂志</em> 2023;61(12):1067-1076，PMID:38018043）沿用此标准。</p>
+<div class="std-block">
+<div class="std-block-head">分类标准</div>
+<div class="std-block-body">
+<p><strong>必备条件：</strong>以下肢为主的可触及性紫癜或瘀点（双下肢为主）。</p>
+<p><strong>附加条件（满足 ≥1 项）：</strong></p>
+<ol>
+<li>腹痛（弥漫性，急性发作；可伴呕吐、消化道出血）</li>
+<li>组织病理：白细胞碎裂性血管炎，以 IgA 为主的免疫复合物沉积</li>
+<li>关节症状：急性关节炎或关节痛（膝、踝等大关节）</li>
+<li>肾脏受累：24h 尿蛋白 &gt;0.3 g；或尿沉渣红细胞 &gt;5/HPF；或尿试纸潜血 ≥2+</li>
+</ol>
+</div>
+</div>
+<p>敏感性 100%，特异性 87%，显著优于 1990 ACR 标准（后者在儿童特异性极低）。IgAV 是儿童最常见的血管炎，好发于 4~6 岁。该标准最初为儿童设计，后被验证可用于成人。</p>
+<div class="refs"><strong>文献</strong>：Ozen S, Ruperto N, et al. <em>Ann Rheum Dis.</em> 2010;69(5):798-806；《中国儿童 IgAV 指南 2023》<em>中华儿科杂志</em> 2023;61(12):1067-1076（PMID:38018043）。</div>
+<h3>5.2 川崎病（KD）</h3>
+<p>国内有两份文献：《中国儿童川崎病诊疗循证指南（2023 年）》（<em>中国当代儿科杂志</em> 2023;25(12):1198-1210，DOI:10.7499/j.issn.1008-8830.2309038，20 条推荐意见）；《川崎病诊断和急性期治疗专家共识（2022）》。</p>
+<div class="std-block">
+<div class="std-block-head">完全性 KD（CKD）：发热 + 以下 5 项主要特征中 ≥4 项</div>
+<div class="std-block-body">
+<ol>
+<li>双侧球结膜非渗出性充血</li>
+<li>口腔黏膜改变（唇红皲裂、草莓舌、口咽弥漫充血）</li>
+<li>急性非化脓性颈部淋巴结肿大（直径常 &gt;1.5 cm，多为单侧）</li>
+<li>多形性皮疹（躯干为主，非水疱性）</li>
+<li>四肢末端改变（急性期掌跖红斑、手足硬性水肿；恢复期指趾端膜状脱皮）</li>
+</ol>
+</div>
+</div>
+<div class="warn"><strong>发热天数表述差异：</strong>2023 循证指南对完全性 KD 的表述为"发热"（未强制 ≥5 天）；2017 AHA 科学声明（<em>Circulation.</em> 2017;135(17):e927-e999）为"发热 ≥4 天即应考虑 KD"；国内 2022 共识沿用经典"发热 ≥5 天"。临床以早期识别、及时治疗为原则，不必拘泥具体天数延误治疗。</div>
+<p><strong>不完全性 KD（IKD）：</strong>2023 循证指南定义——发热 ≥5 天（或热程不定）+ 5 项主要特征中 <strong>2~3 项</strong>，同时明确存在冠状动脉病变（CAL）的超声心动图改变。超声 CAL 标准：冠状动脉内径大于同龄正常值（<span class="hl">&lt;5 岁 &gt;3 mm、≥5 岁 &gt;4 mm</span>），或为相邻段内径的 <span class="hl">≥1.5 倍</span>，或管腔明显不规则。</p>
+<p><strong>实验室补充指标（2017 AHA 算法）：</strong>炎症指标阳性（CRP ≥3 mg/dL 或 ESR ≥40 mm/h）；其基础上补充指标 ≥3 项支持诊断——白蛋白 ≤3.0 g/dL；贫血（年龄校正）；ALT 升高；WBC ≥15×10⁹/L；血小板 ≥450×10⁹/L；尿白细胞 ≥10/HPF（无菌性脓尿）。</p>
+<div class="warn">诊断 KD 应尽早（理想发热 4~5 天），以预防冠状动脉病变。未经治疗者约 <strong>25% 发生冠状动脉瘤</strong>。</div>
+<div class="refs"><strong>文献</strong>：《中国儿童 KD 循证指南 2023》<em>中国当代儿科杂志</em> 2023;25(12):1198-1210；《KD 共识 2022》；McCrindle BW, et al. <em>Circulation.</em> 2017;135(17):e927-e999（2017 AHA）。</div>
+<h3>5.3 儿童大动脉炎（Takayasu 动脉炎）</h3>
+<p>标准来源：2010 EULAR/PRINTO/PRES（Ankara）儿童大动脉炎分类标准。中国《儿童血管炎系列共识之二——多发性大动脉炎》（<em>中国实用儿科杂志</em> 2023 年第 4 期）沿用此标准。</p>
+<div class="warn"><strong>所谓"2025 儿童共识"不准确：</strong>2025 年发布的是成人《中国大动脉炎相关血压评估和多学科管理专家共识（修订版）》（非儿童专属）。儿童大动脉炎的标准是 2010 Ankara。</div>
+<div class="std-block">
+<div class="std-block-head">分类标准</div>
+<div class="std-block-body">
+<p><strong>必备（准入）：</strong>主动脉、其主要分支或肺动脉的影像学异常（传统造影、CTA 或 MRA 显示动脉瘤/扩张、狭窄、闭塞或管壁增厚，除外纤维肌性发育不良）。</p>
+<p><strong>附加（满足 ≥1 项即可分类）：</strong></p>
+<ol>
+<li>外周动脉搏动减弱或无脉，伴或不伴肢体间歇性跛行</li>
+<li>四肢血压不对称</li>
+<li>大动脉或主要分支可闻及血管杂音</li>
+<li>高血压（以儿童正常参考范围为准）</li>
+<li>急性期反应物升高（ESR 升高或 CRP 升高）</li>
+</ol>
+</div>
+</div>
+<p>儿童以高血压、血管杂音、无脉/脉搏不对称为常见就诊原因。影像学（CTA/MRA/血管超声）是诊断核心。</p>
+<div class="refs"><strong>文献</strong>：Ozen S, et al. <em>Ann Rheum Dis.</em> 2010;69(5):798-806；《儿童血管炎系列共识之二》（<em>中国实用儿科杂志</em> 2023 年第 4 期）。</div>
+<h3>5.4 儿童肉芽肿性多血管炎（GPA，旧称韦格纳）</h3>
+<p>标准来源：2010 EULAR/PRINTO/PRES 儿童 GPA 分类标准（Ankara）。<strong>2022 ACR/EULAR GPA 标准仅基于成人队列，未在儿童验证，儿童不首选。</strong></p>
+<div class="std-block">
+<div class="std-block-head">分类标准（满足 6 项中 ≥3 项）</div>
+<div class="std-block-body">
+<ol>
+<li>肉芽肿性炎症的组织学证据</li>
+<li>上呼吸道受累（鼻、鼻窦、鼻中隔等）</li>
+<li>喉气管支气管受累（声门下狭窄等）</li>
+<li>肺部受累（结节、空洞、浸润）</li>
+<li>ANCA 阳性（通常 c-ANCA/抗 PR3）</li>
+<li>肾脏受累（坏死性肾小球肾炎、血尿、管型）</li>
+</ol>
+</div>
+</div>
+<div class="refs"><strong>文献</strong>：Ozen S, et al. <em>Ann Rheum Dis.</em> 2010;69(5):798-806；《儿童血管炎系列共识之五——AAV》。</div>
+<h3>5.5 显微镜下多血管炎（MPA）与嗜酸性肉芽肿性多血管炎（EGPA）</h3>
+<div class="warn">MPA 和 EGPA 目前<strong>无儿童专属分类标准</strong>。临床参考 CHCC 2012 命名 + 临床表现 + ANCA（MPA 多为 p-ANCA/抗 MPO）+ 病理综合判断。2022 ACR/EULAR MPA/EGPA 标准为成人标准，未在儿童验证，应谨慎使用，不能等同于儿童标准。</div>
+<ul>
+<li><strong>MPA：</strong>坏死性小血管炎，肾/肺受累常见，p-ANCA/抗 MPO 阳性</li>
+<li><strong>EGPA：</strong>哮喘、嗜酸性粒细胞增多（<span class="hl">&gt;1×10⁹/L 或 &gt;10%</span>）+ 坏死性血管炎，可 ANCA 阳性或阴性</li>
+</ul>
+<div class="refs"><strong>文献</strong>：Jennette JC, Falk RJ, et al. <em>Arthritis Rheum.</em> 2013;65(1):1-11（CHCC 2012）。</div>
+<h3>5.6 结节性多动脉炎（PAN）</h3>
+<p><strong>儿童 c-PAN：</strong>2010 EULAR/PRINTO/PRES（Ankara）儿童 PAN 分类标准（组织活检坏死性血管炎或血管造影异常 + 皮肤/肌痛/高血压/周围神经病变等）。<strong>成人沿用：</strong>1990 ACR 分类标准（10 项中 ≥3 项）。</p>
+<p>确诊需血管造影证实（动脉瘤、狭窄）或组织活检见坏死性血管炎。</p>
+<div class="refs"><strong>文献</strong>：Ozen S, et al. <em>Ann Rheum Dis.</em> 2010;69(5):798-806（c-PAN）。</div>
+<h3>5.7 血管炎国内外差异总览</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>疾病</th><th>国际标准</th><th>国内情况</th><th>差异</th></tr></thead>
+<tbody>
+<tr><td>IgAV</td><td>Ankara 2008</td><td>2023 中国儿童指南沿用</td><td>一致</td></tr>
+<tr><td>川崎病</td><td>经典标准+2017 AHA</td><td>2023 循证指南+2022 共识</td><td>发热天数表述略有差异</td></tr>
+<tr><td>大动脉炎</td><td>2010 Ankara</td><td>儿童沿用；成人有 2025 血压共识</td><td>儿童一致</td></tr>
+<tr><td>GPA</td><td>2010 Ankara（儿童）</td><td>沿用</td><td>一致</td></tr>
+<tr><td>MPA/EGPA</td><td>无儿童标准；2022 ACR/EULAR 为成人</td><td>借用成人/CHCC</td><td>均缺儿童标准</td></tr>
+<tr><td>PAN</td><td>2010 c-PAN（儿童）/1990 ACR（成人）</td><td>沿用</td><td>一致</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 六、其他 -->
+<section class="section" id="other">
+<div class="section-head"><span class="section-num">Ⅵ</span><h2>其他风湿免疫疾病</h2></div>
+<h3 id="behcet">6.1 儿童白塞病</h3>
+<p>儿童白塞病有<strong>专属分类标准</strong>：2015 PEDBD（Koné-Paut I, et al. <em>Ann Rheum Dis.</em> 2016;75(6):958-964）。源于国际前瞻性儿童队列，是目前唯一的儿童专属标准。</p>
+<p><strong>PEDBD 分类标准</strong>（原文：six categories, a minimum of three signs, each in a distinct category）：<strong>6 大类别，每类计 1 分（等权重）；患儿出现 ≥3 个体征，且每个体征分属不同类别</strong>，即分类为儿童白塞病。<strong>不要求口腔溃疡为必备条件</strong>（与成人 ISG 不同）。</p>
+<p>六类及各自涵盖的具体临床表现：</p>
+<ol>
+<li><strong>口腔阿弗他溃疡</strong>（复发性，常为首发表现，约 81% 患儿）</li>
+<li><strong>生殖器溃疡</strong>（生殖器和/或肛周阿弗他溃疡）</li>
+<li><strong>眼部受累</strong>（葡萄膜炎，尤其后葡萄膜炎/全葡萄膜炎；视网膜血管炎）</li>
+<li><strong>皮肤病变</strong>（结节性红斑样皮损、丘疹脓疱样皮损、针刺反应阳性皮损等）</li>
+<li><strong>血管受累</strong>（静脉血栓、动脉血栓、动脉瘤等；儿童相对突出）</li>
+<li><strong>神经系统受累</strong>（中枢和/或周围神经系统表现）</li>
+</ol>
+<div class="card"><strong>重要区别：</strong>PEDBD 不纳入针刺试验和 HLA-B51（这两项在儿童 discriminatory value 较低），而成人 ICBD 2014 含针刺试验、ISG 1990 含针刺试验。血管和神经系统受累在儿童相对成人更突出。</div>
+<h4>三个标准的关系与临床应用（重要）</h4>
+<p>三个标准（ISG 1990、ICBD 2014、PEDBD 2015）本质上均为分类标准，但在临床实践中，<strong>患儿符合其中任一标准、并结合临床排除感染/肿瘤/其他自身炎症性疾病后，即可诊断白塞病</strong>。三者并非互斥，而是互补关系，各有侧重：</p>
+<ul>
+<li><strong>ISG 1990</strong>：原作为"诊断标准"提出，是经典标准，但要求口腔溃疡为必备条件，且敏感性在儿童偏低。</li>
+<li><strong>ICBD 2014</strong>：敏感性最高，不要求口腔溃疡为必备，权重更合理，是当前成人应用最广、儿童敏感性也最优的标准。</li>
+<li><strong>PEDBD 2015</strong>：是唯一儿童专属标准，强调血管/神经受累，但敏感性在部分队列低于 ICBD。</li>
+</ul>
+<div class="card-cyan"><strong>临床推荐：</strong>儿童优先联合应用 PEDBD（儿童专属）+ ICBD（敏感性高），两者互补可减少漏诊；ISG 因要求口腔溃疡必备且儿童敏感性低，作为补充参考。</div>
+<h4>三个标准的具体内容</h4>
+<div class="std-block">
+<div class="std-block-head">【ISG 1990】（International Study Group. <em>Lancet.</em> 1990，PMID:1970380）</div>
+<div class="std-block-body">
+<p>复发性口腔溃疡（阿弗他溃疡，1 年内 ≥3 次，<strong>必备</strong>）+ 以下 4 项中 <strong>≥2 项</strong>：</p>
+<ol>
+<li>复发性生殖器溃疡或瘢痕</li>
+<li>眼部病变（前/后葡萄膜炎、玻璃体细胞、视网膜血管炎）</li>
+<li>皮肤病变（结节性红斑、假性毛囊炎、丘疹脓疱、痤疮样结节）</li>
+<li>针刺试验阳性（24~48 小时判读）</li>
+</ol>
+</div>
+</div>
+<div class="std-block">
+<div class="std-block-head">【ICBD 2014】（Davatchi F, et al. <em>J Eur Acad Dermatol Venereol.</em> 2014，PMID:23441863）</div>
+<div class="std-block-body">
+<p>评分制，<strong>≥4 分</strong>分类为白塞病：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>条目</th><th class="center">分值</th></tr></thead>
+<tbody>
+<tr><td>眼部病变</td><td class="center num">2</td></tr>
+<tr><td>生殖器溃疡</td><td class="center num">2</td></tr>
+<tr><td>口腔溃疡（复发性阿弗他）</td><td class="center num">2</td></tr>
+<tr><td>皮肤病变</td><td class="center num">1</td></tr>
+<tr><td>血管病变</td><td class="center num">1</td></tr>
+<tr><td>关节炎</td><td class="center num">1</td></tr>
+<tr><td>神经系统表现</td><td class="center num">1</td></tr>
+<tr><td>针刺试验阳性（可选，纳入时）</td><td class="center num">1</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="std-block">
+<div class="std-block-head">【PEDBD 2015】（见上，6 类每类 1 分，≥3 个不同类别体征）</div>
+<div class="std-block-body">儿童专属，不含针刺试验和 HLA-B51。</div>
+</div>
+<p>儿童队列各标准敏感性对比（多项研究）：ICBD 最高（约 79%~97%），PEDBD 次之（约 54%~58%），ISG 最低（约 50%~58%，因要求口腔溃疡必备）。例如 Matucci-Cerinic 等 2024 验证研究（<em>Rheumatology.</em> 2024;63(12):3422）：ISG 0.50、ICBD 0.79、PEDBD 0.58。</p>
+<div class="refs"><strong>文献</strong>：Koné-Paut I, Darce-Bello M, et al. <em>Ann Rheum Dis.</em> 2016;75(6):958-964；《儿童血管炎系列共识之三——白塞》。</div>
+<h3 id="sjogren">6.2 儿童干燥综合征</h3>
+<div class="warn">目前<strong>无公认的儿童专属诊断/分类标准</strong>。临床借用成人标准，主要为 2016 ACR/EULAR 原发性干燥综合征分类标准（Shiboski CH, et al. <em>Ann Rheum Dis.</em> 2017;76(5):803-811）。CARRA 等国际组织正在推进儿童专属标准，尚未定稿。国内参考《原发性干燥综合征诊疗规范（2020 版）》。</div>
+<h4>2016 ACR/EULAR 成人标准（借用参考）</h4>
+<p><strong>纳入条件：</strong>至少 1 项眼干或口干症状。加权评分（5 项，<strong>≥4 分</strong>分类为 pSS）：</p>
+<ul>
+<li>唇腺活检局灶性淋巴细胞唾液腺炎（focus score ≥1）：<strong>3 分</strong></li>
+<li>抗 SSA/Ro 阳性：<strong>3 分</strong></li>
+<li>角膜染色（OSS ≥5）：<strong>1 分</strong></li>
+<li>Schirmer 试验（≤5 mm/5 min）：<strong>1 分</strong></li>
+<li>未刺激全唾液流率（≤0.1 mL/min）：<strong>1 分</strong></li>
+</ul>
+<div class="card"><strong>儿童临床特点与成人差异大：</strong>复发性腮腺炎在儿童为常见首发；典型眼干/口干出现晚，常不典型；肾小管酸中毒相对常见；关节痛常见；中枢神经受累可见。以成人"口干眼干"为纳入条件，在儿童极易漏诊。遇反复腮腺肿大、关节痛、肾小管酸中毒、原因不明高球蛋白血症患儿，需警惕儿童干燥综合征。</div>
+<div class="refs"><strong>文献</strong>：Shiboski CH, et al. <em>Ann Rheum Dis.</em> 2017;76(5):803-811；《pSS 诊疗规范 2020 版》。</div>
+<h3 id="mctd">6.3 儿童混合性结缔组织病（MCTD）</h3>
+<div class="warn">无儿童专属标准，沿用成人标准。共有四套标准：Sharp 1987、Kasukawa、Alarcón-Segovia、2019 日本标准。国内多用 Sharp 标准。</div>
+<h4>Sharp 1987 标准（国内常用）</h4>
+<p><strong>确诊：</strong>抗 U1RNP 高滴度阳性（抗 ENA ≥1:4000）、抗 Sm 阴性，+ 4 项主要标准中 ≥3 项。<strong>可能：</strong>抗 U1RNP 阳性（≥1:1000）+ 3 项主要，或 2 项主要 + 2 项次要。</p>
+<h4>主要标准（5 项）</h4>
+<ol>
+<li>严重肌炎</li>
+<li>肺部受累（DLCO &lt;70%、肺动脉高压、增生性血管病变）</li>
+<li>雷诺现象</li>
+<li>手肿胀或手指硬化</li>
+<li>抗 ENA ≥1:4000（抗 U1RNP 高滴度、抗 Sm 阴性）</li>
+</ol>
+<h4>次要标准（11 项）</h4>
+<p>脱发、白细胞减少、贫血、胸膜炎、心包炎、关节炎、三叉神经病变、颊部红斑、血小板减少、轻度肌病、既往手背肿胀史。</p>
+<h4>四套标准比较</h4>
+<div class="table-wrap">
+<table>
+<thead><tr><th>标准</th><th>特点</th><th>敏感性</th></tr></thead>
+<tbody>
+<tr><td><strong>Sharp 1987</strong></td><td>国内最常用，强调 U1RNP+抗 Sm 阴性</td><td>—</td></tr>
+<tr><td><strong>Kasukawa</strong></td><td>适合筛查</td><td class="hl">77.5%（最高）</td></tr>
+<tr><td><strong>Alarcón-Segovia</strong></td><td>U1-RNP&gt;1:1600 + 5 项中 ≥3 项</td><td>—</td></tr>
+<tr><td><strong>2019 日本标准</strong></td><td>最新综合标准（Tanaka 等）</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>标志抗体：</strong>高滴度抗 U1RNP（nRNP）是 MCTD 标志；ANA 呈斑点型高滴度；抗 Sm 阴性用于与 SLE 鉴别。</p>
+<div class="refs"><strong>文献</strong>：Sharp GC. <em>Arthritis Rheum.</em> 1987;30(suppl):S24；2011《MCTD 诊断及治疗指南》；Tanaka Y, et al. <em>Mod Rheumatol.</em> 2021;31(1):29-33（2019 日本标准）。</div>
+</section>
+<!-- 七、注意事项 -->
+<section class="section" id="notes">
+<div class="section-head"><span class="section-num">Ⅶ</span><h2>重要注意事项</h2></div>
+<h3>7.1 分类标准 vs 诊断标准</h3>
+<p>分类标准用于研究入组、亚型分类，强调敏感性与特异性的平衡，不能直接替代临床诊断。诊断标准用于临床个体诊断，更重敏感性。实际诊断 = 病史 + 查体 + 实验室 + 影像 + 病理 + 排除其他病因（感染、肿瘤、遗传代谢病等）。</p>
+<div class="warn">临床常见误区：仅满足分类标准条目就下诊断；或反之，未达条目数就排除疾病。两种倾向都需避免。</div>
+<h3>7.2 国内外差异总览（完整版）</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>疾病</th><th>国际标准</th><th>国内情况</th><th>差异</th></tr></thead>
+<tbody>
+<tr><td>cSLE</td><td>SLICC-2012 / EULAR/ACR-2019</td><td>2025 共识+2021 指南推荐此 2 项</td><td>一致</td></tr>
+<tr><td>JIA</td><td>ILAR 2004（PRINTO 2019 待验证）</td><td>2023 指南采用 ILAR</td><td>一致（sJIA 关节炎放宽为国内进展）</td></tr>
+<tr><td>sJIA+MAS</td><td>2016 标准</td><td>2025 共识沿用</td><td>一致</td></tr>
+<tr><td>JDM</td><td>EULAR/ACR-2017 + Bohan-Peter</td><td>2022 指南推荐</td><td>一致</td></tr>
+<tr><td>IgAV</td><td>Ankara 2008</td><td>2023 中国儿童指南</td><td>一致</td></tr>
+<tr><td>川崎病</td><td>经典 + 2017 AHA</td><td>2023 循证指南+2022 共识</td><td>发热天数表述差异</td></tr>
+<tr><td>大动脉炎</td><td>2010 Ankara（儿童）</td><td>儿童沿用</td><td>一致（2025 血压共识为成人）</td></tr>
+<tr><td>GPA</td><td>2010 Ankara（儿童）</td><td>沿用</td><td>一致</td></tr>
+<tr><td>MPA/EGPA</td><td>无儿童标准；2022 ACR/EULAR 为成人</td><td>借用成人/CHCC</td><td>均缺儿童标准</td></tr>
+<tr><td>PAN</td><td>2010 c-PAN（儿童）/1990 ACR</td><td>沿用</td><td>一致</td></tr>
+<tr><td>白塞病</td><td>PEDBD 2015（儿童专属）</td><td>共识之三沿用</td><td>一致（有儿童标准）</td></tr>
+<tr><td>干燥综合征</td><td>无儿童标准</td><td>借用成人 2016 ACR/EULAR</td><td>均缺儿童标准</td></tr>
+<tr><td>MCTD</td><td>无儿童标准</td><td>沿用 Sharp 等四套</td><td>均缺儿童标准</td></tr>
+</tbody>
+</table>
+</div>
+<h3>7.3 三大易错点速记</h3>
+<div class="core-alert">
+<div class="core-alert-title">三大易错点</div>
+<ol>
+<li><strong>MAS 铁蛋白界值 684</strong>（非 HLH 的 500）——sJIA 患者发热 + 铁蛋白飙升即警觉</li>
+<li><strong>川崎病发热：</strong>国内 2023 循证指南完全性 KD 表述为"发热"（未强制 ≥5 天）；2017 AHA 为"≥4 天即考虑"。勿固守天数延误治疗</li>
+<li><strong>儿童白塞病有 PEDBD 2015</strong>；干燥综合征、MPA、EGPA、MCTD 才是真正缺乏儿童标准的疾病</li>
+</ol>
+</div>
+<h3>7.4 资料来源区分</h3>
+<p>一手权威来源（原始指南/共识）可直接引用。二次整理资料（AI 综述/课件）引用前须对照原始指南核实，不可直接当作指南条文引用。</p>
+</section>
+<!-- 八、参考文献 -->
+<section class="section" id="refs">
+<div class="section-head"><span class="section-num">Ⅷ</span><h2>权威参考文献（完整出处）</h2></div>
+<h3>国际原始标准文献</h3>
+<ol>
+<li>Aringer M, Costenbader KH, Brinks R, et al. 2019 EULAR/ACR Classification Criteria for Systemic Lupus Erythematosus. <em>Arthritis Rheumatol.</em> 2019;71(9):1400-1412.</li>
+<li>Petri M, Orbai AM, Alarcón GS, et al. Derivation and Validation of SLICC Classification Criteria for SLE. <em>Arthritis Rheum.</em> 2012;64(8):2677-2686.</li>
+<li>Petty RE, Southwood TR, Baum J, et al. Revision of the Proposed Classification Criteria for JIA: Durban, 1997. <em>J Rheumatol.</em> 2004;31(2):390-392.</li>
+<li>Martini A, Ravelli A, Avcin T, et al. Toward New Classification Criteria for JIA: First Steps, PRINTO International Consensus. <em>J Rheumatol.</em> 2019;46:190-197.</li>
+<li>Yildiz M, Kilic Konte E, Aslan E, et al. Classification of Nonsystemic JIA Using the Provisional PRINTO Criteria. <em>J Rheumatol.</em> 2026;53(7):800-807.</li>
+<li>Ravelli A, Minoia F, Davì S, et al. 2016 Classification Criteria for MAS Complicating sJIA. <em>Ann Rheum Dis.</em> 2016;75(3):481-489.</li>
+<li>Lundberg IE, Tjärnlund A, Bottai M, et al. 2017 EULAR/ACR Classification Criteria for Adult and Juvenile IIM and Their Major Subgroups. <em>Ann Rheum Dis.</em> 2017;76(12):1955-1964.</li>
+<li>Ozen S, Ruperto N, Dillon MJ, et al. EULAR/PRINTO/PRES criteria ... Ankara 2008. Part II: Final classification criteria. <em>Ann Rheum Dis.</em> 2010;69(5):798-806.</li>
+<li>Ruperto N, Ozen S, Pistorio A, et al. EULAR/PRINTO/PRES criteria ... Ankara 2008. Part I. <em>Ann Rheum Dis.</em> 2010;69(5):790-797.</li>
+<li>McCrindle BW, Rowley AH, Newburger JW, et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease: AHA Scientific Statement. <em>Circulation.</em> 2017;135(17):e927-e999.</li>
+<li>International Study Group. Criteria for diagnosis of Behçet's disease. <em>Lancet.</em> 1990;335(8697):1078-1080.</li>
+<li>Davatchi F, Abdollahi BS, Chams-Davatchi C, et al. The ICBD: a collaborative study of 27 countries. <em>J Eur Acad Dermatol Venereol.</em> 2014;28(3):338-347.</li>
+<li>Koné-Paut I, Darce-Bello M, Karman F, et al. Consensus classification criteria for paediatric Behçet's disease: PEDBD. <em>Ann Rheum Dis.</em> 2016;75(6):958-964.</li>
+<li>Batu ED. Diagnostic/classification criteria in pediatric Behçet's disease. <em>Rheumatol Int.</em> 2019;39(1):37-46（PMID:30430200）.</li>
+<li>Shiboski CH, Shiboski SC, Seror R, et al. 2016 ACR/EULAR Classification Criteria for Primary Sjögren's Syndrome. <em>Ann Rheum Dis.</em> 2017;76(5):803-811.</li>
+<li>Jennette JC, Falk RJ, Bacon PA, et al. 2012 Revised International Chapel Hill Consensus Conference Nomenclature of Vasculitides. <em>Arthritis Rheum.</em> 2013;65(1):1-11.</li>
+<li>Sharp GC. Diagnostic criteria for MCTD. <em>Arthritis Rheum.</em> 1987;30(suppl):S24.</li>
+<li>Tanaka Y, Kawaguchi Y, Fujimoto M, et al. 2019 Diagnostic criteria for MCTD: from the Japan Research Committee. <em>Mod Rheumatol.</em> 2021;31(1):29-33.</li>
+</ol>
+<h3>国内指南/共识（完整名称与出处）</h3>
+<ol start="19">
+<li>海峡两岸医药卫生交流协会儿童风湿免疫专业委员会, 等. 儿童系统性红斑狼疮临床诊断与治疗专家共识（2025 版）. <em>中华风湿病学杂志.</em> 2025;29(7).</li>
+<li>中华医学会儿科学分会免疫学组, 中华儿科杂志编辑委员会. 中国儿童系统性红斑狼疮诊断与治疗指南. <em>中华儿科杂志.</em> 2021;59(12):1009.</li>
+<li>中华医学会风湿病学分会. 中国系统性红斑狼疮诊疗指南（2025 版）. <em>中华医学杂志.</em> 2025.（成人版）</li>
+<li>中华医学会儿科学分会免疫学组, 等. 中国幼年特发性关节炎诊断及治疗临床实践指南（2023 版）. <em>中华儿科杂志.</em> 2023（PMID:37096259）.</li>
+<li>中华医学会儿科学分会风湿病学组, 等. 全身型幼年特发性关节炎诊断与治疗中国专家共识（2023 年版）.</li>
+<li>中华医学会儿科学分会风湿病学组, 海峡两岸医药卫生交流协会儿童风湿免疫专业委员会, 等. 全身型幼年特发性关节炎合并巨噬细胞活化综合征诊疗专家共识（2025 版）.</li>
+<li>中华医学会儿科学分会免疫学组, 等. 中国幼年皮肌炎诊断与治疗指南. <em>中华儿科杂志.</em> 2022;60(12):1236-1247（PMID:36444423）.</li>
+<li>幼年皮肌炎诊断与治疗专家共识. <em>中华实用儿科临床杂志.</em> 2022.</li>
+<li>中华医学会儿科学分会免疫学组, 等. 中国儿童 IgA 血管炎诊断与治疗指南（2023）. <em>中华儿科杂志.</em> 2023;61(12):1067-1076（PMID:38018043）.</li>
+<li>中国医师协会儿科医师分会风湿免疫学组. 中国儿童血管炎诊断与治疗系列专家共识（之一总论/之二多发性大动脉炎/之三白塞/之五 AAV）. <em>中国实用儿科杂志.</em> 2023 年第 4 期.</li>
+<li>陕西省川崎病诊疗中心, 国家儿童医学中心, 等. 中国儿童川崎病诊疗循证指南（2023 年）. <em>中国当代儿科杂志.</em> 2023;25(12):1198-1210.</li>
+<li>中华医学会儿科学分会心血管学组, 风湿学组, 免疫学组, 等. 川崎病诊断和急性期治疗专家共识. 2022.</li>
+<li>原发性干燥综合征诊疗规范（2020 版）.</li>
+<li>混合性结缔组织病诊断及治疗指南. 2011.</li>
+<li>中国大动脉炎相关血压评估和多学科管理专家共识（2025 修订版）.（成人，供血压管理参考）</li>
+</ol>
+</section>
+<div class="footer-note">
+      本文档截至 2026 年，所有标准均标注一手权威来源。撰写过程记录于归墟知识库（标签 PedRheumCriteria）。
+    </div>
+</main>
+</div>
+<button aria-label="返回顶部" class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+function toggleMenu(){
+  document.getElementById('toc').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+window.addEventListener('scroll', function(){
+  var t = document.getElementById('totop');
+  if(window.scrollY > 400){ t.classList.add('show'); } else { t.classList.remove('show'); }
+});
+// 点击目录链接后自动关闭（移动端）
+document.querySelectorAll('#toc a').forEach(function(a){
+  a.addEventListener('click', function(){
+    if(window.innerWidth <= 880){
+      document.getElementById('toc').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    }
+  });
+});
+</script>
+<div style="max-width:900px;margin:26px auto 0;padding:12px 22px;font-size:12.5px;color:#5A6B7C;line-height:1.9;text-align:center;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构的规范。</div>
+<script src="../assets/qrcode.min.js"></script>
+<script defer="" src="../assets/share.js?v=8"></script>
+</body>
+</html>

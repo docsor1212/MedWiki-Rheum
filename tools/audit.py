@@ -44,7 +44,7 @@ def audit(rel):
     chk('无SW注册', 'serviceWorker' not in raw)
     chk('无github.io旧域', 'docsor1212.github.io' not in raw)
     scripts = ' '.join(sc.get('src') or '' for sc in soup.find_all('script', src=True))
-    chk('share.js v7', 'share.js?v=7' in scripts)
+    chk('share.js v8', 'share.js?v=8' in scripts)
     chk('qrcode', 'qrcode.min.js' in scripts)
     body_text = soup.get_text()
     chk('免责声明', ('免责声明' in body_text and 'AI 辅助整理' in body_text))
