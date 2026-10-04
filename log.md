@@ -49,6 +49,26 @@
 - 文件：evidence/ev_cetirizine_overdose_01.html
 - 简介：3岁患儿西替利嗪过量20mg（4倍日剂量）的循证处置：剂量评估、去污染取舍、观察时长、心电图指征与家庭管理，20篇核验文献支撑
 
+
+## 2026-10-04 — 新增：儿童风湿免疫疾病诊断与分类标准汇总（2026版）
+- 文件：evidence/ped_rheum_criteria_2026.html
+- 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
+
+
+## 2026-10-04 — 新增：儿童风湿免疫疾病诊断与分类标准汇总（2026版）
+- 文件：evidence/ped_rheum_criteria_2026.html
+- 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
+
+
+## 2026-10-04 — 新增：儿童风湿免疫疾病诊断与分类标准汇总（2026版）
+- 文件：evidence/ped_rheum_criteria_2026.html
+- 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
+
+
+## 2026-10-04 — 新增：儿童风湿免疫疾病诊断与分类标准汇总（2026版）
+- 文件：evidence/ped_rheum_criteria_2026.html
+- 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
+
 ---
 
 *每次Ingest/Query/Lint操作后追加记录*
