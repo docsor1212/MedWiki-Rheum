@@ -971,7 +971,11 @@
  },
  {
   "t": "儿童风湿免疫疾病诊断与分类标准汇总（2026版）",
-  "u": "evidence/ped_rheum_criteria_2026.html",
+  "c": "循证证据"
+ },
+ {
+  "t": "儿童风湿免疫疾病诊断与分类标准汇总（2026版）",
+  "u": "evidence/ev_ped_rheum_criteria_26.html",
   "c": "循证证据"
  }
 ]

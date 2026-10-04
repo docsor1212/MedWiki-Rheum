@@ -69,6 +69,11 @@
 - 文件：evidence/ped_rheum_criteria_2026.html
 - 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
 
+
+## 2026-10-04 — 新增：儿童风湿免疫疾病诊断与分类标准汇总（2026版）
+- 文件：evidence/ev_ped_rheum_criteria_26.html
+- 简介：cSLE、JIA、sJIA+MAS、JDM、IgAV、川崎病、大动脉炎、GPA、白塞病等儿童风湿免疫疾病分类/诊断标准逐条对照，标注标准性质、国内外差异与33篇核验文献
+
 ---
 
 *每次Ingest/Query/Lint操作后追加记录*
