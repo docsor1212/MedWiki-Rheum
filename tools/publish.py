@@ -41,6 +41,10 @@ anchor = "<div class=\"timeline\">"
 assert anchor in s, "index.html 缺少时间线"
 entry = ("\n    <div class=\"tl-item\">\n      <div class=\"tl-date\">%s</div>\n"
          "      <div class=\"tl-text\"><b>%s</b> — %s <a href=\"evidence/%s\">阅读全文</a></div>\n    </div>") % (today, a.title, a.desc, name)
+# 2026-10 fix: 时间线按文档去重——先移除同文档旧条目，再在顶部插入新条目（每文档仅保留1条）
+parts = s.split('<div class="tl-item">')
+parts = [parts[0]] + [c for c in parts[1:] if ('evidence/%s' % name) not in c]
+s = '<div class="tl-item">'.join(parts)
 s = s.replace(anchor, anchor + entry, 1)
 open(p, "w", encoding="utf-8", newline="\n").write(s)
 
