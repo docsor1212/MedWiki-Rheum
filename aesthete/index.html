@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aesthete-agent — 给 AI 的前端配色引擎</title>
+<meta name="description" content="aesthete-agent 技术文档:117 块实证色板、OKLCH 角色派生、四道机械闸门。可直接安装的 Agent Skill 与 MCP 服务器,纯标准库,离线,零密钥。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FDF7EE;color:#3D405B;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+     font-size:16.5px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:#B8543F;text-decoration:none;border-bottom:1px solid rgba(184,84,63,.35)}
+a:hover{border-bottom-color:#B8543F}
+.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 56px;border-bottom:1px solid rgba(94,100,114,.16)}
+.eyebrow{font:700 12px/1 system-ui;letter-spacing:.3em;color:#B8543F}
+.hero h1{font:800 54px/1.12 Georgia,"Times New Roman",serif;margin:20px 0 6px;color:#3D405B}
+.hero h1 em{font-style:normal;color:#E07066}
+.standfirst{font:400 19px/1.7 system-ui;color:#5E6472;max-width:660px;margin-top:14px}
+.standfirst b{font-weight:700;color:#3D405B}
+.chips{display:flex;gap:8px;margin-top:26px}
+.chips i{width:38px;height:38px;border-radius:9px;box-shadow:0 3px 10px rgba(94,100,114,.18)}
+.install{margin-top:30px;background:#3D405B;border-radius:12px;padding:16px 20px;
+         display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.install code{font:500 13.5px/1.5 ui-monospace,Consolas,monospace;color:#FDF7EE;flex:1;min-width:260px}
+.install .lbl{font:700 10px system-ui;letter-spacing:.18em;color:#B8C4D8}
+.meta{margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;font:500 13px system-ui;color:#8A93A3}
+.meta b{color:#5E6472;font-weight:700}
+
+/* ---------- sections ---------- */
+section{padding:64px 0 8px;position:relative}
+.knum{position:absolute;right:0;top:52px;font:800 96px Georgia,serif;color:rgba(94,100,114,.08);line-height:1}
+.kick{font:700 12px/1 system-ui;letter-spacing:.3em;color:#B8543F}
+section h2{font:800 32px/1.25 Georgia,serif;margin:12px 0 20px;color:#3D405B}
+section p{margin:0 0 16px;color:#4A4E63}
+section p b{color:#3D405B}
+.note{font-size:14px;color:#8A93A3}
+
+/* pipeline */
+.pipe{display:flex;gap:0;align-items:stretch;margin:26px 0 10px;flex-wrap:wrap}
+.pipe .st{flex:1;min-width:118px;background:#fff;border:1px solid rgba(94,100,114,.18);
+          border-radius:10px;padding:14px 12px;position:relative}
+.pipe .st b{display:block;font:700 14px system-ui;color:#3D405B;margin-bottom:4px}
+.pipe .st span{font:400 11.5px/1.5 system-ui;color:#8A93A3}
+.pipe .st hot,.pipe .st.hot{border-color:#E07066;border-width:2px}
+.pipe .ar{align-self:center;padding:0 7px;color:#E07066;font:800 16px system-ui}
+
+/* gate cards */
+.gates{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0 8px}
+.gate{background:#fff;border:1px solid rgba(94,100,114,.18);border-radius:14px;padding:22px 24px}
+.gate h3{font:800 17px system-ui;color:#3D405B;margin-bottom:8px}
+.gate h3 span{font:700 10px system-ui;letter-spacing:.16em;color:#B8543F;display:block;margin-bottom:6px}
+.gate p{font-size:14.5px;color:#5E6472;margin:0}
+.gate code{font:500 12.5px ui-monospace,Consolas,monospace;background:rgba(94,100,114,.09);
+           border-radius:5px;padding:1px 6px;color:#3D405B}
+
+/* blind demo */
+.blind{background:#fff;border:1px solid rgba(94,100,114,.18);border-radius:14px;padding:24px 26px;margin:24px 0 8px}
+.blind h4{font:700 14px system-ui;color:#3D405B;margin-bottom:14px}
+.brow{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.brow .lab{width:118px;flex:none;font:600 12px system-ui;color:#8A93A3}
+.brow i{flex:1;min-width:52px;height:34px;border-radius:7px}
+.brow .coll{font:600 11px system-ui;color:#B8543F;flex:none}
+.brow.ok .coll{color:#4E7A64}
+
+/* shots */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 8px}
+.shots figure{background:#fff;border:1px solid rgba(94,100,114,.18);border-radius:14px;overflow:hidden}
+.shots img{width:100%;display:block}
+.shots figcaption{padding:10px 16px;font:500 12.5px system-ui;color:#8A93A3}
+.shots figcaption b{color:#5E6472}
+
+/* cases */
+.case{background:#fff;border:1px solid rgba(94,100,114,.18);border-left:3px solid #E07066;
+      border-radius:12px;padding:20px 26px;margin:0 0 16px}
+.case h3{font:700 16px system-ui;color:#3D405B;margin-bottom:8px}
+.case p{font-size:15px;color:#5E6472;margin:0}
+.case .n{font:700 12px monospace;color:#B8543F;margin-right:8px}
+
+/* install */
+.inst{background:#3D405B;border-radius:14px;padding:22px 26px;margin:24px 0 8px}
+.inst h4{font:700 11px system-ui;letter-spacing:.2em;color:#B8C4D8;margin-bottom:10px}
+.inst code{display:block;font:500 13px/1.7 ui-monospace,Consolas,monospace;color:#FDF7EE;white-space:pre-wrap;word-break:break-all}
+.inst .sep{height:1px;background:rgba(253,247,238,.14);margin:14px 0}
+
+/* footer */
+.foot{margin-top:80px;padding:34px 0 64px;border-top:1px solid rgba(94,100,114,.16);
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+      font:400 13px system-ui;color:#8A93A3}
+.foot a{color:#5E6472}
+
+@media(max-width:720px){
+ .hero h1{font-size:38px}
+ .gates,.shots{grid-template-columns:1fr}
+ .knum{display:none}
+ .pipe .ar{display:none}
+ .pipe .st{min-width:46%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES</div>
+  <h1>给 AI 的<br>前端<em>配色引擎</em></h1>
+  <p class="standfirst">一个可直接安装的 Agent Skill 与 MCP 服务器,把前端配色从"模型的直觉"变成<b>可验证的工程输出</b>:
+     117 块实证色板、OKLCH 角色派生、四道机械闸门。纯标准库,离线运行,零密钥,零遥测。</p>
+  <div class="chips" aria-hidden="true">
+    <i style="background:#FAF3DD"></i><i style="background:#FDF7EE"></i><i style="background:#5E6472"></i>
+    <i style="background:#8A93A3"></i><i style="background:#FFA69E"></i><i style="background:#AED9E0"></i>
+    <i style="background:#B8F2E6"></i><i style="background:#E07066"></i>
+  </div>
+  <div class="install">
+    <span class="lbl">INSTALL</span>
+    <code>npx skills add docsor1212/aesthete-agent&nbsp;&nbsp;·&nbsp;&nbsp;uvx aesthete-agent-mcp</code>
+  </div>
+  <div class="meta">
+    <span>版本 <b>v0.5.0</b></span><span>许可 <b>MIT</b></span><span>引擎 <b>纯标准库</b></span>
+    <span>色板库 <b>117 块</b></span><span>运行 <b>离线</b></span>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="knum">01</div>
+  <div class="kick">THE PROBLEM</div>
+  <h2>模型配色的失手,是结构性的</h2>
+  <p>大模型输出的配色经常不可用,原因有三个,而且都与模型规模无关:</p>
+  <p><b>一,hex 被当作文本处理。</b>模型在 token 空间里"背诵"颜色,而不是在感知空间里比较它们——两个 hex 放在一起是否协调,它没有把握。</p>
+  <p><b>二,输出回归训练中位数。</b>公开前端教程里出现频率最高的配色倾向是紫与蓝。没有外部约束时,模型会稳定地漂回这个中位数,产出千篇一律的"AI 味"。</p>
+  <p><b>三,模型看不见自己的输出。</b>它无法渲染一张图再检查文字是否可读、色盲用户是否分辨得出。这三件事,恰恰是配色工程里必须验证的部分。</p>
+  <p>aesthete-agent 的做法不是换一个更聪明的模型,而是<b>把品味外包给流程</b>:检索先于生成,派生先于偏好,验证先于交付。</p>
+</section>
+
+<section id="method">
+  <div class="knum">02</div>
+  <div class="kick">METHOD</div>
+  <h2>六步流程,每步有机制</h2>
+  <p>从一句话需求到一份通过验收的配色,引擎按固定顺序执行六步。其中任何一步失败,流程会停下来并给出修复建议,而不是继续输出。</p>
+  <div class="pipe">
+    <div class="st"><b>Brief</b><span>需求解析为语域与约束,用户指定的颜色是绑定条件</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>Match</b><span>117 块实证色板按语域排序,人气分层+客观质量双过滤</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>Derive</b><span>OKLCH 派生角色:纸底/墨字/口声,60-30-10 配比</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>Render</b><span>十个真实场景画布,设备框与内容密度同真实交付一致</span></div>
+    <div class="ar">→</div>
+    <div class="st hot"><b>Gates</b><span>四道机械闸,任一失败即中止并给出修复建议</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>Verdict</b><span>裁决回写:色板库与偏好档案随每次验收进化</span></div>
+  </div>
+  <p class="note">角色派生在 OKLCH 空间完成:大底抬亮与降饱和有固定公式,文字与底色的对比度在派生时就已确定,而不是渲染后碰运气。</p>
+</section>
+
+<section id="gates">
+  <div class="knum">03</div>
+  <div class="kick">MECHANICAL GATES</div>
+  <h2>四道闸门,退出码即裁决</h2>
+  <p>每一份输出都要过四道闸。闸门只认数字,不认修辞——下面这组卡片里的每个数字都来自引擎对本文档所用色板的实测。</p>
+  <div class="gates">
+    <div class="gate"><h3><span>GATE 1 · CONTRAST</span>对比度</h3>
+      <p>WCAG 2.2 边界值逐对检验(#767676 通过、#777777 不通过这种级别的边界都在测试集里),可选 APCA 感知算法。本文档正文对底色实测 <code>5.57:1</code>,AA 通过。失败时输出修复建议:沿 OKLCH 抬升亮度直到达标。</p></div>
+    <div class="gate"><h3><span>GATE 2 · COLOR-BLIND</span>色盲安全</h3>
+      <p>红色弱/绿色弱/蓝色弱三种模拟逐一检查色间分离度,分类色板要求去盲分离度 <code>≥ 0.08</code>。模拟是诚实的:分离度下降会被如实标出,并给出"改靠明度差或加标签"的替代方案。</p></div>
+    <div class="gate"><h3><span>GATE 3 · AI-SLOP</span>签名检测</h3>
+      <p>检测四类高发签名:训练中位数色族、紫渐变倾向、平坦明度、全高饱和。命中即非零退出。另有一条工程铁律:<b>任何渐变一律不合格</b>,纯色分层替代。</p></div>
+    <div class="gate"><h3><span>GATE 4 · SCORECARD</span>五维评分</h3>
+      <p>明度弧、饱和分布、角色配比、语义一致性、可访问性,五维合计 20 分。低于 10 分非零退出。对本色板实测 <code>15/20</code>,并如实附上一条 P1:红绿色盲下两色碰撞,建议靠明度差或加标签。</p></div>
+  </div>
+  <p class="note">四闸聚合为一条 <code>report</code> 命令:一次调用输出单份 PASS/FAIL JSON,退出码即裁决,可直接接入 CI。</p>
+
+  <div class="blind">
+    <h4>色盲模拟实测 — 本文档色板(Bees &amp; Honey,8 色)</h4>
+    <div class="brow"><span class="lab">original</span>
+      <i style="background:#FAF3DD"></i><i style="background:#FDF7EE"></i><i style="background:#5E6472"></i>
+      <i style="background:#8A93A3"></i><i style="background:#FFA69E"></i><i style="background:#AED9E0"></i>
+      <i style="background:#B8F2E6"></i><i style="background:#E07066"></i></div>
+    <div class="brow"><span class="lab">protanopia</span>
+      <i style="background:#F9F2DC"></i><i style="background:#FAF7EE"></i><i style="background:#606573"></i>
+      <i style="background:#8E94A4"></i><i style="background:#B5AF9D"></i><i style="background:#D1D5E1"></i>
+      <i style="background:#ECEAE6"></i><i style="background:#837C65"></i><span class="coll">Δ -0.001</span></div>
+    <div class="brow"><span class="lab">deuteranopia</span>
+      <i style="background:#FBF4DE"></i><i style="background:#FBF8EE"></i><i style="background:#5F6372"></i>
+      <i style="background:#8C91A3"></i><i style="background:#C9BF9D"></i><i style="background:#C8CDE0"></i>
+      <i style="background:#DFE1E7"></i><i style="background:#9B8F65"></i><span class="coll">Δ +0.002</span></div>
+    <div class="brow ok"><span class="lab">tritanopia</span>
+      <i style="background:#FFEFEC"></i><i style="background:#FFF5F4"></i><i style="background:#5A6768"></i>
+      <i style="background:#859698"></i><i style="background:#FF9EA4"></i><i style="background:#A2DDDB"></i>
+      <i style="background:#ABF5EE"></i><i style="background:#FE666D"></i><span class="coll">Δ +0.007 · OK</span></div>
+    <p class="note" style="margin-top:12px">注意 FFA69E 与 837C65 在红色弱模拟下几乎重合——引擎不会替你隐瞒这件事,它会给出行级提示。这个色板用于正文与大面积底色是安全的,用作数据分类色则需要补一个明度差。</p>
+  </div>
+</section>
+
+<section id="visual">
+  <div class="knum">04</div>
+  <div class="kick">SCENES</div>
+  <h2>十个场景,所见即交付</h2>
+  <p>色板不适合用色卡评审。引擎把配色渲染进十个真实场景——移动应用、落地页、仪表盘、品牌、字阶、图表、商品卡、邮件、编辑页、图案——大画布、设备框、真实内容密度。浅色与暗色两套主题均由角色派生公式驱动,暗色大底自动抬亮降饱和,避免"黑压压"。</p>
+  <div class="shots">
+    <figure><img src="shots-light.png" alt="浅色主题十场景"><figcaption><b>浅色主题 · Bees &amp; Honey</b> — 十场景画布(节选)</figcaption></figure>
+    <figure><img src="shots-dark.png" alt="明亮暗色主题十场景"><figcaption><b>明亮暗色 · Olive Garden</b> — 大底抬亮 +11 L,降饱和 28%</figcaption></figure>
+  </div>
+  <p>交互版:<a href="showcase.html">打开完整 Showcase</a>(六套配色 × 全部场景,含你正在看的这一份文档同款色板)。场景画布同样过闸:渐变零容忍,文字对底色逐点检查。</p>
+</section>
+
+<section id="library">
+  <div class="knum">05</div>
+  <div class="kick">EVIDENCE LIBRARY</div>
+  <h2>117 块色板,和它们背后的裁决</h2>
+  <p>色板库有两个来源:社区长期沉淀的高人气板(收割时逐块过客观闸),以及<b>使用者验收后的裁决入库</b>——每次"这个配色通过"的决定都会让库向使用者的真实口味靠近一步。目前库内 117 块,其中 30 块来自验收裁决。</p>
+  <p>匹配不是检索关键词,而是语域:医疗教学页与电商大促页会得到不同的候选序列,且候选都要先过同一套客观闸。偏好档案(深色惩罚、禁用色族、已验证板)随裁决持续更新,机械地作用于每一次匹配。</p>
+</section>
+
+<section id="cases">
+  <div class="knum">06</div>
+  <div class="kick">FIELD NOTES</div>
+  <h2>两个使用场景</h2>
+  <div class="case"><h3><span class="n">CASE 1</span>系列视频封面的身份色锁定</h3>
+    <p>一套医学科普视频系列,二十余期封面共用同一块五色板作为系列身份。色板锁定后,每期只更换构图与标题元素——观众不看节目名也能凭颜色认出系列。闸门在这条管线里的职责是防止"某一张忽然跑色":每期封面交付前过一次对比度与 slop 检查。</p></div>
+  <div class="case"><h3><span class="n">CASE 2</span>医疗教学长页面的可读性兜底</h3>
+    <p>长篇教学页面正文量大、层级深,最常见的问题不是"不好看"而是"某一段忽然读不清"。交付前的 HTML 审计逐点检查文字对底色的对比度,渐变与高饱和签名直接判不合格——对以可读性为生命的医学内容,这道闸是兜底而不是装饰。</p></div>
+</section>
+
+<section id="install">
+  <div class="knum">07</div>
+  <div class="kick">INSTALL</div>
+  <h2>三条安装路径</h2>
+  <p>Skill 形态面向编码代理的技能目录;MCP 形态面向任何支持 Model Context Protocol 的客户端;两者共用同一引擎。</p>
+  <div class="inst">
+    <h4>AGENT SKILL</h4>
+    <code>npx skills add docsor1212/aesthete-agent</code>
+    <div class="sep"></div>
+    <h4>MCP SERVER (PyPI)</h4>
+    <code>uvx aesthete-agent-mcp</code>
+    <div class="sep"></div>
+    <h4>MCP SERVER (SMITHERY)</h4>
+    <code>smithery.ai/server/docsor1212/aesthete-agent-mcp</code>
+  </div>
+  <p class="note">引擎为纯 Python 标准库实现,安装后完全离线;不需要 API key,不上传任何数据。色板库与偏好档案以 JSON 随包分发,可离线审计。</p>
+</section>
+
+<footer class="foot">
+  <span>aesthete-agent v0.5.0 · MIT License</span>
+  <span><a href="https://github.com/docsor1212/aesthete-agent">GitHub</a> · <a href="showcase.html">Visual Showcase</a> · <a href="https://pypi.org/project/aesthete-agent-mcp/">PyPI</a> · <a href="https://smithery.ai/server/docsor1212/aesthete-agent-mcp">Smithery</a></span>
+  <span>本页由 aesthete-agent 自行设计并通过其四道闸门</span>
+</footer>
+
+</div>
+</body>
+</html>
