@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三条安装路径 — aesthete-agent</title>
+<meta name="description" content="aesthete-agent 技术文档:117 块实证色板、OKLCH 角色派生、四道机械闸门。纯标准库,离线,零密钥。">
+<style>
+:root{--bg:#F9F6E6;--surface:#F2EED6;--ink:#222E50;--ink2:#677390;--acc:#007991;
+      --atext:#007991;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:##FDF7EE;--CSEP:#rgba(255,255,255,.14);--CAT:#222E50}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+     font-size:16.5px;line-height:1.92;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.stripe{height:4px;background:var(--acc)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 36px}
+.eyebrow{font:700 12px/1 var(--sans);letter-spacing:.3em;color:var(--atext)}
+h1{font:800 52px/1.18 var(--serif);color:var(--ink);margin:18px 0 8px}
+h1 em{font-style:normal;color:var(--acc)}
+h2{font:800 27px/1.3 var(--serif);color:var(--ink);margin:0 0 18px}
+.lead{font:400 18px/1.85 var(--sans);color:var(--ink2)}
+header.top{padding:64px 0 40px}
+.palchip{display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+         font:600 12px var(--sans);border:1px solid var(--hair);border-radius:99px;
+         padding:7px 16px;color:var(--ink2);background:var(--surface)}
+.palchip i{width:14px;height:14px;border-radius:50%;background:var(--acc)}
+.stage{background:var(--surface);border-radius:20px;padding:44px 50px;margin:26px 0 30px;
+       box-shadow:0 20px 56px rgba(30,32,40,.10)}
+.card{background:var(--bg);border:1px solid var(--hair);border-radius:14px;padding:22px 26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
+.card h3{font:800 16.5px var(--serif);color:var(--ink);margin-bottom:8px}
+.card h3 .g{font:700 10px var(--sans);letter-spacing:.18em;color:var(--atext);display:block;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--ink2);line-height:1.8}
+.card code{font:500 .85em ui-monospace,Consolas,monospace;background:rgba(0,0,0,.06);
+           border-radius:5px;padding:1px 6px;color:var(--ink)}
+.pull{font:600 21px/1.7 var(--serif);color:var(--ink);border-left:3px solid var(--acc);
+      padding:8px 0 8px 24px;margin:30px 0}
+.fact{display:flex;gap:16px;align-items:flex-start}
+.fact b.no{font:800 30px var(--serif);color:var(--atext);line-height:1;flex:none}
+.fact div p{margin:0}
+.pipe{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:6px 0}
+.pipe .st{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--hair);
+          border-radius:10px;padding:14px 12px}
+.pipe .st b{display:block;font:700 13.5px var(--sans);color:var(--ink);margin-bottom:4px}
+.pipe .st span{font:400 11px/1.5 var(--sans);color:var(--ink2)}
+.pipe .ar{align-self:center;padding:0 7px;color:var(--acc);font:800 15px var(--sans)}
+.pipe .st.hot{border:2px solid var(--acc)}
+.numband{display:flex;gap:0;margin:14px 0 26px}
+.numband .nb{flex:1;text-align:center;padding:20px 8px;border-left:1px solid var(--hair)}
+.numband .nb:first-child{border-left:0}
+.numband b{display:block;font:800 44px/1 var(--serif);color:var(--acc)}
+.numband span{font:500 13px var(--sans);color:var(--ink2)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:10px 0 18px}
+.shots img{width:100%;display:block;border-radius:12px;border:1px solid var(--hair)}
+.shots .cap{font:500 12.5px var(--sans);color:var(--ink2);padding:8px 4px 0}
+.inst{background:var(--ink);border-radius:14px;padding:22px 28px;margin:12px 0}
+.inst h4{font:700 10.5px var(--sans);letter-spacing:.22em;color:var(--CAI);margin-bottom:9px}
+.inst code{display:block;font:500 13px/1.7 ui-monospace,Consolas,monospace;
+           color:var(--CIT);white-space:pre-wrap;word-break:break-all}
+.inst .sep{height:1px;background:var(--CSEP);margin:14px 0}
+.note{font-size:13.5px;color:var(--ink2)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.badges span{font:600 11px var(--sans);padding:5px 12px;border-radius:99px;
+             border:1px solid var(--hair);background:var(--surface);color:var(--ink2)}
+.badges span.hot{background:var(--acc);color:var(--CAT);border-color:var(--acc)}
+.pnav{display:flex;justify-content:space-between;gap:16px;margin:14px 0 0;padding-top:22px;
+      border-top:1px solid var(--hair)}
+.pnav a{font:700 13.5px var(--sans);color:var(--ink2)}
+.pnav a:hover{color:var(--acc)}
+.pnav a small{display:block;font:500 10.5px var(--sans);color:var(--mute);letter-spacing:.14em;margin-bottom:3px}
+.pnav a.r{text-align:right}
+footer{padding:30px 0 64px;font:400 12px var(--sans);color:var(--ink2)}
+.hub .chgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 8px}
+.hub .ch{border-radius:16px;padding:24px 26px;border:1px solid var(--hair);display:block}
+.hub .ch:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(30,32,40,.12)}
+.hub .ch .no{font:800 13px ui-monospace,monospace;letter-spacing:.1em}
+.hub .ch b{display:block;font:800 22px var(--serif);color:var(--ink);margin:10px 0 6px}
+.hub .ch span{font:400 13px var(--sans);color:var(--ink2)}
+.hub .ch .chips{display:flex;gap:5px;margin-top:14px}
+.hub .ch .chips i{width:26px;height:12px;border-radius:4px}
+.chips{display:flex;gap:8px;margin:26px 0}
+.chips i{width:38px;height:38px;border-radius:9px;box-shadow:0 3px 10px rgba(94,100,114,.16)}
+@media(max-width:760px){
+ h1{font-size:38px}
+ .grid2,.hub .chgrid,.shots{grid-template-columns:1fr}
+ .numband{flex-wrap:wrap}
+ .stage{padding:26px 22px}
+}
+
+</style></head><body>
+<div class="stripe"></div><div class="wrap">
+<header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 07 / INSTALL</div>
+  <h1>三条安装路径</h1>
+  <div class="palchip"><i></i>本页色板 · Deep Space Blue(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>Skill 形态面向编码代理的技能目录;MCP 形态面向任何支持 Model Context Protocol 的客户端;两者共用同一引擎。</p><div class='inst'><h4>AGENT SKILL</h4><code>npx skills add docsor1212/aesthete-agent</code><div class='sep'></div><h4>MCP SERVER · PYPI</h4><code>uvx aesthete-agent-mcp</code><div class='sep'></div><h4>MCP SERVER · SMITHERY</h4><code>smithery.ai/server/docsor1212/aesthete-agent-mcp</code></div><p class='note'>引擎为纯 Python 标准库实现,安装后完全离线;不需要 API key,不上传任何数据。色板库与偏好档案以 JSON 随包分发,可离线审计。</p><div class='pull'>读到这里,你已经看过了七种色板在七种版式上的表现——这就是引擎做的事。</div>
+<div class="pnav"><a href='cases.html'><small>← PREV</small>06 两个使用场景</a><span></span></div>
+<footer>aesthete-agent v0.5.0 · MIT · <a href="index.html">目录</a> · <a href="showcase.html">Showcase</a> ·
+<a href="https://github.com/docsor1212/aesthete-agent">GitHub</a> · <a href="https://pypi.org/project/aesthete-agent-mcp/">PyPI</a>
+· 本页由引擎派生配色并通过四道闸门</footer>
+</div></body></html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>四道闸门,退出码即裁决 — aesthete-agent</title>
+<meta name="description" content="aesthete-agent 技术文档:117 块实证色板、OKLCH 角色派生、四道机械闸门。纯标准库,离线,零密钥。">
+<style>
+:root{--bg:#FCF5E6;--surface:#F6ECD5;--ink:#073B4C;--ink2:#5A7D8B;--acc:#EF476F;
+      --atext:#D82E5D;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:##FDF7EE;--CSEP:#rgba(255,255,255,.14);--CAT:#073B4C}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+     font-size:16.5px;line-height:1.92;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.stripe{height:4px;background:var(--acc)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 36px}
+.eyebrow{font:700 12px/1 var(--sans);letter-spacing:.3em;color:var(--atext)}
+h1{font:800 52px/1.18 var(--serif);color:var(--ink);margin:18px 0 8px}
+h1 em{font-style:normal;color:var(--acc)}
+h2{font:800 27px/1.3 var(--serif);color:var(--ink);margin:0 0 18px}
+.lead{font:400 18px/1.85 var(--sans);color:var(--ink2)}
+header.top{padding:64px 0 40px}
+.palchip{display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+         font:600 12px var(--sans);border:1px solid var(--hair);border-radius:99px;
+         padding:7px 16px;color:var(--ink2);background:var(--surface)}
+.palchip i{width:14px;height:14px;border-radius:50%;background:var(--acc)}
+.stage{background:var(--surface);border-radius:20px;padding:44px 50px;margin:26px 0 30px;
+       box-shadow:0 20px 56px rgba(30,32,40,.10)}
+.card{background:var(--bg);border:1px solid var(--hair);border-radius:14px;padding:22px 26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
+.card h3{font:800 16.5px var(--serif);color:var(--ink);margin-bottom:8px}
+.card h3 .g{font:700 10px var(--sans);letter-spacing:.18em;color:var(--atext);display:block;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--ink2);line-height:1.8}
+.card code{font:500 .85em ui-monospace,Consolas,monospace;background:rgba(0,0,0,.06);
+           border-radius:5px;padding:1px 6px;color:var(--ink)}
+.pull{font:600 21px/1.7 var(--serif);color:var(--ink);border-left:3px solid var(--acc);
+      padding:8px 0 8px 24px;margin:30px 0}
+.fact{display:flex;gap:16px;align-items:flex-start}
+.fact b.no{font:800 30px var(--serif);color:var(--atext);line-height:1;flex:none}
+.fact div p{margin:0}
+.pipe{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:6px 0}
+.pipe .st{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--hair);
+          border-radius:10px;padding:14px 12px}
+.pipe .st b{display:block;font:700 13.5px var(--sans);color:var(--ink);margin-bottom:4px}
+.pipe .st span{font:400 11px/1.5 var(--sans);color:var(--ink2)}
+.pipe .ar{align-self:center;padding:0 7px;color:var(--acc);font:800 15px var(--sans)}
+.pipe .st.hot{border:2px solid var(--acc)}
+.numband{display:flex;gap:0;margin:14px 0 26px}
+.numband .nb{flex:1;text-align:center;padding:20px 8px;border-left:1px solid var(--hair)}
+.numband .nb:first-child{border-left:0}
+.numband b{display:block;font:800 44px/1 var(--serif);color:var(--acc)}
+.numband span{font:500 13px var(--sans);color:var(--ink2)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:10px 0 18px}
+.shots img{width:100%;display:block;border-radius:12px;border:1px solid var(--hair)}
+.shots .cap{font:500 12.5px var(--sans);color:var(--ink2);padding:8px 4px 0}
+.inst{background:var(--ink);border-radius:14px;padding:22px 28px;margin:12px 0}
+.inst h4{font:700 10.5px var(--sans);letter-spacing:.22em;color:var(--CAI);margin-bottom:9px}
+.inst code{display:block;font:500 13px/1.7 ui-monospace,Consolas,monospace;
+           color:var(--CIT);white-space:pre-wrap;word-break:break-all}
+.inst .sep{height:1px;background:var(--CSEP);margin:14px 0}
+.note{font-size:13.5px;color:var(--ink2)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.badges span{font:600 11px var(--sans);padding:5px 12px;border-radius:99px;
+             border:1px solid var(--hair);background:var(--surface);color:var(--ink2)}
+.badges span.hot{background:var(--acc);color:var(--CAT);border-color:var(--acc)}
+.pnav{display:flex;justify-content:space-between;gap:16px;margin:14px 0 0;padding-top:22px;
+      border-top:1px solid var(--hair)}
+.pnav a{font:700 13.5px var(--sans);color:var(--ink2)}
+.pnav a:hover{color:var(--acc)}
+.pnav a small{display:block;font:500 10.5px var(--sans);color:var(--mute);letter-spacing:.14em;margin-bottom:3px}
+.pnav a.r{text-align:right}
+footer{padding:30px 0 64px;font:400 12px var(--sans);color:var(--ink2)}
+.hub .chgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 8px}
+.hub .ch{border-radius:16px;padding:24px 26px;border:1px solid var(--hair);display:block}
+.hub .ch:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(30,32,40,.12)}
+.hub .ch .no{font:800 13px ui-monospace,monospace;letter-spacing:.1em}
+.hub .ch b{display:block;font:800 22px var(--serif);color:var(--ink);margin:10px 0 6px}
+.hub .ch span{font:400 13px var(--sans);color:var(--ink2)}
+.hub .ch .chips{display:flex;gap:5px;margin-top:14px}
+.hub .ch .chips i{width:26px;height:12px;border-radius:4px}
+.chips{display:flex;gap:8px;margin:26px 0}
+.chips i{width:38px;height:38px;border-radius:9px;box-shadow:0 3px 10px rgba(94,100,114,.16)}
+@media(max-width:760px){
+ h1{font-size:38px}
+ .grid2,.hub .chgrid,.shots{grid-template-columns:1fr}
+ .numband{flex-wrap:wrap}
+ .stage{padding:26px 22px}
+}
+
+</style></head><body>
+<div class="stripe"></div><div class="wrap">
+<header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 03 / MECHANICAL GATES</div>
+  <h1>四道闸门,退出码即裁决</h1>
+  <div class="palchip"><i></i>本页色板 · Pop Deco(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>每一份输出都要过四道闸。闸门只认数字,不认修辞——下面卡片里的每个数字,都来自引擎对<b>本页所用色板</b>的实测。</p><div class='grid2'><div class='card'><h3><span class='g'>GATE 1 · CONTRAST</span>对比度</h3><p>WCAG 2.2 边界值逐对检验(#767676 通过、#777777 不通过,这种级别的边界都在测试集里),可选 APCA 感知算法。失败时输出修复建议:沿 OKLCH 抬升亮度直到达标。</p></div><div class='card'><h3><span class='g'>GATE 2 · COLOR-BLIND</span>色盲安全</h3><p>红色弱/绿色弱/蓝色弱三种模拟逐一检查色间分离度,分类色板要求去盲分离度 ≥ 0.08。模拟是诚实的:分离度下降会如实标出,并给出替代方案。</p></div><div class='card'><h3><span class='g'>GATE 3 · AI-SLOP</span>签名检测</h3><p>检测四类高发签名:训练中位数色族、紫渐变倾向、平坦明度、全高饱和。命中即非零退出。另有一条工程铁律:任何渐变一律不合格,纯色分层替代。</p></div><div class='card'><h3><span class='g'>GATE 4 · SCORECARD</span>五维评分</h3><p>明度弧、饱和分布、角色配比、语义一致性、可访问性,五维合计 20 分,低于 10 分非零退出。</p></div></div><p class='note'>四闸聚合为一条 <code>report</code> 命令:一次调用输出单份 PASS/FAIL JSON,退出码即裁决,可直接接入 CI。</p><div class='card' style='margin-top:8px'><h3>色盲模拟实测 — 本页色板(Pop Deco,5 色)</h3><div class='pipe' style='flex-direction:column;align-items:stretch'><div class='st' style='margin:4px 0'><b>original</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FAF3DD;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FDF7EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5E6472;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8A93A3;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FFA69E;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#AED9E0;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#B8F2E6;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#E07066;display:inline-block;margin-right:6px'></i></span></div><div class='st' style='margin:4px 0'><b>protanopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#F9F2DC;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FAF7EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#606573;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8E94A4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#B5AF9D;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#D1D5E1;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#ECEAE6;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#837C65;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ −0.001</span></div><div class='st' style='margin:4px 0'><b>deuteranopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FBF4DE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FBF8EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5F6372;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8C91A3;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#C9BF9D;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#C8CDE0;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#DFE1E7;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#9B8F65;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ +0.002</span></div><div class='st' style='margin:4px 0'><b>tritanopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FFEFEC;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FFF5F4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5A6768;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#859698;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FF9EA4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#A2DDDB;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#ABF5EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FE666D;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ +0.007 · OK</span></div></div><p class='note' style='margin-top:10px'>模拟是诚实的:即便整体通过,个别色对的分离度变化也会行级标出。</p></div>
+<div class="pnav"><a href='method.html'><small>← PREV</small>02 六步流程,每步有机制</a><a class='r' href='scenes.html'><small>NEXT →</small>04 十个场景,所见即交付</a></div>
+<footer>aesthete-agent v0.5.0 · MIT · <a href="index.html">目录</a> · <a href="showcase.html">Showcase</a> ·
+<a href="https://github.com/docsor1212/aesthete-agent">GitHub</a> · <a href="https://pypi.org/project/aesthete-agent-mcp/">PyPI</a>
+· 本页由引擎派生配色并通过四道闸门</footer>
+</div></body></html>
