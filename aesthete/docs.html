@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aesthete-agent 技术文档 — 连续版</title>
+<meta name="description" content="给 AI 的前端配色引擎:问题、方法、闸门、场景、色板库、案例与安装,一页连续读完。">
+<style>
+:root{--bg:#F9F5F0;--surface:#F0ECE7;--ink:#5E6472;--ink2:#696F7E;--acc:#E07066;
+      --atext:#DA6B61;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:#rgba(255,255,255,.14);--CAT:#5E6472}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#EFEBE0;color:var(--ink);font-family:var(--sans);
+     font-size:17px;line-height:1.8;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.stripe{height:4px;background:var(--acc)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 36px}
+.eyebrow{font:700 12px/1 var(--sans);letter-spacing:.3em;color:var(--atext)}
+h1{font:800 52px/1.18 var(--serif);color:var(--ink);margin:18px 0 8px}
+h1 em{font-style:normal;color:var(--acc)}
+h2{font:800 27px/1.3 var(--serif);color:var(--ink);margin:0 0 18px}
+.lead{font:400 18px/1.8 var(--sans);color:var(--ink);max-width:660px}
+header.top{padding:64px 0 40px}
+.palchip{display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+         font:600 12px var(--sans);border:1px solid var(--hair);border-radius:99px;
+         padding:7px 16px;color:var(--ink2);background:var(--surface)}
+.palchip i{width:14px;height:14px;border-radius:50%;background:var(--acc)}
+.stage{background:var(--surface);border-radius:20px;padding:38px 44px;margin:24px 0 26px;
+       box-shadow:0 20px 56px rgba(30,32,40,.10)}
+.card{background:var(--bg);border:1px solid var(--hair);border-radius:14px;padding:22px 26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0}
+.card h3{font:800 16.5px var(--serif);color:var(--ink);margin-bottom:8px}
+.card h3 .g{font:700 10px var(--sans);letter-spacing:.18em;color:var(--atext);display:block;margin-bottom:6px}
+.card p{font-size:15.5px;color:var(--ink2);line-height:1.8}
+.card code{font:500 .85em ui-monospace,Consolas,monospace;background:rgba(0,0,0,.06);
+           border-radius:5px;padding:1px 6px;color:var(--ink)}
+.pull{font:600 21px/1.7 var(--serif);color:var(--ink);border-left:3px solid var(--acc);
+      padding:8px 0 8px 24px;margin:30px 0}
+.fact{display:flex;gap:16px;align-items:flex-start}
+.fact b.no{font:800 30px var(--serif);color:var(--atext);line-height:1;flex:none}
+.fact div p{margin:0}
+.pipe{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:6px 0}
+.pipe .st{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--hair);
+          border-radius:10px;padding:14px 12px}
+.pipe .st b{display:block;font:700 13.5px var(--sans);color:var(--ink);margin-bottom:4px}
+.pipe .st span{font:400 11px/1.5 var(--sans);color:var(--ink2)}
+.pipe .ar{align-self:center;padding:0 7px;color:var(--acc);font:800 15px var(--sans)}
+.pipe .st.hot{border:2px solid var(--acc)}
+.numband{display:flex;gap:0;margin:14px 0 26px}
+.numband .nb{flex:1;text-align:center;padding:20px 8px;border-left:1px solid var(--hair)}
+.numband .nb:first-child{border-left:0}
+.numband b{display:block;font:800 44px/1 var(--serif);color:var(--acc)}
+.numband span{font:500 13px var(--sans);color:var(--ink2)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:10px 0 18px}
+.shots img{width:100%;display:block;border-radius:12px;border:1px solid var(--hair)}
+.shots .cap{font:500 12.5px var(--sans);color:var(--ink2);padding:8px 4px 0}
+.inst{background:var(--ink);border-radius:14px;padding:22px 28px;margin:12px 0}
+.inst h4{font:700 10.5px var(--sans);letter-spacing:.22em;color:var(--CAI);margin-bottom:9px}
+.inst code{display:block;font:500 13px/1.7 ui-monospace,Consolas,monospace;
+           color:var(--CIT);white-space:pre-wrap;word-break:break-all}
+.inst .sep{height:1px;background:var(--CSEP);margin:14px 0}
+.note{font-size:13.5px;color:var(--ink2)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.badges span{font:600 11px var(--sans);padding:5px 12px;border-radius:99px;
+             border:1px solid var(--hair);background:var(--surface);color:var(--ink2)}
+.badges span.hot{background:var(--acc);color:var(--CAT);border-color:var(--acc)}
+.pnav{display:flex;justify-content:space-between;gap:16px;margin:14px 0 0;padding-top:22px;
+      border-top:1px solid var(--hair)}
+.pnav a{font:700 13.5px var(--sans);color:var(--ink2)}
+.pnav a:hover{color:var(--acc)}
+.pnav a small{display:block;font:500 10.5px var(--sans);color:var(--mute);letter-spacing:.14em;margin-bottom:3px}
+.pnav a.r{text-align:right}
+footer{padding:30px 0 64px;font:400 12px var(--sans);color:var(--ink2)}
+.hub .chgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 8px}
+.hub .ch{border-radius:16px;padding:24px 26px;border:1px solid var(--hair);display:block}
+.hub .ch:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(30,32,40,.12)}
+.hub .ch .no{font:800 13px ui-monospace,monospace;letter-spacing:.1em}
+.hub .ch b{display:block;font:800 22px var(--serif);color:var(--ink);margin:10px 0 6px}
+.hub .ch span{font:400 13px var(--sans);color:var(--ink2)}
+.hub .ch .chips{display:flex;gap:5px;margin-top:14px}
+.hub .ch .chips i{width:26px;height:12px;border-radius:4px}
+.chips{display:flex;gap:8px;margin:26px 0}
+.chips i{width:38px;height:38px;border-radius:9px;box-shadow:0 3px 10px rgba(94,100,114,.16)}
+@media(max-width:760px){
+ h1{font-size:38px}
+ .grid2,.hub .chgrid,.shots{grid-template-columns:1fr}
+ .numband{flex-wrap:wrap}
+ .stage{padding:26px 22px}
+}
+
+
+/* ── 连续长页骨架 ── */
+.topbar{position:sticky;top:0;z-index:50;background:#EFEBE0;border-bottom:1px solid rgba(61,64,91,.18)}
+.topbar .bar{max-width:980px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
+.topbar .brand{font:800 15px var(--sans);color:#3D405B;text-decoration:none;white-space:nowrap}
+.topbar nav{display:flex;gap:4px 16px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{font:600 13px var(--sans);color:#3D405B;text-decoration:none;white-space:nowrap;padding:3px 0;border-bottom:2px solid transparent}
+.topbar nav a:hover{border-bottom-color:#D1495B}
+.topbar nav a.x{color:#6B7280}
+.chap{background:var(--bg);color:var(--ink);scroll-margin-top:0}
+.chap .inner{max-width:980px;margin:0 auto;padding:52px 24px 60px}
+.chap + .chap{border-top:1px solid rgba(61,64,91,.14)}
+.chap header.top{position:static;border:none;padding:0;margin-bottom:6px}
+.chap .docnav a{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="bar">
+<a class="brand" href="../">aesthete-agent</a>
+<nav><a href="#ch0">00 概述</a><a href="#ch1">01 问题</a><a href="#ch2">02 方法</a><a href="#ch3">03 闸门</a><a href="#ch4">04 场景</a><a href="#ch5">05 色板库</a><a href="#ch6">06 案例</a><a href="#ch7">07 安装</a><a class="x" href="showcase.html">Showcase</a><a class="x" href="../">← 首页</a></nav>
+</div></div>
+<section class='chap' id='ch0' style='--bg:#F9F5F0;--surface:#F0ECE7;--ink:#5E6472;--ink2:#696F7E;--acc:#E07066;
+      --atext:#DA6B61;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#5E6472'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 00 / OVERVIEW</div>
+  <h1>给 AI 的前端配色引擎</h1>
+  <div class="palchip"><i></i>本页色板 · Bees & Honey(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>大模型输出的配色经常不可用:hex 被当作文本、输出回归训练中位数、而且模型看不见自己渲染的结果。aesthete-agent 把品味外包给流程——<b>检索先于生成,派生先于偏好,验证先于交付</b>。这份文档本身就是一个实例:每一页用一块不同的色板渲染,由同一套角色派生公式驱动,全部通过四道机械闸。</p><div class='chgrid'><a class='ch' href='#ch1' style='background:#FFF4E6'><span class='no' style='color:#B62F46'>CHAPTER 01</span><b>问题</b><span>为什么模型配色会失手</span><span class='chips'><i style='background:#EDAE49'></i><i style='background:#D1495B'></i><i style='background:#00798C'></i><i style='background:#30638E'></i><i style='background:#003D5B'></i></span></a><a class='ch' href='#ch2' style='background:#F6F5F5'><span class='no' style='color:#AA856B'>CHAPTER 02</span><b>方法</b><span>六步流程,每步有机制</span><span class='chips'><i style='background:#555B6E'></i><i style='background:#89B0AE'></i><i style='background:#BEE3DB'></i><i style='background:#FAF9F9'></i><i style='background:#FFD6BA'></i></span></a><a class='ch' href='#ch3' style='background:#FCF5E6'><span class='no' style='color:#D82E5D'>CHAPTER 03</span><b>机械闸门</b><span>对比度/色盲/slop/评分</span><span class='chips'><i style='background:#EF476F'></i><i style='background:#FFD166'></i><i style='background:#06D6A0'></i><i style='background:#118AB2'></i><i style='background:#073B4C'></i></span></a><a class='ch' href='#ch4' style='background:#46513B'><span class='no' style='color:#F67872'>CHAPTER 04</span><b>场景渲染</b><span>十个真实场景画布</span><span class='chips'><i style='background:#FEFAE0'></i><i style='background:#283618'></i><i style='background:#606C38'></i><i style='background:#BC6C25'></i><i style='background:#DDA15E'></i><i style='background:#9B2226'></i></span></a><a class='ch' href='#ch5' style='background:#FFF3EB'><span class='no' style='color:#B90139'>CHAPTER 05</span><b>实证色板库</b><span>117 块板与裁决机制</span><span class='chips'><i style='background:#D8A47F'></i><i style='background:#EF8354'></i><i style='background:#EE4B6A'></i><i style='background:#DF3B57'></i><i style='background:#0F7173'></i></span></a><a class='ch' href='#ch6' style='background:#FBF5EF'><span class='no' style='color:#AB7FA1'>CHAPTER 06</span><b>使用场景</b><span>封面身份色与可读性兜底</span><span class='chips'><i style='background:#8D6B94'></i><i style='background:#B185A7'></i><i style='background:#C3A29E'></i><i style='background:#E8DBC5'></i><i style='background:#FFF4E9'></i></span></a><a class='ch' href='#ch7' style='background:#F9F6E6'><span class='no' style='color:#007991'>CHAPTER 07</span><b>安装</b><span>Skill / PyPI / Smithery</span><span class='chips'><i style='background:#222E50'></i><i style='background:#007991'></i><i style='background:#439A86'></i><i style='background:#BCD8C1'></i><i style='background:#E9D985'></i></span></a></div><div class='badges'><span class='hot'>117 块实证色板</span><span>OKLCH 角色派生</span><span>WCAG 2.2 + APCA</span><span>色盲三模拟</span><span>AI-slop 签名检测</span><span>渐变零容忍</span><span>纯标准库 · 离线 · 零密钥</span></div><p class='note' style='margin-top:18px'>交互样张见 <a href='showcase.html'>Visual Showcase</a> · 安装方式见 <a href='#ch7'>07 安装</a>。</p>
+<div class="pnav"><span></span><a class='r' href='#ch1'><small>NEXT →</small>01 模型配色的失手,是结构性的</a></div>
+</div></section>
+<section class='chap' id='ch1' style='--bg:#FFF4E6;--surface:#FAEAD6;--ink:#003D5B;--ink2:#20475E;--acc:#D1495B;
+      --atext:#B62F46;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#003D5B'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 01 / THE PROBLEM</div>
+  <h1>模型配色的失手,是结构性的</h1>
+  <div class="palchip"><i></i>本页色板 · Editorial Deep(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>大模型输出的配色经常不可用,原因有三个,而且都与模型规模无关。</p><div class='grid2' style='grid-template-columns:1fr'><div class='card fact'><b class='no'>一</b><div><h3>hex 被当作文本</h3><p>模型在 token 空间里「背诵」颜色,而不是在感知空间里比较它们——两个 hex 放在一起是否协调,它没有把握。</p></div></div><div class='card fact'><b class='no'>二</b><div><h3>输出回归训练中位数</h3><p>公开前端教程里出现频率最高的倾向是紫与蓝。没有外部约束时,模型会稳定地漂回这个中位数,产出千篇一律的「AI 味」。</p></div></div><div class='card fact'><b class='no'>三</b><div><h3>模型看不见自己的输出</h3><p>它无法渲染一张图再检查文字是否可读、色盲用户是否分辨得出。而这三件事,恰恰是配色工程里必须验证的部分。</p></div></div></div><div class='pull'>aesthete-agent 不换模型。它给配色流程装上四道机械闸:每个输出在交付前实测对比度、色盲分离度、AI 味签名与五维评分,失败就带着修复建议回来。</div><p>换更聪明的模型解决不了这三个问题——它们是流程问题,不是智力问题。</p>
+<div class="pnav"><a href='#ch0'><small>← PREV</small>00 给 AI 的前端配色引擎</a><a class='r' href='#ch2'><small>NEXT →</small>02 六步流程,每步有机制</a></div>
+</div></section>
+<section class='chap' id='ch2' style='--bg:#F6F5F5;--surface:#EDECEC;--ink:#555B6E;--ink2:#61677A;--acc:#FFD6BA;
+      --atext:#AA856B;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#555B6E'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 02 / METHOD</div>
+  <h1>六步流程,每步有机制</h1>
+  <div class="palchip"><i></i>本页色板 · Morning Pastel(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>从一句话需求到一份通过验收的配色,引擎按固定顺序执行六步。其中任何一步失败,流程会停下来并给出修复建议,而不是继续输出。</p><div class='pipe'><div class='st'><b>Brief</b><span>需求解析为语域与约束,用户指定的颜色是绑定条件</span></div><div class='ar'>→</div><div class='st'><b>Match</b><span>117 块实证色板按语域排序,人气分层+客观质量双过滤</span></div><div class='ar'>→</div><div class='st'><b>Derive</b><span>OKLCH 派生角色:纸底/墨字/口声,60-30-10 配比</span></div><div class='ar'>→</div><div class='st'><b>Render</b><span>十个真实场景画布,设备框与内容密度同真实交付一致</span></div><div class='ar'>→</div><div class='st hot'><b>Gates</b><span>四道机械闸,任一失败即中止并给出修复建议</span></div><div class='ar'>→</div><div class='st'><b>Verdict</b><span>裁决回写:色板库与偏好档案随每次验收进化</span></div></div><p class='note'>角色派生在 OKLCH 空间完成:大底抬亮与降饱和有固定公式,文字与底色的对比度在派生时就已确定,而不是渲染后碰运气。</p><div class='pull'></div><p>第六步是引擎与「一次性输出」的区别:每次验收或否决都回写色板库与偏好档案,下一次匹配随真实口味移动。</p>
+<div class="pnav"><a href='#ch1'><small>← PREV</small>01 模型配色的失手,是结构性的</a><a class='r' href='#ch3'><small>NEXT →</small>03 四道闸门,退出码即裁决</a></div>
+</div></section>
+<section class='chap' id='ch3' style='--bg:#FCF5E6;--surface:#F6ECD5;--ink:#073B4C;--ink2:#326173;--acc:#EF476F;
+      --atext:#D82E5D;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#073B4C'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 03 / MECHANICAL GATES</div>
+  <h1>四道闸门,退出码即裁决</h1>
+  <div class="palchip"><i></i>本页色板 · Pop Deco(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>每一份输出都要过四道闸。闸门只认数字,不认修辞——下面卡片里的每个数字,都来自引擎对<b>本页所用色板</b>的实测。</p><div class='grid2'><div class='card'><h3><span class='g'>GATE 1 · CONTRAST</span>对比度</h3><p>WCAG 2.2 边界值逐对检验(#767676 通过、#777777 不通过,这种级别的边界都在测试集里),可选 APCA 感知算法。失败时输出修复建议:沿 OKLCH 抬升亮度直到达标。</p></div><div class='card'><h3><span class='g'>GATE 2 · COLOR-BLIND</span>色盲安全</h3><p>红色弱/绿色弱/蓝色弱三种模拟逐一检查色间分离度,分类色板要求去盲分离度 ≥ 0.08。分离度下降会如实标出,并给出替代方案。</p></div><div class='card'><h3><span class='g'>GATE 3 · AI-SLOP</span>签名检测</h3><p>检测四类高发签名:训练中位数色族、紫渐变倾向、平坦明度、全高饱和。命中即非零退出。另有一条工程铁律:任何渐变一律不合格,纯色分层替代。</p></div><div class='card'><h3><span class='g'>GATE 4 · SCORECARD</span>五维评分</h3><p>明度弧、饱和分布、角色配比、语义一致性、可访问性,五维合计 20 分,低于 10 分非零退出。</p></div></div><p class='note'>四闸聚合为一条 <code>report</code> 命令:一次调用输出单份 PASS/FAIL JSON,退出码即裁决,可直接接入 CI。</p><div class='card' style='margin-top:8px'><h3>色盲模拟实测 — 本页色板(Pop Deco,5 色)</h3><div class='pipe' style='flex-direction:column;align-items:stretch'><div class='st' style='margin:4px 0'><b>original</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FAF3DD;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FDF7EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5E6472;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8A93A3;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FFA69E;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#AED9E0;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#B8F2E6;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#E07066;display:inline-block;margin-right:6px'></i></span></div><div class='st' style='margin:4px 0'><b>protanopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#F9F2DC;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FAF7EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#606573;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8E94A4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#B5AF9D;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#D1D5E1;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#ECEAE6;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#837C65;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ −0.001</span></div><div class='st' style='margin:4px 0'><b>deuteranopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FBF4DE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FBF8EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5F6372;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#8C91A3;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#C9BF9D;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#C8CDE0;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#DFE1E7;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#9B8F65;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ +0.002</span></div><div class='st' style='margin:4px 0'><b>tritanopia</b><span style='display:block;margin-top:6px'><i style='width:30px;height:22px;border-radius:5px;background:#FFEFEC;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FFF5F4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#5A6768;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#859698;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FF9EA4;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#A2DDDB;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#ABF5EE;display:inline-block;margin-right:6px'></i><i style='width:30px;height:22px;border-radius:5px;background:#FE666D;display:inline-block;margin-right:6px'></i></span><span style='color:var(--atext);font-weight:700'>Δ +0.007 · OK</span></div></div><p class='note' style='margin-top:10px'>模拟是诚实的:即便整体通过,个别色对的分离度变化也会行级标出。</p></div>
+<div class="pnav"><a href='#ch2'><small>← PREV</small>02 六步流程,每步有机制</a><a class='r' href='#ch4'><small>NEXT →</small>04 十个场景,所见即交付</a></div>
+</div></section>
+<section class='chap' id='ch4' style='--bg:#46513B;--surface:#5F6A55;--ink:#FEFAE0;--ink2:#D0CCB3;--acc:#9B2226;
+      --atext:#F67872;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#000000;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#FEFAE0'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 04 / SCENES</div>
+  <h1>十个场景,所见即交付</h1>
+  <div class="palchip"><i></i>本页色板 · Olive Garden(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>色板不适合用色卡评审。引擎把配色渲染进十个真实场景——移动应用、落地页、仪表盘、品牌、字阶、图表、商品卡、邮件、编辑页、图案——大画布、设备框、真实内容密度。</p><p>本章页面特意选用<b>明亮暗色主题</b>演示:暗色大底由角色派生公式自动抬亮(Olive Garden 大底 +11 L、降饱和 28%),暗色不等于黑压压。截图为浅色与暗色两套主题的十场景画布。</p><div class='shots'><div><img src='shots-light.png' alt='浅色十场景'><div class='cap'>浅色主题 · Bees &amp; Honey</div></div><div><img src='shots-dark.png' alt='明亮暗色十场景'><div class='cap'>明亮暗色 · Olive Garden</div></div></div><p>完整交互版(二十块收藏色板 × 全部场景,含 SVG 重着色演示)在 <a href='showcase.html'>Visual Showcase</a>。</p>
+<div class="pnav"><a href='#ch3'><small>← PREV</small>03 四道闸门,退出码即裁决</a><a class='r' href='#ch5'><small>NEXT →</small>05 117 块色板,和它们背后的裁决</a></div>
+</div></section>
+<section class='chap' id='ch5' style='--bg:#FFF3EB;--surface:#FEE8D9;--ink:#004445;--ink2:#004445;--acc:#DF3B57;
+      --atext:#B90139;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#004445'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 05 / EVIDENCE LIBRARY</div>
+  <h1>117 块色板,和它们背后的裁决</h1>
+  <div class="palchip"><i></i>本页色板 · Terracotta Warm(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>色板库有两个来源:社区长期沉淀的高人气板(收割时逐块过客观闸),以及<b>使用者验收后的裁决入库</b>——每一次「这个配色通过」的决定都会让库向使用者的真实口味靠近一步。</p><div class='numband'><div class='nb'><b>117</b><span>色板总数</span></div><div class='nb'><b>30</b><span>验收裁决入库</span></div><div class='nb'><b>4</b><span>机械闸门</span></div><div class='nb'><b>10</b><span>场景画布</span></div></div><p>匹配按语域而非关键词:医疗教学页与电商大促页得到不同的候选序列,且候选都先过同一套客观闸。偏好档案(深色惩罚、禁用色族、已验证板)随裁决持续更新,机械地作用于每一次匹配。</p><div class='pull'>裁决越多,排序越贴近使用者的口味。</div>
+<div class="pnav"><a href='#ch4'><small>← PREV</small>04 十个场景,所见即交付</a><a class='r' href='#ch6'><small>NEXT →</small>06 两个使用场景</a></div>
+</div></section>
+<section class='chap' id='ch6' style='--bg:#FBF5EF;--surface:#F2ECE5;--ink:#7C5E82;--ink2:#7B5F80;--acc:#B185A7;
+      --atext:#AB7FA1;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#7C5E82'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 06 / FIELD NOTES</div>
+  <h1>两个使用场景</h1>
+  <div class="palchip"><i></i>本页色板 · Lavender Mist(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>两个真实使用场景,一个关于「一致性」,一个关于「兜底」。</p><div class='case'><h3><span class='n'>CASE 1</span>系列视频封面的身份色锁定</h3><p>一套医学科普视频系列,二十余期封面共用同一块五色板作为系列身份。色板锁定后,每期只更换构图与标题元素——观众不看节目名也能凭颜色认出系列。闸门在这条管线里的职责是防止「某一张忽然跑色」:每期封面交付前过一次对比度与签名检查。</p></div><div class='case'><h3><span class='n'>CASE 2</span>医疗教学长页面的可读性兜底</h3><p>长篇教学页面正文量大、层级深,最常见的问题不是「不好看」,而是「某一段忽然读不清」。交付前的 HTML 审计逐点检查文字对底色的对比度,渐变与高饱和签名直接判不合格——对以可读性为生命的医学内容,这道闸是兜底而不是装饰。</p></div><div class='pull'>这两个场景都不是特例:身份锁定与可读性兜底,是配色工程里最常见的一类需求。</div>
+<div class="pnav"><a href='#ch5'><small>← PREV</small>05 117 块色板,和它们背后的裁决</a><a class='r' href='#ch7'><small>NEXT →</small>07 三条安装路径</a></div>
+</div></section>
+<section class='chap' id='ch7' style='--bg:#F9F6E6;--surface:#F2EED6;--ink:#222E50;--ink2:#475577;--acc:#007991;
+      --atext:#007991;--hair:rgba(94,100,114,.16);
+      --sans:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+      --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+      --CAI:#FFFFFF;--CIT:#FDF7EE;--CSEP:rgba(255,255,255,.14);--CAT:#222E50'><div class='inner'><header class="top">
+  <div class="eyebrow">AESTHETE-AGENT · TECHNICAL NOTES · 07 / INSTALL</div>
+  <h1>三条安装路径</h1>
+  <div class="palchip"><i></i>本页色板 · Deep Space Blue(由引擎派生并过闸)</div>
+</header>
+<p class='lead'>Skill 形态面向编码代理的技能目录;SkillHub 面向国内环境;MCP 形态面向任何支持 Model Context Protocol 的客户端;两者共用同一引擎。</p><div class='inst'><h4>AGENT SKILL</h4><code>npx skills add docsor1212/aesthete-agent</code><div class='sep'></div><h4>SKILLHUB · 中文站</h4><code>skillhub install aesthete-agent --dir ~/.claude/skills</code><div class='sep'></div><h4>MCP SERVER · PYPI</h4><code>uvx aesthete-agent-mcp</code><div class='sep'></div><h4>MCP SERVER · SMITHERY</h4><code>smithery.ai/server/docsor1212/aesthete-agent-mcp</code></div><p class='note'>引擎为纯 Python 标准库实现,安装后完全离线;不需要 API key,不上传任何数据。色板库与偏好档案以 JSON 随包分发,可离线审计。</p><div class='pull'>七页七块色板,全部由同一套角色派生公式渲染——你刚看过的每一页,都是引擎的输出。</div>
+<div class="pnav"><a href='#ch6'><small>← PREV</small>06 两个使用场景</a><span></span></div>
+</div></section>
+<footer style='max-width:980px;margin:0 auto;padding:30px 24px 64px;font:400 12px var(--sans);color:#5E6472'>aesthete-agent v0.6.0 · MIT · <a href='showcase.html'>Showcase</a> · <a href='https://github.com/docsor1212/aesthete-agent'>GitHub</a> · <a href='https://pypi.org/project/aesthete-agent-mcp/'>PyPI</a> · 本页由引擎派生配色并通过四道闸门</footer>
+</body>
+</html>
