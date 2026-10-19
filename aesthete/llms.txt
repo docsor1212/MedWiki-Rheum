@@ -1,0 +1,32 @@
+# aesthete-agent
+
+> Mechanically validated frontend aesthetics engine (color only): a 118-palette evidence library matched by register, OKLCH harmony, WCAG 2.2 + APCA contrast gates, color-blind simulation, AI-slop detection, 10-scene visualizer, one-verdict acceptance report. Agent Skill + MCP server. Pure stdlib, offline, zero API keys.
+>
+> 中文:给 AI 用的前端美学引擎,只管配色。118 块实证色板按语域匹配;四道机械检查——对比度、色盲模拟、AI 味检测、五维评分——检查不过不交付。开源 MIT,纯本地运行。
+
+## Install
+
+- Agent skill (SkillHub): `skillhub install aesthete-agent --dir <your-skills-dir>`
+- Agent skill (GitHub): `npx skills add docsor1212/aesthete-agent`
+- MCP server (15 tools): `uvx aesthete-agent-mcp`
+
+## Try in 30 seconds
+
+Score the video cover on this site yourself:
+
+1. `curl -sO https://docsor.cn/aesthete/cover-bilibili.png`
+2. Extract its palette: run the skill's `extract cover-bilibili.png --n 5`
+3. Verdict: `report --palette <hex1,hex2,...>` → `{"verdict":"PASS"|"FAIL","gates":{...}}`
+
+Any AI can do step 1–3 with vision alone; the skill does it with numbers.
+
+## Commands
+
+`match` (register-ranked library search) · `directions` (cross-register whole-page candidates) · `score` · `report` (4 gates, exit code = verdict) · `matrix` · `blind` · `slop` · `evidence` (page-level dossier) · `visualize` (10 scenes) · `export` (css/tailwind/w3c/context) · `theme` · `card` · `make_variants`
+
+Full docs: https://docsor.cn/aesthete/docs.html · Live showcase: https://docsor.cn/aesthete/showcase.html
+
+## Facts
+
+- Library size: 118 palettes. Every count printed in our materials is test-enforced to equal the real library size.
+- License MIT · No network calls · No telemetry · Works fully offline.
