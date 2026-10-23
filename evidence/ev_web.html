@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<!--
+═══════════════════════════════════════════════════════════════════
+ MedWiki 深度文章模板 · KD考据体（默认文体）
+ 适用：一个临床问题的深挖（时机之争/方案比较/指南冲突）
+ 母版：evidence/ev_KD_04.html（川崎病IVIG使用时机，2026-09）
+ 使用：复制本文件 → 替换全部 {{占位符}} → 按【必填块清单】核对
+       → 存为 evidence/ev_<主题>_01.html → python3 tools/publish.py <文件> --title … --desc …
+───────────────────────────────────────────────────────────────────
+ 【必填块清单】（缺一不可，发布门禁会查）
+ 1. hero：kicker体裁标签 + h1主标题/副题 + meta三胶囊（依据/日期/作者）
+ 2. 核心结论卡（3秒前置结论，读者最先看）
+ 3. 临床问题（question卡：病例引入+争议点）
+ 4. 正文节（section/h2.sec，编号"一、二、…"；指南对照用表格+截图figure；
+    每张截图必须有来源标注；临床主张逐条挂引文）
+ 5. 主要参考文献（ol/li，每条含PMID，发布前过L1核验）
+ 6. 术语与截图说明（note）
+ 7. 相关阅读条（RELATED占位：站内专题/工具/病例互链，3-5张，站内转化关键）
+ 8. 页脚签名 + 免责声明（固定文案勿改）
+ ⛔ 术语核验：病名/评分名逐条过PubMed+名词委，查无此名即删
+ ⛔ 中国方案与国际方案不同处，必须标"中国方案"全称
+═══════════════════════════════════════════════════════════════════
+-->
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/evidence/ev_transaminitis_16y_04.html" data-theme="glm" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>一股随肝酶消长的怪味，少年的肝病到底为何？ — MedWiki-Rheum</title>
+<meta content="一股随肝酶消长的怪味，少年的肝病到底为何？" name="description"/>
+<meta content="#12365F" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<style>
+:root{
+    --navy:#1B4F8A; --navy-deep:#12365F; --navy-ink:#0F2A4A;
+    --gold:#C0893C; --gold-deep:#A8742F; --gold-bright:#E8A33D;
+    --blue-soft:#7FA8CC; --blue-mist:#EAF1F8; --blue-line:#C9D9EA;
+    --ink:#22303F; --ink-soft:#5A6B7C; --line:#DDE5EC;
+    --bg:#F5F6F8; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.95; font-size:16px;
+    max-width:900px; margin:0 auto; padding:0 0 60px;
+  }
+  .wrap{padding:0 22px;}
+
+  /* ── 站点导航（黄蓝斜线风格吸顶条） ── */
+  .sitenav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:9px 22px;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 70%);
+    border-bottom:4px solid var(--gold-bright);
+    box-shadow:0 2px 10px rgba(18,54,95,.28);
+    font-size:13.5px;
+  }
+  .sitenav::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(135deg,
+      transparent 0 26px, rgba(232,163,61,.18) 26px 34px,
+      transparent 34px 60px, rgba(127,168,204,.20) 60px 68px);
+  }
+  .sitenav a{
+    position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px;
+    text-decoration:none; font-weight:700; border-radius:999px; padding:5px 16px;
+  }
+  .sitenav a.home{background:var(--gold-bright); color:var(--navy-deep); box-shadow:0 2px 6px rgba(0,0,0,.28);}
+  .sitenav a.home:hover{background:#F2B455;}
+  .sitenav a.list{color:#fff; border:1.5px solid rgba(255,255,255,.65);}
+  .sitenav a.list:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .sitenav .cur{position:relative; z-index:1; color:#E8F0F9; font-weight:600;}
+  .sitenav .brand{margin-left:auto; position:relative; z-index:1; color:var(--gold-bright); font-weight:800; letter-spacing:.14em; font-size:12px;}
+
+  /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
+  .band{
+    height:16px;
+    background:repeating-linear-gradient(135deg,
+      var(--navy) 0 16px, transparent 16px 25px,
+      var(--blue-soft) 25px 41px, transparent 41px 50px,
+      var(--gold-bright) 50px 66px, transparent 66px 75px);
+  }
+  .band.thin{height:8px; opacity:.85;}
+
+  /* ── Hero 头区 ── */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, #2456A6 100%);
+    color:#fff; padding:48px 42px 36px;
+  }
+  .hero::before{
+    content:''; position:absolute; right:-34px; top:-34px; width:280px; height:280px;
+    background:repeating-linear-gradient(45deg, transparent 0 15px, rgba(127,168,204,.32) 15px 21px);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:''; position:absolute; left:-26px; bottom:-52px; width:230px; height:230px;
+    background:repeating-linear-gradient(45deg, transparent 0 17px, rgba(232,163,61,.28) 17px 24px);
+    pointer-events:none;
+  }
+  .hero .kicker{
+    display:inline-block; font-size:12.5px; letter-spacing:.4em; font-weight:600;
+    color:#CFE0F2; border:1px solid rgba(207,224,242,.55);
+    padding:4px 14px 3px; margin-bottom:18px; border-radius:2px;
+  }
+  .hero h1{font-size:28px; line-height:1.6; font-weight:800; letter-spacing:.01em; position:relative; z-index:1;}
+  .hero h1 .sub{display:block; font-size:16.5px; font-weight:600; color:var(--gold-bright); margin-top:8px; letter-spacing:.06em;}
+  .hero .meta{
+    display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1;
+    font-size:12.5px;
+  }
+  .hero .meta span{
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:4px 14px; color:#E8F0F9;
+  }
+  .hero .meta b{color:var(--gold-bright); font-weight:700; margin-right:2px;}
+
+  /* ── 核心结论 ── */
+  .verdict{
+    margin:-26px 22px 0; position:relative; z-index:2;
+    background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold-bright);
+    border-radius:14px; box-shadow:0 6px 22px rgba(18,54,95,.10);
+  }
+  .verdict .vhead{
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,#FBF4E6,#FFFFFF 72%);
+    padding:13px 22px; border-bottom:1px dashed #E4D5B4; border-radius:14px 14px 0 0;
+  }
+  .verdict .vhead .slash{color:var(--gold-bright); font-weight:800; letter-spacing:.1em;}
+  .verdict .vhead h2{font-size:17px; color:var(--gold-deep); letter-spacing:.22em; font-weight:800;}
+  .verdict p{padding:0 22px; margin:0;}
+  .verdict .vbody{padding:16px 0 18px;}
+  .verdict p{margin-bottom:13px; font-size:15.5px;}
+  .verdict p:last-child{margin-bottom:0;}
+
+  /* ── 章节 ── */
+  section{margin-top:54px;}
+  h2.sec{
+    font-size:23px; font-weight:800; color:var(--navy-ink);
+    padding:0; margin-bottom:22px; border:none; line-height:1.4;
+  }
+  h2.sec::before{content:'/// '; color:var(--gold-bright); letter-spacing:.06em; margin-right:4px;}
+  h2.sec::after{
+    content:''; display:block; width:132px; height:4px; margin-top:9px; border-radius:2px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 44px, var(--navy) 44px 132px);
+  }
+  h3{
+    font-size:16.5px; margin:30px 0 10px; color:var(--navy); font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+  h3::before{content:''; width:8px; height:8px; background:var(--gold-bright); transform:rotate(45deg); flex:none;}
+  p{margin:0 0 16px;}
+
+  /* ── 病例卡与临床问题 ── */
+  .case{
+    background:linear-gradient(180deg,#FFFFFF, #F2F7FC);
+    border:1px solid var(--blue-line); border-top:4px solid var(--navy);
+    border-radius:14px; padding:22px 24px 18px; margin:6px 0 24px; font-size:15.5px;
+    box-shadow:0 3px 14px rgba(18,54,95,.06);
+  }
+  .case p{margin-bottom:10px;}
+  .question{
+    background:#FDF8EF; border:1px dashed var(--gold); border-top:3px solid var(--gold-bright);
+    border-radius:12px; padding:14px 18px; margin-top:14px; font-size:15px;
+  }
+
+  /* ── 原文引用块 ── */
+  blockquote.q{
+    margin:20px 0; padding:18px 20px 14px 52px; position:relative;
+    background:var(--blue-mist); border:1px solid var(--blue-line); border-left:5px solid var(--navy);
+    border-radius:0 12px 12px 0; font-size:15px;
+  }
+  blockquote.q::before{
+    content:'\201C'; position:absolute; left:14px; top:2px;
+    font-family:Georgia,serif; font-size:52px; line-height:1; color:var(--blue-soft);
+  }
+  blockquote.q.en{font-family:Georgia,"Times New Roman",serif; font-size:15.5px; line-height:1.75;}
+
+  /* ── 截图与图表 ── */
+  figure.evidence{margin:24px 0 32px;}
+  figure.evidence .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:12px; padding:12px; background:#fff;
+    box-shadow:0 3px 14px rgba(18,54,95,.08);
+  }
+  figure.evidence .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--navy) 0 34%, var(--gold-bright) 34% 67%, var(--blue-soft) 67%);
+  }
+  figure.evidence img{width:100%; display:block; border-radius:6px;}
+  figure.evidence figcaption{
+    font-size:13px; color:var(--ink-soft); margin-top:10px; line-height:1.75;
+    padding-left:12px; border-left:3px solid var(--gold-bright);
+  }
+  figure.evidence figcaption b{color:var(--navy-ink);}
+  figure.chart{margin:26px 0 34px;}
+  figure.chart .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff;
+    box-shadow:0 4px 18px rgba(18,54,95,.09);
+  }
+  figure.chart .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 50%, var(--navy) 50%);
+  }
+  figure.chart img{width:100%; display:block; border-radius:6px;}
+  figure.chart figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.75;}
+  figure.chart figcaption .src{display:block; font-size:12px; color:#93A2B1; margin-top:4px;}
+
+  /* ── 表格 ── */
+  .tablewrap{
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 3px 14px rgba(18,54,95,.07); margin:22px 0 30px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  th{
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy)); color:#fff;
+    font-weight:700; padding:12px 14px; text-align:left; font-size:14px; letter-spacing:.06em;
+  }
+  td{border-top:1px solid var(--line); padding:12px 14px; vertical-align:top;}
+  tr:nth-child(even) td{background:#F6F9FC;}
+  td b{color:var(--navy);}
+
+  /* ── 参考文献 ── */
+  .refs{font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  .refs li{margin-bottom:7px; margin-left:22px;}
+  a.url{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft); word-break:break-all; font-size:0.92em;}
+  a.url:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
+  .note{
+    margin-top:26px; padding:16px 20px; background:#fff;
+    border:1px solid var(--line); border-left:4px solid var(--blue-soft); border-radius:10px;
+    font-size:12.5px; color:var(--ink-soft); line-height:1.85;
+  }
+  .note b{color:var(--navy);}
+
+  /* ── 页脚 ── */
+  footer{margin-top:60px; text-align:center;}
+  footer .sig{
+    display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.3em;
+    color:#fff; background:linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-bottom:3px solid var(--gold-bright);
+    padding:8px 26px 7px; border-radius:4px; margin-bottom:14px;
+  }
+  footer .fline{font-size:12px; color:#8A98A8; line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero{padding:36px 24px 30px;}
+    .hero h1{font-size:22px;}
+    .verdict{margin:-20px 12px 0;}
+    h2.sec{font-size:20px;}
+  }
+  @media print{
+    body{background:#fff; max-width:100%;}
+    .hero{background:var(--navy-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    figure .frame, .tablewrap{box-shadow:none;}
+  }
+/* 相关阅读条（自包含样式） */
+.mw-related{max-width:1100px;margin:30px auto 0;padding:0 20px;}
+.mw-related h2{font-size:15px;font-weight:800;color:#0F2A4A;margin:0 0 10px;}
+.mw-related .cards{display:flex;gap:10px;flex-wrap:wrap;}
+.mw-related .cards a{flex:1 1 200px;text-decoration:none;color:inherit;background:#fff;
+  border:1px solid #DDE5EC;border-top:3px solid #E8A33D;border-radius:10px;padding:10px 12px;
+  transition:transform .15s, box-shadow .15s;}
+.mw-related .cards a:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(15,42,74,.13);}
+.mw-related .cards .t{font-weight:700;font-size:13px;color:#1B4F8A;}
+.mw-related .cards .d{font-size:11.5px;color:#5A6B7C;margin-top:2px;}
+/* 站点页脚（自包含样式） */
+.mw-sfoot{max-width:1100px;margin:30px auto 0;padding:14px 20px 26px;border-top:1px solid #DDE5EC;
+  text-align:center;font-size:12px;color:#5A6B7C;line-height:1.9;}
+.mw-sfoot .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.mw-sfoot .flinks a{color:#1B4F8A;text-decoration:none;}
+</style>
+<!--mw-seo-->
+<link href="https://docsor.cn/evidence/ev_transaminitis_16y_04.html" rel="canonical"/>
+<meta content="一股随肝酶消长的怪味，少年的肝病到底为何？ — MedWiki-Rheum" property="og:title"/>
+<meta content="一股随肝酶消长的怪味，少年的肝病到底为何？" property="og:description"/>
+<meta content="https://docsor.cn/evidence/ev_transaminitis_16y_04.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="MedWiki-Rheum" property="og:site_name"/>
+<meta content="zh_CN" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<style>.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}figure img{max-width:100%;height:auto;}section p,section ol,section ul,section li,.summary,.hero .meta span{overflow-wrap:anywhere;word-break:break-word;}@media(max-width:980px){.sitenav{padding:9px 14px;}.mw-related{padding:0 12px;}}</style></head>
+<body>
+<style>.sitenav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:900px;margin:0 auto;padding:9px 22px;background:linear-gradient(135deg,#12365F 0%,#1B4F8A 70%);border-bottom:4px solid #E8A33D;box-shadow:0 2px 10px rgba(18,54,95,.28);font-size:13.5px;}.sitenav::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 26px,rgba(232,163,61,.18) 26px 34px,transparent 34px 60px,rgba(127,168,204,.20) 60px 68px);}.sitenav a{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:700;border-radius:999px;padding:5px 16px;}.sitenav a.home{background:#E8A33D;color:#12365F;box-shadow:0 2px 6px rgba(0,0,0,.28);}.sitenav a.home:hover{background:#F2B455;}.sitenav a.list{color:#fff;border:1.5px solid rgba(255,255,255,.65);}.sitenav a.list:hover{border-color:#E8A33D;color:#E8A33D;}.sitenav .cur{position:relative;z-index:1;color:#E8F0F9;font-weight:600;}.sitenav .brand{margin-left:auto;position:relative;z-index:1;color:#E8A33D;font-weight:800;letter-spacing:.14em;font-size:12px;}</style><nav class="sitenav"><a class="home" href="https://docsor.cn/">⌂ MedWiki 首页</a><a class="list" href="https://docsor.cn/evidence/index.html">证据与病例</a><span class="cur">› 一股随肝酶消长的怪味，少年的肝病到底为何？</span><span class="brand">MedWiki-Rheum</span></nav>
+<header class="hero">
+<h1>一股随肝酶消长的怪味，少年的肝病到底为何？
+    <span class="sub">从隐匿线索到确诊丙型肝炎的全程临床解析</span>
+</h1>
+<div class="meta">
+<span><b>依据</b> 30篇核验文献（CiteScore 88～90/100，A级）</span>
+<span><b>日期</b> 2026-10-18</span>
+<span><b>作者</b> Doctor Q</span>
+</div>
+</header>
+<div style="max-width:900px;margin:0 auto;padding:8px 22px;font-size:12px;color:#5A6B7C;text-align:center;background:#EAF1F8;border-bottom:1px solid #DDE5EC;">引文经 Cite-holmes 双层核验 ｜ 方法学工具：Cite-holmes · Academic-figures · Paper-polisher-pro · DoctorQ MedPub</div>
+<!-- ═══ 核心结论（3秒前置，必填） ═══ -->
+<section>
+<h2 class="sec">核心结论</h2>
+<p>16岁男性，体检发现丙氨酸氨基转移酶升高1年余（波动于52.5～193.6 U/L），无症状，肝脾不大，超声阴性。三项事实构成评估框架：①肝功能异常早于中药暴露1个月——中药为叠加加重因素而非起始病因；②母亲有丙型肝炎史——慢性丙型肝炎病毒感染为第一优先排除病因；③父亲诉体味与肝酶同步消长——按先验概率分层鉴别。首轮筛查已锁定病因：抗丙型肝炎病毒抗体阳性、丙型肝炎病毒核糖核酸8.62×10⁵阳性，<span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">慢性丙型肝炎确诊</span>，判定为母婴垂直传播；铜蓝蛋白0.19 g/L处于临界偏低，尿铜未能检测、裂隙灯检查待完成，肝豆状核变性的排除链条保留一环，不因丙型肝炎确诊而关卷；抗核抗体阴性、免疫球蛋白正常、心肌酶正常、其他嗜肝病毒阴性，自身免疫性肝炎与肌源性等病因暂不支持。当前最优先医疗行动：启动直接抗病毒治疗（索磷布韦/维帕他韦，12周），同步完成母亲与孪生兄弟的丙型肝炎筛查；治疗结束12周复查持续病毒学应答，并按转氨酶转归三分支决定遗留病因是否重启评估。</p>
+</section>
+<!-- ═══ 一、临床问题（question卡） ═══ -->
+<section>
+<h2 class="sec">一、临床问题</h2>
+<div class="case">
+<div class="question"><b>临床问题：</b><div class="question"><p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">主诉</span>：体检发现肝功能异常1年。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">病程经过</span>：2025年10月学校体检发现肝功能异常，同月复查ALT 52.5 U/L，余项未见异常。2025年11月起服用家族长辈提供的中药粉及药丸，共半年，方剂与成分不详。2026年7月复查ALT 193.6 U/L、AST 66.4 U/L、胆碱酯酶136 000 U/L，乙肝两对半定量未见异常；当日停用中药，开始口服复方甘草酸苷片。2026年8月复查ALT 67.5 U/L。2026年9月复查ALT 152.9 U/L，加用双环醇片2周。2026年10月复诊：ALT 172.3 U/L，AST 58.8 U/L；同日回报首轮病因学筛查结果（见第三节）。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">症状与体征</span>：无发热、乏力、黄疸、瘙痒、恶心、呕吐、腹痛、腹泻，无反复口腔溃疡，无神经精神症状。夜眠差，常熬夜至凌晨4～5时，食纳稍差。颜面部痤疮，未用药物治疗；皮肤巩膜无黄染，无肝掌及蜘蛛痣，肝脾不大，墨菲氏征阴性；双手甲床稍发绀，血氧饱和度97%。超声示肝胆胰脾未见异常。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">家族史</span>：母亲有"丙肝"史，具体不详，本人现口腔有明显异味；孪生兄弟体健；其余成员无特殊。</p>
+<figure style="margin:14px 0;text-align:center;"><img alt="病程中ALT与AST变化轨迹及药物时间轴（横轴精确到月）" decoding="async" loading="lazy" src="images/ev_transaminitis_16y_fig1.png"/><figcaption style="font-size:12.5px;color:#5A6B7C;line-height:1.7;margin-top:6px;text-align:left;">图1 病程中ALT与AST的变化轨迹及药物时间轴。中药暴露始于转氨酶升高之后1个月；降酶药覆盖下转氨酶反弹提示基础肝病驱动持续存在。数据来源：患儿门诊检验记录（2025年10月至2026年10月）</figcaption></figure>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">临床特征归纳</span>：</p>
+<ol><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">肝细胞型损伤、中度、波动性</span>：ALT较AST更具肝特异性（半衰期45～47小时对17～18小时）<sup class="xref">[2]</sup>，ALT/AST约2.9不支持肌源性为主；波动幅度达3.7倍，提示免疫介导损伤、间断暴露或慢性感染的波动病程。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">整个观察期肝功能从未正常</span>：最低值67.5 U/L按性别特异参考上限（男26 U/L）折算仍为2.6倍<sup class="xref">[9]</sup>；每轮"降酶成功"均为复方甘草酸苷的酶学压制，而非病因消除。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">时间线具有因果定性意义</span>：转氨酶升高（2025年10月）早于中药暴露（2025年11月）约1个月——中药不可能是起始病因，至多为叠加加重因素；基础肝病在此之前即已存在。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">家族与暴露线索</span>：母亲丙肝史（垂直传播可能）；母亲本人现口腔异味（需评估母亲肝脏病变阶段）；孪生兄弟的合子性与健康状况是遗传病的重要旁证；痤疮未服药，排除了米诺环素、异维A酸等痤疮治疗药物的肝损伤可能。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">孤立性表现</span>：无肝脾大、无黄疸、无合成功能异常记载，超声阴性——早期自身免疫性肝炎、肝豆状核变性、脂肪变不足33%的脂肪性肝病均可呈此表现，影像与体征阴性不能缩小鉴别范围<sup class="xref">[1]</sup><sup class="xref">[9]</sup>。</li></ol></div></div>
+</div>
+</section>
+<!-- ═══ 正文节（复制本节结构，编号顺延；指南对照=表格+截图） ═══ -->
+<!-- ═══ 主要参考文献（每条含PMID，发布前过L1核验） ═══ -->
+<section>
+<section><h2 class="sec">二、转氨酶升高的判读基础</h2><p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">参考上限</span>：儿童判读必须采用性别与年龄特异界值而非实验室统一区间——NASPGHAN推荐男26 U/L、女22 U/L<sup class="xref">[9]</sup>；健康人群12～17岁分层界值男孩25.8 U/L、女孩22.1 U/L，18个月以上男孩40 U/L、女孩35 U/L<sup class="xref">[1]</sup><sup class="xref">[2]</sup>。本例本次ALT 172.3 U/L为性别特异上限的6.6倍，属中度升高（轻度2～5倍、中度5～10倍、重度&gt;10倍ULN）<sup class="xref">[2]</sup>。中国儿童多中心正常参考值数据尚缺，判读可参照上述界值并结合本实验室区间。</p>
+<p>表1 儿童ALT性别与年龄特异参考上限（U/L）<sup class="xref">[1]</sup><sup class="xref">[2]</sup><sup class="xref">[9]</sup></p>
+<div class="tablewrap"><table><thead><tr><th>年龄段</th><th>男孩</th><th>女孩</th></tr></thead><tr><td>12～17岁（NASPGHAN/健康人群分层）</td><td>26（25.8）</td><td>22（22.1）</td></tr><tr><td>&gt;18个月（健康人群分层）</td><td>40</td><td>35</td></tr></table></div>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">损伤模式</span>：R值=(ALT/ULN)÷(ALP/ULN)，R≥5为肝细胞型、2～5混合型、≤2淤胆型<sup class="xref">[5]</sup>；本例ALT/AST约2.9不支持肌源性为主，第一步复测组套中的肌酸激酶已回报正常，肌源性疾病排除。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">重症界值</span>：ALT或AST&gt;5倍ULN或ALP&gt;2倍ULN（相隔至少24小时）；总胆红素&gt;2.5 mg/dL（42.75 μmol/L）伴转氨酶升高；INR&gt;1.5伴酶升高<sup class="xref">[5]</sup>。出现黄疸、腹水、出血倾向、意识改变、脾大或转氨酶&gt;10倍上限者立即转儿童肝病专科<sup class="xref">[1]</sup><sup class="xref">[2]</sup>。本例凝血功能正常，无重症征象。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">胆碱酯酶</span>：血清胆碱酯酶由肝脏合成，在脂肪性肝病与胰岛素抵抗状态下升高，方向与重症肝衰竭时的下降相反<sup class="xref">[25]</sup>。本例2026年7月136 000 U/L——须核对本院参考区间；现已确认慢性丙型肝炎且低密度脂蛋白胆固醇偏低（1.61 mmol/L）、空腹血糖正常，代谢相关脂肪性肝病表型的证据不足，该值的升高更可能与个体基线或检验方法学有关，随访复查即可。</p></section>
+<section><h2 class="sec">三、分步病因学评估与首轮筛查结果解读</h2><p>评估框架按无症状儿童持续性高转氨酶血症的分步共识设计<sup class="xref">[1]</sup>：第一步停剧烈运动1周复查全组并系统问诊（酒精、运动补剂与合成代谢类固醇、输血/手术/纹身史、出生地新生儿筛查史、孪生兄弟合子性）；第二步一线病因学筛查一次覆盖；第三步按阳性结果进入确诊分流。首轮筛查结果总表如下。</p>
+<p>表2 首轮筛查结果与判读</p>
+<div class="tablewrap"><table><thead><tr><th>项目</th><th>结果</th><th>判读</th></tr></thead><tr><td>抗-HCV / HCV RNA</td><td>阳性 / 8.62×10⁵阳性</td><td><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">慢性丙型肝炎确诊</span>（见第四节）</td></tr><tr><td>铜蓝蛋白</td><td>0.19 g/L</td><td>临界偏低，肝豆状核变性排除链保留一环（见第七节）</td></tr><tr><td>抗核抗体</td><td>阴性</td><td>结合免疫球蛋白正常与丙型肝炎确诊，自身免疫性肝炎暂不支持</td></tr><tr><td>免疫球蛋白三项</td><td>正常</td><td>同上；随访中抗体转阳现象已知<sup class="xref">[3]</sup></td></tr><tr><td>心肌酶（肌酸激酶）</td><td>正常</td><td>肌源性升高排除<sup class="xref">[1]</sup></td></tr><tr><td>凝血功能</td><td>正常</td><td>合成功能保留，无进展期肝病功能学证据</td></tr><tr><td>乙肝两对半定量</td><td>未见异常</td><td>慢性乙型肝炎排除；免疫抑制治疗前后留档<sup class="xref">[12]</sup></td></tr><tr><td>EB病毒/优生四项IgM/甲肝/戊肝</td><td>均阴性</td><td>其他病毒性病因排除</td></tr><tr><td>血脂 / 空腹血糖</td><td>LDL-C 1.61 mmol/L偏低 / 4.89 mmol/L正常</td><td>代谢相关脂肪性肝病证据不足（胆碱酯酶升高单独不构成证据<sup class="xref">[25]</sup>）</td></tr><tr><td>24小时尿铜</td><td>未能检测</td><td>排除链缺项，检测条件具备后补做</td></tr><tr><td>眼科裂隙灯</td><td>后续安排</td><td>角膜K-F环阳性为确诊线索，阴性不能排除<sup class="xref">[6]</sup></td></tr></table></div>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">解读要点</span>：①首轮筛查在确认慢性丙型肝炎的同时，未发现第二病因的阳性证据；②肝豆状核变性的排除链条因尿铜缺失而未闭合；③自身免疫性肝炎的血清学组合阴性，但血清阴性型占5%～20%<sup class="xref">[3]</sup>，其最终排除依赖治疗转归（见第八节）。</p></section>
+<section><h2 class="sec">四、病因确诊：慢性丙型肝炎——母婴垂直传播</h2><p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">证据链</span>：①抗-HCV阳性+HCV RNA阳性（现症感染确认）；②母亲丙肝史（垂直传播为主要途径，建议补问输血/手术/纹身史以完整记录）；③病程表型吻合——儿童慢性丙型肝炎多无症状、转氨酶轻中度波动，121例2～16岁患儿肝活检示炎症以轻度至中度为主<sup class="xref">[23]</sup>，与本例"1年余、无症状、52.5～193.6 U/L波动"吻合；④无其他病因阳性证据。慢性丙型肝炎的诊断成立；中药暴露（晚于起病1个月）定性为叠加加重因素，可解释2026年7月的酶学峰值。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">传播风险背景</span>：母婴传播总体风险约5%～6%；汇总meta分析（26项研究、4934名新生儿）显示母亲病毒血症时传播风险显著升高（比值比8.25，95%可信区间4.65～14.63），病毒载量≥6 log10拷贝/mL进一步升高（比值比4.58），合并人类免疫缺陷病毒感染时最高<sup class="xref">[22]</sup>。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">自然史与治疗必要性</span>：儿童慢性丙型肝炎进展通常缓慢，但并非良性——部分患儿可发生进展期纤维化<sup class="xref">[23]</sup>；且直接抗病毒治疗治愈率超过95%，治愈即去除此病因并阻断家庭传播链，故所有确诊儿童均推荐治疗，不以肝活检为前提<sup class="xref">[24]</sup>。</p></section>
+<section><h2 class="sec">五、治疗：直接抗病毒治疗</h2><ol><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">适应证</span>：所有确诊慢性丙型肝炎的3岁以上儿童和青少年均推荐治疗<sup class="xref">[24]</sup>；本例16岁，远超最保守年龄门槛（≥12岁），国内以获批说明书为准。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">方案</span>：索磷布韦/维帕他韦（400 mg/100 mg）每日一次，疗程12周；泛基因型覆盖，本例无肝硬化失代偿证据，无须延长疗程<sup class="xref">[24]</sup>。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">治疗前基线</span>：血常规、肝功能、肾功能；乙型肝炎再激活筛查已完成（乙肝两对半定量未见异常，报告留档<sup class="xref">[12]</sup>）。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">治疗中监测</span>：每4周肝功能+血常规；依从性管理（每日固定时间服药）。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">疗效判定</span>：治疗结束后12周检测HCV RNA（SVR12）——低于检测下限即为治愈；治愈后转氨酶应复常。</li></ol></section>
+<section><h2 class="sec">六、家庭筛查与传染源管理</h2><ul><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">母亲</span>：丙型肝炎病毒核糖核酸检测+肝弹性成像——她是家庭传染源管理的核心，且口腔异味需评估是否存在肝硬化相关表现；确诊后按成人直接抗病毒方案治疗（治愈率&gt;95%），治愈同时消除患儿再暴露风险。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">孪生兄弟</span>：抗-HCV（阳性则加HCV RNA）——同一次妊娠的垂直暴露风险相同，属紧急筛查缺口；同时查铜蓝蛋白+24小时尿铜作为肝豆状核变性家系旁证（若兄弟铜指标亦异常，家庭筛查直接指向）。</li><li><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">日常管理</span>：丙型肝炎不经日常接触传播，无须隔离；避免共用牙刷、剃须刀等可能有血液/黏膜接触的物品；患儿治疗期间正常上学与活动。</li></ul></section>
+<section><h2 class="sec">七、肝豆状核变性：未关卷的遗留排查</h2><p>EASL-ERN 2025指南确认：诊断基于临床特征、铜蓝蛋白、24小时尿铜、肝铜与基因分析，莱比锡评分与相对可交换铜用于确诊<sup class="xref">[20]</sup>。本例铜蓝蛋白0.19 g/L的解读须谨慎——它是急相反应蛋白，慢性肝炎症时可假性正常；有肝病表现时&lt;0.14 g/L的界值敏感性93%、特异性100%<sup class="xref">[6]</sup>，本例0.19高于该界值，结合慢性丙型肝炎已确诊，当前肝豆状核变性概率已显著下降，但排除链条尚未闭合（表3）。</p>
+<p>表3 肝豆状核变性遗留排查项目（依据文献<sup class="xref">[1]</sup><sup class="xref">[6]</sup><sup class="xref">[19]</sup><sup class="xref">[20]</sup>）</p>
+<div class="tablewrap"><table><thead><tr><th>项目</th><th>界值/要点</th><th>状态</th></tr></thead><tr><td>24小时尿铜</td><td>无症状/轻症儿童≥40 μg/24h（≈0.64 μmol/24h）进一步评估；全天留尿并记录总量，收集不全结果作废</td><td>未能检测，条件具备后补做</td></tr><tr><td>裂隙灯查角膜K-F环</td><td>儿童检出率&lt;5%，阳性为确诊线索，阴性不能排除</td><td>后续安排，务必完成</td></tr><tr><td>ATP7B基因测序</td><td>检出率77%～98%，东亚常见R778L突变</td><td>尿铜或裂隙灯异常时送检</td></tr><tr><td>肝组织铜干重</td><td>&gt;250 μg/g干重支持诊断</td><td>仅在因其他指征行肝活检时同步</td></tr><tr><td>相对可交换铜</td><td>&gt;18.5%敏感性与特异性均100%</td><td>三级中心可送检</td></tr></table></div>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">触发升级的条件</span>：尿铜≥40 μg/24h、或K-F环阳性、或直接抗病毒治疗获得持续病毒学应答后转氨酶仍不复常——任一情况送ATP7B测序并以莱比锡评分综合判断<sup class="xref">[6]</sup><sup class="xref">[7]</sup><sup class="xref">[20]</sup>。<span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">家系旁证</span>：孪生兄弟铜蓝蛋白+24小时尿铜（同上）；追问合子性，若为同卵孪生且兄弟完全健康，肝豆状核变性概率显著下降。</p></section>
+<section><h2 class="sec">八、自身免疫性肝炎的再评估触发器与治疗预案</h2><p>首轮自身免疫证据组合（ANA阴性+免疫球蛋白正常）不支持自身免疫性肝炎，且慢性丙型肝炎已解释病程——当前无须激素治疗。但保留明确的再评估触发器：<span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">直接抗病毒治疗获得持续病毒学应答后，转氨酶仍持续超过性别特异上限2倍</span>——此时须重新评估自身免疫性肝炎（血清阴性型占5%～20%<sup class="xref">[3]</sup>），并按儿科规范行肝活检+磁共振胰胆管成像初筛自身免疫性硬化性胆管炎<sup class="xref">[8]</sup><sup class="xref">[11]</sup>。</p>
+<p>预案要点（若届时确诊）：儿童自身抗体阳性阈值低于成人（ANA/ASMA≥1:20、抗LKM-1≥1:10，间接免疫荧光阴性以1:10复测）<sup class="xref">[3]</sup><sup class="xref">[11]</sup>；抗F-肌动蛋白抗体可作为抗平滑肌抗体的补充<sup class="xref">[26]</sup>；简化评分敏感性仅77%，诊断以肝活检裁决<sup class="xref">[3]</sup>。一线治疗：泼尼松（龙）2 mg/(kg·d)起始（最大60 mg/d），6～8周渐减至维持量5～7.5 mg/d；硫唑嘌呤0.5 mg/(kg·d)起始渐增至2～2.5 mg/(kg·d)，85%患儿需加用<sup class="xref">[8]</sup>；治疗缓解率约90%<sup class="xref">[8]</sup>。二线：吗替麦考酚酯、环孢素或他克莫司<sup class="xref">[8]</sup>。维持至少2～3年，撤药成功率20%～40%，撤药后每3个月监测AST、ALT、IgG与自身抗体至少5年<sup class="xref">[8]</sup>。自身免疫性硬化性胆管炎按AIH方案加熊去氧胆酸15 mg/(kg·d)<sup class="xref">[8]</sup>。诊断评分采用ESPGHAN儿童青少年评分系统（表4），成人IAIHG评分不适用于儿童青少年型<sup class="xref">[8]</sup>。</p>
+<p>表4 ESPGHAN儿童青少年自身免疫性肝病诊断评分系统（转录自文献<sup class="xref">[8]</sup>）</p>
+<div class="tablewrap"><table><thead><tr><th>变量</th><th>界值</th><th>AIH计分</th><th>ASC计分</th></tr></thead><tr><td>ANA和/或ASMA</td><td>≥1:20</td><td>1</td><td>1</td></tr><tr><td></td><td>≥1:80</td><td>2</td><td>2</td></tr><tr><td>抗LKM-1或抗LC-1</td><td>≥1:10</td><td>1</td><td>1</td></tr><tr><td></td><td>≥1:80</td><td>2</td><td>1</td></tr><tr><td>抗SLA</td><td>阳性</td><td>2</td><td>2</td></tr><tr><td>pANNA</td><td>阳性</td><td>1</td><td>2</td></tr><tr><td>IgG</td><td>&gt;ULN</td><td>1</td><td>1</td></tr><tr><td></td><td>&gt;1.20倍ULN</td><td>2</td><td>2</td></tr><tr><td>肝组织学</td><td>符合AIH</td><td>1</td><td>1</td></tr><tr><td></td><td>典型AIH</td><td>2</td><td>2</td></tr><tr><td>排除病毒性肝炎（甲、乙、戊型及EB病毒）、脂肪性肝炎、肝豆状核变性与药物暴露</td><td>是</td><td>2</td><td>2</td></tr><tr><td>肝外自身免疫表现</td><td>存在</td><td>1</td><td>1</td></tr><tr><td>自身免疫性疾病家族史</td><td>存在</td><td>1</td><td>1</td></tr><tr><td>胆管造影</td><td>正常</td><td>2</td><td>−2</td></tr><tr><td></td><td>异常</td><td>−2</td><td>2</td></tr></table></div>
+<p>注：五项抗体得分合计不超过2分。总分≥7分为可能、≥8分为确诊；ASC同阈值另行计分。</p>
+<p>评分应用注意：该评分在本例的定位是"直接抗病毒治疗获得持续病毒学应答后转氨酶不复常"时的再评估工具——计分前须以同期结果重填"排除病毒性肝炎"等动态项（慢性丙型肝炎经治疗获得持续病毒学应答后，该项计2分成立）；胆管造影正常计2分、异常计−2分的设计，使自身免疫性硬化性胆管炎需另行计分且必须以磁共振胰胆管成像结果为准；随访中自身抗体转阳（血清阴性型的已知现象<sup class="xref">[3]</sup>）时应重新计分。成人IAIHG简化评分（2008）敏感性仅77%<sup class="xref">[3]</sup>，不适用于本例的最终裁决。</p>
+<figure style="margin:14px 0;text-align:center;"><img alt="图2 儿童自身免疫性肝炎的治疗与随访路径流程图" decoding="async" loading="lazy" src="images/ev_transaminitis_16y_fig2.png"/><figcaption style="font-size:12.5px;color:#5A6B7C;line-height:1.7;margin-top:6px;text-align:left;">图2 儿童自身免疫性肝炎的治疗与随访路径（本例预案）。方案依据ESPGHAN立场声明整合绘制。数据来源：文献<sup class="xref">[8]</sup><sup class="xref">[10]</sup><sup class="xref">[11]</sup></figcaption></figure></section>
+<section><h2 class="sec">九、草药叠加损伤的定性与体味线索收尾</h2><p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">定性</span>：起病早于暴露，中药为叠加加重因素；2026年7月峰值（ALT 193.6 U/L，暴露第8个月）可由草药性损伤解释；停药后降至67.5 U/L与复方甘草酸苷及中药清除双重作用相关，随后反弹的基础驱动现已确认为慢性丙型肝炎。管理：永久停用并登记该中药，告知家长避免同类产品；草药与膳食补充剂的掺杂污染（含重金属）在监管宽松环境常见<sup class="xref">[5]</sup>，患者层面重金属检测已完成（结果回报后归入随访记录）。慢性化口径：停药后6～12个月未恢复者占10%～20%<sup class="xref">[5]</sup>——本例叠加于慢性丙型肝炎之上，停药后的酶学走势应结合抗病毒应答综合判读。</p>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">体味线索收尾</span>：中药已于7月停用，请家长继续记录异味与肝酶的时间轴——若异味此后不再与肝酶升高同步出现，"中药成分经汗液排出"为最简解释；若仍同步波动，重新审视该线索并复诊评估。此线索维持低权重观察，不追加检查。</p></section>
+<section><h2 class="sec">十、肝纤维化评估与肝活检指征</h2><p>慢性丙型肝炎儿童进展通常缓慢，直接抗病毒治疗治愈后纤维化可长期稳定，无须常规肝活检<sup class="xref">[23]</sup><sup class="xref">[24]</sup>。无创评估：瞬时弹性成像在儿童已有参考值研究（527名儿童，探头与测量部位影响结果）<sup class="xref">[29]</sup>，可在抗病毒治疗基线与 SVR 后评估；血清模型基于成人队列，儿童解读保守（专家意见）。<span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">肝活检指征汇总</span>（满足任一项）：治疗获得持续病毒学应答后转氨酶仍不复常（启动遗留病因再评估，含自身免疫性肝炎与肝豆状核变性完成项）<sup class="xref">[8]</sup><sup class="xref">[11]</sup>；24小时尿铜≥40 μg/24h或裂隙灯阳性需组织学确认时同步肝铜干重定量（&gt;250 μg/g支持肝豆状核变性）<sup class="xref">[1]</sup><sup class="xref">[6]</sup>。</p></section>
+<section><h2 class="sec">十一、其余筛查清单与分步检查路线图</h2><p>表5 其余筛查清单（首轮已完成项不再重复；依据文献<sup class="xref">[1]</sup><sup class="xref">[2]</sup><sup class="xref">[5]</sup><sup class="xref">[30]</sup>）</p>
+<div class="tablewrap"><table><thead><tr><th>目标疾病</th><th>检查组合</th><th>状态</th></tr></thead><tr><td>慢性乙型肝炎</td><td>乙肝两对半定量</td><td>已排除，留档<sup class="xref">[12]</sup></td></tr><tr><td>氨基酸与有机酸代谢病</td><td>血氨基酸+尿有机酸（含琥珀酰丙酮）</td><td>已列入首轮，结果回报后归档</td></tr><tr><td>重金属</td><td>血/尿砷、汞、铅</td><td>已列入首轮，结果回报后归档</td></tr><tr><td>α1-抗胰蛋白酶缺乏症</td><td>血清α1-抗胰蛋白酶水平</td><td>首轮筛查组合内，回报后归档<sup class="xref">[1]</sup></td></tr><tr><td>乳糜泻</td><td>tTG-IgA+总IgA</td><td>首轮筛查组合内，回报后归档<sup class="xref">[1]</sup></td></tr><tr><td>甲状腺疾病</td><td>TSH±游离T4</td><td>首轮筛查组合内，回报后归档<sup class="xref">[1]</sup></td></tr><tr><td>铁过载</td><td>铁蛋白+转铁蛋白饱和度</td><td>二线，异常再行基因评估</td></tr><tr><td>溶酶体酸性脂肪酶缺乏症</td><td>干血斑酶活性测定</td><td>血脂异常时优先<sup class="xref">[30]</sup></td></tr></table></div>
+<p>上述清单中，氨基酸与有机酸代谢病、重金属两项同时服务于体味线索的鉴别（第九节）；其余项目首轮回报后归档即可。该清单与第七节遗留排查项共同构成"持续病毒学应答后转氨酶不复常"情形下的完整再评估对照表——届时按第七节触发条件优先完成肝豆状核变性三件套，再按本清单逐项复核。</p>
+<p>随访期间的一般管理：①昼夜节律——熬夜至凌晨4～5时的作息与转氨酶波动的关联虽无定量证据，但作为慢性肝病管理的一般要求，建议逐步纠正并在随访中评估；②痤疮——皮肤科就诊时主动告知慢性丙型肝炎与用药情况，避免具有肝毒性的抗痤疮药物；③疫苗接种——核实甲型肝炎疫苗接种史，未接种者建议补种（丙型肝炎基础上重叠甲型肝炎感染的临床风险更高）<sup class="xref">[2]</sup>；④心理与学业——慢性感染标签可能带来心理负担，随诊时关注。</p>
+<figure style="margin:14px 0;text-align:center;"><img alt="图3 慢性转氨酶升高儿童的分步检查路线流程图" decoding="async" loading="lazy" src="images/ev_transaminitis_16y_fig3.png"/><figcaption style="font-size:12.5px;color:#5A6B7C;line-height:1.7;margin-top:6px;text-align:left;">图3 16岁男性慢性转氨酶升高的分步检查路线图（本例已按此路径完成首轮评估并确诊慢性丙型肝炎）。依据AASLD、ESPGHAN、NASPGHAN指南的分步路径与家庭筛查要求整合绘制。数据来源：文献<sup class="xref">[1]</sup><sup class="xref">[5]</sup><sup class="xref">[8]</sup><sup class="xref">[9]</sup><sup class="xref">[11]</sup><sup class="xref">[22]</sup></figcaption></figure></section>
+<section><h2 class="sec">十二、辅助用药定位与随访汇总</h2><p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">复方甘草酸苷与双环醇的定位</span>：两药均属中国指南框架下的抗炎保肝药物（中国方案）<sup class="xref">[13]</sup><sup class="xref">[14]</sup>。病因已确诊的背景下，两药的任务转为过渡期辅助：其一，AASLD 2023未收录甘草酸制剂，其临床证据存在研究异质性与发表偏倚<sup class="xref">[5]</sup><sup class="xref">[17]</sup>；其二，甘草酸代谢物3-单葡萄糖醛酸甘草次酸抑制11β-羟基类固醇脱氢酶2型，可致假性醛固酮增多症（低钾、高血压、水肿，剂量相关）<sup class="xref">[17]</sup>。直接抗病毒治疗期间转氨酶多自行下降，建议在专科指导下逐步减停，避免多重保肝药并用掩盖抗病毒应答的判读；过渡期继续使用者每4～8周监测血钾与血压<sup class="xref">[17]</sup>。</p>
+<p>表6 随访节点汇总</p>
+<div class="tablewrap"><table><thead><tr><th>时间点</th><th>动作</th></tr></thead><tr><td>即刻</td><td>直接抗病毒治疗基线（血常规/肝肾功能）并启动索磷布韦/维帕他韦12周</td></tr><tr><td>每4周（治疗中）</td><td>肝功能+血常规；依从性核对</td></tr><tr><td>治疗结束12周</td><td>SVR12（HCV RNA低于检测下限=治愈）+转氨酶转归三分支判定</td></tr><tr><td>眼科会诊（已约）</td><td>裂隙灯角膜K-F环</td></tr><tr><td>尿铜条件具备</td><td>24小时尿铜（规范留尿）</td></tr><tr><td>同步</td><td>母亲HCV RNA+肝弹性评估；孪生兄弟抗-HCV（+铜筛查）</td></tr><tr><td>SVR后每6～12个月</td><td>肝功能随访；不复常即启动第八节再评估</td></tr></table></div>
+<p><span style="background:#FBF4E6;border-bottom:2px solid #E8A33D;padding:0 2px;font-weight:700;color:#12365F;">转氨酶转归三分支</span>（剩余病因的最终裁决树）：①获得持续病毒学应答且转氨酶复常——慢性丙型肝炎为唯一解释，本例临床收官，进入年度随访；②改善但仍高于性别特异上限——完成肝豆状核变性遗留排查，并评估其他叠加因素；③基本不变——肝活检+遗传性肝病基因检测组合，按第八节预案处理。</p></section><h2 class="sec">主要参考文献</h2>
+<ol>
+<p><sup class="xref">[1]</sup> Vajro P, Maddaluno S, Veropalumbo C. Persistent hypertransaminasemia in asymptomatic children: a stepwise approach[J]. World Journal of Gastroenterology, 2013, 19(18): 2740-2751. DOI: 10.3748/wjg.v19.i18.2740. PMID: 23687411.</p>
+<p><sup class="xref">[2]</sup> Costa JM, Pinto SM, Santos-Silva E, et al. Incidental hypertransaminasemia in children—a stepwise approach in primary care[J]. European Journal of Pediatrics, 2023, 182(4): 1601-1609. DOI: 10.1007/s00431-023-04825-4. PMID: 36697884.</p>
+<p><sup class="xref">[3]</sup> Islek A, Tumgor G. Seronegative autoimmune hepatitis in childhood[J]. World Journal of Clinical Pediatrics, 2023, 12(3): 77-85. DOI: 10.5409/wjcp.v12.i3.77. PMID: 37342447.</p>
+<p><sup class="xref">[4]</sup> Sebode M, Schulz L, Lohse AW. "Autoimmune(-like)" drug and herb induced liver injury: new insights into molecular pathogenesis[J]. International Journal of Molecular Sciences, 2017, 18(9): 1954. DOI: 10.3390/ijms18091954. PMID: 28895915.</p>
+<p><sup class="xref">[5]</sup> Fontana RJ, Liou I, Reuben A, et al. AASLD practice guidance on drug, herbal, and dietary supplement-induced liver injury[J]. Hepatology, 2023, 77(3): 1036-1065. DOI: 10.1002/hep.32689. PMID: 35899384.</p>
+<p><sup class="xref">[6]</sup> Chanpong A, Dhawan A. Wilson disease in children and young adults—state of the art[J]. Saudi Journal of Gastroenterology, 2022, 28(1): 21-31. DOI: 10.4103/sjg.sjg_501_21. PMID: 35042319.</p>
+<p><sup class="xref">[7]</sup> Socha P, et al. Wilson's disease in children: a position paper by the Hepatology Committee of ESPGHAN[J]. Journal of Pediatric Gastroenterology and Nutrition, 2018, 66(2): 334-344. DOI: 10.1097/MPG.0000000000001787. PMID: 29341979.</p>
+<p><sup class="xref">[8]</sup> Mieli-Vergani G, Vergani D, Baumann U, et al. Diagnosis and management of pediatric autoimmune liver disease: ESPGHAN Hepatology Committee position statement[J]. Journal of Pediatric Gastroenterology and Nutrition, 2018, 66(2): 345-360. DOI: 10.1097/MPG.0000000000001801. PMID: 29356770.</p>
+<p><sup class="xref">[9]</sup> Vos MB, et al. NASPGHAN clinical practice guideline for the diagnosis and treatment of nonalcoholic fatty liver disease in children[J]. Journal of Pediatric Gastroenterology and Nutrition, 2017, 64(2): 319-334. DOI: 10.1097/MPG.0000000000001482. PMID: 28107283.</p>
+<p><sup class="xref">[10]</sup> Mack CL, et al. Diagnosis and management of autoimmune hepatitis in adults and children: 2019 practice guidance from AASLD[J]. Hepatology, 2020, 72(2): 671-722. DOI: 10.1002/hep.31065. PMID: 31863477.</p>
+<p><sup class="xref">[11]</sup> 欧洲肝脏研究学会（EASL）. EASL clinical practice guidelines on the management of autoimmune hepatitis[J]. Journal of Hepatology, 2025, 83(2): 453-501. DOI: 10.1016/j.jhep.2025.03.017. PMID: 40348684.</p>
+<p><sup class="xref">[12]</sup> 中华医学会肝病学分会. 自身免疫性肝炎诊断和治疗指南(2021)[J]. 中华肝脏病杂志, 2022, 30(5): 482-492. PMID: 35764540.</p>
+<p><sup class="xref">[13]</sup> 中国医药生物技术协会药物性肝损伤防治技术专业委员会，中华医学会肝病学分会药物性肝病学组. 中国药物性肝损伤诊治指南(2023年版)[J]. 中华肝脏病杂志, 2023, 31(4): 355-384. PMID: 37248976.</p>
+<p><sup class="xref">[14]</sup> Chinese guideline for the diagnosis and treatment of drug-induced liver injury: an update[J]. Hepatology International, 2024, 18(2): 384-419. DOI: 10.1007/s12072-023-10633-7. PMID: 38402364.</p>
+<p><sup class="xref">[15]</sup> Rao T, et al. The hepatotoxicity of Polygonum multiflorum: the emerging role of the immune-mediated liver injury[J]. Acta Pharmacologica Sinica, 2021, 42(1): 27-35. DOI: 10.1038/s41401-020-0360-3. PMID: 32123300.</p>
+<p><sup class="xref">[16]</sup> LiverTox: Clinical and Research Information on Drug-Induced Liver Injury. Polygonum multiflorum[M]. Bethesda: National Institute of Diabetes and Digestive and Kidney Diseases, 2020. NBK548795.</p>
+<p><sup class="xref">[17]</sup> Ma T, et al. Glycyrrhizin preparations in liver diseases: a narrative review of mechanisms and therapeutic potential[J]. Frontiers in Pharmacology, 2026, 17: 1795174. DOI: 10.3389/fphar.2026.1795174. PMID: 42147312.</p>
+<p><sup class="xref">[18]</sup> You H, et al. APASL clinical practice guidelines on the management of chronic hepatitis B infection: a 2026 update[J]. 中华肝脏病杂志, 2026, 34(7): 640-667. PMID: 42503908.</p>
+<p><sup class="xref">[19]</sup> Nicastro E, et al. Re-evaluation of the diagnostic criteria for Wilson disease in children with mild liver disease[J]. Hepatology, 2010, 52(6): 1948-1956. DOI: 10.1002/hep.23910. PMID: 20967755.</p>
+<p><sup class="xref">[20]</sup> EASL-ERN. EASL-ERN clinical practice guidelines on Wilson's disease[J]. Journal of Hepatology, 2025. DOI: 10.1016/j.jhep.2024.11.007. PMID: 40089450.</p>
+<p><sup class="xref">[21]</sup> AASLD Practice Statement on the evaluation and management of metabolic dysfunction-associated steatotic liver disease in children[J]. Hepatology, 2025. DOI: 10.1097/HEP.0000000000001368. PMID: 40300071.</p>
+<p><sup class="xref">[22]</sup> Hepatitis C viral load and mother-to-child transmission: a systematic review and meta-analysis[J]. Journal of Gastroenterology and Hepatology, 2023. PMID: 36066543.</p>
+<p><sup class="xref">[23]</sup> Pathology of chronic hepatitis C in children: liver biopsy findings in the Peds-C Trial[J]. Hepatology, 2008, 47(3): 836-843. PMID: 18167062.</p>
+<p><sup class="xref">[24]</sup> Sofosbuvir-velpatasvir in children 3-17 years old with hepatitis C virus infection[J]. Journal of Pediatric Gastroenterology and Nutrition, 2024. PMID: 38644678.</p>
+<p><sup class="xref">[25]</sup> Serum cholinesterase activity in the diagnosis of nonalcoholic fatty liver disease in type 2 diabetes mellitus[J]. Pathophysiology, 2010. PMID: 19540737.</p>
+<p><sup class="xref">[26]</sup> Meta-analysis: diagnostic accuracy of antinuclear antibodies, smooth muscle antibodies and antibodies to F-actin in autoimmune hepatitis[J]. PLoS One, 2014. PMID: 24651126.</p>
+<p><sup class="xref">[27]</sup> Daou KN, Barhoumi A, Bassyouni A, Karam PE. Diagnostic and therapeutic challenges of hereditary tyrosinemia type 1 in Lebanon: a 12-year retrospective review[J]. Frontiers in Pediatrics, 2021, 9: 698577. PMID: 34422723.</p>
+<p><sup class="xref">[28]</sup> Newborn screening for Tyrosinemia type 1 using succinylacetone—a systematic review of test performance[J]. Orphanet Journal of Rare Diseases, 2017. PMID: 28274233.</p>
+<p><sup class="xref">[29]</sup> Goldschmidt I, et al. Application and limitations of transient liver elastography in children[J]. Journal of Pediatric Gastroenterology and Nutrition, 2013, 57(1): 109-113. PMID: 23539048.</p>
+<p><sup class="xref">[30]</sup> Balwani M, et al. Lysosomal acid lipase deficiency manifestations in children and adults: baseline data from an international registry[J]. Liver International, 2023, 43(7): 1537-1547. PMID: 37222260.</p>
+<p>注：全部条目经机械校验与语义核对（证据库累计CiteScore 88～90/100，A级）；文献<sup class="xref">[11]</sup>儿科条目另经指南总结页二次核证；<sup class="xref">[28]</sup>为共识标准转述源；<sup class="xref">[27]</sup>作者与题名经注册库核对。</p>
+</ol>
+<div class="note">
+<b>术语说明</b>：本文主要缩写与中英文对照如下。<div class="tablewrap"><table><thead><tr><th>缩写</th><th>中文术语</th><th>英文全称</th></tr></thead><tr><td>AIH</td><td>自身免疫性肝炎</td><td>autoimmune hepatitis</td></tr><tr><td>ALP</td><td>碱性磷酸酶</td><td>alkaline phosphatase</td></tr><tr><td>ALT</td><td>丙氨酸氨基转移酶</td><td>alanine aminotransferase</td></tr><tr><td>AAT</td><td>α1-抗胰蛋白酶</td><td>alpha-1 antitrypsin</td></tr><tr><td>ANA</td><td>抗核抗体</td><td>antinuclear antibody</td></tr><tr><td>ASC</td><td>自身免疫性硬化性胆管炎</td><td>autoimmune sclerosing cholangitis</td></tr><tr><td>ASMA</td><td>抗平滑肌抗体</td><td>anti-smooth muscle antibody</td></tr><tr><td>AST</td><td>天冬氨酸氨基转移酶</td><td>aspartate aminotransferase</td></tr><tr><td>CHE</td><td>胆碱酯酶</td><td>cholinesterase</td></tr><tr><td>CK</td><td>肌酸激酶</td><td>creatine kinase</td></tr><tr><td>DAA</td><td>直接抗病毒药物</td><td>direct-acting antiviral</td></tr><tr><td>ERCP</td><td>内镜逆行胰胆管造影</td><td>endoscopic retrograde cholangiopancreatography</td></tr><tr><td>GGT</td><td>γ-谷氨酰转移酶</td><td>gamma-glutamyl transferase</td></tr><tr><td>HCV</td><td>丙型肝炎病毒</td><td>hepatitis C virus</td></tr><tr><td>HOMA-IR</td><td>胰岛素抵抗稳态模型评估指数</td><td>homeostasis model assessment of insulin resistance</td></tr><tr><td>IBD</td><td>炎症性肠病</td><td>inflammatory bowel disease</td></tr><tr><td>IgG</td><td>免疫球蛋白G</td><td>immunoglobulin G</td></tr><tr><td>INR</td><td>国际标准化比值</td><td>international normalized ratio</td></tr><tr><td>IAIHG</td><td>国际自身免疫性肝炎小组</td><td>International Autoimmune Hepatitis Group</td></tr><tr><td>抗LC-1</td><td>抗肝细胞溶质1型抗体</td><td>anti-liver cytosol type 1 antibody</td></tr><tr><td>抗LKM-1</td><td>抗肝肾微粒体1型抗体</td><td>anti-liver/kidney microsomal antibody type 1</td></tr><tr><td>抗SLA</td><td>抗可溶性肝抗原抗体</td><td>anti-soluble liver antigen antibody</td></tr><tr><td>MASLD</td><td>代谢功能障碍相关脂肪性肝病</td><td>metabolic dysfunction-associated steatotic liver disease</td></tr><tr><td>MRCP</td><td>磁共振胰胆管成像</td><td>magnetic resonance cholangiopancreatography</td></tr><tr><td>SVR12</td><td>治疗结束12周持续病毒学应答</td><td>sustained virologic response at week 12 post-treatment</td></tr><tr><td>TPMT</td><td>硫嘌呤甲基转移酶</td><td>thiopurine methyltransferase</td></tr><tr><td>ULN</td><td>参考上限</td><td>upper limit of normal</td></tr><tr><td>RUCAM</td><td>药物性肝损伤因果评估量表（Roussel Uclaf法）</td><td>Roussel Uclaf Causality Assessment Method</td></tr><tr><td>K-F环</td><td>角膜色素环（Kayser-Fleischer环）</td><td>Kayser-Fleischer ring</td></tr></table></div><b>截图与图表说明</b>：本文无截图；表格数据均标注来源引文。<br/>
+<b>声明</b>：本文供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构的规范。
+</div>
+</section>
+<!-- ═══ 相关阅读（必填：站内专题/工具/病例/药物互链，3-5张） ═══ -->
+<div class="mw-related">
+<h2>相关阅读</h2>
+<div class="cards">
+<a href="ev_neutropenia_01.html" rel="noopener" target="_blank"><div class="t">儿童慢性中性粒细胞减少症的临床评估与管理策略</div><div class="d">无症状检验异常的分步评估同类范例</div></a><a href="ev_cetirizine_overdose_01.html" rel="noopener" target="_blank"><div class="t">儿童西替利嗪急性过量：循证依据与处置建议</div><div class="d">药物安全审查：循证核算与处置要点</div></a><a href="ev_TETRA_01.html" rel="noopener" target="_blank"><div class="t">新一代四环素类抗生素儿科应用指南（2026版）图解</div><div class="d">指南全文精读：证据与推荐分级</div></a><a href="ev_ped_rheum_criteria_26.html" rel="noopener" target="_blank"><div class="t">儿童风湿免疫疾病分类标准汇总</div><div class="d">多标准对照速查手册</div></a>
+</div>
+</div>
+<footer>
+<div class="band thin"></div>
+<div style="height:26px;"></div>
+<div class="sig">DOCTOR Q</div>
+<div class="fline">
+    作者 Doctor Q · 儿科临床知识整理<br/>
+    引文经 Cite-holmes 双层核验 · 发布日期 2026-10-18<br/>
+    本文收录于 <a class="url" href="https://docsor.cn/">MedWiki-Rheum</a> · <a class="url" href="https://docsor.cn/evidence/index.html">更多证据与病例</a>
+</div>
+</footer>
+<div class="mw-sfoot">
+<div class="flinks">
+<a href="https://github.com/docsor1212/MedWiki-Rheum" rel="noopener" target="_blank">GitHub 开源仓库 · 欢迎勘误</a>
+<a href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站 · DoctorQ 免疫前沿</a>
+<a href="https://skillhub.cn/user/user_481397b5" rel="noopener" target="_blank">SkillHub · 我们的Skills</a>
+</div>
+儿童风湿免疫临床知识库 · 作者 Doctor Q
+</div>
+<div style="max-width:1100px;margin:26px auto 0;padding:12px 20px 30px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div>
+<script src="../assets/qrcode.min.js"></script>
+<script defer="" src="../assets/share.js?v=8"></script>
+</body>
+</html>
