@@ -987,5 +987,10 @@
   "t": "一股随肝酶消长的怪味，少年的肝病到底为何？",
   "u": "evidence/ev_transaminitis_16y_04.html",
   "c": "循证证据"
+ },
+ {
+  "t": "试过 Strata，最后留在 tandem.cpp：24G 显存装下 Qwen3.8-Next 的 1250 亿参数",
+  "u": "evidence/24G显存跑125B-MoE引擎实测.html",
+  "c": "循证证据"
  }
 ]

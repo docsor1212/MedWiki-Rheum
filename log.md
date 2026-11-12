@@ -99,6 +99,16 @@
 - 文件：evidence/ev_transaminitis_16y_04.html
 - 简介：16岁无症状转氨酶升高1年余——分步病因评估确诊慢性丙型肝炎（母婴垂直传播），治疗与家庭筛查全程解析
 
+
+## 2026-11-12 — 新增：试过 Strata，最后留在 tandem.cpp：24G 显存装下 Qwen3.8-Next 的 1250 亿参数
+- 文件：evidence/24G显存跑125B-MoE引擎实测.html
+- 简介：三种引擎路线实测（Strata/tandem/ik）+ 五个没人讲透的坑：agent 负载、上下文预算、存储介质、测速陷阱、长会话
+
+
+## 2026-11-12 — 新增：试过 Strata，最后留在 tandem.cpp：24G 显存装下 Qwen3.8-Next 的 1250 亿参数
+- 文件：evidence/24G显存跑125B-MoE引擎实测.html
+- 简介：三种引擎路线实测（Strata/tandem/ik）+ 五个没人讲透的坑：agent 负载、上下文预算、存储介质、测速陷阱、长会话
+
 ---
 
 *每次Ingest/Query/Lint操作后追加记录*
