@@ -53,6 +53,10 @@ def audit(rel):
     for name, ver in (('themes.css', 6), ('medwiki.css', 26), ('content.css', 4)):
         chk(f'{name}v{ver}', bare or f'{name}?v={ver}' in raw)
     chk('无/assets/绝对路径', tetra or ('src="/assets/' not in raw and 'href="/assets/' not in raw))
+    # 组件-样式配套闸（2026-11-13 D4发布逃逸分析：母版head不含.cards/.sitenav样式→裸链接逃逸到线上）
+    for cls in ('cards', 'sitenav'):
+        if f'class="{cls}"' in raw or f"class='{cls}'" in raw:
+            chk(f'{cls}样式配套', f'.{cls}{{' in raw)
     # sitemap + search-index
     sm = load_once('sitemap.xml')
     chk('sitemap收录', rel in sm)
