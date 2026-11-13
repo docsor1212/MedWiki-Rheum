@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<!--
+═══════════════════════════════════════════════════════════════════
+ MedWiki 深度文章模板 · KD考据体（默认文体）
+ 适用：一个临床问题的深挖（时机之争/方案比较/指南冲突）
+ 母版：evidence/ev_KD_04.html（川崎病IVIG使用时机，2026-09）
+ 使用：复制本文件 → 替换全部 {{占位符}} → 按【必填块清单】核对
+       → 存为 evidence/ev_<主题>_01.html → python3 tools/publish.py <文件> --title … --desc …
+───────────────────────────────────────────────────────────────────
+ 【必填块清单】（缺一不可，发布门禁会查）
+ 1. hero：kicker体裁标签 + h1主标题/副题 + meta三胶囊（依据/日期/作者）
+ 2. 核心结论卡（3秒前置结论，读者最先看）
+ 3. 临床问题（question卡：病例引入+争议点）
+ 4. 正文节（section/h2.sec，编号"一、二、…"；指南对照用表格+截图figure；
+    每张截图必须有来源标注；临床主张逐条挂引文）
+ 5. 主要参考文献（ol/li，每条含PMID，发布前过L1核验）
+ 6. 术语与截图说明（note）
+ 7. 相关阅读条（RELATED占位：站内专题/工具/病例互链，3-5张，站内转化关键）
+ 8. 页脚签名 + 免责声明（固定文案勿改）
+ ⛔ 术语核验：病名/评分名逐条过PubMed+名词委，查无此名即删
+ ⛔ 中国方案与国际方案不同处，必须标"中国方案"全称
+═══════════════════════════════════════════════════════════════════
+-->
+<html data-mw-rebuilt="1" data-share-url="https://docsor.cn/evidence/推翻上篇结论-转投Strata-24G跑125B提速3倍.html" data-theme="glm" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>推翻上篇结论：从 ik_llama.cpp 转投 Strata，24G 显存跑 125B 提速 3 倍 — MedWiki-Rheum</title>
+<meta content="一股随肝酶消长的怪味，少年的肝病到底为何？" name="description"/>
+<meta content="#12365F" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<style>
+:root{
+    --navy:#1B4F8A; --navy-deep:#12365F; --navy-ink:#0F2A4A;
+    --gold:#C0893C; --gold-deep:#A8742F; --gold-bright:#E8A33D;
+    --blue-soft:#7FA8CC; --blue-mist:#EAF1F8; --blue-line:#C9D9EA;
+    --ink:#22303F; --ink-soft:#5A6B7C; --line:#DDE5EC;
+    --bg:#F5F6F8; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.95; font-size:16px;
+    max-width:900px; margin:0 auto; padding:0 0 60px;
+  }
+  .wrap{padding:0 22px;}
+
+  /* ── 站点导航（黄蓝斜线风格吸顶条） ── */
+  .sitenav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    max-width:900px; margin:0 auto; padding:9px 22px;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 70%);
+    border-bottom:4px solid var(--gold-bright);
+    box-shadow:0 2px 10px rgba(18,54,95,.28);
+    font-size:13.5px;
+  }
+  .sitenav::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(135deg,
+      transparent 0 26px, rgba(232,163,61,.18) 26px 34px,
+      transparent 34px 60px, rgba(127,168,204,.20) 60px 68px);
+  }
+  .sitenav a{
+    position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px;
+    text-decoration:none; font-weight:700; border-radius:999px; padding:5px 16px;
+  }
+  .sitenav a.home{background:var(--gold-bright); color:var(--navy-deep); box-shadow:0 2px 6px rgba(0,0,0,.28);}
+  .sitenav a.home:hover{background:#F2B455;}
+  .sitenav a.list{color:#fff; border:1.5px solid rgba(255,255,255,.65);}
+  .sitenav a.list:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .sitenav .cur{position:relative; z-index:1; color:#E8F0F9; font-weight:600;}
+  .sitenav .brand{margin-left:auto; position:relative; z-index:1; color:var(--gold-bright); font-weight:800; letter-spacing:.14em; font-size:12px;}
+
+  /* ── 三色斜纹装饰带（贯穿全稿的标志性母题） ── */
+  .band{
+    height:16px;
+    background:repeating-linear-gradient(135deg,
+      var(--navy) 0 16px, transparent 16px 25px,
+      var(--blue-soft) 25px 41px, transparent 41px 50px,
+      var(--gold-bright) 50px 66px, transparent 66px 75px);
+  }
+  .band.thin{height:8px; opacity:.85;}
+
+  /* ── Hero 头区 ── */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, #2456A6 100%);
+    color:#fff; padding:48px 42px 36px;
+  }
+  .hero::before{
+    content:''; position:absolute; right:-34px; top:-34px; width:280px; height:280px;
+    background:repeating-linear-gradient(45deg, transparent 0 15px, rgba(127,168,204,.32) 15px 21px);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:''; position:absolute; left:-26px; bottom:-52px; width:230px; height:230px;
+    background:repeating-linear-gradient(45deg, transparent 0 17px, rgba(232,163,61,.28) 17px 24px);
+    pointer-events:none;
+  }
+  .hero .kicker{
+    display:inline-block; font-size:12.5px; letter-spacing:.4em; font-weight:600;
+    color:#CFE0F2; border:1px solid rgba(207,224,242,.55);
+    padding:4px 14px 3px; margin-bottom:18px; border-radius:2px;
+  }
+  .hero h1{font-size:28px; line-height:1.6; font-weight:800; letter-spacing:.01em; position:relative; z-index:1;}
+  .hero h1 .sub{display:block; font-size:16.5px; font-weight:600; color:var(--gold-bright); margin-top:8px; letter-spacing:.06em;}
+  .hero .meta{
+    display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1;
+    font-size:12.5px;
+  }
+  .hero .meta span{
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:4px 14px; color:#E8F0F9;
+  }
+  .hero .meta b{color:var(--gold-bright); font-weight:700; margin-right:2px;}
+
+  /* ── 核心结论 ── */
+  .verdict{
+    margin:-26px 22px 0; position:relative; z-index:2;
+    background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold-bright);
+    border-radius:14px; box-shadow:0 6px 22px rgba(18,54,95,.10);
+  }
+  .verdict .vhead{
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,#FBF4E6,#FFFFFF 72%);
+    padding:13px 22px; border-bottom:1px dashed #E4D5B4; border-radius:14px 14px 0 0;
+  }
+  .verdict .vhead .slash{color:var(--gold-bright); font-weight:800; letter-spacing:.1em;}
+  .verdict .vhead h2{font-size:17px; color:var(--gold-deep); letter-spacing:.22em; font-weight:800;}
+  .verdict p{padding:0 22px; margin:0;}
+  .verdict .vbody{padding:16px 0 18px;}
+  .verdict p{margin-bottom:13px; font-size:15.5px;}
+  .verdict p:last-child{margin-bottom:0;}
+
+  /* ── 章节 ── */
+  section{margin-top:54px;}
+  h2.sec{
+    font-size:23px; font-weight:800; color:var(--navy-ink);
+    padding:0; margin-bottom:22px; border:none; line-height:1.4;
+  }
+  h2.sec::before{content:'/// '; color:var(--gold-bright); letter-spacing:.06em; margin-right:4px;}
+  h2.sec::after{
+    content:''; display:block; width:132px; height:4px; margin-top:9px; border-radius:2px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 44px, var(--navy) 44px 132px);
+  }
+  h3{
+    font-size:16.5px; margin:30px 0 10px; color:var(--navy); font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+  h3::before{content:''; width:8px; height:8px; background:var(--gold-bright); transform:rotate(45deg); flex:none;}
+  p{margin:0 0 16px;}
+
+  /* ── 病例卡与临床问题 ── */
+  .case{
+    background:linear-gradient(180deg,#FFFFFF, #F2F7FC);
+    border:1px solid var(--blue-line); border-top:4px solid var(--navy);
+    border-radius:14px; padding:22px 24px 18px; margin:6px 0 24px; font-size:15.5px;
+    box-shadow:0 3px 14px rgba(18,54,95,.06);
+  }
+  .case p{margin-bottom:10px;}
+  .question{
+    background:#FDF8EF; border:1px dashed var(--gold); border-top:3px solid var(--gold-bright);
+    border-radius:12px; padding:14px 18px; margin-top:14px; font-size:15px;
+  }
+
+  /* ── 原文引用块 ── */
+  blockquote.q{
+    margin:20px 0; padding:18px 20px 14px 52px; position:relative;
+    background:var(--blue-mist); border:1px solid var(--blue-line); border-left:5px solid var(--navy);
+    border-radius:0 12px 12px 0; font-size:15px;
+  }
+  blockquote.q::before{
+    content:'\201C'; position:absolute; left:14px; top:2px;
+    font-family:Georgia,serif; font-size:52px; line-height:1; color:var(--blue-soft);
+  }
+  blockquote.q.en{font-family:Georgia,"Times New Roman",serif; font-size:15.5px; line-height:1.75;}
+
+  /* ── 截图与图表 ── */
+  figure.evidence{margin:24px 0 32px;}
+  figure.evidence .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:12px; padding:12px; background:#fff;
+    box-shadow:0 3px 14px rgba(18,54,95,.08);
+  }
+  figure.evidence .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--navy) 0 34%, var(--gold-bright) 34% 67%, var(--blue-soft) 67%);
+  }
+  figure.evidence img{width:100%; display:block; border-radius:6px;}
+  figure.evidence figcaption{
+    font-size:13px; color:var(--ink-soft); margin-top:10px; line-height:1.75;
+    padding-left:12px; border-left:3px solid var(--gold-bright);
+  }
+  figure.evidence figcaption b{color:var(--navy-ink);}
+  figure.chart{margin:26px 0 34px;}
+  figure.chart .frame{
+    position:relative; overflow:hidden;
+    border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff;
+    box-shadow:0 4px 18px rgba(18,54,95,.09);
+  }
+  figure.chart .frame::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--gold-bright) 0 50%, var(--navy) 50%);
+  }
+  figure.chart img{width:100%; display:block; border-radius:6px;}
+  figure.chart figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.75;}
+  figure.chart figcaption .src{display:block; font-size:12px; color:#93A2B1; margin-top:4px;}
+
+  /* ── 表格 ── */
+  .tablewrap{
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 3px 14px rgba(18,54,95,.07); margin:22px 0 30px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  th{
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy)); color:#fff;
+    font-weight:700; padding:12px 14px; text-align:left; font-size:14px; letter-spacing:.06em;
+  }
+  td{border-top:1px solid var(--line); padding:12px 14px; vertical-align:top;}
+  tr:nth-child(even) td{background:#F6F9FC;}
+  td b{color:var(--navy);}
+
+  /* ── 参考文献 ── */
+  .refs{font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  .refs li{margin-bottom:7px; margin-left:22px;}
+  a.url{color:var(--navy); text-decoration:none; border-bottom:1px dotted var(--blue-soft); word-break:break-all; font-size:0.92em;}
+  a.url:hover{color:var(--navy-deep); border-bottom-color:var(--gold);}
+  .note{
+    margin-top:26px; padding:16px 20px; background:#fff;
+    border:1px solid var(--line); border-left:4px solid var(--blue-soft); border-radius:10px;
+    font-size:12.5px; color:var(--ink-soft); line-height:1.85;
+  }
+  .note b{color:var(--navy);}
+
+  /* ── 页脚 ── */
+  footer{margin-top:60px; text-align:center;}
+  footer .sig{
+    display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.3em;
+    color:#fff; background:linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-bottom:3px solid var(--gold-bright);
+    padding:8px 26px 7px; border-radius:4px; margin-bottom:14px;
+  }
+  footer .fline{font-size:12px; color:#8A98A8; line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero{padding:36px 24px 30px;}
+    .hero h1{font-size:22px;}
+    .verdict{margin:-20px 12px 0;}
+    h2.sec{font-size:20px;}
+  }
+  @media print{
+    body{background:#fff; max-width:100%;}
+    .hero{background:var(--navy-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    figure .frame, .tablewrap{box-shadow:none;}
+  }
+/* 相关阅读条（自包含样式） */
+.mw-related{max-width:1100px;margin:30px auto 0;padding:0 20px;}
+.mw-related h2{font-size:15px;font-weight:800;color:#0F2A4A;margin:0 0 10px;}
+.mw-related .cards{display:flex;gap:10px;flex-wrap:wrap;}
+.mw-related .cards a{flex:1 1 200px;text-decoration:none;color:inherit;background:#fff;
+  border:1px solid #DDE5EC;border-top:3px solid #E8A33D;border-radius:10px;padding:10px 12px;
+  transition:transform .15s, box-shadow .15s;}
+.mw-related .cards a:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(15,42,74,.13);}
+.mw-related .cards .t{font-weight:700;font-size:13px;color:#1B4F8A;}
+.mw-related .cards .d{font-size:11.5px;color:#5A6B7C;margin-top:2px;}
+/* 站点页脚（自包含样式） */
+.mw-sfoot{max-width:1100px;margin:30px auto 0;padding:14px 20px 26px;border-top:1px solid #DDE5EC;
+  text-align:center;font-size:12px;color:#5A6B7C;line-height:1.9;}
+.mw-sfoot .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.mw-sfoot .flinks a{color:#1B4F8A;text-decoration:none;}
+</style>
+<!--mw-seo-->
+<link href="https://docsor.cn/evidence/%E6%8E%A8%E7%BF%BB%E4%B8%8A%E7%AF%87%E7%BB%93%E8%AE%BA-%E8%BD%AC%E6%8A%95Strata-24G%E8%B7%91125B%E6%8F%90%E9%80%9F3%E5%80%8D.html" rel="canonical"/>
+<meta content="推翻上篇结论：从 ik_llama.cpp 转投 Strata，24G 显存跑 125B 提速 3 倍 — MedWiki-Rheum" property="og:title"/>
+<meta content="从 20 tok/s 一路跌到 15，到稳定 50-60、峰值 79.7：一次降速诊断引发的引擎迁移全程记录，六个坑逐一拆解，附可直接抄的 26 万上下文生产配置。" property="og:description"/>
+<meta content="https://docsor.cn/evidence/%E6%8E%A8%E7%BF%BB%E4%B8%8A%E7%AF%87%E7%BB%93%E8%AE%BA-%E8%BD%AC%E6%8A%95Strata-24G%E8%B7%91125B%E6%8F%90%E9%80%9F3%E5%80%8D.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="MedWiki-Rheum" property="og:site_name"/>
+<meta content="zh_CN" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="从 20 tok/s 一路跌到 15，到稳定 50-60、峰值 79.7：一次降速诊断引发的引擎迁移全程记录，六个坑逐一拆解，附可直接抄的 26 万上下文生产配置。" name="description"/>
+<style>.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}figure img{max-width:100%;height:auto;}section p,section ol,section ul,section li,.summary,.hero .meta span{overflow-wrap:anywhere;word-break:break-word;}@media(max-width:980px){.sitenav{padding:9px 14px;}.mw-related{padding:0 12px;}}</style>
+</head>
+<body>
+<nav class="sitenav"><a class="home" href="https://docsor.cn/">⌂ MedWiki 首页</a><a class="list" href="https://docsor.cn/evidence/index.html">证据与病例</a><span class="cur">› 推翻上篇结论：转投 Strata</span><span class="brand">MedWiki-Rheum</span></nav>
+<header class="hero"><h1>推翻上篇结论：从 ik_llama.cpp 转投 Strata，24G 显存跑 125B 提速 3 倍<span class="sub">六个坑的完整排查记录，和一套稳定 50-60 tok/s、26 万上下文的生产配置</span></h1><div class="meta"><span><b>依据</b> 800+ 条引擎日志时间线 · 51 个真实任务请求统计</span><span><b>日期</b> 2026-11-13</span><span><b>作者</b> Doctor Q</span></div></header>
+<div style="max-width:900px;margin:0 auto;padding:8px 22px;font-size:12px;color:#5A6B7C;text-align:center;background:#EAF1F8;border-bottom:1px solid #DDE5EC;">方法学工具：Cite-holmes（社区方案调研核验） · Academic-figures（本文全部图表） · A5000 本机实测</div>
+<section>
+<p>昨天我刚发过一篇文章，结论是“试过 Strata，最后留在了 tandem.cpp”。今天这篇把它推翻。不是昨天的判断错了，是当时有一个前提不成立：驱动版本不够，Strata 根本装不上。昨天之后，这个前提没了。</p>
+<p>先给结果。同一个模型，同一张显卡，从 20 tokens/s 出头，做到了稳定 50 到 60，最好的一次跑到 79.7。中间踩了六个坑，每个都写在这篇文章里，包括我怎么发现的、差一点怎么误判、最后怎么解决的。如果你也是 24G 显卡加大内存跑 125B 的 MoE 模型，这篇记录了完整的排查和解决过程。</p>
+</section>
+<section>
+<h2 class="sec">先看图</h2>
+<p>四张图把这次改造讲完。</p>
+<figure style="margin:20px 0;"><img alt="改造前后：同一模型、同一张显卡的真实生成速度" src="images/q38d4_fig1_speed_arena.png" style="max-width:100%;height:auto;border:1px solid var(--line);"/><figcaption style="font-size:12px;color:#5A6B7C;text-align:center;margin-top:6px;">改造前后：同一模型、同一张显卡的真实生成速度</figcaption></figure>
+<p>第一张是结果。右边三根柱子是新方案：冷启动 42，暖态 60，峰值 79.7。左边两根是旧方案的常态：刚启动 20，日常用 15。</p>
+<figure style="margin:20px 0;"><img alt="旧引擎 24 小时降速曲线：800 余条日志的中位值" src="images/q38d4_fig2_degrade_timeline.png" style="max-width:100%;height:auto;border:1px solid var(--line);"/><figcaption style="font-size:12px;color:#5A6B7C;text-align:center;margin-top:6px;">旧引擎 24 小时降速曲线：800 余条日志的中位值</figcaption></figure>
+<p>第二张是问题本身。旧引擎的速度不是恒定的，是一条持续下滑的曲线，灌一次大文档就跌到个位数。这不是错觉，是 800 多条日志画出来的事实。</p>
+<figure style="margin:20px 0;"><img alt="方案核心：显存放热数据，内存放全部家底" src="images/q38d4_fig3_memory_arch.png" style="max-width:100%;height:auto;border:1px solid var(--line);"/><figcaption style="font-size:12px;color:#5A6B7C;text-align:center;margin-top:6px;">方案核心：显存放热数据，内存放全部家底</figcaption></figure>
+<p>第三张是新方案的结构。显存 24G 只放热数据，283G 内存放全部家底，两边每秒往返数十次——这条通道的带宽，就是这套方案速度的来源。</p>
+<figure style="margin:20px 0;"><img alt="调优实验成绩单：冠军是起点，收益在结构与质量" src="images/q38d4_fig4_tuning.png" style="max-width:100%;height:auto;border:1px solid var(--line);"/><figcaption style="font-size:12px;color:#5A6B7C;text-align:center;margin-top:6px;">调优实验成绩单：冠军是起点，收益在结构与质量</figcaption></figure>
+<p>第四张是调优成绩单。冠军是起点自己：这轮调优没有在微基准上跑赢起点，真正的收益在结构与质量——命中率爬到九成、上下文翻倍、以及一个可以长期学习的缓存画像。</p>
+</section>
+<section>
+<h2 class="sec">一、我的机器和模型</h2>
+<p>显卡是 RTX A5000，24G 显存。CPU 是 AMD EPYC 服务器平台，虚拟机分到 56 个线程。内存 283G，DDR4，前两年内存便宜的时候拿服务器条子拼的。系统是 Ubuntu 24.04，显卡直通进虚拟机。</p>
+<p>模型是 Qwen3.8-Flash-Next，总参数 125B，量化之后 94G 左右。MoE 架构可以理解成一个很大的专家委员会：每个字进来，只需要其中一小部分专家处理。所以 94G 的权重虽然塞不进 24G 显存，速度却未必慢，前提是“这次要用的那部分权重”能又快又稳地送到该去的地方。不同的推理引擎，差别就在这个送货方案上。</p>
+<p>内存在这套方案里的地位比显卡高。后面会看到，引擎要把几十 G 的专家权重常驻在内存里，显存只放热门部分。</p>
+</section>
+<section>
+<h2 class="sec">二、问题：不只是慢，是越用越慢</h2>
+<p>20 tokens/s 跑对话还行，当干活的主力就难受了。我用它跑 agent，让它连续执行几十步工具调用，等输出的感觉像看慢放的录像。</p>
+<p>真正的问题在后面。我把引擎日志里 800 多条生成记录按时间排开，看到一个规律。刚启动，速度 17 到 23。正常用一天，掉到 11 到 15。给它灌一次两万字的文档，瞬时掉到 7 到 9。</p>
+<p>最差的时候只有标称速度的三分之一。我一开始怀疑引擎坏了、显卡降频、有程序抢资源，逐个查过，都不是。</p>
+<p>这里还藏着第二个痛点，写在配置单上。这台机器配了 283G 内存，是整套配置里最贵的部分。可在 10 到 20 tokens/s 的速度下，这套内存的产出配不上它的投入：明明能支撑快得多的引擎，方案没跟上。</p>
+</section>
+<section>
+<h2 class="sec">三、查原因：把日志铺开看</h2>
+<p>日志给出的答案很清楚。这个模型是 MoE 结构，可以想成一个很大的专家委员会，每个字只需要其中几位专家处理。引擎在显存里划了一小块地方（4G）放“最近最常用的专家”，没排上的从内存里现取。</p>
+<p>刚启动的时候聊的都是常见话题，要请的专家就那几位，快区坐得下，20 tokens/s。真实工作里，多文件、多轮工具调用、长文档，需要请的专家远超快区容量，座位上的人被不停换下去，每一步都要从内存重新取，速度就掉到 11 到 15。灌一次大文档，等于把整个座位表掀了重排，瞬时 7 到 9。</p>
+<p>所以这不是故障，是工作负载变重之后，那块 4G 的快区装不下了。</p>
+<p>找到原因之后我反而松了口气，因为可以验证。我把免费手段全试了一遍：重启引擎，恢复到 15.5，好不了更多；把快区扩到 6G，显存不够，第一次解码直接崩；扩到 5G，没变化；改 CPU 绑核，更慢。</p>
+<p>这四张牌打完，结论就不是“我觉得还能优化”，而是“这条路的容量天花板已经量出来了”。换方向的决策有了铁的依据。</p>
+</section>
+<section>
+<h2 class="sec">四、出去看别人怎么跑</h2>
+<p>这个模型有一个很活跃的中文社区——抡锤者（<a href="https://lcz.me/" rel="noopener" target="_blank">lcz.me</a>），我在里面泡了一圈，看同款配置的实测帖，看的时候心情很复杂。</p>
+<div class="tablewrap"><table>
+<tr><th>别人的硬件</th><th>精度档</th><th>实测速度</th></tr>
+<tr><td>RTX 5070，12G 显存，128G 内存</td><td>IQ3_S（比我激进，质量略低）</td><td>65 到 79 tokens/s</td></tr>
+<tr><td>老平台 + 3080 20G，内存带宽只有我的九分之一</td><td>Q4 档（和我同档）</td><td>39 到 45 tokens/s</td></tr>
+<tr><td>一张 7900XTX + 服务器平台</td><td>IQ3_S</td><td>90 到 125 tokens/s</td></tr>
+</table></div>
+<p>上面三个数据分别来自社区里的实测帖：<a href="https://lcz.me/topic/2988" rel="noopener" target="_blank">3080 20G 的 Q4 档实测</a>、<a href="https://lcz.me/topic/2975" rel="noopener" target="_blank">RTX 5070 的 IQ3_S 实测</a>、<a href="https://lcz.me/topic/2931" rel="noopener" target="_blank">7900XTX 的 IQ3_S 实测</a>，先谢过。</p>
+<p>大家用的引擎是 Strata。它和传统方案的区别在于，专家缓存是一套完整的管理系统：命中率实时可见，大小可以精细调，连“几个会话来回切换时不重新读长文档”这种 agent 痛点都有专门的机制。</p>
+<p>我为什么放弃过它？翻自己的记录，原因只有一个：驱动版本不够，Strata 新版需要更新的 NVIDIA 驱动。社区里有人直接写了“如果你的驱动自由，值得优先试”。</p>
+<p>我为什么一直留在 535？不是懒得动。这套机器三四月装机的时候，NVIDIA 的新版驱动正好有严重 bug，只能把驱动钉在 535 上。这大半年，驱动是封存的禁区，别的都敢动，唯独它不敢。直到 535 系今年年中停止安全更新、上游驱动接连迭代把坑踩完、我专门做了一轮调研把目标版本和要避开的版本都定下来，才下的决心。现在理由凑齐了：旧驱动停更，新引擎装得上，旧引擎容量到顶。</p>
+</section>
+<section>
+<h2 class="sec">五、三件事</h2>
+<p>第一，升级驱动。第二，换模型文件里的一张表。第三，装 Strata。</p>
+<p>第二件事单独说一下，它是白捡的质量提升。解析模型文件时我发现，模型里最大的一张查找表（512 亿个数值，占整体体积约三成）在量化时被压得比较狠，和原版的误差有 7.57%。模型作者后来单独发布了这张表的高精度版本，误差 0.53%，并且官方支持混搭替换。换表之后其他全部不动，模型整体消灭了一个已知的系统性误差源，代价只是多占 25.6G 内存。这台机器 283G 内存，毫无压力。下载走国内镜像，104MB 一秒，十几分钟。</p>
+</section>
+<section>
+<h2 class="sec">六、过程中的坑</h2>
+<h3>坑一：软件源里找不到新驱动，旧驱动也回不去了</h3>
+<p>装驱动时报“找不到候选版本”。排查半天，是我的软件源配置少了一个组件分区。NVIDIA 驱动放在 Ubuntu 的 restricted 分区，我的源配置只开了 multiverse。补上之后驱动立刻可见。</p>
+<p>更大的意外在后面。查备份通道时发现，535 系驱动已经从 Ubuntu 官方仓库整体下架，仓库里残留的 535 包全是空壳，装它们等于自动转投新驱动。也就是说，升级之后如果想退回，联网重装这条路是死的。</p>
+<p>所以我升级前把现役驱动的内核模块、源码、用户态库全部打包成本地备份，一共 7G 多。事后看，新驱动一次成功，备份没派上用场，但如果没有这批备份，我就是在不带安全绳的情况下走钢丝。</p>
+<p>另外两条纪律。装完先别重启，确认新模块编译注册成功再动。版本要挑：580 系的第一个点版本有个内核模块编译不过的已知问题，我装的是后来的 580.178.04，编译八十秒干净通过。</p>
+<h3>坑二：换表的下载通道有个怪名字</h3>
+<p>高精度查找表的下载链接按照直觉的文件名访问会报“资源不存在”。看了仓库的文件列表才发现，这几个文件的真实名字带一个多余的 <code>.gguf_file</code> 后缀。换成真实文件名立刻通。下载完我按字节数逐个核对了大小，再解析文件头确认表的精度档位，才动手替换。</p>
+<h3>坑三：新引擎的第二次启动会静默失败</h3>
+<p>Strata 的安装很顺：一条命令，自动识别显卡、下载对应版本、做性能调优，十五分钟。首次启动，速度从 20 跳到 56，这时候我还什么都没调。</p>
+<p>但重新启动实例时踩了一个所有自启动服务都有的坑：命令执行“成功”，服务没起来。查下来是端口被一个残留实例占着，启动工具对端口被占的处理是静默退出，不留报错。</p>
+<p>从此我的部署清单里多了一条死规矩：启动之后必须查端口监听、查进程归属，再跑业务验证。命令返回成功不算数。</p>
+<h3>坑四：agent 的工具调用会随机变成一段纯文本</h3>
+<p>换完引擎跑真实任务，遇到最诡异的问题：助手偶尔在回答里输出一整段原始 XML 格式的工具调用代码，而不是真正执行工具。任务卡死。</p>
+<p>它是间歇性的，大多数时候正常。翻上游的问题追踪器找到了机制：这类引擎只解析“本轮请求里明确声明过的工具”的调用；如果模型喊了一个没在当轮清单里的工具名，哪怕格式完全正确，引擎也把整段调用当普通文本返回。</p>
+<p>我的场景恰好会踩。模型偶尔会发明一个合理但没有注册的工具名。</p>
+<p>解法是一个环境变量的事。引擎有个专门的开关，默认“按文本返回”，改成“按调用返回”。改完之后，模型喊了没注册的名字，客户端也能收到结构化的调用，把“这个工具不存在，你可用的有这些”回喂给模型，模型自己改名重试。从卡死变成了自我纠正。</p>
+<h3>坑五：读图失败，凶手不是视觉模块</h3>
+<p>配置好视觉之后，助手读图片还是报错。直觉去查视觉模块，查完发现它一切正常：引擎带视觉启动，编码器正常装载，我直接发一张测试图它准确说出了颜色。</p>
+<p>真正的原因在客户端配置。助手的模型声明里少了一行“这个模型接受图像输入”，客户端发送前检查能力，发现声明里没有，直接拒绝，图根本没出门。补一行声明，重启，通了。</p>
+<p>这件事的教训：全链路排查时，每一跳的“能力声明”和“实际能力”是两回事。错误发生在哪一跳，看那一段的日志，不要猜最复杂的部件。</p>
+<h3>坑六：我自己埋的雷</h3>
+<p>正式切换当天，引擎连跑了近两个小时，一个正在生成的请求突然报连接错误。日志显示引擎进程被系统终止了。第一反应是内存耗尽，但当时内存还有 200G 富余。</p>
+<p>真相是我给引擎服务加过一个“防御性”的内存上限。系统统计服务内存时，会把引擎读过的模型文件的缓存页也算进去，权重 119G，缓存就 119G，加上引擎本身占的 110G 左右，怎么都会突破我设的 200G。这个上限在大模型场景必然误杀。</p>
+<p>移除上限，问题绝迹。设上限之前先搞清楚统计口径，这句话值一次半夜排障。</p>
+</section>
+<section>
+<h2 class="sec">七、真实效果</h2>
+<p>引擎稳定后，我让一个会自主执行几十步工具调用的助手跑了五十分钟真实任务，统计如下（14:35 到 15:25，51 个请求）。</p>
+<p>51 个请求全部正常完成，没有一个中途失败。生成速度中位 54，均值 54.2，峰值 79.7。51 个里 50 个超过 40 tokens/s，唯一低于线的一次是重启后的冷启动。最大的一次读入了 178,365 token 的上下文，正常处理。专家缓存命中率稳定在八成以上，最高 92%。</p>
+<p>体感：发复杂任务不用再盯进度条，消息发出去答案已经在流出来。灌长文档，首字等待从一分多钟变成几秒。模型质量因为换表反而提升了一个已知精度档。</p>
+<p>换完引擎我没有停手，又做了三轮调优实验：给专家缓存装一套自适应画像（用得越多越懂该把哪些专家放进显存，命中率爬到九成）、把没被用到的上下文显存让给专家缓存、再把投机解码的窗口加宽试了一遍。最后这一招是负优化，已经回退。成绩单在“现在的方案”一节里：冠军是起点，这轮调优的收益不在微基准速度，在结构与质量。</p>
+<p>还有一样东西的变化不在数字里：内存。现在引擎常驻内存 113G，里面装着四样东西：全套权重、高精度查找表、二十六万上下文装不下的那部分 KV（引擎自动把它们分流到内存）、还有最多 8G 的会话热缓存，作用是切换会话时不用重新读长文档。前两年拼的这 283G 内存，到今天才算物尽其用：显存放热门专家和热数据，内存放全部家底，各干各的。</p>
+</section>
+<section>
+<h2 class="sec">八、现在的方案</h2>
+<div class="tablewrap"><table>
+<tr><th style="width:22%;">层</th><th>配置</th></tr>
+<tr><td>驱动</td><td>NVIDIA 580.178.04，旧驱动完整备份在本地</td></tr>
+<tr><td>引擎</td><td>Strata 0.2.13，注册成系统服务开机自启</td></tr>
+<tr><td>模型</td><td>官方 4 分片量化包 + 高精度查找表混搭，119G 放 SSD 和内存</td></tr>
+<tr><td>关键参数</td><td>上下文 26 万 token；KV 用 int8，热段驻留显存、溢出走内存；专家缓存自动档；自适应学习开启并定期保存</td></tr>
+<tr><td>客户端</td><td>模型声明补上图像能力；未声明工具调用改为返回真实调用</td></tr>
+<tr><td>回滚</td><td>旧引擎脚本一条命令切回；旧驱动本地备份三件套</td></tr>
+</table></div>
+</section>
+<section>
+<h2 class="sec">九、几条建议</h2>
+<p>一，判断速度问题，先拉完整的日志时间线。单次测量说明不了任何事，缓存命中率随工作负载起伏，看清规律再动手。</p>
+<p>二，免费手段全部试完，再决定换方案。试错记录本身就是决策依据，它把“我觉得还有优化空间”变成“这条路的天花板量出来了”。</p>
+<p>三，同模型的社区实测比任何官方文档都值钱。引擎之间 2 到 20 倍的差距不会写在文档里，只在真实用户的帖子里。</p>
+<p>四，动驱动之前打包备份。仓库会下架旧包，你以为随时能回头，回头路可能已经拆了。</p>
+<p>五，量化模型的精度是分层管理的。找出误差最大的部件单独换高精度版本，可能是零代价的质量提升。</p>
+<p>六，agent 场景选引擎，把工具调用的可靠性放在跑分前面。翻一翻它的 issue 区有没有“工具调用变文本”的未修复问题，一次失败就能卡死整个任务。</p>
+<p>七，服务的内存上限不要拍脑袋设。搞清楚系统把什么算进账本，再决定上限是多少。</p>
+</section>
+<section>
+<h2 class="sec">十、现状和边界</h2>
+<p>冷启动后的第一波请求会慢一些，连续使用才进入 50 到 60 的区间。生成速度再往上需要换硬件带宽档位了，软件侧已经到顶。上游还有一个工具调用的边角案例没修复，我们的场景没踩到，升级引擎时需要留意。自适应缓存还在学习期，命中率会随使用天数继续爬。</p>
+<p>昨天那篇文章的标题说“最后留在 tandem.cpp”。今天起，留在 Strata。</p>
+</section>
+<section>
+<h2>相关阅读</h2>
+<div class="cards">
+<a href="https://docsor.cn/evidence/24G%E6%98%BE%E5%AD%98%E8%B7%91125B-MoE%E5%BC%95%E6%93%8E%E5%AE%9E%E6%B5%8B.html" rel="noopener"><div class="t">上一篇：试过 Strata，最后留在 tandem.cpp</div><div class="d">被本文推翻的前篇：三条引擎路线实测与五个坑（2026-11-12）</div></a>
+<a href="https://lcz.me/topic/3034" rel="noopener" target="_blank"><div class="t">本文的社区讨论版（抡锤者 lcz.me）</div><div class="d">同款硬件玩家的实测交流帖</div></a>
+<a href="https://docsor.cn/evidence/index.html" rel="noopener"><div class="t">MedWiki 证据与病例索引</div><div class="d">本站全部深度文章与核验报告</div></a>
+</div>
+</section>
+<footer>
+<div class="band thin"></div>
+<div style="height:26px;"></div>
+<div class="sig">DOCTOR Q</div>
+<div class="fline">
+    作者 Doctor Q · 本地大模型部署与工程实录（第二篇）<br/>
+    全部数字来自真实任务实测 · 图表由 Academic-figures 生成 · 发布日期 2026-11-13<br/>
+    本文收录于 <a class="url" href="https://docsor.cn/">MedWiki-Rheum</a> · <a class="url" href="https://docsor.cn/evidence/index.html">更多证据与病例</a>
+</div>
+<div style="max-width:860px;margin:18px auto 0;padding:10px 18px;font-size:11.5px;color:#5A6B7C;background:#F5F6F8;border:1px solid #DDE5EC;">
+免责声明：本文为个人工程实践记录，所有配置与数字基于所述环境实测，不构成通用建议；换硬件、换模型版本请先在隔离环境复测。内容仅供技术交流。
+</div>
+</footer>
+<div class="mw-sfoot">
+<div class="flinks">
+<a href="https://github.com/docsor1212/MedWiki-Rheum" rel="noopener" target="_blank">GitHub 开源仓库 · 欢迎勘误</a>
+<a href="https://space.bilibili.com/432233902" rel="noopener" target="_blank">B站 · DoctorQ 免疫前沿</a>
+<a href="https://skillhub.cn/user/user_481397b5" rel="noopener" target="_blank">SkillHub · 我们的Skills</a>
+</div>
+儿童风湿免疫临床知识库 · 作者 Doctor Q
+</div>
+<div style="max-width:1100px;margin:26px auto 0;padding:12px 20px 30px;font-size:12px;color:#5A6B7C;line-height:1.8;border-top:1px solid #DDE5EC;"><b>免责声明</b>　本页内容为临床参考资料，由 AI 辅助整理、Cite-holmes 及人工审校，仅供专业交流，不构成对具体患者的诊疗建议；临床决策请结合患者实际情况并遵循所在医疗机构规范。所引指南与文献均标注来源与核验状态，引用请以原文为准。</div><script src="../assets/qrcode.min.js"></script>
+<script defer="" src="../assets/share.js?v=8"></script></body>
+</html>
