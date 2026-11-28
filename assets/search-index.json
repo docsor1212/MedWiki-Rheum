@@ -997,5 +997,10 @@
   "t": "推翻上篇结论：从 ik_llama.cpp 转投 Strata，24G 显存跑 125B 提速 3 倍",
   "u": "evidence/推翻上篇结论-转投Strata-24G跑125B提速3倍.html",
   "c": "循证证据"
+ },
+ {
+  "t": "胸腺 CT 识别速查卡（判据 · 儿童径线 · 陷阱 · 图集）",
+  "u": "evidence/ev_thymus_ct_quickref.html",
+  "c": "循证证据"
  }
 ]
